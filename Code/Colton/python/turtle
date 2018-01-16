@@ -1,13 +1,27 @@
 from turtle import *
 
+left(45)
 forward(100)
-right(144)
+right(90)
 forward(100)
-right(144)
+right(180)
 forward(100)
-right(144)
+right(45)
 forward(100)
-right(144)
+left(90)
 forward(100)
+right(180)
+forward(200)
+right(180)
+forward(100)
+right(90)
+forward(50)
+right(45)
+i = 0
+while i < 4:
+    forward(100)
+    left(90)
+    i = i + 1
 
 done()
+
