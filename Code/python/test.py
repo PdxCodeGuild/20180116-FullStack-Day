@@ -1,5 +1,1 @@
-print ("Hello world")
-
-print(" Sup")
-
-
+print('hello world!')
