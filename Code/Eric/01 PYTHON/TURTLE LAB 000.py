@@ -1,16 +1,17 @@
-import turtle
+from turtle import *
 
-#color(red)
+move_distance = 100
+turn_angle = 144
 
-forward(10)
-right(90)
-forward(10)
-right(90)
-forward(10)
-right(90)
-forward(10)
-right(90)
-
-#setposition(-5, -5)
+forward (move_distance)
+right(turn_angle)
+forward (move_distance)
+right(turn_angle)
+forward (move_distance)
+right(turn_angle)
+forward (move_distance)
+right(turn_angle)
+forward (move_distance)
+right(turn_angle)
 
 done()
