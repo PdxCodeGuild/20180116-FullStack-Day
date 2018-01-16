@@ -1,5 +1,5 @@
 """
-
+First lab drawing a stick figure
 """
 
 from turtle import *
