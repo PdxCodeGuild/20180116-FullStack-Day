@@ -13,6 +13,7 @@ left(90)
 forward(move_distance)
 left(turn_around)
 forward(250)
+
 # legs
 right(33)
 forward(move_distance)
@@ -24,6 +25,7 @@ forward(move_distance)
 right(turn_around)
 forward(move_distance)
 right(33)
+
 # arms
 forward(move_distance)
 right(50)
@@ -67,6 +69,7 @@ right(40) # return
 forward(100)
 left(30)
 forward(100)
+
 # head
 penup()
 forward(90)
@@ -76,6 +79,7 @@ right(90)
 right(turn_around)
 pendown()
 circle(90)
+
 # eyes
 left(90)
 penup()
@@ -87,6 +91,7 @@ forward(60)
 left(90)
 pendown()
 circle(15)
+
 # mouth
 left(turn_around)
 penup()
@@ -94,6 +99,8 @@ forward(60)
 right(115)
 forward(40)
 pendown()
-forward(60)
+forward(40)
+penup()
 
+# draw, little turtle, draw!
 done()
