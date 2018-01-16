@@ -1,10 +1,10 @@
+from turtle import *
 
+i = 0
+while i < 4:
+    forward(100)
+    left(90)
+    i = i + 1
+    print(i)
 
-def newday():
-
-    day = 0116
-
-    if day == 0116:
-    print("Hello World")
-
-newday()
+done()
