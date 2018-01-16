@@ -24,14 +24,17 @@ pendown()
 
 
 
-edge_length = 100
-n_sides = 100
+edge_length = 200
+n_sides = 200
 
 i = 0
+fillcolor('red')
+begin_fill()
 while i < n_sides:
+
 	forward(edge_length/n_sides)
 	left(360/n_sides)
 	i = i + 1
-
+end_fill()
 done()
 
