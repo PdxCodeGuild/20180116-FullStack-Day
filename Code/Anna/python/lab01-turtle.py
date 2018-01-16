@@ -100,6 +100,7 @@ right(115)
 forward(40)
 pendown()
 forward(40)
+penup()
 
 # draw, little turtle, draw!
 done()
