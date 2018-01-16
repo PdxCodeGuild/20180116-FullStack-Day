@@ -1,0 +1,13 @@
+body = input("Pick a part of your body.\n:")
+peeps = input ("Noun.")
+adj = input("Adjective.\n:")
+adj2 = input("Another Adjective.\n")
+char = input("Word for imposter.\n:")
+
+print("If you can keep your "+ body +" when all about you Are losing theirs and blaming it on you,")
+print("If you can trust yourself when all" + peeps + " doubt you,But make allowance for their doubting too;")
+print("If you can " + adj + " and not be tired by waiting, Or being lied about, don’t deal in lies,")
+print("Or being hated, don’t give way to hating, And yet don’t look too good, nor talk too wise:")
+print("If you can + adj2 +—and not make " + adj2 + " your master;")
+print("If you can think—and not make thoughts your aim;")
+print("If you can meet with Triumph and Disaster And treat those two " + char + " just the same;")
