@@ -1,0 +1,28 @@
+from turtle import *
+
+i = 0
+while i < 180:
+    forward(1)
+    left(2)
+    i = i + 1
+right(90)
+forward(25)
+left(90)
+forward(50)
+right(180)
+forward(100)
+right(180)
+forward(50)
+right(90)
+forward(50)
+right(45)
+forward(30)
+right(180)
+forward(30)
+right(90)
+forward(30)
+
+
+
+done()
+
