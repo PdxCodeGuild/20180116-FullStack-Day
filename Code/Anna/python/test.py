@@ -1,4 +1,6 @@
 print('Hello, world!')
 
-from turtle import *
+x = .001
+
+print(type(x))
 
