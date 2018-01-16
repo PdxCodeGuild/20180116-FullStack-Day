@@ -1,6 +1,6 @@
 from turtle import *
 
-fillcolor('green')
+fillcolor('green') #lines 3 - 10 are for the head
 begin_fill()
 i = 0
 while i < 180:
@@ -13,7 +13,7 @@ right(90)
 forward(25)
 left(90)
 forward(50)
-fillcolor('orange')
+fillcolor('orange') #lines 16 - 23 for basketball
 begin_fill()
 i = 0
 while i < 180:
