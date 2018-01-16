@@ -28,8 +28,7 @@ forward(100)
 left(-120)
 forward(50)
 
-from turtle import *
-
+# head
 edge_length = 0
 i = 0
 while i < 100:
@@ -37,8 +36,6 @@ while i < 100:
 	right(144)
 
 	edge_length += 4
-
-done()
 
 
 end_fill()
