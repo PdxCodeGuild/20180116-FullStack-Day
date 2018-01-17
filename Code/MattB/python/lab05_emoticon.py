@@ -6,4 +6,8 @@ eyes = [':', ';', '8', 'X']
 nose = ['^', '', '-']
 mouth = ['(', ')', 'D', '/', '\\']
 
-print(random.choice(eyes), random.choice(nose), random.choice(mouth), sep='')
+
+i = 0
+while i < 5:
+    print(random.choice(eyes), random.choice(nose), random.choice(mouth), sep='')
+    i += 1
