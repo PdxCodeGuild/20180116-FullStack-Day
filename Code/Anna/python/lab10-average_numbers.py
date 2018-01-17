@@ -12,6 +12,8 @@ print("We're going to average some numbers. Enter each number, then write 'done'
 
 while num != "done":
     num = input("Enter a number: ")
+    if num != 'done':
+        break
     try:
         num = float(num)
         numbers.append(num)
