@@ -1,0 +1,38 @@
+from turtle import *
+
+fillcolor('green') #lines 3 - 10 are for the head
+begin_fill()
+i = 0
+while i < 180:
+    forward(1)
+    left(2)
+    i = i + 1
+end_fill()
+
+right(90)
+forward(25)
+left(90)
+forward(50)
+fillcolor('orange') #lines 16 - 23 for basketball
+begin_fill()
+i = 0
+while i < 180:
+    forward(.5)
+    right(2)
+    i = i + 1
+end_fill()
+right(180)
+forward(100)
+right(180)
+forward(50)
+right(90)
+forward(50)
+right(45)
+forward(30)
+right(180)
+forward(30)
+right(90)
+forward(30)
+
+done()
+
