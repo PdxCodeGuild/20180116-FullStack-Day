@@ -2,6 +2,7 @@
 Lab 5
 Because the world needs more emoticons!
 """
+
 import random
 
 eyes = [':', ':', '=', '<:', '>:', '[:', '{:', 'X', 'O;']
@@ -23,13 +24,15 @@ while i < 5:
 
 mood = input("How are you feeling today? ")
 
-if "sad" in mood:
+if "sad" in mood or "depressed" in mood or "bad" in mood:
     emoticon = random.choice(eyes) + random.choice(noses) + random.choice(sad)
     print(emoticon)
+    print("Feel better!")
 
-elif "happy" in mood:
+elif "happy" in mood or "great" in mood or "good" in mood or "fine" in mood:
     emoticon = random.choice(eyes) + random.choice(noses) + random.choice(happy)
     print(emoticon)
+    print("Awesome!")
 
 else:
     emoticon = random.choice(eyes) + random.choice(noses) + random.choice(meh)
