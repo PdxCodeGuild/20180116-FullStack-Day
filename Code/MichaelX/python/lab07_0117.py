@@ -6,25 +6,36 @@
 # Determine who won and tell the user
 # Let's list all the cases:
 
-# rock vs rock (tie)
-# rock vs paper
-# rock vs scissors
-# paper vs rock
-# paper vs paper
-# paper vs scissors
-# scissors vs rock
-# scissors vs paper
-# scissors vs scissors
-
-
 import random
 
 x = ['rock','paper','scissors']
 y = input('> pick either rock paper or scissors. ')
 
-if y in x:
-    picked = random.choice(x)
-    print(y + ' ' + picked)
+win = ['rockscissors', 'rockscissors', 'rockscissors', ]
+lose = ['rock vs paper']
+tie = ['rock vs paper']
 
-else:
-    print('try again')
+
+tied = 'rock vs rock'
+
+
+
+while y in x:
+     computer = random.choice(x)
+
+    if y == computer:
+
+        winner = y + ' vs ' + computer)
+    elif y ==
+
+
+    else:
+        print('try again')
+
+
+
+# if x and y == rockpaper
+#   print(you win, rock covers scissors)
+
+# elif x and y == rockscissors
+#   print(you win)
