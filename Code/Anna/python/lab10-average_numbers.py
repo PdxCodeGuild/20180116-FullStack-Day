@@ -18,9 +18,7 @@ while num != "done":
     except ValueError:
         print("Not a number!")
 
-numbers.pop() # get that 'done' out of there!
-
-print(numbers)
+print(f"You have entered: {numbers}")
 
 for i in range(len(numbers)):
     num = float(numbers[i])
