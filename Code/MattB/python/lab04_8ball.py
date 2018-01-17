@@ -7,9 +7,13 @@ predictions = ['It is certain', 'Yes definitely', 'Most likely', 'Signs point to
 
 question = input('What do you wish to know? ')
 
-if question.find('Will') == 0 or question.find('will') == 0:
-    print(random.choice(predictions))
-else:
-    print('Please ask a yes or no question')
+while question != 'done':
+    if question.find('Will') == 0 or question.find('will') == 0:
+        print(random.choice(predictions))
+        question = input('Ask another question or type \'done\': ')
+    else:
+        question = input('Please ask a yes or no question: ')
+
+
 
 
