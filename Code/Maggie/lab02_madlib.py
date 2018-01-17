@@ -14,10 +14,10 @@ g = 'a group of people'
 def query(wtype):
     'Input ' + wtype + ': '
 
+print('let\'s try a madlib! \nFollow the instructions below.')
+q1 = input('Input ' + v + ': ')
+q2 = input('Input ' + n + ': ')
+q3 = input('Input ' + pln + ': ')
 
-q1 = str(query(v))
-q2 = str(query(n))
-q3 = str(query(g))
-
-print('10 ways to {word_1} your {word_2}. {word_3} hate them, find out why!'.format(word_1=input(q1), word_2=input(q2), word_3=input(q3)))
+print('10 ways to {word_1} your {word_2}. {word_3} hate them; find out why!'.format(word_1=q1, word_2=q2, word_3=q3))
 
