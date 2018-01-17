@@ -1,19 +1,19 @@
 from turtle import*
 
-#Set size (circumference) of circle
-C = float(270)
+#Set size (perimeter) of circle
+P = 270.0
 
 #Angle size
-angle = 360/C
-distance = C/360
+angle = 360/P
+perimeter = P/360
 
 #Draw Head
 fillcolor('blue')
 begin_fill()
 
 i = 0
-while i < C:
-    forward(distance)
+while i < P:
+    forward(perimeter)
     left(angle)
     i = i + 1
 
