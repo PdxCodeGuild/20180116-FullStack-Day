@@ -41,7 +41,7 @@ while True:
 		break
 
 plural_nouns = random.choice(plural_nouns)
-plural_nouns = str(random.choice(plural_nouns))-
+plural_nouns = str(random.choice(plural_nouns))
 
 #TEXT
 print('When I go to the arcade with my ' + random.choice(plural_nouns) + ', '
