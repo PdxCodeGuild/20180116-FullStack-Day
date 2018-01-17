@@ -7,7 +7,15 @@ import random
 import string
 
 print("Quick, you need a password! How many characters do you want it to be?")
-n = int(input("> "))
+
+while True:
+    n = input("> ")
+    try:
+        n = int(n)
+        break
+    except ValueError:
+        print("Not a number!")
+
 x = 0
 password = ''
 choices = string.ascii_letters + string.digits
