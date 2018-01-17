@@ -1,19 +1,23 @@
 import random
 
-eye = [';',':','8','E','>']
-nose = ['^','-','>','@','7']
-mouth = [')','/','D','O','P']
 
-eye.pop
-nose.pop
-mouth.pop
 
-eyes = random.choice(eye)
-noses = random.choice(nose)
-mouths = random.choice(mouth)
+def rando():
+    eye = [';', ':', '8', 'E', '>']
+    nose = ['^', '-', '>', '@', '7']
+    mouth = [')', '/', 'D', 'O', 'P']
 
-facia = [eyes, noses, mouths]
+    eyes = random.choice(eye)
+    noses = random.choice(nose)
+    mouths = random.choice(mouth)
 
-while (facia < 5):
-    facia += 1
-    print(facia)
+    faces = [eyes, noses, mouths]
+
+    while faces < 5:
+        faces += 1
+        print(faces)
+
+
+
+rando()
+
