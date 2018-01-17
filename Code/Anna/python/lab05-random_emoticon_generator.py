@@ -5,7 +5,7 @@ Because the world needs more emoticons!
 import random
 
 eyes = [':', ':', '=', '<:', '>:', '[:', '{:', 'X', 'O;']
-noses = ['-', '>', '^', '=', '~']
+noses = ['-', '>', '^', '=', '~', '', '-']
 mouths = ['O', '0', 'o', ')', '(', ']', '}', '%', '#', '@', '*', '|', 'D', 'P']
 
 i = 0
@@ -17,4 +17,3 @@ while i < 5:
     print(emoticon)
     print("")
     i += 1
-
