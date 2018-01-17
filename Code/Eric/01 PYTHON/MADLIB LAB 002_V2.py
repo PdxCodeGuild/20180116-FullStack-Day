@@ -39,7 +39,10 @@ while True:
 		verbs = verbs.split(', ')
 		verbs.append(verbs)
 		break
+
+print(type(random.choice(plural_nouns)))
 print(plural_nouns)
+print(type(plural_nouns))
 
 #TEXT
 print('When I go to the arcade with my ' + random.choice(plural_nouns) + ', '
@@ -53,6 +56,6 @@ print('When I go to the arcade with my ' + random.choice(plural_nouns) + ', '
 	'you are ' + random.choice(verbs) + ' against. There are a whole \n'
 	'lot of other cool games. When you play some games you win \n' + random.choice(plural_nouns) +
 	' for certain scores. Once youre done, \n'
-	'you can cash in your tickets to get a big ' + random.choice(single_nouns) +'!\n' 
-	'Or you can save your ' + random.choice(plural_nouns) + ' for another time!\n\n:' 
+	'you can cash in your tickets to get a big ' + random.choice(single_nouns) + '!\n'
+	'Or you can save your ' + random.choice(plural_nouns) + ' for another time!\n\n:')
 	'(source link: http://www.teach-nology.com/worksheets/language_arts/madlibs/3/)')
