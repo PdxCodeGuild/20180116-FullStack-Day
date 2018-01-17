@@ -1,10 +1,12 @@
 print('Let\'s find out how much change you can make.')
 
-money = int(input('Please input a dollar amount without a decimal: '))
+money = float(input('Please input a dollar amount with a decimal: '))
 
-quarters = money // 25
+nmoney = int(money * 100)
 
-qmoney = money % 25
+quarters = nmoney // 25
+
+qmoney = nmoney % 25
 
 dimes = qmoney // 10
 
