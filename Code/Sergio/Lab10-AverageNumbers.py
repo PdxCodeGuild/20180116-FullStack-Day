@@ -16,12 +16,3 @@ numbersSum = sum(nums)
 numbersSum /= len(nums)
 print('Your average is: ')
 print(numbersSum)
-
-
-# # loop over the elements
-# for num in nums:
-#     print(num)
-#
-# # loop over the indices
-# for i in range(len(nums)):
-#     print(nums[i])
