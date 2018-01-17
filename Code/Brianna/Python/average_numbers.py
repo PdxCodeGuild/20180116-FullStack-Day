@@ -5,9 +5,9 @@
 
 nums = [5, 0, 8, 3, 4, 1, 6]
 
-number_sum = sum(nums)
-list_length = len(nums)
-print(number_sum // list_length)
+number_sum = float(sum(nums))
+list_length = float(len(nums))
+print(number_sum / list_length)
 
 
 
