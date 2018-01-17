@@ -7,6 +7,9 @@ import random
 eyes = [':', ':', '=', '<:', '>:', '[:', '{:', 'X', 'O;']
 noses = ['-', '>', '^', '=', '~', '', '-']
 mouths = ['O', '0', 'o', ')', '(', ']', '}', '%', '#', '@', '*', '|', 'D', 'P']
+happy = [')', ']', '}', '*', 'D', 'P']
+sad = ['(', '[', '{']
+meh = ['O', '0', 'o', '%', '#', '@', '*', '|']
 
 i = 0
 
@@ -17,3 +20,17 @@ while i < 5:
     print(emoticon)
     print("")
     i += 1
+
+mood = input("How are you feeling today? ")
+
+if "sad" in mood:
+    emoticon = random.choice(eyes) + random.choice(noses) + random.choice(sad)
+    print(emoticon)
+
+elif "happy" in mood:
+    emoticon = random.choice(eyes) + random.choice(noses) + random.choice(happy)
+    print(emoticon)
+
+else:
+    emoticon = random.choice(eyes) + random.choice(noses) + random.choice(meh)
+    print(emoticon)
