@@ -14,34 +14,42 @@ Bonus: Allow the user to enter the value of n, (remember to convert its type, as
 print('A Password Generator \n')
 
 
-num = input('How many characters would you like your password to be?\n'
+'''num = input('How many characters would you like your password to be?\n'
                        'Enter a numerical digit between 1-10 or anything else to let me choose.\n'
                        'Your choice: ')
+'''
 
-
-
-def generate(num):
+def generate():
+    num = input('How many characters would you like your password to be?\n'
+                'Enter a numerical digit between 1-10.\n'
+                'Your choice: ')
     password = ''
     characters= list(string.ascii_letters + string.digits)
     try:
-        if int(num) <= 100:
-            print('Ok.\n')
-            sleep(0.5)
-            print('generating your password')
-            sleep(0.5)
-            print('your randomly generated passkey is:\n')
-            for i in range(num):
-                password = password + (random.choice(characters))
-            print(password, '\n')
-            close()
-        else:
-            print('Sorry that was not a valid entry. I will choose for you.')
-            num = random.randrange(100)
-            generate(num)
-    except:
+        pw_len =int(num)
+        print(num)
+    except ValueError:
+        print('exception')
         print('Sorry that was not a valid entry. I will choose for you.')
-        n = random.randrange(100)
-        generate(n)
+        num = random.randrange(100)
+        generate()
+    print('Generate a password of length: ' + num)
+    if pw_len <= 100:
+        print('Ok.\n')
+        sleep(0.5)
+        print('generating your password')
+        sleep(0.5)
+        print('your randomly generated passkey is:\n')
+        for i in range(pw_len):
+            password = password + (random.choice(characters))
+        print(password, '\n')
+        close()
+    else:
+        print('Sorry that number was out of range.')
+        num = input('How many characters would you like your password to be?\n'
+                'Please enter a number less than 100.\n'
+                'Your choice: ')
+
 
 def close():
     close_query = input('Would you like me to generate another password? (Y/N)')
@@ -49,7 +57,8 @@ def close():
         num = input('How many characters would you like your password to be?\n'
                     'Enter a numerical digit between 1-10 or anything else to let me choose.\n'
                     'Your choice: ')
-        generate(num)
+        return num
+        generate()
 
     else:
         print('Ok. Thanks for using this password generator!')
@@ -57,4 +66,4 @@ def close():
         print('Take care.')
         # end
 
-generate(num)
+generate()
