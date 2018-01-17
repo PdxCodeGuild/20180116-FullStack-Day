@@ -6,7 +6,7 @@ MOUTHS = [')', 'D', '(', '[', ']', '/', 'P', 'p']
 
 def emoji():
     i = 0
-    print('The notorious gang of five: \n')
+    print('Emoji Generator. \nHere are your five faces:\n')
     while i < 5:
         print(random.choice(EYES) + random.choice(NOSES) + random.choice(MOUTHS) + '\n')
         i += 1
