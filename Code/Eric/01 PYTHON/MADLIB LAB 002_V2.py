@@ -40,8 +40,8 @@ while True:
 		verbs.append(verbs)
 		break
 
-plural_nouns = random.choice(plural_nouns)
-plural_nouns = str(random.choice(plural_nouns))
+# plural_nouns = random.choice(plural_nouns)
+# plural_nouns = str(random.choice(plural_nouns))
 
 #TEXT
 print('When I go to the arcade with my ' + random.choice(plural_nouns) + ', '
@@ -58,3 +58,5 @@ print('When I go to the arcade with my ' + random.choice(plural_nouns) + ', '
 	'you can cash in your tickets to get a big ' + random.choice(single_nouns) + '!\n'
 	'Or you can save your ' + random.choice(plural_nouns) + ' for another time!\n\n:'
 	'(source link: http://www.teach-nology.com/worksheets/language_arts/madlibs/3/)')
+
+#COME BACK TO THIS!!!
