@@ -108,4 +108,4 @@ while True:
 		print('Please answer with "Yes" or "No"...\n')
 		story.lower = input('\nWould you like to read your story??? Type "Yes" or "No"\n:')
 
-#COME BACK TO THIS
+#COME BACK TO THIS*****
