@@ -1,5 +1,5 @@
 
-# Lab 11: Average Numbers
+# Lab 10: Average Numbers
 
 We're going to average a list of numbers. Start with the following list, iterate through it, keeping a 'running sum', then divide that sum by the number of elements in that list. Remember `len` will give you the length of a list.
 
