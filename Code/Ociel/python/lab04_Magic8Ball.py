@@ -11,8 +11,9 @@ print("Welcome User! ")
 userReply = True
 
 while userReply != 'no':
-    answer = input("Please ask me a question and i will predict the outcome: ")
+    input("Please ask me a question and i will predict the outcome: ")
     print(random.choice(mylist))
     userReply = input("would you like to play again?")
 
 print("Thank you for playing")
+
