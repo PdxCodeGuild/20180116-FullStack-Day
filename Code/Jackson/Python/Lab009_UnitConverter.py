@@ -1,5 +1,6 @@
 """
 This lab will involve writing a program that allows the user to convert a number between units.
+**Still need to convert version 3 - yards and inches.
 
 """
 
