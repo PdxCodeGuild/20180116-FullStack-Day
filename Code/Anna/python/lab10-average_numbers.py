@@ -12,17 +12,21 @@ print("We're going to average some numbers. Enter each number, then write 'done'
 
 while num != "done":
     num = input("Enter a number: ")
-    numbers.append(num)
+    try:
+        num = float(num)
+        numbers.append(num)
+    except ValueError:
+        print("Not a number!")
 
 numbers.pop() # get that 'done' out of there!
 
 print(numbers)
 
 for i in range(len(numbers)):
-    num = int(numbers[i])
+    num = float(numbers[i])
     adding = adding + num
 
-result = int(adding) / int(len(numbers))
+result = float(adding) / float(len(numbers))
 
 print(f"\nYour average is: {result}")
 
