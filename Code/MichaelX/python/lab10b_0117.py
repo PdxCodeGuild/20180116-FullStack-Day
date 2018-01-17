@@ -1,4 +1,4 @@
 nums = []
 nums.append(5)
 
-print
+print(nums)
