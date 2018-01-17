@@ -1,6 +1,6 @@
 import random
 
-eye_list = [":", ";", "=", '8']
+eye_list = [":", ";", "=", "8"]
 nose_list = ["-", "o", "*"]
 mouth_list = [")", "(", "}", "{", "D", "P"]
 
