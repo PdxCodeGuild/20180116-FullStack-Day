@@ -21,11 +21,11 @@ while go_on is True:
 
     else:
         print("I don't understand.")
-    go_again = input("Would you like to go on? (yes or no?)\n:")
-    if go_again == "yes":
+    go_again = input("Would you like to go on?\n:")
+    if go_again == "yes" or go_again == "y":
         print("okay!")
         go_on = True
-    elif go_again == "no":
+    elif go_again == "no" or go_again == "n":
         print("See you later!")
         go_on = False
     else:
