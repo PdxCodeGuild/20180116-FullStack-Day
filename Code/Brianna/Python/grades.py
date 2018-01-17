@@ -14,3 +14,4 @@ elif number_grade < 60:
     print("Ouch! Time to hit the books again. You got an F.")
 else:
     print("I don't understand! @.@")
+
