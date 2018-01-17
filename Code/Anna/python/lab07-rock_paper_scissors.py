@@ -15,6 +15,7 @@ while game_on is True:
     user_choice = input("> ")
     comp_choice = random.choice(options)
     print(f"The computer chose {comp_choice}.")
+    user_choice = user_choice.lower()
     game_on = False
 
     if user_choice == comp_choice:
