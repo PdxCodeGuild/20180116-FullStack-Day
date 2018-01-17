@@ -2,6 +2,7 @@
 Lab 5
 Because the world needs more emoticons!
 """
+
 import random
 
 eyes = [':', ':', '=', '<:', '>:', '[:', '{:', 'X', 'O;']
