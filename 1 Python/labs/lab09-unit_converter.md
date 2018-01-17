@@ -1,5 +1,5 @@
 
-# Lab 10: Unit Converter
+# Lab 9: Unit Converter
 
 This lab will involve writing a program that allows the user to convert a number between units.
 
