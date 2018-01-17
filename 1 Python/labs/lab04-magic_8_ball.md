@@ -2,6 +2,12 @@
 
 Let's write a program to simulate the classic "[Magic Eight Ball](https://en.wikipedia.org/wiki/Magic_8-Ball)"
 
+## Concepts Covered
+
+- input, print
+- import
+- random.choice
+
 ## Instructions
 
 1. Print a welcome screen to the user.
@@ -38,8 +44,3 @@ Below are some example 'predictions':
 Using a `while` loop, keep asking the user for a question, if they enter 'done', exit
 
 
-## Concepts Covered
-
-- input, print
-- import
-- random.choice
