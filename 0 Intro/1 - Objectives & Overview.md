@@ -12,7 +12,7 @@
 
 This course is a sling-shot into a professional software development career, it is immersive and pragmatic. We focus on understanding the principles in context, how they play out in practice. Most classes will consist of a lecture followed by a lab. While we're working on our labs, you're free to use the entirety of the space.
 
-The class will use a repo for viewing docs, labs, and solutions. This is also where you will submit their own solutions, in a folder with your name. Your solution must solve the specific problem outlined in the lab.
+The class will use a repo for viewing docs, labs, and solutions. This is also where you will submit your own solutions, in a folder with your name. Your solution must solve the specific problem outlined in the lab.
 
 Make an honest attempt before you ask for help on a lab. Look carefully at the error message and where in the code it's occurring. Look through the provided resources, look at previous labs, research the problem on google and stack overflow. If you're stuck after 15 minutes of review and research, please ask for help, either from another student, a TA, or the instructor.
 
