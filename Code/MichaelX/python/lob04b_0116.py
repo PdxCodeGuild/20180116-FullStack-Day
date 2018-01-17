@@ -18,6 +18,11 @@ def eightb():
 
         print(f'Q: {magic} A: {magicks}')
 
+        if:
+            print('> do you want to ask another question? ')
+        if:
+            print('> do you want to ask another question? ')
+
 
 
 eightb()
