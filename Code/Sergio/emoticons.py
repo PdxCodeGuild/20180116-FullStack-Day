@@ -19,7 +19,7 @@ def create_emoticon():
 for i in range(5):
     print(create_emoticon())
 
-# my non-working code
+#  my non-working code
 # import random
 #
 # emoticon_eyes = [':' , '8', ';' , ':::']
