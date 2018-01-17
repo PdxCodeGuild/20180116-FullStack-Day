@@ -17,34 +17,36 @@ while game_on is True:
     print(f"The computer chose {comp_choice}.")
     game_on = False
 
+    if user_choice == comp_choice:
+        print("It's a tie! Let's try again.")
+        game_on = True
 
-if user_choice == comp_choice:
-    print("It's a tie! Let's try again.")
-    game_on = True
+    elif user_choice == "rock" and comp_choice == "paper":
+        print("You lose!")
+        game_on = False
 
-elif user_choice == "rock" and comp_choice == "paper":
-    print("You lose!")
-    game_on = False
+    elif user_choice == "rock" and comp_choice == "scissors":
+        print("You win!")
+        game_on = False
 
-elif user_choice == "rock" and comp_choice == "scissors":
-    print("You win!")
-    game_on = False
+    elif user_choice == "paper" and comp_choice == "rock":
+        print("You win!")
+        game_on = False
 
-elif user_choice == "paper" and comp_choice == "rock":
-    print("You win!")
-    game_on = False
+    elif user_choice == "paper" and comp_choice == "scissors":
+        print("You lose!")
+        game_on = False
 
-elif user_choice == "paper" and comp_choice == "scissors":
-    print("You lose!")
-    game_on = False
+    elif user_choice == "scissors" and comp_choice == "paper":
+        print("You win!")
+        game_on = False
 
-elif user_choice == "scissors" and comp_choice == "paper":
-    print("You win!")
-    game_on = False
+    elif user_choice == "scissors" and comp_choice == "rock":
+        print("You lose!")
+        game_on = False
 
-elif user_choice == "scissors" and comp_choice == "rock":
-    print("You lose!")
-    game_on = False
+    else:
+        print("Something's not right. Try again.")
+        game_on = True
 
-else:
-    print("Something's not right.")
+
