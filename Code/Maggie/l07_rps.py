@@ -10,8 +10,7 @@ After playing, ask them if they'd like to play again. If they say yes, restart t
 
 import random
 from time import sleep
-#import l05_emoji
-#print(l05_emoji.EYES)
+
 win = 'You win!!'
 lose = 'Computer wins!!'
 
