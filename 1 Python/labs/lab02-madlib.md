@@ -29,12 +29,13 @@ Write a simple program that prompts the user for several inputs then
 ```
 
 
-## Advanced
+## Version 2 (optional)
+
 * Make a functional solution that utilizes lists. For example, ask the user for 3 adjectives, separated by commas, then use the .split() function to store each adjective and later use it in your story.
 * Add randomness! Use the random module, rather than selecting which adjective goes where in the story.
 
 
-## Super Advanced
+## Version 3 (optional)
 * Make it a repeatable game. Once you're done prompting the user for words, prompt them for whether they'd like to hear the story. Use a while loop to keep asking if they'd like to hear the story again until the answer is 'no'. You could then ask them if they'd like to make another story, and so on.
 
 
