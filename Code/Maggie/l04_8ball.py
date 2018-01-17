@@ -1,4 +1,4 @@
-limport random
+import random
 from time import sleep
 import sys
 
