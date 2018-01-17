@@ -1,10 +1,11 @@
 print("Let's make some change")
+#establishing varibales
 quarter = 25
 dime =  10
 nickel = 5
 penny = 1
 money = input("How many pennies do you have?\n:")
-money = int(money)
+money = int(money)#convertong string to integer
 # simpler way to do this math? I tend to overcomplicate things
 change_q = money // quarter
 money1 = change_q * quarter
