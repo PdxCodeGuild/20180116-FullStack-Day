@@ -22,7 +22,7 @@ if run == "Y":
     verbs = input("Give me three verbs ending in '-ing' (separated by commas): ")
     sport = input("Name a sport: ")
     type_of_person = input("Name a type of person: ")
-    action = input("Ok, now give me an action: ")
+    action = input("Ok, now give me a type of conflict: ")
     relatives = input("Name three relatives, separated by commas (i.e. mom, dad, etc.): ")
     city2 = input("Name another city: ")
     ints = input("Enter two numbers (separated by commas): ")
@@ -59,11 +59,29 @@ while story == "Y":
     Looked at my kingdom, I was finally there
     To sit on my {furniture} as the Prince of {city2}
     """)
-    story = input("Do you want to hear your story again? Y/N: ")
+    add_random = input("Do you want to hear your story again, this time with randomness!? Y/N: ")
+    if add_random == "Y":
+        print(f"""
+        \n\tIn West {city1}, born and raised
+        On the {place_list[random.randint(0,1)]} is where I spent most of my days
+        {verb_list[random.randint(0,2)]}, {verb_list[random.randint(0,2)]}, {verb_list[random.randint(0,2)]} all cool
+        And all shootin' some {sport} outside of the {place_list[random.randint(0,1)]}
+        When a couple of {type_of_person}s who were up to no good
+        Started makin' trouble in my neighborhood
+        I got in one little {action} and my {relative_list[random.randint(0,2)]} got scared
+        And said "You're movin' with your {relative_list[random.randint(0,2)]} and {relative_list[random.randint(0,2)]} in {city2}"
+
+        I pulled up to the house about {int_list[random.randint(0,1)]} or {int_list[random.randint(0,1)]}
+        And I yelled to the cabbie "Yo holmes, {verb} ya later"
+        Looked at my kingdom, I was finally there
+        To sit on my {furniture} as the Prince of {city2}
+        """)
+
+        story = input("Do you want to hear your story again? Y/N: ")
+
+    else:
+        story = "N"
 
 print(f"\nThanks for playing PyLibs, {name}!")
-
-if go == True:
-    run = input("Do you want to try again with new answers? Y/N: ")
 
 
