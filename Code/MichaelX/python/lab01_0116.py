@@ -29,13 +29,15 @@ left(-120)
 forward(50)
 
 # head
-edge_length = 0
-i = 0
-while i < 100:
-	forward(edge_length)
-	right(144)
 
-	edge_length += 4
+forward(100)
+left(90)
+forward(-50)
+left(90)
+forward(100)
+left(90)
+forward(-50)
+left(90)
 
 
 end_fill()
