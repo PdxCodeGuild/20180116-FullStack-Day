@@ -103,10 +103,9 @@ while True:
     else:
         print("Invalid operation")
 
+print("\nThis calculator is smarter. Enter a whole operation (i.e. 2 + 3):")
 
-
-
-
-
+calculation = input("> ")
+print("Your total is: ", eval(calculation))
 
 
