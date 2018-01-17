@@ -6,9 +6,9 @@ def eightb():
 
 
 
-    questions = 0
+    questions = True
 
-    while questions == False:
+    while questions:
 
         questions += 1
 

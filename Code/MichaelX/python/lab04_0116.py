@@ -10,6 +10,4 @@ def eightb():
 
     print(f'Q: {magic} A: {magicks}')
 
-eightb()eyes = random.choice(eye)
-noses = random.choice(nose)
-mouths = random.choice(mouth)
+eightb()
