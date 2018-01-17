@@ -10,7 +10,7 @@ magicball = ['it is certain', 'it is decidedly so', 'Without a doubt', 'Yes defi
 user_response = True
 
 while user_response != 'no':
-    input('Ask me a question and I will tell you your fortune')
+    input('Ask me a question and I will tell you your fortune: ')
     print(random.choice(magicball))
     user_response = input('Would you like to play again? ')
 
