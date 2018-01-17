@@ -12,9 +12,8 @@ eyes = random.choice(eye)
 noses = random.choice(nose)
 mouths = random.choice(mouth)
 
-facia = (f'{eyes}{noses}{mouths}')
+facia = [eyes, noses, mouths]
 
 while (facia < 5):
-    print(facia)
     facia += 1
     print(facia)
