@@ -1,24 +1,25 @@
-
 # Version 2
 
 alpha = 'abcdefghijklmnopqrstuvwxyz'
-user_word = input("Please enter a word to encode: ")
+user_word = input("Please enter a word to encode: ").lower()
 user_number = int(input("Enter the amount of rotations (Num 1 - 26): ")) - 1
 
-x = 0
-num = 0
+i = 0
 my_string = ''
 
-while x < len(user_word):
-    newNumber = alpha.find(user_word[num])
-    newNumber += user_number
+while i < len(user_word):
 
-    if newNumber > 26:
-        newNumber = newNumber % 27
+    newNumber = alpha.find(user_word[i])
+    if user_word[i].islower():
+        newNumber += user_number
 
-    my_string += alpha[newNumber]
+        if newNumber > 25:
+            newNumber = newNumber % 26
 
-    x +=1
-    num += 1
+        my_string += alpha[newNumber]
+    else:
+         my_string += user_word[i]
+
+    i += 1
 
 print(f' Your new encryption is : {my_string} ')
