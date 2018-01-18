@@ -1,6 +1,7 @@
 import time
 go_on = True
 
+# Make while loop
 while go_on == True:
     operation = input("What operation would you like to perform? Please choose between +, -, *, and /.\n:")
     first_number = float(input("What is the first number?\n:"))
@@ -27,5 +28,6 @@ while go_on == True:
         go_on == False
     else:
         print("Let's calculate something new!")
+
 
 
