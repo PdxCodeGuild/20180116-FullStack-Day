@@ -38,7 +38,7 @@ while True:
     user_guess = input("Guess a number between 1 and 10.\n> ")
     user_guess = int(user_guess)
     if user_guess == computer_guess:
-        print("You got it in just " + str(number_tries) + " guesses!")
+        print(f"You got it in just {number_tries} guesses!")
         break
     else:
         number_tries += 1
@@ -58,7 +58,7 @@ while True:
     user_guess = input("Guess a number between 1 and 10.\n> ")
     user_guess = int(user_guess)
     if user_guess == computer_guess:
-        print("You got it in just " + str(number_tries) + " guesses!")
+        print(f"You got it in just {number_tries} guesses!")
         break
     else:
         number_tries += 1
@@ -66,19 +66,50 @@ while True:
             print("Wrong! Too high!\n")
         else:
             print("Wrong! Too low!\n")
+
 print("Game over.\n")
 
 # version 4
 
+print("Not enough hints before? This version of the game will really help you out.")
 
+computer_guess = random.randint(1, 10)
+
+number_tries = 1
+last_guess = 0
+
+while True:
+    user_guess = input("Guess a number between 1 and 10.\n> ")
+    user_guess = int(user_guess)
+    current_guess = user_guess
+
+    if user_guess == computer_guess:
+        print(f"You got it in just {number_tries} guesses!")
+        break
+    else:
+        number_tries += 1
+        if abs(current_guess - computer_guess) < abs(last_guess - computer_guess):
+            print("Wrong! But you're closer than before!\n")
+            last_guess = user_guess
+        elif abs(current_guess - computer_guess) > abs(last_guess - computer_guess):
+            print("Wrong! Now you're getting colder!\n")
+            last_guess = user_guess
+        elif current_guess == last_guess:
+            print("Wrong! Try again.\n")
+            last_guess = user_guess
+        else:
+            print("Wrong! Try again.\n")
+            last_guess = user_guess
+
+print("Game over.\n")
 
 # version 5
 
 number_tries = 1
 
-user_guess = int(input("Enter a number between 1 and 10 for the computer to guess\n:"))
+user_guess = int(input("This time, enter a number between 1 and 10 for the computer to guess\n:"))
 
-while computer_guess != user_guess: # and number_tries < 100:
+while True:
     computer_guess = random.randint(1, 10)
     if computer_guess == user_guess:
         print(computer_guess)
