@@ -1,8 +1,8 @@
-from random import randint
+import random
 
-t = ['rock', 'paper', 'scissors']
+cpu = ['rock', 'paper', 'scissors']
 
-computer = t[randint(0, 2)]
+computer = random.choice(cpu)
 
 player = False
 
@@ -35,4 +35,4 @@ while player == False:
         print('You must have entered something wrong. Please, try again!')
 
     player = False
-    computer = t[randint(0, 2)]
+    computer = random.choice(cpu)
