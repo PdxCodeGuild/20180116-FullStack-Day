@@ -16,6 +16,9 @@ while True:
     elif str(guess) == str(num):
         print(f'Congrats! you guessed {ng} times')
         break
-    else:
-        guess = input('Sorry! Try again: ')
+    elif int(guess) < int(num):
+        guess = input('Sorry! You\'re guess is too low. Try again: ')
+        ng += 1
+    elif int(guess) > int(num):
+        guess = input('Sorry! You\'re guess is too high. Try again: ')
         ng += 1
