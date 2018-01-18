@@ -1,41 +1,32 @@
-# Lab 7: Rock Paper Scissors
-# Let's play rock-paper-scissors with the computer.
+from random import randint
 
-# The computer will ask the user for their choice (rock, paper, scissors)
-# The computer will randomly choose rock, paper or scissors
-# Determine who won and tell the user
-# Let's list all the cases:
+t = ["Rock", "Paper", "Scissors"]
 
-import random
+computer = t[randint(0,2)]
 
-x = ['rock','paper','scissors']
-y = input('> pick either rock paper or scissors. ')
+player = False
 
-win = ['rockscissors', 'rockscissors', 'rockscissors', ]
-lose = ['rock vs paper']
-tie = ['rock vs paper']
-
-
-tied = 'rock vs rock'
-
-
-
-while y in x:
-     computer = random.choice(x)
-
-    if y == computer:
-
-        winner = y + ' vs ' + computer)
-    elif y ==
-
-
+while player == False:
+    player = input("Rock, Paper, Scissors?")
+    if player == computer:
+        print("Tie!")
+    elif player == "Rock":
+        if computer == "Paper":
+            print("You lose!", computer, "covers", player)
+        else:
+            print("You win!", player, "smashes", computer)
+    elif player == "Paper":
+        if computer == "Scissors":
+            print("You lose!", computer, "cut", player)
+        else:
+            print("You win!", player, "covers", computer)
+    elif player == "Scissors":
+        if computer == "Rock":
+            print("You lose...", computer, "smashes", player)
+        else:
+            print("You win!", player, "cut", computer)
     else:
-        print('try again')
+        print("That's not a valid play. Check your spelling!")
 
-
-
-# if x and y == rockpaper
-#   print(you win, rock covers scissors)
-
-# elif x and y == rockscissors
-#   print(you win)
+    player = False
+    computer = t[randint(0,2)]

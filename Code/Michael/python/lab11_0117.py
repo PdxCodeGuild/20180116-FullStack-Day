@@ -24,4 +24,4 @@ elif operator == '4':
     print(first,"/",second,"=", first / second)
 
 else:
-    print('Enter a damn number!')
+    print('Something isn\'t correct!')

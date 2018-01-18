@@ -1,18 +1,18 @@
-amount = float(133.00)
+def change(x):
 
-if amount >= 100:
-    dollars = amount // 100
-    change = amount % 100
-    print(f'{dollars} {change}')
-else:
-    print(amount)
+    amount = float(x)
 
-quarters = amount // 25
-qremainder = amount % 25
-dimes = qremainder // 10
-dremainder = dimes % 10
-nickles = dremainder // 5
-nremainder = nickles % 5
-pennies = nremainder // 1
+    quarters = amount // 25
+    qremainder = amount % 25
 
-print(f'you have {quarters} quarters, {dimes} dimes, {nickles} nickles and {pennies}')
+    dimes = qremainder // 10
+    dremainder = qremainder % 10
+
+    nickles = dremainder // 5
+    nremainder = dremainder % 5
+
+    pennies = nremainder // 1
+
+    print(f'You have {quarters} quarters, {dimes} dimes, {nickles} nickles and {pennies} pennies.')
+
+change(166)
