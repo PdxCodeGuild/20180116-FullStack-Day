@@ -10,4 +10,7 @@ def emoji():
     while i < 5:
         print(random.choice(EYES) + random.choice(NOSES) + random.choice(MOUTHS) + '\n')
         i += 1
-emoji()
+
+
+if __name__ == '__main__':
+    emoji()
