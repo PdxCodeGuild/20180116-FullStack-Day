@@ -1,26 +1,29 @@
-units = input('what units will you like to use? \n')
-x = float(input('conversion amount \n'))
+print("""
+1. feet to meters
+2. miles to meters
+3. kilometers to meters
+4. yards to meters
+5. inches to meters
+""")
 
-ft = x * 0.3048
-miles = x * 1609.34
-meters = x * 1
-km = x * 1000
-yard = x * 0.9144
-inch = x * 0.0254
+units = input('Select a conversion type. \n> ')
 
-if ft:
-    print(ft)
+x = float(input('what is the distance? \n> '))
 
-elif meters:
-    print(meters)
+if units == '1':
+    print(x * 0.3048,'meters')
 
-elif km:
-    print(km)
+elif units == '2':
+    print(x * 1609.34,'meters')
 
-elif yard:
-    print(yard)
+elif units == '3':
+    print(x * 1000,'meters')
 
-elif inch:
-    print(inch)
+elif units == '4':
+    print(x * 0.9144,'meters')
 
+elif units == '5':
+    print(x * 0.0254,'meters')
 
+else:
+    print('The metric system is the tool of the Devil!')
