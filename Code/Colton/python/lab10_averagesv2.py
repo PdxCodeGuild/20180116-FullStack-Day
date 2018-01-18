@@ -8,8 +8,7 @@ while numbers != 'done':
     if numbers == 'done':
         nums.pop()
         break
-nums = ','.join(nums)
-nums = sum(nums)
+
 print(nums)
 
 
