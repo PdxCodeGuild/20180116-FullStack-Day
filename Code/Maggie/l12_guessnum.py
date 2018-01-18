@@ -1,4 +1,5 @@
-# Guess the number! This is a game where you try to guess the computer generated number.
+# Guess the number!
+# This is a game where you try to guess the computer generated number.
 
 import random
 import time
@@ -9,8 +10,8 @@ guesses = 0
 
 
 # cool typing feature
-def typer(text, delay=0.05):
-    width = 75 # typer is using to determine when to wrap
+def typer(text, delay=0.03):
+    width = 75  # typer is using to determine when to wrap
     for char in textwrap.fill(text, width):
         delay *= random.uniform(0.9, 1.1)
         time.sleep(delay)
