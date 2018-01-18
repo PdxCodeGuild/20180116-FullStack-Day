@@ -1,7 +1,7 @@
 # Version 2
 
 alpha = 'abcdefghijklmnopqrstuvwxyz'
-user_word = input("Please enter a word to encode: ").lower()
+user_word = input("Please enter a word to encode: ")
 user_number = int(input("Enter the amount of rotations (Num 1 - 26): ")) - 1
 
 i = 0
