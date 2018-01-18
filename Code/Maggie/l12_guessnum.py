@@ -7,12 +7,10 @@ import textwrap
 
 guesses = 0
 
-# typer is using to determine when to wrap
-width = 75
-
 
 # cool typing feature
 def typer(text, delay=0.05):
+    width = 75 # typer is using to determine when to wrap
     for char in textwrap.fill(text, width):
         delay *= random.uniform(0.9, 1.1)
         time.sleep(delay)
@@ -35,9 +33,15 @@ def setup():
 
 # number guessing flow
 def guessnum(secretnum):
-    global guesses
-    guesses += 1
-    guess = int(input('Your guess: '))
+    while True:
+        global guesses
+        guesses += 1
+        guess = input('Your guess: ')
+        try:
+            guess = int(guess)
+            break
+        except ValueError:
+            print('Invalid entry! Try again.')
     if guess < secretnum:
         typer('too low! Guess again!')
         guessnum(secretnum)
