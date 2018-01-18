@@ -8,8 +8,8 @@ import sys
 
 PREDICTIONS = ['It is certain', 'It is decidecly so', 'Without a doubt', 'Yes, definitely',
                'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good',
-               'Yes', 'signs point to yes', 'Reply hazy. Try again', 'Ask again later.',
-               'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again.',
+               'Yes', 'signs point to yes', 'Reply hazy. Try again', 'Ask again later',
+               'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again',
                'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not good',
                'Very doubtful']
 
@@ -27,6 +27,7 @@ while loop:
     cont = input('Would you like to play again? (Y/N) ')
     if cont.upper() != 'Y':
         print('Ok, goodbye! ')
+        sleep(.5)
         break
     else:
         print('Ok. Let\'s try it again! \n')
