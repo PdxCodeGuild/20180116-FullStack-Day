@@ -69,6 +69,30 @@ def encrypt(text):
     print("Your secret encoded message is: '" + ''.join(encoded) + "'")
 
 
-
 encrypt(message)
 
+print("\nNow enter an encrypted message to decrypt:")
+new_message = input("> ")
+new_message = new_message.lower()
+
+def decrypt(text):
+    i = 0
+    encrypted_message = []
+    for i in range(0, len(text)):
+        encrypted_message.append(text[i])
+        i += 1
+    # print(encrypted_message)
+
+    coded = []
+    for letter in encrypted_message:
+        coded.append(numberfy[letter])
+    # print(coded)
+
+    encoded = []
+    for number in coded:
+        encoded.append(encryptor[number])
+    # print(encoded)
+
+    print("\nYour decoded message is: '" + ''.join(encoded) + "'")
+
+decrypt(new_message)
