@@ -1,15 +1,22 @@
 import random
 
-x = random.randint(1, 10)
+guesses = 0
+correct = 0
 
-guess = input('> guess the number? \n >')
+while guesses < 10:
 
-while guess < 10:
-    if guess == x:
+    guess = input('> guess the number?\n> ')
+
+    guesses += 1
+
+    x = random.randint(1, 10)
+
+    if int(guess) == x:
+        correct =+ 1
         print('correct')
-    elif guess == x:
-        print('correct')
+
+    elif int(guess) != x:
+        print('try again!')
 
 
-print(x)
-
+print(f'you got correct {correct} times')
