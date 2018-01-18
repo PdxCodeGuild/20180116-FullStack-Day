@@ -16,3 +16,9 @@ Let's list all the cases:
 - scissors vs rock
 - scissors vs paper
 - scissors vs scissors
+
+## Version 2 (optional)
+
+After playing, ask them if they'd like to play again. If they say yes, restart the game, otherwise exit.
+
+
