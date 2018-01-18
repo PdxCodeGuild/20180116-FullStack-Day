@@ -12,7 +12,7 @@ while guesses < 10:
     x = random.randint(1, 10)
 
     if int(guess) == x:
-        correct =+ 1
+        correct += 1
         print('correct')
 
     elif int(guess) != x:

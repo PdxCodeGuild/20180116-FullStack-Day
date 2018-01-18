@@ -3,6 +3,6 @@
 first = input('What is the first number?')
 seccond = input('What is the second number?')
 
-sum = first+second
+sum = first +second
 
 print(sum)
