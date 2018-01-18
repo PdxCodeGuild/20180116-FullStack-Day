@@ -29,7 +29,6 @@ left(-120)
 forward(50)
 
 # head
-
 forward(100)
 left(90)
 forward(-50)
