@@ -18,7 +18,7 @@ def main():
         print(str(first) + ' * ' + str(second) + '=', float(first) * float(second))
     elif operator == '/':
         print(str(first) + ' / ' + str(second) + '=', float(first) / float(second))
-    elif operator == 'done':*
+    elif operator == 'done':
         quit()
     else:
         print("invalid operation.")
