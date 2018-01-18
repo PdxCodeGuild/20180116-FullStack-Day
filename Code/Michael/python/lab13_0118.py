@@ -4,8 +4,8 @@
 original = "abcdefghijklmnopqrstuvwxyz"
 shifted = "nopqrstuvwxyzabcdefghijklm"
 
-string = input('> ')
+stringed = input('> ')
 
-translation = string.maketrans(original, shifted)
+translation = stringed.maketrans(original, shifted)
 
-print("Translated:", string.translate(translation))
+print("Translated:", stringed.translate(translation))
