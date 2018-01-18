@@ -19,4 +19,4 @@ while guesses < 10:
         print('try again!')
 
 
-print(f'you got correct {correct} times')
+print(f'You got {correct} correct!')
