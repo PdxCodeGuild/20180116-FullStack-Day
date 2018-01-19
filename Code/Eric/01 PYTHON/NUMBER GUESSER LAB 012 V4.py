@@ -1,3 +1,4 @@
+#RANDOM NUMBER GUESSER V4: HOTTER & COLDER!
 import random
 
 comp_number = random.randint(1, 10)
