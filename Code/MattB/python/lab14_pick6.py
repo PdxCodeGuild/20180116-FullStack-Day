@@ -18,31 +18,34 @@ def check(list1, list2):
     return count
 
 
-balance = 0
+earnings = 0
+
+expenses = 0
 
 winners = pick6()
 
 for x in range(0, 100000):
     hits = 0
-    balance -= 2
+    expenses += 2
     picks = pick6()
     hits += check(winners, picks)
     if hits == 0:
-        balance += 0
+        earnings += 0
     elif hits == 1:
-        balance += 4
+        earnings += 4
     elif hits == 2:
-        balance += 7
+        earnings += 7
     elif hits == 3:
-        balance += 100
+        earnings += 100
     elif hits == 4:
-        balance += 50000
+        earnings += 50000
     elif hits == 5:
-        balance += 1000000
+        earnings += 1000000
     elif hits == 6:
-        balance += 25000000
+        earnings += 25000000
 
-print(balance)
+roi = (earnings - expenses) / expenses
+print(f'You\'re expenses = {expenses}, earnings = {earnings}, and ROI = {roi}')
 
 
 
