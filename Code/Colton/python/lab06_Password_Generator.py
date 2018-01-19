@@ -32,6 +32,5 @@ for i in range(0, int(special_4)):
 password = list(password)
 password = random.sample(password, len(password))
 
-
-
+password = ''.join(password)
 print(password)
