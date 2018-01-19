@@ -29,3 +29,4 @@ elif input_number == 10:
 
 else:
     print(tens_list[tens_digit] + dash + singles_list[ones_digit])
+
