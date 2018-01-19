@@ -2,6 +2,8 @@
 
 
 original = "abcdefghijklmnopqrstuvwxyz"
+originalupper = original.upper()
+
 shifted = "nopqrstuvwxyzabcdefghijklm"
 
 stringed = input('> ')
