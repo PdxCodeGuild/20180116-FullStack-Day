@@ -1,23 +1,35 @@
 from PIL import Image
+import imageio
 import colorsys
+import numpy
 
 
-print(colorsys)
+images = []
+img = Image.open("./gifs/lenna.png")
+np_img = numpy.asarray(img)
+print(np_img.shape)
 
-
-img = Image.open("lenna.png") # must be in same folder
 width, height = img.size
 pixels = img.load()
 
+images = []
 
-for i in range(width):
-    for j in range(height):
-        r, g, b = pixels[i, j]
+#
+for k in range(10):
+    for i in range(width):
+        for j in range(height):
+            r, g, b = pixels[i, j]
 
 
-        y = int(round(0.299 * r + 0.587 * g + 0.114 * b, 0))
+            r = (r + 13) % 256
+            g = (g + 13) % 256
+            b = (b + 13) % 256
 
+            pixels[i, j] = (r, g, b)
 
-        pixels[i, j] = (y, y, y)
+    np_img = numpy.asarray(img)
+    images.append(np_img)
 
-img.show()
+imageio.mimsave('./gifs/lenna.gif', images)
+#
+#
