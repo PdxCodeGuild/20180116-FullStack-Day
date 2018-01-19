@@ -1,4 +1,6 @@
-'''Guess the number!'''
+# Guess the number!
+# This is a game where you try to guess the computer generated number.
+
 import random
 import time
 import sys
@@ -6,9 +8,10 @@ import textwrap
 
 guesses = 0
 
-width = 75
 
-def typer(text, delay=0.05):
+# cool typing feature
+def typer(text, delay=0.03):
+    width = 75  # typer is using to determine when to wrap
     for char in textwrap.fill(text, width):
         delay *= random.uniform(0.9, 1.1)
         time.sleep(delay)
@@ -17,7 +20,7 @@ def typer(text, delay=0.05):
     sys.stdout.write('\n')
 
 
-
+# text and random number, calls guessing function
 def setup():
     typer("The computer will pick a random number for you to guess.")
     typer(". . . . . . . . . . . . .")
@@ -28,10 +31,18 @@ def setup():
     typer('input a number between 1-100')
     guessnum(secretnum)
 
+
+# number guessing flow
 def guessnum(secretnum):
-    global guesses
-    guesses += 1
-    guess = int(input('Your guess: '))
+    while True:
+        global guesses
+        guesses += 1
+        guess = input('Your guess: ')
+        try:
+            guess = int(guess)
+            break
+        except ValueError:
+            print('Invalid entry! Try again.')
     if guess < secretnum:
         typer('too low! Guess again!')
         guessnum(secretnum)
@@ -40,7 +51,7 @@ def guessnum(secretnum):
         guessnum(secretnum)
     elif guess == secretnum:
         print('That\'s it! ')
-        typer('You got it in ' + str(guesses) +'  guesses.')
+        typer('You got it in ' + str(guesses) + '  guesses.')
         typer('Would you like to play again? (y/n)')
         again = input('Your choice: ')
         if again.upper() == 'Y':
@@ -48,7 +59,6 @@ def guessnum(secretnum):
             guesses = 0
         else:
             typer('Be seeing you!')
-
 
 
 typer("Guess the number")
