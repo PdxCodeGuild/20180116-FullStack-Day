@@ -17,4 +17,3 @@ while True:
         print("\nToo low! Sorry, guess again!\n")
     if user_guess_1 > comp_number:
         print("\nToo high! Sorry, guess again!\n")
-
