@@ -37,3 +37,39 @@ for i in range(width):
 
 img.show()
 
+# version 2
+
+img2 = Image.open("images/lenna.png")    # must be in same folder
+width2, height2 = img2.size                # breaking up the tuple of (512, 512)
+pixels2 = img2.load()                     # allocates storage for the image and loads the pixel data
+
+print(img2.format, img2.size, img2.mode)   # shows: PNG (512, 512) RGB
+print(type(pixels2))
+print(pixels2)
+
+
+for i in range(width2):
+    for j in range(height2):
+        r, g, b = pixels2[i, j]
+
+        # colorsys uses colors in the range [0, 1]
+        h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
+
+        # do some math on h, s, v
+
+        h = h * .2
+        s = s * .5
+        v = v * .8
+
+        r, g, b = colorsys.hsv_to_rgb(h, s, v)
+
+        # convert back to [0, 255]
+
+        r = int(r * 255)
+        g = int(g * 255)
+        b = int(b * 255)
+
+        pixels2[i, j] = r, g, b
+
+img2.show()
+
