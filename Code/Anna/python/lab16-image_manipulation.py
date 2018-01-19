@@ -3,7 +3,7 @@ Lab 16
 Finally, some images!
 """
 
-from PIL import Image
+from PIL import Image, ImageDraw
 import colorsys
 import numpy
 import imageio
@@ -72,4 +72,43 @@ for i in range(width2):
         pixels2[i, j] = r, g, b
 
 img2.show()
+
+# put a bird on it
+
+run = input("Do you want to make art? y/n: ")
+
+if run == 'y':
+    img3 = Image.open("images/lenna.png")
+    img4 = Image.open("images/bird.png")
+
+    put_a_bird_on_it = Image.blend(img3, img4, 0.5)
+
+    put_a_bird_on_it.show()
+
+    run2 = input("Do you want to make more art? y/n: ")
+    if run2 == 'y':
+
+        # put another bird on it
+        img5 = Image.open("images/lenna.png")
+        img6 = Image.open("images/bird2.jpg")
+
+        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+
+        put_another_bird_on_it.show()
+    else:
+        print("OK, your loss. Let's move on.")
+else:
+    run2 = input("Are you sure? y/n: ")
+    if run2 == 'n':
+
+        # put another bird on it
+        img5 = Image.open("images/lenna.png")
+        img6 = Image.open("images/bird2.jpg")
+
+        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+
+        put_another_bird_on_it.show()
+    else:
+        print("OK, your loss. Let's move on.")
+
 
