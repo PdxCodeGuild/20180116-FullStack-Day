@@ -1,5 +1,5 @@
 # Number to phrase converter
-
+# Current version 0.1, works for numbers up to 999
 # Convert a given number into a spelled out string.
 
 import random
@@ -7,7 +7,8 @@ import random
 testnum = random.randint(0, 999)
 print('randomly generated number = ', testnum)
 
-# TODO:  Extract digits.. ones, tens, hundreds, thousands, decimals.
+# TODO:  change globals into arguments that are passed into functions, so that a testscript can verify that the function works for lots of numbers
+# TODO:  convert a number
 
 ones = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 0: ''}
 teens = {0: 'ten', 1: 'eleven', 2: 'twelve', 3: 'thirteen', 4: 'fourteen', 5: 'fifteen', 6: 'sixteen', 7: 'seventeen', 8: 'eighteen', 9: 'nineteen'}
