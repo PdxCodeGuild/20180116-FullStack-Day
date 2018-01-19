@@ -117,3 +117,46 @@ else:
     print("That's not an option.")
 
 
+# version 4
+
+print("Ok, now let's convert the time!")
+hour = input("Enter the hour: ")
+minutes = input("Enter the minutes: ")
+hour = int(hour)
+minutes = int(minutes)
+
+
+def time_to_time(hour, minutes):
+
+    if minutes == 00:
+        return time_hour[hour]
+
+    elif minutes < 10:
+        ones_digit = minutes % 10
+        return time_hour[hour] + ' ' + time_minutes_single[ones_digit]
+
+    elif minutes < 20:
+        return time_hour[hour] + ' ' + time_minutes_teens[minutes]
+
+    elif minutes < 60:
+        tens_digit = minutes // 10
+        ones_digit = minutes % 10
+        return time_hour[hour] + ' ' + time_minutes_dec[tens_digit] + ' ' + time_minutes_single[ones_digit]
+    else:
+        phrase = "Sorry, that's not a valid time."
+        return phrase
+
+
+    # if minutes < 10:
+    #     hour_digit = hour % 10
+    #     tens_digit = minutes // 10
+    #     ones_digit = minutes % 10
+    #     return singles[ones_digit]
+    #
+    # elif minutes < 60:
+    #     tens_digit = minutes // 10
+    #     ones_digit = minutes % 10
+    #     return decs[tens_digit] + '-' + singles[ones_digit]
+
+
+print("The time is: " + time_to_time(hour, minutes) + " o'clock")
