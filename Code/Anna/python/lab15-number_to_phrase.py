@@ -16,6 +16,11 @@ roman_singles = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 
 roman_decs = {1: 'X', 2: 'XX', 3: 'XXX', 4: 'XL', 5: 'L', 6: 'LX', 7: 'LXX', 8: 'LXXX', 9: 'XC'}
 roman_hundreds = {1: 'C', 2: 'CC', 3: 'CCC', 4: 'CD', 5: 'D', 6: 'DC', 7: 'DCC', 8: 'DCCC', 9: 'CM'}
 
+time_hour = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve'}
+time_minutes_teens = {10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
+time_minutes_single = {0: '', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
+time_minutes_dec = {2: 'twenty', 3: 'thirty', 4: 'forty', 5: 'fifty'}
+
 
 def num_to_phrase(number):
 
@@ -27,17 +32,37 @@ def num_to_phrase(number):
         ones_digit = number % 10
         return singles[ones_digit]
 
+    elif number < 20:
+        return teens[number]
+
     elif number < 100:
         tens_digit = number // 10
         ones_digit = number % 10
-        return decs[tens_digit] + '-' + singles[ones_digit]
+        if ones_digit == 0:
+            return decs[tens_digit]
+        else:
+            return decs[tens_digit] + '-' + singles[ones_digit]
 
     elif number < 1000:
         interfy = str(number)
         hundreds_digit = number // 100
         tens_digit = int(interfy[1])
         ones_digit = number % 10
-        return hundreds[hundreds_digit] + ' ' + decs[tens_digit] + '-' + singles[ones_digit]
+
+        if tens_digit == 0:
+            return hundreds[hundreds_digit] + ' ' + singles[ones_digit]
+
+        elif ones_digit == 0:
+            return hundreds[hundreds_digit] + ' ' + decs[tens_digit]
+
+        elif tens_digit == 1:
+            combine = str(tens_digit) + str(ones_digit)
+            combine = int(combine)
+            print(combine)
+            return hundreds[hundreds_digit] + ' ' + teens[combine]
+
+        else:
+            return hundreds[hundreds_digit] + ' ' + decs[tens_digit] + '-' + singles[ones_digit]
 
     else:
         phrase = "Sorry, your number is too big for my brain."
@@ -67,13 +92,18 @@ def num_to_roman(number):
         hundreds_digit = number // 100
         tens_digit = int(interfy[1])
         ones_digit = number % 10
-        return roman_hundreds[hundreds_digit] + roman_decs[tens_digit] + roman_singles[ones_digit]
+        if tens_digit == 0:
+            return roman_hundreds[hundreds_digit] + roman_singles[ones_digit]
+        else:
+            return roman_hundreds[hundreds_digit] + roman_decs[tens_digit] + roman_singles[ones_digit]
 
     else:
         phrase = "Sorry, your number is too big for my brain."
         return phrase
 
+
 # version 3
+
 
 print("Let's get fancy! Do you want your number converted to a phrase or a Roman numeral?")
 print("Enter 'p' for phrase or 'r' for Roman numeral:")
@@ -85,3 +115,5 @@ elif choice == 'r':
     print("Your Roman numeral is: " + num_to_roman(number))
 else:
     print("That's not an option.")
+
+
