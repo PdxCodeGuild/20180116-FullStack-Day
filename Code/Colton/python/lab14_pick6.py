@@ -1,9 +1,9 @@
 import random
 #for i in range(0, 6):
-#   com = random.randint(0, 99)
+   # com = random.randint(0, 99)
 com_1 = random.randint(0, 99) #I am sure there is a better wat to do lines 2 - 8
 com_2 = random.randint(0, 99)
-com_3 = random.randint(0, 99)
+com_3 = random.randint(0, 99)#
 com_4 = random.randint(0, 99)
 com_5 = random.randint(0, 99)
 com_6 = random.randint(0, 99)
