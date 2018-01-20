@@ -3,7 +3,7 @@ Lab 16
 Finally, some images!
 """
 
-from PIL import Image
+from PIL import Image, ImageDraw
 import colorsys
 import numpy
 import imageio
@@ -73,3 +73,72 @@ for i in range(width2):
 
 img2.show()
 
+# put a bird on it
+
+run = input("Do you want to make art? y/n: ")
+
+if run == 'y':
+    img3 = Image.open("images/lenna.png")
+    img4 = Image.open("images/bird.png")
+
+    put_a_bird_on_it = Image.blend(img3, img4, 0.5)
+
+    put_a_bird_on_it.show()
+
+    run2 = input("Do you want to make more art? y/n: ")
+    if run2 == 'y':
+
+        # put another bird on it
+        img5 = Image.open("images/lenna.png")
+        img6 = Image.open("images/bird2.jpg")
+
+        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+
+        put_another_bird_on_it.show()
+    else:
+        print("OK, your loss. Let's move on.")
+else:
+    run2 = input("Are you sure? y/n: ")
+    if run2 == 'n':
+
+        # put another bird on it
+        img5 = Image.open("images/lenna.png")
+        img6 = Image.open("images/bird2.jpg")
+
+        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+
+        put_another_bird_on_it.show()
+    else:
+        print("OK, your loss. Let's move on.")
+
+
+# version 3
+
+width = 500
+height = 500
+
+img = Image.new('RGB', (width, height))
+
+draw = ImageDraw.Draw(img)
+
+
+# the origin (0, 0) is at the top-left corner
+
+draw.rectangle(((0, 0), (width, height)), fill="white")
+
+# draw a rectangle from x0, y0 to x1, y1
+draw.rectangle(((100, 100), (300, 300)), fill="lightblue")
+
+# draw a line from x0, y0, x1, y1
+# using the color pink
+color = (256, 128, 128)  # pink
+draw.line((0, 0, width, height), fill=color)
+draw.line((0, height, width, 0), fill=color)
+
+
+circle_x = width/2
+circle_y = height/2
+circle_radius = 100
+draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='lightgreen')
+
+img.show()
