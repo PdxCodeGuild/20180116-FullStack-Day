@@ -1,7 +1,6 @@
-import math
 
 
-# Digits is a list of lists
+# Number_phrases is a list of lists
 number_phrases = [['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
                   ['', 'onety-','twenty-', 'thirty-', 'forty-', 'fifty-', 'sixty-', 'seventy-', 'eighty-',
                 'ninety-'],
@@ -28,7 +27,7 @@ if n == 0:
 # Make a list of numeric digits from the user input, this list is built backwards
 while n > 0:
     digit_list.append(n % 10)
-    n = math.floor(n / 10)
+    n //= 10
 
 
 # Using index of digit and value of digit find the appropriate phrase
