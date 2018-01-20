@@ -6,6 +6,7 @@ Initially the program will pick 6 random numbers as the 'winner'. Then try playi
 
 A ticket contains 6 numbers, 1 to 99, and the number of matches between the ticket and the winning numbers determines the payoff. Order matters, if the winning numbers are `[5, 10]` and your ticket numbers are `[10, 5]` you have **0** matches. If the winning numbers are `[5, 10, 2]` and your ticket numbers are `[10, 5, 2]`, you have **1** match. Calculate your net winnings (the sum of all expenses and earnings).
 
+- a ticket costs $2
 - if 1 number matches, you win $4
 - if 2 numbers match, you win $7
 - if 3 numbers match, you win $100
