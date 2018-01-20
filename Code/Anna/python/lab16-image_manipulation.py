@@ -4,6 +4,7 @@ Finally, some images!
 """
 
 from PIL import Image, ImageDraw
+from random import randint
 import colorsys
 import numpy
 import imageio
@@ -31,7 +32,6 @@ for i in range(width):
         r, g, b = pixels[i, j]
 
         y = 0.299 * r + 0.587 * g + 0.114 * b
-        int(y)
 
         pixels[i, j] = (int(y), int(y), int(y))
 
@@ -75,70 +75,73 @@ img2.show()
 
 # put a bird on it
 
-run = input("Do you want to make art? y/n: ")
-
-if run == 'y':
-    img3 = Image.open("images/lenna.png")
-    img4 = Image.open("images/bird.png")
-
-    put_a_bird_on_it = Image.blend(img3, img4, 0.5)
-
-    put_a_bird_on_it.show()
-
-    run2 = input("Do you want to make more art? y/n: ")
-    if run2 == 'y':
-
-        # put another bird on it
-        img5 = Image.open("images/lenna.png")
-        img6 = Image.open("images/bird2.jpg")
-
-        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
-
-        put_another_bird_on_it.show()
-    else:
-        print("OK, your loss. Let's move on.")
-else:
-    run2 = input("Are you sure? y/n: ")
-    if run2 == 'n':
-
-        # put another bird on it
-        img5 = Image.open("images/lenna.png")
-        img6 = Image.open("images/bird2.jpg")
-
-        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
-
-        put_another_bird_on_it.show()
-    else:
-        print("OK, your loss. Let's move on.")
+# run = input("Do you want to make art? y/n: ")
+#
+# if run == 'y':
+#     img3 = Image.open("images/lenna.png")
+#     img4 = Image.open("images/bird.png")
+#
+#     put_a_bird_on_it = Image.blend(img3, img4, 0.5)
+#
+#     put_a_bird_on_it.show()
+#
+#     run2 = input("Do you want to make more art? y/n: ")
+#     if run2 == 'y':
+#
+#         # put another bird on it
+#         img5 = Image.open("images/lenna.png")
+#         img6 = Image.open("images/bird2.jpg")
+#
+#         put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+#
+#         put_another_bird_on_it.show()
+#     else:
+#         print("OK, your loss. Let's move on.")
+# else:
+#     run2 = input("Are you sure? y/n: ")
+#     if run2 == 'n':
+#
+#         # put another bird on it
+#         img5 = Image.open("images/lenna.png")
+#         img6 = Image.open("images/bird2.jpg")
+#
+#         put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+#
+#         put_another_bird_on_it.show()
+#     else:
+#         print("OK, your loss. Let's move on.")
 
 
 # version 3
 
-width = 500
-height = 500
+width = 512
+height = 512
 
 img = Image.new('RGB', (width, height))
 
 draw = ImageDraw.Draw(img)
 
+# stick man!
 
 # the origin (0, 0) is at the top-left corner
-
+# draw a rectangle from x0, y0 to x1, y1
 draw.rectangle(((0, 0), (width, height)), fill="white")
 
-# draw a rectangle from x0, y0 to x1, y1
-draw.rectangle(((100, 100), (300, 300)), fill="lightblue")
+# the head
+draw.ellipse([156, 30, 356, 230], fill='yellow', outline='black')
 
+# the body
 # draw a line from x0, y0, x1, y1
-# using the color pink
-color = (256, 128, 128)  # pink
-draw.line((0, 0, width, height), fill=color)
-draw.line((0, height, width, 0), fill=color)
+draw.line((256, 230, 256, 400), fill='black', width=8)
 
+# the legs
+draw.line((256, 400, 356, 500), fill='black', width=4)
+draw.line((256, 400, 156, 500), fill='black', width=4)
 
-circle_x = width/2
-circle_y = height/2
-circle_radius = 100
-draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='lightgreen')
+# the arms
+draw.line((256, 300, 206, 250), fill='black', width=4)
+draw.line((256, 300, 306, 250), fill='black', width=4)
 
 img.show()
+
+
