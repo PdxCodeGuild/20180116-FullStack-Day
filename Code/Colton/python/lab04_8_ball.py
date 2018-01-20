@@ -5,7 +5,7 @@ answer = ("yes").lower()
 while answer == ("yes"):
     input("Please type your question below.\n:")
     print(random.choice(c))
-    answer = input("Try again? Yes or No\n:")
+    answer = input("Try again? Yes or No\n:").lower()
     if answer == ("no"):
         break
     else:

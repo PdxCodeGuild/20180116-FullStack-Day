@@ -1,0 +1,2 @@
+nums = input('Enter a number or done: ')
+
