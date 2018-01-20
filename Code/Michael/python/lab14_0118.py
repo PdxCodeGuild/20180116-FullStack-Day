@@ -1,20 +1,46 @@
-# from random
-
-# numb = sorted(random.sample(range(1,48), 6))
-# print(numb)
-
 import random
 
-'''i = 0
+def pick6():
 
-while i < 6:
-    i += 1
-    nums = random.randint(1, 48)
-#    numb = nums.sort()
-    print(nums)'''
+    ticket = []
+    megabucks = list(range(1, 48))
+    i = 0
+
+    while i < 6:
+        i += 1
+        random.shuffle(megabucks)
+        nums = megabucks.pop()
+        ticket.append(nums)
+    ticket.sort()
+
+    return ticket
 
 
-deck = list(range(1, 48))
-nums.pop() = random.shuffle(deck)
+tot_wins = [0, 0, 0, 0, 0, 0, 0]
+games = 0
+account = 0
 
-print(nums)
+while games < 1000:
+
+    games += 1
+    account -= 1
+    me = pick6()
+    cpu = pick6()
+    matches = 0
+    win_list = [0, 0, 1, 40, 800, 6800000]
+    one = 0
+
+    numbered = 0
+    while numbered < 6:
+        if me[numbered] == cpu[numbered]:
+            matches += 1
+        numbered += 1
+
+    if matches > 1:
+        account += win_list[matches]
+
+    tot_wins[matches] += 1
+
+print(f'You have {account} dollars!')
+for i in range(len(tot_wins)):
+    print(i, tot_wins[i])
