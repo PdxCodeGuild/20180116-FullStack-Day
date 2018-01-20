@@ -2,11 +2,11 @@
 
 
 original = "abcdefghijklmnopqrstuvwxyz"
-originalupper = original.upper()
+# originalupper = original.upper()
 
 shifted = "nopqrstuvwxyzabcdefghijklm"
 
-stringed = input('> ')
+stringed = input('> Type something you fool!\n> ')
 
 translation = stringed.maketrans(original, shifted)
 
