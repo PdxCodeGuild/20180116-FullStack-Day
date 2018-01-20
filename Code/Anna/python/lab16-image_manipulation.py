@@ -75,41 +75,41 @@ img2.show()
 
 # put a bird on it
 
-# run = input("Do you want to make art? y/n: ")
-#
-# if run == 'y':
-#     img3 = Image.open("images/lenna.png")
-#     img4 = Image.open("images/bird.png")
-#
-#     put_a_bird_on_it = Image.blend(img3, img4, 0.5)
-#
-#     put_a_bird_on_it.show()
-#
-#     run2 = input("Do you want to make more art? y/n: ")
-#     if run2 == 'y':
-#
-#         # put another bird on it
-#         img5 = Image.open("images/lenna.png")
-#         img6 = Image.open("images/bird2.jpg")
-#
-#         put_another_bird_on_it = Image.blend(img5, img6, 0.5)
-#
-#         put_another_bird_on_it.show()
-#     else:
-#         print("OK, your loss. Let's move on.")
-# else:
-#     run2 = input("Are you sure? y/n: ")
-#     if run2 == 'n':
-#
-#         # put another bird on it
-#         img5 = Image.open("images/lenna.png")
-#         img6 = Image.open("images/bird2.jpg")
-#
-#         put_another_bird_on_it = Image.blend(img5, img6, 0.5)
-#
-#         put_another_bird_on_it.show()
-#     else:
-#         print("OK, your loss. Let's move on.")
+run = input("Do you want to make art? y/n: ")
+
+if run == 'y':
+    img3 = Image.open("images/lenna.png")
+    img4 = Image.open("images/bird.png")
+
+    put_a_bird_on_it = Image.blend(img3, img4, 0.5)
+
+    put_a_bird_on_it.show()
+
+    run2 = input("Do you want to make more art? y/n: ")
+    if run2 == 'y':
+
+        # put another bird on it
+        img5 = Image.open("images/lenna.png")
+        img6 = Image.open("images/bird2.jpg")
+
+        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+
+        put_another_bird_on_it.show()
+    else:
+        print("OK, your loss. Let's move on.")
+else:
+    run2 = input("Are you sure? y/n: ")
+    if run2 == 'n':
+
+        # put another bird on it
+        img5 = Image.open("images/lenna.png")
+        img6 = Image.open("images/bird2.jpg")
+
+        put_another_bird_on_it = Image.blend(img5, img6, 0.5)
+
+        put_another_bird_on_it.show()
+    else:
+        print("OK, your loss. Let's move on.")
 
 
 # version 3
@@ -145,3 +145,24 @@ draw.line((256, 300, 306, 250), fill='black', width=4)
 img.show()
 
 
+# version 4
+
+
+width = 512
+height = 512
+
+img = Image.new('RGB', (width, height))
+draw = ImageDraw.Draw(img)
+
+for i in range(1000):
+    x0 = randint(0, width)
+    y0 = randint(0, height)
+    x1 = randint(0, width)
+    y1 = randint(0, height)
+    line_width = randint(1, 40)
+    red = randint(0, 255)
+    green = randint(0, 255)
+    blue = randint(0, 255)
+    draw.line((x0, y0, x1, y1), fill=(red, green, blue), width=line_width)
+
+img.show()
