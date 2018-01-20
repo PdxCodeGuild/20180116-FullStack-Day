@@ -2,8 +2,6 @@
 
 
 original = "abcdefghijklmnopqrstuvwxyz"
-# originalupper = original.upper()
-
 shifted = "nopqrstuvwxyzabcdefghijklm"
 
 stringed = input('> Type something you fool!\n> ')
