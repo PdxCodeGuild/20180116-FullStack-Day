@@ -1,33 +1,25 @@
-from PIL import Image
+from PIL import Image, ImageDraw
 
+# Draw a stick figure
+width = 500
+height = 500
 
+img = Image.new('RGB', (width, height))
 
-img1 = Image.open("./gifs/dude.jpg")
-img2 = Image.open("./gifs/flower.jpg")
-img3 = img2
+draw = ImageDraw.Draw(img)
 
+# Draw head
+draw.ellipse((200, 50, 300, 150), outline = "blue", fill='lightgreen')
 
-width, height = img1.size
-pixels1 = img1.load()
-pixels2 = img2.load()
-pixels3 = img3.load()
+# Draw a body
+draw.line((250, 150, 250, 350), width = 10, fill = "red")
 
+# Draw arms
+draw.line((250, 200, 300, 150), width = 10, fill = "red")
+draw.line((250, 200, 200, 150), width = 10, fill = "red")
 
+# Draw legs
+draw.line((250, 350, 350, 450), width = 10, fill = "red")
+draw.line((250, 350, 150, 450), width = 10, fill = "red")
 
-
-for i in range(width):
-    for j in range(height):
-        r1, g1, b1 = pixels1[i, j]
-        r2, g2, b2 = pixels2[i, j]
-
-        r3 = int((r1 + r2) / 2)
-        g3 = int((g1 + g2) / 2)
-        b3 = int((b1 + b2) / 2)
-
-
-
-        pixels3[i, j] = (r3, g3, b3)
-
-
-
-img3.show()
+img.show()
