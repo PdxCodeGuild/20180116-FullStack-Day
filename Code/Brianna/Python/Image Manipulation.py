@@ -6,10 +6,11 @@ pixels = img.load()
 
 for i in range(width):
     for j in range(height):
+        #defining all those pixels
         r, g, b = pixels[i, j]
         y = 0.299 * r + 0.587 * g + 0.114 * b
         int(y)
-
+        # redefining all those pixels by switching stuff about and replacing it with y.
         pixels[i, j] = (int(y), int(y), int(y))
 
 img.show()

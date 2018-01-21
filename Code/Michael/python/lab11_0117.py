@@ -1,9 +1,9 @@
 print('''
 Select operator.
-1. Addition
-2. Subtracting
-3. Multiplication
-4. Division
+Addition
+Subtracting
+Multiplication
+Division
 ''')
 
 operator = input('What is the operation you\'d like to perform?\n> ')
@@ -11,16 +11,16 @@ operator = input('What is the operation you\'d like to perform?\n> ')
 first = int(input('> What is the first number?\n> '))
 second = int(input('> What is the second number?\n> '))
 
-if operator == '1':
+if operator == '+':
     print(first,"+",second,"=", first + second)
 
-elif operator == '2':
+elif operator == '-':
     print(first,"-",second,"=", first - second)
 
-elif operator == '3':
+elif operator == '*':
     print(first,"*",second,"=", first * second)
 
-elif operator == '4':
+elif operator == '/':
     print(first,"/",second,"=", first / second)
 
 else:
