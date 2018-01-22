@@ -5,7 +5,7 @@ comp = random.choice(numbers)
 player1 = int(input('Guess a number between 1-10.\n:'))
 
 if player1 == comp:
-        print('YAY')
+    print('YAY')
 else:
     print('Wrong')
 
