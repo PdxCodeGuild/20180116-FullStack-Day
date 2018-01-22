@@ -1,6 +1,4 @@
-# For each character, find the corresponding character, add it to an output string. Notice that there are 26 letters in the English language, so encryption is the same as decryption.
-
-import string
+# ROT13 LAB V1: TEXT ENCODER/ DECODER!
 
 user_string_in = ''
 
@@ -8,10 +6,18 @@ print('\nhello!\ni will be encrypting your text for you using ROT13 format!\n')
 
 user_string_in = user_string_in.lower()
 user_string_in = input('please enter any text you would like encrypted below:\n\n:')
-
-for char in user_string_in[0:]:
-	user_string_in = user_string_in.replace(char, string.ascii_lowercase[string.ascii_lowercase.find(char) + 13])
-	user_string_out = user_string_in
+user_string_out = ''
 
 
-print('your newly encrypted text is:\n', user_string_out)
+def rot13(user_string_in):
+	alphabet = 'abcdefghijklmnopqrstuvwxyz'
+	alphabet_rotated = 'nopqrstuvwxyzabcdefghijklm'
+
+	user_string_out = ''
+	for char in user_string_in:
+		index = alphabet.find(char)
+		user_string_out += alphabet_rotated[index]
+	return user_string_out
+
+
+print('your newly encrypted text is:\n', rot13(user_string_in))
