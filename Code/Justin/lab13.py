@@ -9,7 +9,7 @@ def create_rotation_tables(o, n):
     # n is rotation amount
     # Returns string of rotated characters
     s = ''
-    s = o[n:26] + o[0:n-1]
+    s = o[n:26] + o[0:n]
     return s
 
 def encrypt(s):
