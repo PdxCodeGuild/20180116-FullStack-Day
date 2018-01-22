@@ -20,7 +20,7 @@ tot_wins = [0, 0, 0, 0, 0, 0]
 games = 0
 account = 0
 
-while games < 10000:
+while games < 1000000:
 
     games += 1
     account -= 1
