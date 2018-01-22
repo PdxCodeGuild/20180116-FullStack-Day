@@ -11,6 +11,14 @@ change = {'quarters': 25, 'dimes': 10, 'nickels': 5, 'pennies': 1}
 
 user_monies = int(input('How much monies you got? In pennies.\n:'))
 
+
+quarters = user_monies // 25
+user_monies -= quarters * 25
+dimes = user_monies // 10
+# ...
+
+
+
 print(user_monies / change['quarters'])
 change = change % 25
 print(c // change['dimes'])

@@ -10,8 +10,15 @@ valley_list = []
 both_list = []
 x_list = []
 rand_x_list = []
+new_x_list = []
 xes_list = []
 rand_xes_list = []
+new_xes_list = []
+is_x = False
+
+rand_new_max_number = []
+rand_new_x_list = []
+rand_new_xes_list = []
 
 rand_data_list = []
 
@@ -102,3 +109,55 @@ print('')
 for l in rand_xes_list:
     print(''.join(l))
 
+# Version 3
+
+print("\nLet's add some water!")
+
+new_max_number = max(data_list)
+
+for i in range(0, new_max_number):
+    for x in range(0, len(data_list)):
+        if data_list[x] >= new_max_number:
+            new_x_list.append(" X ")
+            is_x = True
+        elif is_x is True:
+            if new_x_list[x - 1] == " X " or new_x_list[x - 1] == " O ":    # and " X " in new_x_list[x:]
+                new_x_list.append(" O ")
+        else:
+            new_x_list.append("   ")
+    new_max_number -= 1
+    new_xes_list.append(new_x_list)
+    new_x_list = []
+    is_x = False
+
+for l in new_xes_list:
+    print(''.join(l))
+
+
+# random water mountain
+
+print("\nRandom water!")
+
+rand_new_max_number = max(rand_data_list)
+is_x = False
+
+for i in range(0, rand_new_max_number):
+    for x in range(0, len(rand_data_list)):
+        if rand_data_list[x] >= rand_new_max_number:
+            rand_new_x_list.append(" X ")
+            is_x = True
+        elif is_x is True:
+            if rand_new_x_list[x - 1] == " X " or rand_new_x_list[x - 1] == " O ":    # and " X " in new_x_list[x:]
+                rand_new_x_list.append(" O ")
+        else:
+            rand_new_x_list.append("   ")
+    rand_new_max_number -= 1
+    rand_new_xes_list.append(rand_new_x_list)
+    rand_new_x_list = []
+    is_x = False
+
+print(rand_data_list)
+print('')
+
+for l in rand_new_xes_list:
+    print(''.join(l))
