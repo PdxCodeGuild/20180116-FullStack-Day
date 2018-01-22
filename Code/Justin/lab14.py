@@ -18,32 +18,33 @@ def compare (m, w):
 
 
 
-awards = [4, 7, 100, 50000, 1000000, 25000000]
-losses = 0
-winnings = 0
-wins = 0
+awards = [0, 4, 7, 100, 50000, 1000000, 25000000] # Possible awards, index correspondes to number of matches
+wins = [0, 0, 0, 0, 0, 0, 0] # Accumulates number of games won, by number of matches
+losses = 0 # Accumulates lost dollars
+winnings = 0 # Accumulates won dollars
+
 
 
 # Loop plays multilple games
 # Picks new winning numbers and player ticket each game
 # Accumulates number of wins, total winnings and total losses, $2 per game
-for i in range(10000):
+for i in range(100000):
     print(i)
-    my_ticket = pick6()
+    my_ticket = pick6() # Get player ticket
     print(my_ticket)
     losses -= 2
-    winning_numbers = pick6()
+    winning_numbers = pick6() # Get winning numbers
     print(winning_numbers)
     matches = compare(my_ticket, winning_numbers)
+    wins[matches] += 1
+    winnings += awards[matches]
     if matches > 0:
-        print(f'You won ${awards[matches-1]} with {matches} matches')
-        print('*' * 50)
-        winnings += awards[matches - 1]
-        wins += 1
+        print(f'You won ${awards[matches]} with {matches} matches')
+        print('*' * 40 + '*' * 20 * matches) # Visiual indicator of won game
     else:
         print('Better luck next time :(')
 
-print('wins: ', wins)
-print('losses: ', losses)
-print('winnings: ', winnings)
-
+print('Number of matches 0 - 6: ', wins)
+print('Dollar losses: ', losses)
+print('Dollar winnings: ', winnings)
+print('ROI: ', (winnings - losses) / losses)
