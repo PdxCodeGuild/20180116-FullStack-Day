@@ -1,6 +1,6 @@
 import random
 
-def pick6():
+def lottery():
 
     ticket = []
     megabucks = list(range(1, 48))
@@ -16,16 +16,16 @@ def pick6():
     return ticket
 
 
-tot_wins = [0, 0, 0, 0, 0, 0, 0]
+tot_wins = [0, 0, 0, 0, 0, 0]
 games = 0
 account = 0
 
-while games < 1000:
+while games < 10000:
 
     games += 1
     account -= 1
-    me = pick6()
-    cpu = pick6()
+    me = lottery()
+    cpu = lottery()
     matches = 0
     win_list = [0, 0, 1, 40, 800, 6800000]
     one = 0
