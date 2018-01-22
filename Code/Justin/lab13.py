@@ -9,7 +9,7 @@ def create_rotation_tables(o, n):
     # n is rotation amount
     # Returns string of rotated characters
     s = ''
-    s = o[n:26] + o[0:n-1]
+    s = o[n:26] + o[0:n]
     return s
 
 def encrypt(s):
@@ -36,13 +36,15 @@ derotation = 26 - rotation
 
 # Get rotated strings of upper and lower case letters
 rotated_uppers = create_rotation_tables(uppers, rotation)
+print(uppers)
 print(rotated_uppers)
 rotated_lowers = create_rotation_tables(lowers, rotation)
+print(lowers)
 print(rotated_lowers)
 
-#  the message by finding the index of original character lists and pulling
+# Encrypt the message by finding the index of original character lists and pulling
 # that index from rotated list.
-# Then append that character to encoded message
+# Then append that character to encrypted message
 # Numbers and special characters are appended as is.
 rotated_message = ''
 for char in message:

@@ -9,30 +9,9 @@ from time import sleep
 #       add it to an output string.
 # Notice that there are 26 letters in the English language, so encryption is the same as decryption.
 
-# wrapping around an index (modulo operator)
-
-# call the alpha list by the index
-# print(alpha_list[1])
-
-# user input ... make a cipher for each letter entered... convert the letter by its index
-
-
-# def encrypt(str, rot):
-#     global encrypted
-#     print(str)
-#     print('Ok. Converting.')
-#     sleep(1)
-#     print('Your rotated word is:')
-#     encrypted = ''  # empty string for the converted word
-#     for i in range(len(str)):
-#         # find letter in the alpha list
-#         encrypted += (alpha_list[((((alpha_list.index(word[i].upper())) + rot) % 26))]) #rotate by amt
-#         print('#', i, encrypted, rot)
-#         i += 1
-#     print(encrypted)
-
 alpha_list = list(string.ascii_uppercase)
 
+# TBD  add support for upper and lower..
 
 def main():
     print('First, enter a word')
@@ -44,7 +23,8 @@ def main():
         rotation = int(rotation)
     except ValueError:
         print('enter a valid number')
-    cipher(word, rotation)
+    encrypted = cipher(word, rotation)
+    print(decrypt(encrypted, rotation))
 
 
 def cipher(my_str, rot):
@@ -55,11 +35,12 @@ def cipher(my_str, rot):
     encrypted = ''  # empty string for the converted word
     for i in range(len(my_str)):
         # find letter in the alpha list
-        encrypted += (alpha_list[(((alpha_list.index(my_str[i].upper())) + rot) % 26)])  # rotate by amt
-        print('#', i, encrypted, rot)
-        i += 1
-    print(encrypted)
-    decrypt(encrypted, rot)
+        try:
+            encrypted += (alpha_list[(((alpha_list.index(my_str[i].upper())) + rot) % 26)])  # rotate by amt
+            print('#', i, encrypted, rot)
+        except:
+            encrypted += my_str[i]
+    return encrypted
 
 
 def decrypt(encr, rota):
@@ -69,7 +50,7 @@ def decrypt(encr, rota):
         print(rota)
         rota = -int(rota)
         print(rota)
-        cipher(encr, rota)
+        return cipher(encr, rota)
 
 
 print('Ceaser Cipher\nThis program will encrypt a word by a cipher rotation\n')

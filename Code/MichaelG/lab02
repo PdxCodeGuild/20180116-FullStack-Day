@@ -1,0 +1,25 @@
+adjective = input('enter an adjective')
+nationality = input('enter a nationality')
+person = input('enter a name')
+noun = input('enter a noun')
+adjective2 = input('enter an adjective')
+noun2 = input('enter a noun')
+adjective3 = input('enter an adjective')
+adjective4 = input('enter an adjective')
+pluralnoun = input('enter a plural noun')
+noun3 = input('enter a noun')
+number = input('enter a number between one and ten')
+shape = input('enter a shape')
+food = input('enter a type of food')
+food2 = input('enter a type of food')
+number2 = input('enter a number')
+
+output = 'Pizza was invented by a ' + adjective + ' ' + nationality + ' chef named ' + person + '.\n'
+output += 'To make a pizza you need to take a lump of ' + noun + ', and make a thin, round ' + adjective2 + ' ' + noun2 + '.\n'
+output += 'Then cover it with ' + adjective3 + ' sauce, ' + adjective4 + ' cheese, and fresh chopped ' + pluralnoun + '.\n'
+output += 'Next you have to bake it in a hot ' + noun2 + '.\n'
+output += 'When it is done, cut it into ' + number + ' ' + shape + 's.\n'
+output += 'Some kids like ' + food + ' pizza the best, but my favorite is the ' +food2 + ' pizza.\n'
+output += 'If I could, I would eat pizza ' +number2 + ' times a day!'
+
+print(output)
