@@ -1,0 +1,13 @@
+x = int(input('Please enter your test score.: '))
+if x >= 90:
+ print('Your letter grade is: A')
+elif x <= 89 and x >= 80:
+ print('Your letter grade is: B')
+elif x <= 79 and x >= 70:
+ print('Your letter grade is: C')
+elif x <= 69 and x >= 60:
+ print('Your letter grade is: C')
+elif x <= 59 and x >= 50:
+    print('Your letter grade is: D')
+elif x <= 49:
+    print('Your letter grade is: F')

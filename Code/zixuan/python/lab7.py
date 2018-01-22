@@ -25,8 +25,8 @@ def  win(yC, cC):
     if yC == 3 and cC ==3:
         return "same"
 
-
 resul = win(yourChoice, compChoice)
+
 if yourChoice==1:
     yourChoice="rock"
 elif yourChoice==2:
