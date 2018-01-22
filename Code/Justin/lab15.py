@@ -1,4 +1,7 @@
 
+# Convertr integers 0-9999 to corresponding english phrase
+# Does not handle 11 - 19 as a special case, rather renames them to "onety-one","onety-two" etc.
+
 
 # Number_phrases is a list of lists
 number_phrases = [['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
