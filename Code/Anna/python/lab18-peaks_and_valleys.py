@@ -71,5 +71,34 @@ for l in xes_list:
     print(''.join(l))
 
 
+# sideways mountain
+print("")
 
+for i in range(0, len(data_list)):
+    add_x = " X " * data_list[i]
+    x_list.append(add_x)
+    print(add_x)
+
+# random mountain
+
+print("\nNow let's make a random mountain!")
+
+rand_max_number = max(rand_data_list)
+
+for i in range(0, rand_max_number):
+    for x in range(0, len(rand_data_list)):
+        if rand_data_list[x] >= rand_max_number:
+            rand_x_list.append(" X ")
+        else:
+            rand_x_list.append("   ")
+    rand_max_number -= 1
+    rand_xes_list.append(rand_x_list)
+    rand_x_list = []
+
+
+print(rand_data_list)
+print('')
+
+for l in rand_xes_list:
+    print(''.join(l))
 
