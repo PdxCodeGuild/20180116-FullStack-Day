@@ -26,7 +26,7 @@ if number >= 20 and number < 100:
 if 20 > number >= 0:
     if number > 10:
         print(eleven_to_nineteen[number])
-    elif:
+    else:
         print(zero_to_ten[number])
 
 
