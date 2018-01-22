@@ -1,6 +1,3 @@
-#Using a while loop, allow the user to guess 10 times. If they fail to guess the number after 10 tries, the user is told they've lost.
-#If the user guesses the number, the user is told they've won and the game exits. You can get a random number using random.randint:
-
 import random
 
 rand_num = random.randint(1, 10)
