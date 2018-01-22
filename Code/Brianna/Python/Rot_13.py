@@ -11,3 +11,15 @@ for i in range(len(input_phrase)):
 
 print(new_phrase)
 
+#decypher = input("Would you like to decypher your code?")
+#original_phrase = ''
+#print("Okay!")
+
+'''
+if decypher == "yes" or decypher == "y":
+    for i in range(len(input_phrase)):
+        original_phrase = original_phrase + alphabet_list[(((alphabet_list.index(new_phrase[i].upper())) - rotation) % 26)]
+
+print(new_phrase)
+
+'''
