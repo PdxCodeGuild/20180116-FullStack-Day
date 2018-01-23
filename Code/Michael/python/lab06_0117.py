@@ -11,4 +11,4 @@ def randomizer(y):
         ranstr = random.choice(list)
         print(ranstr, end='')
 
-randomizer(55)
+randomizer(14)
