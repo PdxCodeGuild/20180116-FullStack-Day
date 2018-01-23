@@ -1,4 +1,13 @@
 
+
+
+
+
+def min(a, b):
+    return a if a < b else b
+
+
+
 def numbers(x):
 
     ones = {0:'Zero', 1:'one', 2:'two', 3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine'}
@@ -26,5 +35,5 @@ def numbers(x):
 
     print(text)
 
-numbers(93)
+numbers(65)
 

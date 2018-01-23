@@ -14,7 +14,7 @@ while player == False:
     elif player == 'rock':
         if computer == 'paper':
             print('You lose,', computer, 'covers', player)
-        else:
+        elif computer == 'scissors':
             print('You win,', player, 'smashes', computer)
 
     elif player == 'paper':
