@@ -12,16 +12,3 @@
 # # loop over the indices
 # for i in range(len(nums)):
 #     print(nums[i])
-# Version 2
-# Ask the user to enter the numbers one at a time, putting them into a list. If the user enters 'done', then calculate and display the average. The following code demonstrates how to add an element to the end of a list.
-#
-# nums = []
-# nums.append(5)
-# print(nums)
-# Below is an example input/output:
-#
-# > enter a number, or 'done': 5
-# > enter a number, or 'done': 3
-# > enter a number, or 'done': 4
-# > enter a number, or 'done': done
-# average: 4
