@@ -2,6 +2,8 @@
 First lab drawing a stick figure
 """
 
+#stick figure going up stairs
+
 from turtle import *
 
 setposition(0, 0)
@@ -9,15 +11,11 @@ setposition(0, 0)
 fillcolor('red')
 begin_fill()
 
-forward(100)
-left(90)
-forward(100)
-left(90)
-forward(100)
-left(90)
-forward(100)
-left(90)
-forward(50)
+i = 0
+while i < 360:
+    forward(1)
+    left(1)
+    i += 1
 
 end_fill()
 
