@@ -1,9 +1,7 @@
 import random
 
 cpu = ['rock', 'paper', 'scissors']
-
 computer = random.choice(cpu)
-
 player = False
 
 while player == False:
