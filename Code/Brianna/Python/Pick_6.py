@@ -26,7 +26,7 @@ while game < 200000:
     primary_lottery = pick6()
     human_ticket = pick6()
     balance = balance -2
-    match = compare(primary_lottery,human_ticket)
+    match = compare(primary_lottery, human_ticket)
     #print('match',match)
     balance = balance + lottery_winnings[match]
     #print('balance',balance)
