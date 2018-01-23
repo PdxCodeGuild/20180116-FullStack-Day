@@ -1,5 +1,22 @@
-tens_digit = {'twenty': 2, 'thirty': 3, 'fourty': 4, 'fifty': 5, 'sixty': 6, 'seventy': 7, 'eighty': 8, 'ninety': 9 }
-ones_digit = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
-user = input("Give a number in numerical form\n:")
-if user ==
+ones = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'']
+tens = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety',]
+
+
+
+
+while True:
+    try:
+        user = int(input("Give a number in numerical form\n:"))
+    except ValueError:
+        continue
+    else:
+        break
+
+input_tens_digit = (user) // 10
+input_ones_digit = (user) % 10
+
+
+print(input_tens_digit)
+print(input_ones_digit)
 
