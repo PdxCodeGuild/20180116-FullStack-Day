@@ -40,32 +40,116 @@ def roll():
     return result
 
 
-while True:                                            # while more than one player has chips, otherwise game ends
-    players_left = players
+while True:                                             # while more than one player has chips, otherwise game ends
+    players_left = players                              # initialize how many players left
 
     for i in range(0, players):
         if bank[player_list[i]] == 0:                              # if player has no chips, takes no turn
             print(f"\nNo chips. {player_list[i]} skips a turn")
             players_left -= 1
         else:
-            print(f"\nIt's {player_list[i]}'s turn to roll.")
-            result = roll()
-            if result == 'L':
-                bank[player_list[i]] -= 1
-                bank[player_list[i - 1]] += 1
-            elif result == 'R':
-                if player_list[i] != player_list[players - 1]:
+            if bank[player_list[i]] == 1:
+                print(f"\nIt's {player_list[i]}'s turn to roll.")
+                result = roll()
+                if result == 'L':
                     bank[player_list[i]] -= 1
-                    bank[player_list[i + 1]] += 1
+                    bank[player_list[i - 1]] += 1
+                elif result == 'R':
+                    if player_list[i] != player_list[players - 1]:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[i + 1]] += 1
+                    else:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[0]] += 1
+                elif result == 'C':
+                    bank[player_list[i]] -= 1
+                    bank['Center'] += 1
                 else:
+                    pass
+            elif bank[player_list[i]] == 2:
+                print(f"\nIt's {player_list[i]}'s turn to roll.")
+                result = roll()
+                if result == 'L':
                     bank[player_list[i]] -= 1
-                    bank[player_list[0]] += 1
-            elif result == 'C':
-                bank[player_list[i]] -= 1
-                bank['Center'] += 1
+                    bank[player_list[i - 1]] += 1
+                elif result == 'R':
+                    if player_list[i] != player_list[players - 1]:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[i + 1]] += 1
+                    else:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[0]] += 1
+                elif result == 'C':
+                    bank[player_list[i]] -= 1
+                    bank['Center'] += 1
+                else:
+                    pass
+                result = roll()
+                if result == 'L':
+                    bank[player_list[i]] -= 1
+                    bank[player_list[i - 1]] += 1
+                elif result == 'R':
+                    if player_list[i] != player_list[players - 1]:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[i + 1]] += 1
+                    else:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[0]] += 1
+                elif result == 'C':
+                    bank[player_list[i]] -= 1
+                    bank['Center'] += 1
+                else:
+                    pass
             else:
-                pass
-
+                print(f"\nIt's {player_list[i]}'s turn to roll.")
+                result = roll()
+                if result == 'L':
+                    bank[player_list[i]] -= 1
+                    bank[player_list[i - 1]] += 1
+                elif result == 'R':
+                    if player_list[i] != player_list[players - 1]:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[i + 1]] += 1
+                    else:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[0]] += 1
+                elif result == 'C':
+                    bank[player_list[i]] -= 1
+                    bank['Center'] += 1
+                else:
+                    pass
+                result = roll()
+                if result == 'L':
+                    bank[player_list[i]] -= 1
+                    bank[player_list[i - 1]] += 1
+                elif result == 'R':
+                    if player_list[i] != player_list[players - 1]:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[i + 1]] += 1
+                    else:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[0]] += 1
+                elif result == 'C':
+                    bank[player_list[i]] -= 1
+                    bank['Center'] += 1
+                else:
+                    pass
+                result = roll()
+                if result == 'L':
+                    bank[player_list[i]] -= 1
+                    bank[player_list[i - 1]] += 1
+                elif result == 'R':
+                    if player_list[i] != player_list[players - 1]:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[i + 1]] += 1
+                    else:
+                        bank[player_list[i]] -= 1
+                        bank[player_list[0]] += 1
+                elif result == 'C':
+                    bank[player_list[i]] -= 1
+                    bank['Center'] += 1
+                else:
+                    pass
         print(f"\nThese are the current values: {bank}")
 
     if players_left < 2:
