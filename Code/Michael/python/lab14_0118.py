@@ -3,14 +3,14 @@ import random
 def lottery():
 
     ticket = []
-    megabucks = list(range(1, 48))
     i = 0
 
     while i < 6:
         i += 1
-        random.shuffle(megabucks)
-        nums = megabucks.pop()
-        ticket.append(nums)
+        num = random.randint(1,48)
+        while num in ticket:
+            num = random.randint(1, 48)
+        ticket.append(num)
     ticket.sort()
 
     return ticket
@@ -40,6 +40,10 @@ while games < 1000000:
         account += win_list[matches]
 
     tot_wins[matches] += 1
+
+    if games%100 == 0:
+        print(str(round(games/1000000*100, 3))+'%')
+
 
 print(f'You have {account} dollars!')
 for i in range(len(tot_wins)):

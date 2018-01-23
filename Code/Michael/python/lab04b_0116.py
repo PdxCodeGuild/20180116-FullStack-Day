@@ -10,18 +10,8 @@ def eightb():
     answer = 'yes'
 
     while answer == 'yes':
-        print(input('> Ask a question? '))
+        print(input('> What is your question? '))
         print(random.choice(ans))
-
-        if answer == 'yes':
-            print('do you want to ask another question? ')
-
-        elif answer == 'no':
-            print('\n Answer yes or no.\n > ')
-            break
-
-        else:
-            exit(0)
-
+        answer = input('do you want to ask another question? ')
 
 eightb()
