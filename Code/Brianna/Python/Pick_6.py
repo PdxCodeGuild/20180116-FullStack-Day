@@ -9,41 +9,30 @@ def pick6():
     return lottery
 
 # Make a comparison function
-def compare(primary_lottery, human_ticket)
+def compare(primary_lottery, human_ticket):
     match = 0
-    ticket1 = []:
-    for number in range(primary_lottery):
-        ticket1.append()
-    ticket2 = []:
-    for number in range(human_ticket)
-        ticket2.append()
-    if ticket1() == ticket2()
-        match = match + 1
+    for i in range(len(primary_lottery)):
+        if primary_lottery[i] == human_ticket[i]:
+            match = match + 1
+    return match
+
+balance = 0
+game = 0
 
 
-# Make primary lottery ticket user is trying to win against.
+lottery_winnings = {0 : 0, 1 : 4, 2 : 7, 3 : 100, 4 : 50000, 5 : 1000000, 6 : 25000000}
 
-primary_lottery = pick6()
-print(primary_lottery)
+while game < 200000:
+    primary_lottery = pick6()
+    human_ticket = pick6()
+    balance = balance -2
+    match = compare(primary_lottery,human_ticket)
+    #print('match',match)
+    balance = balance + lottery_winnings[match]
+    #print('balance',balance)
+    game = game + 1
+    #print('game',game)
 
-
-# Make a lottery ticket for the human
-
-human_ticket = pick6()
-print(human_ticket)
-
-# Run the lottery a set number of times
-
-# Figure out how to make the computer match the numbers in order.
-'''
-def compare (primary, human):
-    count = 0
-    for i in range(6):
-        if primary[i] == human[i]:
-            count = count + 1
-    return count
-
-'''
-
-#  Output how many times each $ amount was won.
-
+print("You monnies are now....", balance, "!")
+if balance < 0:
+    print("Ouch! That hurt!")
