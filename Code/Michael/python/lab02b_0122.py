@@ -11,7 +11,7 @@ adjective3 = str(input('Type third adjective. '))
 
 verb1 = str(input('Type first verb. '))
 verb2 = str(input('Type second verb. '))
-verb3 = str(input('Type thrid verb. '))
+verb3 = str(input('Type third verb. '))
 
 noun1 = str(input('Type first noun. '))
 noun2 = str(input('Type second noun. '))

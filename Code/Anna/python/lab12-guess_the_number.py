@@ -14,7 +14,7 @@ computer_guess = random.randint(1, 10)
 game_on = True
 number_tries = 9
 
-while game_on is True and number_tries > 0:
+while game_on and number_tries > 0:
     user_guess = input("Guess a number between 1 and 10.\n> ")
     user_guess = int(user_guess)
     if user_guess == computer_guess:
