@@ -48,10 +48,9 @@ def color_pairs(lst):
         sock_dict[typ] = 0
     for sock in lst:
         sock_dict[sock] += 1
-    print(sock_dict)
     for sock in sock_dict.keys():
         sock_dict[sock] //= 2
     print(sock_dict)
 
-# sorted_socks(laundry_list())
+sorted_socks(laundry_list())
 color_pairs(laundry_colors())
