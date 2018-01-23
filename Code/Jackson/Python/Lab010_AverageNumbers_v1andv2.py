@@ -9,10 +9,18 @@ nums = []
 newnumber = 0
 
 newnumber = (input('enter a number to the list and I will average them! (type "done" to get average): '))
-
-while newnumber != ('done'):
+while newnumber != 'done':
     nums.append(newnumber)
     newnumber = (input('enter a number to the list and I will average them! (type "done" to get average): '))
+
+
+# while True:
+#     newnumber = input('enter a number or done: ')
+#     if newnumber == 'done':
+#         break
+#     else:
+#         nums.append(int(newnumber))
+
 
 
 

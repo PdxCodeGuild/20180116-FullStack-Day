@@ -30,10 +30,15 @@ def valley():
 
 
 def peaks_and_valleys():
-    #create new list
-    #append for len of lists
-    #sorted() function
+    #create new list with both peaks and valleys
+    peak_and_valley = peaks()
+    for i in valley():
+        peak_and_valley.append(i)
+    #sort() function
+    peak_and_valley.sort()
 
+    return peak_and_valley
 
 print(peaks())
 print(valley())
+print(peaks_and_valleys())

@@ -6,8 +6,9 @@ the number, and the program will tell them whether they're right or wrong.\
 #x is the computer's guess
 import random
 i = 0
+x = random.randint(1, 10)
+
 while i < 10:
-    x = random.randint(1, 10)
     #print('answer:' + str(x)) #to test
     y = int(input('guess the number: '))
     if x == y:

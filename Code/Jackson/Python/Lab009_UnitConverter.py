@@ -8,6 +8,11 @@ This lab will involve writing a program that allows the user to convert a number
 
 Metrics = ['ft', 'mi', 'm', 'km']
 
+#units_ft = 'ft'
+#scales = [0.3048, 1609.34, ...]
+
+
+
 distanceInput = float(input('what is the distance that you would like converted?: '))
 metricInput = input('what is the metric that you are starting with (ft, mi, m, or km)?: ')
 metricOutput = input('what is the metric that you would like the distance converted to (ft, mi, m, or km)?: ')
