@@ -2,6 +2,7 @@
 Lab 18
 Peaks and valleys
 """
+
 import random
 
 data_list = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
@@ -120,7 +121,8 @@ for i in range(0, new_max_number):
         if data_list[x] >= new_max_number:
             new_x_list.append(" X ")
             is_x = True
-        elif is_x is True:
+        elif is_x:
+            # loop - start from x, look ahead to see if you can find another X, found_x flag
             if new_x_list[x - 1] == " X " or new_x_list[x - 1] == " O ":    # and " X " in new_x_list[x:]
                 new_x_list.append(" O ")
         else:

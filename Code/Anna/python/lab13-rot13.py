@@ -11,6 +11,13 @@ message = input("> ")
 message = message.lower()
 rotation = 13
 
+
+# for char in string.ascii_lowercase:
+#     alphabet.append(char)
+# alphabet = list(string.ascii_lowercase)
+
+
+
 x = 0
 alphabet = []
 for x in range(0, 26):
