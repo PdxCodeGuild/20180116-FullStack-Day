@@ -25,7 +25,7 @@ print("\nLet's sort them!")
 
 for i in range(100):
     time.sleep(.1)
-    sys.stdout.write("\rSorting magic: %d%%" % i)
+    sys.stdout.write("\rSorting elves are sorting the socks: %d%%" % i)
     sys.stdout.flush()
 
 while len(sock_list) > 0:
@@ -35,4 +35,4 @@ while len(sock_list) > 0:
 
 print('\n')
 for sock in sock_dict:
-    print(f"You have {sock_dict[sock] // 2} pairs of {sock} socks and {sock_dict[sock] % 2} loner.")
+    print(f"You have {sock_dict[sock] // 2} pairs of {sock} socks and {sock_dict[sock] % 2} loner(s).")
