@@ -8,10 +8,11 @@ import random
 passwordLength = int(input('Enter the number of digits you would like your password to be: '))
 
 x = 0
+password = ''
 
 while x < passwordLength:
     letter = ''
     letter = random.choice("abcdefghijklmnopqrstuvwxyz") #single and double quotes both work
-    print(letter)
+    password = password + letter
     x += 1
-
+print(password)
