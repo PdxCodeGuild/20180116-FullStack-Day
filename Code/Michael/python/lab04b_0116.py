@@ -18,8 +18,8 @@ def eightb():
 
         elif answer == 'no':
             print('\n Answer yes or no.\n > ')
-
             break
+
         else:
             exit(0)
 
