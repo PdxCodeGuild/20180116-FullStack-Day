@@ -1,7 +1,7 @@
 #CHANGE MAKER V1: PAYING IN PENNIES
 coin_value = {'quarter':25, 'dime':10, 'nickel':5, 'penny':1}
 
-pennies = (int(input('\nhow many pennies?\n\n:')))
+pennies = input('\nhow many pennies?\n\n:')
 pennies = int(pennies)
 
 #coin_breakdown
