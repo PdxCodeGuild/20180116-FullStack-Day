@@ -7,11 +7,11 @@ the number, and the program will tell them whether they're right or wrong.\
 import random
 i = 0
 x = random.randint(1, 10)
-
 while i < 10:
     #print('answer:' + str(x)) #to test
     y = int(input('guess the number: '))
     if x == y:
+        i += 1
         print('you win! you guessed ' + str(i) + ' times')
         break
     else:
