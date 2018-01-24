@@ -49,6 +49,8 @@ for i in range(0, 100000):
     human = human_pick6()
     i += 1
     matches = num_matches(comp, human)
+    # payout = [0, 4, 7, 100, 50000...]
+    # money += payout[matches]
     if matches == 6:
         print("Winner winner, 25 million chicken dinners!\n")
         money += 25000000
