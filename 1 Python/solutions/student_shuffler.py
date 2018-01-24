@@ -1,14 +1,8 @@
 import random
 
-student_list = ['Justin', 'Jackson', 'Anna', 'Brianna', 'Maggie', 'Colton', 'Wes', 'Zixuan', 'OCL', 'Sergio', 'Eric', 'Michael M', 'Matt', 'Michael G', 'Scottie']
+student_list = ['Justin', 'Jackson', 'Anna', 'Brianna', 'Maggie', 'Colton', 'Wes', 'Zixuan', 'OCL', 'Sergio', 'Eric', 'Michael M', 'Matt', 'Michael G']
 
-absent_student_list = ['Michael G', 'Matt', 'Scottie']
-#absent_student_list = ['Michael G', 'Matt']
-
-print(len(student_list))
-
-
-
+absent_student_list = []
 
 
 for i in range(len(absent_student_list)):
