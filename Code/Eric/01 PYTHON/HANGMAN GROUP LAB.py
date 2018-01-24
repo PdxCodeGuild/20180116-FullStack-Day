@@ -15,7 +15,7 @@ word = ''
 while len(word) < 5:
 	word = random.choice(contents)
 
-print(word)
+# print(word)
 
 letters_guessed = []
 counter = 0
