@@ -18,7 +18,7 @@ for i in range(width):
         s = float(s)
         s += .4
         v = float(v)
-        v += .2
+        v += .3
 
         r, g, b = colorsys.hsv_to_rgb(h, s, v)
 
