@@ -17,16 +17,19 @@ def play():
     import player_dictionaries
     players = player_dictonaries()
     center_pot = 0
-    for i in range(players[1]):
+    while user_index in range(len(players % len(players):
         for i in range(0, 6):
            action = roll_dice()
            if action == 'center':
                 center_pot = center_pot + 1
-            elif action == 'nothing':
+           elif action == 'nothing':
                 center_pot = center_pot
-            elif action == 'left':
-                for
-            elif action == 'right':
+           elif action == 'left':
+                for i in range(players[i+1][1]):
+                    players[i][1] = players[i](["chips"] + 1)
+           elif action == 'right':
+                for i in range(players[i - 1]["chips"]):
+                    players[i][1] = players[i](["chips"] + 1)
             
 
 
