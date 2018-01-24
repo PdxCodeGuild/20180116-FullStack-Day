@@ -11,7 +11,7 @@ adjective3 = str(input('Type third adjective. '))
 
 verb1 = str(input('Type first verb. '))
 verb2 = str(input('Type second verb. '))
-verb3 = str(input('Type thrid verb. '))
+verb3 = str(input('Type third verb. '))
 
 noun1 = str(input('Type first noun. '))
 noun2 = str(input('Type second noun. '))
@@ -22,4 +22,4 @@ verbs = [verb1, verb2, verb3]
 nouns = [noun1, noun2, noun3]
 
 
-print(f'Sixty tiny {random.choice(nouns)} were {random.choice(verbs)} together over a {random.choice(nouns)} of a {random.choice(nouns)}, {random.choice(verbs)} the {random.choice(nouns)} of a {random.choice(nouns)} {random.choice(verbs)} the changes between {random.choice(nouns)}.')
+print(f'{random.choice(adjectives)} {random.choice(adjectives)} {random.choice(nouns)} were {random.choice(verbs)} together over a {random.choice(nouns)} of a year, {random.choice(verbs)} the name of a {random.choice(nouns)} {random.choice(verbs)} the changes between {random.choice(nouns)}.')
