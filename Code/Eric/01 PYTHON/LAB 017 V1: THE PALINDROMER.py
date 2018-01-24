@@ -1,3 +1,4 @@
+#  PALINDROMER
 user_palindrome = input('hello! i am called the palindromer!\ni can tell you what words are or are not '
                     'palindromes!\nplease enter a word you would like to use\n\n:')
 
