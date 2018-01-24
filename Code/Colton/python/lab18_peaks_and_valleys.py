@@ -17,3 +17,4 @@ def valleys(data):
 #
 #def peaks_and_valleys():
 #    #identifies the peaks and valleys
+grdg
