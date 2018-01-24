@@ -6,29 +6,23 @@ print()
 # allow user to input units in feet, miles, meters, or kilometers
 
 distance = int(input('What is the distance? '))
-unit_measure = input('What is the input unit? (ft, mi, m, yd, in, or km)? ')
+input_unit = input('What is the input unit? (ft, mi, m, yd, in, or km) ')
+output_unit = input('What is the output unit? (ft, mi, m, yd, in, or km) ')
 
+# creat dictionary with the key as a string and number as a value
 
-if unit_measure == 'ft':
-    meters = distance * .3048
-    print(str(distance) + ' ft is equal to ' + str(meters) + ' m')
-elif unit_measure == 'mi':
-    meters = distance * 1609.34
-    print(str(distance) + ' miles is equal to ' + str(meters) + ' m')
-elif unit_measure == 'm':
-    meters = distance * 1
-    print(str(distance) + ' meters is equal to ' + str(meters) + ' m')
-elif unit_measure == 'km':
-    meters = distance * 1000
-    print(str(distance) + ' kilometers is equal to ' + str(meters) + ' m')
-elif unit_measure == 'yd':
-    meters = distance * .9144
-    print(str(distance) + ' yards is equal to ' + str(meters) + ' m')
-elif unit_measure == 'in':
-    meters = distance * .0254
-    print(str(distance) + ' in is equal to ' + str(meters) + ' m')
-else:
-    print('You entered an invalid unit of measure.')
+convert_from_meters = {'ft': .3048, 'mi': 1609.34, 'm': 1, 'yd': .9144, 'in': 39.370, 'km': .0001}
+convert_to_meters = {'ft': 3.28, 'mi': .0006, 'm': 1, 'yd': 1.0936, 'in': .02541, 'km': 1000}
+
+# distance times convert_to lookup input unit
+
+x = distance * convert_to_meters[input_unit]
+
+# save that
+
+print(str(distance) + input_unit + ' is equal to ' + str(x * convert_from_meters[output_unit]) + output_unit)
+
+# meters value convert_from[] lookup output unit
 
 
 

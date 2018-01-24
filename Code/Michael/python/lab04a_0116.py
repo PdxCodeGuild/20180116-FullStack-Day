@@ -10,4 +10,6 @@ def eightb():
 
     print(f'Q: {magic} A: {magicks}')
 
+
+
 eightb()
