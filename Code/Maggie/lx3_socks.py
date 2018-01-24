@@ -52,5 +52,6 @@ def color_pairs(lst):
         sock_dict[sock] //= 2
     print(sock_dict)
 
+
 sorted_socks(laundry_list())
 color_pairs(laundry_colors())
