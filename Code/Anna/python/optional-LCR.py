@@ -153,7 +153,8 @@ while True:                                             # while more than one pl
         print(f"\nThese are the current values: {bank}")
 
     if players_left < 2:
-        print(f"Game over! {list(bank.keys())[list(bank.values()).index(1)]} is the winner!")
+        print(f"\nGame over! {list(bank.keys())[list(bank.values()).index(1)]} is the winner!")
         break
 
 print(f"\nThe final results are: {bank}")
+
