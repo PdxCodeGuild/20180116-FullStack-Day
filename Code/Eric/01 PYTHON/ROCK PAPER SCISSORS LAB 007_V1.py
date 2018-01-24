@@ -4,7 +4,7 @@ hands = ['rock', 'paper', 'scissors']
 user_hand = ""
 
 print('\nLets play Rock Paper Scissors!!!')
-while user_hand.lower() not in hands:
+while user_hand not in hands:
     user_hand = input('\nCHOOSE YOUR WEAPON:\n Rock, Paper, or Scissors?\n:')
     user_hand = user_hand.lower()
 opponent = random.choice(hands)
