@@ -1,9 +1,9 @@
 print('''
 Select operator.
-Addition
-Subtracting
-Multiplication
-Division
++ Addition
+- Subtracting
+* Multiplication
+/ Division
 ''')
 
 operator = input('What is the operation you\'d like to perform?\n> ')
@@ -24,4 +24,4 @@ elif operator == '/':
     print(first,"/",second,"=", first / second)
 
 else:
-    print('Something isn\'t correct!')
+    print('Something isn\'t right!')

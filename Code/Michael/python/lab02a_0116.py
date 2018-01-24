@@ -30,12 +30,3 @@ rand4 = random.choice(new2)
 rand5 = random.choice(new2)
 
 print(f'{rand} {rand2} {rand3} {rand4}.')
-
-# print(f'''For winter's rains and ruins are over,
-#     And all the season of snows, and sins;
-#   The days dividing lover and lover,
-#     The light that loses, the night that wins;
-#   And time remembered is grief forgotten,
-#   And frosts are slain and flowers begotten,
-#   And in green underwood and cover
-#     Blossom by blossom the spring begins.
