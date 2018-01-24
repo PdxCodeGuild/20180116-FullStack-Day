@@ -10,11 +10,12 @@ import sys
 sock_types = ['ankle', 'crew', 'wool', 'knee', 'hiking']
 sock_colors = ['black', 'white', 'grey', 'striped', 'checkered']
 sock_list = []
+new_sock_list = []
 sock_dict = {}
+new_sock_dict = {}
 
 for sock in sock_types:
     sock_dict[sock] = 0
-print(sock_dict)
 
 # Generate a list of 100 random socks
 for i in range(0, 100):
@@ -36,3 +37,5 @@ while len(sock_list) > 0:
 print('\n')
 for sock in sock_dict:
     print(f"You have {sock_dict[sock] // 2} pairs of {sock} socks and {sock_dict[sock] % 2} loner(s).")
+
+
