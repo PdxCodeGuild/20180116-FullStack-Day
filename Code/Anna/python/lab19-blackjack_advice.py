@@ -6,7 +6,10 @@ More gambling!
 import random
 
 card_list = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-card_dict = {'A': [1, 11], '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10}
+card_dict = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10}
+
+hit = True
+total = 0
 
 
 def deal():
@@ -21,42 +24,68 @@ def deal():
 
 """
 
-player_cards = list(input("Enter your first card: "))
-player_cards.append(input("Enter your second card: "))
-player_cards.append(input("Enter your third card: "))
+# player version:
+# player_cards = list(input("Enter your first card: "))
+# player_cards.append(input("Enter your second card: "))
+# player_cards.append(input("Enter your third card: "))
 
-if 'A' in player_cards:
-    total = 0
-    player_cards.remove('A')
+# computer version:
 
-    for i in range(len(player_cards)):
-        total += card_dict[player_cards[i]]
 
-    if total < 12:
-        ace_value = card_dict['A'][1]
-        total += card_dict['A'][1]
-        player_cards.append('A')
-        print(f"Ace value: {ace_value}")
+def play(player_cards):
+    if 'A' in player_cards:
+        total = 0
+        player_cards.remove('A')
+
+        for i in range(len(player_cards)):
+            total += card_dict[player_cards[i]]
+
+        if total < 12:
+            ace_value = 11
+            total += 11
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+        else:
+            ace_value = 1
+            total += 1
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+
     else:
-        ace_value = card_dict['A'][0]
-        total += card_dict['A'][0]
-        player_cards.append('A')
-        print(f"Ace value: {ace_value}")
+        total = 0
+        for i in range(len(player_cards)):
+            total += card_dict[player_cards[i]]
 
-else:
-    total = 0
-    for i in range(len(player_cards)):
-        total += card_dict[player_cards[i]]
+    print(f"You have: {', '.join(player_cards)}")
+    print(f"Your current total is: {total}")
+    return total
 
-print(f"You have: {', '.join(player_cards)}")
-print(f"Your current total is: {total}")
 
-if total > 21:
-    print("Already busted!")
-elif total == 21:
-    print("Blackjack!")
-elif total >= 17:
-    print("Stay")
-else:
-    print("Hit")
+cards = []
+
+while hit is True:
+    new_card = deal()
+    print(f"The dealer gives you: {new_card}")
+    cards.append(new_card)
+    total = play(cards)
+
+    if total > 21:
+        print("Already busted!")
+        hit = False
+        break
+    elif total == 21:
+        print("Blackjack!")
+        hit = False
+        break
+    elif total >= 17:
+        print("Stay")
+        hit = False
+        break
+    else:
+        print("Hit")
+        hit = True
+
+
+
+
 
