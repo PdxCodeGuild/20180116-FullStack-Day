@@ -39,6 +39,7 @@ def play(abc):
     compare(index)
 
 
+
 def again():
     replay = input('Would you like to play again? (Y/N): ').upper()
     if replay == 'Y':
@@ -59,7 +60,7 @@ def compare(index):
         print('Computer chose scissors!!')
     if result == 1:
         print('You win!!')
-    if result == 0:
+    elif result == 0:
         print('You tied!!')
     else:
         print('Computer wins!!')
