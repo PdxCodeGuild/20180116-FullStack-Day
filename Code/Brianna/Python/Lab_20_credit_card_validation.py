@@ -38,10 +38,10 @@ reversed_number = modified_card_number[::-1]
 
 print(reversed_number)
 
-doubled_numbers = [int(num) * 2 for num in reversed_number[::2]]
-
-if int(num) > 9:
-    num = num - 9
-    print(doubled_numbers)
+doubled_numbers = [int(reversed_number[i]) * 2 if i % 2 == 0 else int(reversed_number[i]) for i in range(len(reversed_number))]
+minus_nine = [int(num)-9 for num in doubled_numbers if int(num) > 9]
 
 print(doubled_numbers)
+print(minus_nine)
+
+#Need to replace minus_nines in doubled_numbers then replace doubled numbers in reversed_numbers
