@@ -4,6 +4,7 @@ Yay, reading!
 """
 
 import string
+import random
 
 valid_letters = string.ascii_lowercase
 
@@ -24,19 +25,6 @@ def load():
     return words
 
 
-words_list = load()
-print(words_list)
-print(len(words_list))
-novel = "'Heart of Darkness'"
-author = "Joseph Conrad"
-print(f"\nDid you know that {novel} by {author} has {len(words_list)} words? Neat!")
-
-# make a list of 0's set to len(words_list)
-# count_list = [0 for i in range(len(words_list))]
-
-word_dict = {}
-
-
 def count_words(book):
     for i in range(len(book)):
         if book[i] not in word_dict:
@@ -47,16 +35,68 @@ def count_words(book):
     return word_dict
 
 
+def random_word():
+    return random.choice(words_list)
+
+
+def make_pairs(book):
+    pairs = []
+    for i in range(len(book) - 1):
+        pair = [book[i], book[i + 1]]
+        pairs.append(pair)
+
+    return pairs
+
+
+def count_pairs(book):
+    for i in range(len(book)):
+        if tuple(book[i]) not in pairs_dict:
+            pairs_dict[tuple(book[i])] = 1
+        elif tuple(book[i]) in pairs_dict:
+            pairs_dict[tuple(book[i])] += 1
+
+    return pairs_dict
+
+
+words_list = load()
+
+novel = "'Heart of Darkness'"
+author = "Joseph Conrad"
+print(f"\nDid you know that {novel} by {author} has {len(words_list)} words? Neat!")
+
+# make a list of 0's set to len(words_list)
+# count_list = [0 for i in range(len(words_list))]
+# not actually necessary
+
+word_dict = {}
+
+
 count_words(words_list)
 
 print("The most frequent words are:")
 
-words = list(word_dict.items()) # list of tuples
-words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-    print(f"'{words[i][0]}' is found {words[i][1]} times")
+tup_words = list(word_dict.items())  # list of tuples
+tup_words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(10, len(tup_words))):  # print the top 10 words, or all of them, whichever is smaller
+    print(f"'{tup_words[i][0]}' is found {tup_words[i][1]} times")
+
+print(f"\nA random word found in {novel} is: {random_word()}")
 
 
-# count = {words_list[i]: 0 for i in range(len(words_list))}
-# print(count)
+# Version 2
+
+# Count how often each unique pair of words is used, then print the top 10 most common pairs with their counts.
+pairs_list = make_pairs(words_list)
+pairs_dict = {}
+pairs = count_pairs(pairs_list)
+
+print("\nThe most frequent pairs of words are:")
+
+tup_pairs = list(pairs.items())  # list of tuples
+tup_pairs.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(10, len(tup_pairs))):  # print the top 10 words, or all of them, whichever is smaller
+    print(f"'{' '.join(tup_pairs[i][0])}' is found {tup_pairs[i][1]} times")
+
+
+
 
