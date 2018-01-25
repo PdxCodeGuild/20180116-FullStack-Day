@@ -1,12 +1,12 @@
 print('Convert your percentage score to a letter grade! \n')
-Percent = input('Enter the percentage score (0-100):')
+Percent = int(input('Enter the percentage score (0-100):'))
 
 def convert():
     print('You recieved ', end='')
     try:
         if int(Percent) < 60:
             print('an F', end='')
-        elif int(Percent) >= 60:
+        else:
             if 60 < int(Percent) < 70:
                 print('a D', end='')
             elif 70 <= int(Percent) < 80:
