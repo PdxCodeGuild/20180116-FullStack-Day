@@ -66,3 +66,5 @@ for i in range(100):
 print('\n')
 for sock in new_sock_dict:
     print(f"You have {new_sock_dict[sock] // 2} pairs of {sock} socks and {new_sock_dict[sock] % 2} loner(s).")
+
+print("\nSorted! Thanks, sorting elves!")

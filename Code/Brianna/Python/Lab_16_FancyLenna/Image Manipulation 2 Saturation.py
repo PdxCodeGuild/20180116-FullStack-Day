@@ -44,6 +44,3 @@ for subdir, dirs, files in os.walk(png_dir):
             images.append(imageio.imread(file_path))
 imageio.mimsave('.movie.gif', images)
 
-
-
-
