@@ -18,13 +18,14 @@ words_copy = words.copy()
 
 print(words)
 
+'''
 word_dictionary = {}
 
 for word_num in range(len(words)):
     new_word[] =
     word_dictionary.append(new_word)
 
-
+'''
 
 word_dictionary = make_dictionary()
 
