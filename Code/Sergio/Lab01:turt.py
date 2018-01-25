@@ -1,7 +1,7 @@
 "Lab 1: Turtle"
 "Stick Figure"
 from turtle import *
-
+from PIL import Image, ImageDraw
 #move_distance = 100
 #turn_angle =  144
 

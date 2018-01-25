@@ -1,7 +1,7 @@
 import random
 while True:
     options = ['rock', 'paper', 'scissors']
-    end_game = ['stop']
+    end_game = 'stop'
     user_choice = input('Choose rock, paper, or scissors: ')
     computer_choice = random.choice(options)
 
@@ -26,5 +26,5 @@ while True:
             print('Win')
         elif computer_choice == 'scissors':
             print('Lose')
-    if user_choice == end_game == 'stop':
+    if user_choice == end_game:
         break
