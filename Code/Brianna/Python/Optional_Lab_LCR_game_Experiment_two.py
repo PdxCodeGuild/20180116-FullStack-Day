@@ -12,6 +12,36 @@ def roll_dice():
     die = dice_dictonary[roll]
     return die
 
+
+def player_dictionaries():
+    players = []
+    player_number = int(input('How many players are playing RCL today?\n:'))
+    for player_num in range(player_number):
+        new_player = {}
+        new_player['name'] = input("What is your name?\n:")
+        new_player['chips'] = 3
+        players.append(new_player)
+    return players, player_number
+
+
+
+
+players = player_dictionaries()
+print(players)
+
+
+
+
+
+
+
+# make players an automatically populated index/dictionary then L is "money" is assigned to that index -1, R is
+#assigned to that index +1.  Use modulous to wrap the index?
+
+# example_list_of_lists[0][0]
+
+
+'''
 def play():
     players = player_dictonaries()
     global center_pot = 0
@@ -28,28 +58,5 @@ def play():
            elif action == 'right':
                 for i in range(players[i - 1]["chips"]):
                     players[i]["chips"] = players[i](["chips"] + 1)
-            
-
-
-def player_dictionaries():
-    players = []
-    player_number = int(input('How many players are playing RCL today?\n:'))
-    for player_num in range(player_number):
-        new_player = {}
-        new_player['name'] = input("What is your name?\n:")
-        new_player['chips'] = 3
-        players.append(new_player)
-    return players, player_number
-
-
-players = player_dictionaries()
-print(players)
-
-
-
-
-# make players an automatically populated index/dictionary then L is "money" is assigned to that index -1, R is
-#assigned to that index +1.  Use modulous to wrap the index?
-
-# example_list_of_lists[0][0]
+'''
 
