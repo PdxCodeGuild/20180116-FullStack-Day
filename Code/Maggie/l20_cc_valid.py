@@ -17,6 +17,7 @@ def check_valid_cc(numstr):  # Check procedure to validate card
     print(f'2. Last digit sliced from number as a check digit: \t\t{check_num}')
     cc_chk = [int(x) for x in ((numstr[14::-1]))]  # reversed list of nums 1-15
     print(f'3. List of card numbers 1-15 reversed: \t{cc_chk}')
+    # cc_chk[i] *=2 for i in range(len(cc_chk)) if i % 2 != 0  # attempt as a list comprehension
     for i in range(len(cc_chk)):  # double every other digit in list
         if i % 2 != 0:
             cc_chk[i] *= 2
