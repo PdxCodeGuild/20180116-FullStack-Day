@@ -1,11 +1,11 @@
 # Peaks and Valleys
 
-data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]  # the data to sort
+data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 2]  # the data to sort
 
 
 # if the value at the previous and post index is lower/higher, index marks a peak/valley
 def peaks(lst):
-    pk_i = []
+    pk_i =
     for i in range(1, len(lst)-1):
         if lst[i] > lst[i - 1] and lst[i] > lst[i + 1]:
             pk_i.append(i)

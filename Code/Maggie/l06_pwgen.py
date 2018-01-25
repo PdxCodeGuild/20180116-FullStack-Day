@@ -13,6 +13,19 @@ Bonus: Allow the user to enter the value of n, (remember to convert its type, as
 '''
 
 
+# def get_number(prompt_text, error_text):
+#     while True:
+#         num = input(prompt_text)
+#         try:
+#             num = int(num)
+#             return num
+#         except:
+#             print(error_text)
+# x = get_number('enter a number: ', 'invalid number')
+
+
+
+
 print('A Password Generator \n')
 
 
@@ -32,8 +45,8 @@ def generate():
         print(num)
     except ValueError:
         print('exception')
-        print('Sorry that was not a valid entry. I will choose for you.')
-        num = random.randrange(100)
+        print('Sorry that was not a valid entry.')
+        # num = random.randrange(100)
         generate()
     print('Generate a password of length: ' + num)
     if pw_len <= 100:
