@@ -1,10 +1,8 @@
 # HANGMAN LAB: ERIC/ MATT/ JACKSON/ ZIXUAN
-
 import random
 
 with open('english.txt', 'r') as wordlist:
-	contents = wordlist.read()
-	contents = contents.split('\n')
+	contents = wordlist.read().split('\n')
 
 with open('hangmanpics.txt', 'r') as hangman:
 	man_pics = hangman.read()
@@ -14,6 +12,7 @@ word = ''
 
 while len(word) < 5:
 	word = random.choice(contents)
+	word = word.lower()
 
 # print(word)
 
@@ -23,6 +22,7 @@ counter = 0
 
 def replace(word, guessed):
 	new_word = ''
+	new_word = new_word.lower()
 	for i in range(len(word)):
 		if word[i] in guessed:
 			new_word = new_word + f'{word[i]} '
@@ -36,11 +36,14 @@ def replace(word, guessed):
 
 
 while counter < 10:
-	guess = input('guess a letter\n\n:')
+	guess = input('guess a letter\n\n:').lower()
+	guess = guess.lower()
 	while guess in letters_guessed:
-		guess = input('already guessed. try again\n:')
+		guess = input('already guessed. try again\n:').lower()
+		guess = guess.lower()
 	letters_guessed.append(guess)
 	new = replace(word, letters_guessed)
+	new = new.lower()
 	if new == 'win':
 		break
 	if guess not in word:
