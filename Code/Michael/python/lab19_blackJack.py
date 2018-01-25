@@ -15,15 +15,15 @@ total = 0
 for card in cards:
     total += cardVal[card]
 
-if total < 18:
+if total < 17:
     print(total, 'hit')
-    while total <= 18:
+    while total <= 17:
         key = random.choice(list(cardVal.keys()))
         cards.append(key)
         total += cardVal[card]
     print(cards, total)
 
-if 20 >= total > 18:
+if 20 >= total >= 18:
     print(total, 'stay')
 
 elif total == 21:
