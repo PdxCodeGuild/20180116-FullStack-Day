@@ -17,6 +17,20 @@ hand_3 = input("What is your third card?\nex.2, 3, J, A\n:").lower()
 while hand_3 not in cards.keys():
     hand_3 = input("What is your third card?\nex.2, 3, J, A\n:").lower()
 
-hand_1 =
+hand_1 = hand_1#how to make it equal to the value from the dictionary with the corresponding key
+hand_2 = hand_2#how to make it equal to the value from the dictionary with the corresponding key
+hand_3 = hand_3#how to make it equal to the value from the dictionary with the corresponding key
 
-print(hand_1)
+master_hand = sum(hand_1, hand_2, hand_3)
+print(master_hand)
+
+if master_hand < 17:
+    print("Advise hit")
+elif masterhand > 17:
+    print("Advise stay")
+elif master_hand == 21:
+    print("Blackjack!!!")
+elif master_hand > 21:
+    print("Bust")
+
+
