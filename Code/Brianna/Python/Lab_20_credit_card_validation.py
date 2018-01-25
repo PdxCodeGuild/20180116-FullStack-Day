@@ -39,7 +39,7 @@ reversed_number = modified_card_number[::-1]
 print(reversed_number)
 
 doubled_numbers = [int(reversed_number[i]) * 2 if i % 2 == 0 else int(reversed_number[i]) for i in range(len(reversed_number))]
-minus_nine = [int(num)-9 for num in doubled_numbers if int(num) > 9]
+minus_nine = [int(doubled_numbers[i]) -9 if int(doubled_numbers[i]) > 9 else int(doubled_numbers[i]) for i in range(len(doubled_numbers))]
 
 print(doubled_numbers)
 print(minus_nine)
