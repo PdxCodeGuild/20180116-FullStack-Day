@@ -9,18 +9,19 @@ card_number = list(card_number)##########converting to list
 
 
 card_number = [int(i) for i in card_number]#######converting to integers
-check_digit = card_number.pop
+check_digit = card_number.pop()
+print(check_digit)
 card_number = card_number[::-1]########reversing the order of the card number
 i = 0
-print(card_number)
 while i < len(card_number):
     card_number[i] *= 2
     if card_number[i] > 9:
         card_number[i] -= 9
     i += 2
-card_number = sum(card_number)
-card_number = card_number % 10
-if card_number == check_digit:
+card_number_sum = sum(card_number)
+print(card_number_sum)
+card_number_sum = card_number_sum % 10
+if card_number_sum == check_digit:
     print("Valid card")
 else:
     print("Not valid")

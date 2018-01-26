@@ -8,9 +8,17 @@ import random
 
 valid_letters = string.ascii_lowercase
 
+# path = 'files/heart_of_darkness.txt'                      # program chooses book
+path = input("Enter the path of the book to open: ")        # user chooses book
+novel = input("What is the name of the book? ")             # just for fun
+author = input("Who is the author? ")                       # just for fun
+
+
+# All the functions (so many functions)
+
 
 def load():
-    with open('files/heart_of_darkness.txt', 'r') as f:
+    with open(path, 'r') as f:
         contents = f.read().lower()
         stripped = contents.translate(string.punctuation)
         for char in stripped:
@@ -58,10 +66,18 @@ def count_pairs(book):
     return pairs_dict
 
 
+def count_matches(book):
+    for i in range(len(book)):
+        if tuple(book[i]) not in match_dict:
+            match_dict[tuple(book[i])] = 1
+        elif tuple(book[i]) in match_dict:
+            match_dict[tuple(book[i])] += 1
+
+    return match_dict
+
+
 words_list = load()
 
-novel = "'Heart of Darkness'"
-author = "Joseph Conrad"
 print(f"\nDid you know that {novel} by {author} has {len(words_list)} words? Neat!")
 
 # make a list of 0's set to len(words_list)
@@ -98,5 +114,29 @@ for i in range(min(10, len(tup_pairs))):  # print the top 10 words, or all of th
     print(f"'{' '.join(tup_pairs[i][0])}' is found {tup_pairs[i][1]} times")
 
 
+# Version 3
+
+# Let the user enter a word, then show the words which most frequently follow it.
+
+print(f"\nNow let's see what words most frequently follow a word in {novel}. Enter a word:")
+user_word = input("> ")
 
 
+# match_list = [] # can make list comprehension?
+
+match_list = []
+
+for i in range(len(pairs_list)):
+    if user_word == pairs_list[i][0]:
+        match_list.append(pairs_list[i])
+
+match_dict = {}
+
+matches = count_matches(match_list)
+
+print(f"\nThe words most frequently following {user_word} are:")
+
+tup_matches = list(matches.items())  # list of tuples
+tup_matches.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(10, len(tup_pairs))):  # print the top 10 words, or all of them, whichever is smaller
+    print(f"'{tup_matches[i][0][1]}' follows {user_word} {tup_matches[i][1]} times")
