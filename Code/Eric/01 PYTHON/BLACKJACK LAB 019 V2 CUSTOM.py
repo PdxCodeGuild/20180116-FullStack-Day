@@ -100,8 +100,13 @@ def card_dealer():  #main game function
 			break
 	return user_hand, user_hand_val, total_val
 
-
-card_dealer()
+# welcome screen/ game start
+begin_ = input('\n*** W E L C O M E   T O   B L A C K J A C K! ***\n type "start" to begin game or "quit" to exit\n:').lower()
+if begin_ == 'start':
+	card_dealer()
+elif begin_ == 'quit':
+	print('\nthank you for playing! GOODBYE!\n')
+	quit()
 
 while True:  #option to play again or to quit game
 	again_ = input('\nGAME OVER! would you like to play again???\ntype "yes" or "no"\n:').lower()
@@ -112,4 +117,3 @@ while True:  #option to play again or to quit game
 
 print('\nthank you for playing! GOODBYE!\n')
 quit()
-
