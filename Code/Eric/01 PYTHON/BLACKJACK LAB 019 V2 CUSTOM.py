@@ -5,7 +5,6 @@ cards = {'A': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
          'J': 10, 'Q': 10, 'K': 10}
 
 
-
 def card_dealer():  #main game function
 	user_hand = []
 	user_hand_val = []
