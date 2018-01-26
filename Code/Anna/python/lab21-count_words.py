@@ -8,10 +8,10 @@ import random
 
 valid_letters = string.ascii_lowercase
 
-# path = 'files/heart_of_darkness.txt'                    # program chooses book
-path = input("Enter the path of the book to open: ")    # user chooses book
-novel = input("What is the name of the book? ")     # this is supposed to be italics...
-author = input("Who is the author? ")
+# path = 'files/heart_of_darkness.txt'                      # program chooses book
+path = input("Enter the path of the book to open: ")        # user chooses book
+novel = input("What is the name of the book? ")             # just for fun
+author = input("Who is the author? ")                       # just for fun
 
 
 # All the functions (so many functions)
