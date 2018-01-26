@@ -12,7 +12,6 @@ def remove_punct(text):
     return [w.strip(string.punctuation) for w in words] # Need to understand this better. What about translate?
 
 words = remove_punct(words)
-words = remove_apostrophes(words)
 words_copy = words.copy()
 
 print(words)
@@ -24,7 +23,6 @@ for i in range(len(words)):
         word_dictionary[words[i]] = 1
     else:
         word_dictionary[words[i]] += 1
-
 
 
 print(word_dictionary)
