@@ -28,9 +28,9 @@ for i in range(len(allwords)):
     else:
         counter[allwords[i]] = 1 #note: automatically creates a key for an assignment
 
+print(counter)
 
-
-
-
-
-print(allwords)
+words = list(counter.items()) # list of tuples
+words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+    print(words[i])
