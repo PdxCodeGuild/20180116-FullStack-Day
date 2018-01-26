@@ -1,40 +1,39 @@
 import os
 import string
+import math
 
-# The score is computed by multiplying the number of characters divided
-#  by the number of words by 4.17, adding the number of words divided by
-# the number of sentences multiplied by 0.5, and subtracting 21.43. **If the
-# result is a decimal, always round up.**
-
-
-
+# Open the document...and close it with with open. ^^
 with open('Frankenstein.txt', 'r') as frankenstein_file:
         contents = frankenstein_file.read()
 
+
 # Make everything lowercase, strip punctuation, split into a list of words.
 words = contents.lower().split()
-
+# Word count
 word_count = len(words)
 
+# Make sentence list by splitting sentences by the '.'
 sentence_list = contents.split('.')
-print(sentence_list)
-
 sentence_count = len(sentence_list)
-print(sentence_count)
-print(word_count)
 
+# Make a character list.
 character_list = []
 
 for i in range(len(contents.strip(string.punctuation))):
     character_list.append(contents[i])
-print(character_list)
 
+# And count the characters
 character_count = len(character_list)
-print(character_count)
 
-score = ((float(character_count) / float(word_count)) * 4.17)  + 0.5 * (float(word_count) / (float(sentence_count))) - 21.43
+# figure out a rough score
+score = ((float(character_count) / float(word_count)) * 4.17)  + (0.5 * (float(word_count) / (float(sentence_count)))) - 21.43
 
-print('score', score)  # Still need to round score up and add condition that if it is over 14 it should still be read as 14.
+if score > 14:
+    score = 14
+else:
+    score = math.ceil(score)
+
+print('score', score)
 
 ari_scale = {
     1: {'ages': '5-6', 'grade_level': 'Kindergarten'},
@@ -53,28 +52,11 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level': 'College'}
 }
 
+# make the output
+print(f"The ARI for Frankenstein is {score}. \n This corresponds to a {ari_scale[score]['grade_level']} level of difficulty \n that is suitable for an average person {ari_scale[score]['ages']} years old.")
 
-def remove_punct(text):
-    return [w.strip(string.punctuation) for w in words] # Need to understand this better. What about translate?
-
-words = remove_punct(words)
-words_copy = words.copy()
-
-print(words)
-
-word_dictionary = {}
-
-for i in range(len(words)):
-    if words[i] not in word_dictionary.keys():
-        word_dictionary[words[i]] = 1
-    else:
-        word_dictionary[words[i]] += 1
-
-
-print(word_dictionary)
-
-
-words = list(word_dictionary.items()) # list of tuples
-words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-    print(words[i])
+'''
+   The ARI for gettysburg-address.txt is 12
+    This corresponds to a 11th Grade level of difficulty
+    that is suitable for an average person 16-17 years old.
+'''
