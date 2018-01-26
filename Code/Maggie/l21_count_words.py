@@ -11,39 +11,79 @@
 # words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
 # for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
 #     print(words[i])
-
+from random import choice
 import string   #translation table functionality
 
-punct = '.:?,-&'  # punctuation for translation table
-replace = (' ' * len(punct))
-trans_table = str.maketrans('\n', ' ', string.punctuation)  # the default translation table for punctionation
-# strip = maketrans(trans_out, '')  # removes punctuation
-
-with open('/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/s_holmes.txt') as f:
-    # currently the adv of Sherlock Holmes from Gutenberg
-    raw_text = f.read().lower()
-
-with open('/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/1-1000.txt') as l:
-    # 1000 most common words
-    common_words = l.read().lower()
+sherlock = 'w_whit_leaves.txt'
 
 
-common_list = (common_words.split('\n'))
+# currently the adv of Sherlock Holmes from Gutenberg
 
-strip_text = raw_text.translate(trans_table)
-word_list = strip_text.split(' ')
-word_freq = {}
+def prepare_text(text_file):
+    # import text file, clean up, (opt) extra cleanup, returns a list of words
+    default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/{text_file}'
+    with open(f'{default_path}') as f:
+        raw_text = f.read().lower()
+        trans_table = str.maketrans('\n', ' ', string.punctuation)  # the default translation table for punctionation
+    strip_text = raw_text.translate(trans_table)
+    word_list = strip_text.split(' ')
+    for word in word_list:
+        if len(word) < 1:
+            word_list.remove(word)
+    return word_list
 
-for word in word_list:
-    if word not in common_list and len(word) > 0:  # remove most common words and empty strings
-        if word in word_freq.keys():
-            word_freq[word] += 1
+
+def get_word_freq(w_list, remove_common=True):  # returns a dictionary, opt with common words removed
+    with open(f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/1-1000.txt', mode='r') as l:
+        common_words = l.read().lower()  # 1000 most common words
+    common_list = (common_words.split('\n'))
+    word_freq = {}  # dictionary init
+    for word in w_list:
+        if remove_common:
+            if word not in common_list:  # remove most common words and empty strings
+                if word in word_freq:
+                    word_freq[word] += 1
+                else:
+                    word_freq[word] = 1
         else:
-            word_freq[word] = 1
+            if word in word_freq:
+                word_freq[word] += 1
+            else:
+                word_freq[word] = 1
+    words = list(word_freq.items())  # list of tuples
+    sorted_words = []
+    words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+    for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+        sorted_words.append(words[i])
+    return sorted_words
 
+g_counter = 0
+word_string = ''
+def get_next_word(first_word, word_list):
+    global g_counter
+    global word_string
+    # get most likely next word for word entered
+     # given the first word, look it up in the word list, find the next occurence
+    next_word_list = []
+    for i in range(len(word_list) - 1): #create a most frequent dict of first_word[i]+1
+        if word_list[i] == first_word: #create a frequency dictionary of wordlist[i+1]
+            next_word_list.append(word_list[i + 1])
+    next_word_freq_tup_list = get_word_freq(next_word_list, False)# a list of tuples, sorted
+    next_word = choice(next_word_freq_tup_list)[0]
+    return next_word
 
-words = list(word_freq.items()) # list of tuples
-words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-    print(words[i])
+def construct_str(first_word, text):
+    init_str = first_word
+    for c in range(50):
+        next_in_seq = get_next_word(first_word, text)
+        init_str += " " + next_in_seq
+        first_word = next_in_seq
+    return init_str
 
+prepped_text = (prepare_text(sherlock))
+frequency = get_word_freq(prepped_text)
+first = choice(frequency)[0]
+#nextw = get_next_word(first, prepped_text)
+print(construct_str(first, prepped_text))
+
+# TODO: http://www.nltk.org/ natural language.. return valid sentences
