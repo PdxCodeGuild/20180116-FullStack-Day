@@ -1,49 +1,72 @@
-# Let's write a python module to analyze a given text file containing a book for its vocabulary frequency and display the most frequent words to the user in the terminal. Remember there isn't any "perfect" way to identify a word in english (acronymns, mr/ms, contractions, etc), try to find rules that work best.
-#
-# Find a book on Project Gutenberg. Download it as a UTF-8 text file.
-#
-# Open the file.
-# Make everything lowercase, strip punctuation, split into a list of words.
-# Your dictionary will have words as keys and counts as values.
-# If a word isn't in your dictionary yet, add it with a count of 1. If it is, increment its count.
-# Print the most frequent top 10 out with their counts. You can do that with the code below.
-# words = list(word_set.items()) # list of tuples
-# words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-# for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-#     print(words[i])
-
-import string   #translation table functionality
-
-punct = '.:?,-&'  # punctuation for translation table
-replace = (' ' * len(punct))
-trans_table = str.maketrans('\n', ' ', string.punctuation)  # the default translation table for punctionation
-# strip = maketrans(trans_out, '')  # removes punctuation
-
-with open('/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/s_holmes.txt') as f:
-    # currently the adv of Sherlock Holmes from Gutenberg
-    raw_text = f.read().lower()
-
-with open('/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/1-1000.txt') as l:
-    # 1000 most common words
-    common_words = l.read().lower()
+# Word frequency count from a given text file input
+from random import choice
 
 
-common_list = (common_words.split('\n'))
+sherlock = 's_holmes.txt'
+whit = 'w_whit_leaves.txt'
+liz = 'f_lizst_let.txt'
+default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
 
-strip_text = raw_text.translate(trans_table)
-word_list = strip_text.split(' ')
-word_freq = {}
 
-for word in word_list:
-    if word not in common_list and len(word) > 0:  # remove most common words and empty strings
-        if word in word_freq.keys():
-            word_freq[word] += 1
+def prepare_text(text_file):  # import text file, clean up, (opt) extra cleanup, returns a list of words
+    file_path = default_path + text_file
+    with open(f'{file_path}', mode='r') as f:
+        lines = ' '.join(f.readlines()).lower()
+    punct = '!"#$%()&*+,-./:;<=>?@[\]^_`{|}~'
+    trans_table = str.maketrans({key: None for key in punct})
+    trans_text = lines.translate(trans_table)
+    strip_text = ' '.join(trans_text.split())
+    word_list = strip_text.split(' ')
+    return word_list
+
+
+def get_word_freq(w_list, remove_common=True):  # returns a dictionary, opt with common words removed
+    with open(f'{default_path}1-1000.txt', mode='r') as f:
+        lines = ' '.join(f.readlines()).lower()
+    common_list = (lines.split('\n '))
+    word_freq = {}  # dictionary init
+    for word in w_list:
+        if remove_common:
+            if word not in common_list:  # remove most common words
+                if word in word_freq:
+                    word_freq[word] += 1
+                else:
+                    word_freq[word] = 1
         else:
-            word_freq[word] = 1
+            if word in word_freq:
+                word_freq[word] += 1
+            else:
+                word_freq[word] = 1
+    words = list(word_freq.items())  # list of tuples
+    sorted_words = []
+    words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+    for i in range(min(5, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+        sorted_words.append(words[i])
+    return sorted_words  # This is a tuple!
 
 
-words = list(word_freq.items()) # list of tuples
-words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-    print(words[i])
+def get_next_word(first_word, word_list):
+    next_word_list = []
+    for i in range(len(word_list) - 1):
+        if word_list[i] == first_word:
+            next_word_list.append(word_list[i + 1])
+    next_word_freq_tup_list = get_word_freq(next_word_list, False)  # a list of tuples, sorted
+    next_word = choice(next_word_freq_tup_list)[0]
+    return next_word
 
+
+def construct_str(text, first_word, output_length=30):
+    cleaned_text_list = prepare_text(text)
+    constructed_str = first_word
+    for c in range(output_length):
+        next_in_seq = get_next_word(first_word, cleaned_text_list)
+        constructed_str += " " + next_in_seq
+        first_word = next_in_seq
+    return constructed_str
+
+
+chosen_text = whit
+random_first = choice(prepare_text(chosen_text))
+print(construct_str(chosen_text, random_first))
+
+# TODO: http://www.nltk.org/ natural language.. return valid sentences
