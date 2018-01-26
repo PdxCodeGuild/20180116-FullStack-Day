@@ -1,36 +1,39 @@
 import random
 
-cards = {'A': 1, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':10, 'Q':10, 'K':10}
 
-drawn = {}
+cardVal = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10, 'A': 1}
 
-for key in cards:
-    name, value = random.choice(list(cards.items()))
-    drawn[name] = value
-    print(name, value)
 
-print(drawn)
+cards = []
+answer = True
 
-# first = input('What\'s your first card?')
-# second = input('What\'s your second card?')
-# third = input('What\'s your third card?')
-#
-# h_first = input('What\'s your first card?')
-# h_second = input('What\'s your second card?')
-# h_third = input('What\'s your third card?')
-#
-# s_first = input('What\'s your first card?')
-# s_second = input('What\'s your second card?')
-# s_third = input('What\'s your third card?')
-#
-# if < 17:
-#     print('hit')
-#
-# elif >= 17:
-#     print('stay')
-#
-# elif == 21:
-#     print('blackjack')
-#
-# elif > 21:
-#     print('already busted')
+for i in range(3):
+    key = random.choice(list(cardVal.keys()))
+    cards.append(key)
+    print(cards)
+
+total = 0
+
+for card in cards:
+    total += cardVal[card]
+
+if 'A' in cards and total <= 10:
+    total += 10
+
+if total <= 17:
+    answer = input('would you like to hit?\n > ').lower()
+    if answer == 'yes':
+        while total <= 17:
+            key = random.choice(list(cardVal.keys()))
+            cards.append(key)
+            total += cardVal[card]
+        print(cards, total)
+
+if 20 >= total >= 18:
+    print(total, 'stay')
+
+elif total == 21:
+    print(total, 'blackjack')
+
+elif total > 21:
+    print(total, 'busted')
