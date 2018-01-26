@@ -1,11 +1,13 @@
 # Word frequency count from a given text file input
 from random import choice
-
+from textwrap import wrap
 
 sherlock = 's_holmes.txt'
 whit = 'w_whit_leaves.txt'
 liz = 'f_lizst_let.txt'
+gett = 'gettysburg_address.txt'
 default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
+chosen_text = liz
 
 
 def prepare_text(text_file):  # import text file, clean up, (opt) extra cleanup, returns a list of words
@@ -55,7 +57,7 @@ def get_next_word(first_word, word_list):
     return next_word
 
 
-def construct_str(text, first_word, output_length=30):
+def construct_str(text, first_word, output_length=50):
     cleaned_text_list = prepare_text(text)
     constructed_str = first_word
     for c in range(output_length):
@@ -65,8 +67,34 @@ def construct_str(text, first_word, output_length=30):
     return constructed_str
 
 
-chosen_text = whit
-random_first = choice(prepare_text(chosen_text))
-print(construct_str(chosen_text, random_first))
+def get_input():  # allow the user to interface, select the text and first word.
+    selections = {'1': sherlock, '2': whit, '3': liz, '4': gett}
+    print(f'Choose a textfile to evaluate:\n\t1. {sherlock} \n\t2. {whit} \n\t3. {liz} \n\t4. {gett}')
+    while True:
+        u_selected_text = input('Your choice: ')
+        try:
+            selected_text = selections[str(u_selected_text)[0]]
+            break
+        except KeyError:
+            print('Invalid choice. Try again.')
+    print(f'Your selection is {selected_text}. What would you like to do?')
+    print('you may choose:\n'
+          '\t1. Get the frequency of the most common words in the text.\n'
+          f'\t2. Use {selected_text} as a primer to generate a new string.')
+    while True:
+        random_first = choice(prepare_text(chosen_text))
+        u_select_funct = input('Your choice: ')
+        funct_d = {'1': get_word_freq(prepare_text(selected_text)),
+                   '2': construct_str(selected_text, random_first)}
+        try:
+            select_funct = funct_d[str(u_select_funct)[0]]
+            break
+        except KeyError:
+            print('Invalid choice. Try again.')
+    textout = str(select_funct)
+    print('\n', '\n'.join(wrap(textout)))
 
-# TODO: http://www.nltk.org/ natural language.. return valid sentences
+# TODO: Let user choose the first word. Let the user choose whether to remove common.
+# TODO: http://www.nltk.org/ natural language.. return only valid sentences
+# TODO: Figure out how to put together punctuation and capitalization
+get_input()
