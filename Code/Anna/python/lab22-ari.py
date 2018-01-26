@@ -18,18 +18,21 @@ def load():
     with open(path, 'r') as f:
         contents = f.read().lower()
         new_contents = contents.replace('\n', ' ')
-        sentence = re.split("[.!?]", new_contents)
+        sentence = re.split("[.!?]", new_contents)          # find all ., !, or ? and split at them
         stripped = contents.translate(string.punctuation)
+        # use re instead?
         for char in stripped:
             if char not in valid_letters:
                 stripped = stripped.replace(char, ' ')
+        # use re instead?
         word = stripped.split(' ')
         while '' in word:
             word.remove('')
-        char = list(stripped)
-        while ' ' in char:
-            char.remove(' ')
-        return char, word, sentence
+        # char = list(stripped)                             # this was too slow!
+        # while ' ' in char:
+        #     char.remove(' ')
+        chars = len(stripped) - stripped.count(' ')         # this is so much faster!
+        return chars, word, sentence
 
 
 # the original way I did this was 3 load functions, which took FOREVER. one function == better.
@@ -81,7 +84,7 @@ def ari(c, w, s):
 characters, words, sentences = load()
 
 
-character_count = float(len(characters))
+character_count = float(characters)
 word_count = float(len(words))
 sentence_count = float(len(sentences))
 
