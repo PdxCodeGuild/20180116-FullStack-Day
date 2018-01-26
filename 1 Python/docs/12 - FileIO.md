@@ -75,7 +75,7 @@ You call `open` in one of several modes. You can also combine modes by passing a
 
 ## Encoding
 
-You may need to specify the encoding of the text file. The default encoding is system-dependent (which can be checked with ` locale.getpreferredencoding()`).
+You may need to specify the encoding of the text file. The default encoding is system-dependent (which can be checked with ` locale.getpreferredencoding()`). You can read more here: [unicode](https://docs.python.org/3/howto/unicode.html) and [codecs](https://docs.python.org/3/library/codecs.html).
 
 ```python
 with open('file.txt', encoding='utf-8'):

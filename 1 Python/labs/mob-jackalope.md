@@ -15,6 +15,12 @@ With these conditions in mind, we can represent our population as a list of ints
 
 ## Version 2
 
-Now let's give the Jackalopes distinct sexes and extend their gestation to one year. We can represent each Jackalope with a dictionary, thus our population will be a list of ductionaries.
+Now let's give the jackalopes distinct sexes and extend their gestation period to one year. We can represent each jackalope with a dictionary, thus our population will be a list of dictionaries. A jackalope will have the following properties:
 
+- name
+- age
+- sex
+- whether they're pregnant
+
+Jackalopes can only mate with those immediately around them. Every generation Jackalopes are randomly shuffled.
 
