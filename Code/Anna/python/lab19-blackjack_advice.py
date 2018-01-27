@@ -24,12 +24,12 @@ def deal():
 
 """
 
-# player version:
+# human version:
 # player_cards = list(input("Enter your first card: "))
 # player_cards.append(input("Enter your second card: "))
 # player_cards.append(input("Enter your third card: "))
 
-# computer version:
+# computer dealer version:
 
 
 def play(player_cards):
@@ -70,7 +70,7 @@ while hit is True:
     total = play(cards)
 
     if total > 21:
-        print("Already busted!")
+        print("Busted!")
         hit = False
         break
     elif total == 21:

@@ -1,46 +1,35 @@
-# Let's write a python module to analyze a given text file containing a book for its vocabulary frequency and display the most frequent words to the user in the terminal. Remember there isn't any "perfect" way to identify a word in english (acronymns, mr/ms, contractions, etc), try to find rules that work best.
-#
-# Find a book on Project Gutenberg. Download it as a UTF-8 text file.
-#
-# Open the file.
-# Make everything lowercase, strip punctuation, split into a list of words.
-# Your dictionary will have words as keys and counts as values.
-# If a word isn't in your dictionary yet, add it with a count of 1. If it is, increment its count.
-# Print the most frequent top 10 out with their counts. You can do that with the code below.
-# words = list(word_set.items()) # list of tuples
-# words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-# for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
-#     print(words[i])
+# Word frequency count from a given text file input
 from random import choice
-import string   #translation table functionality
+from textwrap import wrap
 
-sherlock = 'w_whit_leaves.txt'
+sherlock = 's_holmes.txt'
+whit = 'w_whit_leaves.txt'
+liz = 'f_lizst_let.txt'
+gett = 'gettysburg_address.txt'
+default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
+chosen_text = liz
 
 
-# currently the adv of Sherlock Holmes from Gutenberg
-
-def prepare_text(text_file):
-    # import text file, clean up, (opt) extra cleanup, returns a list of words
-    default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/{text_file}'
-    with open(f'{default_path}') as f:
-        raw_text = f.read().lower()
-        trans_table = str.maketrans('\n', ' ', string.punctuation)  # the default translation table for punctionation
-    strip_text = raw_text.translate(trans_table)
+def prepare_text(text_file):  # import text file, clean up, (opt) extra cleanup, returns a list of words
+    file_path = default_path + text_file
+    with open(f'{file_path}', mode='r') as f:
+        lines = ' '.join(f.readlines()).lower()
+    punct = '!"#$%()&*+,-./:;<=>?@[\]^_`{|}~'
+    trans_table = str.maketrans({key: None for key in punct})
+    trans_text = lines.translate(trans_table)
+    strip_text = ' '.join(trans_text.split())
     word_list = strip_text.split(' ')
-    for word in word_list:
-        if len(word) < 1:
-            word_list.remove(word)
     return word_list
 
 
 def get_word_freq(w_list, remove_common=True):  # returns a dictionary, opt with common words removed
-    with open(f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/1-1000.txt', mode='r') as l:
-        common_words = l.read().lower()  # 1000 most common words
-    common_list = (common_words.split('\n'))
+    with open(f'{default_path}1-1000.txt', mode='r') as f:
+        lines = ' '.join(f.readlines()).lower()
+    common_list = (lines.split('\n '))
     word_freq = {}  # dictionary init
     for word in w_list:
         if remove_common:
-            if word not in common_list:  # remove most common words and empty strings
+            if word not in common_list:  # remove most common words
                 if word in word_freq:
                     word_freq[word] += 1
                 else:
@@ -53,37 +42,59 @@ def get_word_freq(w_list, remove_common=True):  # returns a dictionary, opt with
     words = list(word_freq.items())  # list of tuples
     sorted_words = []
     words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
-    for i in range(min(10, len(words))):  # print the top 10 words, or all of them, whichever is smaller
+    for i in range(min(5, len(words))):  # print the top 10 words, or all of them, whichever is smaller
         sorted_words.append(words[i])
-    return sorted_words
+    return sorted_words  # This is a tuple!
 
-g_counter = 0
-word_string = ''
+
 def get_next_word(first_word, word_list):
-    global g_counter
-    global word_string
-    # get most likely next word for word entered
-     # given the first word, look it up in the word list, find the next occurence
     next_word_list = []
-    for i in range(len(word_list) - 1): #create a most frequent dict of first_word[i]+1
-        if word_list[i] == first_word: #create a frequency dictionary of wordlist[i+1]
+    for i in range(len(word_list) - 1):
+        if word_list[i] == first_word:
             next_word_list.append(word_list[i + 1])
-    next_word_freq_tup_list = get_word_freq(next_word_list, False)# a list of tuples, sorted
+    next_word_freq_tup_list = get_word_freq(next_word_list, False)  # a list of tuples, sorted
     next_word = choice(next_word_freq_tup_list)[0]
     return next_word
 
-def construct_str(first_word, text):
-    init_str = first_word
-    for c in range(50):
-        next_in_seq = get_next_word(first_word, text)
-        init_str += " " + next_in_seq
+
+def construct_str(text, first_word, output_length=50):
+    cleaned_text_list = prepare_text(text)
+    constructed_str = first_word
+    for c in range(output_length):
+        next_in_seq = get_next_word(first_word, cleaned_text_list)
+        constructed_str += " " + next_in_seq
         first_word = next_in_seq
-    return init_str
+    return constructed_str
 
-prepped_text = (prepare_text(sherlock))
-frequency = get_word_freq(prepped_text)
-first = choice(frequency)[0]
-#nextw = get_next_word(first, prepped_text)
-print(construct_str(first, prepped_text))
 
-# TODO: http://www.nltk.org/ natural language.. return valid sentences
+def get_input():  # allow the user to interface, select the text and first word.
+    selections = {'1': sherlock, '2': whit, '3': liz, '4': gett}
+    print(f'Choose a textfile to evaluate:\n\t1. {sherlock} \n\t2. {whit} \n\t3. {liz} \n\t4. {gett}')
+    while True:
+        u_selected_text = input('Your choice: ')
+        try:
+            selected_text = selections[str(u_selected_text)[0]]
+            break
+        except KeyError:
+            print('Invalid choice. Try again.')
+    print(f'Your selection is {selected_text}. What would you like to do?')
+    print('you may choose:\n'
+          '\t1. Get the frequency of the most common words in the text.\n'
+          f'\t2. Use {selected_text} as a primer to generate a new string.')
+    while True:
+        random_first = choice(prepare_text(chosen_text))
+        u_select_funct = input('Your choice: ')
+        funct_d = {'1': get_word_freq(prepare_text(selected_text)),
+                   '2': construct_str(selected_text, random_first)}
+        try:
+            select_funct = funct_d[str(u_select_funct)[0]]
+            break
+        except KeyError:
+            print('Invalid choice. Try again.')
+    textout = str(select_funct)
+    print('\n', '\n'.join(wrap(textout)))
+
+# TODO: Let user choose the first word. Let the user choose whether to remove common.
+# TODO: http://www.nltk.org/ natural language.. return only valid sentences
+# TODO: Figure out how to put together punctuation and capitalization
+get_input()
