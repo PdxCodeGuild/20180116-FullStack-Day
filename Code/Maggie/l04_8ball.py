@@ -14,9 +14,7 @@ PREDICTIONS = ['It is certain', 'It is decidecly so', 'Without a doubt', 'Yes, d
                'Very doubtful']
 
 
-loop = True
-
-while loop:
+while True:
     answer = print('Will I win the lottery tomorrow?'), sleep(1), input('Press enter to ask the magic 8 ball.')
     print('The magic 8 ball says, ',)
     sleep(0.5)
@@ -32,4 +30,3 @@ while loop:
     else:
         print('Ok. Let\'s try it again! \n')
         sleep(.5)
-        loop == True
