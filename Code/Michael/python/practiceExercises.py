@@ -112,9 +112,18 @@
 
 #####################################################################
 
-
-# COME BACK TO THIS ONE
-
+# letter = 'i'
+# word = 'antidisestablishmentterianism'
+#
+# counted = word.count(letter)
+# print(counted)
+#
+#
+# letter = 'p'
+# word = 'pneumonoultramicroscopicsilicovolcanoconiosis'
+#
+# counted = word.count(letter)
+# print(counted)
 
 #####################################################################
 
