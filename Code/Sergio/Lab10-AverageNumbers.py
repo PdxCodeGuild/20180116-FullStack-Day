@@ -8,7 +8,7 @@
 #Version 2
 nums = []  # create empty list
 
-for i in range(0, 7):  # set up loop to run 7 times
+for i in range(7):  # set up loop to run 7 times
     number = int(input('Enter a number: '))  # prompt user for number
     nums.append(number)  # append to nums
 print(nums)
