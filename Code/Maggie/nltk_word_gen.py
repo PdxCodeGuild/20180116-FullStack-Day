@@ -37,13 +37,13 @@ def pos_sentences(full_text_str):
 def construct_str(token_sent_list):
     sentence_index = randint(0, len(token_sent_list))
     word_str = token_sent_list[sentence_index][0][0]
-    p = 1  #position in sentence
-    while p < len((token_sent_list)[sentence_index]):
+    p = 1  # position in sentence
+    while p < len(token_sent_list[sentence_index]):
         selection_list = []
         selection_list.append(token_sent_list[sentence_index][p][0].lower())
         for i in range(len(token_sent_list)):
             for j in range(len(token_sent_list[i])):  # iterate through all sentences by index
-               if token_sent_list[i][j][1] == token_sent_list[sentence_index][p][1]:
+                if token_sent_list[i][j][1] == token_sent_list[sentence_index][p][1]:
                     selection_list.append(token_sent_list[i][j][0])
         chosen_word = choice(selection_list)
         if chosen_word not in string.punctuation:
@@ -69,7 +69,7 @@ def main():
 
 main()
 
-# Class Word:
+# Class Word:  # future version?
 #     def __init__(self, word_str, pos, freq, context):
 #         self.word_str = word_str
 #         self.pos = pos
