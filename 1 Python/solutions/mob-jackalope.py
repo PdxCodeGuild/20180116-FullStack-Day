@@ -12,14 +12,14 @@
 
 
 # First two jackalopes
-jackalopes = [5, 5]
+jackalopes = [0, 0]
 year = 0
 
 while len(jackalopes) < 1000:
     pair_count = 0
     year += 1
-    for i in range(len(jackalopes)-1, -1, -1):  # age increasing
-        jackalopes[i] += 1
+    for i in range(len(jackalopes)-1, -1, -1):
+        jackalopes[i] += 1 # age increasing
         if jackalopes[i] == 10:  # kill them off
             jackalopes.pop(i)
         if 4 <= jackalopes[i] <= 8:  # if they are of breeding age
@@ -31,24 +31,4 @@ while len(jackalopes) < 1000:
 
 print('Year: ', year)
 print(jackalopes)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
