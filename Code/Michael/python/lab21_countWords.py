@@ -16,7 +16,7 @@ words = contents.lower().split()
 # initializes an empty dictionary
 wordDictionary = {}
 
-# for-loop interates through the index words. if words occurances happens multiple times, the value is incremented, else occurance only happens once, it is assigned 1.
+# for-loop interates through the index words. if words occurrence happens more than once, the value is incremented, if else occurrence only happens once, words in wordDictionary is assigned 1.
 
 for i in range(len(words)):
     if words[i] in wordDictionary.keys():
@@ -32,6 +32,3 @@ word.sort(key=lambda tup: tup[1], reverse=True)
 for i in range(min(1000, len(word))):
     print(word[i])
 
-word = Tuples[{Range[1,4], Range[1, 6], Range[1,8], Range[1, 12], Range[1,20]}]
-
-Select[tuples, Length[Union[#]] == 4 &]
