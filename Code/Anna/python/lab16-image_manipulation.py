@@ -3,11 +3,11 @@ Lab 16
 Finally, some images!
 """
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageSequence
 from random import randint
 import colorsys
-import numpy
 import imageio
+import numpy
 
 
 # Pillow uses ints for RGB values, in the range of 0-255
@@ -166,3 +166,31 @@ for i in range(1000):
     draw.line((x0, y0, x1, y1), fill=(red, green, blue), width=line_width)
 
 img.show()
+
+
+# now let's gif a jackalope!
+
+images = []
+img7 = Image.open("images/jackalope.jpg")
+np_img = numpy.asarray(img7)
+print(np_img.shape)
+
+width, height = img7.size
+pixels = img7.load()
+
+#
+for k in range(10):
+    for i in range(width):
+        for j in range(height):
+            r, g, b = pixels[i, j]
+
+            r = (r + 13) % 256
+            g = (g + 13) % 256
+            b = (b + 13) % 256
+
+            pixels[i, j] = (r, g, b)
+
+    np_img = numpy.asarray(img7)
+    images.append(np_img)
+
+imageio.mimsave('images/jackalope.gif', images)
