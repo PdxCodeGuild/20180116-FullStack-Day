@@ -1,0 +1,2446 @@
+﻿The Project Gutenberg EBook of Music As A Language, by Ethel Home
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: Music As A Language
+       Lectures to Music Students
+
+Author: Ethel Home
+
+Release Date: July 6, 2005 [EBook #16225]
+
+Language: English
+
+
+*** START OF THIS PROJECT GUTENBERG EBOOK MUSIC AS A LANGUAGE ***
+
+
+
+
+Produced by David Newman, Charlene Taylor and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+Oxford University Press
+
+_London_ _Edinburgh_ _Glasgow_ _New York_
+_Toronto_ _Melbourne_ _Bombay_
+
+Humphrey Milford _M.A._ _Publisher to the University_
+
+
+
+
+MUSIC
+AS A LANGUAGE
+
+LECTURES TO
+MUSIC STUDENTS
+
+BY
+
+ETHEL HOME
+HEAD MISTRESS OF THE KENSINGTON HIGH SCHOOL
+G.P.D.S.T.
+
+OXFORD
+AT THE CLARENDON PRESS
+1916
+
+
+
+
+PREFACE
+
+
+The following lectures were delivered to music students between the
+years 1907 and 1915. They have been partly rewritten so as to be
+intelligible to a different audience, for in all cases the lectures were
+followed by a discussion in which various points not dealt with in the
+lectures were elucidated.
+
+An experience of eight years in organizing a training course for
+students who wish to teach ear-training on modern lines to classes of
+average children in the ordinary curriculum of a school has shown me
+that the great need for such students is to realize the problems, not
+only of musical education, but of _general_ education.
+
+Owing to the nature of all art work the artist is too often inclined to
+see life in reference to his art alone. It is for this reason that he
+sometimes finds it difficult to fit in with the requirements of school
+life. He feels vaguely that his art matters so much more to the world
+than such things as grammar and geography; but when asked to give a
+reason for his faith, he is not always able to convince his hearers.
+
+He feels with Ruskin that:
+
+'The end of Art is as serious as that of other beautiful things--of the
+blue sky, and the green grass, and the clouds, and the dew. They are
+either useless, or they are of much deeper function than giving
+amusement.'
+
+But he has not always the gift of words by means of which he can
+describe this function.
+
+We want our artists, and their visions, and those of them who can
+realize a perspective in which their art takes its place with other
+educative forces are among the most valuable educators of the rising
+generation.
+
+ETHEL HOME.
+KENSINGTON,
+_January, 1916._
+
+
+
+
+CONTENTS
+
+
+CHAP.                                                      PAGE
+
+   I. THE TRAINING OF THE MUSIC TEACHER                      9
+
+  II. THE ORGANIZATION OF MUSICAL WORK IN SCHOOLS           15
+
+ III. THE TEACHING OF VOICE PRODUCTION AND SONGS            20
+
+  IV. THE SOL-FA METHOD                                     26
+
+   V. FIRST LESSONS TO BEGINNERS IN EAR-TRAINING            31
+
+  VI. THE TEACHING OF SIGHT-SINGING                         35
+
+ VII. THE TEACHING OF TIME AND RHYTHM                       40
+
+VIII. THE TEACHING OF DICTATION                             43
+
+  IX. THE TEACHING OF EXTEMPORIZATION AND HARMONY           48
+
+   X. THE TEACHING OF ELEMENTARY COMPOSITION                55
+
+  XI. THE TEACHING OF TRANSPOSITION                         60
+
+ XII. GENERAL HINTS ON TAKING A LESSON IN EAR-TRAINING      65
+
+XIII. THE TEACHING OF THE PIANO                             70
+
+ XIV. SUGGESTIONS TO STUDENTS ON LEAVING A TRAINING
+        DEPARTMENT                                          79
+
+
+
+
+CHAPTER I
+
+THE TRAINING OF THE MUSIC TEACHER
+
+
+Let us consider the case of a young girl who has finished her school
+education, and has supplemented this by a special course of technical
+work in music, which has ended in her taking a musical diploma. She now
+wishes to teach. What are the chief problems which she will have to
+face? She must first of all make up her mind whether she wishes to
+confine her work to the teaching of a solo instrument, together with
+some work in harmony or counterpoint, along orthodox lines, or whether
+she wishes to be in touch with modern methods of guiding the _general_
+musical education of children, as taken in some schools in the morning
+curriculum. If the latter, she must enter on a course of special
+training.
+
+There is also a practical reason why many who wish to teach music at the
+present time are entering a training department. In a paper recently
+issued by the Teachers' Registration Council we find the following
+paragraph dealing with 'Conditions of Registration':
+
+'The applicant must produce evidence satisfactory to the Council of
+having completed successfully a course of training in the principles and
+methods of teaching, accompanied by practice under supervision. The
+course must extend over a period of at least one academic year or its
+equivalent.'
+
+Now, those who have studied the question of the teaching of music in
+accordance with modern methods have realized that music provides a
+_language,_ which should be used primarily for self-expression and
+intercourse with others. The whole of life depends on the expression of
+ourselves in relation to the community. 'Self-expression is a universal
+instinct, which can only be crushed by a course of systematic ill
+treatment, either self-inflicted or inflicted by others. It is
+self-inflicted if we conform to false standards of convention, or create
+for ourselves a standard of life which is out of touch with humanity as
+a whole. It is inflicted by others if they force us when young into a
+wrong educational atmosphere, and paralyse our faculties instead of
+developing them.
+
+To the favoured few real creative power comes by instinct, but to a
+great many a small degree of this power can be given by education, and
+in this way an extra outlet is possible for self-expression. The child
+should be trained when quite young to think in terms of music, in the
+same way in which it is trained to think in its mother-tongue. The
+fundamental work should be taken in class, not at an individual lesson,
+and should be compulsory for all children. We do not inquire whether a
+child is gifted in languages before we teach him French, and we must not
+ask whether he is gifted in the language of music before placing him in
+the music class. Again, short frequent lessons are more beneficial to
+the young beginner than longer lessons at greater intervals, for, as a
+new 'sense' is being opened to the pupil, a long lesson produces an
+unhealthy strain.
+
+The scheme of work to be followed in such a class will be dealt with
+later, but we may note here that training given in accordance with the
+above-mentioned aim will produce a marked increase in the vitality and
+general intelligence of a child. The reflex actions of intense
+concentration for a short time, followed by the giving out of creative
+work, will send a child back to its other lessons with an alert mind and
+with increased vigour.
+
+A large number of schools and private families are offering posts to
+teachers who are able to teach along such lines. Every year the number
+of such posts steadily increases, and it will not be too much to predict
+that in the near future few schools in the first rank will be without
+teaching of this kind. The salaries offered are naturally higher than
+those obtained by the old-fashioned 'orthodox' teacher, as more has to
+be done, and classes have to be managed instead of individual pupils.
+
+It is impossible to over-estimate the importance of securing plenty of
+experience in teaching classes of average pupils of all ages, under
+expert supervision. Many an apparently promising teacher has come to
+grief in the first post taken, because the knowledge gained has been too
+theoretical, and has not been checked by class experience with really
+average pupils. The question of discipline is an easy one with an
+individual pupil, but in class work it assumes a different proportion.
+
+For the purpose of teaching ear-training, without instrumental work, a
+high degree of musical gift is not necessary. Any one who is fond of
+music, sympathetic with children, and willing to work, can manage the
+course of work necessary before being able to teach classes up to a fair
+standard.
+
+The work, which often appears bewilderingly difficult to one who sees it
+for the first time, becomes quite simple when approached step by step,
+and in company with fellow students. It is also interesting to know that
+some of the most satisfactory results obtained in certain schools during
+the last few years have been arrived at by teachers possessing only an
+average knowledge of an instrument, but who have thrown themselves with
+enthusiasm into the study of music as a living language. Such teachers
+are bound to succeed, because they are attacking the subject in a
+genuinely educational spirit.
+
+A word now on another aspect of the question of training. There is going
+to be an enormous difference in the young girl's outlook on life. For
+perhaps the first time she has to adopt the attitude of the one who
+gives, not of the one who receives. Hitherto she has been receiving
+food, clothes, money, education, help in her difficulties, &c., and now,
+Fate waves a wand, and the child who has been the centre of interest in
+her home and in her school has to learn to give--and to give
+generously--as others gave to her.
+
+For the real teacher is never paid for all she does. Her salary is not
+augmented in proportion to all the extra help she gives to the backward
+or delicate pupil--to the hours of drudgery, outside school hours,
+willingly given in order to be prepared for every eventuality of school
+life. Such things are never paid for in money, the only reward is in the
+partial realization of the standard attempted.
+
+Another point. The ideal teacher must have real personality, and this is
+a thing of slow growth, but which can be developed under expert
+guidance. There must be sympathy, tact, and humour. In adopting the
+attitude of the giver instead of the receiver the young teacher is too
+apt to put away the remembrance of childish difficulties, and to forget
+the restless vitality which made her, as a child, long to fidget, and do
+anything but learn.
+
+There is another thing to bear in mind. The majority of amateurs are
+never subject to the same criticism as the professional. Everything is
+'watered down'. 'Very good' has often been the verdict of the critic,
+but an unspoken addition has been--'for an amateur'.
+
+Now in a training department one of the most valuable points of the
+training consists in the outspoken comments. And this does not only
+refer to musical work, but to personal faults. We all know that if a
+mannerism does not interfere with the unity of a strong personality, it
+may be left alone. But there are some mannerisms which merely express
+the weaknesses of those who possess them, and which spoil the expression
+of the personality. These must be cured, and will be faithfully dealt
+with in the training department.
+
+Lastly, if the course of training be taken in connexion with a school,
+opportunities will be afforded of getting an insight into general
+organization and schemes of work for children of all ages.
+
+An accusation often levelled at the musical members of a staff is that
+they keep to themselves, and do not identify themselves with the general
+school life. In some cases this may be due to lack of willingness, but
+in the large majority it is due to lack of training in, and realization
+of, the unity of such life.
+
+A student who takes every opportunity given to her during her year of
+training will not only learn how to organize the general musical life of
+a school, through the medium of ear-training and song classes, recitals,
+music clubs, &c., but will be ready and proud to show initiative in
+other directions.
+
+We cannot do without the visions of our artists, and a country or a
+school, is the poorer when full use is not made of the driving force of
+artistic inspiration.
+
+
+
+
+CHAPTER II
+
+THE ORGANIZATION OF MUSICAL WORK IN SCHOOLS
+
+
+The musical work in a school falls roughly into four divisions:
+
+1. Ear-training, leading on in later stages to harmony, counterpoint,
+&c.
+
+2. Voice production and songs.
+
+3. Instrumental work.
+
+4. Concerts, music clubs, &c.
+
+To take these in order:
+
+
+1. _Ear-training._
+
+When the necessity for this work has been realized the next step is to
+consider how the time can be found for it in the school curriculum.
+Those who have seen some of the results in schools which have taken the
+work for some years are sometimes inclined to think that a large
+expenditure of time has been involved. But, provided the children have
+begun the training when quite young, it is neither necessary nor
+desirable for them to have more than one forty-minute lesson a week
+after they have reached the age of twelve years. We must remember that
+in all 'language' work the ideal plan is to begin with very short and
+fairly frequent lessons. Ear-training which is to be treated on the
+lines suggested will be opening up a new 'sense' to the pupil, and the
+concentration necessary is such that the children cannot stand the
+strain of a long lesson.
+
+The following lengths of lessons are therefore advisable:
+
+For children from four to seven years of age, a quarter of an hour four
+days a week.
+
+From eight to twelve years of age, twenty minutes three days a week.
+
+From thirteen years of age upwards, forty minutes once a week.
+
+Now as to schemes of work.
+
+For those between the ages of four and seven the time should be spent in
+singing at sight easy melodies in major keys, and in ear tests of two or
+three notes at a time.
+
+For those between eight and twelve sight-singing in minor keys and in
+two parts should be added, also the dictation of melodies and of
+two-part tunes. When this work is securely grasped the treatment of
+chords can begin, also extemporizing of melodies with the voice,
+together with transposition and harmonizing of easy phrases at the
+piano.
+
+For children of thirteen years and upwards the above can be continued,
+together with sight-singing in three parts, dictation in three and four
+parts, extemporizing at the piano, and more definite work in harmony,
+counterpoint, and elementary composition.
+
+After the age of fourteen it is well to make the work voluntary. By this
+time it is possible to distinguish between children who are sufficiently
+interested in music to make it worth while for them to continue the
+work and those who will be more profitably employed in other directions.
+The latter will have learnt how to take an intelligent interest in
+music, and how to 'listen' when music is being performed. The classes
+will now become smaller, an advantage for the more detailed work.
+
+It is important to note that the best results in ear-training will only
+be obtained if the classes do not exceed twenty-five pupils in number.
+
+
+2. _Voice Production and Songs_.
+
+These classes can be larger without prejudice to the work, but the above
+classification as to age is desirable. Children between four and seven
+years of age will probably learn songs connected with their kindergarten
+work, so it is difficult to say exactly the amount of time to be spent
+in song lessons, as the work will overlap. Those between eight and
+twelve should have one song and voice production lesson a week, of not
+less than twenty minutes. Those over thirteen will probably be working
+at more difficult songs, and will need not less than thirty minutes once
+a week.
+
+
+3. _Instrumental Work_.
+
+It is very desirable that all children up to the age of eight who are
+learning an instrument should do so in a _class_ for the first year,
+rather than in individual lessons. Much of the fundamental work at an
+instrument can become wearisome to a young child unless taken in company
+with others of the same age.
+
+A practical consideration involved is that this makes it possible to
+charge a smaller fee for each pupil, and this fact may influence a
+parent to let a child begin an instrument earlier than would otherwise
+be the case.
+
+It has been found that children started in this way develop much more
+rapidly than if they had individual lessons. The stimulus of class work
+for the average child cannot be over-estimated.
+
+When this preliminary year's work is over, the child can go on either to
+three twenty-minute lessons a week by itself, or two half-hours. If
+ear-training is being done at the same time, it is possible to shorten
+the amount of instrumental practice each day. In few cases should it be
+allowed to exceed half an hour up to the age of thirteen, and in many
+cases twenty minutes is found sufficient.
+
+After the age of thirteen it is again possible, as was the case with the
+ear-training work, to distinguish between the musical children and the
+others. The former should increase the amount of practising each day;
+the latter, if they continue to learn, should not exceed half an hour.
+The piano lessons will in most cases consist of two half-hours a week.
+
+
+4. _Concerts, Music Clubs, &c._
+
+It is a good plan to arrange for a short recital to be given every term,
+at which not only the more advanced pupils will play, but children at
+all stages of development. It is wise to insist on all music being
+played by heart, as in this way an invaluable training will be given
+from the very first.
+
+In the case of a prize-giving or large school function it is of course
+necessary to show only the best work.
+
+A music club is a great stimulus to the musical life of a school. A good
+plan is to arrange a series of short lectures on such subjects as the
+origins of harmony, acoustics, the chief difference between music of
+different schools and periods, &c., and to follow these by accounts of
+the lives and works of the great composers. Children are delighted to
+come to such meetings, especially if their aid be asked in illustrating
+the lectures by playing specimens of the music referred to.
+
+In the organization of musical work in a school it is of the utmost
+importance that there should be a central musical authority, responsible
+for bringing all those engaged in the teaching into touch with each
+other. If this be done, not only will overlapping of work in the various
+classes and lessons be avoided, but a driving force of musical
+comradeship will be initiated which will produce a genuine musical
+atmosphere.
+
+
+
+
+CHAPTER III
+
+THE TEACHING OF VOICE PRODUCTION AND SONGS
+
+
+It is perhaps more rare to find a successful teacher of songs than of
+any other subject in the school curriculum. There are many reasons for
+this. In many cases a visiting teacher takes the work, who finds it
+difficult to learn the names of all the children in one lesson a week,
+and who therefore starts at a disadvantage. Then the size of the class
+for songs is always larger than that of classes in other subjects, and
+there is therefore more inducement to inattention on the part of the
+children.
+
+Nothing is more pitiful than to see a young, inexperienced mistress
+grappling with a large class of healthy, restless children, who know
+from experience that the weekly song lesson may be turned to good
+account for their own little games!
+
+There is, of course, the born teacher, who sends an electric shock
+through the room directly she enters it, and who, without asking for it,
+secures instant silence and eager attention. Such people are rare, and
+it must be our task now to give a few practical suggestions to those
+less fortunate people who do not possess the innate gift, but who are
+willing to learn.
+
+To begin with, the teacher of songs must have real personality; and if
+she does not possess this by nature, she must do her best to develop
+what she has. She must be full of vitality, she must understand
+children, and, above all, she must be genuinely fond of music, in such a
+way that she cannot do without it. The last qualification often implies
+a certain sensitiveness, which finds a difficulty in accommodating
+itself to a workaday world, where people have little time, or
+inclination, to study the 'moods' of others. Very artistic people are a
+well-known difficulty to the authorities of schools. In order to excel
+in their art, they must not only have a 'capacity for taking pains', but
+a reserve store of emotional force, on which they draw for
+self-expression through their art. Now the possession of such a reserve
+store does not always imply a power of keeping it in reserve! During the
+course of training the attention of such people should be directed to
+the high ideals underlying all true educational work; they should
+realize the real function of music in education--that it is not to be
+taken as a mere accomplishment, or technical art, but as a means of
+self-expression.
+
+We will now consider a special case. Let us suppose that a new mistress
+is taking a song lesson with a large class of children, who have the
+reputation of being troublesome to manage. On entering the classroom it
+is a good plan to go straight to the platform, without speaking a word
+to the children on the way, whatever they may be doing. From this
+vantage ground the teacher should look the class over for a few seconds,
+still without speaking. There is nothing more impressive to a restless
+class than the sight of a mistress not in the least disturbed by their
+doings, yet taking everything in. If the mistress has cultivated a sense
+of repose and self-confidence this action on her part will produce the
+feeling of a centre of force in the room--and the force will radiate
+from her. The children, without knowing exactly what has happened, will
+feel different, and will be pliant and easy to manage. Directly the
+mistress is conscious of this change of atmosphere she can start the
+lesson. But she must now gradually merge her personality into that of
+the class--she must work _with_ them, not outside them. It is difficult
+to put this idea into words, but all real teachers will see the meaning.
+There is no driving force to equal that which works from within a
+community--not from without.
+
+Now for the lesson itself.
+
+It should start with a few simple exercises in voice production.
+Excellent suggestions for these will be found in a little book called
+_Class Singing for Schools_, with a preface by Sir Charles Stanford,
+published by Stainer & Bell, also in the Board of Education Memorandum
+on Music. A special point must be dwelt on. Children should never be
+allowed to use the chest register. Their voices should be trained
+downwards. In the singing of scales there should be a leap to, or a
+start on, a note high enough to be out of the chest register--such as
+the high E[b]. The descending scale should then be sung. Breathing
+exercises should be taken at the beginning of the lesson. A good
+exercise is to exhale on the sound 'sh'. The children will stand in easy
+positions for this, the hands on the ribs, so that they can feel the
+ribs expanding and contracting during inhalation and exhalation. The
+shoulders should be kept down. The advantage in using the sound 'sh' is
+that the teacher can thereby tell how long each child makes its breath
+last.
+
+When these exercises are finished, and a few scales and passages have
+been sung, the class should sit down while the teacher speaks about the
+new song to be sung. In schools where sight-singing is taken as part of
+the regular curriculum it is not necessary to work at this in the song
+class. In beginning a new song the chief thing is for the teacher to get
+the class to seize the spirit of it. If difficult words occur, they may
+be explained later, but it is absolutely essential that the children
+shall get hold of some idea which they can express in singing.
+
+Mr. W. Tomlins, who came over from New York in order to show some of his
+methods for dealing with large classes, produced some admirable results.
+He worked up the enthusiasm of his classes to such an extent that the
+effect of their singing was electrical; and it was all due to the few
+words he said before the song was sung, not to any corrections he made
+later. It is not necessary for a teacher to _conduct_ the songs all the
+time during the lesson, or the fact that the class is expected to watch
+the baton tends to make them rigid in their attitudes, and therefore, to
+a certain extent, in their singing. The best results are obtained when a
+class stands to sing. Some well-meaning teachers forget that the
+children have probably been sitting in their classrooms for the greater
+part of the morning, and are only too glad to stand for a change. They
+can sit between the songs, when finding their places, and so on.
+
+Songs should be chosen in which the pitch is not too low. Many people
+have the mistaken idea that young children cannot sing high. Listen to
+their shouts in the playground, to the notes they use when calling to
+each other, and this idea will soon be corrected. The lowest note in the
+voice of a young child is generally E, and it can take the high F or G
+quite easily.
+
+Droners should not be allowed to sing with the rest of the class, or the
+pitch will be lost at once, to say nothing of the spoiling of the
+general effect.
+
+Flat singing is often due to bad ventilation of the room, more often
+still to boredom. A good plan in this case is to raise the pitch a
+semitone; it is often just as easy for singing, and invariably produces
+a sense of cheerfulness.
+
+Children should never be allowed to sing loudly, especially when very
+young. It is most difficult to cure the habit when once formed.
+Attention should be paid to articulation from the very first. A useful
+lesson is taught the class if, from time to time, half of them go to the
+end of the room, and, with closed books, listen to their companions
+singing a verse of a song which is new to them. The difficulty they
+experience in following the words will not soon be forgotten.
+
+Attacks should be absolutely precise. The two-and three-part
+contrapuntal singing which is done in the sight-singing classes is
+admirable for this, as the whole effect is blurred or entirely spoilt
+in such clear-cut work by a false entry.
+
+For all large school functions, such as a prize-giving, the songs should
+be sung by heart. This is not necessary in ordinary class work, as the
+aim there is to teach as many good songs as possible, in order to form a
+standard of real musical literature. But at the set performance nothing
+is more delightful than to see children rise, and, without any flapping
+of pages, or uncomfortable attitudes for seeing the words in a book,
+sing straight from their hearts. However simple the music or the words,
+the effect will be well worth the little additional trouble.
+
+Our last consideration is that of the songs to be chosen to learn.
+Little children should rarely sing anything but unison songs.
+Folk-songs, such as those edited by Cecil Sharp and others, and, for the
+very little ones, traditional nursery rhymes and game songs are the
+best. From the ages of ten to fourteen years such books as Boosey's
+_National Songs_ or _Songs of Britain_ should be the staple work, while
+for older children the great classical songs may be added. A good book
+for these is the _Golden Treasury_, published by Boosey.
+
+Songs by living composers should be strictly limited in number, though
+not excluded. These have not stood the test of time. We teach
+Shakespeare in our literature classes, not a modern poet--the essays of
+Bacon, not those of a modern essayist. And our reason is that the only
+way to create a standard of taste is to take our children to the
+classical fountains of prose and poetry. We must do the same in music.
+
+
+
+
+CHAPTER IV
+
+THE SOL-FA METHOD
+
+
+To those who are not accustomed to the Sol-fa notation it appears at
+first sight a useless encumbrance. Excellent arguments are produced for
+this view. Many musical people can scarcely remember when they could not
+sing at sight and write melodies from dictation. They picked up this
+knowledge instinctively, and cannot see why others should not do the
+same. Unfortunately everybody has not proved able to do so, hence a
+multitude of 'methods' for teaching them.
+
+The most familiar of these consisted in trying to teach the pupil to
+sing intervals, _as_ intervals, at sight. Thirds, fifths, sixths, &c.
+were diligently practised. But pupils did not always find it easy to
+sing these intervals from all notes of the scale, unless in sequence.
+The major third from _doh_ to _me_ seemed easier than that from _fah_ to
+_lah_, and so on. Thus in the majority of cases sight-singing in classes
+resolved itself into the musical children leading, and the others
+following. It is rare to find a large class in which there is not one
+musical child, and the only sure test of progress is to make the less
+musical children sing at sight alone from time to time.
+
+Now, if those who have 'picked up' the knowledge of sight-singing
+without knowing how they did it be asked to explain how they arrive at
+their intervals, it will be found that _tonality_ plays a large part in
+their consciousness. In other words, they are perfectly certain of their
+key-note, and at any moment could sing it, even after complicated
+passages.
+
+This fact is the root of the Sol-fa system. The child is taught to think
+of all the notes of the scale in relation to the key-note. A very
+sensible objection is sometimes raised to this, i.e. that it must surely
+entail a great deal of detachment from the matter in hand if the mind
+has to grope for the key-note between every two consecutive notes of a
+melody. But this process becomes automatic very quickly. We are not
+conscious of references to the multiplication tables every time we do a
+sum, yet we could not do the sum without these. And it is the same with
+the Sol-fa system. The child need very rarely actually _sing_ the
+key-note when considering another note, she refers the latter to it
+unconsciously.
+
+There is one curious anomaly in the orthodox Sol-fa system, which has
+caused a good deal of amusement to its critics, and has ended by causing
+a cleavage on the part of many who are otherwise in cordial agreement
+with the broad lines of the method. This is concerned with the treatment
+of the minor key. The orthodox Sol-fa teacher relates the notes of the
+minor scale, not to the key-note, but to the third of the scale, i.e. to
+the key-note of the relative major. The confusion which this plan
+produces in the sense of tonality can readily be imagined. When singing
+in major keys the pupils are told to refer all notes to the key-note for
+'mental effect', but in the minor key this is strictly forbidden. To
+take an instance. In the scale of C major the child has been trained to
+feel the sharp, bright effect of the note G, the fifth from the key-note
+C. It would naturally feel the same effect for the note E in the key of
+A minor, when related to the key-note A. But the orthodox Sol-fa teacher
+says: 'No. You must feel the calm, soothing effect of E in relation to
+C!' Can the child be _really_ trained in this way? If it were merely a
+difference in detail of the treatment of the two modes this error could
+be forgiven, but it is a difference in fundamental principle.
+
+One of the many difficulties caused occurs in transposition on the
+piano. When transposing from, say, C minor to F minor, the child must
+first think in E[b] major, so as to get the pivot of reference, then in
+A[b] major for the new pivot A[b]. Yet all the time its real sense of
+pivot, which, be it noted, has been admirably trained by the Sol-fa
+treatment of the major scale, is in favour of C and F respectively.
+
+The method evolved for the minor key by those who wish to uphold the
+fundamental principle of the key-note being the pivot of reference for
+_all_ keys, major and minor, is a very simple one. It consists in giving
+to the third and sixth of the harmonic form of the scale their logical
+names of _maw_ and _taw_. The sixth of the ascending scale in the
+melodic form will of course be the same in the minor as in the major.
+
+There are two other points in the orthodox Sol-fa system which are
+modified by those who wish to use it as a crutch to staff notation. The
+first of these concerns the rather complicated time notation of all but
+the first sets of exercises. Directly subdivisions of the beat are
+introduced the notation becomes difficult to read without putting a
+strain on the eyes. The little dots, dashes, commas, &c., worry
+children. Experience has proved that when a class is ready for anything
+beyond the very simplest time values it can leave the Sol-fa notation
+altogether, and keep entirely to the staff notation. This is, of course,
+an advantage, and is what is being aimed at.
+
+The other point is connected with the use of what are called
+'bridge-notes'. When a modulation is introduced which entails a fairly
+long reference to a new key, the note leading directly to it is of
+course accidental in the first key and diatonic in the second. This is
+called a bridge-note, and must be thought of in two ways, first in the
+old key, then in the new. Thus its name must be changed, as a prelude to
+using the new pivot.
+
+Now, in teaching staff notation it is neither wise nor necessary to
+introduce extended modulations very early. The aim is to make it
+possible for children to sing fairly easy melodies in all keys, major
+and minor, with incidental modulations, as soon as possible--then to
+revise the work, introducing more difficult modulations. This end will
+be attained by deferring the use of bridge-notes until the children are
+ready to sing melodies in the minor keys which modulate to the relative
+major. If the above-mentioned plan for the treatment of the minor key
+be adopted, bridge-notes will be essential at this stage, and the
+melodies, at any rate at first, cannot be sung without their aid. A
+further reference to this matter is given in the chapter on the teaching
+of sight-singing.
+
+
+
+
+CHAPTER V
+
+FIRST LESSONS TO BEGINNERS IN EAR-TRAINING
+
+
+The form of these lessons will vary slightly according to the ages of
+the children. We will suppose these to lie between seven and nine years,
+when the children can read and write.
+
+At the first lesson the scale of C major should be played, from middle C
+to high C, ascending only. Then repeat middle C, and stop on it a
+little. Do this three or four times, telling the children to count the
+notes as you play up the scale. When they are all sure that eight notes
+have been played, ask them why they think you repeated the middle C at
+the end. They will probably say: 'To make it sound finished.' In other
+words, they have grasped the 'mental effect' of the key-note _in every
+key_, the pivot round which the other notes revolve. Give the hand sign
+for this note, according to the Sol-fa plan, and tell the children that
+the note is called _doh_. Now repeat the scale, but this time play it
+from high C to middle C, repeating the high C at the end. The children
+will see at once what has happened, and that the high C now 'finishes'
+the passage. Thus it will be called 'high _doh_', and the hand sign will
+be repeated, but at a higher level. Be careful not to bend the hand at
+the wrist when giving this sign, or the effect of finality and repose
+will be lost.
+
+At the second lesson, repeat this work, the children telling you what to
+do. Then make eight large dots on the blackboard, and against the first
+and eighth of these write _doh_ and _doh'_. Now play the first five
+notes of the scale, and repeat the first as before. Ask how many notes
+were played. Then play them again, but starting from the fifth
+downwards, and repeat the fifth at the end. Ask the children why they
+think you did this. At first they will not be able to express what they
+feel, but gradually the idea will emerge that you want to call attention
+to something of interest. People often call to each other by singing up
+a fifth. The new note is sharp and bright in sound when related to the
+key-note. Hence the hand sign. Give the name _soh_, and write it against
+the fifth dot on the board. The children should now sing from the three
+hand signs known, also from the notes on the board. They should also
+identify the notes when played in groups of two and three on the piano.
+
+When they can do all this easily, the next note, the third of the scale,
+is taken in the same way. The 'mental effect' is calm and soothing,
+hence the hand sign. In addition to singing from the hand signs, and
+from the Sol-fa 'modulator' which is gradually being constructed on the
+board, the children can now sing from the horizontal Sol-fa notation,
+and from the staff notation. The first of these is invaluable in the
+early stages, as it absolutely precludes guessing. In singing from the
+modulator this is possible to a certain extent, as the relation of each
+note to the key-note is shown roughly in _distance_ by the dots between
+the notes. There is no such help given in the horizontal notation.
+
+In beginning the work in staff notation the notes of the scale will be
+thought of as steps in a ladder. In all keys, when _doh_ is on a line,
+_me_ and _soh_ are also on lines, and high _doh_ is on a space; but when
+_doh_ is on a space, _me_ and _soh_ are on spaces, and high _doh_ is on
+a line. These are very simple matters, but children are simple people,
+and will not despise such hints.
+
+The next notes of the scale to be taken are _ray_ and _te_, then _fah_
+and _lah_. The last two are the most difficult. A good pattern to fix in
+the children's minds is:
+
+     _d f m l s t, d--_
+
+which splits up into:
+
+     _d f m--; d l s--_
+
+If these are really known, no trouble will be found with the notes _f_
+and _l_.
+
+Plenty of exercises should be given in which the notes of the scale are
+taken in relation to the high _doh_. Possible notes should also be taken
+above high _doh_ (such as high _ray_, high _me_, high _fah_ in the scale
+of C) and below _doh_. With regard to the latter, the key may be changed
+from time to time when taking Sol-fa work from hand signs or the
+modulator, or from Sol-fa notation, in order to get a wider range for
+the notes above mentioned. Thus, if the class be given the _doh_ of G
+major, they can sing low _te_, low _lah_, low _soh_, and low _fah_, or,
+as these notes are written in Sol-fa notation, _t,_ _l,_ _s,_
+_f,_. These points are sometimes overlooked by mistresses, and the
+early training loses in thoroughness.
+
+Directly the children are sure of the diatonic notes of the key of C
+major they should take the sharpened fourth (_fe_), the flattened
+seventh (_taw_). and the sharpened fifth (_se_). Later on they will
+learn that these notes often introduce modulations to the dominant,
+subdominant, and relative minor keys respectively.
+
+Extemporizing with the voice may now begin, along the lines suggested in
+Chapter IX. An extra interest will thus be added to the lesson, and the
+child will have its first initiation into 'self-expression' through the
+art of music.
+
+
+
+
+CHAPTER VI
+
+THE TEACHING OF SIGHT-SINGING
+
+
+Instruction in sight-singing should begin by teaching the staff notation
+through the Tonic Sol-fa method. Objections to this are sometimes raised
+by very musical people, who have no recollection of any 'method' by
+means of which they themselves learnt to sing at sight, and who
+therefore think their pupils can pick up the knowledge in the same
+instinctive fashion. Experience proves that this is very rarely the
+case.
+
+With very little children it is well to keep entirely to hand signs and
+ear tests until all the notes of the scale are known, through their
+'mental effect'. One reason for this is that such children cannot read
+or write, so no musical work can be done with them which implies this
+knowledge. Care must be taken to vary the lessons as much as possible.
+
+At one lesson the teacher can give the hand signs and ear tests herself.
+At the next, one of the class can give the hand signs for the rest of
+the class, and the teacher the ear tests. At the next, a child can give
+the ear tests, and so on. An experienced teacher will find plenty of
+similar ways for producing new interest in the lessons, even though the
+actual amount of work done be necessarily small. Nothing is gained by
+hurrying over the initial stages of ear-training. The foundation must be
+securely laid, or trouble will come later. Those who have had
+experience of class work in kindergartens know the special difficulties
+to be met--the irregularity of attendance, the constant stream of new
+pupils coming in, and so on. Unless plenty of opportunity is given for
+revision the work will suffer in thoroughness.
+
+For children who take this work between the ages of eight and twelve, no
+better scheme for sight-singing can be found than that contained in
+Somervell's _Fifty Steps in Sight-singing_, supplemented by the
+children's books, _A Thousand Exercises_, published by Curwen. It is
+essential to read carefully the appendices to this work, especially that
+concerned with the minor keys. Another book of sight-singing exercises
+which follows the same sequence is the _Rational Sight Reader_, by
+Everett, published by Boosey.
+
+In teaching the keys of G major and F major it is most important that
+the class shall themselves discover the necessity for the F[#] and B[b]
+in the respective signatures. Inexperienced teachers sometimes teach
+this as a dogma, and thereby deprive the children of the delight of
+discovering it for themselves.
+
+Thus, if the scale of G major be played with F[n] instead of F[#], the
+class will discover that _taw_ has been played instead of _te_, and will
+soon find out how to correct the wrong sound.
+
+Similarly, if the scale of F major be played with B[n] instead of B[b],
+they will say that _fe_ has been played instead of _fah_.
+
+If the order of keys taken be that of the _Fifty Steps_, the following
+diagram will show at a glance the underlying plan:
+
+     7      5      3    1    2   4   6
+     E[b] | B[b] | F || C || G | D | A
+
+It should be noted that so far as the positions of the notes on the
+stave are concerned, the key of A[b] is as easy to sing in as the key of
+A, D[b] as D, and so on. This fact is sometimes overlooked, and
+unnecessary difficulties are created for the children.
+
+It is important for a class to sing at sight fluently in one key before
+attempting a new one. Some teachers take keys in groups, and try to
+teach them all together. This plan rarely leads to satisfactory results.
+
+
+_Minor Keys._
+
+It is wise to defer the treatment of these until all the major keys have
+been mastered. The harmonic form of the scale of C minor should then be
+taken, the children identifying the two notes new to them as the
+flattened third and sixth of the scale. It is a good plan to get them to
+sing a few melodies from the blackboard which are in C minor, but which
+bear the signature of C major, the flattened third and sixth being
+supplied. This impresses the new notes on the children.
+
+Later on, the correct signature should be evolved by experiment, and the
+same plan followed for the other keys, before the 'rule' for finding the
+signature is discussed. The melodic form of the scale can then be
+taught, and both forms practised to give plenty of freedom in the new
+tonality. The various minor keys should then be taken in the same order
+as that in which the major keys were taken.
+
+It is advisable to limit the work at first to melodies which do not
+modulate to the relative major. Later on, when the children are fairly
+fluent, they can take these. At first they will have to make use of
+'bridge-notes' at the modulation, but, with a little practice, they will
+soon be able to sing at sight to _lah_.
+
+_Part-singing._
+
+Children should not be allowed to sing part-songs until they can sing at
+sight in parts. The reason for this is that in the majority of
+part-songs the under parts are written too low for the child voice, and
+if they are _practised_ several times in succession, harm is likely to
+result. If, on the other hand, the songs can be read at sight, the parts
+can be interchanged, and the voices of the children do not suffer to the
+same extent. The greatest difficulty in teaching part-singing is a moral
+one: a child who takes an under part does not like the feeling of some
+one singing above her. The voices must be divided carefully for this
+work--some teachers prefer to get the balance on the side of the under
+parts, in order to avoid the feeling that it is necessary to shout in
+order to be heard! The ideal plan is to interchange the parts freely at
+the same lesson.
+
+Exercises should be chosen at first in which the under part starts on a
+fairly high note and, if possible, before the upper part enters, in
+order to give confidence. The under part should also move freely, and
+should not consist of long holding notes. Exercises in which the parts
+cross afford excellent practice. Good instances of easy exercises are to
+be found in Nos. 9, 68, 80, 101, &c. in Book III of _A Thousand
+Exercises_; also in the many canons to be found in that book.
+
+Sight-singing in three parts should always begin with exercises written
+in the contrapuntal style. There are instances of these in _Three-part
+Vocal Exercises_, by Raymond, published by Weekes & Sons. This book is
+also suitable for use where men's voices are obtainable, the two treble
+parts being taken by two tenors, and the transposed alto part by a bass.
+
+A good series of part-songs is to be found in the Year Book Press, which
+only admits songs by standard composers.
+
+
+
+
+CHAPTER VII
+
+THE TEACHING OF TIME AND RHYTHM
+
+
+It is impossible to over-estimate the importance of careful study before
+a teacher attempts to train children in a sense of time and rhythm.
+
+Not only must an intellectual conception of the importance of the
+subject be arrived at, but a subconscious realization of it. The
+function of rhythm in the world should be perceived, and such natural
+phenomena as day and night, the seasons, the tides, and countless
+others, seem to be examples of the same principle. The same influence
+may be traced in social activities. Work cannot be organized and carried
+on where rhythmic order is not found, and no conception of the brain or
+of the artistic faculty can emerge uninformed by rhythmic continuity.
+
+A human being imperfectly endowed with a sense of balance or rhythm is a
+danger to the community, and one who is entirely without this sense is
+spoken of as 'insane'.
+
+In the training of the teacher it is well to call attention first to the
+rhythm of speech, before entering into that of music. Those who have had
+a literary education have already studied the metrical properties of
+poetry and prose. They will readily agree that such phrases as:
+
+'My father's father saw it not.'
+'Happy New Year to you.'
+'Because I sought it far from men,
+  In deserts and alone.'
+'We must go back with Policeman Day,
+  Back to the City of Sleep.'
+
+can be thought of as written in [2/4], [3/4], [4/4], [6/8] times
+respectively.
+
+M. Jaques Dalcroze has shown, through his Rhythmic Gymnastics, the
+extraordinary effect that rhythmic movements can have, not only on
+physical health, but on mental and moral poise. For highly nervous
+children some such work is of especial benefit, but for all children it
+is of great value. It should be supplemented in the ear-training class
+by constant practice in beating time to tunes. The teacher begins by
+playing simple tunes, with strongly marked accents. The children should
+discover these accents for themselves, and should be taught to beat
+time, using the proper conductor's beats from the first.
+
+The French time names--_ta_, _ta-té_, &c.--are invaluable in early
+stages. They are based on sense impression, and are picked up quickly by
+the children. By taking the crotchet as the unit to start with, the
+old-fashioned plan of exalting the semibreve, the least used note in
+music, to a primary place, is avoided.
+
+If the order given in Somervell's _Fifty Steps in Sight-singing_ be
+followed, the question of complicated time will not be forced too early
+on the attention of the children. Pupils trained on other systems have
+sometimes been found incapable of singing melodies written in
+complicated time, even though they can beat time to the notes, giving
+the time names, without mistake. The same thing is noticeable in their
+instrumental work. This is due to the fact that one side of their
+training has been developed at the expense of the other--time at the
+expense of pitch. There seems little point in teaching a child such
+time-values as
+
+[Illustration: (crotchet tied to first note of a quaver triplet,
+followed by four semiquavers and another crotchet)]
+
+when it can only read at sight in the key of C major!
+
+In taking an exercise in sight-singing for the first time with a class
+at an elementary stage the following practice has been found beneficial:
+
+1. The children sing the tune straight through at sight, without
+stopping, the teacher beating time. Mistakes are then pointed out and
+difficult phrases practised.
+
+2. The children stand and sing the tune straight through again, beating
+time as they do so.
+
+3. Individual children then stand and sing the tune by themselves,
+beating time. In this way the child gets to know the sound of its own
+voice, and the teacher can correct any individual faults of intonation,
+voice production, &c. Some children will always have an inclination to
+shout when they sing with others, partly through excitement and partly
+because they cannot hear their own voices in any other way. If this be
+permitted the quality of tone will rapidly degenerate, and the effect of
+the whole class work will suffer.
+
+Nothing is more delightful than to hear young children sing quietly, and
+without in any way forcing their voices.
+
+
+
+
+CHAPTER VIII
+
+THE TEACHING OF DICTATION
+
+
+So long as the work done in ear-training is in the very elementary
+stages the best form of dictation will be:
+
+1. Ear tests, consisting of two to three notes at a time, which should
+be written in staff notation as soon as possible.
+
+2. Monotone time tests, which should be quite short, as the constant
+repetition of the same note in pitch is irritating to the more sensitive
+ears in a class. This point is sometimes overlooked, with the result
+that only the less musical children get any real benefit from the tests.
+
+By the time that children can sing at sight in the key of D major they
+will be ready to take down from dictation short melodic phrases in time
+and tune. A useful plan is for the phrase to be played over three times,
+the children listening carefully and beating time. They should then sing
+the phrase once through to _lah_, and write it down.
+
+This method of dictation is more satisfactory than that of dictating a
+bar at a time, as it draws attention to musical phrases as a whole.
+Later on it will be found possible to dictate in the same way longer and
+longer phrases. Incidentally the memory is being trained as well as the
+ear.
+
+The class should be accustomed to write phrases which do not
+necessarily begin on the first beat of the bar. The handwriting, exact
+position of accidentals, &c., should be carefully watched. With young
+children it is well to use manuscript books which have the lines ruled
+very widely apart--a little child's hand soon gets cramped if it is made
+to write in an ordinary manuscript book.
+
+When a class can take down simple melodies correctly it is time to begin
+two-part work. As a preliminary, get a child to play middle C on the
+piano, then to combine with it each of the notes of the scale of C major
+in turn. The class will decide which of these two-part chords are
+pleasant to listen to. Opinion is generally unanimous in favour of the
+third, sixth, and octave, which will therefore be the basis of the first
+exercises in two-part dictation.
+
+Plenty of practice should be given in isolated examples of these chords,
+in more than one key, before the class attempts to combine time with
+tune. When they are ready for this, the work should begin with very
+simple phrases, with plenty of repetition to enable them to be quickly
+memorized. A later stage introduces the use of passing notes. It is
+better to play the exercise through first without these, and when it has
+been written and corrected, to play it again, inserting the passing
+notes.
+
+Before a class has finished the major keys it should be ready for the
+dictation of three-part chords. As the children are accustomed to the
+sound of the chord of the third on all degrees of the scale, it will be
+a natural experiment to play a particular combination of thirds, thus
+arriving at the triad. After this has been played on all degrees of the
+scale, the class should be asked to decide which of these chords it will
+be well to get to know first. They will remember that the first three
+keys in which they learnt to sing were C, G, and F major, and will
+therefore suggest that the tonic, dominant, and subdominant chords
+should be chosen.
+
+At this stage it should be pointed out that all the notes of the scale
+are contained in one or other of these chords. This is a seed which, if
+well planted, will suggest the first principles of harmonizing melodies
+later.
+
+We must now work at the three chords carefully. Begin by making the
+class sing them in arpeggio, and in a definite rhythm, so as to get
+precision. Each chord should be sung once very slowly, so as to get the
+notes correctly, and absolutely in tune; then twice more quickly, so as
+to get the feeling of harmony. This step is invaluable in its later
+results--a child will often be heard to sing different chords in
+arpeggio, when in doubt as to the chords to use in harmonizing a melody.
+
+When the three primary chords are known the others may be added,
+together with the dominant seventh and the inversions, in all keys. This
+last step must not be hurried. The average class rarely finishes
+three-part chords in less than a year, and unless plenty of time is
+given difficulties will crop up later, when four-part chords are begun.
+
+It is not enough for children to be trained to listen to the actual
+notes of a chord--they must feel the mental effect, in the same way in
+which they felt these effects in the case of the notes of the scale.
+
+A later step is to make use of the position of the chord in a
+sequence--for instance, the child soon gets to notice that many phrases
+end with the progression subdominant, dominant, tonic.
+
+We now come to the consideration of the dictation of four-part chords.
+These need not be sung in arpeggio. As a first experiment it will be
+necessary to play the chord to the class with each note doubled in turn,
+so that they may feel the necessity for doubling the best note.
+
+This experiment is most valuable, as it gets the child away from the
+cramping feeling of keeping a rule merely because it is mentioned in a
+text-book.
+
+Plenty of phrases with the primary chords in root position must be taken
+before the other chords are treated. For at least a year the class will
+not be able to _write_ four-part dictation; the time should be spent in
+identifying the chords when played.
+
+The chant form is the best for elementary work. It is very simple, and
+can be adapted to every sort of sequence. Passing notes, appoggiaturas,
+suspensions, &c., should be avoided at first. When the diatonic chords
+and their inversions are known the principal modulations should be
+studied. It will probably be necessary for the teacher to write her own
+tests, as there are very few books of chants published which contain
+enough exercises on the use of the easier chords.
+
+The last step in the teaching of dictation is the treatment of what may
+be called the 'mixed phrase', i.e. one in the course of which the
+number of parts varies. This is the most difficult stage of all, and
+will need the utmost patience on the part of the teacher. But by this
+time the children will have begun some of the practical work at the
+piano described in the chapter on 'The Teaching of Extemporization and
+Harmony', and this will help them to recognize easily the drift of the
+mixed phrase.
+
+
+
+
+CHAPTER IX
+
+THE TEACHING OF EXTEMPORIZATION
+AND HARMONY
+
+
+In early days the art of melody was developed before that of harmony.
+The same plan should be followed in the general musical education of the
+child.
+
+As every child possesses a voice, but does not in every case learn an
+instrument, it is clear that the fundamental training in music must be
+given through the use of the voice. The first step will consist in
+learning how to sing at sight and how to take down easy melodies from
+dictation. Parallel with this work the child should be taught to
+extemporize melodies, and to sing them.
+
+Quite little children will take pleasure in completing a musical phrase
+of which the first few bars have been given them. The procedure will be
+as follows:
+
+1. The teacher writes two bars in C major, [2/4] time, on the
+blackboard.
+
+2. The class sings it through twice, first using the Sol-fa names for
+the notes, then singing to _lah_.
+
+3. Volunteers are then asked for to complete the phrase by adding
+another two bars. The more musical children in the class will at once
+respond, and their efforts will stir the ambition of the others. It will
+soon be a question of taking the children in turn, a few at each
+lesson--so eager will they be to 'express themselves' in melody.
+
+It is important not to be too critical of these early efforts. The
+great thing is to get the children un-self-conscious--variety of melodic
+outline and of rhythm will follow quickly enough.
+
+The next step will be for two children in the class to extemporize the
+whole phrase between them, one taking the first two bars and the other
+the last two. The key and time should be varied as much as
+possible--keys a fourth or fifth apart should be used in succession, or
+the children will assume that any melody can be sung by them in any key,
+which is obviously not the case. A melody sung in C major, which uses
+middle C and high F, cannot be sung in the key of G major with the child
+voice.
+
+The class will now find it quite easy to extemporize the whole of a
+four-bar phrase. Suggestions can be made by the teacher, such as:
+
+'Begin on the third beat of the bar.'
+
+'Introduce two triplets in the course of the phrase,' and so on.
+
+When this becomes easy to them they will be ready to begin eight-bar
+melodies. At first the teacher will give the first four bars, and
+different members of the class will finish the tune. Modulations should
+now be introduced. The same procedure as before should be followed,
+until any child in the class can give the whole of a tune, in any given
+key and time, and with a given modulation.
+
+Next comes the sixteen-bar tune, in which at least one modulation should
+be introduced. A good plan is to begin with the well-known simple form:
+
+1. Four bars to the [6/4] [5/3] cadence.
+
+2. Four bars to the principal modulation.
+
+3. Repeat the first four bars.
+
+4. Four bars to the end.
+
+Three children can be used for this, in the following way:
+
+The first child sings the first four bars, the second goes on to the end
+of the eighth bar, then the first child repeats what she sang, and a
+third child finishes. This affords excellent practice, particularly for
+the first child, who soon learns to confine herself to a simple opening,
+as this must be remembered and repeated later.
+
+Memory plays a much larger part in the power to extemporize than many
+people realize, and if this step in the preliminary work be
+conscientiously taken there will be abundant results later.
+
+We now come to the important stage of extemporizing on the piano. It
+must be remembered that a very thorough foundation of the knowledge of
+chords has been laid by the ear-training work, leading up to the power
+to write down chords from dictation, and to sing them in arpeggio.
+
+The first exercise will consist in playing a very simple tonic and
+dominant accompaniment on the piano, while a melody is extemporized with
+the voice. There is far more variety possible in this than appears at
+first sight. For instance, the sequence of the chords may run in any of
+the following ways, among others:
+
+I V I V I I V I }
+                }
+I I V I I I V I }
+                }
+I I I V I I V I }
+                }
+I V V I I I V I }
+
+Those who have studied elementary algebra will recognize a simple
+application of the theory of permutations!
+
+It is interesting to note the ease with which children will do this
+exercise, if they have been carefully trained in all the preceding work.
+Grown-up students are usually very much slower than children at it,
+partly because they are inclined to be self-conscious, and to worry
+about the sound of their voice, &c. But the child who has been
+accustomed to sing at sight and to extemporize with the voice in front
+of a class is not in the least embarrassed at being told to go to the
+piano and combine a sung melody with a simple piano accompaniment. At
+first there will be a tendency to restrict the melodies to the actual
+notes of the tonic and dominant chords, but with a little practice
+passing notes, &c. are soon added, and graceful little tunes will
+result.
+
+The next exercise consists in the use of three chords, tonic, dominant,
+and subdominant; the melody, as before, being sung. At this stage it is
+wise to let the dictation work in the class take the form of phrases
+which can be harmonized with these chords, so as to accustom the
+children to use them. This gives invaluable practice in the first
+principles of harmonizing melodies, and should precede all formal
+treatment of the subject.
+
+Another useful exercise at this stage is to let the children add a
+second part, either above or below a given melodic phrase. This will be
+the foundation of later work in formal counterpoint.
+
+The class is now ready for the treatment of modulations on the piano.
+If the preliminary work in cadences, dominant sevenths, &c. has been
+conscientiously done in all keys there will be no difficulty in
+extemporizing a sung melody, which modulates, and adding a simple
+accompaniment at the piano.
+
+Other chords can now be added, and the children will be ready to
+extemporize short tunes, entirely at the piano, without the aid of the
+voice. To some people this may seem an easier thing to do than to
+accompany the voice, but experience has proved the contrary. The child
+is so accustomed to use the voice that it will at first be inclined to
+think of all melody as vocal, and will be a little troubled when told
+not to think about vocal pitch.
+
+The discipline of these early restrictions is obvious, and cannot be
+over-estimated. It quite does away with the 'hymn-tune' style of early
+composition, which is such a trap to many amateurs.
+
+Side by side with this work it is advisable to get the class to
+extemporize chants, under the same restrictions as have been put on the
+melodies, i.e. they will begin by using only tonic and dominant chords,
+then adding the subdominant, and so on. The double chant will give
+opportunities for more than one modulation being introduced at a time.
+This work will prepare the way for figured basses, and more formal
+harmony. The children will learn to avoid consecutive fifths and eighths
+because they gradually notice the ugliness of them, which seems a better
+plan than to learn to avoid them as a 'rule'.
+
+There is an interesting reference to methods of teaching harmony in the
+Board of Education Memorandum on Music, issued in 1914.
+
+The writer says:
+
+'It cannot be emphasized too strongly that the current method of
+teaching harmony, whereby pupils are taught to resolve chords on paper
+by eye, quite regardless of the fact that 99 per cent. of them do not
+realize the sound of the chords they are writing, is musically
+valueless.
+
+       *       *       *       *       *
+
+'In no other language than that of music would it be tolerated that the
+theoretical rules of grammar and syntax should be so completely
+separated from the actual literature from which they are derived, that
+the pupil should never have perceived that there was any relation
+whatever between them.
+
+       *       *       *       *       *
+
+'Another very common result of the neglect of an aural basis for harmony
+teaching is that students who can pass a difficult examination, and
+write correctly by eye an advanced harmony exercise, are often quite
+unable to recognize that exercise played over to them on the piano, or
+even to write down the notes, apart from the time, of a hymn or a tune
+that they have known all their lives.'
+
+The whole chapter in this memorandum is well worth reading.
+
+The final stages in the teaching of extemporization will consist in:
+
+1. Expressing a given idea in musical form, e.g. a march, or a gavotte.
+
+2. Extemporizing on a given theme.
+
+Although these last stages may be thought to be beyond the power of the
+average child, experience has proved that it is not so, provided the
+previous work has been carefully graded, and that none of the early
+steps have been omitted or hurried over.
+
+
+
+
+CHAPTER X
+
+THE TEACHING OF ELEMENTARY COMPOSITION
+
+
+A wise musician has drawn attention to the fact that music has a more
+important educational function than any foreign language, being a common
+language for the expression of emotion, imaginative power, and rhythmic
+feeling. He went on to say that, as a training, it is of use from the
+very earliest years, and for all classes of the community.
+
+If we agree with this view--and it is encouraging to note the increasing
+number of those who do so--we must so organize the musical education of
+children that a time comes when they will be ready to 'express
+themselves' in music in the same way in which they can express
+themselves in their native tongue.
+
+An earlier chapter in this book has dealt with the teaching of
+extemporizing, first, treated as vocal expression, then as instrumental.
+When a class of children has arrived at the stage of being able to
+extemporize a tune of sixteen bars, in any given key and time, and
+introducing given modulations, it is quite ready to begin the more
+formal study of composition, and to be initiated into the mysteries of
+form. Hitherto the experiments of the class in this direction have been
+chiefly spontaneous; the teacher has of set design left the child who is
+extemporizing as free as possible, but the time has now come for a new
+'window' to be opened in its mind.
+
+A preliminary talk should be given on the need of form in music. It must
+be pointed out that we cannot be intelligible without it, that it is not
+enough to have a language at our command; we must have _shape_ in order
+to convey our ideas to others. The child should realize that the great
+artists in all the arts are under the same necessity as the youngest
+beginner in composition. Inspiration must be embodied in a definite
+form, or others cannot share the vision of beauty.
+
+For a time the child now has to learn to select a musical form, then to
+choose a musical thought which can be fitly expressed in it. It will
+seem a cramping process after the freedom of extemporizing, but the
+child who loves the work will willingly submit to the discipline. It
+cannot be too often impressed on the young teacher that children as a
+whole _like_ discipline. They despise those who are indifferent to it,
+and give a ready submission to those who expect it, provided they feel
+sure of an underlying sympathy.
+
+The first lessons in form should consist of the analysis of simple
+tunes, preferably of the Folk Song type. The forms known as AB, ABA, and
+the variants derived from these will be explained, and the class will
+write examples of each, at first not harmonizing the melodies, but
+afterwards doing so. The old dance forms will then be taken. At this
+stage it is absolutely necessary for those of the class who are musical,
+and who wish to give a little extra time to music, to go through a
+course of strict harmony and counterpoint; endless time will be wasted
+if they do not do so. The work will be very much lightened because of
+the foundation already laid, for, without knowing it, the children have
+been doing a little free counterpoint for some time, when they added
+vocal parts to a given melody, and their knowledge of practical harmony
+will make it possible for them to take many a short cut in the formal
+work.
+
+The dance forms, together with very simple fugues and contrapuntal
+studies, and a few 'free' exercises in songs and short pieces, will be
+as far as the majority of children will get in the study of composition.
+But there will always be a few in each class who will be eager and able
+to go farther, and to begin the study of sonata form. For such children,
+and certainly for all teachers of music, there can be no better
+text-book than Hadow's _Sonata Form_, published in the Novello Primer
+Series. This book is often described as 'more exciting than a novel'!
+Somervell's Charts for Harmony and Counterpoint are also most valuable,
+and will save the necessity of a text-book in these subjects--at any
+rate for the beginner, who works under guidance.
+
+There is one curious fact about all but the most musical children when
+they begin to _write down_ tunes of their own composition. They make
+mistakes which they have never made when _extemporizing_ the same type
+of tune. This seems to arise from the fact that they suddenly feel
+self-conscious--they have more time to think when writing than when
+singing or playing, and are inclined to compose one bar at a time
+instead of phrase by phrase. They will produce a tune of seven
+bars--they will end on a weak beat--they will come to a full stop in the
+middle of an eight-bar tune on the tonic chord, root at the top--the
+last half of the tune will have nothing to do with the first half. We
+could write a page of their possible mistakes!
+
+The cure for these lapses is to insist on the tunes being sung before
+being written. The old unconscious habit will then assert itself, and
+the little tunes will fall into shape.
+
+It is a useful lesson to get a class to criticize all original tunes
+when played by the young composer. For one thing, the criticism of our
+contemporaries often carries more weight than that of our elders; and
+for another, the practice arouses the critical faculty, and teaches the
+children to listen keenly, for they have not the written tune in front
+of them.
+
+After a little practice quite good criticisms will be given by children.
+They will notice such points as a weak scheme of keys--undue repetition
+of the chief melody--a clumsy modulation--a trite ending--an
+over-laboured sequence--a tendency to borrow ideas from others, and so
+on.
+
+This training will be of the greatest possible value to them later on in
+the concert-room. As a writer in _The Times_ once put it:
+
+'The vague impressions which are all that many people carry away from
+the concert-room would be replaced by definite experiences.
+
+       *       *       *       *       *
+
+'Mental analysis is not, of course, the main object in listening to
+music, but it is a most powerful aid to full appreciation. It is the
+failure to perceive any definite relation between the parts and the
+whole that baffles so many people, and sends them away from the
+concert-room remarking that they cannot understand "classical" music.'
+
+
+
+
+CHAPTER XI
+
+THE TEACHING OF TRANSPOSITION
+
+
+A great many musical people will not take up the subject of
+transposition seriously, because they have no idea of the lines along
+which to work. They all agree that the knowledge would be most useful to
+them, especially from the point of view of song accompaniment, but the
+path seems to be beset by so many difficulties, and the results of their
+first attempts are so pitifully small, that they generally give up all
+hope, and all effort. Then again, some of the books published on the
+subject are not very helpful to the average student. Some of them seem
+to start with the assumption that the student is very musical, and can
+do a great deal by instinct. They therefore give only the roughest
+directions. Others begin sensibly enough, but leave out so many steps in
+the work that a student may be forgiven for throwing them aside in
+despair.
+
+Now there are three chief reasons why the musician would do well to
+study transposition:
+
+1. For the purpose of song accompaniment.
+
+2. As an aid to committing music to memory, especially that written in a
+form where different keys are used for the presentment of the same
+material.
+
+3. As an infallible test of a sound 'general' musical education.
+
+The last reason is not often advocated, but a little thought will show
+that it is impossible for the average student, not specially gifted in
+any way, to transpose even an easy piece of music at sight on the piano,
+without proving the possession of a trained ear and a knowledge of
+practical harmony. For class work with children it can be made a still
+more valuable test of progress. For the average child will be quite
+unable to transpose a simple ear test--such as _d f m l s t, d_--on the
+piano, from one key to another, say a fifth away, without a good deal of
+accurate knowledge.
+
+The first exercises in transposition will be very simple--any child of
+seven or eight years old, who can sing at sight, and take down ear
+tests, in the keys of C and G major, can be expected to do them. They
+consist in:
+
+1. Singing any well-known hymn-tune, or simple melody of the Folk Song
+type, using the Sol-fa names of the notes. It should be sung phrase by
+phrase, until every child in the class is sure of the correct notes.
+
+2. The children should now go in turn to the piano, and each play a
+phrase of the melody, first in C major, then in G.
+
+It is important to emphasize the fact that the tune must be well known
+to them, or an extra difficulty will be introduced.
+
+As the children learn more and more keys, these tunes should be
+transposed into them.
+
+Provided the class does not consist of picked musical children, there
+will always be a few in it who do not learn the piano. This work will
+be one of their opportunities for learning a little about it.
+Interesting results have been obtained from such children, if the
+teacher is enthusiastic and ready to help.
+
+By the time that the class has begun the study of three-part chords the
+transposition will become more and more interesting, as sequences of
+chords can now be transposed. When the first steps in extemporizing on
+the piano are begun, the transposition advances by leaps and bounds. The
+children will be delighted to play their little tonic and dominant
+accompaniments in every key--to change from major to tonic minor by
+flattening the third and sometimes the sixth of the scale.
+
+There is a sense of freedom and power in such work, to which the class
+will readily respond. They soon realize that certain melodies 'only
+sound nice' in such and such a key, and in this way the foundation of a
+'colour sense' will be laid. Also, apart from the question of the key in
+which a melody sounds best to a child, another point comes into notice.
+The child cannot sing certain notes in certain melodies unless it keeps
+within a certain range of keys. This teaches them something. The point
+has been referred to in the preceding chapter.
+
+Altogether it will be seen that the study of transposition is opening a
+new window for them into the fairyland of music.
+
+Later on, when a child can compose short harmonized tunes of its own, it
+is well to hold up the ideal of being able to transpose them into any
+key, and in certain cases, where the melody lends itself to the
+treatment, from major to minor, and vice versa. This work must of course
+be voluntary, but a child is well rewarded when it finds that it is only
+the first step which costs, and that the second of such tunes is so much
+easier to transpose than the first!
+
+And the time comes when a child will sit down to the piano, and will
+extemporize quite happily either in F major or in F[#] major, whichever
+is suggested. Such work is well worth any initial trouble taken--it is a
+combined process of ear and mind which has a far-reaching educational
+effect.
+
+The last stage of all in this work consists in transposing at sight from
+the printed page. Hitherto the ear and the mind have been chiefly
+employed, but now the _eye_ must be trained to do its share.
+
+It is found useful to make children say the names of the chords aloud
+when they are beginning this sort of transposition. The habit sets up a
+connecting link between the various faculties in use, in some curious
+way. The eye can help by noting the intervals between successive notes
+in the various parts, and especially in the outer parts. It sees the
+general drift of the piece before the mind comes into play--the coming
+modulations and so on. In fact, it is not too much to say that it is
+best, in certain musical phrases, to rely on the eye alone, e.g. rapid
+decorative passages, which are not always easy to analyse at first
+sight.
+
+A word of warning must now be given. Those who attempt 'short cuts' in
+this work will certainly come to grief, unless they are born with the
+faculty--undoubtedly possessed by a few--of being able to transpose by a
+sort of instinct. Such people are fortunate, but it is not our present
+task to attempt to guide them. We are concerned with the average child,
+taught in fairly large classes, in the ordinary school curriculum, and
+with only a very limited amount of time at our disposal.
+
+
+
+
+
+CHAPTER XII
+
+GENERAL HINTS ON TAKING A LESSON IN EAR-TRAINING
+
+
+All those who teach ear-training should keep a book in which they write
+on one side of the page the proposed scheme of work for each lesson, and
+on the other the actual work done. All sorts of things may happen in the
+course of the lesson to upset the proposed scheme. The children may find
+the new work easier, or more difficult than was expected, a question
+from a child may suddenly reveal a piece of ignorance which necessitates
+a digression--every teacher is aware of the 'unknown quantities' in
+class work. Unless the proposed scheme of work is checked by what is
+done in each lesson, there will be difficulties later.
+
+Again, each lesson must form a definite link between past and future
+lessons. It is often a temptation to a teacher of initiative to draw
+attention to a new aspect of the subject, in which she happens to be
+specially interested at the time, when the previous work is not in a fit
+state to be left, even for two or three lessons. Something happens to
+make her realize this, and the new piece of work is hurriedly
+left--suspended in mid-air, as it were--and is not referred to again
+until an accident recalls it to her mind. Such teaching certainly has
+the charm of novelty to a class, but we must remember that one of the
+faults of childhood is an undue readiness to pass on quickly to learn
+'something new' before the previous work is secure.
+
+In taking a lesson the teacher should aim at speaking in her ordinary
+voice. Inexperienced people sometimes imagine that it is necessary to
+shout when speaking in a fairly large room. But provided the voice is
+clear, and the articulation good, a low voice carries just as well as a
+loud one, and certainly produces a greater sense of repose.
+
+Another fault to avoid is monotony of tone--we need 'modulations' in
+speaking just as much as in music, and a class is keenly, though often
+unconsciously, susceptible to this. A change of position is helpful. The
+voice of the mistress will brighten at once if she comes down from the
+platform and walks about a little. But she must never turn her back on a
+class when actually telling them something. Musical people, who have not
+the same experience in such matters as the ordinary teacher, constantly
+do this, and will even hide the greater part of a blackboard when
+pointing to notes of a tune.
+
+In beginning a lesson the maximum effort will be gained if communal work
+be taken before individual, i.e. sight-singing before dictation,
+extemporizing, &c. The reason for this is obvious, a certain momentum is
+thus generated, which is impossible later, when the force has been
+diffused.
+
+Before a tune is sung at sight the class should analyse it, giving the
+key, time signature, starting note, modulations, sequences, general
+construction, &c. Remind the children from time to time that the last
+sharp in a signature gives the _te_ in a key, the last flat the _fah_;
+that when modulating to the dominant key the _fe_ of the first key
+becomes the _te_ of the second, in going from a key to its subdominant
+_taw_ becomes _fah_, for the relative minor _se_ becomes _te_, and for
+the relative major _taw_ becomes _soh_. Also that if in a minor key
+_taw_ occurs in an ascending scale passage, or is taken or left by leap,
+it is a sign of a modulation to the relative major.
+
+In starting the tune the tonic chord is played, and the teacher beats a
+whole bar, together with a fraction of the next if the tune begins on an
+off-beat, before the class takes it up.
+
+Do not _tap_ time when beating: it cultivates a habit of inattention on
+the part of a class. Nor should the teacher beat time when the class is
+doing so, unless for a moment, to correct an error. One reason for this
+is that if the time signature be anything but [2/4] or [6/8], the
+teacher's arm moves in a different direction in certain beats from that
+of the class facing her, and this is most confusing.
+
+Never correct a mistake by singing the right note yourself. This would
+be teaching by imitation--as we teach a bird to sing a tune--not
+teaching by method.
+
+Remember that we are not aiming at artistic performance in a
+sight-singing class, so do not hammer away at a tune until the
+performance of it has reached your ideal. If you do, your aim is
+'performance'--not sight-singing.
+
+If a child makes a mistake in dictation, do not tell it what is wrong,
+unless you are very short of time. Get it to sing the phrase it has
+written to Sol-fa names--in this way it will find out its own mistake.
+
+In writing notes, either on the blackboard or on manuscript paper, it is
+not necessary to fill up all the space between the lines, as is done in
+printed music. If children are allowed to do this, they will spend a
+long time over their exercises. Teach them to turn all tails of notes
+_up_ which are written on lines or spaces below the third line, and
+_down_ for those above. The direction of the tails of notes on the third
+line itself will depend on the context. These directions refer, of
+course, to the writing of melodies. It is often necessary to remind even
+grown-up students that accidentals must be placed _before_ the note
+affected, not after it; also that a dot after a note which is written on
+a line must come on the space next above, not on the line itself.
+Children often forget that the leading note in a minor key invariably
+carries an accidental.
+
+We must now say a little on the subject of revision. It is a fault of
+the young teacher that she often entirely neglects this, with the result
+that her class can only sing accurately at sight, and do dictation in,
+the last key learned. During the first few lessons in a new key it is
+certainly inadvisable to give exercises in the preceding ones, as the
+whole attention must be concentrated on the new tonality. But other keys
+should be taken at least once in three weeks. An impatient person may
+say: 'But properly taught children could not forget so soon!' Yet, at
+times, we are all hazy on almost any subject, but it does not follow
+that we are either fools, or badly taught: we are simply human! After
+all, machines get out of order, so why not the most complicated machine
+of all--the human mind?
+
+Again, it is only the inexperienced teacher who thinks her class has
+been badly taught by her predecessor. Many a student in training is
+inclined, after the first lesson with a new class, to come to the
+distracting conclusion that the children know 'nothing'. This generally
+means that, after the holidays, the former work needs a little revision
+before new work is begun.
+
+In taking a fairly advanced class a teacher is often worried because
+there is not enough time in a single forty-minute lesson a week to touch
+on all of such subjects as chords, cadences, extemporizing,
+transposition, &c., in addition to sight-singing and dictation. It is
+certainly quite impossible to do so, and this is one of the reasons for
+apparently slow progress. But there is, however, a good side to the
+difficulty, for such work ought not to be hurried, and it is well to
+leave a little breathing space between the references to it.
+
+Teachers are sometimes heard to speak with regret of the high spirits of
+their classes, which lead to restlessness. But we should never regret
+_force_ in a child, and we must realize that all pent-up force needs a
+safety-valve. It must be our business to direct such force into safe
+channels. Keep the children really busy, give them plenty to do, and
+there will be no cause to regret their vitality.
+
+
+
+
+CHAPTER XIII
+
+THE TEACHING OF THE PIANO
+
+
+It is impossible, within the limits of a chapter, to do more than dwell
+on a few practical points connected with the teaching and organization
+of this work in a school. As was said in the preceding chapter, the
+ideal for all young children who are about to learn the piano is that
+they should first go through a short course of ear-training. If this be
+done, the progress in the first year's work will be about three times
+what it would otherwise be. If the ear-training be done along the lines
+suggested in earlier chapters, the child will have been taught to sing
+easy melodies at sight, she will have approached the question of time by
+means of the French time names, she will have learned to beat time with
+the proper conductor's beat, to find notes on the piano, and, what is
+more important, to know these notes by sound, in relation to fixed
+notes.
+
+In this way some of the processes which a child goes through in
+beginning to learn the piano are taken one at a time, in company with
+other children, and are therefore not hurried.
+
+When the time has come to begin the piano, the child should join a
+_class_ for this for one year. Such a class should not exceed six in
+number. During this time she will add to her knowledge the first
+principles of fingering, will play easy exercises for fingers, wrist,
+&c., and will learn a few easy pieces and duets.
+
+From the very first she will be taught to analyse a piece before she
+begins to play it--she will find out the key, time, cadences, sequences,
+passages of imitation, modulations, &c. If the melody be within the
+range of the child's voice she will then sing it, beating time as she
+does so. After these preliminaries it is only a question of technique to
+learn to play it. The last stage will consist in learning the piece by
+heart. The day has long gone by when it was considered a sign of
+exceptional musical gift to be able to do this. All experienced teachers
+know that, provided a child is having its ear trained by some such
+method as that suggested above, it can learn a piece of music by heart
+almost entirely away from the piano. That is to say, instead of the
+wearisome repetitions which were formerly necessary before a piece could
+be played by heart, it is possible, directly the technique is mastered,
+and in many cases before this is done, to learn the piece away from the
+piano. The benefit of this is obvious, and the nerves, both of the
+player and of the unwilling listeners, are the gainers.
+
+A little thought will show that it should be no more difficult for
+average children to learn a piece of music by heart in this way, than
+for them to learn a piece of prose or poetry by heart. The initial steps
+are exactly the same--the language has to be known, and it is then a
+question of memory, and memory alone. Who would think of learning poetry
+by heart by the process of repeating it aloud a hundred or more times?
+Yet this is what was formerly done in the case of music.
+
+Sixty years ago no girl was considered educated who could not play the
+piano a little. Since then a reaction has begun to set in. The standard
+of playing has gone up to such a degree that parents are often heard to
+say that their child is not musical enough for it to be worth while to
+teach it an instrument. This is a pity. Music is used so much in our
+daily life that we cannot do without our 'average performers'. The
+soldier marches best to a tune, the sailor heaves his anchor to a song,
+the ritual of all forms of religion needs the aid of music; we need it,
+not only in the pageantry of our processions, but in the solemn crises
+of life and death. For these purposes artists of the first rank are not
+necessary.
+
+Every child, however apparently unmusical, should be given its chance,
+at any rate up to the age of twelve years. During this time, the stress
+should be placed, for the unmusical child, not so much on perfection of
+technique, but on the ability of playing easy pieces really well, and to
+read at sight such things as duets, song accompaniments, &c.
+
+If, in addition, the children have joined an ear-training class, they
+will, at any rate, be intelligent listeners for the rest of their lives
+to other people's playing.
+
+For all children, sight reading should form part, not only of every
+lesson, but of every day's practice. Many books for sight reading have
+been published, well graded, some of them beginning with little pieces
+in the treble clef only, and going on to advanced tests. The following
+are a few, selected from many other excellent ones:
+
+Schäfer (3 vols., published by Augener).
+
+Hilliard (5 vols., published by Weekes).
+
+Somervell (2 vols., published by Augener and Weekes respectively).
+
+Taylor (1 vol., published by Bosworth).
+
+As a child will need more than one such book in the course of her study,
+and as she cannot play the same test twice, a plan has been made in some
+schools for the music to be sold second-hand from one pupil to another,
+through the medium of a mistress, in the same way in which ordinary
+school books are sometimes passed on. This reduces the expense of
+constantly having to buy new books for sight reading. Another plan is to
+establish a lending library, each child to pay 2_d._ or 3_d._ a term.
+
+In the teaching of 'pieces' music mistresses should bear in mind that
+children must, from time to time, revise those which they have finished.
+Nothing is more irritating to a parent than to be told by a child that
+it has 'nothing to play' to a visitor. The mistress who is anxious to
+get a pupil on as quickly as possible often overlooks this point, and an
+entirely wrong impression is given of the child's progress to the
+parent.
+
+We now come to the vexed question of the interpretation of music by
+children. An interesting point can be noted about the practice of the
+early classical composers. They were accustomed to give the minimum
+amount of indication as to tempo and general detail for the performance
+of their works.
+
+And to what conclusion does this lead us? Surely this--that these giants
+in music recognized the necessity for every performer of their works to
+express _themselves_ through the music, subject to the broad conditions
+laid down by the composer. As Hegel said: 'Music is the most subjective
+of all arts.' And is it not true that it is this constant necessity for
+personal interpretation, so strongly felt by the majority of artists,
+which gives the permanent interest to music?
+
+We say, 'by the majority of artists', for now and then we meet an artist
+who seems to have strayed from the path of beauty, and who is devoting
+his energies to an ascetic determination to keep alive one particular
+interpretation of a composer's work, or works; who dictates these
+interpretations to his pupils, and who talks of other artists who feel
+the bounden duty of self-expression through the said works as
+'outsiders', and 'not in the cult'. Such musicians do not appear to see
+that such an attitude is 'idolatry' pure and simple. They have not
+pondered the well-known anecdote of Brahms, who, when asked by a singer
+whether his interpretation of one of his songs was 'the right one',
+answered: 'It is one of the many hundred possible interpretations.'
+
+A word must now be said on the organization of instrumental work in the
+school. It is important that this should be in the hands of one person,
+who will not only keep a supervising eye on questions of method, choice
+of music, lengths of lessons and practising, &c., but who will evolve
+some means of testing the progress of the pupils every term, in the same
+way in which their progress is tested in other subjects. The progress of
+the individual pupil should not be a secret between herself and her
+particular mistress!
+
+It is a good plan to arrange a short recital every term in a school, at
+which from twenty to twenty-five pupils should play at a time. Such
+recitals should not exceed more than 1-1/4 hours in length. Nothing is
+more wearisome to the outsider than to listen to amateur performances
+which stretch out to two and sometimes to three hours' length. If the
+above plan be adopted, no child will be able to play more than one short
+piece. A mistress who is ambitious for the success of a few specially
+gifted pupils will sometimes suggest that a recital shall consist of the
+performance of two or three of these only, and that each pupil should
+play more than once.
+
+Such suggestions should be frowned at.
+
+What we want, if we have an educational end in view, is not so much to
+give the few musical children in a school the opportunity of gaining
+experience in playing in public, and indirectly of showing their
+progress to an admiring audience, but we want to give every music pupil
+in turn the same opportunity.
+
+All children need experience before they can play to others in such a
+way that they not only do themselves justice, but give pleasure to
+their listeners.
+
+Pieces played at such recitals should invariably be by heart. The
+nervous pupil may possibly break down at her first appearance, but she
+will be quickly succeeded by a more confident player, the little victim
+of 'nerves' will be soon forgotten, and the experience gained in this
+way is invaluable.
+
+Before a recital a rehearsal should be held in the same room in which
+the recital is to take place. Few people seem to realize the immense
+difference made to children by a change of environment at such a time.
+The pupil who will play her piece on the piano without one mistake to
+her mistress, and in the room to which she is used, will often be
+troubled at playing it on another piano, and in another room.
+
+A child was once known to break down in an evening recital, and when
+asked the reason, said: 'I have never played that piece before with a
+candle near me, and I didn't like the shadows on the piano.'
+
+This sort of remark gives a real insight into the child mind.
+
+Another small point may be mentioned. In the lessons just before a
+recital the mistress should go to the end of the room in which the
+lesson is given, while the child is playing her recital piece, in order
+that her supporting presence near the child may not be missed at the
+recital.
+
+The recital will probably be followed by some form of reception by the
+school authorities of the parents of the pupils. No teacher should miss
+this opportunity of getting to know the parents of her pupils. A
+friendly talk over the progress, or lack of progress of a child will
+often result in sympathetic help being given at home, and, in any case,
+the teacher will probably learn something about the character and home
+environment of the child which will help her in her work.
+
+Partly owing to lack of time, and partly because some pieces will not be
+ready, a certain number of children will not be able to play at the
+school recital. Such children should be gathered together at the end of
+the term, and should play to the mistress who organizes the work. In
+this way they too will gain experience, and a little focus will have
+been made for their work.
+
+We must add one final suggestion. Each music mistress should keep a
+register, in which she notes not only the names of her pupils, the times
+of their lessons, absences, late arrivals, &c., but an exact list of all
+the work done by them, with dates. This is invaluable, not only for
+gauging their progress, but as a means of quickly ascertaining their
+work in musical literature. It is, alas! a day of examinations, and with
+the many little books of studies and pieces which have to be got up for
+outside examinations there is a serious fear of the systematic education
+of a child in classical musical literature being interrupted, or, at any
+rate, put on one side for a time. Such a book makes it possible for the
+mistress to keep a definite scheme of work in view for each pupil, and
+the busier the mistress, the more she will need some such aid to her
+memory.
+
+The pupil should also keep a register, in which she notes the exact
+amount of time spent daily in practising, and the way in which she
+divides it. This book should be brought to each music lesson, and should
+also be shown to the supervising mistress at the end of each term.
+
+
+
+
+CHAPTER XIV
+
+SUGGESTIONS TO STUDENTS ON LEAVING
+A TRAINING DEPARTMENT
+
+
+In finishing a course of training along the lines we have been
+considering, it is well to take a bird's-eye view of what has been done.
+
+In all communal work the results fall roughly under two heads:
+
+1. The getting of new ideas, and of new ways of presenting old ideas.
+
+2. The development of character, due to the mixing with fellow students
+and with those who are directing the work.
+
+So far as the actual work is concerned, stress has been laid on the
+following:
+
+1. The necessity of considering music as a language.
+
+2. Various methods for teaching in accordance with this idea.
+
+3. The principle of the inclusion of the work in the regular curriculum
+of schools, with class treatment.
+
+In the short space of one year, which is all that can be generally
+spared by the student, it is impossible for her to realize the full
+bearing of all that has been done. It is only when we see such work in
+perspective, after the lapse of a little time, when it has been possible
+to work out at leisure some of the practical points involved, that we
+can perceive all the ground covered.
+
+Many students have experienced considerable difficulty at first in doing
+themselves what they have seen children do, who have been trained along
+these lines, i.e. to write down two-, three-, or four-part exercises in
+dictation, to transpose at sight, to extemporize without hesitation at
+the piano, &c. The feeling of working against time, of examinations to
+be passed, of discouragement at apparently slow progress, has possibly
+produced a state of mental indigestion, and the only cure for this is
+Time, the universal doctor.
+
+The student is now at the point of entering a new sphere of work. The
+instrument has been sharpened. How is the application to be directed? A
+word of warning is necessary. The young and enthusiastic teacher, fresh
+from the inspiration of a year's work with those interested in her
+development, is too often apt to be over-rigid in enforcing a new
+presentment of ideas.
+
+'This way, or no way!' is her cry.
+
+Now all sound educational work must possess an intrinsic quality of
+pliability: it must grow, expand, and be capable of development in a
+hundred ways. Small points of method must be adjusted to the particular
+class and pupil, and a generous recognition of the useful parts of other
+people's 'methods' will be the surest way of obtaining recognition of
+our own ideals. Provided a firm attitude be maintained on essentials, it
+is often possible to compromise on minor details. Above all, an open
+mind must be preserved in the presence of advice, however
+inexperienced. Many a young teacher has failed in her first post because
+she has given the impression to those in authority that there is one,
+and one only, way in which she can do her work--one, and one only,
+possible scheme of division of classes and hours for lessons.
+
+An arrangement far short of the ideal must often be accepted, with a
+courteous protest, but it will assuredly be modified later by the
+authorities when the teacher has won confidence by arousing the interest
+and enthusiasm of the pupils, and by showing good results from the
+lessons.
+
+Has not every new presentment of every subject in the school curriculum
+been greeted with the same chorus of depreciation at first? Why should
+music, the latest arrived of the subjects on the regular curriculum,
+fare differently?
+
+Remember that the head of a school has often to keep in mind, not only
+his or her ideals in education, but the wishes of a governing body and
+of the parents.
+
+A short demonstration of work done under imperfect conditions will often
+throw a flood of light on the aims of an enthusiastic teacher, who has
+been struggling in difficult surroundings. 'I had no idea you were doing
+all _this_ with the children' has been the admiring comment of more than
+one former unsympathetic critic, and conditions are at once altered in a
+generous spirit.
+
+Above all, the young teacher must remember that it is of the first
+importance not to lose her enthusiasm for the work. She must keep
+herself up to date by being in touch with general musical life outside
+her immediate circle. She should belong to a musical society, and take
+every opportunity of attending lectures, &c. She should organize musical
+clubs and meetings among her pupils, and encourage a healthy attitude of
+kindly criticism.
+
+And, finally, she must be always working at something to do with her own
+music, for directly she ceases to put herself, from time to time, in the
+attitude of the learner, she will cease to be a sympathetic and
+stimulating teacher.
+
+It is a good plan to keep a musical diary, in which our own progress and
+that of our pupils is recorded, together with notes on current musical
+events--concerts attended, and so on. Such a record is most useful for
+reference, and for encouragement in dark hours, when it seems impossible
+to re-establish a lost sense of proportion.
+
+PRINTED IN ENGLAND
+AT THE OXFORD UNIVERSITY PRESS
+
+
+
+
+
+End of the Project Gutenberg EBook of Music As A Language, by Ethel Home
+
+*** END OF THIS PROJECT GUTENBERG EBOOK MUSIC AS A LANGUAGE ***
+
+***** This file should be named 16225-8.txt or 16225-8.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/6/2/2/16225/
+
+Produced by David Newman, Charlene Taylor and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
