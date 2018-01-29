@@ -26,7 +26,10 @@ if total <= 17:
         while total <= 17:
             key = random.choice(list(cardVal.keys()))
             cards.append(key)
-            total += cardVal[card]
+            lastCard = cards
+            total += cardVal[key]
+        print(cards, total)
+    else:
         print(cards, total)
 
 if 20 >= total >= 18:
