@@ -11,7 +11,6 @@ from time import sleep
 
 alpha_list = list(string.ascii_uppercase)
 
-# TBD  add support for upper and lower..
 
 def main():
     print('First, enter a word')
@@ -24,22 +23,26 @@ def main():
     except ValueError:
         print('enter a valid number')
     encrypted = cipher(word, rotation)
-    print(decrypt(encrypted, rotation))
+    decrypt(encrypted, rotation)
 
 
 def cipher(my_str, rot):
     print(my_str)
     print('Ok. Converting.')
     sleep(1)
-    print('Your rotated word is:')
     encrypted = ''  # empty string for the converted word
     for i in range(len(my_str)):
         # find letter in the alpha list
         try:
+            # TODO  add support for upper and lower characters with string.isupper()
             encrypted += (alpha_list[(((alpha_list.index(my_str[i].upper())) + rot) % 26)])  # rotate by amt
-            print('#', i, encrypted, rot)
-        except:
+            print('.', end=' ')
+            sleep(.2)
+        except ValueError:
             encrypted += my_str[i]
+    print('Done!!')
+    sleep(1)
+    print('\nYour rotated word is: ', encrypted)
     return encrypted
 
 
@@ -47,12 +50,11 @@ def decrypt(encr, rota):
     print('would you like to decrypt this word?')
     ans = input().upper()
     if ans == 'Y':
-        print(rota)
         rota = -int(rota)
-        print(rota)
         return cipher(encr, rota)
 
 
-print('Ceaser Cipher\nThis program will encrypt a word by a cipher rotation\n')
+print('Caeser Cipher\nThis program will encrypt a word by a cipher rotation\n')
+
 
 main()
