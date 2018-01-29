@@ -3,6 +3,8 @@ Lab 23
 Contact list
 """
 
+from twilio.rest import Client
+
 with open('files/contacts.csv', 'r') as file:
     lines = file.read().split('\n')
     items = []
@@ -68,5 +70,10 @@ for i in range(len(contact_list) - 1):
 print(contact_list)
 
 
+# Version 3
+
+with open('files/contacts.csv', 'w') as file:
+    for i in range(len(contact_list)):
+        file.write(contact_list[i]['name'] + ',' + contact_list[i]['favorite fruit'] + ',' + contact_list[i]['favorite color'] + "\n")
 
 
