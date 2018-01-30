@@ -27,7 +27,6 @@ def check_palindrome(word):
         return f"{word} is not a palindrome."
 
 
-
 def check_anagram(word2, word3):
     word4 = word2.lower()
     word5 = word3.lower()
