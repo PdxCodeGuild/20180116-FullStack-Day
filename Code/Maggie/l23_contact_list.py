@@ -43,19 +43,17 @@ class Contactlist:  # Create/Read/Update/Delete Information Storage
         contact_name = input('Contact name: ')
         for i in range(len(self.contact_list)):
             if self.contact_list[i]['name'] == contact_name:
-                found = True
                 index = i
                 self.print_record(index)
                 return index
         if not found:
             print('Sorry. That entry does not appear to be in the contact list.')
 
-
     def update(self, index):
         print('UPDATE')
         key_search_term = input('Which item would you like to change? ')
         if key_search_term in self.contact_list[index]:
-            print(self.contact_list[index][key_search_term] )
+            print(self.contact_list[index][key_search_term])
             replacement_value = input('What would you like to change this to?')
             self.contact_list[index][key_search_term] = replacement_value
             print(self.contact_list[index])
@@ -101,6 +99,7 @@ class Contactlist:  # Create/Read/Update/Delete Information Storage
                 print('invalid choice.')
         except KeyError:
             print('Invalid choice.')
+
 
 def load_script():
     ascii_art = '''
