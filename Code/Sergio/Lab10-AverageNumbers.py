@@ -5,14 +5,14 @@
 # print(numbersSum)
 
 
-#Version 2
+# Version 2
 nums = []  # create empty list
+user_choice = int(input('How many numbers would you like to average out? '))
 
-for i in range(7):  # set up loop to run 7 times
+for i in range(user_choice):  # loops based on user_choice
     number = int(input('Enter a number: '))  # prompt user for number
     nums.append(number)  # append to nums
-print(nums)
+print(nums)  # prints your list/numbers you want to average
 numbersSum = sum(nums)
 numbersSum /= len(nums)
-print('Your average is: ')
-print(numbersSum)
+print(f'Your average is: {numbersSum} ')
