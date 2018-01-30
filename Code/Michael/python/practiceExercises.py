@@ -72,19 +72,71 @@
 
 #####################################################################
 
-def missing_char(word):
-
-    word = 'kitten'
-
-    list = []
-    for i, x in enumerate(word):
-        list.append(word.replace(x, ''))
-    return list
-
-print(missing_char('kitten'))
+# def missing_char(word):
+#
+#     word = 'kitten'
+#
+#     list = []
+#     for i, x in enumerate(word):
+#         list.append(word.replace(x, ''))
+#     return list
+#
+# print(missing_char('kitten'))
 
 #####################################################################
 
 # latest_letter = 'pneumonoultramicroscopicsilicovolcanoconiosis'
 # print(max(latest_letter))
+
+#####################################################################
+
+# def occurrences(sentence):
+#
+#     occurrs = sentence.count('hi')
+#     print(occurrs)
+#
+# occurrences('hihi')
+
+#####################################################################
+
+# def cat_dog(x):
+#
+#     if x.count('cat') == x.count('dog'):
+#         print('True')
+#     else:
+#         print('False')
+#
+# cat_dog('catdog')
+# cat_dog('catcat')
+# cat_dog('catdogcatdog')
+
+#####################################################################
+
+# letter = 'i'
+# word = 'antidisestablishmentterianism'
+#
+# counted = word.count(letter)
+# print(counted)
+#
+#
+# letter = 'p'
+# word = 'pneumonoultramicroscopicsilicovolcanoconiosis'
+#
+# counted = word.count(letter)
+# print(counted)
+
+#####################################################################
+
+# def lower_case(word):
+#
+#     word = ''.join(word.split())
+#     print(word.lower())
+#
+# lower_case("SUPER!")
+# lower_case("        NANNANANANA BATMAN        ")
+
+
+
+
+
 

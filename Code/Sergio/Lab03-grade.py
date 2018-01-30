@@ -1,5 +1,5 @@
-get_grade = input('Grade yourself! Enter a number between 0 and 100\n:')
-if int(get_grade) >= 90:
+get_grade = int(input('Grade yourself! Enter a number between 0 and 100\n:'))
+if get_grade >= 90:
     print("You got an A!")
 elif int(get_grade) >= 80:
     print("You got a B..")
