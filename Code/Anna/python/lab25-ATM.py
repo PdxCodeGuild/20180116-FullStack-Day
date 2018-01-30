@@ -13,7 +13,7 @@ class ATM:
     def __init__(self, account_holder, balance=0.00, interest_rate=0.1):
         """Initialize ATM attributes"""
         self.account_holder = account_holder
-        self.balance = round(balance, 2)
+        self.balance = balance
         self.interest_rate = interest_rate
         self.transactions = []
 
