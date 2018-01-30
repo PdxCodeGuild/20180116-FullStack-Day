@@ -1,19 +1,16 @@
 
 # Regular Expressions
 
-Regular expressions or 'regex' are a way to match patterns in strings. They represent statements in a formal language. They can be used to validate a phone number or address in an input field on a website, or to find the occurances of a phrase in a block of text, etc. You can find out more about regular expressions [here](https://docs.python.org/3.6/howto/regex.html#regex-howto) and [here](https://docs.python.org/3.6/library/re.html#re-syntax). Use a [regexp debugging tool](https://regex101.com) to help you understand what you're matching.
-
+Regular expressions or 'regex' are a way to match patterns in strings. They can be executed in nearly any programming language. They can be used to validate a phone number or address in an input field on a website, or to find the occurrences of a phrase in a block of text, etc. Use a [regexp debugging tool](https://regex101.com) to try out a regular expression before using it in your code.
 
 ### Overview
 
 - `[]` define a character class
 - `^` within a character class, matches everything BUT what follows
-
 - `$` matches the end of a string, or just before the next newline
-- `*` matches 0 or more occurances
-- `+` matches 1 or more occurances
-- `?` matches 0 or 1 occurance
-
+- `*` matches 0 or more occurrences
+- `+` matches 1 or more occurrences
+- `?` matches 0 or 1 occurrences
 - `.` matches any character except a newline
 - `\d` matches any digit character (0-9)
 - `\s` matches any whitespace character (space, \t, or \n)
@@ -111,7 +108,7 @@ sna*cks
 
 ## Escapes
 
-If you want literally any special characters use backslash `\` escape in front of it.
+If you want to use any special characters literally, use backslash `\` in front of it.
 
 ```re
 Hello\.
@@ -125,9 +122,9 @@ Hello\.
 
 Groups of characters that are used in the same sorts of ways are called **classes**.
 
-* `\d` matches digits
-* `\s` matches white space of all kinds
-* `\w` matches "word" characters (letters _and_ numbers)
+- `\d` matches digits
+- `\s` matches white space (space, tab, newline)
+- `\w` matches "word" characters (letters, numbers, and underscore)
 
 Each group still only matches one character, but repeat characters can be used on them.
 
@@ -143,9 +140,7 @@ Each group still only matches one character, but repeat characters can be used o
 
 ## Character Sets
 
-If you want to be more discerning than a whole character class, you can use a **set**.
-Put all the characters you want to allow in square brackets `[]`.
-Each set still only matches one character, but repeat characters can be used on them.
+If you want to be more discerning than a whole character class, you can use a **set**. Put all the characters you want to allow in square brackets `[]`. Each set still only matches one character, but repeat characters can be used on them.
 
 ```re
 [bp]anana
@@ -163,8 +158,7 @@ snack[sx]*
 
 > **snacksxsssx**
 
-You can specify **ranges** of characters with dash `-`, so dash must be escaped in a character set.
-A super common range is all letters `[a-zA-Z]` since `\w` also includes digits.
+You can specify **ranges** of characters with dash `-`, so dash must be escaped in a character set. A super common range is all letters `[a-zA-Z]` since `\w` also includes digits.
 
 ```re
 My Name Is: [a-zA-Z]+
@@ -176,11 +170,9 @@ My Name Is: [a-zA-Z]+
 
 ## Captures
 
-You can group together parts of a match into a **capture**, which is like a "sub-match", using parentheses `()`.
-You can then use the repeat modifiers on the whole capture.
+You can group together parts of a match into a **capture**, which is like a "sub-match", using parentheses `()`. You can then use the repeat modifiers on the whole capture.
 
-More useful than that, is when the regular expression library matches text, it will save which parts of the text match each capture by the order they appear (1, 2, etc.).
-This is always one-indexed.
+More useful than that, is when the regular expression library matches text, it will save which parts of the text match each capture by the order they appear (1, 2, etc.). This is always one-indexed.
 
 ```re
 (hot+)+dogs
@@ -207,28 +199,4 @@ It is still a sub-match specified in parentheses `()`, but with `?P<NAME>` first
 
 > **bob dole**
 
-
-## Regular Expressions in Python
-
-When writing regular expressions in Python as string literals, you should use the `r` prefix, so you can more easily write and read backslashes.
-
-```python
-import re
-reg_exp = re.compile(r'Hello, (\w+)', re.I)
-match = reg_exp.search('Why hello, Alice.')
-# find the position of the first match
-match.start()  # 4
-```
-
-```python
->>> m = re.match(r"(\w+) (\w+)", "Isaac Newton, physicist")
->>> m.group(0)       # The entire match
-'Isaac Newton'
->>> m.group(1)       # The first parenthesized subgroup.
-'Isaac'
->>> m.group(2)       # The second parenthesized subgroup.
-'Newton'
->>> m.group(1, 2)    # Multiple arguments give us a tuple.
-('Isaac', 'Newton')
-```
 
