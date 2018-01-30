@@ -2,7 +2,7 @@
 import string
 import math
 
-with open('kindergarten.txt', 'r') as f:
+with open('treasure.txt', 'r') as f:
     contents = f.read()
     sentences = contents.split('.')
     letters = list(contents)
@@ -29,23 +29,21 @@ ari_scale = {
     13: {'ages': '17-18', 'grade_level':   '12th Grade'},
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
+if ari < 1:
+    ari = 1
+if ari > 14:
+    ari = 14
 
-for i in ari_scale:
-    if ari > 14:
-        ari = 14
-    if ari < 1:
-        ari = 1
-
-grade_level = ari_scale[i]['grade_level']
-age_level = ari_scale[i]['ages']
+grade_level = ari_scale[ari]['grade_level']
+age_level = ari_scale[ari]['ages']
 print(f'''The ARI for this title is {ari}.\n This corresponds to a {grade_level} level.\n This is suitable for persons in the range of {age_level} years old.''')
 
 
 
 
-
-print(ari)
-print(sentences)
-print(letters)
-print(words)
+#
+# print(ari)
+# print(sentences)
+# print(letters)
+# print(words)
 
