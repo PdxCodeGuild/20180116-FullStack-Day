@@ -112,12 +112,13 @@
 
 #####################################################################
 
+# add to functions, but it works for now
+
 # letter = 'i'
 # word = 'antidisestablishmentterianism'
 #
 # counted = word.count(letter)
 # print(counted)
-#
 #
 # letter = 'p'
 # word = 'pneumonoultramicroscopicsilicovolcanoconiosis'

@@ -72,8 +72,24 @@ print(contact_list)
 
 # Version 3
 
-with open('files/contacts.csv', 'w') as file:
-    for i in range(len(contact_list)):
-        file.write(contact_list[i]['name'] + ',' + contact_list[i]['favorite fruit'] + ',' + contact_list[i]['favorite color'] + "\n")
+# with open('files/contacts.csv', 'w') as file:
+#     for i in range(len(contact_list)):
+#         file.write(contact_list[i]['name'] + ',' + contact_list[i]['favorite fruit'] + ',' + contact_list[i]['favorite color'] + "\n")
 
 
+# Version 4
+
+for i in range(len(contact_list)):
+    contact_list[i]['phone number'] = "503-100-2000"
+
+print(contact_list)
+
+# account_sid = ""
+# auth_token = ""
+# client = Client(account_sid, auth_token)
+#
+# message = client.api.account.messages.create(to="<whatever you like>",
+#                                              from_="+19718033720",
+#                                              body="Hello there!")
+#
+# print(message.sid)
