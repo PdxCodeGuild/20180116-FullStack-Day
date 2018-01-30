@@ -26,7 +26,7 @@
 default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
 filename = 'contacts.csv'
 
-def load_text():
+def load_script():
     ascii_art = '''   (\_/)
    'o.o'
   =(_ _)=
@@ -34,18 +34,22 @@ def load_text():
     project_name = 'Contacts list v0.0 - Maggie Geise, 2018\n'
     print(ascii_art, project_name)
 
-def import_file(file_name):
-    with open(default_path + 'contacts.csv', 'r') as f:
-        lines = f.read().split('\n')
-    lines_list = []
-    for comma_str in lines:
-        lines_list.append(comma_str.split(','))
-    print('...Contacts imported.')
-    return lines_list
+class Repository:
+    # Create/Read/Update/Delete Information Storage
+    #internally stored as listed dicts
+    def __init__(self, file, entry, index):
+        self.file = file
+        self.entry = entry
+        self.index = index
 
-def convert_to_contacts_list(imported_list):
-    contacts_list = []
-    for i in range(1, len(imported_list)):
+
+    def load_csv_file(file_name):
+        with open(default_path + 'contacts.csv', 'r') as f:
+            lines = f.read().split('\n')
+        lines_list = []
+        for comma_str in lines:
+            lines_list.append(comma_str.split(','))
+        for i in range(1, len(lines_list)):
         d = {}
         for j in range(len(imported_list[i])):
             d.update({imported_list[0][j]: imported_list[i][j]})
@@ -53,7 +57,7 @@ def convert_to_contacts_list(imported_list):
     print('...list loaded.')
     return contacts_list
 
-def append_contacts(contacts_list):  # add a new entry to the contact list
+def create_contacts(contacts_list):  # add a new entry to the contact list
     print('Add a new value to the contact list.')
     new_name = input('Contact name: ')
     new_fruit = input(f'{new_name}\'s favorite fruit: ')
