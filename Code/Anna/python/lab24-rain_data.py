@@ -1,6 +1,6 @@
 """
 Lab 24
-But it never rains in Portland...
+Rain in Portland? No way!
 """
 
 import requests
