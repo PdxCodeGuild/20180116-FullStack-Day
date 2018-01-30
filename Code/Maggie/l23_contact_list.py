@@ -1,118 +1,135 @@
 # Let's build a program to manage a list of contacts.
-# To start, we'll build a CSV ('comma separated values')
-# together, and go over how to load that file.
-# Headers might consist of name, favorite fruit, favorite color. Open the CSV,
-# convert the lines of text into a list of dictionaries, one dictionary for each user.
-# The text in the header represents the keys, the text in the other lines represent the values.
-#
-#
-# with open('contacts.csv', 'r') as file:
-#     lines = file.read().split('\n')
-#     print(lines)
-# Once you've processed the file, your list of contacts will look something like this...
-#
-# contacts = [
-#     {'name':'matthew', 'favorite fruit':'blackberries', 'favorite color':'orange'},
-#     {'name':'sam', 'favorite fruit':'pineapple' ...}
-# #
-# Implement a CRUD REPL
-#
-# Create a record: ask the user for each attribute, add a new contact to your contact list with the attributes that the user entered.
-# Retrieve a record: ask the user for the contact's name, find the user with the given name, and display their information
-# Update a record: ask the user for the contact's name, then for which attribute of the user they'd like to update and the value of the attribute they'd like to set.
-# Delete a record: ask the user for the contact's name, remove the contact with the given name from the contact list.
+from csv import DictReader, writer
+from collections import OrderedDict
 
 
-default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
-filename = 'contacts.csv'
+class Contactlist:  # Create/Read/Update/Delete Information Storage
+    contact_list = []
+    fieldnames = ['name', 'favorite fruit', 'favorite color']
+
+    def __init__(self, csv_file):
+        self.csv_file = csv_file
+
+    def read_csv(self):
+        with open(self.csv_file, 'r') as file:  # open for reading
+            for line in DictReader(file):
+                self.contact_list.append(line)
+        print(f'{self.csv_file} Contact list loaded!')
+        return self.contact_list
+
+    def write_csv(self):
+        new_file = 'new_file.csv'
+        with open(new_file, 'w') as csv_file:
+            write = writer(csv_file)
+            write.writerow(self.fieldnames)
+            for i in range(len(self.contact_list)):
+                line_data = (f'{val}' for key, val in self.contact_list[i].items())
+                write.writerow(line_data)
+        print(f'file saved to {new_file}')
+
+    def create(self):  # add a new entry to the contact list at the end
+        contact = OrderedDict()  # an entry is stored in a dictionary
+        new_name = input('Contact name: ')
+        new_fruit = input(f'{new_name}\'s favorite fruit: ')
+        new_color = input(f'{new_name}\'s favorite color: ')
+        contact['name'] = new_name
+        contact['favorite fruit'] = new_fruit
+        contact['favorite color'] = new_color
+        self.contact_list.append(contact)
+
+    def retrieve(self):  # pull up a record by name, display information
+        found = False
+        print('Please enter a name to look up a record.')
+        contact_name = input('Contact name: ')
+        for i in range(len(self.contact_list)):
+            if self.contact_list[i]['name'] == contact_name:
+                found = True
+                index = i
+                self.print_record(index)
+                return index
+        if not found:
+            print('Sorry. That entry does not appear to be in the contact list.')
+
+
+    def update(self, index):
+        print('UPDATE')
+        key_search_term = input('Which item would you like to change? ')
+        if key_search_term in self.contact_list[index]:
+            print(self.contact_list[index][key_search_term] )
+            replacement_value = input('What would you like to change this to?')
+            self.contact_list[index][key_search_term] = replacement_value
+            print(self.contact_list[index])
+        else:
+            print('Sorry, that key was not found')
+            print('would you like to add a new field?')
+            u_choice = input('Your choice: ')
+            if u_choice == 'y':
+                self.add_new_key_val_pair(index)
+
+    def add_new_key_val_pair(self, index):
+        new_key = input('enter a new field.')
+        new_value = input(f'enter a {new_key}')
+        self.contact_list[index][new_key] = new_value
+        self.fieldnames.append(new_key)
+
+    def delete_record(self, index):
+        self.contact_list.pop(index)
+        print('Record deleted')
+
+    def print_record(self, index):
+        record_disp = '\n'.join(f'{key}: {val}' for key, val in self.contact_list[index].items())
+        print('\nContact found:', record_disp, '\n')
+
+    def decide(self, choice):
+        try:
+            if choice == '1':
+                self.create()
+            elif choice == '2':
+                self.retrieve()
+            elif choice == '3':
+                index = self.retrieve()
+                self.update(index)
+            elif choice == '4':
+                index = self.retrieve()
+                self.delete_record(index)
+            elif choice == 'q':
+                print('goodbye.')
+            elif choice == 's':
+                self.write_csv()
+
+            else:
+                print('invalid choice.')
+        except KeyError:
+            print('Invalid choice.')
 
 def load_script():
-    ascii_art = '''   (\_/)
-   'o.o'
-  =(_ _)=
-     U \n'''
-    project_name = 'Contacts list v0.0 - Maggie Geise, 2018\n'
-    print(ascii_art, project_name)
-
-class Repository:
-    # Create/Read/Update/Delete Information Storage
-    #internally stored as listed dicts
-    def __init__(self, file, entry, index):
-        self.file = file
-        self.entry = entry
-        self.index = index
+    ascii_art = '''
+                  (\_/) 
+                  'o.o' 
+==================(_ _)====================
+Contact list v0.1   U   Maggie Geise, 2018\n'''
+    print(ascii_art)
 
 
-    def load_csv_file(file_name):
-        with open(default_path + 'contacts.csv', 'r') as f:
-            lines = f.read().split('\n')
-        lines_list = []
-        for comma_str in lines:
-            lines_list.append(comma_str.split(','))
-        for i in range(1, len(lines_list)):
-        d = {}
-        for j in range(len(imported_list[i])):
-            d.update({imported_list[0][j]: imported_list[i][j]})
-        contacts_list.append(d)
-    print('...list loaded.')
-    return contacts_list
-
-def create_contacts(contacts_list):  # add a new entry to the contact list
-    print('Add a new value to the contact list.')
-    new_name = input('Contact name: ')
-    new_fruit = input(f'{new_name}\'s favorite fruit: ')
-    new_color = input(f'{new_name}\'s favorite color: ')
-    new_record = {'name' : new_name, 'favorite fruit' : new_fruit, 'favorite color ' : new_color }
-    contacts_list.append(new_record)
-    print(f'...{new_record} appended to contact list.')
-    return contacts_list
-
-def retrieve_record_index(contacts_list):  # pull up a record by name, display information
-    print('Please enter a name to look up a record.')
-    contact_name = input('Contact name: ')
-    for index in range(len(contacts_list)):
-        if contacts_list[index]['name'] == contact_name:
-            return index
-        else:
-            print('Sorry. That entry does not appear to be in the contact list.')
-    print('...record retrieved')
-
-def update_record(contacts_list, index):
-    key_search_term = input('Your choice: ')
-    replacement_value = input('Your choice: ')
-    for n, key in enumerate(contacts_list[index].keys):
-        print(f'{n}. {key}')
-        if key == key_search_term:
-            contacts_list[key] = replacement_value
-    return contacts_list
-
-def delete_record(contact_list, index):
-    contact_list.pop(index)
-
-def print_record(contacts_list, index):
-    record_disp = '\n'.join(f'{key}: {val}' for key, val in contacts_list[index].items())
-    print(record_disp)
-
-# def option_loop(contact_list):
-#     c_l = contact_list
-#     rec_ind = retrieve_record_index(c_l)
-#     function_sel = [append_contacts(c_l), print_record(rec_ind), update_record(rec_ind), delete_record(rec_ind)
-#                     ]
-#     options = ['Create a new record', 'Retrieve an existing entry', 'Update an existing entry', 'delete a record']
-#     print('User options: ', enumerate(options))
-#     u_choice = input('Your choice')
-#
-#     try:
-#         u_choice = funct_select[str(u_choice)[0]]
-#         # break
-#     except KeyError:
-#         print('Invalid choice. Try again.')
-
-def main():
-    load_text()
-    imported_list = import_file(filename)
-    contacts_list = convert_to_contacts_list(imported_list)
-    option_loop()
+def __main__():
+    load_script()
+    filename = 'contacts.csv'
+    contacts = Contactlist(filename)
+    Contactlist.read_csv(contacts)
+    header_text = 'Select from the list of options.'
+    select = '\t1. Create a new entry.\n\t2. Retrieve an existing entry' \
+             '\n\t3. Update an existing entry.\n\t4. Delete an entry.' \
+             f'\n\ts. Save {filename}\n\tq. Quit'
+    while True:
+        print(header_text)
+        print(select)
+        u_prompt = input('Your choice: ')
+        try:
+            Contactlist.decide(contacts, u_prompt)
+            if u_prompt.lower() == 'q':
+                break
+        except KeyError:
+            print('Invalid choice. Try again.')
 
 
-main()
+__main__()
