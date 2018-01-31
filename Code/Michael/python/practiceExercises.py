@@ -1,52 +1,47 @@
 
 #####################################################################
 
-# def is_even(myNumber):
-#
-#     if myNumber % 2 == 0:
-#         print('True')
-#     else:
-#         print("False")
-#
-# is_even(5)
-# is_even(6)
+# def is_even(my_number):
+#     return my_number % 2 == 0
+
+# print(is_even(5))
+# print(is_even(6))
 
 #####################################################################
 
 # def opposite(a, b):
 #
 #     if a > 0 and b < 0:
-#         print('True')
+#         return True
 #     elif a < 0 and b > 0:
-#         print('True')
+#         return True
 #     else:
-#         print('False')
+#         return False
 #
-# opposite(10, -1)
-# opposite(2, 3)
-# opposite(-1, -1)
+# print(opposite(10, -1))
+# print(opposite(2, 3))
+# print(opposite(-1, -1))
 
 #####################################################################
 
 # def near_100(num):
 #
 #     if num >= 90 and num <= 110:
-#         print('True')
+#         return True
 #     else:
-#         print('False')
-#
-# near_100(50)
-# near_100(99)
-# near_100(105)
+#         return False
+# #
+# print(near_100(50))
+# print(near_100(99))
+# print(near_100(105))
 
 #####################################################################
 
 # def maximum_of_three(a, b, c):
+#     return max(a, b, c)
 #
-#     print(max(a, b, c))
-#
-# maximum_of_three(5,6,2)
-# maximum_of_three(-4,3,10)
+# print(maximum_of_three(5,6,2))
+# print(maximum_of_three(-4,3,10))
 
 #####################################################################
 
@@ -91,33 +86,32 @@
 #####################################################################
 
 # def occurrences(sentence):
-#
 #     occurrs = sentence.count('hi')
-#     print(occurrs)
+#     return occurrs
 #
-# occurrences('hihi')
+# print(occurrences('hihi'))
 
 #####################################################################
 
 # def cat_dog(x):
-#
 #     if x.count('cat') == x.count('dog'):
-#         print('True')
+#         return True
 #     else:
-#         print('False')
+#         return False
 #
-# cat_dog('catdog')
-# cat_dog('catcat')
-# cat_dog('catdogcatdog')
+# print(cat_dog('catdog'))
+# print(cat_dog('catcat'))
+# print(cat_dog('catdogcatdog'))
 
 #####################################################################
+
+# add to functions, but it works for now
 
 # letter = 'i'
 # word = 'antidisestablishmentterianism'
 #
 # counted = word.count(letter)
 # print(counted)
-#
 #
 # letter = 'p'
 # word = 'pneumonoultramicroscopicsilicovolcanoconiosis'
@@ -130,10 +124,10 @@
 # def lower_case(word):
 #
 #     word = ''.join(word.split())
-#     print(word.lower())
+#     return word.lower()
 #
-# lower_case("SUPER!")
-# lower_case("        NANNANANANA BATMAN        ")
+# print(lower_case("SUPER!"))
+# print(lower_case("        NANNANANANA BATMAN        "))
 
 
 
