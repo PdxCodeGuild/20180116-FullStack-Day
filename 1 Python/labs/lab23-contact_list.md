@@ -31,27 +31,3 @@ Implement a CRUD REPL
 
 When REPL loop finishes, write the updated contact info to the CSV file to be saved. I highly recommend saving a backup `contacts.csv` because you likely won't write it correctly the first time.
 
-## Version 4 (optional)
-
-Add a `phone number` column to the CSV, with each contact's phone number. We'll use the Twilio API to send SMS messages from the terminal.
-
-Add an additional command to the REPL `send sms`, ask for the contact's name, and the message you'd like to send them.
-
-
-
-
-```python
-# Download the twilio-python library from http://twilio.com/docs/libraries
-from twilio.rest import Client
-
-# Find these values at https://twilio.com/user/account
-account_sid = "XXXX"
-auth_token = "XXXX"
-client = Client(account_sid, auth_token)
-
-message = client.api.account.messages.create(to="<whatever you like>",
-                                             from_="+19718033720",
-                                             body="Hello there!")
-```
-
-    
