@@ -1,8 +1,11 @@
-total = input('Please enter how much you have in pennies')
+v = input('Please enter how much you have in pennies')
+v = int(v)
+q = v // 25
+v -= q*25
+d = v//10
+v -= d*10
+n = v//5
+v -= n*5
 
-v = int(total)
-w = v//25
-x = (v-(w*25))//10
-y = ()
-
-print('You have ' + str(w) + ' quarters, ' + str(x) + ' Dimes, ' + str(y) + ' Nickels')
+print('You have ' + str(q) + ' quarters, ' + str(d) + ' Dimes, ' + str(n) + ' Nickels')
+print(f'You have {q} quarters, {d} Dimes, {n} Nickels, and {v} Pennies')

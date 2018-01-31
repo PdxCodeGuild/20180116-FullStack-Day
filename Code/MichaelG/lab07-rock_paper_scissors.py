@@ -21,5 +21,7 @@ print('I choose')
 time.sleep(1.5)
 print(throw)
 
-if output and throw:
+if output == throw:
     print('Tie!')
+
+# cover the other cases
