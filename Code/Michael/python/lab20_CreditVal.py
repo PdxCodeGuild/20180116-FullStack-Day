@@ -6,12 +6,12 @@ def validator():
     card = input('Enter your card\n> ')
     # print(type(card))
 
+    numbers = []
     for i in range(len(card)):
-        numbers = card[i]
-        print(numbers)
+        numbers.append(int(card[i]))
 
-        # numbers = [int(card[i]) for i in range(len(card))]
-    # # print(numbers)
+    # numbers = [int(card[i]) for i in range(len(card))]
+    # print(numbers)
 
     lastDigit = numbers.pop()
     # print(lastDigit)
@@ -20,18 +20,18 @@ def validator():
     reversed = numbers[::-1]
     # print(reversed)
 
+    doubled = reversed.copy()
     for i in range(0, len(reversed), 2):
-        reversed[i] *= 2
-        doubled = reversed
-        print(doubled)
+        doubled[i] *= 2
+    print(doubled)
 
     for i in range(0, len(doubled)):
         if doubled[i] > 9:
             doubled[i] -= 9
-            minusNine = doubled
-            # print(minusNine)
+    minus_nine = doubled
+    # print(minus_nine)
 
-    sumCard = sum(minusNine)
+    sumCard = sum(minus_nine)
     # print(sumCard)
 
     secondDigit = str(sumCard)[1]
