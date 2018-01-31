@@ -1,26 +1,48 @@
-'Unit converter for meters'
+# Unit converter for meters
 
-from time import sleep
-# get number of feet
-#print out equivalence in meters.
 
-ft_m = 0.3048 #feet in meters
-mi_m = 1609.34 #mile in meters
-km_m = 1000 #km in meters
+def to_meters(dist, units):
+    if units == 'ft':
+        return dist * 0.3048  # feet in meters
+    elif units == 'mi':
+        return dist * 1609.34  # mile in meters
+    elif units == 'km':
+        return dist * 1000  # etc.
+    elif units == 'yd':
+        return dist * 0.9144
+    elif units == 'in':
+        return dist * 0.0254
+    elif units == 'm':
+        return dist
+
+
+def from_meters(dist, units):
+    if units == 'm':
+        return dist  # no conversion needed
+    elif units == 'ft':
+        return dist / 0.3048
+    elif units == 'mi':
+        return dist / 1609.34
+    elif units == 'km':
+        return dist / 1000
+    elif units == 'yd':
+        return dist / 0.9144
+    elif units == 'in':
+        return dist / 0.0254
+
 
 def main():
-    print('Unit Conversion Calculator for meters\n\nStep 1: Enter the distance')
-    distance = input('Distance:  ')
-    print('Now choose the units for the distance entered.\n(input ft, mi, or km)')
+    print('Unit Conversion Calculator\n\nStep 1: Enter the distance')
+    distance = float(input('Distance:  '))
+    print('Units for this distance.\n(input ft, mi, km, yd, or in)')
     units = input('Units: ')
+    units_to = input('what units will this be converted to? ')
+
+    d_in_meters = to_meters(distance, units)
+    dist_to = from_meters(d_in_meters, units_to)
+    output = f'{distance} {units} is {dist_to} {units_to}'
+    print(output)
 
 
-    if units == 'ft':
-        print(distance, units, 'equals', int(distance) * ft_m, ' meters')
-    if units == 'mi':
-        print(distance, units, 'equals', int(distance) * mi_m, ' meters')
-    elif units == 'km':
-        print(distance, units, 'equals', int(distance) * km_m, ' meters')
-    sleep(2)
-
-    print('\nThanks for using this unit converter.\nGoodbye!\n')
+main()
+print('\nThanks for using this unit converter.\nGoodbye!\n')
