@@ -57,14 +57,28 @@ start_city = input("> ")
 print("What is your maximum number of hops?")
 max_hops = input("> ")
 max_hops = int(max_hops)
+org_hops = int(max_hops)
 next_cities = []
+travel_time = 0
+hops = 1
 
 
 def city_hopper(start_city, max_hops):
+    global travel_time
+    global hops
     for key in city_to_accessible_cities_with_travel_time[start_city]:
-        if key not in next_cities:
+        if key not in next_cities and hops <= org_hops:
             next_cities.append(key)
+            travel_time += city_to_accessible_cities_with_travel_time[start_city][key]
+            print(f"Your quickest travel time from {start_city} to {key} with {hops} hops would be {travel_time} hours")
+        elif key not in next_cities:
+            next_cities.append(key)
+            travel_time += city_to_accessible_cities_with_travel_time[start_city][key]
+            print(f"Your quickest travel time from {start_city} to {key} with {org_hops} hops would be {travel_time} hours")
+        else:
+            travel_time += 0
     max_hops -= 1
+    hops += 1
     if max_hops != 0:
         for city in next_cities:
             city_hopper(city, max_hops)
@@ -73,4 +87,5 @@ def city_hopper(start_city, max_hops):
 
 hopped_cities = city_hopper(start_city, max_hops)
 
-print(f"From {start_city} you can get to {' and '.join(hopped_cities)} in {max_hops} hops.")
+
+print(f"\nFrom {start_city} you can get to {' and '.join(hopped_cities)} in {max_hops} hops.")
