@@ -124,7 +124,7 @@ while True:
         if current_player_id == 0:
             column = input(f'player {current_player_id}, choose a column (1-{my_game.n_columns}): ')
         elif current_player_id == 1:
-            column = random.randint(1, my_game.n_columns+1)
+            column = random.randint(1, my_game.n_columns)
             print(f"The computer chooses {column}.")
         try:
             column = int(column)
