@@ -8,7 +8,7 @@ def peaks(data):
     return peak_indices
 def valleys(data):
     valley_indices = []
-    for i in range[1,len(data)-1]:
+    for i in range(1,len(data)-1):
         if data[i] < data[i-1] and data[i] < data[i+1]:
             valley_indices.append(i)
     return valley_indices
