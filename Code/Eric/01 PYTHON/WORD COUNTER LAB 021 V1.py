@@ -1,9 +1,7 @@
 import string
 
 with open('Music as a Language by Ethel Home.txt', 'r') as book:  # Open the file.
-	book = book.read()
-
-book = book.lower()  # everything lowercase
+	book = book.read().lower()  # everything lowercase
 
 zero_punctuation = str.maketrans('', '', string.punctuation)  # strip punctuation
 book = book.translate(zero_punctuation)
