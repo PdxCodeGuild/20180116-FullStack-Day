@@ -10,10 +10,9 @@ answer = True
 for i in range(3):
     key = random.choice(list(cardVal.keys()))
     cards.append(key)
-    print(cards)
+print(cards)
 
 total = 0
-
 for card in cards:
     total += cardVal[card]
 
@@ -21,13 +20,13 @@ if 'A' in cards and total <= 10:
     total += 10
 
 if total <= 17:
+    print(total)
     answer = input('would you like to hit?\n > ').lower()
     if answer == 'yes':
         while total <= 17:
-            key = random.choice(list(cardVal.keys()))
-            cards.append(key)
-            lastCard = cards
-            total += cardVal[key]
+            card = random.choice(list(cardVal.keys()))
+            cards.append(card)
+            total += cardVal[card]
         print(cards, total)
     else:
         print(cards, total)
