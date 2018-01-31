@@ -1,5 +1,5 @@
 """
-Let's play Connect Four!
+Let's play Collect Four!
 
 # requirements gathering
 7 columns, 6 rows
@@ -29,137 +29,128 @@ game mechanics:
 import random
 
 
-def print_board(board, piece_lookup):
-    for j in range(len(board)):
-        for i in range(len(board[j])):
-            print(piece_lookup[board[j][i]], end='')
-        print()
-    print(" " + '  '.join([str(i) for i in range(1, len(board[0]) + 1)]))
+class Collect4:
+    """This is totally not a Collect 4™ rip-off. Milton Bradley, please don't sue us."""
 
+    def __init__(self, n_columns, n_rows, n_pieces_to_win):
+        """Initialize!"""
+        self.n_columns = n_columns
+        self.n_rows = n_rows
+        self.n_pieces_to_win = n_pieces_to_win
 
-def put_piece(board, column, piece):
-    row = 0
-    while row < len(board) and board[row][column] == 0:
-        row += 1
-    row -= 1
-    if row > -1:
-        board[row][column] = piece
+    def print_board(self, board, piece_lookup):
+        for j in range(len(board)):
+            for i in range(len(board[j])):
+                print(piece_lookup[board[j][i]], end='')
+            print()
+        print("  " + '    '.join([str(i) for i in range(1, len(board[0]) + 1)]))
+
+    def put_piece(self, board, column, piece):
+        row = 0
+        while row < len(board) and board[row][column] == 0:
+            row += 1
+        row -= 1
+        if row > -1:
+            board[row][column] = piece
+            return True
+        return False
+
+    def column_full(self, board, column):
+        return board[0][column] != 0
+
+    def all_columns_full(self, board):
+        for column in range(len(board[0])):
+            if not self.column_full(board, column):
+                return False
         return True
-    return False
 
+    def check_direction(self, board, piece, row, column, row_increment, column_increment):
+        for i in range(self.n_pieces_to_win):
+            if row >= len(board) or column >= len(board[row]):
+                return False
+            if board[row][column] != piece:
+                return False
+            row += row_increment
+            column += column_increment
+        return True
 
-def column_full(board, column):
-    return board[0][column] != 0
+    def check_all_directions(self, board, piece, row, column):
+        direction_values = [-1, 0, 1]
+        for d0 in direction_values:
+            for d1 in direction_values:
+                if d0 == 0 and d1 == 0:
+                    continue
+                if self.check_direction(board, piece, row, column, d0, d1):
+                    return True
+        return False
 
-
-def all_columns_full(board):
-    for column in range(len(board[0])):
-        if not column_full(board, column):
-            return False
-    return True
-
-
-def check_direction(board, piece, row, column, row_increment, column_increment):
-    for i in range(n_pieces_to_win):
-        if row >= len(board) or column >= len(board[row]):
-            return False
-        if board[row][column] != piece:
-            return False
-        row += row_increment
-        column += column_increment
-    return True
-
-
-def check_all_directions(board, piece, row, column):
-    direction_values = [-1, 0, 1]
-    for d0 in direction_values:
-        for d1 in direction_values:
-            if d0 == 0 and d1 == 0:
-                continue
-            if check_direction(board, piece, row, column, d0, d1):
-                return True
-    return False
-
-
-
-def check_win(board):
-    for row in range(len(board)):
-        for column in range(len(board[row])):
-            piece = board[row][column]
-            if piece == 0:
-                continue
-            if check_all_directions(board, piece, row, column):
-                return True
-    return False
-
-
-
-n_columns = 7
-n_rows = 6
-piece_lookup = [' _ ', ' o ', ' x ']
-board = [[0 for j in range(n_columns)] for i in range(n_rows)]
-n_pieces_to_win = 4
-
-# alternative way of generating the board
-# board = []
-# for i in range(n_rows):
-#     board.append([])
-#     for j in range(n_columns):
-#         board[i].append(0)
-
-# testing stuff
-# for i in range(20):
-#     piece = random.randint(1, 2)
-#     column = random.randint(0, len(board[0])-1)
-#     put_piece(board, column, piece)
+    def check_win(self, board):
+        for row in range(len(board)):
+            for column in range(len(board[row])):
+                piece = board[row][column]
+                if piece == 0:
+                    continue
+                if self.check_all_directions(board, piece, row, column):
+                    return True
+        return False
 
 
 print('\nWelcome to our Collect4™ game')
 print(r'''
-     .-.
-    /'v'\
-   (/   \)
-  ='="="===< 
-     |_|
+             .-.
+            /'v'\
+           (/   \)
+          ='="="===< 
+             |_|
 ''')
 
 
 print('-'*80)
 
+my_game = Collect4(7, 6, 4)
+
+piece_lookup = ['[___]', '[ o ]', '[ x ]']
+board = [[0 for j in range(my_game.n_columns)] for i in range(my_game.n_rows)]
+
 players = [1, 2]
-current_player_id = random.randint(1, len(players))
+current_player_id = random.randint(0, len(players)-1)
+
 
 while True:
 
-    print_board(board, piece_lookup)
+    my_game.print_board(board, piece_lookup)
 
     while True:
-        column = input(f'player {current_player_id}, choose a column (1-{n_columns}): ')
+        if current_player_id == 0:
+            column = input(f'player {current_player_id}, choose a column (1-{my_game.n_columns}): ')
+        elif current_player_id == 1:
+            column = random.randint(1, my_game.n_columns+1)
+            print(f"The computer chooses {column}.")
         try:
             column = int(column)
             column -= 1
-            if column < 0 or column >= n_columns:
+            if column < 0 or column >= my_game.n_columns:
                 print("That is not a column in range")
-            elif column_full(board, column):
+            elif my_game.column_full(board, column):
                 print("That column is full")
             else:
                 break
-            if 0 <= column < n_columns and not column_full(board, column):
+            if 0 <= column < my_game.n_columns and not my_game.column_full(board, column):
                 break
         except ValueError:
             print('Not a valid number')
 
     piece = current_player_id + 1
-    put_piece(board, column, piece)
+    my_game.put_piece(board, column, piece)
 
-    if all_columns_full(board):
-        print_board(board, piece_lookup)
+    if my_game.all_columns_full(board):
+        my_game.print_board(board, piece_lookup)
         print("All columns full with no winner. Game over!")
         break
-    if check_win(board):
-        print_board(board, piece_lookup)
+    if my_game.check_win(board):
+        my_game.print_board(board, piece_lookup)
         print(f"Game over! Player {current_player_id} is the winner!")
         break
 
     current_player_id += 1
-    current_player_id %= len(players)
+    current_player_id %= len(players) # go to the first player when we go past the end
