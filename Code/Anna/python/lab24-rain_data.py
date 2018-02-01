@@ -116,8 +116,9 @@ for i in range(len(sum_list)):
 
 
 # only printing a month of data as any more is a mess...
-x_values = day_list[0:29]
-y_values = inches[0:29]
+x_values = day_list[0:30]
+print(x_values) # make datetime, not strings!
+y_values = inches[0:30]
 
 plt.plot(x_values, y_values)
 plt.xlabel('day')
@@ -138,3 +139,4 @@ plt.xlabel('year')
 plt.ylabel('inches of rain')
 plt.show()
 
+# can also do year with most rainy days, rainiest months
