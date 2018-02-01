@@ -24,10 +24,10 @@
 - [datacamp.com](https://www.datacamp.com/) (not free)
 
 
-
 ### Books
 
-- [Think Python](http://greenteapress.com/thinkpython/html/index.html): a whole O'Reilly book available online for free
+- [Think Python](http://greenteapress.com/thinkpython/html/index.html)
+- [Dive Into Python 3](http://www.diveintopython3.net/)
 - [A Byte of Python](https://python.swaroopch.com/)
 
 
