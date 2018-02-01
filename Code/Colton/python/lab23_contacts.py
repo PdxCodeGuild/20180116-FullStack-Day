@@ -43,15 +43,15 @@ with open('contacts_csv.csv', 'r') as file:
                 break
 
 
-        elif crud == 'retrieve':
+        elif crud == 'retrieve':###still printing name not availible, cant use elif
             fetch = input("Which person would you like info about?\n:")
             for i in range(len(contacts)):
                 if fetch == contacts[i]['name']:
-                    success = i
                     print(contacts[i])
-            if fetch != contacts[success]['name']:
-                print("Name not availible, try another name.")
-            continue
+            if fetch != contacts[i]['name']:
+                    print("Name not availible, try another name.")
+                    continue
+
 
 
         # if crud == 'update':
@@ -65,14 +65,13 @@ with open('contacts_csv.csv', 'r') as file:
         #     if update == 'color':
         #         pass
 
-        elif crud == 'delete':
+        elif crud == 'delete':###deletes name but then says index out of range
              delete = input("Which contact do you want to delete?")
              for i in range(len(contacts)):
                  if delete == contacts[i]['name']:
-                     contacts.pop[i]
-                     success = i
+                     del(contacts[i])
                      print(contacts)
-             if delete != contacts[success]['name']:
+             if delete != contacts[i]['name']:
                  print("Name not availible, try another name.")
 
 
