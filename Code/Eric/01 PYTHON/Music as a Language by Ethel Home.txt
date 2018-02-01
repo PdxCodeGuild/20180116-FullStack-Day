@@ -1,44 +1,4 @@
-﻿The Project Gutenberg EBook of Music As A Language, by Ethel Home
-
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.net
-
-
-Title: Music As A Language
-       Lectures to Music Students
-
-Author: Ethel Home
-
-Release Date: July 6, 2005 [EBook #16225]
-
-Language: English
-
-
-*** START OF THIS PROJECT GUTENBERG EBOOK MUSIC AS A LANGUAGE ***
-
-
-
-
-Produced by David Newman, Charlene Taylor and the Online
-Distributed Proofreading Team at http://www.pgdp.net
-
-
-
-
-
-Oxford University Press
-
-_London_ _Edinburgh_ _Glasgow_ _New York_
-_Toronto_ _Melbourne_ _Bombay_
-
-Humphrey Milford _M.A._ _Publisher to the University_
-
-
-
-
-MUSIC
+﻿MUSIC
 AS A LANGUAGE
 
 LECTURES TO
@@ -53,9 +13,6 @@ G.P.D.S.T.
 OXFORD
 AT THE CLARENDON PRESS
 1916
-
-
-
 
 PREFACE
 
@@ -168,7 +125,7 @@ equivalent.'
 
 Now, those who have studied the question of the teaching of music in
 accordance with modern methods have realized that music provides a
-_language,_ which should be used primarily for self-expression and
+"language, which should be used primarily for self-expression and
 intercourse with others. The whole of life depends on the expression of
 ourselves in relation to the community. 'Self-expression is a universal
 instinct, which can only be crushed by a course of systematic ill
