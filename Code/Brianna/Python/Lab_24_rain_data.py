@@ -7,6 +7,7 @@ import datetime
 #import plotly.graph_objs as go
 import csv
 import re
+import statistics
 
 #app = dash.Dash()
 
@@ -40,23 +41,68 @@ for dates in range(len(data_list)):
     else:
         pass
 
-print(data_list)
 
-for i in range(len(date_list)):
-    print(date_list[i].year, date_list[i].month, date_list[i].day) # Yep! It prints all the dates
-
-
-
-
-
+def year_sum(date_with_data, year1, year2):
+    year1 = int(year1)
+    year2 = int(year2)
+    year_dict = {}
+    for year in range(year1, year2):
+        if year in date_with_data[i][0]:
+            year_dict[year] = 0
+    for year in year_dict.keys():
+        for i in range(len(date_with_data[i][1]), len(date_with_data) + 1):
+            try:
+                if year in date_with_data[i][0]:
+                      year_dict[year] += date_with_data[i][1]
+            except:
+                pass
+    return year_dict
 
 
 '''
-import CSV
-With open(‘some.csv’, ‘rb’) as f:
-reader = csv.reader(f)
-for row in reader:
-print row'''
+
+def month_sum(date_with_data, year_month):
+    month_dict = {}
+    for month in range(int(year_month), int(year_month)):  # Will this give an error?? Probavbly...
+        if month in date_with_data[i][0]:
+            month_dict[month] = 0
+    for month in month_dict.keys():
+        for i in range(len(date_with_data[i][1]), len(date_with_data) + 1]):
+            try:
+                if month in date_with_data[i][0]:
+                      month_dict[month] += date_with_data[i][1]
+        except:
+            pass
+    return month_dict
+'''
+year1 = input(f"What year would you like to start at? 2004 - 2017 are available.\n")
+year2 = input(f"What year would you like to end on? 2004 - 2017 are available.\n")
+
+year_sums = year_sum(data_list, year1, year2)
+
+x_axis = []
+while i in range(len(date_list)):
+    x_axis.append(date_list[i])
+
+y_axis = []
+while i in range(len(data_list)):
+    y_axis.append(data_list[i][1])
+
+
+
+
+
+#print(data_list)
+
+#for i in range(len(date_list)):
+#    print(date_list[i].year, date_list[i].month, date_list[i].day) # Yep! It prints all the dates
+
+plt.plot(x_axis, y_axis)
+plt.show()
+
+
+
+
 
 '''
 
