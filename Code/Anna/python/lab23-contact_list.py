@@ -26,7 +26,7 @@ class ContactManager:
     """This does things to the existing contact list"""
 
     def __init__(self, contact_list):
-        """Initialize ATM attributes"""
+        """Initialize contact list"""
         self.contact_list = contact_list
 
     def add_contact(self):
