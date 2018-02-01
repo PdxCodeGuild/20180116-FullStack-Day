@@ -20,7 +20,6 @@ split_data = []                 # splitting further into dates and numbers
 for i in range(len(data)):
     split_data.append(re.split('\s+', data[i]))
 
-print(split_data)
 
 date_list = []
 for i in range(len(split_data)):
@@ -30,7 +29,7 @@ for i in range(len(split_data)):
     # print(date.month)
     # print(date.day)
 
-print(date_list)
+
 # Version 2
 
 sum_list = []
