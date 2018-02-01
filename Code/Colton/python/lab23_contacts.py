@@ -17,11 +17,13 @@ with open('contacts_csv.csv', 'r') as file:
         contacts_2.append(contact_2)
     contacts = contacts_2
     options = ('create', 'retrieve', 'update', 'delete')
+    for i in range(len(contacts)):
+        print(contacts[i])
     crud = input("Choose your option.\nCreate a new record\nRetrieve a new record\nUpdate a record\nDelete a record\n:::").lower()
 
     while crud not in options:
         crud = input("Choose your option.\nCreate a new record\nRetrieve a new record\nUpdate a record\nDelete a record\n:::").lower()
-
+######################CREATE#########################
     while crud in options:
         if crud == 'create':
             create = []
@@ -42,36 +44,68 @@ with open('contacts_csv.csv', 'r') as file:
             if again != 'yes':
                 break
 
-
-        elif crud == 'retrieve':###still printing name not availible, cant use elif
-            fetch = input("Which person would you like info about?\n:")
+######################RETRIEVE#################################
+        elif crud == 'retrieve':
+            fetch = input("Which person would you like info about? Type done to exit\n:")
             for i in range(len(contacts)):
                 if fetch == contacts[i]['name']:
                     print(contacts[i])
+                    break
+            if fetch == 'done':
+                break
             if fetch != contacts[i]['name']:
-                    print("Name not availible, try another name.")
-                    continue
+                print("Name not availible, try another name.")
+                continue
 
-
-
-        # if crud == 'update':
-        #     update = input("What would you like to update?\n:Name, fruit, or color?").lower()
-        #     if update == 'name':
-        #         pass
-        #
-        #     if update == 'fruit':
-        #         pass
-        #
-        #     if update == 'color':
-        #         pass
-
-        elif crud == 'delete':###deletes name but then says index out of range
-             delete = input("Which contact do you want to delete?")
+#####################UPDATE########################
+        elif crud == 'update':
+             update = input("Which user would you like to update?")
              for i in range(len(contacts)):
-                 if delete == contacts[i]['name']:
-                     del(contacts[i])
-                     print(contacts)
-             if delete != contacts[i]['name']:
-                 print("Name not availible, try another name.")
+                 if update == contacts[i]['name']:
+                     print(contacts[i])
+             update_specs = input("What would you like to update?\n:Name, favorite fruit, or  favorite color\n:").lower()
+################UPDATE NAME##################################
+             if update_specs == 'name':
+                 new_name = input("Type a new name\n:")
+                 for i in range(len(contacts)):
+                     if update == contacts[i]['name']:
+                         contacts[i].update({'name': new_name})
+                         print(contacts)
+
+                 break
+
+
+###############UPDATE FRUIT ###########################
+             if update_specs == 'favorite fruit':
+                 new_fruit = input("Type a new fruit\n:")
+                 for i in range(len(contacts)):
+                     if update == contacts[i]['favorite fruit']:
+                         contacts[i].update({'name': new_fruit})
+                         print(contacts)
+
+                 break
+
+
+###############UPDATE COLOR ###########################
+             if update_specs == 'favorite color':
+                 new_color = input("Type a new color\n:")
+                 for i in range(len(contacts)):
+                     if update == contacts[i]['favorite color']:
+                         contacts[i].update({'favorite color': new_color})
+                         print(contacts)
+
+                 break
+###################DELETE##########################
+        elif crud == 'delete':
+            delete = input("Which contact do you want to delete? Type done to exit.\n:")
+            for i in range(len(contacts)):
+                if delete == contacts[i]['name']:
+                    del(contacts[i])
+                    print(contacts)
+                    break
+            if delete == 'done':
+                break
+
+
 
 
