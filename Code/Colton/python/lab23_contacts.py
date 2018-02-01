@@ -106,6 +106,7 @@ with open('contacts_csv.csv', 'r') as file:
             if delete == 'done':
                 break
 
+contacts = str(contacts)
 
-
-
+with open('contacts_csv.csv', 'w') as file:
+    file.write(contacts)
