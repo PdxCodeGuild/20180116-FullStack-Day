@@ -38,17 +38,26 @@ def load_data():
     return data
 
 
-def find_crime_type(data):
+def find_crime_type(data, x):
     crime_dict = {}
     for i in range(1, len(data)-1):
-        if data[i][3] not in crime_dict:
-            crime_dict[data[i][3]] = 1
+        if data[i][x] not in crime_dict:
+            crime_dict[data[i][x]] = 1
         else:
-            crime_dict[data[i][3]] += 1
+            crime_dict[data[i][x]] += 1
     return crime_dict
 
 
+# def get_zip(data):
+#     zip_list = []
+#     # zip_dict = {}
+#     for i in range(1, len(data)-1):
+#         zip_list.append(data[4].split(', '))
+#     print(zip_list)
+
+
 def count_all_crimes():
+    """counts the total number of crimes per year, then returns the year with the most crime"""
     with open('../../../1 Python/data/crime_incident_data_recent.csv', 'r') as f:
         contents = f.read().replace('"', '')
         new_contents = contents.split('\n')
@@ -92,14 +101,43 @@ def count_all_crimes():
 
 
 data = load_data()  # choose which year to look at
-crime_dict = find_crime_type(data)
+freq_crime_dict = find_crime_type(data, 3)
+hood_crime_dict = find_crime_type(data, 5)
+zip_crime_dict = find_crime_type(data, 6)
+# get_zip(data)
 
 print("The most frequent crimes that year were:")
 
-tup_crimes = list(crime_dict.items())  # list of tuples
+# find the most common crimes
+tup_crimes = list(freq_crime_dict.items())  # list of tuples
 tup_crimes.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
 for i in range(min(30, len(tup_crimes))):  # print the top 30 crimes, or all of them, whichever is smaller
-    print(f"'{tup_crimes[i][0]}' was committed {tup_crimes[i][1]} times")
+    print(f"{tup_crimes[i][0]} was committed {tup_crimes[i][1]} times")
 
 
+print("\nThe neighborhoods with the most crime were:")
+
+# find the most crimes per neighborhood
+tup_crimes = list(hood_crime_dict.items())  # list of tuples
+tup_crimes.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(10, len(tup_crimes))):  # print the top 10 neighborhoods, or all of them, whichever is smaller
+    if 'Unknown/Not Available' in tup_crimes[i][0] or tup_crimes[i][0] == '':
+        pass
+    else:
+        print(f"A crime was committed in the {tup_crimes[i][0]} neighborhood {tup_crimes[i][1]} times")
+
+
+print("\nThe zip codes with the most crime were:")
+
+# find the most crimes per neighborhood
+tup_crimes = list(zip_crime_dict.items())  # list of tuples
+tup_crimes.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(10, len(tup_crimes))):  # print the top 10 zip codes, or all of them, whichever is smaller
+    if 'OR ' in tup_crimes[i][0]:
+        print(f"A crime was committed in the {tup_crimes[i][0]} zip code {tup_crimes[i][1]} times")
+    else:
+        pass
+
+
+# find the year that had the most crimes
 print(count_all_crimes())
