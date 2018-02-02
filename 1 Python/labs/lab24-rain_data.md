@@ -18,16 +18,18 @@ MORE...
 
 ```
 
-Download one of these files (or the csv I've compiled containing all of them), and write a function to load the file. Each line of the file will become a list or class or tuple consisting of a `datetime` and a series of `int`s.
+Download one of these files and write a function to load the file. The two columns that are most important are the date and the daily total. The simplest representation of this data is a list of tuples, but you may also use a list of dictionaries, or a list of instances of a custom class.
 
-To parse the dates, use [datetime.striptime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior). Below I've shown how to parse an example string, resulting in a [datetime](https://docs.python.org/3.6/library/datetime.html#date-objects) object. We can then access the year, month, and day on that datetime as ints.
+To parse the dates, use [datetime.strptime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior). This allows for easy access to the year, month, and day as `int`s. Below I've shown how to parse an example string, resulting in a [datetime](https://docs.python.org/3.6/library/datetime.html#date-objects) object. We can then access the year, month, and day on that datetime as ints. Later, if you want to print the datetime in a more human-readable format, you can use [datetime.strftime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
 ```python
 import datetime
 date = datetime.datetime.strptime('25-MAR-2016', '%d-%b-%Y')
-print(date.year)
-print(date.month)
-print(date.day)
+print(date.year)   # 2016
+print(date.month)  # 3
+print(date.day)    # 25
+print(date)  # 2016-03-25 00:00:00
+print(date.strftime('%d-%b-%Y'))  # 25-Mar-2016
 ```
 
 ## Version 2
