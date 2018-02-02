@@ -25,6 +25,7 @@ def setup(players):
     chips = []
     for player in players:
         chips.append(3)
+        print(chips)
         print(player, 'recieves 3 chips')
     input('press Enter to continue.')
     print('\n')
@@ -60,16 +61,16 @@ def play(players, chips):
                 for result in range(dice[i]):
                     d_set.append(choice(die))
                 print('Die results: ', d_set, '\n')
-                for result in range(len(d_set)):
-                    if d_set[result] == 'L':
+                for result in d_set:
+                    if result == 'L':
                         print(player, 'passes 1 chip to', players[i - 1], 'on the left.')
                         chips[i] -= 1
                         chips[i - 1] += 1
-                    elif d_set[result] == 'C':
+                    elif result == 'C':
                         print(player, 'puts a chip in the pot.')
                         chips[i] -= 1
                         pot += 1
-                    elif d_set[result] == 'R':
+                    elif result == 'R':
                         print(player, 'passes 1 chip to', players[(i + 1) % len(players)], ' on the right.')
                         chips[i] -= 1
                         chips[(i + 1) % len(chips)] += 1

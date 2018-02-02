@@ -1,6 +1,3 @@
-from random import choice
-
-# given list of connected cities
 city_to_accessible_cities = {
   'Boston': {'New York', 'Albany', 'Portland'},
   'New York': {'Boston', 'Albany', 'Philadelphia'},
@@ -8,6 +5,10 @@ city_to_accessible_cities = {
   'Portland': {'Boston', 'Albany'},
   'Philadelphia': {'New York'}
 }
+
+from random import choice
+
+# given list of connected cities
 
 def hop_twice(city):
     hop_dest = city_to_accessible_cities[city]

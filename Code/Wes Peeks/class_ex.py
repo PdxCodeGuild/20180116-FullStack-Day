@@ -42,37 +42,45 @@ class wizard_kobold(character):
         super().__init__(1, 1, 1)
 
     def fireball(self):
+        print(wizard_kobold.__fireball)
         return self.__fireball
 
     def take_dam(self, dam):
         super().take_dam(dam + super().ret_def())
 
-my_char = character(10,5,5)
 
-enemy = wizard_kobold(20)
 
-# print(my_char,enemy)
+wk = wizard_kobold(5)
+
+print(wk.fireball())
+
+
+# my_char = character(10,5,5)
 #
+# enemy = wizard_kobold(20)
 #
-# enemy.take_dam(my_char.damage())
+# # print(my_char,enemy)
+# #
+# #
+# # enemy.take_dam(my_char.damage())
+# #
+# #
+# #
+# # print(my_char,enemy)
 #
+# combat = True
 #
+# while combat:
+#     print(my_char, enemy)
+#     enemy.take_dam(my_char.damage())
+#     my_char.take_dam(enemy.damage())
+#     print(my_char, enemy)
+#     if enemy.is_dead() or my_char.is_dead():
+#         break
 #
-# print(my_char,enemy)
-
-combat = True
-
-while combat:
-    print(my_char, enemy)
-    enemy.take_dam(my_char.damage())
-    my_char.take_dam(enemy.damage())
-    print(my_char, enemy)
-    if enemy.is_dead() or my_char.is_dead():
-        break
-
-    enemy.take_dam(my_char.damage())
-    my_char.take_dam(enemy.fireball())
-    print(my_char, enemy)
-    if enemy.is_dead() or my_char.is_dead():
-        break
-
+#     enemy.take_dam(my_char.damage())
+#     my_char.take_dam(enemy.fireball())
+#     print(my_char, enemy)
+#     if enemy.is_dead() or my_char.is_dead():
+#         break
+#

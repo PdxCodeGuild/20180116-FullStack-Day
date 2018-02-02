@@ -135,7 +135,6 @@ max_of_year_means = calculate_max_year_averages(rain_data_dicts)
 print()
 print('Hayden Island Rainfall Data')
 print('Values measured in inches of collected rainfall.\n')
-
 print('Data from all years:')
 print(f'Total measured rainfall 1998-2018: {pop_sum} inches')
 print(f'Mean daily rainfall total: {pop_mean} inches')
