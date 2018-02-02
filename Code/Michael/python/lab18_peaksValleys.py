@@ -20,16 +20,14 @@ def valleys(data):
             valleys_list.append(i)
     return valleys_list
 
-
 print(f'Peaks {peaks(data)} and valleys {valleys(data)}')
 
 
 def peaks_and_valleys(data):
     peaks_and_valleys_list = []
-    peaks_and_valleys_list += peaks(data)
-    peaks_and_valleys_list += valleys(data)
+    peaks_and_valleys_list.extend(peaks(data))
+    peaks_and_valleys_list.extend(valleys(data))
     return sorted(peaks_and_valleys_list)
-
 
 print(f'Peaks and valleys {peaks_and_valleys(data)}')
 
