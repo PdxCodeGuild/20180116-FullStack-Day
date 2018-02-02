@@ -25,7 +25,7 @@ Return the letter that appears the latest in the english alphabet.
 the latest letter is v.
 ```
 
-## Problem 9
+## Problem 4
 
 Write a function that returns the number of occurances of 'hi' in a given string.
 
@@ -33,7 +33,7 @@ Write a function that returns the number of occurances of 'hi' in a given string
 count_hi('hihi') → 2
 ```
 
-## Problem 10
+## Problem 5
 
 Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
 
@@ -46,7 +46,8 @@ cat_dog('catdogcatdog') → True
 
 
 
-## Problem 7
+## Problem 6
+
 Return the number of letter occurances in a string.
 ```python
 def count_letter(letter, word):
@@ -55,7 +56,7 @@ count_letter('i', 'antidisestablishmentterianism') → 5
 count_letter('p', 'pneumonoultramicroscopicsilicovolcanoconiosis') → 2
 ```
 
-## Problem 8
+## Problem 7
 
 Convert input strings to lowercase without any surrounding whitespace.
 
