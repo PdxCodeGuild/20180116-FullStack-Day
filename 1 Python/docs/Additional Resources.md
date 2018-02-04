@@ -11,7 +11,6 @@
 - [some random guy's list](https://github.com/adrianmoisey/learn-python)
 
 
-
 ### Online Courses
 
 - [Codecademy - Python](https://www.codecademy.com/learn/learn-python)
@@ -23,25 +22,23 @@
 - [rmotr.com](https://rmotr.com/) (not free)
 - [datacamp.com](https://www.datacamp.com/) (not free)
 
-
 ### Books
 
 - [Think Python](http://greenteapress.com/thinkpython/html/index.html)
 - [Dive Into Python 3](http://www.diveintopython3.net/)
 - [A Byte of Python](https://python.swaroopch.com/)
 
-
 ### Reference Documents and Tutorials
+
 - [Cheat Sheets](https://ehmatthes.github.io/pcc/cheatsheets/README.html)
 - [Official Docs](https://docs.python.org/3/)
 - [w3resource.com tutorial](https://www.w3resource.com/python/python-tutorial.php)
 
 ### Practice Problems
+
 - [Py](https://www.downloadpy.com/): an app for Android and iOS
 - [practicepython.org](http://www.practicepython.org/)
 - [codingbat.com exercises](http://codingbat.com/python)
 - [w3resource.com exercises](http://www.w3resource.com/python-exercises/)
-
-
 
 
