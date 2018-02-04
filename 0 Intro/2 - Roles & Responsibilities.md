@@ -1,5 +1,4 @@
 
-
 # Roles & Responsibilities
 
 ## Minimum Criteria to Graduate
@@ -17,15 +16,6 @@ Students can miss 10% of the days at most (6 for the 12-week class, 8 for the 16
 All participants should arrive on time. The start of the class is the easiest time to make announcements and give lectures because everyone's synchronized. If you arrive late, I have to remember what I said before you came in and make sure to tell you it, and inevitably something gets lost in the shuffle. It's also disruptive, and waiting for late people punishes people who came on time. **Arriving more than 15 minutes late 3 times counts as an absence.**
 
 All participants should remain focused on their work while here, or at least not distract others. Let's maximize the return on the time we're all investing.
-
-
-## Labs
-
-Lab solutions must meet perform the function described in the lab description.
-
-All submitted work must be your own. You are encouraged to use resources (docs, online, books, each other) to research solutions. Do not copy-paste whole solutions.
-
-All assignments must be formatted, tested, and commented in order to be considered 'complete'.
 
 
 ## Responsibilities
