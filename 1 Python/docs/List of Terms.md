@@ -1,4 +1,5 @@
-## List of Terms in Python
+# List of Terms in Python
+
 - argument
     - snyonymous with 'parameter', the values passed into a function
 - boolean
