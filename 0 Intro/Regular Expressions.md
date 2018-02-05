@@ -3,6 +3,10 @@
 
 Regular expressions or 'regex' are a way to match patterns in strings. They can be executed in nearly any programming language. They can be used to validate a phone number or address in an input field on a website, or to find the occurrences of a phrase in a block of text, etc. Use a [regexp debugging tool](https://regex101.com) to try out a regular expression before using it in your code.
 
+- [Regular Expressions in Python](../1%20Python/docs/Regular%20Expressions%20in%20Python.md)
+- [Regular Expressions in JavaScript](../3%20JavaScript/docs/Regular%20Expressions%20in%20JavaScript.md)
+
+
 ### Overview
 
 - `[]` define a character class

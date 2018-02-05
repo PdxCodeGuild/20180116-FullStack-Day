@@ -1,9 +1,7 @@
 
 # Python Overview
 
-For more information, check out the [Python Language Reference](https://docs.python.org/3/reference/index.html#reference-index) and [Python Standard Library](https://docs.python.org/3/library/index.html). The [wikipedia article](https://en.wikipedia.org/wiki/Python_(programming_language)) offers a decent overview.
-
-
+Python is a popular general-purpose multi-paradigm programming language. General purpose means it can be used for a variety of purposes: desktop applications, [games](https://wiki.python.org/moin/GameProgramming), [embedded systems](https://micropython.org/), web development (Flask and Django), [data science](https://www.upwork.com/hiring/data/15-python-libraries-data-science/), [artificial intelligence](https://wiki.python.org/moin/PythonForArtificialIntelligence) and more. It also means that its core principles carry over to other languages, so you'll be able to more easily broaden your horizon. Python always has an active community with plenty of learning resources, conferences, and libraries. For more information, check out the [Python Language Reference](https://docs.python.org/3/reference/index.html#reference-index) and [Python Standard Library](https://docs.python.org/3/library/index.html). The [wikipedia article](https://en.wikipedia.org/wiki/Python_(programming_language)) offers a decent overview.
 
 ## Keywords
 
@@ -35,7 +33,6 @@ For all the built-in types, check the [official docs](https://docs.python.org/3.
 - set: an unordered collection of unique elements
 - dictionary: a collection of name-value pairs
 - None: represents a variable without a value
-
 
 ## Common Built-in Functions
 
@@ -79,7 +76,6 @@ For all the built-in functions, check the [official docs](https://docs.python.or
 - itertools, functools: advanced operations on iterables and functions
 - collections: data structures
 - csv: csv file parsing
-
 
 
 ## Common Non-built-in Modules
