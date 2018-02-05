@@ -49,11 +49,10 @@ class wizard_kobold(character):
         super().take_dam(dam + super().ret_def())
 
 
-
+print(wizard_kobold._wizard_kobold__fireball)
 wk = wizard_kobold(5)
-
-print(wk.fireball())
-
+wk.fireball()
+print(wk._wizard_kobold__fireball)
 
 # my_char = character(10,5,5)
 #
