@@ -17,13 +17,7 @@ from Code.Anna.python import blackjack
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
-# TODO: add a final boss that follows you down to the planet - add a planet level?
-#   to beat the boss, have to play blackjack at the casino with him? # might be too much...
-#   alt ending:
-#   "You and your classmates land safely on the warm yellow planet below.
-#   You find the planet's ruler, and she's willing to give you enough
-#   fuel to get you to Space Code School... for a price.
-#   That price is beating her at Space Blackjack. Will you play?
+# TODO: random asteroids! If you hit one, your shields go down 10%
 
 
 class Game:
@@ -401,7 +395,7 @@ def alt():
 
     """))
     print(chalk.yellow("""
-    That price is beating her at Space Blackjack. Will you play?
+    That price is beating her at Space Blackjack 🃏. Will you play?
     """))
     choice = input("> ")
     if choice == 'y':
@@ -409,62 +403,62 @@ def alt():
         bj_result = game()
         bj_ruler = random.randint(10, 21)
 
-        print(f"The ruler has {bj_ruler}")
+        print(f"The ruler has 🃏 {bj_ruler}")
 
         if bj_result <= 21 and bj_result > bj_ruler:
             print("You win!")
             sleep(2)
             print(chalk.yellow("""
-            Congrats, you've earned your fuel, and a tall frosty beer!
-
-                             _, . '__ . 
-                      '_(_0o),(__)o().
-                    ,o(__),_)o(_)O,(__)o
-                  o(_,-o(_ )(),(__(_)oO)_
-                  .O(__)o,__).(_ )o(_)Oo_)
-                   o/'"`\/'"`\/'"`\/'"\O_)0 
-                   |    ||   ||   ||   |,_) 
-                   |\___/\___/\___/\___|o(_)
-              .----|"\/'"`\/'"`\/'"`\/'|_/`)
-             /  .--| ||   ||   ||   || |O_) 
-            |  /   |_/\___/\___/\___/\_|
-            |  |   |/'"`\/'"`\/'"`\/'"`|
-            |  |   |    ||   ||   ||   |
-            |  |   |\___/\___/\___/\___|
-            |  \   |"\/'"`\/'"`\/'"`\/"|
-             \  '--| ||   ||   ||   || |
-              '----|_/\___/\___/\___/\_|
-                   |/'"`\/'"`\/'"`\/'"`|
-                   |    ||   ||   ||   |
-                    \___/\___/\___/\__/
-                   `""""""""""""""""""
+        Congrats, you've earned your fuel, and a tall frosty space beer!
+    
+                                 _, . '__ . 
+                          '_(_0o),(__)o().
+                        ,o(__),_)o(_)O,(__)o
+                      o(_,-o(_ )(),(__(_)oO)_
+                      .O(__)o,__).(_ )o(_)Oo_)
+                       o/'"`\/'"`\/'"`\/'"\O_)0 
+                       |    ||   ||   ||   |,_) 
+                       |\___/\___/\___/\___|o(_)
+                  .----|"\/'"`\/'"`\/'"`\/'|_/`)
+                 /  .--| ||   ||   ||   || |O_) 
+                |  /   |_/\___/\___/\___/\_|
+                |  |   |/'"`\/'"`\/'"`\/'"`|
+                |  |   |    ||   ||   ||   |
+                |  |   |\___/\___/\___/\___|
+                |  \   |"\/'"`\/'"`\/'"`\/"|
+                 \  '--| ||   ||   ||   || |
+                  '----|_/\___/\___/\___/\_|
+                       |/'"`\/'"`\/'"`\/'"`|
+                       |    ||   ||   ||   |
+                        \___/\___/\___/\__/
+                       `""""""""""""""""""
 
                 """))
             outro()
         else:
             print("You lose!")
             print(chalk.yellow("""
-            Sadly, you never make it off the planet, have to drop out of
-            Space Code School, and spend the rest of your life
-            herding space cats.
-
-                      _
-                      \`"-.
-                       )  _`-.
-                      ,  : `. \\
-                      : _   '  \\
-                      ; *` _.   `--._
+        Sadly, you never make it off the planet, have to drop out of
+        Space Code School, and spend the rest of your life
+        herding space cats.
+         .                       .
+    .                 _                 *              .
+        *             \`"-.
+                .      )  _`-.    .                        .
+                      ,  : `. \\              *
+             .        : _   '  \\
+    *                 ; *` _.   `--._    .            .  
                       `-.-'          `-.
-                        |       `       `.
-                        :.       .        \\
+               .        |       `       `.                  *
+       .                :.       .        \\   *          
                         | \  .   :   .-'   .
-                        :  )-.;  ;  /      :
-                        :  ;  | :  :       ;-.
-                        ; /   : |`-:     _ `- )
-                     ,-' /  ,-' ; .-`- .' `--'
-                     `--'   `---' `---'
+    *                   :  )-.;  ;  /      :       .
+                *       :  ;  | :  :       ;-.           *
+         .              ; /   : |`-:     _ `- )
+      .              ,-' /  ,-' ; .-`- .' `--'   .            .
+             *       `--'   `---' `---'            .
 
-                (It could be worse)
+        (Hey, it could be worse)
                 """))
             outro()
     else:
