@@ -6,10 +6,12 @@ Let's build a simple board game that runs on the terminal. We'll represent the b
 Possible modifications:
 - use more succinct commands (l/u/d/r for up/down/left/right or n/s/e/w for north/south/east/west)
 - add boundaries to the map, when the player attempts to move beyond the boundary, stop them or move them to the other side
-- make what's printed on the screen a part of a much larger map (with the player shown at the center of the screen)
+- make what's printed on the screen a part of a much larger map (with the player always shown at the center of the screen)
 - loading a text file containing the map, or procedurally generate things
-- add walls / barriers
-- use different unicode characters (you can find lists online, or search for 'character map' in Windows)
+- walls / barriers
+- use different unicode characters (you can find [lists online](https://www.google.com/search?q=cool+unicode+characters&rlz=1C1CHBF_enUS773US773&oq=cool+unicode+chara&aqs=chrome.0.0j69i57j0l3.90708j1j1&sourceid=chrome&ie=UTF-8))
+- ascii art
+- [colorama](https://pypi.python.org/pypi/colorama) for custom colors, or [curses](https://docs.python.org/3/howto/curses.html) for even more control of the terminal
 - add 'fog of war' - only show the elements of board immediately around the player (you can then find a torch item, which expands your visibility)
 - have enemies move around
 - add an inventory system

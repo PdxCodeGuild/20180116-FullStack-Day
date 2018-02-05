@@ -2,6 +2,7 @@ hour = int(input("input hour:"))
 min = int(input("input min:"))
 
 def inttostr (i):
+    word = "zero"
 
     if i == 1:
         word = 'one'
@@ -31,6 +32,11 @@ def inttostr (i):
         word = 'twenty'
     return word
 
-time = ''
-if(hour/)
+hour_1 = int(hour/10) * 10
+hour_2 = int(hour % 10)
+hour_1 = inttostr(hour_1)
+hour_2 = inttostr(hour_2)
+hour = hour_1+"-"+hour_2
+
+print(hour)
 
