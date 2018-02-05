@@ -1,5 +1,5 @@
 #MADLIB GAME V2: (LISTS, SPLITS, & RANDOMIZATION)
-
+# WIP
 import random
 
 #LISTS
@@ -17,7 +17,7 @@ while True:
 		plural_nouns = input('Please provide four(4) plural nouns, properly separated by commas\n:')
 	else:
 		plural_nouns = plural_nouns.split(', ')
-		plural_nouns.append(plural_nouns)
+		#plural_nouns.append(plural_nouns)
 		break
 
 single_nouns = input('\nPlease provide the name of a comic or cartoon and two(2) singular nouns, properly separated by commas\n:')
@@ -27,7 +27,7 @@ while True:
 		single_nouns = input('\nPlease provide the name of a comic or cartoon and two(2) singular nouns, properly separated by commas\n:')
 	else:
 		single_nouns = single_nouns.split(', ')
-		single_nouns.append(single_nouns)
+		#single_nouns.append(single_nouns)
 		break
 
 verbs = input('\nPlease provide a gerundative (-ing) verb and a standard verb, properly separated by commas\n:')
@@ -37,7 +37,7 @@ while True:
 		verbs = input('\nPlease provide a gerundative (-ing) verb and a standard verb, properly separated by commas\n:')
 	else:
 		verbs = verbs.split(', ')
-		verbs.append(verbs)
+		#verbs.append(verbs)
 		break
 
 # plural_nouns = random.choice(plural_nouns)
