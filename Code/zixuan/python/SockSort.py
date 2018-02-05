@@ -1,5 +1,5 @@
 import random
-import operator
+
 
 sock_colors = ['black', 'white', 'blue']
 sock_types = ['ankle', 'crew', 'calf', 'thigh']

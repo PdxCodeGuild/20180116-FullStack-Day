@@ -1,0 +1,328 @@
+he Project Gutenberg EBook of Colección de Documentos Inéditos
+Relativos al Descubrimiento, Conqu, by Various
+
+This eBook is for the use of anyone anywhere in the United States and most
+other parts of the world at no cost and with almost no restrictions
+whatsoever.  You may copy it, give it away or re-use it under the terms of
+the Project Gutenberg License included with this eBook or online at
+www.gutenberg.org.  If you are not located in the United States, you'll have
+to check the laws of the country where you are located before using this ebook.
+
+
+
+Title: Colección de Documentos Inéditos Relativos al Descubrimiento, Conquista y Organización de las Antiguas Posesiones Espa?olas de Ultramar
+       Tomo 5, De Los Documentos Legislativos, I
+
+Author: Various
+
+Editor: Real Academia de la Historia
+
+Release Date: January 28, 2018 [EBook #56452]
+
+Language: Spanish
+
+Character set encoding: UTF-8
+
+*** START OF THIS PROJECT GUTENBERG EBOOK COLECCIóN DE DOCUMENTOS ***
+
+
+
+
+Produced by Josep Cols Canals, Nahum Maso i Carcases,
+Adrian Mastronardi and the Online Distributed Proofreading
+Team at http://www.pgdp.net (This file was produced from
+images generously made available by The Internet
+Archive/American Libraries.)
+
+
+
+
+
+
+
+
+
+                        Notas del Transcriptor
+
+—Se han respetado la grafía y la acentuación del original, así como las
+inconsistencias en éstas.
+
+—Se han corregido las erratas mencionadas en ?ERRATAS MáS NOTABLES? así
+como los errores obvios de imprenta.
+
+—En las cifras en números romanos impresas en versalita en el original,
+el tama?o de la letra U (1000) es mayor al del resto. En esta versión
+electrónica, su tama?o se ha normalizado debido a que el texto en
+versalita se ha sustituido por mayúsculas.
+
+—Las notas al pie de página se han renumerado.
+
+—En el original, las notas al pie de página núm. 24 y 25 están
+incompletas mientras que, en los documentos núm. 61 y 64, la fecha del
+encabezado y la indicada al final del documento no coinciden.
+
+—El texto en cursiva se indica entre _guiones bajos_.
+
+—El acento circunflejo indica el texto en ^{superíndice}.
+
+—Las páginas en blanco presentes en el original se han eliminado en la
+versión electrónica.
+
+                   *       *       *       *       *
+
+
+
+
+                               COLECCIóN
+
+                                  DE
+
+                          DOCUMENTOS INéDITOS
+
+                             DE ULTRAMAR.
+
+
+
+
+                               COLECCIóN
+
+                                  DE
+
+                          DOCUMENTOS INéDITOS
+
+         RELATIVOS AL DESCUBRIMIENTO, CONQUISTA Y ORGANIZACIóN
+
+                                DE LAS
+
+              ANTIGUAS POSESIONES ESPA?OLAS DE ULTRAMAR.
+
+                             SEGUNDA SERIE
+
+            PUBLICADA POR LA REAL ACADEMIA DE LA HISTORIA.
+
+
+                             TOMO NúM. 5.
+
+                                   I
+
+                    DE LOS DOCUMENTOS LEGISLATIVOS.
+
+
+                                MADRID
+              EST. TIPOGRáFICO ?SUCESORES DE RIVADENEYRA?
+                      IMPRESORES DE LA REAL CASA
+                       Paseo de San Vicente, 20
+                                 1890
+
+
+
+
+                           ENSAYO HISTóRICO
+
+                               SOBRE LA
+
+           LEGISLACIóN DE LOS ESTADOS ESPA?OLES DE ULTRAMAR
+
+
+
+
+                                  I.
+
+                             INTRODUCCIóN.
+
+
+Es opinión por nadie contradicha, y puede en consecuencia elevarse á
+la categoría de verdad inconcusa, que las leyes que dió Espa?a á sus
+posesiones de Ultramar son uno de los más gloriosos monumentos de su
+historia nacional; no sólo con un fin práctico, sino también para
+penetrar su espíritu, desde la segunda mitad del siglo XVI empezaron
+á formarse copilaciones de esas leyes, y más tarde obras que tenían
+por objeto desentra?ar su sentido y exponer en forma metódica sus
+disposiciones: el licenciado Antonio Maldonado, fiscal de Méjico,
+fué el primero, al decir de León Pinelo, que emprendió el trabajo de
+coleccionar las leyes de Indias, pues se despachó cédula á favor de
+su obra en 1556; pero no se sabe que la terminase, ni ha visto la luz
+pública, ignorándose en la actualidad su paradero.
+
+Siguió á éste el doctor Vasco de Puga, oidor de la misma Audiencia de
+Méjico, por encargo del virrey D. Luis de Velasco, limitándose á reunir
+las cédulas y demás disposiciones que halló, de las despachadas desde
+el a?o de 1525 hasta el de 1563, en que imprimió su libro.
+
+Empezóse por mandado de Felipe II, en 1570, aunque se ignora por quién,
+una recopilación de leyes análoga y con igual método al que se siguió
+para la _Nueva Recopilación_ en el Consejo de las Indias, y se imprimió
+su principio en 1593, según consta de su título ó portada; el libro
+primero se terminó, y se conservaba m. s. en los archivos del Consejo,
+pero no llegó á imprimirse completo, y la obra no pasó adelante.
+
+Diego de Encinas, oficial de la Secretaría del Consejo de Indias,
+aunque sin licencia ni autorización, reunió las disposiciones legales
+que halló, y las publicó en cuatro volúmenes, el último de los cuales
+fué impreso en 1599; si bien esta copilación no era metódica y carecía
+de autoridad, como la tenían los documentos que los formaban, fué
+muy útil y se mejoró mucho por los que entendían en los negocios de
+Ultramar, según dice Veitia y Linage en su _Norte de la contratación de
+Indias_[1].
+
+      [1] Provisiones || cédulas, capítulos de || ordenan?as,
+      instrucciones y cartas libradas y des || pachadas en diferentes
+      tiempos por sus Magestades de || los se?ores Reyes Católicos don
+      Fernando y do?a Isabel, y Emperador || don Carlos de gloriosa
+      memoria, y do?a Iuaua su madre, y católico Rey don || Felipe, con
+      acuerdo de los se?ores Presidentes y de su Consejo Real de las
+      In || dias, que en sus tiempos ha auido tocantes al buen gouierno
+      de las Indias y || administración de la justicia en ellas. Sacado
+      todo ello de los libros del || dicho Consejo por su mandado para
+      que se sepa, entienda y tenga no || ticia de lo que cerca dello
+      está proveydo después que se || descubrieron las Indias || hasta
+      agora || En Madrid || En la Imprenta Real || MDXCVI. Folio 1, 14,
+      prd || +462 pp., vol. II, 14 prd+382 pp., vol. III, 13 prd
+      || +482 pp., vol. IV, 10 prd=+415 415.
+
+Hizo un trabajo análogo el licenciado Alvar Gómez de Araunza, oidor
+de Guatemala y luego alcalde del Crimen, de Méjico, bajo el nombre
+de _Repertorio de Cédulas Reales_, en dos grandes volúmenes, que no
+llegaron á imprimirse.
+
+El licenciado Diego de Zorrilla trató de formar una recopilación
+metódica, tomando de la obra de Encinas las resoluciones; pero no
+perfeccionó su trabajo, que publicó el licenciado D. Rodrigo de Aguiar
+un sumario de la _Recopilación general de las Leyes de Indias_, en
+Madrid, y en el a?o de 1628[2].
+
+      [2] Sumario || de la || Recopilación general de || las Leyes
+      Ordenanzas, Provisiones, Cédulas, Instrucciones y Cartas ||
+      Acordadas, que por los Reyes Católicos de Castilla es
+      promulgado..... por las Indias Occidentales. Islas y Tierra firme
+      del mar || Oceano..... Por el Licenciado D. Rodrigo de Aguiar y
+      Acu?a; Madrid, por Juan González, 1628, fol. 8 prd. 14+178
+      pp.+4 ||.
+
+Estando de oidor en Lima, el doctor Juan de Solorzano, empezó otra
+recopilación, y envió el primero de los seis libros que habían de
+formarla al Consejo, que recibió con estimación su escrito, le encargó
+que lo prosiguiese y, aunque no consta que lo llevase á término, hubo
+de servirle de fundamento para las dos grandes obras que escribió, y de
+que hablaré luego.
+
+En la ley que dió autoridad y fuerza legal á la _Recopilación de
+Leyes de Indias_, publicada en 1680, se refieren las vicisitudes de
+esta obra, desde que en 1608 se formó para llevarla á cabo una Junta
+de consejeros, hasta que se terminó en el a?o citado, gobernando
+el Consejo el príncipe D. Vicente Gonzaga. Después de publicada la
+_Recopilación_ se tardó mucho en hacer algún trabajo análogo para
+reunir y sintetizar las muchas disposiciones legales que se fueron
+dictando para el régimen y gobierno de nuestras posesiones de Ultramar.
+Pero cuando al impulso de nuevas ideas se introdujeron en la época
+del Rey D. Carlos III, y por su ministro Galvez grandes reformas en
+Ultramar, el consejero Sr. Ayala preparó una nueva _Recopilación de
+Leyes de Indias_, y á pesar de nuestros esfuerzos no hemos podido
+averiguar el paradero que la gran colección de documentos que formó con
+este objeto últimamente el Sr. Zamora, publicó una copilación y otra
+más tarde el Sr. Rodríguez San Pedro.
+
+últimamente, y bajo imperio de las ideas modernas, se han llevado
+con leves modificaciones á Cuba y Puerto Rico la Ley hipotecaria
+y el Código penal; pero en materias de derecho civil, canónico y
+administrativo está vigente la _Recopilación_, en cuanto no ha sido
+modificada por disposiciones posteriores.
+
+Entre las obras que tratan del régimen y gobierno de las Indias con
+método doctrinal, nunca dejaron de tener el mayor interés la titulada
+_De Jure indiano_, de Solorzano Pereira; la del mismo autor llamada
+_Política indiana_, que no es mera traducción de aquélla, y la de
+Frasso, que se denomina _De Regio patronato indiano_. Otras hay que
+tienen este carácter, y entre ellas debe notarse el _Discurso_ de León
+Pinelo sobre la manera con que se debe proceder á la clasificación y
+distribución de las disposiciones legales para formar un cuerpo de
+derecho, trabajo que sirvió de guía á los que dieron por resultado la
+_Recopilación_ de 1680.
+
+Todas estas obras y otras no menos interesantes, si bastan para formar
+idea de la actividad legislativa de la metrópoli respecto á sus
+dominios de Ultramar y del espíritu de alta justicia con que procuró
+regirlas, no ofrecen siquiera los elementos necesarios para trazar
+la historia de tan vasta legislación, asunto digno de atención y de
+estudio por varios motivos: en efecto, el cedulario de Puga, que es la
+más antigua copilación, sólo contiene, como va dicho, las disposiciones
+que se dictaron con posterioridad á 1525; la de Diego de Encinas
+contiene algunas anteriores á esta fecha, y la oficial de 1680 no trae
+las disposiciones íntegras y se omiten aquellas que al publicarse se
+estimó que habían sido derogadas expresamente ó caído por diferentes
+razones en desuso. Las obras de Solorzano, de Frasso, de Pinelo y otras
+análogas escritas con un sentido doctrinal, sólo citan las partes de
+los documentos que hacen á su propósito, prescindiendo completamente de
+su orden cronológico.
+
+De lo dicho resulta claramente que hasta ahora no se ha emprendido
+ningún estudio histórico acerca de la legislación de Indias, y como
+el asunto es tan interesante para ilustrar la historia de aquellos
+extensos países, al publicar una colección de documentos legales á
+ellos referentes se brinda una ocasión natural para intentar un ensayo
+que necesariamente ha de ser muy imperfecto, porque la materia es muy
+vasta, porque los elementos que es menester reunir para hacer una obra
+definitiva están esparcidos en diferentes archivos, aunque los más
+se conservan en el de Indias, establecido en la ciudad de Sevilla, y
+porque muchos de ellos han desaparecido á consecuencia de las grandes
+vicisitudes ocurridas en el presente siglo, ya con motivo de la
+emancipación de la mayor parte de nuestras posesiones de América, ya
+por la invasión francesa, pues consta que muchos documentos fueron
+sustraídos por los invasores de los depósitos en que se custodiaban.
+
+De todas maneras, el trabajo que emprendemos podrá servir de punto de
+partida á otros posteriores y más completos, que contribuyan á dar
+idea cumplida de lo que Espa?a hizo para llevar la civilización á las
+extensas regiones en que tan brillante porvenir espera á la humanidad,
+que tal vez alcance en aquel inmenso continente el término de sus
+destinos terrestres.
+
+
+
+
+                                  II.
+
+           PRIMERAS DISPOSICIONES DE LOS REYES DON FERNANDO
+             Y DO?A ISABEL PARA EL RéGIMEN DE LAS INDIAS.
+
+
+No nos proponemos dar á conocer como precedente de nuestras
+investigaciones nada de lo que se refiere á la civilización
+precolombiana de América, porque sobre ser asunto difícil y hasta
+ahora muy obscuro, ocuparía grandísimo espacio exponer, aunque fuera
+muy brevemente, lo que de esta materia se sabe; bastará con que
+remitamos á los aficionados á esta clase de estudios á las obras
+que más especialmente se han ocupado del particular, y entre ellas
+á la _Historia de las cosas de Nueva Espa?a_, del P. Fr. Bernardino
+de Sahagún, tesoro riquísimo y hasta ahora poco explotado para el
+conocimiento de la civilización de los aztecas; á la _Historia
+apologética de las Indias_, del P. Las Casas, todavía inédita en su
+mayor parte; á la _Crónica_ del P. Diego Durán, publicada por D. José
+Fernando Ramírez, y cuyo original importantísimo se conserva en la
+Biblioteca Nacional de Madrid; á la _Historia del Perú_, escrita por el
+Inca Garcilaso de la Vega, ya que la _Historia_ del P. Josef de Acosta
+contiene pocas noticias originales, habiendo tomado las más de la obra
+del P. Durán.
+
+Esta omisión no es importante para nuestro objeto, porque, á pesar
+de las opiniones de algunos historiadores americanos, es para
+nosotros indudable que la civilización que actualmente florece en el
+Nuevo Mundo, nada ó muy poco tiene de común con las civilizaciones
+que existían á la llegada de los pueblos de Europa que llevaron
+allí y allí implantaron la que les era propia, y resultado de un
+admirable desarrollo que, empezando por los rudimentos de todas las
+manifestaciones del espíritu, tales como aparecieron en las tribus de
+los primitivos aryas, llegaron á su mayor desarrollo en Grecia y en
+Roma, ampliándose luego de una manera maravillosa bajo el benéfico
+influjo del cristianismo, hasta alcanzar los resultados que hoy se
+muestran en las grandes naciones de origen aryano, que principalmente
+pueblan la Europa y la América.
+
+En virtud de una ley misteriosa cuyos ministros han sido los últimos
+emigrantes llegados al Nuevo Mundo, las razas que antes lo poblaban,
+han ido desapareciendo, y todo indica que acabarán por dejar expeditos
+aquellos inmensos territorios á la invasión incesante y á la
+propagación rapidísima de la raza dominadora. El interés científico que
+ofrece el estudio de la historia precolombiana de América es sin duda
+muy grande; pero no se relaciona de un modo directo con el de la que
+empezó á establecerse y desarrollarse desde que aportaron á las islas

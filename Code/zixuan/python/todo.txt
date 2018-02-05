@@ -1,0 +1,21 @@
+
+
+
+
+
+#lab 2 - change to mad lib
+#lab 3 - def
+#lab 4 - use a magic 8 ball
+#lab 5 - do version 2
+#lab 13 - take word as input
+#lab 14 - play 10,000 times, calculate payout
+#lab 15 - convert number (67) to phrase (sixty-seven)
+lab 16 - do image conversions v1, v2, v3
+lab 19 - do blackjack
+#lab 21 - strip punctuation, finish
+
+optional labs to make up absences
+
+
+
+
