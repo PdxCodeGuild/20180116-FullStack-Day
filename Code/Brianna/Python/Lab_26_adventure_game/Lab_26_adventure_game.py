@@ -7,20 +7,27 @@ import pygame
 #import curses
 #import Urwid
 
-
-#         R    G    B
-WHITE = (255, 255, 255)
-GREEN = (78, 255, 87)
-YELLOW = (241, 255, 0)
-BLUE = (80, 255, 239)
-PURPLE = (203, 0, 255)
-RED = (237, 28, 36)
-
 pygame.init()
+#         R    G    B
+white = (255, 255, 255)
+green = (78, 255, 87)
+yellow = (241, 255, 0)
+blue = (80, 255, 239)
+purple = (203, 0, 255)
+red = (237, 28, 36)
+
+
+# Set width and height of the screen. First number is width, second is height.
+size = [700, 500]
+screen pygame.display.set_mode(size) # can put size directly in (size) area. Screen is the variable name we have assigned this window to. We can create more windows.
+
+pygame.display.set_caption("Programmer's Escape to Hidden Mountain")
 
 
 
 
+
+"""
 
 
 class Entity:
@@ -115,3 +122,5 @@ while True:
             enemy.location_i += random.randint(-1, 1)
         else:
             enemy.location_j += random.randint(-1, 1)
+
+"""
