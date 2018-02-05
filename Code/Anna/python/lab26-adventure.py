@@ -15,12 +15,14 @@ import pygame.examples.stars
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
-# TODO: add boundaries to the map
 # TODO: fog of war?
-# TODO: make enemies move at the end
-# TODO: add a final boss that follows you down to the planet - add a planet level!!
-#   to beat the boss, have to play blackjack at the casino with him?
-# TODO: add classes: items, treasure
+# TODO: add a final boss that follows you down to the planet - add a planet level?
+#   to beat the boss, have to play blackjack at the casino with him? # might be too much...
+#   alt ending:
+#   "You and your classmates land safely on the warm yellow planet below.
+#   You find the planet's ruler, and she's willing to give you enough
+#   fuel to get you to Space Code School... for a price.
+#   That price is beating her at Space Blackjack. Will you play?
 
 
 class Game:
@@ -44,13 +46,13 @@ class Game:
                 board[i].append(chalk.blue('[    ]'))  # append an empty space to the board
         # add enemies in random locations
         for i in range(diff_setting):
-            enemy_x = random.randint(0, self.height - 1)
-            enemy_y = random.randint(0, self.width - 1)
+            enemy_x = random.randint(0, self.height - 2)
+            enemy_y = random.randint(0, self.width - 2)
             board[enemy_x][enemy_y] = chalk.blue('[ 👾 ]')
         return board
 
     def fuel_gage(self, fuel_level):
-        if fuel_level > 22:
+        if fuel_level > 18:
             return chalk.green(f"Fuel level: {'*' * fuel_level}")
         elif fuel_level > 9:
             return chalk.yellow(f"Fuel level: {'*' * fuel_level}")
@@ -60,6 +62,12 @@ class Game:
             s.sound_effect('audio/atomic_overload.wav')
             print(chalk.red("You're out of gas! Hopefully your classmates can make it without you..."))
             outro()
+
+    def shields(self, shield_level):
+        if shield_level == 100:
+            return chalk.green(f"Shields: {shield_level}%")
+        else:
+            return chalk.yellow(f"Shields: {shield_level}%")
 
     def player_position(self):
         """Starting position in the middle of the board"""
@@ -322,10 +330,14 @@ def game_on(player_x, player_y, num_enemies):
                 print(board[i][j], end=' ')  # otherwise print the board square
         print()
     # print the fuel gage
-    fuel_level = 30  # initialize fuel
+    fuel_level = 20  # initialize fuel
     print(play_game.fuel_gage(fuel_level))
+    # print the shield level
+    shield_level = 100  # initialize shields
+    print(play_game.shields(shield_level))
     print()
-    print("\nYou are surrounded by enemies! Choose 'u' for up, 'd' for down, 'r' for right, 'l' for left, or 'q' to quit.\n")
+
+    print("\nYou are surrounded by enemies! Choose 'u' for up, 'd' for down, 'r' for right, 'l' for left, or 'q' to quit. Just don't run out of gas...\n")
     round_one = True
 
     # loop until the user says 'done' or dies
@@ -336,13 +348,29 @@ def game_on(player_x, player_y, num_enemies):
         if command == 'q':
             break  # exit the game
         elif command == 'l':
-            player_y -= 1  # move left
+            if player_y - 1 < 0:
+                print(chalk.yellow(
+                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+            else:
+                player_y -= 1  # move left
         elif command == 'r':
-            player_y += 1  # move right
+            if player_y + 1 > play_game.width - 1:
+                print(chalk.yellow(
+                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+            else:
+                player_y += 1  # move right
         elif command == 'u':
-            player_x -= 1  # move up
+            if player_x - 1 < 0:
+                print(chalk.yellow(
+                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+            else:
+                player_x -= 1  # move up
         elif command == 'd':
-            player_x += 1  # move down
+            if player_x + 1 > play_game.height - 1:
+                print(chalk.yellow(
+                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+            else:
+                player_x += 1  # move down
 
         # check if the player is on the same space as an enemy
         if board[player_x][player_y] == chalk.blue('[ 👾 ]'):
@@ -368,38 +396,37 @@ def game_on(player_x, player_y, num_enemies):
                 sleep(2)
             else:
                 s.sound_effect('audio/laser_sounds_2.wav')
-                print('You hesitated and were slain. Hopefully your classmates can make it without you...')
-                outro()
-                break
+                print("You've been hit! Your shields have been damaged.")
+                shield_level -= 50
 
         if num_enemies == 0:
             print("You did it! Your classmates can now land safely on the planet below!")
             s.sound_effect('audio/space_landing.wav')
             print(chalk.yellow('''
-                                    .                                            .
-                 *   .                  .              .        .   *          .
-              .         .                     .       .           .      .        .
-                    o                             .                   .
-                     .              .                  .           .
-                      0     .
-                             .          .                 ,                ,    ,
-             .          \          .                         .
-                  .      \   ,
-               .          o     .                 .                   .            .
-                 .         \                 ,             .                .
-                        .-;;;;;-.
-                      .;;;;;;;;;;;.    .
-      .      *       /;;;' o o ';;;\                 .
-                    ;;;; o /^\ o ;;;;           *
-            .       ;;;; o \_/ o ;;;;
-      *              \;;;. o o .;;;/        .
-          .           ';;;;;;;;;;;'     *
-                        '-;;;;;-'  .                    .             .          ,
-                                  \          .                         .
-            ____^/\___^--____/\____O______________/\/\---/\___________---______________
-               /\^   ^  ^    ^                  ^^ ^  '\ ^          ^       ---
-                     --           -            --  -      -         ---  __       ^
-               --  __                      ___--  ^  ^                         --  __
+                                .                                            .
+             *   .                  .              .        .   *          .
+          .         .                     .       .           .      .        .
+                o                             .                   .
+                 .              .                  .           .
+                  0     .
+                         .          .                 ,                ,    ,
+         .          \          .                         .
+              .      \   ,
+           .          o     .                 .                   .            .
+             .         \                 ,             .                .
+                    .-;;;;;-.
+                  .;;;;;;;;;;;.    .
+  .      *       /;;;' o o ';;;\                 .
+                ;;;; o /^\ o ;;;;           *
+        .       ;;;; o \_/ o ;;;;
+  *              \;;;. o o .;;;/        .
+      .           ';;;;;;;;;;;'     *
+                    '-;;;;;-'  .                    .             .          ,
+                              \          .                         .
+        ____^/\___^--____/\____O______________/\/\---/\___________---______________
+           /\^   ^  ^    ^                  ^^ ^  '\ ^          ^       ---
+                 --           -            --  -      -         ---  __       ^
+           --  __                      ___--  ^  ^                         --  __
     
                 '''))
             sleep(2)
@@ -417,12 +444,29 @@ def game_on(player_x, player_y, num_enemies):
             print()
         fuel_level -= 1
         print(play_game.fuel_gage(fuel_level))
+        print(play_game.shields(shield_level))
         if fuel_level == 0:
+            break
+        if shield_level == 0:
+            s.sound_effect('audio/space_noise.wav')
+            # print out the board without the player, since the player was blown up #sadface
+            for i in range(play_game.height):
+                for j in range(play_game.width):
+                    # if we're at the player location, print the player icon
+                    if i == player_x and j == player_y:
+                        print(chalk.blue('[    ]'), end=' ')
+                    else:
+                        print(board[i][j], end=' ')  # otherwise print the board square
+                print()
+            print(chalk.red(
+                "With no shields left, your escape pod was blown to smithereens. Hopefully your classmates can make it without you..."))
+            outro()
             break
         print()
 
+
 s = WavePlayer()
-# intro()
+intro()
 diff_setting = difficulty_setting()
 num_enemies = diff_setting
 
