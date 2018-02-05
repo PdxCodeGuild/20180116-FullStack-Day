@@ -178,6 +178,26 @@ class Rotator:
 
 ## Private Methods
 
+Similar to private variables, private methods are denoted with 2 underscores. Private methods are useful if you have a bit of code that's re-used from within your class but you don't want to expose to outside code.
+
+
+```python
+class MyClass:
+    
+    def __init__(self):
+        pass
+    
+    def __privatemethod(self, x):
+        print(x)
+    
+    def publicmethod(self):
+        self.__privatemethod('hi!')
+
+mc = MyClass()
+mc.publicmethod() # hi!
+mc.__privatemethod() # AttributeError: 'MyClass' object has no attribute '__privatemethod'
+```
+
 
 
 ## Inheritance
