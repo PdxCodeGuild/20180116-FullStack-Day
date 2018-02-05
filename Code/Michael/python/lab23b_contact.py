@@ -2,23 +2,27 @@ import csv
 
 
 def read():
+    # open the file with the csv module and then read the opened file and split the line breaks and assign it to lines.
     with open('contacts_csv.csv', 'r') as file:
         lines = file.read().split('\n')
+        # we create and empty list where the file contents will be appended to.
         address_book = []
+        # popping the header file we will hold onto its contents as the variable header.
         header = lines.pop(0)
+        # the header is then split at the comma
         header = header.split(',')
+        # the for loop is to iterate over the lines to split contacts at the comma and assign its contents into the variable contact_val
         for contacts in lines:
             contact_val = contacts.split(',')
+            # an empty dictionay is created to hold the contact_val contents we iterate over in the next following for loop.
             my_dict = {}
             for i in range(len(contact_val)):
+                # the contents of each index of control_val is passed into its respective header column and passed to my_dict.
                 my_dict[header[i]] = contact_val[i]
+                # my_dict is then appended to the empty list address_book
             address_book.append(my_dict)
+        print(address_book)
     return address_book
-
-
-def write(address_book):
-    with open('contacts_csv.csv', 'w') as file:
-        ...
 
 
 def create():
@@ -26,66 +30,62 @@ def create():
     while answer == 'yes':
         input_contact = []
 
-        # add a new contact to your list of contacts
-        # call write(address_book)
-
         with open('contacts_csv.csv', 'a') as file:
             address_book = csv.writer(file)
-            input_contact.append(input(f"Enter new contact name: \n> "))
-            input_contact.append(input(f"enter new contact favorite fruit: \n> "))
-            input_contact.append(input(f"Enter new contact favorite color: \n> "))
+            input_contact.append(input(f'Enter new contact name: \n> '))
+            input_contact.append(input(f'enter new contact favorite fruit: \n> '))
+            input_contact.append(input(f'Enter new contact favorite color: \n> '))
             address_book.writerow(input_contact)
-        answer = input("would you like to create another contact?")
+        answer = input('would you like to create another contact? Yes or no \n> ')
+        return address_book
 
 
-def retrieve():
-    key_name = input("What would you like to retrieve? \n> ")
-    value_name = input("What is the value? \n> ")
+def retrieve(address_book):
+
+    retrieve = input('Enter a name to retrieve their information:\n> ')
+
+    for i in range(len(address_book)):
+        if retrieve in address_book[i]['name']:
+            print(f'You entered {retrieve}.')
+            print(f"Their favorite fruit is {address_book[i]['favorite fruit']} and their favorite color is {address_book[i]['favorite color']}.")
 
 
-def update():
-    updater = read()
-    new_dict = {}
-    with open('contacts_csv.csv', 'w') as file:
-        address_book = csv.writer(file)
-        address_book.writerow(updater[0].keys())
-    with open('contacts_csv.csv', 'a') as file:
-        address_book = csv.writer(file)
-        name = input(f"Name to update\n> ")
-        for dict_line in range(address_book):
+def update(address_book):
 
-            new_dict =
+    update_name = input('Whose information would you like to update?\n> ')
+    update_key = input('Which key would you like to change?\n> ')
+    update_value = input('What is the new value?\n> ')
 
-        name = input(f"Value to update?\n> ")
-
-        # if address_book == name:
-        #     # address_book.writerow(update)
-        #
-        #     key_value = input(f"What else would you like to update? \n> ")
-        #
-        # if address_book == value:
-        #     # address_book.writerow(update)
-
-    while True:
-        answer = input("would you like to update another contact?")
-        if answer == 'yes':
-            update()
-            break
-        elif answer ==  'no':
-            break
+    for i in range(len(address_book)):
+        if update_name in address_book[i]['name']:
+            address_book[i][update_key] = update_value
+            print(f'You entered {update_name}.')
+            print(f'Their {update_key} is now {update_value}.')
 
 
+def delete(address_book):
+    del_name = input('Whose information would you like to delete?\n> ')
 
+    for i in range(len(address_book) - 1):
+        if del_name in address_book[i]['name']:
+            del address_book[i]
+            print(f'You have deleted {del_name} from your contacts list.')
+
+    print(address_book)
 
 
 def main():
+    '''
+    main is the control mechanism where functions are called on to execute its sub-operations. The while loop keeps executing until option 6 is selcted and then exit is called to quit.
+    '''
     print('''
     What would you like to do? Select one.
     1. Read the current contacts
     2. Create a contact
     3. Retrieve a contact
     4. Update a contact
-    5. Exit
+    5. Delete a contact
+    6. Exit
     ''')
 
     addess_book = read()
@@ -100,19 +100,21 @@ def main():
             create()
 
         elif option == '3':
-            retrieve()
+            retrieve(addess_book)
 
         elif option == '4':
-            update()
+            update(addess_book)
 
         elif option == '5':
+            delete(addess_book)
+
+        elif option == '6':
             print('Exit')
             exit(0)
 
         else:
             print('Please type a valid response')
 
-    write(addess_book)
 
 main()
 

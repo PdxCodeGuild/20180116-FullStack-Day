@@ -99,6 +99,8 @@ s = 'hello world'
 print(s.split(' '))
 ```
 
+## Static Variables
+
 ## Static Methods
 
 Static methods are methods that belong to the **type** and **not** the instance. They're represented by an `@staticmethod` above the function declaration.
@@ -122,21 +124,22 @@ polar_point.scale(2)
 ```
 
 
+
 ## Private Variables
 
-We can specify private variables to maximize **encapsulation**. What if the variable is sometimes in an 'invalid' state? Furthermore setting the variable directly could have strange side-effects. These are represented by two underscores before the variable name.
+We can specify private variables to maximize **encapsulation**. What if the variable is sometimes in an 'invalid' state, or other variables depend on its value, or setting its value directly could have strange side-effects. There are many situations where a class' variable should not be accessible from the outside. A variable is made private by placing two underscores before the variable name.
 
 ```python
 import math
 
 class PointPriv:
     def __init__(self, x, y):
-        self.__x = x
+        self.__x = x  # use two underscores to denote a private variable
         self.__y = y
     
     def distance(self, p):
-        dx = self.__x - p.__x
-        dy = self.__y - p.__y
+        dx = self.__x - p.__x # still accessible from inside methods
+        dy = self.__y - p.__y # still accessible to other members of the same class
         return math.sqrt(dx*dx + dy*dy)
 
 p1 = PointPriv(5,2)
@@ -145,7 +148,7 @@ print(p1.distance(p2))
 print(p1.__x) # AttributeError: 'PointPriv' object has no attribute '__x'
 ```
 
-Note that these variables are still accessible, and are merely re-named when the code is run.
+Note that these variables are still accessible, and are merely re-named when the code is run. Thus it is not an obligation not to access it, only a very strong recommendation.
 
 ```python
 print(p1.__dict__) # {'_PointPriv__x': 5, '_PointPriv__y': 2}
@@ -173,6 +176,29 @@ class Rotator:
         return rx, ry
 ```
 
+## Private Methods
+
+Similar to private variables, private methods are denoted with 2 underscores. Private methods are useful if you have a bit of code that's re-used from within your class but you don't want to expose to outside code.
+
+
+```python
+class MyClass:
+    
+    def __init__(self):
+        pass
+    
+    def __privatemethod(self, x):
+        print(x)
+    
+    def publicmethod(self):
+        self.__privatemethod('hi!')
+
+mc = MyClass()
+mc.publicmethod() # hi!
+mc.__privatemethod() # AttributeError: 'MyClass' object has no attribute '__privatemethod'
+```
+
+
 
 ## Inheritance
 
@@ -186,6 +212,48 @@ class Animal:
 class Squirrel(Animal): # inherit from Animal
     def __init__(self, name):
         super().__init__(name) # invoke the parent's initializer
+
+s = Squirrel('Clarence')
+print(s.name)
+```
+
+
+### Multiple Inheritance
+
+```python
+class ParentA:
+    def __init__(self):
+        super().__init__()
+        print('parent a initializer')
+
+class ParentB:
+    def __init__(self):
+        super().__init__()
+        print('parent b initializer')
+
+class Child(ParentA, ParentB):
+    def __init__(self):
+        super().__init__()
+
+c = Child()
+```
+
+
+```python
+class ParentA:
+    def __init__(self):
+        print('parent a initializer')
+
+class ParentB:
+    def __init__(self):
+        print('parent b initializer')
+
+class Child(ParentA, ParentB):
+    def __init__(self):
+        ParentA.__init__(self)
+        ParentB.__init__(self)
+
+c = Child()
 ```
 
 
@@ -280,4 +348,29 @@ print(p1 == p2) # True
 print(p1 == p3) # False
 print(p1 != p2) # False
 print(p1 != p3) # True
+```
+
+
+
+### \_\_getitem__ and \_\_len__
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __getitem__(self, index):
+        if index == 0:
+            return self.x
+        elif index == 1:
+            return self.y
+        return None
+
+    def __len__(self):
+        return 2
+
+p = Point(5, 2)
+for i in range(len(p)):
+    print(p[i])
 ```
