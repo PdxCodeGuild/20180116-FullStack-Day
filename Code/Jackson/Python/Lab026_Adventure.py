@@ -40,6 +40,9 @@ class Set_opponents():
             enemy_j = random.randint(0, width - 1)
             board[enemy_i][enemy_j] = '☠'
 
+
+print('Welcome to "Around the World!"  The objective is to sail around the world without getting capsized by pirates.')
+
 # loop until the user says 'done' or dies
 while True:
     command = input('what direction, captain?!: n/s/e/w')  # get the command from the user
@@ -74,7 +77,7 @@ while True:
     # check if the player is on the same space as an enemy
     if board[player_i][player_j] == '☠':
         print('you\'ve encountered a pirate! You must fight with 1 of the following weapons:"sword, musket, or cannon"')
-        user_weapon = input('which weapon do you select?: ')
+        user_weapon = input('which weapon do you select?: ').lower()
         computer_play = random.choice(['sword', 'musket', 'cannon'])
         print('They choose: ' + computer_play)
         # tie condition
@@ -84,25 +87,28 @@ while True:
             computer_play = random.choice(['sword', 'musket', 'cannon'])
             #losing conditions
         if computer_play == 'sword' and user_weapon == 'cannon':  #tested and worked
-            print('sword beats cannon, YOU LOSE')
+            print('sword beats cannon, You Shipwrecked, GAME OVER')
             break
         if computer_play == 'musket' and user_weapon == 'sword':  #tested and worked
-            print('musket beats sword, YOU LOSE')
+            print('musket beats sword, You Shipwrecked, GAME OVER')
             break
         if computer_play == 'cannon' and user_weapon == 'musket':  #tested and worked
-            print('cannon beats musket, YOU LOSE')
+            print('cannon beats musket,  You Shipwrecked, GAME OVER')
             break
-        # condition for what happens
-        #winning conditions
+        # winning conditions
         if user_weapon == 'sword' and computer_play == 'cannon':  # tested and worked
-            print('sword beats cannon, you defeated them')
+            print('sword beats cannon, you defeated the pirates!')
             board[player_i][player_j] = ' '  # remove the enemy from the board
         if user_weapon == 'musket' and computer_play == 'sword':  # tested and worked
-            print('musket beats sword, you defeated them')
+            print('musket beats sword, you defeated the pirates!')
             board[player_i][player_j] = ' '  # remove the enemy from the board
         if user_weapon == 'cannon' and computer_play == 'musket':  # tested and worked
-            print('cannon beats musket, you defeated them')
+            print('cannon beats musket, you defeated the pirates!')
             board[player_i][player_j] = ' '  # remove the enemy from the board
+        # Conditions for
+        if user_weapon != 'sword' or 'cannon' or 'musket':
+            print(f'{user_weapon} not found on ship.  You shipwrecked, GAME OVER')
+            break
 
     # print out the board
     for i in range(height):
