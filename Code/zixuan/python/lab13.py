@@ -1,14 +1,15 @@
-def transfer(inputs, n):
 
-    return chr(inputs + 95 + int(n))
-
-
-inputs = input("please enter your number list with commom:")
-inputs = inputs.split(",")
+inputs = input("please enter your word:")
 n = int(input("please enter your rot:"))
-
+tmp = list(inputs)
 for i in range(len(inputs)):
-    inputs[i] = transfer(int(inputs[i]), n)
+    newChr = ord(inputs[i])+n
+    if newChr > 122:
+        newChr = newChr -122 + 96
 
-print(inputs)
+
+
+    tmp[i] = chr(newChr)
+
+print(''.join(tmp))
 
