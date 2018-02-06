@@ -218,6 +218,45 @@ print(s.name)
 ```
 
 
+### Multiple Inheritance
+
+```python
+class ParentA:
+    def __init__(self):
+        super().__init__()
+        print('parent a initializer')
+
+class ParentB:
+    def __init__(self):
+        super().__init__()
+        print('parent b initializer')
+
+class Child(ParentA, ParentB):
+    def __init__(self):
+        super().__init__()
+
+c = Child()
+```
+
+
+```python
+class ParentA:
+    def __init__(self):
+        print('parent a initializer')
+
+class ParentB:
+    def __init__(self):
+        print('parent b initializer')
+
+class Child(ParentA, ParentB):
+    def __init__(self):
+        ParentA.__init__(self)
+        ParentB.__init__(self)
+
+c = Child()
+```
+
+
 ## Dunder Methods
 
 Classes can implement special methods, called 'dunder methods' which are denoted by two underscores. One which we've already seen is `__init__`, which represents the initializer. For more info, check the [official docs](https://docs.python.org/3/reference/datamodel.html#special-method-names).
