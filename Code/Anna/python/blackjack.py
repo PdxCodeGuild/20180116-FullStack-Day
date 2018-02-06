@@ -46,8 +46,8 @@ def play(player_cards):
         for i in range(len(player_cards)):
             total += card_dict[player_cards[i]]
 
-    print(f"You have: {', '.join(player_cards)}")
-    print(f"Your current total is: {total}")
+    print(f"The cards drawn are: {', '.join(player_cards)}")
+    print(f"The current total is: {total}")
     return total
 
 
@@ -59,6 +59,46 @@ def game():
     while hit is True:
         new_card = deal()
         print(f"The space card dealer gives you: {new_card}")
+        print('\n'.join(ascii_card(new_card)))
+        sleep(2)
+        cards.append(new_card)
+        total = play(cards)
+        choice = input("Do you 'hit' or 'stay'? ")
+
+        if total > 21:
+            print("Busted! 😞")
+            sleep(2)
+            hit = False
+            break
+        elif total == 21:
+            print("Blackjack!")
+            print('\n'.join(ascii_card('A')))
+            sleep(2)
+            hit = False
+            break
+        elif choice == 'stay':
+            print("Stay")
+            sleep(2)
+            hit = False
+            break
+        elif choice == 'hit':
+            print("Hit")
+            sleep(2)
+            hit = True
+        else:
+            print("Not a valid choice")
+
+    return total
+
+
+def comp_game():
+    cards = []
+    hit = True
+    total = 0
+
+    while hit is True:
+        new_card = deal()
+        print(f"The ruler gets: {new_card}")
         print('\n'.join(ascii_card(new_card)))
         sleep(2)
         cards.append(new_card)
