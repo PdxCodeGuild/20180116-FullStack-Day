@@ -15,7 +15,6 @@ import pygame.examples.stars
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
-# TODO: add fuel tank option - if fuel < 5 and enemies < 4?
 # TODO: add pygame minigame?
 
 
@@ -408,6 +407,7 @@ def outro_alt():
 def alt():
     from Code.Anna.python import blackjack
     from blackjack import game
+    from blackjack import comp_game
 
     sleep(2)
     print(chalk.yellow("""
@@ -469,11 +469,19 @@ def alt():
     choice = input("> ")
     if choice == 'y':
         bj_result = game()
-        bj_ruler = random.randint(10, 21)
+        bj_ruler = comp_game()
 
-        print(f"The ruler has 🃏 {bj_ruler}")
+        if bj_result == bj_ruler:
+            print("It's a tie, play again!")
+            bj_result = game()
+            bj_ruler = comp_game()
 
-        if bj_result <= 21 and bj_result > bj_ruler:
+        elif bj_result > 21 and bj_ruler > 21:
+            print("You both busted, play again!")
+            bj_result = game()
+            bj_ruler = comp_game()
+
+        elif bj_result <= 21 and bj_result > bj_ruler or bj_ruler > 21:
             print("You win!")
             sleep(2)
             print(chalk.yellow("""
@@ -500,13 +508,37 @@ def alt():
                        |    ||   ||   ||   |
                         \___/\___/\___/\__/
                        `""""""""""""""""""
-
-        You make it to Space Code School, and after studying hard and
-        graduating with flying colors, you get a job as the lead
-        developer on a new, top-secret, government project. Something
-        about a 'Star of Death'...
         
                 """))
+            sleep(3)
+            print(chalk.blue(r"""                           *
+                           *   |||      |||         .
+                     *         | |  __  | |   *               *
+                |-|_____-----/   |_|  |_|   \-----_____|-|
+                |_|_________{   }|  (^) |{  }__________|_|  
+                 ||          |_| |   ^  | |_|          ||  
+                 |              \|  /\  |/              |  
+                 |         *     \ |--| /               |    .
+                 =               \ |__| /         *     =    
+                 +               \      /               +
+                          .       \    /    
+                    *             \    /    *
+                                   \  /                      *
+             .                     \  /                             .
+                         .         \  /      .
+                                   \  /
+                                   \  /              *
+                  *                \  /
+                                    \/             .              .
+                         .     *            *      
+                                                            *                
+                """))
+            print(chalk.yellow("""
+            You make it back to Space Code School, and after studying hard and
+            graduating with flying colors, you get a job as the lead
+            python developer on a new, top-secret, government project. 
+            Something about a 'Star' of 'Death'...
+                    """))
             sleep(5)
             outro()
         else:
@@ -537,7 +569,7 @@ def alt():
             sleep(5)
             outro()
     else:
-        return None
+        outro()
 
 
 def game_on(player_x, player_y, num_enemies):
