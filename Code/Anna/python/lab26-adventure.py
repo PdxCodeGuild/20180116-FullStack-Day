@@ -12,11 +12,11 @@ import wave
 import threading
 import pygame.examples.stars
 
-from Code.Anna.python import blackjack
-
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
+# TODO: add fuel tank option - if fuel < 5 and enemies < 4?
+# TODO: add pygame minigame?
 
 
 class Game:
@@ -38,6 +38,11 @@ class Game:
             board.append([])  # append an empty row
             for j in range(self.width):  # loop over the columns
                 board[i].append(chalk.blue('[    ]'))  # append an empty space to the board
+        # add asteroids in random locations
+        for i in range(astroids):
+            ast_x = random.randint(0, self.height - 2)
+            ast_y = random.randint(0, self.width - 2)
+            board[ast_x][ast_y] = chalk.blue('[ ☄️ ]')
         # add enemies in random locations
         for i in range(diff_setting):
             enemy_x = random.randint(0, self.height - 2)
@@ -47,12 +52,10 @@ class Game:
         for i in range(2):
             enemy_x = random.randint(0, self.height - 2)
             enemy_y = random.randint(0, self.width - 2)
-            board[enemy_x][enemy_y] = chalk.blue('[ 👽 ]')
-        # add asteroids in random locations
-        for i in range(astroids):
-            ast_x = random.randint(0, self.height - 2)
-            ast_y = random.randint(0, self.width - 2)
-            board[ast_x][ast_y] = chalk.blue('[ ☄️ ]')
+            if board[enemy_x][enemy_y] != chalk.blue('[ 👾 ]'):  # otherwise there's aliens on top of aliens,
+                board[enemy_x][enemy_y] = chalk.blue('[ 👽 ]')   # and nobody wants that
+            else:
+                board[enemy_x - 1][enemy_y] = chalk.blue('[ 👽 ]')
         return board
 
     def fuel_gage(self, fuel_level):
@@ -357,6 +360,9 @@ def outro_alt():
 
 
 def alt():
+    from Code.Anna.python import blackjack
+    from blackjack import game
+
     sleep(2)
     print(chalk.yellow("""
     You and your classmates land safely on the warm yellow planet below.
@@ -415,7 +421,6 @@ def alt():
     """))
     choice = input("> ")
     if choice == 'y':
-        from blackjack import game
         bj_result = game()
         bj_ruler = random.randint(10, 21)
 
@@ -673,7 +678,7 @@ def game_on(player_x, player_y, num_enemies):
 
 
 s = WavePlayer()
-# intro()
+intro()
 diff_setting = difficulty_setting()
 asteroids = int(diff_setting * 2)
 num_enemies = diff_setting + 2
