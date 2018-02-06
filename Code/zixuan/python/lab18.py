@@ -22,12 +22,12 @@ for i in range(0, inputN.__len__()):
 ###########
 peak_index = 1
 
-for i in range(0, inputN.__len__()):
+for i in range(0, len(inputN)):
     for j in range(0, maxN):
         picture[j][i] = ' '
 
-for i in range(0, inputN.__len__(), +1):
-    if i > peaks[peak_index] and peak_index < peaks.__len__()-1:
+for i in range(0, len(inputN), +1):
+    if i > peaks[peak_index] and peak_index < len(peaks)-1:
         peak_index = peak_index + 1
 
     for j in range(0, maxN):
