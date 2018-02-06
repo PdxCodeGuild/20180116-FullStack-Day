@@ -1,15 +1,15 @@
 import random
 
-eye = ['1', '2', '3']
-nose = ['a', 'b', 'c']
-leg = ['A', 'B', 'C']
+eyes = [':', '=', ';']
+noses = ['', '-', '\'', '^', '+']
+mouths = [')', ']', '|', '/', '\\', 'D', 'P', '3']
 
 i = 0
 
 while i < 5:
-    e = random.choice(eye)
-    n = random.choice(nose)
-    l = random.choice(leg)
+    e = random.choice(eyes)
+    n = random.choice(noses)
+    l = random.choice(mouths)
 
     s = e + n + l
     print(s)

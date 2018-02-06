@@ -1,3 +1,4 @@
+#Version 1
 import random
 answer = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes definitely', 'You may rely on it',
           'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again',
@@ -8,9 +9,8 @@ print('Welcome')
 question = input('Ask a question. ')
 output = random.choice(answer)
 print(output)
-
 cont = input('Do you wish to ask another question? ')
-
+#Version 2
 while cont == 'yes':
     output = random.choice(answer)
     question = input('Ask a question. ')
