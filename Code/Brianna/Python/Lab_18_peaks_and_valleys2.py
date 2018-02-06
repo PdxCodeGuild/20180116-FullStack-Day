@@ -21,5 +21,10 @@ def peaks_and_valleys(data):
     return sorted(peaks_and_valleys_list)
 
 
-for i in range (int(data)):
-    print('x'*(data))
+for num in data:
+    print('x'* num)
+
+
+
+
+

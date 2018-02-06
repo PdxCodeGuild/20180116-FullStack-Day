@@ -15,14 +15,8 @@ import pygame.examples.stars
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
-# TODO: fog of war?
-# TODO: add a final boss that follows you down to the planet - add a planet level?
-#   to beat the boss, have to play blackjack at the casino with him? # might be too much...
-#   alt ending:
-#   "You and your classmates land safely on the warm yellow planet below.
-#   You find the planet's ruler, and she's willing to give you enough
-#   fuel to get you to Space Code School... for a price.
-#   That price is beating her at Space Blackjack. Will you play?
+# TODO: add fuel tank option - if fuel < 5 and enemies < 4?
+# TODO: add pygame minigame?
 
 
 class Game:
@@ -35,7 +29,7 @@ class Game:
     def __getitem__(self, j):
         return self.board[j]
 
-    def make_board(self, diff_setting):
+    def make_board(self, diff_setting, astroids):
         """Create a board with the given width and height
         We'll use a list of lists to represent the board,
         and will add initial enemies to the board"""
@@ -44,11 +38,24 @@ class Game:
             board.append([])  # append an empty row
             for j in range(self.width):  # loop over the columns
                 board[i].append(chalk.blue('[    ]'))  # append an empty space to the board
+        # add asteroids in random locations
+        for i in range(astroids):
+            ast_x = random.randint(0, self.height - 2)
+            ast_y = random.randint(0, self.width - 2)
+            board[ast_x][ast_y] = chalk.blue('[ ☄️ ]')
         # add enemies in random locations
         for i in range(diff_setting):
             enemy_x = random.randint(0, self.height - 2)
             enemy_y = random.randint(0, self.width - 2)
             board[enemy_x][enemy_y] = chalk.blue('[ 👾 ]')
+        # add boss enemies in random locations
+        for i in range(2):
+            enemy_x = random.randint(0, self.height - 2)
+            enemy_y = random.randint(0, self.width - 2)
+            if board[enemy_x][enemy_y] != chalk.blue('[ 👾 ]'):  # otherwise there's aliens on top of aliens,
+                board[enemy_x][enemy_y] = chalk.blue('[ 👽 ]')   # and nobody wants that
+            else:
+                board[enemy_x - 1][enemy_y] = chalk.blue('[ 👽 ]')
         return board
 
     def fuel_gage(self, fuel_level):
@@ -66,8 +73,10 @@ class Game:
     def shields(self, shield_level):
         if shield_level == 100:
             return chalk.green(f"Shields: {shield_level}%")
-        else:
+        if shield_level > 20:
             return chalk.yellow(f"Shields: {shield_level}%")
+        else:
+            return chalk.red(f"Shields: {shield_level}%")
 
     def player_position(self):
         """Starting position in the middle of the board"""
@@ -163,6 +172,10 @@ def difficulty_setting():
         diff_setting = 4
     return diff_setting
 
+
+def scary_space():
+    print(chalk.yellow(
+        "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
 
 def intro():
     s.start()
@@ -260,13 +273,14 @@ def intro():
     offer help. You all just have to make it there
     without getting eaten by 👾's - a hostile 
     alien race with a particular fondness for eating
-    Space Code School students.
+    Space Code School students - and their particularly
+    brutal bosses, 👽's.
     """))
     sleep(12)
     print(chalk.green("""
     As luck would have it, just your escape pod is
     equipped with a space laser gun. As soon as
-    you clear the path of 👾's, your classmates can 
+    you clear the path of enemies, your classmates can 
     follow to safety. Will you save the day?
     """))
     sleep(7)
@@ -319,6 +333,159 @@ def outro():
     # pygame.examples.stars.main()
 
 
+def outro_alt():
+    sleep(2)
+    print(chalk.yellow('''
+
+
+                 ██████╗  █████╗ ███╗   ███╗███████╗
+                ██╔════╝ ██╔══██╗████╗ ████║██╔════╝
+                ██║  ███╗███████║██╔████╔██║█████╗  
+                ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  
+                ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗
+                 ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
+                  ██████╗ ██╗   ██╗███████╗██████╗ 
+                 ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+                 ██║   ██║██║   ██║█████╗  ██████╔╝
+                 ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+                 ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+                  ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+
+    '''))
+    s.sound_effect('audio/ending_theme_short.wav')
+    print(chalk.green("\tWould you like to see the alternate ending? y/n"))
+    ending = input("> ")
+    if ending == 'y':
+        alt()
+
+
+def alt():
+    from Code.Anna.python import blackjack
+    from blackjack import game
+
+    sleep(2)
+    print(chalk.yellow("""
+    You and your classmates land safely on the warm yellow planet below.
+    The streets are clear, and the only building in sight with any
+    commotion is the Space Bar...
+    """))
+    sleep(5)
+    print(chalk.yellow("""
+
+     .     .               . :
+     !          _______ +_______
+     |         /  _____)/  ___  \  +
+- --(+)--- -  /  /_____/  /___)  \    :     ,------.
+     T       (______   )   _______)     .   |       \\
+     !   :.________/  /\  \_________________|______  \\
+     :     [_(_______/__\__)______________________]___\\
+ |         |                         | SPACE BAR  ]|[
+-+--    :  |  ,--.    ,--.    ,--.    `''''''''''''|`---.
+ !    +    | ((_  )  ((_  )  ((_  )  / 0-----0 \  |[__\\\\`._______________________
+           |  `--'    `--'    `--'  /  |     |  \ | _____ _  _            |-|  /'
+           |                        \  |     |  / |(O==o  _,--------------'-'-'
+           |             ,-"-.       \ 0-----0 /  | `---,
+           |____________( |`- )______________________|____/
+  +                .     `-.-'     .        |    |____/ 
+        .             .    |     .       :  |________/
+           +    o!O      __I__+
+   .:                   (  I  )    +
+                         \___/
+
+    """))
+    sleep(2)
+    print(chalk.yellow("""
+    Inside, you find the planet's ruler, and she's willing to give you enough
+    fuel to get you to Space Code School... for a price.
+    """))
+    sleep(5)
+    print(chalk.yellow("""
+    _____________________
+   |         |_________
+   |        [___________
+   |          |   |   |
+   |    @@   /_\ /_\ /_\\
+   |   @()@
+   |   _/\_
+   | <&,)(V)-,_ ________
+   |  ~_) ( [_________ _
+   |  (_( _) |          |
+   |   \ \~  |          |
+   |    \,\, |          |
+   |    /'/'o===========|
+   |_,__-'-_,+-----------
+
+    """))
+    print(chalk.yellow("""
+    That price is beating her at Space Blackjack 🃏. Will you play?
+    """))
+    choice = input("> ")
+    if choice == 'y':
+        bj_result = game()
+        bj_ruler = random.randint(10, 21)
+
+        print(f"The ruler has 🃏 {bj_ruler}")
+
+        if bj_result <= 21 and bj_result > bj_ruler:
+            print("You win!")
+            sleep(2)
+            print(chalk.yellow("""
+        Congrats, you've earned your fuel, and a tall frosty space beer!
+    
+                                 _, . '__ . 
+                          '_(_0o),(__)o().
+                        ,o(__),_)o(_)O,(__)o
+                      o(_,-o(_ )(),(__(_)oO)_
+                      .O(__)o,__).(_ )o(_)Oo_)
+                       o/'"`\/'"`\/'"`\/'"\O_)0 
+                       |    ||   ||   ||   |,_) 
+                       |\___/\___/\___/\___|o(_)
+                  .----|"\/'"`\/'"`\/'"`\/'|_/`)
+                 /  .--| ||   ||   ||   || |O_) 
+                |  /   |_/\___/\___/\___/\_|
+                |  |   |/'"`\/'"`\/'"`\/'"`|
+                |  |   |    ||   ||   ||   |
+                |  |   |\___/\___/\___/\___|
+                |  \   |"\/'"`\/'"`\/'"`\/"|
+                 \  '--| ||   ||   ||   || |
+                  '----|_/\___/\___/\___/\_|
+                       |/'"`\/'"`\/'"`\/'"`|
+                       |    ||   ||   ||   |
+                        \___/\___/\___/\__/
+                       `""""""""""""""""""
+
+                """))
+            outro()
+        else:
+            print("You lose!")
+            print(chalk.yellow("""
+        Sadly, you never make it off the planet, have to drop out of
+        Space Code School, and spend the rest of your life
+        herding space cats.
+         .                       .
+    .                 _                 *              .
+        *             \`"-.
+                .      )  _`-.    .                        .
+                      ,  : `. \\              *
+             .        : _   '  \\
+    *                 ; *` _.   `--._    .            .  
+                      `-.-'          `-.
+               .        |       `       `.                  *
+       .                :.       .        \\   *          
+                        | \  .   :   .-'   .
+    *                   :  )-.;  ;  /      :       .
+                *       :  ;  | :  :       ;-.           *
+         .              ; /   : |`-:     _ `- )
+      .              ,-' /  ,-' ; .-`- .' `--'   .            .
+             *       `--'   `---' `---'            .
+
+                    (Hey, it could be worse)
+            """))
+            outro()
+    else:
+        return None
+
+
 def game_on(player_x, player_y, num_enemies):
     # print out the initial board
     for i in range(play_game.height):
@@ -337,7 +504,10 @@ def game_on(player_x, player_y, num_enemies):
     print(play_game.shields(shield_level))
     print()
 
-    print("\nYou are surrounded by enemies! Choose 'u' for up, 'd' for down, 'r' for right, 'l' for left, or 'q' to quit. Just don't run out of gas...\n")
+    print("\nYou are surrounded by enemies! And asteroids, which can damage your shields!"
+          "\nChoose 'u' for up, 'd' for down, 'r' for right, 'l' for left, or 'q' to quit."
+          "\nIf you encounter an enemy, choose 'attack' or 'run'."
+          "\nJust don't run out of gas...\n")
     round_one = True
 
     # loop until the user says 'done' or dies
@@ -349,28 +519,43 @@ def game_on(player_x, player_y, num_enemies):
             break  # exit the game
         elif command == 'l':
             if player_y - 1 < 0:
-                print(chalk.yellow(
-                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+                scary_space()
             else:
                 player_y -= 1  # move left
         elif command == 'r':
             if player_y + 1 > play_game.width - 1:
-                print(chalk.yellow(
-                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+                scary_space()
             else:
                 player_y += 1  # move right
         elif command == 'u':
             if player_x - 1 < 0:
-                print(chalk.yellow(
-                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+                scary_space()
             else:
                 player_x -= 1  # move up
         elif command == 'd':
             if player_x + 1 > play_game.height - 1:
-                print(chalk.yellow(
-                    "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+                scary_space()
             else:
                 player_x += 1  # move down
+        else:
+            print("Invalid command.")
+
+        # check if the player is on the same space as an asteroid
+        if board[player_x][player_y] == chalk.blue('[ ☄️ ]'):
+            print("You've hit an asteroid field! Shields damaged")
+            s.sound_effect('audio/meteor.wav')
+            shield_level -= 10
+
+        # repopulate board with 4 additional enemies, but only the first time num_enemies drops to 2
+        if num_enemies == 2 and round_one is True:
+            print("Oh no, they're onto you! They've called for reinforcements!")
+            sleep(1)
+            for i in range(4):
+                enemy_x = random.randint(0, play_game.height - 2)
+                enemy_y = random.randint(0, play_game.width - 2)
+                board[enemy_x][enemy_y] = chalk.blue('[ 👾 ]')
+            num_enemies += 4
+            round_one = False
 
         # check if the player is on the same space as an enemy
         if board[player_x][player_y] == chalk.blue('[ 👾 ]'):
@@ -379,20 +564,46 @@ def game_on(player_x, player_y, num_enemies):
             if action == 'attack':
                 num_enemies -= 1
                 s.sound_effect('audio/laser_gun_shot.wav')
-                if num_enemies == 2 and round_one is True:
-                    print("Oh no, they're onto you! They've called for reinforcements!")
-                    sleep(1)
-                    board[player_x][player_y] = chalk.blue('[    ]')  # remove the enemy from the board
-                    for i in range(4):
-                        enemy_x = random.randint(0, play_game.height - 1)
-                        enemy_y = random.randint(0, play_game.width - 1)
-                        board[enemy_x][enemy_y] = chalk.blue('[ 👾 ]')
-                    num_enemies = 6
-                    round_one = False
                 if num_enemies != 0:
                     print(f'You\'ve slain the enemy and stolen their fuel! Keep going, there are {num_enemies} enemies left.')
                     board[player_x][player_y] = chalk.blue('[    ]')  # remove the enemy from the board
                     fuel_level += 5
+                sleep(2)
+            elif action == 'run':
+                s.sound_effect('audio/whoosh_by.wav')
+                if num_enemies != 0:
+                    print(
+                        'You made a run for it, but took damage on your way!')
+                    shield_level -= random.randint(0, 20)
+                sleep(2)
+            else:
+                s.sound_effect('audio/laser_sounds_2.wav')
+                print("You've been hit! Your shields have been damaged.")
+                shield_level -= 50
+
+        # check if the player is on the same space as a boss enemy
+        if board[player_x][player_y] == chalk.blue('[ 👽 ]'):
+            print('You\'ve encountered a boss enemy!')
+            action = input('What will you do? ')
+            if action == 'attack':
+                num_enemies -= 1
+                s.sound_effect('audio/laser_gun_shot.wav')
+                if num_enemies != 0:
+                    print(
+                        f'You\'ve slain the enemy and but took damage to your shields! Keep going, there are {num_enemies} enemies left.')
+                    board[player_x][player_y] = chalk.blue('[    ]')  # remove the enemy from the board
+                    shield_level -= 20
+                    fuel_level += 10
+                sleep(2)
+            elif action == 'run':
+                s.sound_effect('audio/whoosh_by.wav')
+                if num_enemies != 0:
+                    print(
+                        'You made a run for it, but took damage on your way! '
+                        '\nLuckily, the boss got bored and took off to do boss alien things.')
+                    board[player_x][player_y] = chalk.blue('[    ]')  # remove the enemy from the board
+                    num_enemies -= 1
+                    shield_level -= random.randint(20, 50)
                 sleep(2)
             else:
                 s.sound_effect('audio/laser_sounds_2.wav')
@@ -430,7 +641,7 @@ def game_on(player_x, player_y, num_enemies):
     
                 '''))
             sleep(2)
-            outro()
+            outro_alt()
             break
 
         # print out the board
@@ -447,7 +658,7 @@ def game_on(player_x, player_y, num_enemies):
         print(play_game.shields(shield_level))
         if fuel_level == 0:
             break
-        if shield_level == 0:
+        if shield_level < 0:
             s.sound_effect('audio/space_noise.wav')
             # print out the board without the player, since the player was blown up #sadface
             for i in range(play_game.height):
@@ -459,7 +670,8 @@ def game_on(player_x, player_y, num_enemies):
                         print(board[i][j], end=' ')  # otherwise print the board square
                 print()
             print(chalk.red(
-                "With no shields left, your escape pod was blown to smithereens. Hopefully your classmates can make it without you..."))
+                "With no shields left, your escape pod was blown to smithereens."
+                "\nHopefully your classmates can make it without you..."))
             outro()
             break
         print()
@@ -468,37 +680,11 @@ def game_on(player_x, player_y, num_enemies):
 s = WavePlayer()
 intro()
 diff_setting = difficulty_setting()
-num_enemies = diff_setting
+asteroids = int(diff_setting * 2)
+num_enemies = diff_setting + 2
 
 play_game = Game()
 player_i, player_j = play_game.player_position()
-board = play_game.make_board(diff_setting)
+board = play_game.make_board(diff_setting, asteroids)
 
 game_on(player_i, player_j, num_enemies)
-
-
-
-
-# # ASCII art for potential use!
-#
-# print(r"""
-#
-# You encounter a space cat!
-#
-#           _
-#           \`"-.
-#            )  _`-.
-#           ,  : `. \
-#           : _   '  \
-#           ; *` _.   `--._
-#           `-.-'          `-.
-#             |       `       `.
-#             :.       .        \
-#             | \  .   :   .-'   .
-#             :  )-.;  ;  /      :
-#             :  ;  | :  :       ;-.
-#             ; /   : |`-:     _ `- )
-#          ,-' /  ,-' ; .-`- .' `--'
-#          `--'   `---' `---'
-#
-# """)
