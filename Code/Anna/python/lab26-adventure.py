@@ -171,9 +171,8 @@ class WavePlayer(threading.Thread):
 
 class BonusWave(threading.Thread):
     """
-    A simple class based on PyAudio to play a sine wave.
-    It's a threading class. You can play audio while your application
-    continues to do stuff.
+    Another wave player for the bonus ending, so the
+    ending will run while the audio plays
     """
 
     def __init__(self):
@@ -232,7 +231,7 @@ def scary_space():
 
 
 def intro():
-    s.start()
+    s.start()       # for some reason, this has to be s.start() and not s.run(), which won't work
     sleep(1)
     print(chalk.green("\n\t\t\t\t\t\t\t\tWelcome to the..."))
     sleep(1)
@@ -418,7 +417,6 @@ def outro_alt():
 
 def alt():
     # get the blackjack bonus game
-    from Code.Anna.python import blackjack
     from blackjack import game, comp_game
 
     # bonus game set-up
@@ -493,7 +491,7 @@ def alt():
             elif bj_result > 21 and bj_ruler > 21:
                 print("You both busted, play again!\n")
 
-            elif bj_result <= 21 and bj_result > bj_ruler or bj_ruler > 21:
+            elif 21 >= bj_result > bj_ruler or bj_ruler > 21:
                 print("You win!\n")
                 sleep(2)
                 print(chalk.yellow("""
@@ -791,7 +789,7 @@ def game_on(player_x, player_y, num_enemies):
 s = WavePlayer()                                            # initialize intro music
 b = BonusWave()                                             # initialize music for bonus game
 intro()                                                     # start the intro to the game
-diff_setting = difficulty_setting()                         # prompt the user for the difficulty setting
+diff_setting = difficulty_setting()                         # prompt the user for the difficulty setting, which determines # of enemies
 asteroids = int(diff_setting * 2)                           # num of asteroids based on diff setting
 num_enemies = diff_setting + 2                              # add 2 to num enemies for 2 bosses
 
