@@ -38,7 +38,7 @@ class Set_opponents():
         for i in range(4):
             enemy_i = random.randint(0, height - 1)
             enemy_j = random.randint(0, width - 1)
-            board[enemy_i][enemy_j] = '☠'
+            board[enemy_i][enemy_j] = '/☠'
 
 
 print('Welcome to "Around the World!"  The objective is to sail around the world without getting capsized by pirates.')
@@ -75,7 +75,7 @@ while True:
             Set_opponents()  # resets food after going 'around the world'
 
     # check if the player is on the same space as an enemy
-    if board[player_i][player_j] == '☠':
+    if board[player_i][player_j] == '/☠':
         print('you\'ve encountered a pirate! You must fight with 1 of the following weapons:"sword, musket, or cannon"')
         user_weapon = input('which weapon do you select?: ').lower()
         computer_play = random.choice(['sword', 'musket', 'cannon'])
