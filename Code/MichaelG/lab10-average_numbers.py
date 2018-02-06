@@ -8,13 +8,9 @@
 #Version 2
 
 numbers = []
-numinput = input('Please input a number or enter done. ')
-numbers.append(numinput)
-print(numbers)
+numinput = ''
+# print(numbers)
 
-numsum = sum(int(i) for i in numbers)
-numlen = len(numbers)
-avg = (numsum/numlen)
 while True:
 
     if numinput != 'done':
@@ -25,7 +21,12 @@ while True:
     elif numinput == 'done':
         break
 numbers.pop()
-print(f"The average of your numbers is: ", {avg})
+numsum = sum(int(i) for i in numbers)
+numlen = len(numbers)
+numavg = numsum/numlen
+
+print(numsum) #sum test
+print(f"The average of your numbers is: ", {numavg})
 
 
 
