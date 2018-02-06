@@ -5,10 +5,11 @@ for a command. Start with the code below, and add your own modifications.
 
 Changed the icons to be sea themed
 allow the user to go around the world
+changed the directions to be nautically themed
 
-The goal is to go around the world (there's a check to make sure you made it across one of the
-
-**Need to set a boolean to see if has gone around the world yet.  If so,
+The goal is to go around the world (there's a check to make sure you made it around the world)
+If you encounter a pirate (skull and crossbones) you have to choose a weapon to fight them with.
+Cannon beats musket (more power), musket beats sword (more power), sword beats cannon (more agility)
 """
 
 import random
@@ -41,7 +42,6 @@ class Set_opponents():
 
 # loop until the user says 'done' or dies
 while True:
-
     command = input('what direction, captain?!: n/s/e/w')  # get the command from the user
     Set_opponents() # set the food/bad guys on the board
     if command == 'done':
@@ -72,17 +72,39 @@ while True:
             Set_opponents()  # resets food after going 'around the world'
 
     # check if the player is on the same space as an enemy
-    if board[player_i][player_j] == '☠ ':
-        print('you\'ve encountered an enemy!')
-        action = input('what will you do? ')
-        if action == 'attack':
-            print('you\'ve slain the enemy')
-            board[player_i][player_j] = ' '  # remove the enemy from the board
-        else:
-            print('you hestitated and were slain')
+    if board[player_i][player_j] == '☠':
+        print('you\'ve encountered a pirate! You must fight with 1 of the following weapons:"sword, musket, or cannon"')
+        user_weapon = input('which weapon do you select?: ')
+        computer_play = random.choice(['sword', 'musket', 'cannon'])
+        print('They choose: ' + computer_play)
+        # tie condition
+        while computer_play == user_weapon:  # sword > cannon, cannon > musket, musket > sword
+            print('you both chose the same weapon, select another weapon!')
+            user_weapon = input('which weapon do you select?: sword, musket, or cannon ')
+            computer_play = random.choice(['sword', 'musket', 'cannon'])
+            #losing conditions
+        if computer_play == 'sword' and user_weapon == 'cannon':  #tested and worked
+            print('sword beats cannon, YOU LOSE')
             break
+        if computer_play == 'musket' and user_weapon == 'sword':  #tested and worked
+            print('musket beats sword, YOU LOSE')
+            break
+        if computer_play == 'cannon' and user_weapon == 'musket':  #tested and worked
+            print('cannon beats musket, YOU LOSE')
+            break
+        # condition for what happens
+        #winning conditions
+        if user_weapon == 'sword' and computer_play == 'cannon':  # tested and worked
+            print('sword beats cannon, you defeated them')
+            board[player_i][player_j] = ' '  # remove the enemy from the board
+        if user_weapon == 'musket' and computer_play == 'sword':  # tested and worked
+            print('musket beats sword, you defeated them')
+            board[player_i][player_j] = ' '  # remove the enemy from the board
+        if user_weapon == 'cannon' and computer_play == 'musket':  # tested and worked
+            print('cannon beats musket, you defeated them')
+            board[player_i][player_j] = ' '  # remove the enemy from the board
 
-            # print out the board
+    # print out the board
     for i in range(height):
         for j in range(width):
             # if we're at the player location, print the player icon
