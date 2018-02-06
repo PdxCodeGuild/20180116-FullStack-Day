@@ -9,7 +9,7 @@ previous_guess = ""
 while True:
     counter = counter + 1
     number_of_guesses = counter
-    comp_guess_1 = random.randint(1,10)
+    comp_guess_1 = random.randint(1, 10)
     print("\n\n:" + str(comp_guess_1))
     if comp_guess_1 == user_number:
         print("\nComputer has guessed correctly after " + str(number_of_guesses) + " guesses! Thank you for playing with me!\n")
