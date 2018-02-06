@@ -12,17 +12,12 @@ import wave
 import threading
 import pygame.examples.stars
 
+from Code.Anna.python import blackjack
+
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
-# TODO: fog of war?
-# TODO: add a final boss that follows you down to the planet - add a planet level?
-#   to beat the boss, have to play blackjack at the casino with him? # might be too much...
-#   alt ending:
-#   "You and your classmates land safely on the warm yellow planet below.
-#   You find the planet's ruler, and she's willing to give you enough
-#   fuel to get you to Space Code School... for a price.
-#   That price is beating her at Space Blackjack. Will you play?
+# TODO: random asteroids! If you hit one, your shields go down 10%
 
 
 class Game:
@@ -319,6 +314,157 @@ def outro():
     # pygame.examples.stars.main()
 
 
+def outro_alt():
+    sleep(2)
+    print(chalk.green('''
+
+
+                 ██████╗  █████╗ ███╗   ███╗███████╗
+                ██╔════╝ ██╔══██╗████╗ ████║██╔════╝
+                ██║  ███╗███████║██╔████╔██║█████╗  
+                ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  
+                ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗
+                 ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
+                  ██████╗ ██╗   ██╗███████╗██████╗ 
+                 ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+                 ██║   ██║██║   ██║█████╗  ██████╔╝
+                 ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+                 ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+                  ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
+
+    '''))
+    s.sound_effect('audio/ending_theme.wav')
+    print(chalk.green("\tWould you like to see the alternate ending? y/n"))
+    ending = input("> ")
+    if ending == 'y':
+        alt()
+
+
+def alt():
+    sleep(2)
+    print(chalk.yellow("""
+    You and your classmates land safely on the warm yellow planet below.
+    The streets are clear, and the only building in sight with any
+    commotion is the Space Bar...
+    """))
+    sleep(5)
+    print(chalk.yellow("""
+
+     .     .               . :
+     !          _______ +_______
+     |         /  _____)/  ___  \  +
+- --(+)--- -  /  /_____/  /___)  \    :     ,------.
+     T       (______   )   _______)     .   |       \\
+     !   :.________/  /\  \_________________|______  \\
+     :     [_(_______/__\__)______________________]___\\
+ |         |                         | SPACE BAR  ]|[
+-+--    :  |  ,--.    ,--.    ,--.    `''''''''''''|`---.
+ !    +    | ((_  )  ((_  )  ((_  )  / 0-----0 \  |[__\\\\`._______________________
+           |  `--'    `--'    `--'  /  |     |  \ | _____ _  _            |-|  /'
+           |                        \  |     |  / |(O==o  _,--------------'-'-'
+           |             ,-"-.       \ 0-----0 /  | `---,
+           |____________( |`- )______________________|____/
+  +                .     `-.-'     .        |    |____/ 
+        .             .    |     .       :  |________/
+           +    o!O      __I__+
+   .:                   (  I  )    +
+                         \___/
+
+    """))
+    sleep(2)
+    print(chalk.yellow("""
+    Inside, you find the planet's ruler, and she's willing to give you enough
+    fuel to get you to Space Code School... for a price.
+    """))
+    sleep(5)
+    print(chalk.yellow("""
+    _____________________
+   |         |_________
+   |        [___________
+   |          |   |   |
+   |    @@   /_\ /_\ /_\\
+   |   @()@
+   |   _/\_
+   | <&,)(V)-,_ ________
+   |  ~_) ( [_________ _
+   |  (_( _) |          |
+   |   \ \~  |          |
+   |    \,\, |          |
+   |    /'/'o===========|
+   |_,__-'-_,+-----------
+
+    """))
+    print(chalk.yellow("""
+    That price is beating her at Space Blackjack 🃏. Will you play?
+    """))
+    choice = input("> ")
+    if choice == 'y':
+        from blackjack import game
+        bj_result = game()
+        bj_ruler = random.randint(10, 21)
+
+        print(f"The ruler has 🃏 {bj_ruler}")
+
+        if bj_result <= 21 and bj_result > bj_ruler:
+            print("You win!")
+            sleep(2)
+            print(chalk.yellow("""
+        Congrats, you've earned your fuel, and a tall frosty space beer!
+    
+                                 _, . '__ . 
+                          '_(_0o),(__)o().
+                        ,o(__),_)o(_)O,(__)o
+                      o(_,-o(_ )(),(__(_)oO)_
+                      .O(__)o,__).(_ )o(_)Oo_)
+                       o/'"`\/'"`\/'"`\/'"\O_)0 
+                       |    ||   ||   ||   |,_) 
+                       |\___/\___/\___/\___|o(_)
+                  .----|"\/'"`\/'"`\/'"`\/'|_/`)
+                 /  .--| ||   ||   ||   || |O_) 
+                |  /   |_/\___/\___/\___/\_|
+                |  |   |/'"`\/'"`\/'"`\/'"`|
+                |  |   |    ||   ||   ||   |
+                |  |   |\___/\___/\___/\___|
+                |  \   |"\/'"`\/'"`\/'"`\/"|
+                 \  '--| ||   ||   ||   || |
+                  '----|_/\___/\___/\___/\_|
+                       |/'"`\/'"`\/'"`\/'"`|
+                       |    ||   ||   ||   |
+                        \___/\___/\___/\__/
+                       `""""""""""""""""""
+
+                """))
+            outro()
+        else:
+            print("You lose!")
+            print(chalk.yellow("""
+        Sadly, you never make it off the planet, have to drop out of
+        Space Code School, and spend the rest of your life
+        herding space cats.
+         .                       .
+    .                 _                 *              .
+        *             \`"-.
+                .      )  _`-.    .                        .
+                      ,  : `. \\              *
+             .        : _   '  \\
+    *                 ; *` _.   `--._    .            .  
+                      `-.-'          `-.
+               .        |       `       `.                  *
+       .                :.       .        \\   *          
+                        | \  .   :   .-'   .
+    *                   :  )-.;  ;  /      :       .
+                *       :  ;  | :  :       ;-.           *
+         .              ; /   : |`-:     _ `- )
+      .              ,-' /  ,-' ; .-`- .' `--'   .            .
+             *       `--'   `---' `---'            .
+
+        (Hey, it could be worse)
+                """))
+            outro()
+    else:
+        return None
+
+
 def game_on(player_x, player_y, num_enemies):
     # print out the initial board
     for i in range(play_game.height):
@@ -371,6 +517,8 @@ def game_on(player_x, player_y, num_enemies):
                     "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
             else:
                 player_x += 1  # move down
+        else:
+            print("Invalid command.")
 
         # check if the player is on the same space as an enemy
         if board[player_x][player_y] == chalk.blue('[ 👾 ]'):
@@ -430,7 +578,7 @@ def game_on(player_x, player_y, num_enemies):
     
                 '''))
             sleep(2)
-            outro()
+            outro_alt()
             break
 
         # print out the board
@@ -475,30 +623,3 @@ player_i, player_j = play_game.player_position()
 board = play_game.make_board(diff_setting)
 
 game_on(player_i, player_j, num_enemies)
-
-
-
-
-# # ASCII art for potential use!
-#
-# print(r"""
-#
-# You encounter a space cat!
-#
-#           _
-#           \`"-.
-#            )  _`-.
-#           ,  : `. \
-#           : _   '  \
-#           ; *` _.   `--._
-#           `-.-'          `-.
-#             |       `       `.
-#             :.       .        \
-#             | \  .   :   .-'   .
-#             :  )-.;  ;  /      :
-#             :  ;  | :  :       ;-.
-#             ; /   : |`-:     _ `- )
-#          ,-' /  ,-' ; .-`- .' `--'
-#          `--'   `---' `---'
-#
-# """)
