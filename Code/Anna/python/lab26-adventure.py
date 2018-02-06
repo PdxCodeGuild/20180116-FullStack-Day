@@ -1,6 +1,16 @@
 """
 Lab 26
 (Space) adventure awaits!
+-------------------------
+Credits:
+    pyaudio with threading code: https://gist.github.com/THeK3nger/3624478
+    sound effects: http://www.audiomicro.com/free-science-fiction-sci-fi-sound-effects
+    intro and outro music: http://soundimage.org/sci-fi/
+    8-bit cantina song: https://www.youtube.com/watch?v=o8l8SuBj9-c
+    ascii playing cards: https://codereview.stackexchange.com/questions/82103/ascii-fication-of-playing-cards
+    ascii art: http://www.chris.com/ascii/joan/www.geocities.com/SoHo/7373/transp.html#plane
+    ascii text: http://patorjk.com/software/taag/
+-------------------------
 """
 
 from __future__ import print_function
@@ -10,12 +20,10 @@ from time import sleep
 import pyaudio
 import wave
 import threading
-import pygame.examples.stars
+# import pygame.examples.stars
+#
+# pygame.init()
 
-pygame.init()
-
-# TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
-# TODO: add fuel tank option - if fuel < 5 and enemies < 4?
 # TODO: add pygame minigame?
 
 
@@ -396,9 +404,12 @@ def outro_alt():
                  ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
                  ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
                   ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
-
     '''))
     s.sound_effect('audio/ending_theme_short.wav')
+    print(chalk.yellow('''
+                                         ...or is it?
+    '''))
+    sleep(2)
     print(chalk.green("\tWould you like to see the alternate ending? y/n"))
     ending = input("> ")
     if ending == 'y':
@@ -408,6 +419,7 @@ def outro_alt():
 def alt():
     from Code.Anna.python import blackjack
     from blackjack import game
+    from blackjack import comp_game
 
     sleep(2)
     print(chalk.yellow("""
@@ -464,80 +476,115 @@ def alt():
 
     """))
     print(chalk.yellow("""
-    That price is beating her at Space Blackjack 🃏. Will you play?
+    That price is beating her at Space Blackjack 🃏. Will you play? y/n
     """))
     choice = input("> ")
     if choice == 'y':
-        bj_result = game()
-        bj_ruler = random.randint(10, 21)
+        winner = False
+        while winner is False:
 
-        print(f"The ruler has 🃏 {bj_ruler}")
+            bj_result = game()
+            bj_ruler = comp_game()
 
-        if bj_result <= 21 and bj_result > bj_ruler:
-            print("You win!")
-            sleep(2)
-            print(chalk.yellow("""
-        Congrats, you've earned your fuel, and a tall frosty space beer!
-    
-                                 _, . '__ . 
-                          '_(_0o),(__)o().
-                        ,o(__),_)o(_)O,(__)o
-                      o(_,-o(_ )(),(__(_)oO)_
-                      .O(__)o,__).(_ )o(_)Oo_)
-                       o/'"`\/'"`\/'"`\/'"\O_)0 
-                       |    ||   ||   ||   |,_) 
-                       |\___/\___/\___/\___|o(_)
-                  .----|"\/'"`\/'"`\/'"`\/'|_/`)
-                 /  .--| ||   ||   ||   || |O_) 
-                |  /   |_/\___/\___/\___/\_|
-                |  |   |/'"`\/'"`\/'"`\/'"`|
-                |  |   |    ||   ||   ||   |
-                |  |   |\___/\___/\___/\___|
-                |  \   |"\/'"`\/'"`\/'"`\/"|
-                 \  '--| ||   ||   ||   || |
-                  '----|_/\___/\___/\___/\_|
-                       |/'"`\/'"`\/'"`\/'"`|
-                       |    ||   ||   ||   |
-                        \___/\___/\___/\__/
-                       `""""""""""""""""""
+            if bj_result == bj_ruler:
+                print("It's a tie, play again!")
 
-        You make it to Space Code School, and after studying hard and
-        graduating with flying colors, you get a job as the lead
-        developer on a new, top-secret, government project. Something
-        about a 'Star of Death'...
+            elif bj_result > 21 and bj_ruler > 21:
+                print("You both busted, play again!\n")
+
+            elif bj_result <= 21 and bj_result > bj_ruler or bj_ruler > 21:
+                print("You win!")
+                sleep(2)
+                print(chalk.yellow("""
+            Congrats, you've earned your fuel, and a tall frosty space beer!
         
+                                     _, . '__ . 
+                              '_(_0o),(__)o().
+                            ,o(__),_)o(_)O,(__)o
+                          o(_,-o(_ )(),(__(_)oO)_
+                          .O(__)o,__).(_ )o(_)Oo_)
+                           o/'"`\/'"`\/'"`\/'"\O_)0 
+                           |    ||   ||   ||   |,_) 
+                           |\___/\___/\___/\___|o(_)
+                      .----|"\/'"`\/'"`\/'"`\/'|_/`)
+                     /  .--| ||   ||   ||   || |O_) 
+                    |  /   |_/\___/\___/\___/\_|
+                    |  |   |/'"`\/'"`\/'"`\/'"`|
+                    |  |   |    ||   ||   ||   |
+                    |  |   |\___/\___/\___/\___|
+                    |  \   |"\/'"`\/'"`\/'"`\/"|
+                     \  '--| ||   ||   ||   || |
+                      '----|_/\___/\___/\___/\_|
+                           |/'"`\/'"`\/'"`\/'"`|
+                           |    ||   ||   ||   |
+                            \___/\___/\___/\__/
+                           `""""""""""""""""""
+            
+                    """))
+                s.sound_effect('audio/win.wav')
+                print(chalk.blue(r"""                           *
+                           *   |||      |||         .
+                     *         | |  __  | |   *               *
+                |-|_____-----/   |_|  |_|   \-----_____|-|
+                |_|_________{   }|  (^) |{  }__________|_|  
+                 ||          |_| |   ^  | |_|          ||  
+                 |              \|  /\  |/              |  
+                 |         *     \ |--| /               |    .
+                 =               \ |__| /         *     =    
+                 +               \      /               +
+                          .       \    /    
+                    *             \    /    *
+                                   \  /                      *
+             .                     \  /                             .
+                         .         \  /      .
+                                   \  /
+                                   \  /              *
+                  *                \  /
+                                    \/             .              .
+                         .     *            *      
+                                                            *                
+                    """))
+                s.sound_effect('audio/space_launch.wav')
+                print(chalk.yellow("""
+            You make it back to Space Code School, and after studying hard and
+            graduating with flying colors, you get a job as the lead
+            python developer on a new, top-secret, government project. 
+            Something about a 'Star' of 'Death'...
+                    """))
+                sleep(5)
+                outro()
+                break
+            else:
+                print("You lose!")
+                sleep(1)
+                print(chalk.yellow("""
+            Sadly, you never make it off the planet, have to drop out of
+            Space Code School, and spend the rest of your life
+            herding space cats.
+             .                       .
+        .                 _                 *              .
+            *             \`"-.
+                    .      )  _`-.    .                        .
+                          ,  : `. \\              *
+                 .        : _   '  \\
+        *                 ; *` _.   `--._    .            .  
+                          `-.-'          `-.
+                   .        |       `       `.                  *
+           .                :.       .        \\   *          
+                            | \  .   :   .-'   .
+        *                   :  )-.;  ;  /      :       .
+                    *       :  ;  | :  :       ;-.           *
+             .              ; /   : |`-:     _ `- )
+          .              ,-' /  ,-' ; .-`- .' `--'   .            .
+                 *       `--'   `---' `---'            .
+    
+                        (Hey, it could be worse)
                 """))
-            sleep(5)
-            outro()
-        else:
-            print("You lose!")
-            print(chalk.yellow("""
-        Sadly, you never make it off the planet, have to drop out of
-        Space Code School, and spend the rest of your life
-        herding space cats.
-         .                       .
-    .                 _                 *              .
-        *             \`"-.
-                .      )  _`-.    .                        .
-                      ,  : `. \\              *
-             .        : _   '  \\
-    *                 ; *` _.   `--._    .            .  
-                      `-.-'          `-.
-               .        |       `       `.                  *
-       .                :.       .        \\   *          
-                        | \  .   :   .-'   .
-    *                   :  )-.;  ;  /      :       .
-                *       :  ;  | :  :       ;-.           *
-         .              ; /   : |`-:     _ `- )
-      .              ,-' /  ,-' ; .-`- .' `--'   .            .
-             *       `--'   `---' `---'            .
-
-                    (Hey, it could be worse)
-            """))
-            sleep(5)
-            outro()
+                s.sound_effect('audio/space_cats.wav')
+                outro()
+                break
     else:
-        return None
+        outro()
 
 
 def game_on(player_x, player_y, num_enemies):
@@ -560,8 +607,9 @@ def game_on(player_x, player_y, num_enemies):
 
     print("\nYou are surrounded by enemies! And asteroids, which can damage your shields!"
           "\nChoose 'u' for up, 'd' for down, 'r' for right, 'l' for left, or 'q' to quit."
-          "\nIf you encounter an enemy, choose 'attack' or 'run'."
-          "\nJust don't run out of gas...\n")
+          "\nIf you encounter an enemy, choose 'a' for attack or 'r' for 'run'."
+          "\nType anything else at your own peril..."
+          "\nAnd whatever you do, don't run out of gas!\n")
     round_one = True
 
     # loop until the user says 'done' or dies
@@ -601,7 +649,7 @@ def game_on(player_x, player_y, num_enemies):
             shield_level -= 10
 
         # find emergency fuel if conditions met
-        if fuel_level < 6 and num_enemies < 4 and round_one is True:
+        if fuel_level < 6 and num_enemies < 4:
             fuel_level += 10
             print(chalk.green("You found a spare gas canister ⛽ hidden in the escape pod!"
                              "\nNow let's get the rest of those aliens!"))
@@ -621,7 +669,7 @@ def game_on(player_x, player_y, num_enemies):
         if board[player_x][player_y] == chalk.blue('[ 👾 ]'):
             print('You\'ve encountered an alien enemy!')
             action = input('What will you do? ')
-            if action == 'attack':
+            if action == 'a':
                 num_enemies -= 1
                 s.sound_effect('audio/laser_gun_shot.wav')
                 if num_enemies != 0:
@@ -629,7 +677,7 @@ def game_on(player_x, player_y, num_enemies):
                     board[player_x][player_y] = chalk.blue('[    ]')  # remove the enemy from the board
                     fuel_level += 5
                 sleep(2)
-            elif action == 'run':
+            elif action == 'r':
                 s.sound_effect('audio/whoosh_by.wav')
                 if num_enemies != 0:
                     print(
@@ -645,7 +693,7 @@ def game_on(player_x, player_y, num_enemies):
         if board[player_x][player_y] == chalk.blue('[ 👽 ]'):
             print('You\'ve encountered a boss enemy!')
             action = input('What will you do? ')
-            if action == 'attack':
+            if action == 'a':
                 num_enemies -= 1
                 s.sound_effect('audio/laser_gun_shot.wav')
                 if num_enemies != 0:
@@ -655,7 +703,7 @@ def game_on(player_x, player_y, num_enemies):
                     shield_level -= 20
                     fuel_level += 10
                 sleep(2)
-            elif action == 'run':
+            elif action == 'r':
                 s.sound_effect('audio/whoosh_by.wav')
                 if num_enemies != 0:
                     print(
@@ -740,6 +788,7 @@ def game_on(player_x, player_y, num_enemies):
 s = WavePlayer()
 b = BonusWave()
 intro()
+
 diff_setting = difficulty_setting()
 asteroids = int(diff_setting * 2)
 num_enemies = diff_setting + 2
