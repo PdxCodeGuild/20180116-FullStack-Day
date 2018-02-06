@@ -86,6 +86,7 @@ while True:
             print(f'you both chose {user_weapon}, keep attacking!  What weapon do you choose?: ')
             user_weapon = input('which weapon do you select?: sword, musket, or cannon ')
             computer_play = random.choice(['sword', 'musket', 'cannon'])
+            print('They choose: ' + computer_play)
             #losing conditions
         if computer_play == 'sword' and user_weapon == 'cannon':  #tested and worked
             print('sword beats cannon, You Shipwrecked, GAME OVER')
