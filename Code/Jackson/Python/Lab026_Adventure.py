@@ -78,7 +78,7 @@ while True:
     if board[player_i][player_j] == '/☠':
         print('you\'ve encountered a pirate! You must fight with 1 of the following weapons:"sword, musket, or cannon"')
         computer_play = random.choice(['sword', 'musket', 'cannon'])
-        print(computer_play)  # test to check winning
+        # print(computer_play)  # test to check winning
         user_weapon = input('which weapon do you select?: ').lower()
         print('They choose: ' + computer_play)
         # tie condition
