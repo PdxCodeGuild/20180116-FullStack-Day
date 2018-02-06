@@ -21,13 +21,6 @@ def deal():
 
 """
 
-# human version:
-# player_cards = list(input("Enter your first card: "))
-# player_cards.append(input("Enter your second card: "))
-# player_cards.append(input("Enter your third card: "))
-
-# computer dealer version:
-
 
 def play(player_cards):
     if 'A' in player_cards:
@@ -65,18 +58,20 @@ def game():
 
     while hit is True:
         new_card = deal()
-        print(f"The dealer gives you: {new_card}")
+        print(f"The space card dealer gives you: {new_card}")
+        print('\n'.join(ascii_card(new_card)))
         sleep(2)
         cards.append(new_card)
         total = play(cards)
 
         if total > 21:
-            print("Busted!")
+            print("Busted! 😞")
             sleep(2)
             hit = False
             break
         elif total == 21:
             print("Blackjack!")
+            print('\n'.join(ascii_card('A')))
             sleep(2)
             hit = False
             break
@@ -92,3 +87,40 @@ def game():
 
     return total
 
+
+def ascii_card(card):
+    # we will use this to prints the appropriate icons for each card
+    suits_symbols = ['♠', '♦', '♥', '♣']
+
+    # create an empty list of list, each sublist is a line
+    lines = [[] for i in range(9)]
+
+    # "King" should be "K" and "10" should still be "10"
+    if card == '10':  # ten is the only one who's rank is 2 char long
+        rank = 10
+        space = ''  # if we write "10" on the card that line will be 1 char to long
+    else:
+        rank = card  # some have a rank of 'King' this changes that to a simple 'K' ("King" doesn't fit)
+        space = ' '  # no "10", we use a blank space to will the void
+    # get the cards suit in two steps
+    suit = random.choice(suits_symbols)
+
+    # add the individual card on a line by line basis
+    lines[0].append('┌─────────┐')
+    lines[1].append('│{}{}       │'.format(rank, space))  # use two {} one for char, one for space or char
+    lines[2].append('│         │')
+    lines[3].append('│         │')
+    lines[4].append('│    {}    │'.format(suit))
+    lines[5].append('│         │')
+    lines[6].append('│         │')
+    lines[7].append('│       {}{}│'.format(space, rank))
+    lines[8].append('└─────────┘')
+
+    result = []
+    for index, line in enumerate(lines):
+        result.append(''.join(lines[index]))
+
+    return result
+
+
+game()
