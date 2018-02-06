@@ -121,6 +121,3 @@ def ascii_card(card):
         result.append(''.join(lines[index]))
 
     return result
-
-
-game()
