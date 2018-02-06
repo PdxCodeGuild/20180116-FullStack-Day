@@ -1,6 +1,16 @@
 """
 Lab 26
 (Space) adventure awaits!
+-------------------------
+Credits:
+    pyaudio with threading code: https://gist.github.com/THeK3nger/3624478
+    sound effects: http://www.audiomicro.com/free-science-fiction-sci-fi-sound-effects
+    intro and outro music: http://soundimage.org/sci-fi/
+    8-bit cantina song: https://www.youtube.com/watch?v=o8l8SuBj9-c
+    ascii playing cards: https://codereview.stackexchange.com/questions/82103/ascii-fication-of-playing-cards
+    ascii art: http://www.chris.com/ascii/joan/www.geocities.com/SoHo/7373/transp.html#plane
+    ascii text: http://patorjk.com/software/taag/
+-------------------------
 """
 
 from __future__ import print_function
@@ -10,13 +20,11 @@ from time import sleep
 import pyaudio
 import wave
 import threading
-import pygame.examples.stars
+# import pygame.examples.stars
+#
+# pygame.init()
 
-pygame.init()
-
-# TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
 # TODO: add pygame minigame?
-# TODO: portals?
 
 
 class Game:
@@ -383,22 +391,25 @@ def outro_alt():
     sleep(2)
     print(chalk.yellow('''
 
-    
-                     ██████╗  █████╗ ███╗   ███╗███████╗
-                    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝
-                    ██║  ███╗███████║██╔████╔██║█████╗  
-                    ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  
-                    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗
-                     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
-                      ██████╗ ██╗   ██╗███████╗██████╗ 
-                     ██╔═══██╗██║   ██║██╔════╝██╔══██╗
-                     ██║   ██║██║   ██║█████╗  ██████╔╝
-                     ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
-                     ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
-                      ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
-                                             ...or is it?
+
+                 ██████╗  █████╗ ███╗   ███╗███████╗
+                ██╔════╝ ██╔══██╗████╗ ████║██╔════╝
+                ██║  ███╗███████║██╔████╔██║█████╗  
+                ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  
+                ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗
+                 ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
+                  ██████╗ ██╗   ██╗███████╗██████╗ 
+                 ██╔═══██╗██║   ██║██╔════╝██╔══██╗
+                 ██║   ██║██║   ██║█████╗  ██████╔╝
+                 ██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+                 ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
+                  ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
     '''))
     s.sound_effect('audio/ending_theme_short.wav')
+    print(chalk.yellow('''
+                                         ...or is it?
+    '''))
+    sleep(2)
     print(chalk.green("\tWould you like to see the alternate ending? y/n"))
     ending = input("> ")
     if ending == 'y':
@@ -777,6 +788,7 @@ def game_on(player_x, player_y, num_enemies):
 s = WavePlayer()
 b = BonusWave()
 intro()
+
 diff_setting = difficulty_setting()
 asteroids = int(diff_setting * 2)
 num_enemies = diff_setting + 2
