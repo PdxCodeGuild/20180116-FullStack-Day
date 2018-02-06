@@ -12,11 +12,11 @@ import wave
 import threading
 import pygame.examples.stars
 
-from Code.Anna.python import blackjack
-
 pygame.init()
 
 # TODO: add bomb option to clear board (have to go get bomb first though) (if bomb, clear enemies)
+# TODO: add fuel tank option - if fuel < 5 and enemies < 4?
+# TODO: add pygame minigame?
 
 
 class Game:
@@ -38,6 +38,11 @@ class Game:
             board.append([])  # append an empty row
             for j in range(self.width):  # loop over the columns
                 board[i].append(chalk.blue('[    ]'))  # append an empty space to the board
+        # add asteroids in random locations
+        for i in range(astroids):
+            ast_x = random.randint(0, self.height - 2)
+            ast_y = random.randint(0, self.width - 2)
+            board[ast_x][ast_y] = chalk.blue('[ ☄️ ]')
         # add enemies in random locations
         for i in range(diff_setting):
             enemy_x = random.randint(0, self.height - 2)
@@ -47,12 +52,10 @@ class Game:
         for i in range(2):
             enemy_x = random.randint(0, self.height - 2)
             enemy_y = random.randint(0, self.width - 2)
-            board[enemy_x][enemy_y] = chalk.blue('[ 👽 ]')
-        # add asteroids in random locations
-        for i in range(astroids):
-            ast_x = random.randint(0, self.height - 2)
-            ast_y = random.randint(0, self.width - 2)
-            board[ast_x][ast_y] = chalk.blue('[ ☄️ ]')
+            if board[enemy_x][enemy_y] != chalk.blue('[ 👾 ]'):  # otherwise there's aliens on top of aliens,
+                board[enemy_x][enemy_y] = chalk.blue('[ 👽 ]')   # and nobody wants that
+            else:
+                board[enemy_x - 1][enemy_y] = chalk.blue('[ 👽 ]')
         return board
 
     def fuel_gage(self, fuel_level):
@@ -158,6 +161,51 @@ class WavePlayer(threading.Thread):
         p.terminate()
 
 
+class BonusWave(threading.Thread):
+    """
+    A simple class based on PyAudio to play a sine wave.
+    It's a threading class. You can play audio while your application
+    continues to do stuff.
+    """
+
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.p = pyaudio.PyAudio()
+
+        self.fs = 44100          # sampling rate, Hz, must be integer
+
+    def run(self):
+        """
+        Just another name for self.start()
+        """
+        # define stream chunk
+        chunk = 1024
+
+        # open a wav format music
+        f = wave.open(r"audio/cantina.wav", "rb")
+        # instantiate PyAudio
+        p = pyaudio.PyAudio()
+        # open stream
+        stream = p.open(format=p.get_format_from_width(f.getsampwidth()),
+                        channels=f.getnchannels(),
+                        rate=f.getframerate(),
+                        output=True)
+        # read data
+        data = f.readframes(chunk)
+
+        # play stream
+        while data:
+            stream.write(data)
+            data = f.readframes(chunk)
+
+        # stop audio stream
+        stream.stop_stream()
+        stream.close()
+
+        # close PyAudio
+        p.terminate()
+
+
 def difficulty_setting():
     print("\nWhat is your difficulty setting? Choose 'normal', 'hard', or 'hardcore'. (There is no 'easy' in space)")
     difficulty = input("> ")
@@ -173,6 +221,7 @@ def difficulty_setting():
 def scary_space():
     print(chalk.yellow(
         "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+
 
 def intro():
     s.start()
@@ -357,12 +406,16 @@ def outro_alt():
 
 
 def alt():
+    from Code.Anna.python import blackjack
+    from blackjack import game
+
     sleep(2)
     print(chalk.yellow("""
     You and your classmates land safely on the warm yellow planet below.
     The streets are clear, and the only building in sight with any
     commotion is the Space Bar...
     """))
+    b.start()   # please don't sue me, George Lucas...
     sleep(5)
     print(chalk.yellow("""
 
@@ -415,7 +468,6 @@ def alt():
     """))
     choice = input("> ")
     if choice == 'y':
-        from blackjack import game
         bj_result = game()
         bj_ruler = random.randint(10, 21)
 
@@ -449,7 +501,13 @@ def alt():
                         \___/\___/\___/\__/
                        `""""""""""""""""""
 
+        You make it to Space Code School, and after studying hard and
+        graduating with flying colors, you get a job as the lead
+        developer on a new, top-secret, government project. Something
+        about a 'Star of Death'...
+        
                 """))
+            sleep(5)
             outro()
         else:
             print("You lose!")
@@ -476,6 +534,7 @@ def alt():
 
                     (Hey, it could be worse)
             """))
+            sleep(5)
             outro()
     else:
         return None
@@ -540,6 +599,12 @@ def game_on(player_x, player_y, num_enemies):
             print("You've hit an asteroid field! Shields damaged")
             s.sound_effect('audio/meteor.wav')
             shield_level -= 10
+
+        # find emergency fuel if conditions met
+        if fuel_level < 6 and num_enemies < 4 and round_one is True:
+            fuel_level += 10
+            print(chalk.green("You found a spare gas canister ⛽ hidden in the escape pod!"
+                             "\nNow let's get the rest of those aliens!"))
 
         # repopulate board with 4 additional enemies, but only the first time num_enemies drops to 2
         if num_enemies == 2 and round_one is True:
@@ -673,7 +738,8 @@ def game_on(player_x, player_y, num_enemies):
 
 
 s = WavePlayer()
-# intro()
+b = BonusWave()
+intro()
 diff_setting = difficulty_setting()
 asteroids = int(diff_setting * 2)
 num_enemies = diff_setting + 2

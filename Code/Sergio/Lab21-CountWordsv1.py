@@ -1,5 +1,6 @@
 """
 Lab 21: Count Words v1. Business Hints for Men and Women (wth genders why?!)
+EDIT: I still need to remove the most obvious words such 'as' "the"
 """
 import string
 
@@ -17,9 +18,6 @@ with open(openbook, 'r') as f:
         for char in line: # replaces punctuation based on chars string, allowing only letters
             if char not in chars:
                 line = line.replace(char, '')
-
-        # splitssss words into tuples
-        line.split()
 
         # adds to dictionary
         for word in line.split():
