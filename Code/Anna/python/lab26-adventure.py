@@ -161,6 +161,51 @@ class WavePlayer(threading.Thread):
         p.terminate()
 
 
+class BonusWave(threading.Thread):
+    """
+    A simple class based on PyAudio to play a sine wave.
+    It's a threading class. You can play audio while your application
+    continues to do stuff.
+    """
+
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.p = pyaudio.PyAudio()
+
+        self.fs = 44100          # sampling rate, Hz, must be integer
+
+    def run(self):
+        """
+        Just another name for self.start()
+        """
+        # define stream chunk
+        chunk = 1024
+
+        # open a wav format music
+        f = wave.open(r"audio/cantina.wav", "rb")
+        # instantiate PyAudio
+        p = pyaudio.PyAudio()
+        # open stream
+        stream = p.open(format=p.get_format_from_width(f.getsampwidth()),
+                        channels=f.getnchannels(),
+                        rate=f.getframerate(),
+                        output=True)
+        # read data
+        data = f.readframes(chunk)
+
+        # play stream
+        while data:
+            stream.write(data)
+            data = f.readframes(chunk)
+
+        # stop audio stream
+        stream.stop_stream()
+        stream.close()
+
+        # close PyAudio
+        p.terminate()
+
+
 def difficulty_setting():
     print("\nWhat is your difficulty setting? Choose 'normal', 'hard', or 'hardcore'. (There is no 'easy' in space)")
     difficulty = input("> ")
@@ -176,6 +221,7 @@ def difficulty_setting():
 def scary_space():
     print(chalk.yellow(
         "Trust me, you don't want to venture out into the vastness of space. It's scary out there..."))
+
 
 def intro():
     s.start()
@@ -369,6 +415,7 @@ def alt():
     The streets are clear, and the only building in sight with any
     commotion is the Space Bar...
     """))
+    b.start()   # please don't sue me, George Lucas...
     sleep(5)
     print(chalk.yellow("""
 
@@ -454,7 +501,13 @@ def alt():
                         \___/\___/\___/\__/
                        `""""""""""""""""""
 
+        You make it to Space Code School, and after studying hard and
+        graduating with flying colors, you get a job as the lead
+        developer on a new, top-secret, government project. Something
+        about a 'Star of Death'...
+        
                 """))
+            sleep(5)
             outro()
         else:
             print("You lose!")
@@ -481,6 +534,7 @@ def alt():
 
                     (Hey, it could be worse)
             """))
+            sleep(5)
             outro()
     else:
         return None
@@ -545,6 +599,12 @@ def game_on(player_x, player_y, num_enemies):
             print("You've hit an asteroid field! Shields damaged")
             s.sound_effect('audio/meteor.wav')
             shield_level -= 10
+
+        # find emergency fuel if conditions met
+        if fuel_level < 6 and num_enemies < 4 and round_one is True:
+            fuel_level += 10
+            print(chalk.green("You found a spare gas canister ⛽ hidden in the escape pod!"
+                             "\nNow let's get the rest of those aliens!"))
 
         # repopulate board with 4 additional enemies, but only the first time num_enemies drops to 2
         if num_enemies == 2 and round_one is True:
@@ -678,6 +738,7 @@ def game_on(player_x, player_y, num_enemies):
 
 
 s = WavePlayer()
+b = BonusWave()
 intro()
 diff_setting = difficulty_setting()
 asteroids = int(diff_setting * 2)
