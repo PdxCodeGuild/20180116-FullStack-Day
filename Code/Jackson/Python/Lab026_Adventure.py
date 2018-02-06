@@ -38,7 +38,7 @@ class Set_opponents():
         for i in range(4):
             enemy_i = random.randint(0, height - 1)
             enemy_j = random.randint(0, width - 1)
-            board[enemy_i][enemy_j] = '☠'
+            board[enemy_i][enemy_j] = '/☠'
 
 
 print('Welcome to "Around the World!"  The objective is to sail around the world without getting capsized by pirates.')
@@ -75,14 +75,15 @@ while True:
             Set_opponents()  # resets food after going 'around the world'
 
     # check if the player is on the same space as an enemy
-    if board[player_i][player_j] == '☠':
+    if board[player_i][player_j] == '/☠':
         print('you\'ve encountered a pirate! You must fight with 1 of the following weapons:"sword, musket, or cannon"')
-        user_weapon = input('which weapon do you select?: ').lower()
         computer_play = random.choice(['sword', 'musket', 'cannon'])
+        print(computer_play)  # test to check winning
+        user_weapon = input('which weapon do you select?: ').lower()
         print('They choose: ' + computer_play)
         # tie condition
         while computer_play == user_weapon:  # sword > cannon, cannon > musket, musket > sword
-            print('you both chose the same weapon, select another weapon!')
+            print(f'you both chose {user_weapon}, keep attacking!  What weapon do you choose?: ')
             user_weapon = input('which weapon do you select?: sword, musket, or cannon ')
             computer_play = random.choice(['sword', 'musket', 'cannon'])
             #losing conditions
@@ -105,8 +106,8 @@ while True:
         if user_weapon == 'cannon' and computer_play == 'musket':  # tested and worked
             print('cannon beats musket, you defeated the pirates!')
             board[player_i][player_j] = ' '  # remove the enemy from the board
-        # Conditions for
-        if user_weapon != 'sword' or 'cannon' or 'musket':
+        # Conditions for unknown weapon
+        if user_weapon != 'sword' and user_weapon != 'cannon' and user_weapon != 'musket':
             print(f'{user_weapon} not found on ship.  You shipwrecked, GAME OVER')
             break
 
