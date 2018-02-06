@@ -790,8 +790,7 @@ def game_on(player_x, player_y, num_enemies):
 
 s = WavePlayer()                                            # initialize intro music
 b = BonusWave()                                             # initialize music for bonus game
-alt()
-# intro()                                                     # start the intro to the game
+intro()                                                     # start the intro to the game
 diff_setting = difficulty_setting()                         # prompt the user for the difficulty setting
 asteroids = int(diff_setting * 2)                           # num of asteroids based on diff setting
 num_enemies = diff_setting + 2                              # add 2 to num enemies for 2 bosses
