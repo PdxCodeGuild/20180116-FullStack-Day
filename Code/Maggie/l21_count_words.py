@@ -1,13 +1,13 @@
 # Word frequency count from a given text file input
 from random import choice
 from textwrap import wrap
+from collections import defaultdict
 
 sherlock = 's_holmes.txt'
 whit = 'w_whit_leaves.txt'
 liz = 'f_lizst_let.txt'
 gett = 'gettysburg_address.txt'
 default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
-chosen_text = liz
 
 
 def prepare_text(text_file):  # import text file, clean up, (opt) extra cleanup, returns a list of words
@@ -26,19 +26,13 @@ def get_word_freq(w_list, remove_common=True):  # returns a dictionary, opt with
     with open(f'{default_path}1-1000.txt', mode='r') as f:
         lines = ' '.join(f.readlines()).lower()
     common_list = (lines.split('\n '))
-    word_freq = {}  # dictionary init
+    word_freq = defaultdict(int)  # dictionary init
     for word in w_list:
         if remove_common:
             if word not in common_list:  # remove most common words
-                if word in word_freq:
                     word_freq[word] += 1
-                else:
-                    word_freq[word] = 1
         else:
-            if word in word_freq:
                 word_freq[word] += 1
-            else:
-                word_freq[word] = 1
     words = list(word_freq.items())  # list of tuples
     sorted_words = []
     words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
@@ -82,7 +76,7 @@ def get_input():  # allow the user to interface, select the text and first word.
           '\t1. Get the frequency of the most common words in the text.\n'
           f'\t2. Use {selected_text} as a primer to generate a new string.')
     while True:
-        random_first = choice(prepare_text(chosen_text))
+        random_first = choice(prepare_text(selected_text))
         u_select_funct = input('Your choice: ')
         funct_d = {'1': get_word_freq(prepare_text(selected_text)),
                    '2': construct_str(selected_text, random_first)}
@@ -95,6 +89,5 @@ def get_input():  # allow the user to interface, select the text and first word.
     print('\n', '\n'.join(wrap(textout)))
 
 # TODO: Let user choose the first word. Let the user choose whether to remove common.
-# TODO: http://www.nltk.org/ natural language.. return only valid sentences
-# TODO: Figure out how to put together punctuation and capitalization
+
 get_input()

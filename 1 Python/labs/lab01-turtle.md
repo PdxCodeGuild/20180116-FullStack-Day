@@ -136,7 +136,7 @@ done()
 ```python
 from turtle import *
 
-edge_length = 1000
+edge_length = 100
 n_sides = 5
 
 i = 0

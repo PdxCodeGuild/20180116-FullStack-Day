@@ -26,11 +26,11 @@ class ContactManager:
     """This does things to the existing contact list"""
 
     def __init__(self, contact_list):
-        """Initialize ATM attributes"""
+        """Initialize contact list"""
         self.contact_list = contact_list
 
     def add_contact(self):
-        # Create a record
+        """Create a record"""
         print("\nLet's add some contacts!")
         name = input("Enter your contact's name: ")
         fruit = input("Enter their favorite fruit: ")
@@ -41,7 +41,7 @@ class ContactManager:
         print(contact_list)
 
     def retrieve_contact(self):
-        # Retrieve a record
+        """Retrieve a record"""
         print("\nLet's retrieve a contact.")
         retrieve = input("Enter a name to get their information: ")
 
@@ -51,7 +51,7 @@ class ContactManager:
                 print(f"Their favorite fruit is {contact_list[i]['favorite fruit']} and their favorite color is {contact_list[i]['favorite color']}.")
 
     def update_contact(self):
-        # Update a record
+        """Update a record"""
         print("\nLet's update a contact's information.")
         update_name = input("Whose information would you like to update? ")
         update_key = input("Which key would you like to change? ")
@@ -66,7 +66,7 @@ class ContactManager:
         print(contact_list)
 
     def delete_contact(self):
-        # Delete a record
+        """Delete a record"""
         print("\nOh no, it's time to delete someone from our contacts list!")
         del_name = input("Whose information would you like to delete? ")
 

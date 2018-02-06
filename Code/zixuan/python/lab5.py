@@ -1,11 +1,16 @@
 import random
-eye=['1','2','3']
-nose=['a','b','c']
-leg=['A','B','C']
 
-e = random.choice(eye)
-n = random.choice(nose)
-l = random.choice(leg)
+eye = ['1', '2', '3']
+nose = ['a', 'b', 'c']
+leg = ['A', 'B', 'C']
 
-s=e+n+l
-print(s)
+i = 0
+
+while i < 5:
+    e = random.choice(eye)
+    n = random.choice(nose)
+    l = random.choice(leg)
+
+    s = e + n + l
+    print(s)
+    i = i + 1

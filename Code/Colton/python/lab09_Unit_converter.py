@@ -1,4 +1,4 @@
-unit_inches = {'inches': 1, 'foot': .08 , 'yards': .027 , 'meters': .025, 'kilometers': 0.0000254, 'miles': 0.000016}
+unit_inches = {'inches': 1, 'foot': .08, 'yards': .027, 'meters': .025, 'kilometers': 0.0000254, 'miles': 0.000016}
 unit_feet = {'inches': 12, 'foot': 1, 'yards': .33, 'meters': .0348, 'kilometers': .003, 'miles': .001}
 unit_yards = {'inches': .02, 'foot': 3, 'yards': 1, 'meters': .9144, 'kilometers': .0009, 'miles': .0005}
 unit_miles = {'inches': 63360, 'foot': 5280, 'yards': 1760, 'meters': 1609.34, 'kilometers': 1.6, 'miles': 1}
