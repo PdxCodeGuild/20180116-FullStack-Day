@@ -12,7 +12,7 @@ while i < 10:
     if y == x:
         print('Congratulations! You guessed ' + r + ' times.')
         break
-    elif y != x:
+    else:
         print('Try again')
         i += 1
 
