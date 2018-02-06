@@ -9,9 +9,7 @@ width = 10  # the width of the board
 height = 10  # the height of the board
 tiles = ['.', '@', '#', '*', '$', '!', '~', '§']
 int_board = [[0 for j in range(height)] for i in range(width)]  # init the empty int_board
-int_board[3][3] = 1
-game_pieces = []
-# player_piece = GamePiece(3, 3, 1, 'Player')
+# int_board[3][3] = 1
 
 
 # Organizing game elements into classes
@@ -32,16 +30,15 @@ class GamePiece:  # all of the tilebased game elements, including the player
         self.ascii_char = char_int
         self.name = name
 
-
     def move(self, dx, dy):  # move a piece by an amount
         self.x_loc += dx
         self.y_loc += dy
 
-    def put_on_int_board(self, x, y, value):
-        # add the piece to the int_board
-        int_board[y][x] = value
+    def put_on_int_board():
+        for pieces in game_pieces: # add the piece to the int_board
+            int_board[y][x] = char_int
 
-    def clear_spot(self, x, y, value):
+    def clear_spot(self, x, y):
         int_board[y][x] = 0
 
 class Person:
@@ -57,6 +54,12 @@ class Person:
     def __str__(self): # if the piece is called in a print statement
         return(self.name)
 
+
+player_piece = GamePiece(3, 3, 1, 'Player')
+game_pieces = [player_piece]
+
+
+
 def main():
     message = 'Adventures in development.'
     status = 'hello testphrase.'
@@ -64,6 +67,7 @@ def main():
     while not escaped:  # main game loop
         key_log = []
         key_press = k.handle_keys() # get the keypress
+        GamePiece.put_on_int_board()
         # do all the updates..
         print_game_board(int_board, tiles)
 
