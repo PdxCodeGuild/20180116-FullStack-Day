@@ -419,8 +419,7 @@ def outro_alt():
 def alt():
     # get the blackjack bonus game
     from Code.Anna.python import blackjack
-    from blackjack import game
-    from blackjack import comp_game
+    from blackjack import game, comp_game
 
     # bonus game set-up
     sleep(2)
@@ -550,7 +549,7 @@ def alt():
                 print(chalk.yellow("""
             You make it back to Space Code School, and after studying hard and
             graduating with flying colors, you get a job as the lead
-            python developer on a new, top-secret, government project. 
+            Python developer on a new, top-secret, government project. 
             Something about a 'Star' of 'Death'...
                     """))
                 sleep(5)
@@ -791,7 +790,8 @@ def game_on(player_x, player_y, num_enemies):
 
 s = WavePlayer()                                            # initialize intro music
 b = BonusWave()                                             # initialize music for bonus game
-intro()                                                     # start the intro to the game
+alt()
+# intro()                                                     # start the intro to the game
 diff_setting = difficulty_setting()                         # prompt the user for the difficulty setting
 asteroids = int(diff_setting * 2)                           # num of asteroids based on diff setting
 num_enemies = diff_setting + 2                              # add 2 to num enemies for 2 bosses
