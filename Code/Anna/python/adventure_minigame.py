@@ -158,8 +158,11 @@ class MyGame(arcade.Window):
         output = "You win! Game Over"
         arcade.draw_text(output, 220, 400, arcade.color.WHITE, 54)
 
+        output = f"Your time was: {round(self.total_time, 2)}"
+        arcade.draw_text(output, 350, 300, arcade.color.WHITE, 24)
+
         output = "Click to restart"
-        arcade.draw_text(output, 410, 300, arcade.color.WHITE, 24)
+        arcade.draw_text(output, 410, 200, arcade.color.WHITE, 24)
 
     def draw_game(self):
         """ Draw everything """
