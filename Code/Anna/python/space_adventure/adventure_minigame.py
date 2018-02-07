@@ -96,10 +96,10 @@ class MyGame(arcade.Window):
         # ugly. You can also do something similar if you want a page between
         # each level.
         self.instructions = []
-        texture = arcade.load_texture("images/backgrounds/instructions_0.png")
+        texture = arcade.load_texture("backgrounds/instructions_0.png")
         self.instructions.append(texture)
 
-        texture = arcade.load_texture("images/backgrounds/instructions_1.png")
+        texture = arcade.load_texture("backgrounds/instructions_1.png")
         self.instructions.append(texture)
 
         self.total_time = 0.0
@@ -108,7 +108,7 @@ class MyGame(arcade.Window):
         """ Set up the game and initialize the variables. """
 
         # Load the background image. Do this in the setup so we don't keep reloading it all the time.
-        self.background = arcade.load_texture("images/backgrounds/background.png")
+        self.background = arcade.load_texture("backgrounds/background.png")
 
         # Sprite lists
         self.all_sprites_list = arcade.SpriteList()
@@ -118,7 +118,7 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Set up the player
-        self.player_sprite = arcade.Sprite("images/spaceships/player_ship.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite("spaceships/player_ship.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.all_sprites_list.append(self.player_sprite)
@@ -130,7 +130,7 @@ class MyGame(arcade.Window):
         for i in range(50):
 
             # Create the cat instance
-            cat = Cat("images/spaceships/cat.png", SPRITE_SCALING_CAT)
+            cat = Cat("spaceships/cat.png", SPRITE_SCALING_CAT)
 
             # Position the cat
             cat.center_x = random.randrange(SCREEN_WIDTH)
