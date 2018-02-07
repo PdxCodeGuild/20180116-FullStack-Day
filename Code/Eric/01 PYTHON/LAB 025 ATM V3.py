@@ -1,4 +1,4 @@
-# CAPITALISM MACHINE V3 BABY!
+# ATM V3 BABY!
 
 
 class ATM:  # our machine is in a class of its own
@@ -43,7 +43,7 @@ class ATM:  # our machine is in a class of its own
 		return print(f'\ncurrent total interest: ${self.interest}\ncurrent balance with interest: ${balance_w_interest}\n')
 
 	def main_menu(self):  # main menu function
-		user_main_menu = ''
+		# user_main_menu = ''
 		print('\nwelcome to our bourgeois atm machine!\n')  # because basic manners are always important
 		# even for machines and the bourgeois
 		while True:  # as long as ur using the machine u will see the main menu
