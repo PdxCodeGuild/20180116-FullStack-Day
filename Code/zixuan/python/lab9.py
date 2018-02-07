@@ -4,8 +4,6 @@ yOut = input("what are the output units?")
 
 
 def fttransfter(yOut, yDis):
-
-
     if yOut == 'ft':
         out = yDis
     elif yOut == 'mi':
@@ -20,14 +18,14 @@ def fttransfter(yOut, yDis):
 
     return out
 
-def transfer(yUnit,yOut,yDis) :
 
+def transfer(yUnit, yOut, yDis):
     if yUnit == 'ft':
         ftDis = yDis
     elif yUnit == 'm':
-        ftDis = yDis * (1/0.3048)
+        ftDis = yDis * (1 / 0.3048)
     elif yUnit == 'km':
-        ftDis = yDis * (1000/0.3048)
+        ftDis = yDis * (1000 / 0.3048)
     elif yUnit == 'mi':
         ftDis = yDis * 5280
     else:
@@ -35,8 +33,6 @@ def transfer(yUnit,yOut,yDis) :
         return None
     return fttransfter(yOut, ftDis)
 
-out = transfer(yUnit,yOut,yDis)
+
+out = transfer(yUnit, yOut, yDis)
 print(out)
-
-
-

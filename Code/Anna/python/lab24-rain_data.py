@@ -7,6 +7,7 @@ import requests
 import datetime
 import re
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 r = requests.get('https://or.water.usgs.gov/non-usgs/bes/mt_tabor.rain')    # because text files are for chumps
 data = r.text.split('\n')       # listify
@@ -19,10 +20,11 @@ split_data = []                 # splitting further into dates and numbers
 for i in range(len(data)):
     split_data.append(re.split('\s+', data[i]))
 
-print(split_data)
 
+date_list = []
 for i in range(len(split_data)):
     date = datetime.datetime.strptime(split_data[i][0], '%d-%b-%Y')
+    date_list.append(f"{date.month}/{date.day}/{date.year}")
     # print(date.year)
     # print(date.month)
     # print(date.day)
@@ -77,6 +79,7 @@ print(f"\nThe rainiest day was {split_data[rainiest_day][0]} with {round(float(r
 year_list = []
 for i in range(len(split_data)):
     date = datetime.datetime.strptime(split_data[i][0], '%d-%b-%Y')
+
     year_list.append(date.year)
 
 # compare year_list with sums_list
@@ -114,13 +117,49 @@ inches = []
 for i in range(len(sum_list)):
     inches.append(round(sum_list[i] * 0.01, 2))
 
+# print last year of rain
 
-# only printing a month of data as any more is a mess...
-x_values = day_list[0:29]
-y_values = inches[0:29]
+# only printing a year of data as any more is a mess...
+x_values = [datetime.datetime.strptime(d,'%m/%d/%Y').date() for d in date_list][0:365]
+y_values = inches[0:365]
 
+# getting the dates to show up properly
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m/%d/%Y'))
+plt.gca().xaxis.set_major_locator(mdates.DayLocator())
 plt.plot(x_values, y_values)
-plt.xlabel('day')
+plt.gcf().autofmt_xdate()
+
+plt.xlabel('day in previous year')
+plt.ylabel('inches of rain')
+plt.show()
+
+# print last month of rain
+
+x_values = [datetime.datetime.strptime(d,'%m/%d/%Y').date() for d in date_list][0:31]
+y_values = inches[0:31]
+
+# getting the dates to show up properly
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m/%d/%Y'))
+plt.gca().xaxis.set_major_locator(mdates.DayLocator())
+plt.plot(x_values, y_values)
+plt.gcf().autofmt_xdate()
+
+plt.xlabel('day in previous month')
+plt.ylabel('inches of rain')
+plt.show()
+
+# only printing a year of data as any more is a mess...
+x_values = [datetime.datetime.strptime(d,'%m/%d/%Y').date() for d in date_list][0:365]
+# x_values = date_list[0:30]  # make datetime, not strings!
+y_values = inches[0:365]
+
+# getting the dates to show up properly
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m/%d/%Y'))
+plt.gca().xaxis.set_major_locator(mdates.DayLocator())
+plt.plot(x_values, y_values)
+plt.gcf().autofmt_xdate()
+
+plt.xlabel('day in previous year')
 plt.ylabel('inches of rain')
 plt.show()
 
@@ -132,9 +171,9 @@ for key in match_dict:
     years.append(key)
     annual_inches.append(match_dict[key] * 0.01)
 
-
 plt.plot(years[1:], annual_inches[1:])      # skip the current year since it's incomplete
 plt.xlabel('year')
 plt.ylabel('inches of rain')
 plt.show()
 
+# can also do year with most rainy days, rainiest months

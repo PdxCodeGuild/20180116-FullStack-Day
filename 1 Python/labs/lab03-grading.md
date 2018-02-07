@@ -26,5 +26,5 @@ Let's convert a number grade to a letter grade, using `if` and `elif` statements
 
 ## Version 2
 
-Find the specific letter grade (A+, B-, etc).
+Find the specific letter grade (A+, B-, etc). You can check for more specific ranges using `if` statements, or use modulus `%` to get the ones-digit to set another string to `'+'`, `'-'`, or `' '`. Then you can concatenate that string with your grade string. 
 
