@@ -1,3 +1,14 @@
+Sunnyside School Rain Gage - 3421 SE. Salmon St.
+
+PROVISIONAL, UNCORRECTED RAW DATA FROM THE CITY OF PORTLAND HYDRA NETWORK.
+Data are the number of tips of the rain gage bucket.
+Each tip is 0.01 inches of rainfall.
+ [-, missing data]
+Dates and times are PACIFIC STANDARD TIME.
+
+            Daily  Hourly data -->
+   Date     Total    0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23
+------------------------------------------------------------------------------------------------------------------
 28-AUG-2017     0    0   0   0   0   0   0   0   0   0   0   0   0   0   0
 27-AUG-2017     0    0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
 26-AUG-2017     0    0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
