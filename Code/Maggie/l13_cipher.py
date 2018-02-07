@@ -31,13 +31,11 @@ def cipher(my_str, rot):
     print('Ok. Converting.')
     sleep(1)
     encrypted = ''  # empty string for the converted word
-    for i in range(len(my_str)):
-        # find letter in the alpha list
+    for i in range(len(my_str)):  # find letter in the alpha list
         try:
             # TODO  add support for upper and lower characters with string.isupper()
             encrypted += (alpha_list[(((alpha_list.index(my_str[i].upper())) + rot) % 26)])  # rotate by amt
             print('.', end=' ')
-            sleep(.2)
         except ValueError:
             encrypted += my_str[i]
     print('Done!!')

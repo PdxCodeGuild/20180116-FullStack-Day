@@ -1,47 +1,33 @@
-inputN = input('please enter a list of number with comma')
-inputN = inputN.split(",")
-inputN = [int(i) for i in inputN]
+height = input('please enter a list of number with comma')
+height = height.split(",")
+height = [int(i) for i in height]
 
-maxN = max(inputN)
-picture = [[0 for i in range(inputN.__len__())] for i in range(maxN)]
+water = ['0' for n in range(len(height))]
 
-##################
-peaks = list()
+print(height)
+print(water)
 
-for i in range(0, inputN.__len__()):
+left = 0
+left_max = 0
+right = len(height) - 1
+right_max = 0
 
-    if i == 0 and inputN[i] > inputN[i + 1]:
-        peaks.append(i)
-    elif i == inputN.__len__() - 1 and inputN[i] > inputN[i - 1]:
-        peaks.append(i)
+while left <= right:
+    if left_max <= right_max:
+        if height[left] < left_max:
+            water[left] = left_max - height[left]
+            # jiashui
+        else:
+            left_max = height[left]
+        left = left + 1
+    else:
+        if height[right] < right_max:
+            water[right] = right_max - height[right]
+        else:
+            right_max = height[right]
+        right = right - 1
 
-    elif inputN[i] > inputN[i - 1] and inputN[i] > inputN[i + 1]:
-        peaks.append(i)
 
-
-###########
-peak_index = 1
-
-for i in range(0, inputN.__len__()):
-    for j in range(0, maxN):
-        picture[j][i] = ' '
-
-for i in range(0, inputN.__len__(), +1):
-    if i > peaks[peak_index] and peak_index < peaks.__len__()-1:
-        peak_index = peak_index + 1
-
-    for j in range(0, maxN):
-        o = 0
-        if peak_index - 1 >= 0:
-            o = min(inputN[peaks[peak_index]], inputN[peaks[peak_index - 1]])
-
-        if j < inputN[i]:
-            picture[j][i] = 'X'
-        elif j < o and i >= peaks[peak_index-1] and i <= peaks[peak_index]:
-            print(peaks[peak_index])
-            picture[j][i] = 'O'
-
-for i in range(maxN - 1, -1, -1):
-    for j in range(0, inputN.__len__()):
-        print(picture[i][j]+' ', end='')
-    print('')
+for i in range(len(height)):
+    s = 'X '*int(height[i]) + 'O '*int(water[i])
+    print(s)

@@ -13,7 +13,7 @@ grimm = 'grimms_fairy_tales.txt'
 sawyer = 'tom_sawyer.txt'
 modest = 'modest_proposal.txt'
 war = 'war_of_worlds.txt'
-input_text = grimm
+input_text = gett
 default_path = f'/Users/magdalene/PyFiles/CodeGuild/2018coursework/Code/Maggie/resources/'
 
 
@@ -90,3 +90,9 @@ main()
 #         self.freq = freq
 #         self.context = context
 
+# power structures in speech. ... equals, dominant, subordinant
+
+#TODO: corpus, ltsm, tensorflow+keras, aiweirdness
+
+#TODO: consider sentence AI for specific genres.. what sentence structures are typically used? what words are used?
+#TODO: give it certain words to use..

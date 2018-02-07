@@ -4,12 +4,12 @@ import math
 
 with open('treasure.txt', 'r') as f:
     contents = f.read()
+    for c in string.punctuation:
+        contents = contents.replace(c, '.')
+    words = contents.split()
     sentences = contents.split('.')
     letters = list(contents)
 
-    for c in string.punctuation:
-        contents = contents.replace(c, ' ')
-    words = contents.split()
 
 ari = 4.71 * (len(letters) / len(words)) + .5 * (len(words) / len(sentences)) - 21.43
 ari = math.ceil(ari)

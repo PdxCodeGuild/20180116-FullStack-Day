@@ -4,14 +4,10 @@
 ## Version Control
 
 How do multiple people work on a single program without 
-'Version Control' . There is a code `repository` or `'repo'` on a remote server. By creating a `branch`, a developer can work and commit changes without changing the `master` copy of the code. After getting the feature in a reasonably-developed state, the developer can then `merge` the branch with master, and others can `pull` their changes from the repository.
-
-Below are some benefits to using a VCS:
+'Version Control' . There is a code `repository` or `'repo'` on a remote server. By creating a `branch`, a developer can work and commit changes without changing the `master` copy of the code. After getting the feature in a reasonably-developed state, the developer can then `merge` the branch with master, and others can `pull` their changes from the repository. Below are some benefits to using a VCS:
 
 - Security: Many hours of work goes into developing software, and it is thus highly valuable to a company or organization. What if a laptop is stolen, or a hurricane floods the data center, or hackers wipe your hard drives?
-
 - Collaboration: Multiple people can edit a program's source code simultaneously.
-
 - History: By keeping track of every change, one can easily reverse a mistaken change they'd made, and always has access to a 'working version' once established.
 
 ## Git
@@ -45,8 +41,21 @@ Git gives you a suite of command line tools. All commands below are run from wit
 
 `git push <remote> <branch>` pushes the changes to the remote repository
 
+`get pull` pulls changes from the remote repository
+
 `git diff` view the difference between the last commit and your working directory
 
 `git log` view a list of your commits
 
-`git status` view a summary of all the files Git knows about, whether they've changed since the last commit, and whether there are commits that are staged (not yet pushed).
+`git branch` create a branch
+
+`git checkout` checkout a branch
+
+`git merge` merge a branch
+
+
+## .gitignore and .gitkeep
+
+The .gitignore file contains a list of files that should not be tracked by git. These could be files with sensitive data such as api keys, passwords, phone numbers. It may also be project files and temporary files created during compilation.
+
+The .gitkeep isn't a special file to Git, it's only a placeholder. Git does not allow one to commit and push empty folders, so the easiest way to ensure a folder is put into a repo is to create a blank file inside of it, and commit and push that. So people started creating this file and calling it .gitkeep so that the repo keeps the folder.
