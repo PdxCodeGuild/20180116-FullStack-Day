@@ -23,6 +23,7 @@ class Player(pygame.sprite.Sprite):
         self.max_speed = 10
         self.armor_amount = 8
         self.calories = 500
+        self.attack = 20
 
         # Set speed vector of player
         self.change_x = 0
@@ -74,7 +75,7 @@ class Player(pygame.sprite.Sprite):
             self.image = self.walking_frames_d[frame]
 
         # See if we hit anything
-        border_hit_list = pygame.sprite.spritecollide(self, self.area.wall_list, False  ## add enemy version.
+        border_hit_list = pygame.sprite.spritecollide(self, self.area.wall_list, False)  ## add enemy version.
         for border in border_hit_list:
             # If we are moving right,
             # set our right side to the left side of the item we hit
@@ -84,11 +85,35 @@ class Player(pygame.sprite.Sprite):
                 # Otherwise if we are moving left, do the opposite.
                 self.rect.left = border.rect.right
 
+        enemy_hit_list = pygame.sprite.spritecollide(self, self.area.enemy_list, False)
+        for enemy in enemy_hit_list:
+            if self.change_x > 0:
+                self.rect.right = enemy.rect.left  ### Do I place attack graphics in here? Likely.
+                self.current_hit_points -= sprite_objects.enemy.attack   ### Is this how I delete hit points? Maybe?
+                enemy.kill()
+            if self.change_y > 0:
+                self.rect.up = enemy.rect.down  ### Do I place attack graphics in here? Likely.
+                self.current_hit_points -= sprite_objects.enemy.attack   ### Is this how I delete hit points? Maybe?
+                enemy.kill()
+            if self.change_y > 0:
+                self.rect.down = enemy.rect.up  ### Do I place attack graphics in here? Likely.
+                self.current_hit_points -= sprite_objects.enemy.attack   ### Is this how I delete hit points? Maybe?
+                enemy.kill()
+            elif self.change_x < 0:
+                self.rect.left = enemy.rect.right
+                self.current_hit_points -= sprite_objects.enemy.attack  ### Is this how I delete hit points? Maybe?
+                enemy.kill()
+
+        food_list = pygame.sprite.spritecollide(self, self.area.food_list, False)
+        for food_item in food_list:
+            if self.change_x > 0:
+
+
         # Move up/down
         self.rect.y += self.change_y
 
         # Check and see if we hit anything
-        border_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
+        border_hit_list = pygame.sprite.spritecollide(self, self.area.platform_list, False)
         for border in border_hit_list:
 
             # Reset our position based on the top/bottom of the object.
