@@ -1,4 +1,4 @@
-# ATM V3 BABY!
+# CAPITALISM MACHINE V3 BABY!
 
 
 class ATM:  # our machine is in a class of its own
