@@ -4,6 +4,7 @@
 #convert the lines of text into a list of dictionaries, one dictionary for each user.
 #The text in the header represents the keys, the text
 #
+import csv
 
 
 
@@ -32,14 +33,22 @@ Delete a record: ask the user for the contact's name, remove the contact with th
 '''
 
 
-def create(address_book):
+def create(contacts):
 
     add_name = input('What contact name?\n:')
     add_fruit = input('What fruit?\n:')
     add_color = input('What color?')
+    with open('contacts_new.csv', 'w') as file:
+        lines = csv.writer(file)
+        lines.writerow(contacts[0].keys())
 
-    address_book.append({'name': add_name, 'favorite fruit': add_fruit, 'favorite color': add_color})
+    contacts.append({'name': add_name, 'favorite fruit': add_fruit, 'favorite color': add_color})
 
+    with open('contacts_new.csv', 'a') as file:
+        lines = csv.writer(file)
+        lines.writerow() #loop this for values in each line
+        for contact in contacts:
+            lines.writerow(contact)
 
 
 def retrieve(address_book):
@@ -52,6 +61,8 @@ def retrieve(address_book):
 
 def update(address_book):
 
+    with open('contacts_new.csv', 'w') as file:
+        lines = file.write()
     retrieve_name = input('name of contact to change: ')
     update_name = input('contact\'s new name: ')
     for contact in address_book:
@@ -61,12 +72,22 @@ def update(address_book):
 
 
 def delete(address_book):
-
+    with open('contacts_new.csv', 'r') as file:
+        lines = file.write()
     delete_name = input('Which name would you like to delete?')
+    for contact in address_book:
+        if contact['name'] == delete_name:
+            address_book.remove(contact)
+            break
+
+#When REPL loop finishes, write the updated contact info to the CSV file to be saved. I highly recommend saving a backup
+#  contacts.csv because you likely won't write it correctly the first time.
+#def main(address_book):
 
 
 
 
 address_book = load_contacts()
-#retrieve()
-update(address_book)
+create(address_book)
+
+print(address_book)
