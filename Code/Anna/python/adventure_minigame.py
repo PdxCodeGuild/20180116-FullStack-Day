@@ -102,6 +102,8 @@ class MyGame(arcade.Window):
         texture = arcade.load_texture("images/backgrounds/instructions_1.png")
         self.instructions.append(texture)
 
+        self.total_time = 0.0
+
     def setup(self):
         """ Set up the game and initialize the variables. """
 
@@ -120,6 +122,9 @@ class MyGame(arcade.Window):
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.all_sprites_list.append(self.player_sprite)
+
+        # Timer
+        self.total_time = 0.0
 
         # Create the coins
         for i in range(50):
@@ -166,9 +171,19 @@ class MyGame(arcade.Window):
         # Draw all the sprites
         self.all_sprites_list.draw()
 
+        # Calculate minutes
+        minutes = int(self.total_time) // 60
+
+        # Calculate seconds by using a modulus (remainder)
+        seconds = int(self.total_time) % 60
+
+        # Figure out our output
+        timer = f"Time: {minutes:02d}:{seconds:02d}"
+
         # Put the text on the screen.
-        output = f"Score: {self.score}"
-        arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
+        output = f"Cats Herded: {self.score}"
+        arcade.draw_text(output, 10, 40, arcade.color.GHOST_WHITE, 14)
+        arcade.draw_text(timer, 10, 20, arcade.color.GHOST_WHITE, 14)
 
     def on_draw(self):
         """
@@ -235,6 +250,9 @@ class MyGame(arcade.Window):
             # Call update on all sprites (The sprites don't do much in this
             # example though.)
             self.all_sprites_list.update()
+
+            # update the timer
+            self.total_time += delta_time
 
             # Generate a list of all sprites that collided with the player.
             hit_list = arcade.check_for_collision_with_list(self.player_sprite,
