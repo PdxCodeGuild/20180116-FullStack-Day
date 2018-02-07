@@ -8,7 +8,7 @@ class ATM:  # our machine is in a class of its own
 		self.history = []  # this will soon be your bank statement lol
 
 	def check_balance(self):
-		return print(f'\ncurrent account balance: ${self.acct_balance}')  # self explanatory
+		return print(f'\ncurrent account balance: ${self.acct_balance}')  # self explanatory: checks & relays ur balance
 
 	def deposit(self):
 		deposit_amount = float(input('\nenter deposit amount\n:'))  # assuming ur not broke, this input will be a float
@@ -44,7 +44,8 @@ class ATM:  # our machine is in a class of its own
 
 	def main_menu(self):  # main menu function
 		user_main_menu = ''
-		print('\nwelcome to our atm machine!\n')  # because basic manners are always important even for machines
+		print('\nwelcome to our bourgeois atm machine!\n')  # because basic manners are always important
+		# even for machines and the bourgeois
 		while True:  # as long as ur using the machine u will see the main menu
 			print('\nmain menu:\n'
 			       '01- CHECK BALANCE: ("check"/ "balance")\n'
