@@ -47,6 +47,40 @@ rainiest_day = (dates[location]) #both date and daily total are the same length 
 print(f''' The wetest date was {rainiest_day} with {most_rain} inches of rain.''')
 
 ###Pull the rainiest year on average###
+### add rain totals categorized by year
+###find the sum of the rain totals and divide by length of the year
+###seperate the years in lists
+###put together the dates with their rain totals
+year_list = []
+for i in range(len(data)):
+    date = datetime.datetime.strptime(data[i][0], '%d-%b-%Y')
+
+    year_list.append(date.year)
+
+year_dict = {}
+
+def match_year():
+    for i in range(len(daily_total)):
+        if year_list[i] not in year_dict:
+            year_dict[year_list[i]] = daily_total[i]
+        elif year_list[i] in year_dict:
+            year_dict[year_list[i]] += daily_total[i]
+
+    return year_dict
+
+
+matching = match_year()
+rainy_year = max(matching, key=matching.get)
+rainy_year_amount = matching[rainy_year]
+
+print(f'''The rainiest year was {rainy_year}''')
+
+
+
+
+
+
+
 
 
 
