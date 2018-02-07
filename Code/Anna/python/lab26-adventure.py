@@ -20,11 +20,6 @@ from time import sleep
 import pyaudio
 import wave
 import threading
-# import pygame.examples.stars
-#
-# pygame.init()
-
-# TODO: add pygame minigame?
 
 
 class Game:
@@ -383,7 +378,6 @@ def outro():
     '''))
     s.sound_effect('audio/ending_theme.wav')
     print(chalk.green("\tThanks for playing!"))
-    # pygame.examples.stars.main()
 
 
 def outro_alt():
@@ -416,7 +410,7 @@ def outro_alt():
 
 
 def alt():
-    # get the blackjack bonus game
+    # get the blackjack bonus minigame
     from blackjack import game, comp_game
 
     # bonus game set-up
@@ -580,6 +574,9 @@ def alt():
                         (Hey, it could be worse)
                 """))
                 s.sound_effect('audio/space_cats.wav')
+                # get the Herding Space Cats bonus minigame
+                from adventure_minigame import main
+                cats = main()
                 outro()
                 break
     else:
@@ -789,7 +786,7 @@ def game_on(player_x, player_y, num_enemies):
 s = WavePlayer()                                            # initialize intro music
 b = BonusWave()                                             # initialize music for bonus game
 intro()                                                     # start the intro to the game
-diff_setting = difficulty_setting()                         # prompt the user for the difficulty setting, which determines # of enemies
+diff_setting = difficulty_setting()         # prompt the user for the difficulty setting, which determines # of enemies
 asteroids = int(diff_setting * 2)                           # num of asteroids based on diff setting
 num_enemies = diff_setting + 2                              # add 2 to num enemies for 2 bosses
 
