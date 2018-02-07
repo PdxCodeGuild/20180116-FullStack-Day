@@ -18,4 +18,6 @@ for i in range(1000):
     blue = randint(0, 255)
     draw.line((x0, y0, x1, y1), fill=(red, green, blue), width=line_width)
 
+print(type(img))
+
 img.show()

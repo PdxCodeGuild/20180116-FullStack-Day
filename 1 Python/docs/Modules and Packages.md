@@ -23,6 +23,17 @@ print(module_example1.x) # 10
 print(module_example1.add(5, 2)) # 7
 ```
 
+
+### Importing
+
+```python
+import x
+from x import y
+from x import y, z, w
+from x import *
+x = __import__('X')
+```
+
 ### \_\_name__
 
 When a module is run directly or imported, a variable `__name__` is passed into it. If the module is run directly, `__name__` wil lbe `'__main__'`, otherwise it will be the module name itself. This allows you to execute code only when a module is run directly, and not when it's imported into another file.
@@ -54,4 +65,6 @@ print(module_example1.add(5, 2)) # 7
 
 ## Packages
 
-A package is another major unit of a Python program, and become important as a program grows in scale. A package is simply a collection of modules, and is represented by a folder several containing `.py` files. A package must also contain a blank file with the name `__init__.py`.
+A package is another major unit of a Python program, and become important as a program grows in scale. A package is simply a collection of modules and other packages, and is represented by a folder several containing `.py` files. A package must also contain a blank file with the name `__init__.py`.
+
+

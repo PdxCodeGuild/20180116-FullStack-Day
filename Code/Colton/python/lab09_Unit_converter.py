@@ -15,157 +15,34 @@ while out_unit not in unit_meters.keys():
     out_unit = input("What is the output unit?\ninches, foot, yards, meters, kilometers, or miles\n:").lower()
 
 while in_unit == 'inches':
-    if out_unit == 'inches':
-        result = dist * unit_inches["inches"]
-        print(result)
-        break
-    elif out_unit == 'foot':
-        result = dist * unit_inches["foot"]
-        print(result)
-        break
-    elif out_unit == 'yards':
-        result = dist * unit_inches["yards"]
-        print(result)
-        break
-    elif out_unit == 'meters':
-        result = dist * unit_inches["meters"]
-        print(result)
-        break
-    elif out_unit == 'kilometers':
-        result = dist * unit_inches["kilometers"]
-        print(result)
-        break
-    elif out_unit == 'miles':
-        result = dist * unit_inches["miles"]
-        print(result)
-        break
-#########################################################
+    result = dist * unit_inches[out_unit]
+    print(result)
+    break
+
+##############################
 while in_unit == 'foot':
-    if out_unit == 'inches':
-        result = dist * unit_feet["inches"]
-        print(result)
-        break
-    elif out_unit == 'foot':
-        result = dist * unit_feet["foot"]
-        print(result)
-        break
-    elif out_unit == 'yards':
-        result = dist * unit_feet["yards"]
-        print(result)
-        break
-    elif out_unit == 'meters':
-        result = dist * unit_feet["meters"]
-        print(result)
-        break
-    elif out_unit == 'kilometers':
-        result = dist * unit_feet["kilometers"]
-        print(result)
-        break
-    elif out_unit == 'miles':
-        result = dist * unit_feet["miles"]
-        print(result)
-        break
+    result = dist * unit_feet[out_unit]
+    print(result)
+    break
+
 ########################################################
 while in_unit == 'yards':
-    if out_unit == 'inches':
-        result = dist * unit_yards["inches"]
-        print(result)
-        break
-    elif out_unit == 'foot':
-        result = dist * unit_yards["foot"]
-        print(result)
-        break
-    elif out_unit == 'yards':
-        result = dist * unit_yards["yards"]
-        print(result)
-        break
-    elif out_unit == 'meters':
-        result = dist * unit_yards["meters"]
-        print(result)
-        break
-    elif out_unit == 'kilometers':
-        result = dist * unit_yards["kilometers"]
-        print(result)
-        break
-    elif out_unit == 'miles':
-        result = dist * unit_yards["miles"]
-        print(result)
-        break
+    result = dist * unit_yards[out_unit]
+    print(result)
+    break
+
 ##########################################################
 while in_unit == 'meters':
-    if out_unit == 'inches':
-        result = dist * unit_meters["inches"]
-        print(result)
-        break
-    elif out_unit == 'foot':
-        result = dist * unit_meters["foot"]
-        print(result)
-        break
-    elif out_unit == 'yards':
-        result = dist * unit_meters["yards"]
-        print(result)
-        break
-    elif out_unit == 'meters':
-        result = dist * unit_meters["meters"]
-        print(result)
-        break
-    elif out_unit == 'kilometers':
-        result = dist * unit_meters["kilometers"]
-        print(result)
-        break
-    elif out_unit == 'miles':
-        result = dist * unit_meters["miles"]
-        print(result)
-        break
+    result = dist * unit_meters[out_unit]
+    print(result)
+    break
  ######################################################
 while in_unit == 'kilometers':
-    if out_unit == 'inches':
-        result = dist * unit_kilometers["inches"]
-        print(result)
-        break
-    elif out_unit == 'foot':
-        result = dist * unit_kilometers["foot"]
-        print(result)
-        break
-    elif out_unit == 'yards':
-        result = dist * unit_kilometers["yards"]
-        print(result)
-        break
-    elif out_unit == 'meters':
-        result = dist * unit_kilometers["meters"]
-        print(result)
-        break
-    elif out_unit == 'kilometers':
-        result = dist * unit_kilometers["kilometers"]
-        print(result)
-        break
-    elif out_unit == 'miles':
-        result = dist * unit_kilometers["miles"]
-        print(result)
-        break
+    result = dist * unit_kilometers[out_unit]
+    print(result)
+    break
 ###########################################################
 while in_unit == 'miles':
-    if out_unit == 'inches':
-        result = dist * unit_miles["inches"]
-        print(result)
-        break
-    elif out_unit == 'foot':
-        result = dist * unit_miles["foot"]
-        print(result)
-        break
-    elif out_unit == 'yards':
-        result = dist * unit_miles["yards"]
-        print(result)
-        break
-    elif out_unit == 'meters':
-        result = dist * unit_miles["meters"]
-        print(result)
-        break
-    elif out_unit == 'kilometers':
-        result = dist * unit_miles["kilometers"]
-        print(result)
-        break
-    elif out_unit == 'miles':
-        result = dist * unit_miles["miles"]
-        print(result)
-        break
+    result = dist * unit_miles[out_unit]
+    print(result)
+    break
