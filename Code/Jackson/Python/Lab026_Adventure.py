@@ -35,18 +35,18 @@ around_the_world = False  # start at False
 # add 4 enemies in random locations
 class Set_opponents():
     def __init__(self):
-        for i in range(4):
+        for i in range(5):
             enemy_i = random.randint(0, height - 1)
             enemy_j = random.randint(0, width - 1)
             board[enemy_i][enemy_j] = '/☠'
 
 
-print('Welcome to "Around the World!"  The objective is to sail around the world without getting capsized by pirates.')
+print('Welcome to "Around the World!"  The objective is to sail around the world and return home without getting capsized by pirates.')
 
 # loop until the user says 'done' or dies
 while True:
     command = input('what direction, captain?!: n/s/e/w')  # get the command from the user
-    Set_opponents() # set the food/bad guys on the board
+    Set_opponents() # set the bad guys on the board each time a move is made
     if command == 'done':
         break  # exit the game
     elif command == 'w':
@@ -125,5 +125,6 @@ while True:
         print()
 
     if player_i == 4 and player_j == 4 and around_the_world == True:
-        print('************You win!*****************')
+        print('You returned home safely! \n'
+              '************You win!*****************')
         break
