@@ -28,33 +28,28 @@ class Player(pygame.sprite.Sprite):
         self.change_x = 0
         self.change_y = 0
 
-        # This holds all the images for the animated walk left/right
+        # This holds all the images for the animated walk left/right. The lists might need to be empty?
         # of our player
-        self.walking_frames_l = []
-        self.walking_frames_r = []
-        self.walking_frames_u = []
-        self.walking_frames_d = []
+        self.walking_frames_l = [pygame.load('images/Characters/png/1x/hero2/WalkLeft_1.png'), pygame.load('images/Characters/png/1x/hero2/WalkLeft_2.png'), pygame.load('images/Characters/png/1x/hero2/WalkLeft_3.png'), pygame.load('images/Characters/png/1x/hero2/WalkLeft_4.png')]
+        self.walking_frames_r = ['images/Characters/png/1x/hero2/WalkRight_1.png', 'images/Characters/png/1x/hero2/WalkRight_2.png', 'images/Characters/png/1x/hero2/WalkRight_3.png', 'images/Characters/png/1x/hero2/WalkRight_4.png']
+        self.walking_frames_u = ['images/Characters/png/1x/hero2/WalkUp_1.png', 'images/Characters/png/1x/hero2/WalkUp_2.png','images/Characters/png/1x/hero2/WalkUp_3.png', 'images/Characters/png/1x/hero2/WalkUp_4.png' ]
+        self.walking_frames_d = ['images/Characters/png/1x/hero2/WalkDown_1.png', 'images/Characters/png/1x/hero2/WalkDown_2.png', 'images/Characters/png/1x/hero2/WalkDown_3.png', 'images/Characters/png/1x/hero2/WalkDown_4.png']
+
+
+
+
 
         # What direction is the player facing?
         self.direction = "R"
 
         # List of sprites we can bump against
-        self.level = None
-
-
-        # Load all the right facing images, then flip them
-        # to face left.
-        for images in range(len(self.walking_frames_r)):
-            image = pygame.transform.flip(self.walking_frames_r[i], True, False )
-            self.walking_frames_l.append(image)
-
-        #  Possibly do the same with images facing up or down?
+        self.area = None
 
         # Set the image the player starts with
         self.image = self.walking_frames_r[0]
 
         # Set a reference to the image rect.
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect()   #### Probably need to edit this now.
 
         #### should I add things like eat here?
 
@@ -79,7 +74,7 @@ class Player(pygame.sprite.Sprite):
             self.image = self.walking_frames_d[frame]
 
         # See if we hit anything
-        border_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False  ## Change to enemies or walls?
+        border_hit_list = pygame.sprite.spritecollide(self, self.area.wall_list, False  ## add enemy version.
         for border in border_hit_list:
             # If we are moving right,
             # set our right side to the left side of the item we hit

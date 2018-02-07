@@ -13,14 +13,14 @@ from spritesheet_functions import SpriteSheet
 #   Height of sprite
 
 
-#### List tile lists????
+#### List tile lists????   THIS WILL CHANGE >>>  No longer using a cut up sprite sheet
 
-GRASS_LEFT = (576, 720, 70, 70)
-GRASS_RIGHT = (576, 576, 70, 70)
-GRASS_MIDDLE = (504, 576, 70, 70)
-STONE_PLATFORM_LEFT = (432, 720, 70, 40)
-STONE_PLATFORM_MIDDLE = (648, 648, 70, 40)
-STONE_PLATFORM_RIGHT = (792, 648, 70, 40)
+TREE = pygame.image.load("images/grass_etc_tile_set/png/1x/non_tile/Tree.png")
+GRASS_RIGHT = pygame.image.load()
+GRASS_MIDDLE = pygame.image.load()
+STONE_PLATFORM_LEFT =  pygame.image.load()
+STONE_PLATFORM_MIDDLE = pygame.image.load()   ###  >>> Not using platforms anymore/not side-scrolling. Use walls for some similar effects.
+STONE_PLATFORM_RIGHT = pygame.image.load()
 
 
 class Wall(pygame.sprite.Sprite):   ### Make walls here? Probably don't need to use spritesheet_functions now...
