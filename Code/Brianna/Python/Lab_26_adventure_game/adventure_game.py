@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
 
 
-i"""mport pygame
+"""import pygame
 import constants
 import areas
 from player import Player
