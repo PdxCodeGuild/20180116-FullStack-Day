@@ -1,4 +1,4 @@
-# ATM V3
+# ATM V3 BABY!
 
 
 class ATM:  # our machine is in a class of its own
@@ -72,5 +72,5 @@ class ATM:  # our machine is in a class of its own
 				quit()
 
 
-atm = ATM(1000.00)
-atm.main_menu()
+atm = ATM(1000.00)  # most banks dont like it when u have less than $1000 so we did u a favor & hooked it up
+atm.main_menu()  # everything gets handled from here
