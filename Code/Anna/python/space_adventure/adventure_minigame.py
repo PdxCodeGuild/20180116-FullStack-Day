@@ -167,6 +167,9 @@ class MyGame(arcade.Window):
     def draw_game(self):
         """ Draw everything """
         arcade.start_render()
+        # # audio theme
+        # my_sound = arcade.sound.load_sound('audio/space_cats.wav')
+        # arcade.play_sound(my_sound)
 
         # Draw the background texture
         arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
@@ -250,8 +253,7 @@ class MyGame(arcade.Window):
     def update(self, delta_time):
         """ Movement and game logic """
         if self.current_state == GAME_RUNNING:
-            # Call update on all sprites (The sprites don't do much in this
-            # example though.)
+            # Call update on all sprites
             self.all_sprites_list.update()
 
             # update the timer

@@ -411,7 +411,7 @@ def outro_alt():
 
 def alt():
     # get the blackjack bonus minigame
-    from blackjack import game, comp_game
+    from space_adventure.blackjack import game, comp_game
 
     # bonus game set-up
     sleep(2)
@@ -575,7 +575,7 @@ def alt():
                 """))
                 s.sound_effect('audio/space_cats.wav')
                 # get the Herding Space Cats bonus minigame
-                from adventure_minigame import main
+                from space_adventure.adventure_minigame import main
                 cats = main()
                 outro()
                 break
