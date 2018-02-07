@@ -1,6 +1,6 @@
 user = input("Give me a word\n:")
 user = list(user)
-palindrome = user[::-1]
+palindrome = user[::-1] #reverse the user input
 if user == palindrome:
     print("Palindrome")
 else:

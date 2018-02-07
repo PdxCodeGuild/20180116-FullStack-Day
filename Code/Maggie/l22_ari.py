@@ -12,7 +12,6 @@ def prepare_text(txt_file):
     trans_text = lines.translate(trans_table)
     strip_text = ' '.join(trans_text.split())
     word_list = strip_text.split(' ')
-
     return word_list
 
 

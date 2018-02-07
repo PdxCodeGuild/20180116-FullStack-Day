@@ -2,11 +2,15 @@ booktitle = 'words.txt'
 
 with open(booktitle, 'r') as f:
     contents = f.read()
+
+
+
+
 words = contents.split(" ")
 words = float(len(words))
 char = 0
 for i in range(len(contents)):
-  if contents[i] != ' ':
+  if contents[i] != ' ' and contents[i] != ',' and contents[i] != '!' and contents[i] != '.':
       char += 1
 
 sentence = contents.count(".")
