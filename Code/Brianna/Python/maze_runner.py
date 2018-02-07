@@ -9,6 +9,7 @@ PURPLE = (255, 0, 255)
 
 
 class Wall(pygame.sprite.Sprite):
+
     """This class represents the bar at the bottom that the player controls """
 
     def __init__(self, x, y, width, height, color):
