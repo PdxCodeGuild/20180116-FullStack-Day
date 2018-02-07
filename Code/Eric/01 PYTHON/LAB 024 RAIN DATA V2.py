@@ -84,4 +84,3 @@ def rainiest_year(rain_data_points: dict):
 
 
 rainiest_year(rain_data_points=load_file('sunnyside.rain.txt'))
-s
