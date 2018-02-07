@@ -6,7 +6,7 @@ import random
 from time import sleep
 
 card_list = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-card_dict = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10}
+card_dict = {'A': 0, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10}
 
 
 def deal():
@@ -60,7 +60,7 @@ def game():
         new_card = deal()
         print(f"The space card dealer gives you: {new_card}")
         print('\n'.join(ascii_card(new_card)))
-        sleep(2)
+        sleep(1)
         cards.append(new_card)
         total = play(cards)
         choice = input("Do you 'hit' or 'stay'? ")

@@ -171,9 +171,8 @@ class WavePlayer(threading.Thread):
 
 class BonusWave(threading.Thread):
     """
-    A simple class based on PyAudio to play a sine wave.
-    It's a threading class. You can play audio while your application
-    continues to do stuff.
+    Another wave player for the bonus ending, so the
+    ending will run while the audio plays
     """
 
     def __init__(self):
@@ -232,7 +231,7 @@ def scary_space():
 
 
 def intro():
-    s.start()
+    s.start()       # for some reason, this has to be s.start() and not s.run(), which won't work
     sleep(1)
     print(chalk.green("\n\t\t\t\t\t\t\t\tWelcome to the..."))
     sleep(1)
@@ -417,10 +416,10 @@ def outro_alt():
 
 
 def alt():
-    from Code.Anna.python import blackjack
-    from blackjack import game
-    from blackjack import comp_game
+    # get the blackjack bonus game
+    from blackjack import game, comp_game
 
+    # bonus game set-up
     sleep(2)
     print(chalk.yellow("""
     You and your classmates land safely on the warm yellow planet below.
@@ -487,13 +486,13 @@ def alt():
             bj_ruler = comp_game()
 
             if bj_result == bj_ruler:
-                print("It's a tie, play again!")
+                print("It's a tie, play again!\n")
 
             elif bj_result > 21 and bj_ruler > 21:
                 print("You both busted, play again!\n")
 
-            elif bj_result <= 21 and bj_result > bj_ruler or bj_ruler > 21:
-                print("You win!")
+            elif 21 >= bj_result > bj_ruler or bj_ruler > 21:
+                print("You win!\n")
                 sleep(2)
                 print(chalk.yellow("""
             Congrats, you've earned your fuel, and a tall frosty space beer!
@@ -548,14 +547,14 @@ def alt():
                 print(chalk.yellow("""
             You make it back to Space Code School, and after studying hard and
             graduating with flying colors, you get a job as the lead
-            python developer on a new, top-secret, government project. 
+            Python developer on a new, top-secret, government project. 
             Something about a 'Star' of 'Death'...
                     """))
                 sleep(5)
                 outro()
                 break
             else:
-                print("You lose!")
+                print("You lose!\n")
                 sleep(1)
                 print(chalk.yellow("""
             Sadly, you never make it off the planet, have to drop out of
@@ -785,16 +784,17 @@ def game_on(player_x, player_y, num_enemies):
         print()
 
 
-s = WavePlayer()
-b = BonusWave()
-intro()
+# this is where we finally launch the game
 
-diff_setting = difficulty_setting()
-asteroids = int(diff_setting * 2)
-num_enemies = diff_setting + 2
+s = WavePlayer()                                            # initialize intro music
+b = BonusWave()                                             # initialize music for bonus game
+intro()                                                     # start the intro to the game
+diff_setting = difficulty_setting()                         # prompt the user for the difficulty setting, which determines # of enemies
+asteroids = int(diff_setting * 2)                           # num of asteroids based on diff setting
+num_enemies = diff_setting + 2                              # add 2 to num enemies for 2 bosses
 
-play_game = Game()
-player_i, player_j = play_game.player_position()
-board = play_game.make_board(diff_setting, asteroids)
+play_game = Game()                                          # initialize the game
+player_i, player_j = play_game.player_position()            # set the initial player position
+board = play_game.make_board(diff_setting, asteroids)       # set up the playing board
 
-game_on(player_i, player_j, num_enemies)
+game_on(player_i, player_j, num_enemies)                    # start the Space Adventure Game!
