@@ -22,9 +22,11 @@ game = 0
 
 lottery_winnings = {0 : 0, 1 : 4, 2 : 7, 3 : 100, 4 : 50000, 5 : 1000000, 6 : 25000000}
 
-while game < 200000:
+while game < 200:
     primary_lottery = pick6()
+    print("lottery numbers", primary_lottery)
     human_ticket = pick6()
+    print("your ticket" ,human_ticket)
     balance = balance -2
     match = compare(primary_lottery, human_ticket)
     #print('match',match)
