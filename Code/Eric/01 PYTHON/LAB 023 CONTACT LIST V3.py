@@ -1,5 +1,4 @@
-# VERSION 2: NOW WITH A CRUD REPL FEATURE AND A MAIN MENU <3<3<3 !!
-import csv
+# VERSION 2: NOW WRITES DIRECT TO FILE!!!
 
 # CONTACT LIST V1
 with open('contacts_csv.csv', 'r') as file:
@@ -230,8 +229,3 @@ def main_menu():
 
 
 main_menu()
-
-
-# for writing to csv later (import csv up top)
-# linewriter = csv.writer(file)
-# linewriter.writerow(["name","favfruit","favcolor"])
