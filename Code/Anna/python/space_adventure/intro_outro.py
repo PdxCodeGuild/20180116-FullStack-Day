@@ -1,5 +1,7 @@
 from __future__ import print_function
-from adventure_game import *
+import chalk
+from time import sleep
+from audio_classes import *
 
 
 def intro():
