@@ -1,10 +1,13 @@
 
 # HTML Elements
 
-For a complete list of tags, look [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) and [here](https://www.w3schools.com/tags/).
+Many of these come with default styling from the browser. However all can be altered using CSS, thus their meaning is largely what you give to them. For a complete list of tags, look [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) and [here](https://www.w3schools.com/tags/).
 
 
-## Common Elements
+## Overview
+
+
+### Common Elements
 
 | element | description |
 |---  |---    |
@@ -17,17 +20,37 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 | [br](#lines-and-breaks) | line break |
 | [a](#anchor-tags) | link, uses attribute `href` |
 | [img](#image-tags) | image, uses attributes `src`, ` |
-| [div](#division-tags) | division, used to organize elements |
+| [div](#division-tags) | division, block element, used to organize elements |
+| [span](#span-tags) | span, inline element, used to organize elements |
 | [table, tr, td, th](#tables) | table, row, column, header |
 | [ol, ul, li](#ordered-and-unordered-lists) | ordered list, unordered list, list item |
+
+
+### Interactive Elements
+
+| element | description |
+|---  |---    |
 | [buttons](#button) | button |
 | [input](#input) | various forms of input, uses attribute `type` |
 | [select, option](#dropdown-lists) | drop-down list |
 
- 
+### Text Formatting Elements
+
+| element | description |
+|---  |---    |
+| [b](#text-formatting-elements) | bold text |
+| [strong](#text-formatting-elements) | important text, usually bold |
+| [i](#text-formatting-elements) | italic text |
+| [em](#text-formatting-elements) | emphasized text, usually italic |
+| [mark](#text-formatting-elements) | marked or highlighted text |
+| [small](#text-formatting-elements) | small text |
+| [del](#text-formatting-elements) | deleted text (line-through) |
+| [ins](#text-formatting-elements) | inserted text (underlined) |
+| [sub](#text-formatting-elements) | subscript text |
+| [sup](#text-formatting-elements) | superscript text |
 
 
-## Common Attributes
+### Common Attributes
 
 | attribute | description |
 |--- |--- |
@@ -42,7 +65,7 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 | width, height | used on `img` and `canvas` tags |
 
 
-## Explanations and Examples
+## Common Elements
 
 ### Header Tags
 
@@ -122,6 +145,15 @@ The `div` tag represents a generic block-level container.
 ```
 
 
+### Span Tags
+
+The `span` tag represents a generic inline-level container.
+
+```html
+<span>This is a generic span</span>
+```
+
+
 ### Tables
 
 Table are defined first by row, then by column.
@@ -178,6 +210,9 @@ Unordered lists are shown with bullet points, ordered lists are shown with numbe
 </ol>
 ```
 
+
+## Interactive Elements
+
 ### Buttons
 
 ```html
@@ -217,6 +252,31 @@ A `select` tag defines a dropdown list. Each `option` defines an option of that 
   <option value="audi">Audi</option>
 </select>
 ```
+
+
+
+## Text Formatting Elements
+
+
+| element | description |
+|---  |---    |
+| b | bold text |
+| strong | important text, usually bold |
+| i | italic text |
+| em | emphasized text, usually italic |
+| mark | marked or highlighted text |
+| small | small text |
+| del | deleted text (line-through) |
+| ins | inserted text (underlined) |
+| sub | subscript text |
+| sup | superscript text |
+
+
+```html
+<p>Text formatting elements are meant to be embedded within text and determine how the text is rendered. They allow you to create <b>bold text</b> and <strong>strong text</strong>, <i>italic</i> and <em>emphasized</em> text, <mark>marked</mark>, <small>small</small>, <del>deleted</del>, <ins>inserted</ins>, <sub>subscript</sub>, and <sup>superscript</sup>.</p>
+```
+
+
 
 
 
