@@ -71,21 +71,22 @@ def win(player_list):
         print("winner is "+str(winner+1))
     return n == 1
 
-def print1(player_list):
+def print_player(player_list):
     for player in player_list:
         print(player.chip)
-    print("XXXXXXXXX")
+    print()
 
 
 def main():
     player_list = creat_player_list()
-    print1(player_list)
+    print_player(player_list)
 
     while True:
         win_check = False
-        for player in player_list:
+        for i, player in enumerate(player_list):
+            print(f'player {i}'+"'"+'s turn')
             player.roll_dice()
-            print1(player_list)
+            print_player(player_list)
             win_check = win(player_list)
             if win_check:
                 break
