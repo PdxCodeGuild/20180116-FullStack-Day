@@ -10,8 +10,8 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 |---  |---    |
 | [h1, h2, etc](#header-tags) | headers |
 | [p](#paragraph-tags) | paragraph |
-| [q](#quotes-and-blockquotes) | quote |
-| [blockquote](#quotes-and-blockquotes) | block quote |
+| [q](#quotes-and-block-quotes) | quote |
+| [blockquote](#quotes-and-block-quotes) | block quote |
 | [pre](#pre-formatted-text) | pre-formatted text |
 | [hr](#lines-and-breaks) | horizontal line |
 | [br](#lines-and-breaks) | line break |
@@ -20,7 +20,7 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 | [div](#division-tags) | division, used to organize elements |
 | [table, tr, td, th](#tables) | table, row, column, header |
 | [ol, ul, li](#ordered-and-unordered-lists) | ordered list, unordered list, list item |
-| [button](button) | button |
+| [buttons](#button) | button |
 | [input](#input) | various forms of input, uses attribute `type` |
 | [select, option](#dropdown-lists) | drop-down list |
 
@@ -178,6 +178,11 @@ Unordered lists are shown with bullet points, ordered lists are shown with numbe
 </ol>
 ```
 
+### Buttons
+
+```html
+<button>this is a button</button>
+```
 
 ### Input
 
@@ -214,8 +219,4 @@ A `select` tag defines a dropdown list. Each `option` defines an option of that 
 ```
 
 
-### Buttons
 
-```html
-<button>this is a button</button>
-```
