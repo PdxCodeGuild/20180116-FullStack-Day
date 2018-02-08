@@ -6,7 +6,6 @@ Many of these come with default styling from the browser. However all can be alt
 
 ## Overview
 
-
 ### Common Elements
 
 | element | description |
@@ -48,6 +47,24 @@ Many of these come with default styling from the browser. However all can be alt
 | [ins](#text-formatting-elements) | inserted text (underlined) |
 | [sub](#text-formatting-elements) | subscript text |
 | [sup](#text-formatting-elements) | superscript text |
+| [time](#text-formatting-elements) | identify a time "11:23" within text |
+
+
+### Semantic Elements
+
+| element | description |
+|---  |---    |
+| article | an article |
+| aside | for content set aside (a sidebar) |
+| details | additional details the user can show or hide |
+| figure | a figure |
+| figcaption | the caption for a figure |
+| footer | the footer of a page |
+| header | the header of a page |
+| main | the main content of a page
+| nav | a set of navigation links |
+| section | a section of a page |
+| summary | a summary |
 
 
 ### Common Attributes
@@ -257,6 +274,7 @@ A `select` tag defines a dropdown list. Each `option` defines an option of that 
 
 ## Text Formatting Elements
 
+You can read more about text formatting elements [here](https://www.w3schools.com/html/html_formatting.asp).
 
 | element | description |
 |---  |---    |
@@ -270,13 +288,15 @@ A `select` tag defines a dropdown list. Each `option` defines an option of that 
 | ins | inserted text (underlined) |
 | sub | subscript text |
 | sup | superscript text |
-
+| time | identify a time "11:23" within text |
 
 ```html
-<p>Text formatting elements are meant to be embedded within text and determine how the text is rendered. They allow you to create <b>bold text</b> and <strong>strong text</strong>, <i>italic</i> and <em>emphasized</em> text, <mark>marked</mark>, <small>small</small>, <del>deleted</del>, <ins>inserted</ins>, <sub>subscript</sub>, and <sup>superscript</sup>.</p>
+<p>Text formatting elements are meant to be embedded within text and determine how the text is rendered. They allow you to create <b>bold text</b> and <strong>strong text</strong>, <i>italic</i> and <em>emphasized</em> text, <mark>marked</mark>, <small>small</small>, <del>deleted</del>, <ins>inserted</ins>, <sub>subscript</sub>, <sup>superscript</sup>, and time <time>11:23</time>.</p>
 ```
 
+## Semantic Elements
 
+You can read more about semantic elements [here](https://www.w3schools.com/html/html5_semantic_elements.asp).
 
 
 
