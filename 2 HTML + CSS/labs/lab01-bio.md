@@ -1,7 +1,7 @@
 # Lab 1: Bio
 
-Write up a short bio webpage for yourself or someone famous.
-Include:
+Write up a short bio webpage for someone famous (alive or dead) or a fictional character.
+Include the following:
 
 * A written introduction
 * A link to a Wikipedia article in that introduction

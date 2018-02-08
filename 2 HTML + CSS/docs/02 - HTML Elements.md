@@ -10,7 +10,7 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 |---  |---    |
 | h1, h2, etc | headers |
 | p | paragraph |
-| q, blockquote | quote |
+| q | quote |
 | blockquote | block quote |
 | hr | horizontal line |
 | br | line break |
