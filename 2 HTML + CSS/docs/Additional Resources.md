@@ -3,11 +3,11 @@
 
 - [MDN](https://developer.mozilla.org/en-US/)
 - [w3schools](https://www.w3schools.com/)
-- [html cheat sheet](https://digital.com/wp-content/uploads/html-cheat-sheet.pdf)
-- [css cheat sheet](https://www.onblastblog.com/wp-content/uploads/2017/01/CSS3-Cheat-Sheet.pdf)
-- [css-tricks.com](https://css-tricks.com/)
-- [HTML Validator](https://validator.w3.org/)
-- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [html cheat sheet](http://www.simplehtmlguide.com/cheatsheet.php)
+- [css cheat sheet](https://www.smashingmagazine.com/wp-content/uploads/images/css3-cheat-sheet/css3-cheat-sheet.pdf)
+- [interactively generate css](http://htmlcheatsheet.com/css/)
+- [official HTML validator](https://validator.w3.org/)
+- [official CSS validator](https://jigsaw.w3.org/css-validator/)
 
 
 ### CSS Frameworks
