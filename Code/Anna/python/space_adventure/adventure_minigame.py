@@ -96,17 +96,19 @@ class MyGame(arcade.Window):
         # ugly. You can also do something similar if you want a page between
         # each level.
         self.instructions = []
-        texture = arcade.load_texture("images/backgrounds/instructions_0.png")
+        texture = arcade.load_texture("backgrounds/instructions_0.png")
         self.instructions.append(texture)
 
-        texture = arcade.load_texture("images/backgrounds/instructions_1.png")
+        texture = arcade.load_texture("backgrounds/instructions_1.png")
         self.instructions.append(texture)
+
+        self.total_time = 0.0
 
     def setup(self):
         """ Set up the game and initialize the variables. """
 
         # Load the background image. Do this in the setup so we don't keep reloading it all the time.
-        self.background = arcade.load_texture("images/backgrounds/background.png")
+        self.background = arcade.load_texture("backgrounds/background.png")
 
         # Sprite lists
         self.all_sprites_list = arcade.SpriteList()
@@ -116,16 +118,19 @@ class MyGame(arcade.Window):
         self.score = 0
 
         # Set up the player
-        self.player_sprite = arcade.Sprite("images/spaceships/player_ship.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite("spaceships/player_ship.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.all_sprites_list.append(self.player_sprite)
+
+        # Timer
+        self.total_time = 0.0
 
         # Create the coins
         for i in range(50):
 
             # Create the cat instance
-            cat = Cat("images/spaceships/cat.png", SPRITE_SCALING_CAT)
+            cat = Cat("spaceships/cat.png", SPRITE_SCALING_CAT)
 
             # Position the cat
             cat.center_x = random.randrange(SCREEN_WIDTH)
@@ -153,12 +158,18 @@ class MyGame(arcade.Window):
         output = "You win! Game Over"
         arcade.draw_text(output, 220, 400, arcade.color.WHITE, 54)
 
+        output = f"Your time was: {round(self.total_time, 2)}"
+        arcade.draw_text(output, 350, 300, arcade.color.WHITE, 24)
+
         output = "Click to restart"
-        arcade.draw_text(output, 410, 300, arcade.color.WHITE, 24)
+        arcade.draw_text(output, 410, 200, arcade.color.WHITE, 24)
 
     def draw_game(self):
         """ Draw everything """
         arcade.start_render()
+        # # audio theme
+        # my_sound = arcade.sound.load_sound('audio/space_cats.wav')
+        # arcade.play_sound(my_sound)
 
         # Draw the background texture
         arcade.draw_texture_rectangle(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2,
@@ -166,9 +177,19 @@ class MyGame(arcade.Window):
         # Draw all the sprites
         self.all_sprites_list.draw()
 
+        # Calculate minutes
+        minutes = int(self.total_time) // 60
+
+        # Calculate seconds by using a modulus (remainder)
+        seconds = int(self.total_time) % 60
+
+        # Figure out our output
+        timer = f"Time: {minutes:02d}:{seconds:02d}"
+
         # Put the text on the screen.
-        output = f"Score: {self.score}"
-        arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
+        output = f"Cats Herded: {self.score}"
+        arcade.draw_text(output, 10, 40, arcade.color.GHOST_WHITE, 14)
+        arcade.draw_text(timer, 10, 20, arcade.color.GHOST_WHITE, 14)
 
     def on_draw(self):
         """
@@ -232,9 +253,11 @@ class MyGame(arcade.Window):
     def update(self, delta_time):
         """ Movement and game logic """
         if self.current_state == GAME_RUNNING:
-            # Call update on all sprites (The sprites don't do much in this
-            # example though.)
+            # Call update on all sprites
             self.all_sprites_list.update()
+
+            # update the timer
+            self.total_time += delta_time
 
             # Generate a list of all sprites that collided with the player.
             hit_list = arcade.check_for_collision_with_list(self.player_sprite,
