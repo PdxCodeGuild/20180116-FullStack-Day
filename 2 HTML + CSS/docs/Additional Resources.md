@@ -8,6 +8,7 @@
 - [interactively generate css](http://htmlcheatsheet.com/css/)
 - [official HTML validator](https://validator.w3.org/)
 - [official CSS validator](https://jigsaw.w3.org/css-validator/)
+- [Lorem Ipsum Generator](https://www.lipsum.com/)
 
 
 ### CSS Frameworks

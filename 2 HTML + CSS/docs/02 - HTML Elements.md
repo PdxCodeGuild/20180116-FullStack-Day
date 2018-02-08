@@ -8,21 +8,22 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 
 | element | description |
 |---  |---    |
-| h1, h2, etc | headers |
-| p | paragraph |
-| q | quote |
-| blockquote | block quote |
-| hr | horizontal line |
-| br | line break |
-| a | link, uses attribute `href` |
-| img | image, uses attributes `src`, ` |
-| pre | pre-formatted text |
-| div | division, used to organize elements |
-| table, tr, td, th | table, row, column, header |
-| ol, ul, li | ordered list, unordered list, list item |
-| input | various forms of input, uses attribute `type` |
-| select, option | drop-down list |
-| button | button |
+| [h1, h2, etc](#header-tags) | headers |
+| [p](#paragraph-tags) | paragraph |
+| [q](#quotes-and-blockquotes) | quote |
+| [blockquote](#quotes-and-blockquotes) | block quote |
+| [pre](#pre-formatted-text) | pre-formatted text |
+| [hr](#lines-and-breaks) | horizontal line |
+| [br](#lines-and-breaks) | line break |
+| [a](#anchor-tags) | link, uses attribute `href` |
+| [img](#image-tags) | image, uses attributes `src`, ` |
+| [div](#division-tags) | division, used to organize elements |
+| [table, tr, td, th](#tables) | table, row, column, header |
+| [ol, ul, li](#ordered-and-unordered-lists) | ordered list, unordered list, list item |
+| [button](button) | button |
+| [input](#input) | various forms of input, uses attribute `type` |
+| [select, option](#dropdown-lists) | drop-down list |
+
  
 
 
@@ -178,17 +179,32 @@ Unordered lists are shown with bullet points, ordered lists are shown with numbe
 ```
 
 
-### Input and Select
+### Input
 
-`input` tags allow for user-input. A `select` tag defines a drop-down box.
+`input` tags allow for user-input.
 
 ```html
-<input type="text"></input>
-<input type="date"></input>
-<input type="color"></input>
-<input type="password"></input>
-<input type="radio"></input>
-<input type="checkbox"></input>
+<input type="text"/>
+<input type="date"/>
+<input type="color"/>
+<input type="password"/>
+<input type="radio"/>
+<input type="checkbox"/>
+```
+
+If radio buttons are given the same `name` attribute, only allow one among them can be selected at any time.
+
+```html
+<input type="radio" name="gender" value="male"> Male<br>
+<input type="radio" name="gender" value="female"> Female<br>
+<input type="radio" name="gender" value="other"> Other
+```
+
+### Dropdown Lists
+
+A `select` tag defines a dropdown list. Each `option` defines an option of that dropdown list. Note that the `value` attribute differs from the inner text. The inner text servers human interests, the `value` serves the code's interests.
+
+```html
 <select>
   <option value="volvo">Volvo</option>
   <option value="saab">Saab</option>
@@ -197,13 +213,6 @@ Unordered lists are shown with bullet points, ordered lists are shown with numbe
 </select>
 ```
 
-If radio buttons are given the same `name` attribute, they'll only allow one option to be selected at a time.
-
-```html
-<input type="radio" name="gender" value="male"> Male<br>
-<input type="radio" name="gender" value="female"> Female<br>
-<input type="radio" name="gender" value="other"> Other
-```
 
 ### Buttons
 
