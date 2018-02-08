@@ -1,0 +1,25 @@
+body  {
+    text-align: center;
+    font-family: Times New Roman, sans-serif;
+    color: #089765;
+    background-color: #800016;
+
+}
+
+#main {
+    text-align: justify;
+    color: #126547;
+}
+
+#side {
+    float: left;
+    text-align: left;
+    color: #387651;
+    border: 2px solid #726512;
+
+}
+
+#cynic {
+    float: right;
+
+}
