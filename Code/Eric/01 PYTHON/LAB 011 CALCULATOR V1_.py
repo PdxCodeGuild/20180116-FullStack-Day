@@ -1,3 +1,5 @@
+"""feedback from matt: rather than have a counter, just have user_numbers() take a string ('first', 'second') as a parameter"""
+
 operations_list = ['+', '-', '*', '/']
 
 #OPERATION
