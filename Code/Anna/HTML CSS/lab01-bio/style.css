@@ -1,0 +1,26 @@
+.top-margin {
+    margin-top: 50px;
+}
+
+.main_red {
+    color: #D9230F;
+}
+
+.spacer {
+    padding: 50px 50px;
+    background-color: #D9230F;
+}
+
+.color-footer {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    background-color: #F14A39;
+}
+
+.footer-copyright {
+    color: antiquewhite;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #373A3C;
+}
+
