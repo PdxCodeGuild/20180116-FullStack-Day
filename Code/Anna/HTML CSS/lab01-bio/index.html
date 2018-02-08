@@ -9,18 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
 </head>
 
 <body>
 <!--Some navbnar stuff-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-  <a class="navbar-brand" href="#">Bio</a>
+  <a class="navbar-brand" href="#">Bio Lab</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor03">
-    <ul class="navbar-nav mr-auto">
+    <ul class="smooth-scroll navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -42,14 +44,14 @@
 </nav>
 
 <!--The main title-->
-<div class="jumbotron">
+<div class="jumbotron" id="top">
     <div class="container">
         <h1 class="display-3">Grace Murray Hopper</h1>
         <p class="lead">Like high-level programming languages? You have Grace Hopper to thank!</p>
         <hr class="my-4 main_red">
         <p>United States Navy Admiral Grace Hopper (1906–1992) was one of the first programmers in the history of computers. Her belief that programming languages should be as easily understood as English was highly influential on the development of one of the first programming languages called COBOL. It is largely due to Grace Hopper’s influence that programmers use “if/thens” instead of 1s and 0s today.</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#about" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg smooth-scroll" href="#about" role="button">Learn more</a>
         </p>
     </div>
 </div>
@@ -71,7 +73,21 @@
     </div>
     <div class="col-xs-12 col-lg-4">
         <img class="img-rounded img-responsive" style='width:100%;' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/720px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg" alt="kitteh">
-        <br><p class="text-center"><em>Rear Admiral Grace M. Hopper, 1984</em></p>
+        <br><p class="text-center"><em>Rear Admiral Grace M. Hopper, 1984</em></p><br>
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+          <div class="card-header">Places Grace Hopper Lived</div>
+          <div class="card-body">
+            <p class="card-text">
+                <ul>
+                    <li>New York City</li>
+                    <li>Poughkeepsie, New York</li>
+                    <li>New Haven, Connecticut</li>
+                    <li>Boston, Massachusetts</li>
+                    <li>Arlington, Virginia</li>
+                </ul>
+            </p>
+          </div>
+        </div>
     </div>
     </div>
 </div>
@@ -109,6 +125,16 @@
     </div>
 </div>
 
+<!--Back to top-->
+<div class="container top-margin">
+    <div class="row">
+    <div class="col-xs-12 col-lg-12">
+        <p class="lead text-center">
+            <a class="smooth-scroll btn btn-secondary btn-lg" href="#top" role="button">Back to top</a>
+        </p>
+    </div>
+    </div>
+</div>
 
 <!--Footer-->
 <footer class="page-footer">
