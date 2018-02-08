@@ -2,36 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Grace Hopper Was Awesome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
 </head>
 
 <body>
 <!--Some navbnar stuff-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-  <a class="navbar-brand" href="#">Bio</a>
+  <a class="navbar-brand" href="#">Bio Lab</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor03">
-    <ul class="navbar-nav mr-auto">
+    <ul class="smooth-scroll navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link smooth-scroll" href="#about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#quote">Quote</a>
+        <a class="nav-link smooth-scroll" href="#quote">Quote</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#wiki">Wikipedia</a>
+        <a class="nav-link smooth-scroll" href="#wiki">Wikipedia</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -42,14 +44,14 @@
 </nav>
 
 <!--The main title-->
-<div class="jumbotron">
+<div class="jumbotron" id="top">
     <div class="container">
-        <h1 class="display-3">A bio page!</h1>
-        <p class="lead">All about the awesome person I haven't picked yet.</p>
+        <h1 class="display-3">Grace Murray Hopper</h1>
+        <p class="lead">Like high-level programming languages? You have Grace Hopper to thank!</p>
         <hr class="my-4 main_red">
-        <p>Lorem ipsum dolor amet neutra slow-carb semiotics typewriter, celiac williamsburg 90's letterpress pariatur authentic venmo tbh adipisicing laboris. Artisan mixtape consectetur marfa veniam scenester sunt poutine swag food truck fixie occaecat. Shoreditch migas post-ironic coloring book dreamcatcher semiotics. Poke pour-over non waistcoat, glossier retro 8-bit 90's voluptate.</p>
+        <p>United States Navy Admiral Grace Hopper (1906–1992) was one of the first programmers in the history of computers. Her belief that programming languages should be as easily understood as English was highly influential on the development of one of the first programming languages called COBOL. It is largely due to Grace Hopper’s influence that programmers use “if/thens” instead of 1s and 0s today.</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#about" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg smooth-scroll" href="#about" role="button">Learn more</a>
         </p>
     </div>
 </div>
@@ -58,16 +60,34 @@
 <div class="container">
     <div class="row" id="about">
     <div class="col-xs-12 col-lg-8">
-        <h1>This will be a bio</h1>
-        <p>Lorem ipsum dolor amet lomo sustainable la croix, helvetica kickstarter flannel viral cardigan magna craft beer bicycle rights adaptogen photo booth post-ironic master cleanse. Put a bird on it ennui fam, activated charcoal consequat seitan swag flannel photo booth. Thundercats nisi nostrud, brooklyn kale chips lyft edison bulb 8-bit literally commodo authentic vaporware organic. Microdosing post-ironic flannel celiac photo booth plaid jean shorts +1 bicycle rights 8-bit distillery. Kogi lumbersexual austin artisan banjo kitsch pok pok swag VHS fashion axe pabst typewriter umami godard cliche. Man bun master cleanse ugh fugiat minim qui laboris pok pok blue bottle 90's fingerstache seitan waistcoat crucifix elit.</p>
-        <p>Raw denim man bun irure, gentrify brunch eu master cleanse hot chicken locavore fashion axe freegan kogi yuccie. Vegan hell of aute knausgaard gochujang, brooklyn master cleanse kale chips iPhone tbh neutra flannel. 8-bit craft beer neutra locavore dolore pinterest keytar pop-up duis laboris synth live-edge vice vape cloud bread. Pop-up roof party chillwave pariatur seitan ut brunch. Deserunt flexitarian mixtape portland, brunch tempor cornhole iceland labore bushwick hammock occaecat authentic. Franzen try-hard edison bulb, banh mi nulla austin cray exercitation food truck dolor tempor lorem everyday carry plaid.</p>
-        <p>La croix next level godard, slow-carb hoodie unicorn in dolore mixtape man braid ramps aesthetic raw denim small batch minim. Magna vinyl street art authentic. Roof party proident meh voluptate, portland tbh unicorn. Palo santo woke occaecat pariatur pabst, pok pok banh mi wayfarers authentic.</p>
-        <p>Bespoke pinterest lumbersexual ullamco. Salvia etsy laboris viral. Portland adaptogen vape single-origin coffee synth marfa asymmetrical minim magna. Copper mug synth roof party waistcoat readymade cliche listicle ullamco twee bespoke stumptown meggings four loko.</p>
-        <p>Id eiusmod sriracha seitan listicle. Labore selfies poutine whatever schlitz qui four loko. Biodiesel lumbersexual minim next level dreamcatcher everyday carry blog poke tattooed cronut. Intelligentsia cornhole ennui food truck chambray hot chicken synth mumblecore.</p>
+        <h1>A short biography</h1>
+        <p>Grace Hopper was a computer scientist who is best known for helping to create the first all-electronic digital computer, called UNIVAC (Universal Automatic Computer). NASA's tracking stations for the Apollo moon missions used UNIVAC hardware to communicate with the astronauts. In 2016, Hopper posthumously received the Presidential Medal of Freedom for her contributions.</p>
+        <p>"Known as 'Amazing Grace' and 'the first lady of software,' [Hopper] was at the forefront of computers and programming development from the 1940s through the 1980s," the citation read. "Hopper's work helped make coding languages more practical and accessible, and she created the first compiler, which translates source code from one language into another."</p>
+        <p>Hopper was born in New York on Dec. 9, 1906, and attended Vassar College. She graduated in 1928 with a mathematics degree, then received master's and doctorate degrees in mathematics and physics from Yale University in 1934, according to the U.S. Navy.</p>
+        <p>At the height of World War II, in 1943, she enlisted with the Women Accepted for Volunteer Emergency Service (WAVES). She was 37 years old, far older than most military recruits. In 1944, she was assigned to the Bureau of Ordnance Computation Project at Harvard University.</p>
+        <p>Some of the work she did there still echoes in the lingo of computer programmers today. For example, she used the word "bug" to talk about a computer malfunction. She also created a model of an electric computer called the Mark I.</p>
+        <p>She finished active duty in 1946, but remained in the Naval Reserve as a contractor for the Mark II and Mark III computers, the Navy said on another web page. Her work on the UNIVAC occurred after 1949, when she joined Eckert-Mauchly Computer Corp. (later known as Sperry-Rand, then Sperry Corp., which now exists in parts today in Unisys, Honeywell and Sperry Marine.)</p>
+        <p>Besides helping to create UNIVAC, she also created the first computer compiler (which translates source code from one language to another) and also made a new programming language that was "a widely used framework for coding languages at the time," the Navy said. That language was called FLOW-MATIC, and is a basis of the widely used Common Business Operating Language (COBOL).</p>
+        <p>Hopper's connection with the Navy persisted for most of her life. She retired from the reserves in 1966, then returned for active duty in 1967 for what was supposed to be six months — but for what ended up being 19 years. By the time of her involuntary retirement in 1986 at the age of 79, Hopper was one of the few female flag officers, achieving the rank of rear admiral (lower half.) She died in 1992 at age 85, leaving behind a collection of papers donated to the Smithsonian Institution.
+        <p>Source: <a href="https://www.space.com/34885-grace-hopper-biography.html">Grace Hopper: 'First Lady of Software' on Space.com</a></p>
     </div>
     <div class="col-xs-12 col-lg-4">
-        <h1>This is a picture</h1>
-        <img class="img-rounded img-responsive" style='width:100%;' src="https://www.splendidbeast.com/wp-content/uploads/2017/10/Regal-Cat-resized.jpg" alt="kitteh">
+        <img class="img-rounded img-responsive" style='width:100%;' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/720px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg" alt="kitteh">
+        <br><p class="text-center"><em>Rear Admiral Grace M. Hopper, 1984</em></p><br>
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+          <div class="card-header">Places Grace Hopper Lived</div>
+          <div class="card-body">
+            <p class="card-text">
+                <ul>
+                    <li>New York City</li>
+                    <li>Poughkeepsie, New York</li>
+                    <li>New Haven, Connecticut</li>
+                    <li>Boston, Massachusetts</li>
+                    <li>Arlington, Virginia</li>
+                </ul>
+            </p>
+          </div>
+        </div>
     </div>
     </div>
 </div>
@@ -77,8 +97,8 @@
 <!--The quote section-->
 <div class="color-footer" id="quote">
     <div class="container">
-        <h3 class="text-center">"Consciousness is the nature of interconnectedness, and of us. By unfolding, we believe."</h3>
-        <p class="text-right">- said this awesome person</p>
+        <h2 class="text-center"><em>"If it's a good idea, go ahead and do it. It is much easier to apologize than it is to get permission."</em></h2>
+        <br><p class="text-right">- Grace Hopper</p>
     </div>
 </div>
 
@@ -87,17 +107,34 @@
 <!--The wikipedia section-->
 <div class="container top-margin">
     <div class="row">
-    <div class="col-xs-12 col-lg-12" id="wiki">
-        <h1>This will be have a Wikipedia article</h1>
-        <p>Lorem ipsum dolor amet leggings incididunt irure cardigan put a bird on it bitters blue bottle narwhal YOLO shaman sed lomo pariatur aliquip try-hard. Poke laboris direct trade tofu copper mug twee pariatur commodo lumbersexual lomo hashtag pinterest pitchfork portland. Actually heirloom humblebrag hella yr fam offal helvetica tote bag XOXO blog cronut DIY. Taiyaki ethical in, VHS next level health goth retro poke helvetica. Coloring book ut in chambray nisi ex ugh exercitation. Vape taiyaki incididunt brunch synth helvetica, post-ironic skateboard.</p>
-
-        <p>Hoodie mixtape synth fam put a bird on it polaroid ut mustache lyft dolore. Godard consectetur green juice whatever lomo yr pabst DIY. Typewriter ipsum four dollar toast, chartreuse id try-hard ennui crucifix VHS tousled. Literally shabby chic do cillum farm-to-table crucifix cupidatat letterpress irure viral sunt artisan. Ut quis occupy, kickstarter health goth pug shaman deserunt sustainable in ethical nisi polaroid.</p>
-
-        <p>Health goth VHS try-hard ipsum eu chartreuse photo booth. Hella asymmetrical iceland, sustainable id hexagon godard blog before they sold out qui twee. Cardigan squid lorem, umami put a bird on it plaid health goth veniam banh mi food truck dreamcatcher. Quis tumblr asymmetrical air plant kogi eu four loko kitsch prism, biodiesel art party microdosing shaman. Farm-to-table mumblecore gluten-free sunt veniam tumeric. Chambray eu iPhone, retro id intelligentsia austin stumptown irure. Ennui green juice mollit, poke nostrud YOLO forage.</p>
+    <div class="col-xs-12 col-lg-8" id="wiki">
+        <h1>Grace Hopper's Wikipedia page</h1>
+        <p>Grace Brewster Murray Hopper (née Murray; December 9, 1906 – January 1, 1992) was an American computer scientist and United States Navy rear admiral. One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first compiler related tools. She popularized the idea of machine-independent programming languages, which led to the development of COBOL, an early high-level programming language still in use today.</p>
+        <p>Hopper had attempted to enlist in the Navy during World War II, but she was rejected by the military because she was 34 years of age and too old to enlist. She instead joined the Navy Reserves. Hopper began her computing career when she worked on the Harvard Mark I team that was led by Howard H. Aiken. In 1949, she joined the Eckert–Mauchly Computer Corporation and was part of the development team that designed the UNIVAC I computer in 1944. It was at Eckert–Mauchly that she began developing the compiler. She believed that computer code could be written in English by using a programming language that was based on English words. The compiler would convert that code into machine code that would be understood by computers. By 1952, Hopper finished her program linker (originally called a compiler), which was written for the A-0 System.</p>
+        <p>In 1954, Eckert–Mauchly chose Hopper to lead their department for automatic programming, and she led the release of some of the first compiled languages like FLOW-MATIC. In 1959, she participated in the CODASYL consortium, which consulted Hopper to guide them in creating a machine-independent programming language. This led to the COBOL language, which was inspired by her idea of a language being based on English words. In 1966, she retired from the Naval Reserve, but in 1967, the Navy recalled her to active duty. She retired from the Navy in 1986 and found work as a consultant for the Digital Equipment Corporation, sharing her computing experiences.</p>
+        <p>Owing to her accomplishments and her naval rank, she was sometimes referred to as "Amazing Grace". The U.S. Navy Arleigh Burke-class guided-missile destroyer USS Hopper was named for her, as was the Cray XE6 "Hopper" supercomputer at NERSC.[8] During her lifetime, Hopper was awarded 40 honorary degrees from universities across the world. A college at Yale University is named in her honor. In 1991, she received the National Medal of Technology. On November 22, 2016, she was posthumously awarded the Presidential Medal of Freedom by President Barack Obama.</p>
+        <hr class="my-4 main_red">
+        <p class="lead text-center">
+            <a class="btn btn-secondary btn-lg" href="https://en.wikipedia.org/wiki/Grace_Hopper" target="_blank" role="button">Read more on Wikipedia</a>
+        </p>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+        <img class="img-rounded img-responsive" style='width:100%;' src="https://upload.wikimedia.org/wikipedia/commons/3/37/Grace_Hopper_and_UNIVAC.jpg" alt="Grace Murray Hopper at the UNIVAC keyboard, c. 1960">
+        <br><p class="text-center"><em>Grace Murray Hopper at the UNIVAC keyboard, c. 1960. Grace Brewster Murray: American mathematician and rear admiral in the U.S. Navy who was a pioneer in developing computer technology, helping to devise UNIVAC I. the first commercial electronic computer, and naval applications for COBOL (common-business-oriented language).</em></p>
     </div>
     </div>
 </div>
 
+<!--Back to top-->
+<div class="container top-margin">
+    <div class="row">
+    <div class="col-xs-12 col-lg-12">
+        <p class="lead text-center">
+            <a class="smooth-scroll btn btn-secondary btn-lg" href="#top" role="button">Back to top</a>
+        </p>
+    </div>
+    </div>
+</div>
 
 <!--Footer-->
 <footer class="page-footer">
