@@ -1,40 +1,41 @@
 """
-Main module for adventure game.
+Main module for platform scroller.
 
+Game art from Kenney.nl: http: // opengameart.org / content / platformer - art - deluxe
 """
 
 import pygame
 import constants
-import areas
+import levels
 from player import Player
 
 def main():
-    """ Main Program """
+""" Main Program """
     pygame.init()
 
     # Set the height and width of the screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
     screen = pygame.display.set_mode(size)
 
-    pygame.display.set_caption("Escape to Code Mountain")
+    pygame.display.set_caption("Platformer with sprite sheets")
 
     # Create the player
     player = Player()
 
-    # Create all the areas -- World list? Not really areas.
-    area_list = []
-    area_list.append(areas.Area_01(player))
-    area_list.append(areas.Area_02(player))
+    # Create all the levels
+    level_list = []
+    level_list.append(levels.Level_01(player))
+    level_list.append(levels.Level_02(player))
 
     # Set the current area
-    current_area_no = 0
-    current_area = area_list[current_area_no]
+    current_level_no = 0
+    current_level = level_list[current_level_no]
 
     active_sprite_list = pygame.sprite.Group()
-    player.area = current_area
+    player.level = current_level
 
-    player.rect.x = 340 ### ???
-    player.rect.y = constants.SCREEN_HEIGHT - player.rect.height  ###????
+    player.rect.x = 340
+    player.rect.y = constants.SCREEN_HEIGHT - player.rect.height
     active_sprite_list.add(player)
 
     #Loop until the user clicks the close button.
@@ -67,31 +68,31 @@ def main():
         active_sprite_list.update()
 
         # Update items in the area
-        current_area.update()
+        current_level.update()
 
         # If the player gets near the right side, shift the world left (-x)
         if player.rect.right >= 500:
             diff = player.rect.right - 500
             player.rect.right = 500
-            current_area.shift_world(-diff)
+            current_level.shift_world(-diff)
 
         # If the player gets near the left side, shift the world right (+x)
         if player.rect.left <= 120:
             diff = 120 - player.rect.left
             player.rect.left = 120
-            current_area.shift_world(diff)
+            current_level.shift_world(diff)
 
         # If the player gets to the end of the area, go to the next area
-        current_position = player.rect.x + current_area.world_shift
-        if current_position < current_area.area_limit:
+        current_position = player.rect.x + current_level.world_shift
+        if current_position < current_level.level_limit:
             player.rect.x = 120
-            if current_area_no < len(area_list)-1:
-                current_area_no += 1
-                current_area = area_list[current_area_no]
-                player.area = current_area
+            if current_level_no < len(level_list)-1:
+                current_level_no += 1
+                current_level = level_list[current_level_no]
+                player.level = current_level
 
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
-        current_area.draw(screen)
+        current_level.draw(screen)
         active_sprite_list.draw(screen)
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
@@ -108,45 +109,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-"""import pygame
-import constants
-import areas
-from player import Player
-
-
-
-def Main():
-    # initialize pygame and set up the window.
-    pygame.init()
-    # Set width and height of the screen. First number is width, second is height.
-    size = [SCREEN_WIDTH, SCREEN_HEIGHT]
-    screen = pygame.display.set_mode(size)
-    pygame.display.set_caption("Programmer's Escape to Hidden Mountain")
-    # Hide the mouse cursor
-    pygame.mouse.set_visible(0)
-
-    # Loop until the user clicks the close button.
-    done = False  # Loop control
-    # Used to manage how fast the screen updates
-    clock = pygame.time.Clock()  # Controls how fast the game runs
-    game = Game()
-
-    while not done:
-        # Process events mouse clicks, etc.
-        done = game.process_events()
-        # Update object positions, check for colissions.
-        game.run_logic()
-        # draw the current frame
-        game.display_frame(screen)
-        #pausing for next frame
-        clock.tick(60)
-    pygame.quit()"""
