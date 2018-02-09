@@ -38,17 +38,17 @@ img {
 }
 
 ul {
+
+    list-style: none;
     margin: auto;
-    text-align: center;
-    width: 100px;
-    list-style: "☞";
+    width: 150px;
 }
 
-li {
-    margin: auto;
-    text-align: center;
-    width: 100px;
-    list-style: "☞";
+ul li:before {
+    color: chocolate;
+    content: '☞ ';
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 footer {
