@@ -58,7 +58,7 @@ class WavePlayer(threading.Thread):
         chunk = 1024
 
         # open a wav format music
-        f = wave.open(path, "rb")
+        f = wave.open(os.path.join(BASE_DIR, path), "rb")
         # instantiate PyAudio
         p = pyaudio.PyAudio()
         # open stream
