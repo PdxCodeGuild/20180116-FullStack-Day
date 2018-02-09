@@ -1,0 +1,26 @@
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+}
+
+.padding-left {
+    padding-left: 10px;
+}
+
+.parallax{
+  position:static;
+}
+
+.spacer {
+    padding: 50px 50px;
+    background-color: #303030;
+}
+
+.top-margin {
+    margin-top: 20px;
+}
