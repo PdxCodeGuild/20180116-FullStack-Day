@@ -1,32 +1,73 @@
 
 # HTML Elements
 
-For a complete list of tags, look [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) and [here](https://www.w3schools.com/tags/).
+Many of these come with default styling from the browser. However all can be altered using CSS, thus their meaning is largely what you give to them. For a complete list of tags, look [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) and [here](https://www.w3schools.com/tags/).
 
 
-## Common Elements
+## Overview
+
+### Common Elements
 
 | element | description |
 |---  |---    |
-| h1, h2, etc | headers |
-| p | paragraph |
-| q | quote |
-| blockquote | block quote |
-| hr | horizontal line |
-| br | line break |
-| a | link, uses attribute `href` |
-| img | image, uses attributes `src`, ` |
-| pre | pre-formatted text |
-| div | division, used to organize elements |
-| table, tr, td, th | table, row, column, header |
-| ol, ul, li | ordered list, unordered list, list item |
-| input | various forms of input, uses attribute `type` |
-| select, option | drop-down list |
-| button | button |
- 
+| [h1, h2, etc](#header-tags) | headers |
+| [p](#paragraph-tags) | paragraph |
+| [q](#quotes-and-block-quotes) | quote |
+| [blockquote](#quotes-and-block-quotes) | block quote |
+| [pre](#pre-formatted-text) | pre-formatted text |
+| [hr](#lines-and-breaks) | horizontal line |
+| [br](#lines-and-breaks) | line break |
+| [a](#anchor-tags) | link, uses attribute `href` |
+| [img](#image-tags) | image, uses attributes `src`, ` |
+| [div](#division-tags) | division, block element, used to organize elements |
+| [span](#span-tags) | span, inline element, used to organize elements |
+| [table, tr, td, th](#tables) | table, row, column, header |
+| [ol, ul, li](#ordered-and-unordered-lists) | ordered list, unordered list, list item |
 
 
-## Common Attributes
+### Interactive Elements
+
+| element | description |
+|---  |---    |
+| [buttons](#button) | button |
+| [input](#input) | various forms of input, uses attribute `type` |
+| [select, option](#dropdown-lists) | drop-down list |
+
+### Text Formatting Elements
+
+| element | description |
+|---  |---    |
+| [b](#text-formatting-elements) | bold text |
+| [strong](#text-formatting-elements) | important text, usually bold |
+| [i](#text-formatting-elements) | italic text |
+| [em](#text-formatting-elements) | emphasized text, usually italic |
+| [mark](#text-formatting-elements) | marked or highlighted text |
+| [small](#text-formatting-elements) | small text |
+| [del](#text-formatting-elements) | deleted text (line-through) |
+| [ins](#text-formatting-elements) | inserted text (underlined) |
+| [sub](#text-formatting-elements) | subscript text |
+| [sup](#text-formatting-elements) | superscript text |
+| [time](#text-formatting-elements) | identify a time "11:23" within text |
+
+
+### Semantic Elements
+
+| element | description |
+|---  |---    |
+| article | an article |
+| aside | for content set aside (a sidebar) |
+| details | additional details the user can show or hide |
+| figure | a figure |
+| figcaption | the caption for a figure |
+| footer | the footer of a page |
+| header | the header of a page |
+| main | the main content of a page
+| nav | a set of navigation links |
+| section | a section of a page |
+| summary | a summary |
+
+
+### Common Attributes
 
 | attribute | description |
 |--- |--- |
@@ -41,7 +82,7 @@ For a complete list of tags, look [here](https://developer.mozilla.org/en-US/doc
 | width, height | used on `img` and `canvas` tags |
 
 
-## Explanations and Examples
+## Common Elements
 
 ### Header Tags
 
@@ -121,6 +162,15 @@ The `div` tag represents a generic block-level container.
 ```
 
 
+### Span Tags
+
+The `span` tag represents a generic inline-level container.
+
+```html
+<span>This is a generic span</span>
+```
+
+
 ### Tables
 
 Table are defined first by row, then by column.
@@ -178,17 +228,40 @@ Unordered lists are shown with bullet points, ordered lists are shown with numbe
 ```
 
 
-### Input and Select
+## Interactive Elements
 
-`input` tags allow for user-input. A `select` tag defines a drop-down box.
+### Buttons
 
 ```html
-<input type="text"></input>
-<input type="date"></input>
-<input type="color"></input>
-<input type="password"></input>
-<input type="radio"></input>
-<input type="checkbox"></input>
+<button>this is a button</button>
+```
+
+### Input
+
+`input` tags allow for user-input.
+
+```html
+<input type="text"/>
+<input type="date"/>
+<input type="color"/>
+<input type="password"/>
+<input type="radio"/>
+<input type="checkbox"/>
+```
+
+If radio buttons are given the same `name` attribute, only allow one among them can be selected at any time.
+
+```html
+<input type="radio" name="gender" value="male"> Male<br>
+<input type="radio" name="gender" value="female"> Female<br>
+<input type="radio" name="gender" value="other"> Other
+```
+
+### Dropdown Lists
+
+A `select` tag defines a dropdown list. Each `option` defines an option of that dropdown list. Note that the `value` attribute differs from the inner text. The inner text servers human interests, the `value` serves the code's interests.
+
+```html
 <select>
   <option value="volvo">Volvo</option>
   <option value="saab">Saab</option>
@@ -197,16 +270,33 @@ Unordered lists are shown with bullet points, ordered lists are shown with numbe
 </select>
 ```
 
-If radio buttons are given the same `name` attribute, they'll only allow one option to be selected at a time.
+
+
+## Text Formatting Elements
+
+You can read more about text formatting elements [here](https://www.w3schools.com/html/html_formatting.asp).
+
+| element | description |
+|---  |---    |
+| b | bold text |
+| strong | important text, usually bold |
+| i | italic text |
+| em | emphasized text, usually italic |
+| mark | marked or highlighted text |
+| small | small text |
+| del | deleted text (line-through) |
+| ins | inserted text (underlined) |
+| sub | subscript text |
+| sup | superscript text |
+| time | identify a time "11:23" within text |
 
 ```html
-<input type="radio" name="gender" value="male"> Male<br>
-<input type="radio" name="gender" value="female"> Female<br>
-<input type="radio" name="gender" value="other"> Other
+<p>Text formatting elements are meant to be embedded within text and determine how the text is rendered. They allow you to create <b>bold text</b> and <strong>strong text</strong>, <i>italic</i> and <em>emphasized</em> text, <mark>marked</mark>, <small>small</small>, <del>deleted</del>, <ins>inserted</ins>, <sub>subscript</sub>, <sup>superscript</sup>, and time <time>11:23</time>.</p>
 ```
 
-### Buttons
+## Semantic Elements
 
-```html
-<button>this is a button</button>
-```
+You can read more about semantic elements [here](https://www.w3schools.com/html/html5_semantic_elements.asp).
+
+
+

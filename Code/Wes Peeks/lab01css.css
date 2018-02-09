@@ -1,0 +1,55 @@
+body  {
+    text-align: center;
+    font-family: sans-serif;
+    color: #089765;
+    background-color: #800016;
+    font-size: 1em;
+}
+
+#wiki {
+    text-decoration: none;
+    color: #089765;
+}
+
+h1  {
+    border: 2px solid #567889;
+    border-radius: 20px;
+    width: 600px;
+    margin: auto;
+}
+
+#diogenes{
+    height: 200px;
+    width: 200px;
+    padding: 15px;
+}
+
+#main {
+    text-align: center;
+    color: #126547;
+    border: 2px solid #342567;
+}
+
+#side {
+    float: left;
+    text-align: left;
+    color: #387651;
+    border: 2px solid #726512;
+}
+
+#cynic {
+    float: right;
+}
+
+#barrel {
+    height: 250px;
+    width: 250px;
+    float: top;
+    border-radius: 50%;
+}
+
+p {
+    margin: 2px;
+    padding: 1px;
+
+}
