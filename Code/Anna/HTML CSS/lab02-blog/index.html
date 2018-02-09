@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>A Weblog</title>
-
+    <!-- Importing page elements -->
+    <link rel="import" href="templates.html">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
@@ -17,28 +18,28 @@
 </head>
 
 <body>
+    <div id="top"></div>
 
     <!-- Navbar goes here -->
-
     <div class="navbar-fixed">
-    <nav>
-    <div class="nav-wrapper">
-      <span class="padding-left"></span><a href="#" class="brand-logo"> <i class="fa fa-pencil"></i> LiveJournal 2.0</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="side-nav" id="slide-out">
-        <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    </nav>
+        <nav class="orange darken-3">
+        <div class="nav-wrapper">
+          <span class="padding-left"></span><a href="#" class="brand-logo"> <i class="fa fa-pencil"></i> LiveJournal 2.0</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="modal-trigger" href="#modal1">About</a></li>
+            <li><a class="modal-trigger" href="#modal2">Contact</a></li>
+          </ul>
+          <ul class="side-nav" id="slide-out">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        </nav>
     </div>
 
     <!-- Page Layout here -->
@@ -46,11 +47,15 @@
 
       <div class="col s12 m4 l3">
 
-      <div class="container">
-          <p class="flow-text">Blog stuff</p>
+          <!-- Blog header here -->
+        <div class="full-width">
+        <header id="header-container" class="header gradient center z-depth-2">
+            <h1 class="title">A Fancy Blog</h1>
+            <h2 class="subtitle">A modern, artisanal, gluten-free blog template</h2>
+            <h2 class="subtitle">Using the Materialize CSS framework like a champ</h2>
+        </header>
+        </div>
 
-
-      </div>
       </div>
 
       <div class="col s12 m8 l9">
@@ -61,56 +66,80 @@
         <div class="section white">
             <div class="row container">
                 <h2 class="header">Fancy Blog is Fancy</h2>
-                <p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor amet woke subway tile consectetur viral iceland. PBR&B pok pok neutra cold-pressed schlitz small batch church-key pour-over succulents pork belly, ullamco ut. Quis gentrify hoodie pug, franzen lyft mixtape. Man braid iPhone selfies gastropub paleo chambray chicharrones tacos intelligentsia quinoa poutine minim vinyl.</p>
+                <p class="grey-text text-darken-3 lighten-3">Look at this fanciness! Lorem ipsum dolor amet woke subway tile consectetur viral iceland. PBR&B pok pok neutra cold-pressed schlitz small batch church-key pour-over succulents pork belly, ullamco ut. Quis gentrify hoodie pug, franzen lyft mixtape. Man braid iPhone selfies gastropub paleo chambray chicharrones tacos intelligentsia quinoa poutine minim vinyl.</p>
             </div>
         </div>
         <div class="parallax-container">
             <div class="parallax"><img src="images/parallax2.jpg"></div>
         </div>
+
       </div>
 
     </div>
 
-<!--The footer!-->
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">Something amazing will go down here one day.</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Let's Get Social!</h5>
-        <div class="footer-socials mb-5 flex-center">
-            <!--Facebook-->
-            <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
-            <!--Twitter-->
-            <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mr-md-4"> </i></a>
-            <!--Google +-->
-            <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i></a>
-            <!--Linkedin-->
-            <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i></a>
-            <!--Instagram-->
-            <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mr-md-4"> </i></a>
-            <!--Pinterest-->
-            <a class="icons-sm pin-ic"><i class="fa fa-pinterest fa-lg white-text"> </i></a>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h4>Look, a modal!</h4>
+          <p>Aren't I fancy?</p>
         </div>
-      </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Yes!</a>
+        </div>
     </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+          <h4>Wow, another modal!</h4>
+          <p>What is this insanity?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">I don't even know!</a>
+        </div>
+    </div>
+
+    <!-- import the footer -->
+
+    <footer class="page-footer orange darken-3">
+      <div class="container">
         <div class="row">
-        <div class="col l6 s12">
-            © 2018 Copyright Text
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">Something amazing will go down here one day.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Let's Get Social!</h5>
+            <div class="footer-socials mb-5 flex-center">
+                <!--Facebook-->
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
+                <!--Twitter-->
+                <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mr-md-4"> </i></a>
+                <!--Google +-->
+                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i></a>
+                <!--Linkedin-->
+                <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i></a>
+                <!--Instagram-->
+                <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mr-md-4"> </i></a>
+                <!--Pinterest-->
+                <a class="icons-sm pin-ic"><i class="fa fa-pinterest fa-lg white-text"> </i></a>
+            </div>
+          </div>
         </div>
-        <div class="col l4 offset-l2 s12">
-            <a class="smooth-scroll grey-text text-lighten-4" href="#">Back to top</a>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                © 2018 Copyright Text
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <a class="smooth-scroll grey-text text-lighten-4" href="#top">Back to top</a>
+            </div>
         </div>
-    </div>
-    </div>
-  </div>
-</footer>
+        </div>
+      </div>
+    </footer>
+
 
 </body>
 </html>

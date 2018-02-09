@@ -1,17 +1,28 @@
+
 div {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: lightgray;
+    padding: 50px;
+}
+
+img {
+    padding: 25px;
+    border-radius: 50px;
+    text-align: center;
+    width: 86%;
+    height: 86%;
+    display: block;
     margin: auto;
-    width: 600px;
-    /*background-color: lightgray;*/
 }
 
 body {
-    background-color: lightgray;
-    color: cccccc
-    text-align: center;
+    background-color: gray;
+    color: cccccc;
+    text-align: left;
     line-height: 25px;
     font-family: 'Encode Sans Condensed', sans-serif;
     letter-spacing: 1px;
-
 }
 
 blockquote {
@@ -25,33 +36,22 @@ blockquote {
 
 h1 {
     font-size: xxx-large;
-    font-weight: black;
+    font-weight: bolder;
     text-align: right;
     letter-spacing: 1px;
-
-}
-
-img {
-    float: center;
-    padding: 15px 25px;
-    border-radius: 50px;
 }
 
 ul {
-
     list-style: none;
-    margin: auto;
-    width: 150px;
+    text-align: left;
+    /*margin: auto;*/
+    /*width: 150px;*/
 }
 
 ul li:before {
     color: chocolate;
     content: '☞ ';
-    font-size: 1.2em;
+    font-size: 24px;
     font-weight: bold;
-}
-
-footer {
-    margin-bottom: 50px;
 }
 
