@@ -2,6 +2,8 @@ from __future__ import print_function
 import pyaudio
 import wave
 import threading
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class WavePlayer(threading.Thread):
@@ -25,7 +27,7 @@ class WavePlayer(threading.Thread):
         chunk = 1024
 
         # open a wav format music
-        f = wave.open(r"audio/beginning_theme.wav", "rb")
+        f = wave.open(os.path.join(BASE_DIR, "audio/beginning_theme.wav"), "rb")
         # instantiate PyAudio
         p = pyaudio.PyAudio()
         # open stream
@@ -100,7 +102,7 @@ class BonusWave(threading.Thread):
         chunk = 1024
 
         # open a wav format music
-        f = wave.open(r"audio/cantina.wav", "rb")
+        f = wave.open(os.path.join(BASE_DIR, "audio/cantina.wav"), "rb")
         # instantiate PyAudio
         p = pyaudio.PyAudio()
         # open stream
