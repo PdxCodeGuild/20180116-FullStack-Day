@@ -1,7 +1,7 @@
 # ROT13 LAB V1: TEXT ENCODER/ DECODER!
 
-user_string_in = ''
 print('\nhello!\ni will be encrypting your text for you using ROT13 format!\n')
+user_string_in = ''
 user_string_in = user_string_in.lower()
 user_string_in = input('please enter any text you would like encrypted below:\n\n:')
 user_string_out = ''
