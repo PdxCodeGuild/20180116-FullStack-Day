@@ -64,7 +64,7 @@ class Area():
 
 
 # Create tiles for the area?
-class Area_01(area):        ### Create more areas as needed
+class Area_01(area):  # Around Home        ### Create more areas as needed
     """ Definition for area 1. """
 
     def __init__(self, player):
@@ -73,23 +73,23 @@ class Area_01(area):        ### Create more areas as needed
         # Call the parent constructor
         area.__init__(self, player)
 
-        self.background = pygame.image.load("background_01.png").convert()
+        self.background = pygame.image.load("background/background_images/forrest_side_scroll_background_2.jpg").convert() ### Temp image. ### WILL BE REPLACED WITH TILE MAP LATER
         self.background.set_colorkey(constants.WHITE)
         self.area_limit = -2500
 
         # Array with type of wall, and x, y location of the wall.      ### Modify as needed
-        area = [[platforms.GRASS_LEFT, 500, 500],
-                 [platforms.GRASS_MIDDLE, 570, 500],
-                 [platforms.GRASS_RIGHT, 640, 500],
-                 [platforms.GRASS_LEFT, 800, 400],
-                 [platforms.GRASS_MIDDLE, 870, 400],
-                 [platforms.GRASS_RIGHT, 940, 400],
-                 [platforms.GRASS_LEFT, 1000, 500],
-                 [platforms.GRASS_MIDDLE, 1070, 500],
-                 [platforms.GRASS_RIGHT, 1140, 500],
-                 [platforms.STONE_PLATFORM_LEFT, 1120, 280],
-                 [platforms.STONE_PLATFORM_MIDDLE, 1190, 280],
-                 [platforms.STONE_PLATFORM_RIGHT, 1260, 280],
+        area = [[sprite_objects.GRASS_LEFT, 500, 500],
+                 [sprite_objects.GRASS_MIDDLE, 570, 500],
+                 [sprite_objects.GRASS_RIGHT, 640, 500],
+                 [sprite_objects.GRASS_LEFT, 800, 400],
+                 [sprite_objects.GRASS_MIDDLE, 870, 400],
+                 [sprite_objects.GRASS_RIGHT, 940, 400],
+                 [sprite_objects.GRASS_LEFT, 1000, 500],
+                 [sprite_objects.GRASS_MIDDLE, 1070, 500],
+                 [sprite_objects.GRASS_RIGHT, 1140, 500],
+                 [sprite_objects.STONE_PLATFORM_LEFT, 1120, 280],
+                 [sprite_objects.STONE_PLATFORM_MIDDLE, 1190, 280],
+                 [sprite_objects.STONE_PLATFORM_RIGHT, 1260, 280],
                  ]
 
         # Go through the array above and add platforms
@@ -113,7 +113,7 @@ class Area_01(area):        ### Create more areas as needed
 
 
 # Create platforms for the area
-class Area_02(area):
+class Area_02(area): # Forest to "right" of home/ Area one.
     """ Definition for area 2. """
 
     def __init__(self, player):
@@ -122,7 +122,7 @@ class Area_02(area):
         # Call the parent constructor
         area.__init__(self, player)
 
-        self.background = pygame.image.load("background_02.png").convert()  ### Select a background image or color here
+        self.background = pygame.image.load("background/background_images/glad_forest_side_scroll_background2.jpg").convert()  ### WILL BE REPLACED WITH TILE MAP LATER
         self.background.set_colorkey(constants.WHITE)
         self.area_limit = -1000
 
@@ -159,3 +159,28 @@ class Area_02(area):
         wall.player = self.player
         wall.area = self
         self.wall_list.add(wall)
+
+class Area_03(area):  # Base of Tree house. Up from Area_02
+    pass
+class Area_04(area): # second story of Tree house. Up from Area_03, Down from Area_05
+    pass
+
+class Area_05(area): # top of Tree hous. Up from Area_04
+    pass
+
+class Area_06(area): # Home interior. Only accessible via object (house) collision within Area_01
+    pass
+
+class Area_07(area): # Rocky area to the Left of Area_07.
+    pass
+
+class Area_08(area): # First segment of the dungeon. Up from Area_07
+    pass
+
+class Area_09(area): # Second segment of the dungeon. Up from Area_08 and Down from Area_10
+    pass
+
+class Area_10(area): # Deepest segment of the dungeon. Secondary area for games. Up from Area_09
+    pass
+class Area_11(area): # Possible mining area. Only accessible from Area_07 through colliding with object. Likely not an area.
+    pass

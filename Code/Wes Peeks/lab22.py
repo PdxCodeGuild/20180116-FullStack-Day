@@ -9,7 +9,7 @@ with open('Thus Spoke Zarathrustra.txt', 'r', encoding="utf8") as book:
 
 def read_level():
     for c in string.punctuation():
-        contents = contents.replace(c, ' ')
+        contents.replace(c, ' ')
 
 
 words = contents.split()

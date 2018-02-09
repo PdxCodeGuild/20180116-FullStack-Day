@@ -9,7 +9,7 @@ import areas
 from player import Player
 
 def main():
-""" Main Program """
+    """ Main Program """
     pygame.init()
 
     # Set the height and width of the screen
@@ -117,7 +117,7 @@ if __name__ == "__main__":
 
 
 
-i"""mport pygame
+"""import pygame
 import constants
 import areas
 from player import Player

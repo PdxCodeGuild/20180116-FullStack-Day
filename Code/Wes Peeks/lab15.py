@@ -45,7 +45,7 @@ elif 20 < num_input < 100:
     y = num_input // 10
     print(ten_num[y], single_num[x])
 
-#elif num_input > 100 and num_input < 1000:
+
 elif 100 < num_input < 1000:
     x = num_input % 100
     y = num_input // 100
