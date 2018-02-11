@@ -1,29 +1,8 @@
 import random
-
-
-class weapon:
-    def __init__(self, dp = 1):
-        self.dp = damage
-
-    def dagger(self):
-        damage = 5
-
-    def sword(self):
-        damage = 10
-
-class enemy:
-    def __init__(self, enemy, hp = 10):
-        self.enemy = enemy
-        self.hp = health
-
-    def troll(self):
-        health = 10
-
-    def goblin(self):
-        health = 20
-
-
-
+#Added borders
+#Added guessing game to fight goblins
+#Added player health
+#Sorry, I am not a very creative person
 
 width = 10  # the width of the board
 height = 10  # the height of the board
@@ -39,16 +18,13 @@ for i in range(height):  # loop over the rows
 # define the player position
 player_i = 4
 player_j = 4
-for i in range(2):#spawn weapons
-    weapon.dagger = random.randint(0, height - 1)
-    weapon.sword = random.randint(0, width - 1)
-    board[weapon.dagger][weapon.sword] = '⚔'
+
 # add 4 enemies in random locations
-for i in range(4):
-    enemy.troll = random.randint(0, height - 1)
-    enemy.goblin = random.randint(0, width - 1)
-    board[enemy.troll] = '§'
-    board[enemy.goblin] = '#'
+for i in range(8):
+    enemy_i = random.randint(0, height - 1)
+    enemy_j = random.randint(0, width - 1)
+    board[enemy_i][enemy_j] = '§'
+
 # loop until the user says 'done' or dies
 while True:
 
@@ -56,22 +32,47 @@ while True:
 
     if command == 'done':
         break  # exit the game
-    elif command == 'left':
+    elif command == 'left' or command == 'l':
         player_j -= 1  # move left
-    elif command == 'right':
+        if player_j == 0: #######Adding borders
+            player_j += 1
+    elif command == 'right' or command == 'r':
+        if player_j == 9:
+            player_j -= 1
         player_j += 1  # move right
-    elif command == 'up':
+    elif command == 'up' or command == 'u':
+        if player_i == 0:
+            player_i += 1
         player_i -= 1  # move up
-    elif command == 'down':
+    elif command == 'down' or command == 'd':
+        if player_i == 9:
+            player_i -= 1
         player_i += 1  # move down
 
+    player_health = 20#Adding player health and health is depleted for wrong answers
     # check if the player is on the same space as an enemy
-    if board[player_i][player_j] == '§' or board[player_i][player_j] == '#':
+    if board[player_i][player_j] == '§': #Adding number guesing name for enemies
         print('you\'ve encountered an enemy!')
         action = input('what will you do? ')
         if action == 'attack':
-            print('you\'ve slain the enemy')
-            board[player_i][player_j] = ' '  # remove the enemy from the board
+            tricky_goblin = random.randint(1, 10)
+            print("The enemy wants you to guess a number between 1 and 10 or DIE.")
+            while player_health > 0:
+                print(f'''PLAYER HEALTH:{player_health}hp''')
+                guess = int(input("Guess at your own peril\n:"))
+                print(tricky_goblin)
+
+                if guess != tricky_goblin:
+                    print("The goblin hit you and did 5 damage")
+                    player_health -= 5
+                    if player_health <= 0:
+                        print("The goblin ate you")
+                        quit()
+
+                if guess == tricky_goblin:
+                    print("You have slain the tricky goblin")
+                    board[player_i][player_j] = ' '  # remove the enemy from the board
+
         else:
             print('you hestitated and were slain')
             break
