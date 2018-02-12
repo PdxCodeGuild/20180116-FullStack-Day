@@ -57,6 +57,6 @@ print(f"The ARI for Frankenstein is {score}. \n This corresponds to a {ari_scale
 
 '''
    The ARI for gettysburg-address.txt is 12
-    This corresponds to a 11th Grade level of difficulty
+    This corresponds to a 11th Grade area of difficulty
     that is suitable for an average person 16-17 years old.
 '''

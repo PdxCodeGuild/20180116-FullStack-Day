@@ -62,15 +62,39 @@ def retrieve_info(list_name):
     value_name = input("What is the value? For example, blue, or watermelon.\n")
     for dictionary in list_name:
         if dictionary[key_name] == value_name:
-        return(dictionary)
+            return(dictionary)
 
-user_dictionary = retrieve_info(new_dictionary)
+#user_dictionary = retrieve_info(new_dictionary)
+
+def delete_user(list_name):
+    key_name = input("What contact information would you like to delete? ie: name, favorite fruit, favorite color. \n")
+    value_name = input("What is the value? For example, blue, or watermelon.\n")
+    delete_dictionary = input("Would you like to delete the associated dictionary? y or n?\n")
+    if delete_dictionary == 'y':
+        for dictionary in list_name:
+            if dictionary[key_name] == value_name:
+                for i in range(len(list_name)-1):
+                    if value_name in list_name[i][key_name]:
+                        del list_name[i]
+    elif delete_dictionary == 'n':
+        for dictionary in list_name:
+            if dictionary[key_name] == value_name:
+                for i in range(len(list_name)-1):
+                    if value_name in list_name[i][key_name]:
+                        del list_name[i][key_name]
+    return(dictionary)
+
+user_removed = delete_user(new_dictionary)
 
 
+print(new_dictionary)
 
+'''    if del_name in contact_list[i]['name']:
+        del contact_list[i]
+        print(f"You have deleted {del_name} from the contacts list forever. Hope you're happy with yourself.")
 
 '''
-
+'''
     #if contact_name in contacts_dictionary_list:
     #    contact_output = contacts_dictionary_list.get(header[0]: contact_name, header[1]: , header[2] :)
 #print(contact_output)
