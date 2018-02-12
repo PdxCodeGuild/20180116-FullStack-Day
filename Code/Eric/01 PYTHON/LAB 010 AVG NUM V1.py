@@ -1,3 +1,4 @@
+# AVERAGES V1
 numbers = [5, 0, 8, 3, 4, 1, 6]
 sum_running = 0
 
@@ -9,4 +10,4 @@ for num in numbers:
 
 #SUM AND AVERAGE ALL NUMBERS IN LIST
 avg = sum_running / len(numbers)
-print(avg)
+print(f'average: {avg}')

@@ -1,4 +1,3 @@
-"""feedback from matt: rather than have a counter, just have user_numbers() take a string ('first', 'second') as a parameter"""
 
 operations_list = ['+', '-', '*', '/']
 
@@ -35,8 +34,35 @@ def user_numbers():
 	counter += 1
 	return user_num0
 
+
 user_num1 = user_numbers()
 user_num2 = user_numbers()
+
+#QUICK MATHS
+if user_op == '+':
+	answer = user_num1 + user_num2
+	print(user_num1, '+', user_num2, '=', answer)
+elif user_op is '-':
+	answer = user_num1 - user_num2
+	print(user_num1, '-', user_num2, '=', answer)
+elif user_op is '*':
+	answer = user_num1 * user_num2
+	print(user_num1, '*', user_num2, '=', answer)
+elif user_op is '/':
+	answer = user_num1 / user_num2
+	print(user_num1, '/', user_num2, '=', answer)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ALTERNATIVES***
 # DIRTY VERSION: NUMBER INPUTS USING WHILE LOOPS
@@ -74,18 +100,3 @@ user_num2 = user_numbers()
 #
 # num1 = get_number('enter number 1', 'that is not a number')
 # num2 = get_number('enter number 2', 'that is not a number')
-
-
-#QUICK MATHS
-if user_op == '+':
-	answer = user_num1 + user_num2
-	print(user_num1, '+', user_num2, '=', answer)
-elif user_op is '-':
-	answer = user_num1 - user_num2
-	print(user_num1, '-', user_num2, '=', answer)
-elif user_op is '*':
-	answer = user_num1 * user_num2
-	print(user_num1, '*', user_num2, '=', answer)
-elif user_op is '/':
-	answer = user_num1 / user_num2
-	print(user_num1, '/', user_num2, '=', answer)
