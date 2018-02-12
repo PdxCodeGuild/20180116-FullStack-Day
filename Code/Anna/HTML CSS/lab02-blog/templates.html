@@ -1,0 +1,83 @@
+<!-- Trying to use templates for navbar and footer elements, but I can't get them to work :( --->
+
+
+<template id="navbar-template">
+<div class="navbar-fixed">
+    <nav class="orange darken-3">
+    <div class="nav-wrapper">
+      <span class="padding-left"></span><a href="#" class="brand-logo"> <i class="fa fa-pencil"></i> LiveJournal 2.0</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a class="modal-trigger" href="#modal1">About</a></li>
+        <li><a class="modal-trigger" href="#modal2">Contact</a></li>
+      </ul>
+      <ul class="side-nav" id="slide-out">
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    </nav>
+</div>
+</template>
+
+<template id="footer-template">
+<footer class="page-footer orange darken-3">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">Something amazing will go down here one day.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Let's Get Social!</h5>
+        <div class="footer-socials mb-5 flex-center">
+            <!--Facebook-->
+            <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
+            <!--Twitter-->
+            <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mr-md-4"> </i></a>
+            <!--Google +-->
+            <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i></a>
+            <!--Linkedin-->
+            <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i></a>
+            <!--Instagram-->
+            <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mr-md-4"> </i></a>
+            <!--Pinterest-->
+            <a class="icons-sm pin-ic"><i class="fa fa-pinterest fa-lg white-text"> </i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+        <div class="row">
+        <div class="col l6 s12">
+            © 2018 Copyright Text
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <a class="smooth-scroll grey-text text-lighten-4" href="#">Back to top</a>
+        </div>
+    </div>
+    </div>
+  </div>
+</footer>
+</template>
+
+<!--<script>-->
+  <!--var me = document.currentScript.ownerDocument;-->
+  <!--var post = me.querySelector('#navbar-template');-->
+
+  <!--var container = document.querySelector('#nav-container');-->
+  <!--container.appendChild(post.cloneNode(true));-->
+<!--</script>-->
+
+<!--<script>-->
+  <!--var me = document.currentScript.ownerDocument;-->
+  <!--var post = me.querySelector('#footer-template');-->
+
+  <!--var container = document.querySelector('#foot-container');-->
+  <!--container.appendChild(post.cloneNode(true));-->
+<!--</script>-->
