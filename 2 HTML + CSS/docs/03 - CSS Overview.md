@@ -75,6 +75,11 @@ You can also keep css in external files. This is useful if you want to use the s
 You can add comments in CSS with `/* ... */`
 
 
+## Removing the Browser's Built-In CSS
+
+You can remove the browser's built-in css by including [normalize.css](http://necolas.github.io/normalize.css/) or [reset.css](https://meyerweb.com/eric/tools/css/reset/). You can read about the differences [here](https://stackoverflow.com/questions/6887336/what-is-the-difference-between-normalize-css-and-reset-css).
+
+
 ## CSS Preprocessors
 
 The two most popular CSS preprocessors are [Sass/SCSS](http://sass-lang.com/) and [Less](http://lesscss.org/). For info on using CSS preprocessors in PyCharm, look [here](https://www.jetbrains.com/help/pycharm/compiling-sass-less-and-scss-to-css.html).

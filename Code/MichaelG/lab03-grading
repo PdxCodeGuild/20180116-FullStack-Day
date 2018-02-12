@@ -10,14 +10,14 @@ elif x >= 70:
     letter_grade = 'C'
     print('Your letter grade is: ' + letter_grade)
 elif x >= 60:
-    letter_grade = ''
+    letter_grade = 'D'
     print('Your letter grade is: ' + letter_grade)
-elif x >= 50:
-    letter_grade = 'A'
+elif x <= 50:
+    letter_grade = 'F'
     print('Your letter grade is: ' + letter_grade)
-else:
-    letter_grade = 'A'
-    print('Your letter grade is: ' + letter_grade)
+# else:
+#     letter_grade = ''
+#     print('Your letter grade is: ' + letter_grade)
 
 
 
