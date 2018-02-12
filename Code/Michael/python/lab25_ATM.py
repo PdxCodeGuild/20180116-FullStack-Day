@@ -17,20 +17,20 @@ class ATM:
 
     def deposit(self, input_deposit):
         self.balance += input_deposit
-        self.history.append(f'You deposited {input_deposit} on {now.strftime('%Y-%m-%d at %H:%M:%S')}.')
+        self.history.append(f"You deposited {input_deposit} on {now.strftime('%Y-%m-%d at %H:%M:%S')}.")
         return self.balance
 
     def check_withdrawal(self,  input_withdrawal):
 
         if self.balance >= input_withdrawal:
             self.balance -= input_withdrawal
-            self.history.append(f'You withdrew {input_withdrawal} on {now.strftime('%Y-%m-%d at %H:%M:%S')}.')
+            self.history.append(f"You withdrew {input_withdrawal} on 3.")
         else:
             print('You don\'t have enough money in your account for this transaction. :( \n')
 
     def calc_interest(self):
         self.balance += self.balance * self.rate
-        self.history.append(f'You calculated interest on {now.strftime('%Y-%m-%d at %H:%M:%S')}.')
+        self.history.append(f"You calculated interest on {now.strftime('%Y-%m-%d at %H:%M:%S')}.")
         return self.balance
 
     def history(self):
@@ -69,7 +69,7 @@ def main():
 
         elif answer == '4':
             atm.calc_interest()
-            print(f'At the current interest rate of 1%, your new balance is {atm.balance} in interest.')
+            print(f'At the current interest rate of {atm.rate}, your new balance is {atm.balance} with interest.')
 
         elif answer == '5':
             print(f'These are your past transactions:\n\t' + '\n\t'.join(atm.history))

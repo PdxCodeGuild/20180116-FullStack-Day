@@ -1,4 +1,4 @@
-# VERSION 2: NOW WITH A CRUD REPL FEATURE AND A MAIN MENU <3<3<3 !!
+# VERSION 2: NOW WRITES DIRECT TO FILE!!!
 
 # CONTACT LIST V1
 with open('contacts_csv.csv', 'r') as file:
