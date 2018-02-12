@@ -1,0 +1,66 @@
+ /****************************************************************
+    # background   What this code does is gets the image. Gives it a distance that is
+                   zero pixels away from the size of the window (top,bottom,left,right)
+                   Puts it behind the text using z-index -1 that is why it is behind the letters
+                   Gives it a transparent look of 0.7 (opacity) And gives it a fixed position so
+                   that the picture stays in position but everything else is moves. THe background-position
+                   will adjust the background to fit the size of the screen when it is minimized.
+     ***************************************************************/
+#background {
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.65;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+ h1 {
+     margin: 30px;
+ }
+.btn-toolbar {
+    margin: 13px;
+}
+
+header{
+    background-color: darkgoldenrod;
+    border-radius: 4px;
+
+
+}
+/*.list {*/
+
+    /*background-color: white;*/
+    /*border-radius: 4px;*/
+    /*font-family: Courier,"Times New Roman",sans-serif;*/
+/*}*/
+
+p {
+    background: White;
+    font-family: Courier,"Times New Roman",sans-serif;
+    border-radius: 4px;
+}
+
+.picture {
+    border-radius: 4px;
+}
+
+.qoute {
+    margin-top: 10px;
+    background-color: burlywood;
+    border-radius: 4px;
+    padding: 10px;
+    border: 10px;
+    font-size: 15px;
+    font-family:"Helvetica Neue", "Times New Roman",sans-serif;
+    font-weight: bold;
+}
+
+ul {
+    background-color: white;
+   list-style-image: url('mic.jpg');
+    border-radius: 4px;
+
+}
