@@ -142,6 +142,13 @@ The anchor tag `a` lets us create links.
 <a href="http://www.google.com">click this</a>
 ```
 
+You can also create "internal links", which will take you do another part of the page. This is commonly done to make a table of contents. Note how the `href` begins with a `#` and takes us to the element with the matching `id`.
+
+```html
+<a href="#myheading">go to My Heading</a>
+<h2 id="myheading">My Heading</h2>
+```
+
 
 ### Image Tags
 
