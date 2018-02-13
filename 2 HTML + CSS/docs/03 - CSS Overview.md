@@ -72,6 +72,30 @@ You can also keep css in external files. This is useful if you want to use the s
 <link rel="stylesheet" type="text/css" href="mystyle.css"/>
 ```
 
+## CSS Lengths
+
+You can read more about lengths in CSS [here](https://css-tricks.com/the-lengths-of-css/), [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units), and [here](https://www.w3schools.com/cssref/css_units.asp). Keep in mind that in CSS a 'pixel' [isn't the same as a screen pixel](https://stackoverflow.com/questions/27382331/how-a-css-pixel-size-is-calculated).
+
+
+| Unit | Relative To | Description |
+|--- |--- |--- |
+| px | absolute | pixels |
+| cm | absolute | centimeters |
+| mm | absolute | millimeters |
+| in | absolute | inches |
+| pt | absolute | point, 1pt == 1/72in |
+| pc | absolute | pica, 1pc == 12pt |
+| em | font | font size of the element, does not change with font family |
+| rem | font | font size of root element (html), does not change with font family |
+| ex | font | the height of "x", does change with font family |
+| ch | font  | the width of "0", does change with font family |
+| vw | viewport | 1vw == 1% of the width of the viewport |
+| vh | viewport | 1vh == 1% of the height of the viewport |
+| vmin | viewport | 1vmin == 1% of the viewport's smaller dimension |
+| vmax | viewport | 1vmax == 1% of the viewport's larger dimension |
+| %	 | parent | relative to the length of the parent's width or height |
+
+
 ## CSS Comments
 
 You can add comments in CSS with `/* ... */`
