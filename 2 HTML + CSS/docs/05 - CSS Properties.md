@@ -16,8 +16,3 @@ For more info, look [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Refe
 | font-family, font-size | the font family and font sized used within the element |
 
 
-## `color` and `background-color`
-
-
-The `color` property defines the foreground or text color of an element. The `background-color` specifies the background color. The values of both can be [named colors](http://htmlcolorcodes.com/color-names/), RGB values encoded in hex (`#000000` is black, `#FFFFFF` is white), RGB values 0-255 written as `rgb(128, 0, 255)`, or RGB values 0-255 with alpha 0-1 written as `rgba(128, 0, 255, 0.5)`.
-
