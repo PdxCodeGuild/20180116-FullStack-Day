@@ -13,6 +13,12 @@ selector {
 }
 ```
 
+## CSS Comments
+
+You can add comments in CSS with `/* ... */`
+
+
+
 ## Including CSS
 
 There are three ways to add CSS to a page. They'll be applied with the following priority (highest first).
@@ -96,9 +102,36 @@ You can read more about lengths in CSS [here](https://css-tricks.com/the-lengths
 | %	 | parent | relative to the length of the parent's width or height |
 
 
-## CSS Comments
+## CSS Colors
 
-You can add comments in CSS with `/* ... */`
+RGB is short for [red green blue](https://en.wikipedia.org/wiki/RGB_color_model), with each value going from 0 to 255 (0 to FF in hexidecimal). Hexidecimal RGB values can also be specified with 3 values, in which case the digit is repeated (`#FFF` is the same as `#FFFFFF`).
+
+HSL is short for [hue saturation lightness](https://en.wikipedia.org/wiki/HSL_and_HSV), with hue going from 0 to 360, and saturation and lightness going from 0% to 100%. The A stands for [alpha](https://en.wikipedia.org/wiki/Alpha_compositing), which goes from 0.0 to 1.0. You can learn more about CSS colors at the [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color). You can view a list of named colors at [w3schools](https://www.w3schools.com/cssref/css_colors.asp).
+
+| color type | examples |
+|--- |--- |
+| RGB Hex | `#7FFFD4`, `#A9A9A9`, `#F00` |
+| RGB Decimal | `rgb(127, 255, 212)` |
+| RGBA Decimal | `rgba(255, 0, 0, 0.5)` |
+| HSL | `hsl(120, 100%, 50%)` |
+| HSLA | `hsla(120, 100%, 50%, 0.3)` |
+| named color | `red`, `goldenrod`, `magenta` |
+
+
+## CSS Frameworks
+
+- [Bootstrap](http://getbootstrap.com/)
+- [Materialize](http://materializecss.com/)
+- [Pure.css](https://purecss.io/)
+- [Foundation](http://foundation.zurb.com/sites/docs/)
+- [Skeleton](http://getskeleton.com/)
+- [Material Design](https://material.io/guidelines/#)
+- [Kube](https://imperavi.com/kube/)
+- [Milligram](http://milligram.io/)
+- [Bulma](http://bulma.io/)
+- [Vuetify](https://vuetifyjs.com/) - for use with Vue.js
+- [Material UI](http://www.material-ui.com/#/) - for use with React
+
 
 
 ## Removing the Browser's Built-In CSS
