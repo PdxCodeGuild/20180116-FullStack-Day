@@ -12,7 +12,7 @@
 # units = ['feet', 'miles', 'meters', 'kilometers', 'yards', 'inches']
 # unit = input("Enter the type of unit you wish to convert from (Feet, Miles, Meters, Kilometers, Yards or Inches: ")
 # convertto = input('Enter the type of unit you wish to convert to : ')
-# convertvalue = int(input('Enter the amount you wish to convert: '))
+# convertvalue = float(input('Enter the amount you wish to convert: '))
 # #Feet conversion formulas
 # fttm = str(convertvalue*0.3048)
 # fttmi = str(convertvalue*0.000189394)
@@ -125,17 +125,26 @@
 
 
 units = ['feet', 'miles', 'meters', 'kilometers']
-distance = int(input('What is the distance? '))
+distance = float(input('What is the distance? '))
 unitin = input('Are the input units in Feet, Miles, Meters, or Kilometers? ')
 unitout = input('What are the output units? ')
+
 ftm = distance*0.3048
 mitm = distance*1609.34
-mtm = distance*1
+# mtm = distance*1
 kmtm = distance*1000
-mtf =
-convert_to_meters = {0: ftm, 1: mitm, 2: mtm, 3: kmtm}
-convert_from_meters = {0: , 1: , 2: , 3: }
+convert_to_meters = {0: ftm, 1: mitm, 2: kmtm}
 
-#test ft to mi
-ftmi = int(ftm * 0.000621371)
+mtf = convert_to_meters[0]*3.28084
+mtmi = convert_to_meters[1]*0.000621371
+mtkm = convert_to_meters[3]*0.001
+convert_from_meters = {0: mtf, 1: mtmi, 2:  3: mtkm}
+
+if unitin == 'feet' and unitout == 'meters':
+    print(f"That is {convert_to_meters[0]} {unitout}.")
+if unitin == 'miles' and unitout == 'meters':
+    print(f"That is {convert_to_meters[1]} {unitout}.")
+if unitin == 'kilometers' and unitout == 'meters':
+    print(f"That is {convert_to_meters[2]} {unitout}.")
+
 

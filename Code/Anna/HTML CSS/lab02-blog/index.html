@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Weblog</title>
+    <!-- Importing page elements -->
+    <link rel="import" href="templates.html">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div id="top"></div>
+
+    <!--Trying to get templating to work...-->
+    <!--<div id="nav-container"></div>-->
+
+    <!-- Header here -->
+    <div class="full-width">
+    <header id="header-container" class="header gradient center z-depth-2">
+        <h1 class="title">A Fancy Blog</h1>
+        <h2 class="subtitle">A modern, artisanal, gluten-free blog template</h2>
+        <h2 class="subtitle">Using the Materialize CSS framework like a champ</h2>
+    </header>
+    </div>
+
+    <!-- Navbar goes here -->
+    <div class="navbar-lower">
+        <nav class="orange darken-3">
+        <div class="nav-wrapper">
+          <span class="padding-left"></span><a href="#" class="brand-logo"> <i class="fa fa-pencil"></i> LiveJournal 2.0</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="modal-trigger" href="#modal1">About</a></li>
+            <li><a class="modal-trigger" href="#modal2">Contact</a></li>
+          </ul>
+          <ul class="side-nav" id="slide-out">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        </nav>
+    </div>
+
+    <!-- Page Layout here -->
+    <div class="row">
+
+      <div class="col s12 m4 l3">
+
+          <!-- Sidebar here -->
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <img src="images/parallax1.jpg" alt="" class="circle">
+              <h5>Blog editor</h5>
+              <p>Jane<br>
+                 Doe
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle">account_circle</i>
+              <h5>Contributor</h5>
+              <p>Bob<br>
+                 Roberts
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle green">album</i>
+              <h5>Contributor</h5>
+              <p>Jill<br>
+                 Gomez
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+            <li class="collection-item avatar">
+              <i class="material-icons circle red">border_color</i>
+              <h5>Contributor</h5>
+              <p>Not<br>
+                 Sure
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+          </ul>
+
+
+      </div>
+
+      <div class="col s12 m8 l9">
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="images/parallax1.jpg"></div>
+        </div>
+        <div class="section white">
+            <div class="row container">
+                <h2 class="header">Fancy Blog is Fancy</h2>
+                <p class="grey-text text-darken-3 lighten-3">Look at this fanciness! Lorem ipsum dolor amet woke subway tile consectetur viral iceland. PBR&B pok pok neutra cold-pressed schlitz small batch church-key pour-over succulents pork belly, ullamco ut. Quis gentrify hoodie pug, franzen lyft mixtape. Man braid iPhone selfies gastropub paleo chambray chicharrones tacos intelligentsia quinoa poutine minim vinyl.</p>
+            </div>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="images/parallax2.jpg"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h4>Look, a modal!</h4>
+          <p>Aren't I fancy?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Yes!</a>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+          <h4>Wow, another modal!</h4>
+          <p>What is this insanity?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">I don't even know!</a>
+        </div>
+    </div>
+
+    <!-- import the footer -->
+
+    <footer class="page-footer orange darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">Something amazing will go down here one day.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Let's Get Social!</h5>
+            <div class="footer-socials mb-5 flex-center">
+                <!--Facebook-->
+                <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
+                <!--Twitter-->
+                <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mr-md-4"> </i></a>
+                <!--Google +-->
+                <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i></a>
+                <!--Linkedin-->
+                <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i></a>
+                <!--Instagram-->
+                <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mr-md-4"> </i></a>
+                <!--Pinterest-->
+                <a class="icons-sm pin-ic"><i class="fa fa-pinterest fa-lg white-text"> </i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                © 2018 Copyright Text
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <a class="smooth-scroll grey-text text-lighten-4" href="#top">Back to top</a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+
+</body>
+</html>
+
