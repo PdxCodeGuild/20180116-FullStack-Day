@@ -42,7 +42,7 @@ div {
 | 2 | inline style |
 | 3 | media queries |
 | 4 | user-defined (through developer panel) |
-| 5 | inline and external CSS, by last defined rule |
+| 5 | internal and external CSS, by last defined rule |
 | 6 | parent element's value |
 | 7 | browser default |
 
