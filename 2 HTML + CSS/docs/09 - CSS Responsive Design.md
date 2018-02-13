@@ -33,7 +33,11 @@ You can read more about media queries on the [MDN](https://developer.mozilla.org
 | Operator | Description |
 |--- |--- |
 | `,` | applies to multiple situations |
-| `only` | applies only when a condition is present |
 | `and` | applies only when both conditions are present |
 | `not` | applies only when a condition is not present |
 
+e.g.
+
+```css
+@media screen and (min-width: 30em) and (orientation: landscape) { ... }
+```
