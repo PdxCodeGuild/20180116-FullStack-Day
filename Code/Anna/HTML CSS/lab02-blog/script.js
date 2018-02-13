@@ -3,6 +3,7 @@
 
 $( document ).ready(function() {
     console.log( "ready!" );
+    $('.collapsible').collapsible();
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
     $('.modal').modal();
@@ -18,4 +19,16 @@ $( document ).ready(function() {
       }
     }
   });
+});
+
+
+// AFFIX LOWER NAVBAR ON SCROLL
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 284) {
+        $(".navbar-lower").addClass("navbar-fixed");
+    }
+    else {
+        $(".navbar-lower").removeClass("navbar-fixed");
+    }
 });

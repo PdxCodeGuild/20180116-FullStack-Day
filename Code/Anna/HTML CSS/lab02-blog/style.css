@@ -8,6 +8,11 @@ main {
 flex: 1 0 auto;
 }
 
+/*OFFSET FOR LOWER NAVBAR*/
+.navbar-fixed {
+  top:-284px;
+}
+
 .padding-left {
     padding-left: 10px;
 }

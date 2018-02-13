@@ -11,8 +11,8 @@ while i < 5:
     emote1 = random.choice(nose)
     emote2 = random.choice(mouth)
 
-    x = emote + emote1 + emote2
+    face = emote + emote1 + emote2
 
-    print(x)
+    print(face)
     i += 1
 
