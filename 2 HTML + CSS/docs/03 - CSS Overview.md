@@ -13,13 +13,42 @@ selector {
 }
 ```
 
+You can add comments in CSS with `/* ... */`
+
+```css
+/* this is for a very special div,
+ * one that requires lots of explanation
+ */
+div {
+    color: #0FA0CE; /* a beautiful color */
+}
+```
+
+
+## Priority
+
+CSS Rules will be applied with the following priority (highest first). You can place a special keyword on rules which will automatically give them the highest priority.
+
+```css
+div {
+    /* overwrite all other rules */
+    color: red !important;
+}
+```
+
+| Priority | Definition |
+|--- |--- |
+| 1 | rules with `!important` |
+| 2 | inline style |
+| 3 | media queries |
+| 4 | user-defined (through developer panel) |
+| 5 | internal and external CSS, by last defined rule |
+| 6 | parent element's value |
+| 7 | browser default |
+
 ## Including CSS
 
-There are three ways to add CSS to a page. They'll be applied with the following priority (highest first).
-
-1. inline style
-2. external and internal style sheets
-3. the browser's default style
+There are three ways to add CSS to a page.
 
 ### Inline CSS
 
@@ -66,15 +95,72 @@ CSS can be placed within its own tag, usually inside the document's `head`. This
 
 ### External CSS
 
-You can also keep css in external files. This is useful if you want to use the same CSS across multiple pages. The `link` tag should also go inside the `head`. The `type="text/css"` isn't necessary for HTML5, but it is for HTML4 and below.
+You can also keep css in external files. This is useful if you want to use the same CSS across multiple pages. The `link` tag should also go inside the `head`. The `type="text/css"` isn't necessary for HTML5, but it is for HTML4 and below. Be aware that it's **common for your browser to cache external CSS, and you won't see changes you've made until you do a "hard refresh".** You can find out how to do this in various browsers [here](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache).
 
 ```html
 <link rel="stylesheet" type="text/css" href="mystyle.css"/>
 ```
 
-## CSS Comments
+You can also include CSS from a remote server by putting a URL in `href`. Your browser will download the CSS when the page is rendered. This is commonly served by a CDN "content delivery network".
 
-You can add comments in CSS with `/* ... */`
+```html
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+```
+
+## CSS Lengths
+
+You can read more about lengths in CSS [here](https://css-tricks.com/the-lengths-of-css/), [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units), and [here](https://www.w3schools.com/cssref/css_units.asp). Keep in mind that in CSS a 'pixel' [isn't the same as a screen pixel](https://stackoverflow.com/questions/27382331/how-a-css-pixel-size-is-calculated).
+
+
+| Unit | Relative To | Description |
+|--- |--- |--- |
+| px | absolute | pixels |
+| cm | absolute | centimeters |
+| mm | absolute | millimeters |
+| in | absolute | inches |
+| pt | absolute | point, 1pt == 1/72in |
+| pc | absolute | pica, 1pc == 12pt |
+| em | font | font size of the element, does not change with font family |
+| rem | font | font size of root element (html), does not change with font family |
+| ex | font | the height of "x", does change with font family |
+| ch | font  | the width of "0", does change with font family |
+| vw | viewport | 1vw == 1% of the width of the viewport |
+| vh | viewport | 1vh == 1% of the height of the viewport |
+| vmin | viewport | 1vmin == 1% of the viewport's smaller dimension |
+| vmax | viewport | 1vmax == 1% of the viewport's larger dimension |
+| %	 | parent | relative to the length of the parent's width or height |
+
+
+## CSS Colors
+
+RGB is short for [red green blue](https://en.wikipedia.org/wiki/RGB_color_model), with each value going from 0 to 255 (0 to FF in hexidecimal). Hexidecimal RGB values can also be specified with 3 values, in which case the digit is repeated (`#FFF` is the same as `#FFFFFF`).
+
+HSL is short for [hue saturation lightness](https://en.wikipedia.org/wiki/HSL_and_HSV), with hue going from 0 to 360, and saturation and lightness going from 0% to 100%. The A stands for [alpha](https://en.wikipedia.org/wiki/Alpha_compositing), which goes from 0.0 to 1.0. You can learn more about CSS colors at the [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) and [w3schools](https://www.w3schools.com/cssref/css_colors.asp). You can view a nicely organized list of named colors [here](http://htmlcolorcodes.com/color-names/).
+
+| color type | examples |
+|--- |--- |
+| RGB Hex | `#7FFFD4`, `#A9A9A9`, `#F00` |
+| RGB Decimal | `rgb(127, 255, 212)` |
+| RGBA Decimal | `rgba(255, 0, 0, 0.5)` |
+| HSL | `hsl(120, 100%, 50%)` |
+| HSLA | `hsla(120, 100%, 50%, 0.3)` |
+| named color | `red`, `goldenrod`, `magenta` |
+
+
+## CSS Frameworks
+
+- [Bootstrap](http://getbootstrap.com/), [w3schools tutorial](https://www.w3schools.com/bootstrap/default.asp)
+- [Materialize](http://materializecss.com/)
+- [Pure.css](https://purecss.io/)
+- [Foundation](http://foundation.zurb.com/sites/docs/)
+- [Skeleton](http://getskeleton.com/)
+- [Material Design](https://material.io/guidelines/#)
+- [Kube](https://imperavi.com/kube/)
+- [Milligram](http://milligram.io/)
+- [Bulma](http://bulma.io/)
+- [Vuetify](https://vuetifyjs.com/) - for use with Vue.js
+- [Material UI](http://www.material-ui.com/#/) - for use with React
+
 
 
 ## Removing the Browser's Built-In CSS
