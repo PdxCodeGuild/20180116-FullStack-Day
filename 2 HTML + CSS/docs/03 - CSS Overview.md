@@ -1,6 +1,8 @@
 
 # CSS Overview
 
+CSS stands for [Cascading Style Sheets](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), "cascading" meaning that style rules are evaluated by priority. That is, if a style rule is applied to a particular element, it'll override the rules applied to its parent. Whereas HTML is the raw skeleton of a page, CSS adds fonts, colors, margins, positioning, animations, and more.
+
 ## CSS Syntax
 
 CSS has two major parts: properties and selectors. Properties set the color, shape, positioning, etc of elements. Selectors determine what HTML elements receive the given properties.
@@ -13,7 +15,7 @@ selector {
 
 ## Including CSS
 
-There are three ways to add CSS to a page. They'll be applied with the following priority.
+There are three ways to add CSS to a page. They'll be applied with the following priority (highest first).
 
 1. inline style
 2. external and internal style sheets
