@@ -5,9 +5,11 @@ html {
 
 .wrapper {
     font-family: "Courier New";
+    position: relative;
+    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px;
+    grid-template-rows: 100px auto auto 50px;
     /*border: 2px dashed;*/
     grid-template-areas:
             "head head"
@@ -15,16 +17,18 @@ html {
             "left-content right-content"
             "footer footer";
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .wrapper {
         display: grid;
-        grid-gap: 20px;
+        grid-gap: 0px;
         grid-template-areas: "head" "slideshow" "left-content" "right-content" "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
     }
 }
 
 .header {
-    font-size: x-large;
+    font-size: large;
     grid-column: 1 / 3;
     grid-row: 1;
     padding: 0%;
@@ -40,14 +44,26 @@ html {
 }
 .header .center {
     font-family: "Courier New";
-    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*position: absolute;*/
+    right: 25%;
+    left: 25%;
+    top: 50%
     font-size: 100%;
-    font-weight: bold;
     text-align: center;
     display: flex;
     flex-direction: column;
     /*vertical-align: text-top;*/
     /*align-items: center;*/
+    -webkit-transition: font-size 2s; /* For Safari 3.1 to 6.0 */
+    transition: all 2s;
+}
+
+.center:hover {
+    font-size: 120%;
+    color: gray;
 }
 .line {
     background-color: black;
@@ -162,6 +178,7 @@ li a:hover {
     color: whitesmoke;
     background-color: black;
     grid-area: slideshow;
+    position: relative;
     /*border: 2px dashed;*/
     /*background-image: url("images/dark_embroidery.png");*/
     /*border: 2px solid;*/
@@ -169,19 +186,19 @@ li a:hover {
 
 .shuttle-container {
     /*position: relative;*/
-    text-align: center;
+    /*text-align: right;*/
     /*display: flex;*/
     /*justify-content: space-between;*/
 
 }
 .prev {
-    font-size: 10em;
+    font-size: 900%;
     color: rgba(50, 50, 50, 0.8);
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 10%;
     transform: translate( -50%, -50%);
-    z-index: 1;
+    z-index: 10;
 
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
@@ -197,14 +214,13 @@ li a:hover {
 }
 
 .next {
-    font-size: 10em;
-    /*color: #d6470a;*/
+    font-size: 900%;
     color: rgba(50, 50, 50, 0.8);
     position: absolute;
     top: 50%;
-    right: 0%;
+    right: 5%;
     transform: translate( -50%, -50%);
-    z-index: 1;
+    z-index: 10;
 
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
@@ -266,6 +282,7 @@ li a:hover {
 }
 .left-text {
     color: whitesmoke;
+    font-size: 100%;
     background-color: black;
     /*background-image: url("images/dark_embroidery.png");*/
     grid-area: left-content;
@@ -282,10 +299,13 @@ li a:hover {
 }
 footer {
     color: whitesmoke;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: black;
-    /*background-image: url("images/dark_embroidery.png");*/
+    background-image: url("images/dark_embroidery.png");
     grid-area: footer;
+
     /*border: 2px dashed;*/
 
 }
