@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Another Company Page</title>
+        <meta name="author" content="Brianna Harris">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h1 class="centered">  This is a banner </h1>
+
+
+
+
+<section class="row">
+    <article class="u-pull-right seven columns">
+        <h2> A header for my content</h2>
+        <p>Spicy jalapeno bacon ipsum dolor amet laboris salami doner anim turducken shankle. Cupim prosciutto sirloin, deserunt id non elit veniam porchetta. Excepteur labore exercitation pariatur kevin tenderloin. Et ea jerky filet mignon pariatur culpa corned beef pig eiusmod cupim id jowl ex. Adipisicing sausage flank, aute pork doner sunt turducken drumstick aliqua pig non duis. Chicken meatloaf magna, chuck sausage pancetta id non exercitation do anim in shoulder.
+
+Cow qui nisi, ball tip ullamco chuck magna sed flank aute turducken porchetta andouille. Bacon ribeye esse aliqua in. Alcatra voluptate lorem pancetta porchetta flank pig kielbasa ex cow filet mignon.
+        </p>
+        <p>Bresaola turkey picanha, ut esse qui jerky laboris minim cow rump mollit velit. Ham hock bresaola reprehenderit ball tip. Consectetur short ribs qui filet mignon irure dolore flank eu veniam nostrud shank commodo.
+
+Consequat voluptate aute occaecat, flank in velit ea esse. Cupidatat dolor turducken, cupim tri-tip meatloaf exercitation pork culpa. Dolore bresaola chuck pastrami, salami reprehenderit prosciutto pork nisi. Bresaola cow aliquip lorem esse, pancetta excepteur shankle. Cillum doner est ut voluptate, commodo magna fugiat chicken in ground round lorem ball tip t-bone adipisicing. Kielbasa adipisicing velit t-bone tempor. Venison consectetur ball tip alcatra hamburger aliquip ex.
+
+Beef laboris jowl kevin ullamco. Pork loin ribeye ut sint ball tip labore shoulder corned beef. </p>
+        <p>Bacon non sint chuck irure do occaecat landjaeger ea nisi. Drumstick pig sint filet mignon, meatball fatback minim hamburger beef ribs. Sint burgdoggen laborum tongue leberkas shoulder, t-bone chuck.
+
+In consectetur lorem in bacon, et proident labore culpa swine. Qui deserunt swine, pancetta burgdoggen </p>
+        <p>ullamco short loin do tail cillum leberkas aute irure. Mollit tongue culpa laborum sausage boudin, salami fatback frankfurter chicken in short loin venison ribeye anim. Est in non ut, occaecat tenderloin elit labore jerky. In pork burgdoggen picanha consequat sint fugiat beef lorem bacon culpa venison flank mollit rump. Adipisicing sed corned beef duis shoulder drumstick sirloin ipsum. Incididunt tenderloin short loin consequat kielbasa pork belly, cupidatat ea chicken kevin enim meatball porchetta chuck.
+
+            Does your lorem ipsum text long for something a little meatier? Give our generator a try… it’s tasty!</p>
+
+        <p><strong> more </strong> text about <u>more</u> things</p>
+    </article>
+        <article id="about-me">
+        <img class="u-pull-left four columns profilePhoto" src="temp_photo.jpg"></img>
+             <aside class="u-pull-left four columns ">
+                 <h3>A Title</h3>
+                 Some randome information about myself that goes on for ever. Maybe a list should be over here.  Blah blah blah. Spicy jalapeno bacon ipsum dolor amet laboris salami doner anim turducken shankle. Cupim prosciutto sirloin, deserunt id non elit veniam porchetta. Excepteur labore exercitation pariatur kevin tenderloin. Et ea jerky filet mignon pariatur culpa corned beef pig eiusmod cupim id jowl ex.
+            <ul>
+                <li>
+                    A thing
+                </li>
+                <li>
+                    Another thing
+                </li>
+                <li>
+                    One more thing.
+                </li>
+            </ul>
+            </aside>
+        </article>
+</section>
+
+        <section class="row">
+            <pre><code class="five columns u-pull-right">
+                # Make a way to create a lottery ticket and/or lottery answer
+def pick6():
+    lottery = []
+    for i in range(6):
+       lottery.append(random.randint(0, 100))
+    return lottery
+
+# Make a comparison function
+def compare(primary_lottery, human_ticket):
+    match = 0
+    for i in range(len(primary_lottery)):
+        if primary_lottery[i] == human_ticket[i]:
+            match = match + 1
+    return match</code></pre>
+
+        </section>
+        <!-- A basic form -->
+        <form class="u-full-width" >
+              <div class="row">
+                <div class="six columns">
+                  <label for="exampleEmailInput">Your email</label>
+                  <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+                </div>
+                <div class="six columns">
+                  <label for="exampleRecipientInput">Reason for contacting</label>
+                  <select class="u-full-width" id="exampleRecipientInput">
+                    <option value="Option 1">Questions</option>
+                    <option value="Option 2">Admiration</option>
+                    <option value="Option 3">Can I get your number?</option>
+                  </select>
+                </div>
+              </div>
+              <label for="exampleMessage">Message</label>
+              <textarea class="u-full-width" placeholder="Thanks for visiting. LEave a message. …" id="exampleMessage"></textarea>
+              <label class="example-send-yourself-copy">
+                <input type="checkbox">
+                <span class="label-body">Send a copy to yourself</span>
+              </label>
+              <input class="button-primary" type="submit" value="Submit">
+            </form>
+
+<!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
+
+<!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
+
+
+
+
+
+
+
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>

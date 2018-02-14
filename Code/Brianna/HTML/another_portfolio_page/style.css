@@ -1,0 +1,58 @@
+
+body {
+    background-color: #6a7a87;
+    color: #c8e6ff;
+    min-width: 57em;
+}
+
+.centered {
+    background-color: #c8e6ff;
+    color: lightpink;
+    height: 20vh;
+    width: content-box;
+    border-radius: 0.5em;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+#about-me img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 100em;
+}
+
+form.u-full-width;
+
+aside {
+    background-color: #d84315;
+    color: #00acc1;
+    display: flex;
+
+    }
+
+}
+
+aside.u-pull-right {
+    float: right;
+}
+
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+
