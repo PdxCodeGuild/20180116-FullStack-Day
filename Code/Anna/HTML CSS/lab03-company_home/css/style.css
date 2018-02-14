@@ -6,6 +6,19 @@
  * Made By MaterializeCSS.com
  */
 
+#map {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+}
+
+.app-img {
+    max-width: 200px;
+    height: auto;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -108,3 +121,4 @@ footer.page-footer {
     margin-bottom: 0px;
     margin-left: auto;
 }
+
