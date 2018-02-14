@@ -7,6 +7,9 @@ $( document ).ready(function() {
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
     $('.modal').modal();
+    $('#textarea1').val('Your message');
+    $('#textarea1').trigger('autoresize');
+    $('select').material_select();
     $('a.smooth-scroll[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
