@@ -6,11 +6,12 @@
  * Made By MaterializeCSS.com
  */
 
-html, body, #map {
+#map {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+    min-height: 600px;
 }
 
 .app-img {
@@ -120,3 +121,4 @@ footer.page-footer {
     margin-bottom: 0px;
     margin-left: auto;
 }
+

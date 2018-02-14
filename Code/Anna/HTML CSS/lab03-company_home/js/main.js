@@ -21,16 +21,6 @@ $( document ).ready(function() {
   });
 });
 
-
-function myMap() {
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {
-        center: new google.maps.LatLng(37.359, -122.035),
-        zoom: 10
-    };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-}
-
 // Fancy Google map
 // function initMap() {
 //         // Styles a map in night mode.
