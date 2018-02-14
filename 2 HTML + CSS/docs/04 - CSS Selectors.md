@@ -1,20 +1,27 @@
 # CSS Selectors
 
-You can find more info [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors), [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors), and [here](https://www.w3schools.com/cssref/css_selectors.asp)
+You can find more info [here](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Simple_selectors), [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors), and [here](https://www.w3schools.com/cssref/css_selectors.asp). To get some practice with selectors, try [this](https://flukeout.github.io/).
 
-To get some practice with selectors, try [this](https://flukeout.github.io/).
+## Overview
 
-
+### Simple Selectors
 
 | selector | description |
 |--- |--- |
-| element | select all elements of that type |
-| .class | select all elements with that class |
-| #id | select the element with that id |
-| * | select all elements |
-| s1, s2 | select all elements that match s1 or match s2 |
-| s1 s2 | select all elements that match s2 with an ancestor that matches s1 |
-| s1 > s2 | select all elements that match s2 with a parent that matches s1 |
+| [element](#tag-selector) | select all elements of that type |
+| [.class](#class-selector) | select all elements with that class |
+| [#id](#id-selector) | select the element with that id |
+| [s[attribute="value"]](#attribute-selector) | select elements based on the attribute's value |
+| [*](#universal-selector) | select all elements |
+
+
+### Combining Selectors
+
+| selector | description |
+|--- |--- |
+| [s1, s2](#using-multiple-selectors) | select all elements that match s1 or match s2 |
+| [s1 s2](#descendent-selector) | select all elements that match s2 with an ancestor that matches s1 |
+| [s1 > s2](#child-selector) | select all elements that match s2 with a parent that matches s1 |
 
 
 
@@ -68,6 +75,18 @@ Putting a `#` in front of your selector lets you target the particular element w
 <p id="paragraph2">blahblahblah</p>
 ```
 
+## Attribute Selector
+
+Using square brackets, you can select elements based on their attribute's value.
+
+```html
+<style>
+    input[type="text"] {
+      width: 100px;
+    }
+</style>
+<input type="text">
+```
 
 ## Universal Selector
 

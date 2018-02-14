@@ -1,6 +1,3 @@
-"""feedback from matt: you want to check if the randomly chosen character is not a space or newline, not the whole
-password"""  # line 26: punct_list is initially a single random character (*)
-
 import random
 import string
 
@@ -23,7 +20,7 @@ for lower in range(0, int(lowercase)):
     password.append(low_list)
 punctuation = input('\nand lastly, how many punctuation characters would you like to use?\n:')
 for punct in range(0, int(punctuation)):
-    punct_list = random.choice(string.punctuation)  # *
+    punct_list = random.choice(string.punctuation)  # punct_list is a single random character (*)
     while punct_list == " " or punct_list == "\n":
         punct_list = random.choice(string.punctuation)
     password.append(punct_list)

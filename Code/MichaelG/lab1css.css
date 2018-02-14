@@ -1,0 +1,32 @@
+p {
+  font: 25px arial, sans-serif;
+  text-align:center;
+}
+#link {
+  font: 10px arial, sans-serif;
+  text-align:center;
+}
+#main {
+  font: 15px arial, sans-serif;
+}
+#lived {
+  font: 15px arial, sans-serif;
+  text-align:left;
+}
+ul {
+  list-style-type:square
+}
+html {
+  background-color:gainsboro;
+}
+img {
+  float:left;
+  border-radius: 20px
+}
+html {
+    background-color: palegreen;
+    width: 650px;
+    border: 5px solid green;
+    padding: 25px;
+    margin: 25px;
+}

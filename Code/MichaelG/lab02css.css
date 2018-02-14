@@ -1,0 +1,23 @@
+html {
+  background-color:gainsboro;
+
+}
+#newcontainer {
+  display:flex;
+  flex-direction:row;
+}
+
+#Title {
+  text-align:center;
+}
+#aside {
+  text-align:right;
+    width: 300px;
+    border: 5px solid green;
+    padding: 25px;
+    margin: 25px;
+
+}
+#footer {
+  font-size: 10px
+}
