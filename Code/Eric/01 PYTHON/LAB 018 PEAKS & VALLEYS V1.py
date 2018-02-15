@@ -11,7 +11,7 @@ def peak_finder(data):
 		if previous < current > next:
 			peaks_i.append(i)
 			peaks.append(current)
-	return print('peaks: ' + str(peaks) + ' at indeces: ' + str(peaks_i))
+	return peaks, peaks_i
 
 
 def valley_finder(data):
@@ -24,12 +24,18 @@ def valley_finder(data):
 		if previous > current < next:
 			valleys_i.append(i)
 			valleys.append(current)
-	return print('valleys: ' + str(valleys) + ' at indeces: ' + str(valleys_i))
+	return valleys, valleys_i
 
 
 def peaks_and_valleys(data):
-	peak_finder(data)
-	valley_finder(data)
+	peaks = peak_finder(data)
+	valleys = valley_finder(data)
+
+	return peaks, valleys
 
 
-peaks_and_valleys(data)
+p_v = peaks_and_valleys(data)
+
+
+print(f'peaks: {p_v[0][0]} at indices: {p_v[0][1]}')
+print(f'valleys: {p_v[1][0]} at indices: {p_v[1][1]}')

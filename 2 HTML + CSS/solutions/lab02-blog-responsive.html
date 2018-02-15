@@ -1,0 +1,207 @@
+         <html>
+<head>
+    <title>Brisco Blog</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+            background-color: lightgrey;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        /* header and nav */
+        header {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+        }
+
+        nav {
+            background-color: dimgrey;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        nav a:hover {
+            color: deeppink;
+        }
+
+        /* aside */
+        aside {
+            padding: 10px;
+            width: 25%;
+        }
+
+        aside > div {
+            padding: 20px;
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 4px;
+        }
+
+        /* section and articles */
+        section {
+            padding: 10px;
+            width: 75%;
+        }
+
+        article {
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 4px;
+        }
+
+        /* footer */
+        footer {
+            text-align: center;
+        }
+
+
+        #maindiv {
+            display:flex;
+            flex-direction:row;
+        }
+
+        @media (max-width:800px) {
+            #maindiv {
+                display:initial;
+            }
+            section, aside {
+                width:100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brisco</h1>
+    </header>
+    <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 5</a>
+    </nav>
+    <div id="maindiv">
+        <section>
+            <article>
+                <h2>Post 1</h2>
+                <h5>2/12/2018</h5>
+                <p>Lorem ipsum dolor amet disrupt raclette shoreditch cred. Polaroid wolf tofu normcore shabby chic
+                    activated charcoal gochujang humblebrag sustainable cliche 90's. Next level biodiesel stumptown cronut
+                    franzen, fashion axe cliche vice vinyl vexillologist bespoke you probably haven't heard of them. Next
+                    level mustache cred DIY hashtag glossier vegan wolf banh mi yuccie. Health goth tacos truffaut
+                    microdosing plaid.</p>
+
+                <p>Trust fund vexillologist iPhone bicycle rights, ethical venmo gluten-free man bun lyft chillwave enamel
+                    pin portland. Banh mi bitters taiyaki four dollar toast food truck, air plant aesthetic kickstarter
+                    microdosing forage. Man bun cred try-hard adaptogen meh, 90's narwhal beard wayfarers cold-pressed
+                    snackwave sriracha semiotics kale chips plaid. Whatever cred drinking vinegar schlitz trust fund copper
+                    mug typewriter kitsch. Hashtag migas normcore, DIY drinking vinegar sartorial chartreuse ethical pabst
+                    copper mug farm-to-table asymmetrical. Affogato cloud bread la croix skateboard, knausgaard williamsburg
+                    green juice vape scenester meditation lomo listicle aesthetic.</p>
+
+                <p>Umami slow-carb truffaut pop-up retro bespoke. Squid lo-fi 90's you probably haven't heard of them
+                    whatever gastropub vegan. PBR&B helvetica pork belly, af affogato shaman mustache humblebrag adaptogen
+                    letterpress enamel pin slow-carb poutine trust fund. Ethical migas beard copper mug. Messenger bag
+                    wayfarers occupy, tumeric offal bicycle rights ugh stumptown polaroid hell of literally four dollar
+                    toast tofu next level knausgaard.</p>
+
+                <p>Bicycle rights succulents fanny pack, raw denim put a bird on it prism shaman hella gochujang cronut
+                    asymmetrical brunch woke dreamcatcher. YOLO shoreditch +1, hot chicken listicle literally four loko palo
+                    santo plaid kogi salvia activated charcoal jean shorts trust fund. Kickstarter cray beard cliche
+                    cold-pressed green juice celiac, cred blue bottle pitchfork glossier fixie you probably haven't heard of
+                    them. Kinfolk deep v offal tumblr authentic small batch banjo tote bag venmo. Asymmetrical keytar
+                    kombucha kickstarter. Lumbersexual bespoke bushwick 3 wolf moon four dollar toast PBR&B normcore.</p>
+
+                <p>Before they sold out raclette thundercats bushwick. Crucifix slow-carb raclette gochujang +1. Gluten-free
+                    pitchfork deep v mixtape celiac fashion axe, forage succulents. Seitan kitsch gastropub, polaroid
+                    adaptogen iPhone pour-over enamel pin squid poke austin venmo cred shoreditch glossier.</p>
+            </article>
+            <article>
+                <h2>Post 2</h2>
+                <h5>2/11/2018</h5>
+                <p>Lorem ipsum dolor amet disrupt raclette shoreditch cred. Polaroid wolf tofu normcore shabby chic
+                    activated charcoal gochujang humblebrag sustainable cliche 90's. Next level biodiesel stumptown cronut
+                    franzen, fashion axe cliche vice vinyl vexillologist bespoke you probably haven't heard of them. Next
+                    level mustache cred DIY hashtag glossier vegan wolf banh mi yuccie. Health goth tacos truffaut
+                    microdosing plaid.</p>
+
+                <p>Trust fund vexillologist iPhone bicycle rights, ethical venmo gluten-free man bun lyft chillwave enamel
+                    pin portland. Banh mi bitters taiyaki four dollar toast food truck, air plant aesthetic kickstarter
+                    microdosing forage. Man bun cred try-hard adaptogen meh, 90's narwhal beard wayfarers cold-pressed
+                    snackwave sriracha semiotics kale chips plaid. Whatever cred drinking vinegar schlitz trust fund copper
+                    mug typewriter kitsch. Hashtag migas normcore, DIY drinking vinegar sartorial chartreuse ethical pabst
+                    copper mug farm-to-table asymmetrical. Affogato cloud bread la croix skateboard, knausgaard williamsburg
+                    green juice vape scenester meditation lomo listicle aesthetic.</p>
+
+                <p>Umami slow-carb truffaut pop-up retro bespoke. Squid lo-fi 90's you probably haven't heard of them
+                    whatever gastropub vegan. PBR&B helvetica pork belly, af affogato shaman mustache humblebrag adaptogen
+                    letterpress enamel pin slow-carb poutine trust fund. Ethical migas beard copper mug. Messenger bag
+                    wayfarers occupy, tumeric offal bicycle rights ugh stumptown polaroid hell of literally four dollar
+                    toast tofu next level knausgaard.</p>
+
+                <p>Bicycle rights succulents fanny pack, raw denim put a bird on it prism shaman hella gochujang cronut
+                    asymmetrical brunch woke dreamcatcher. YOLO shoreditch +1, hot chicken listicle literally four loko palo
+                    santo plaid kogi salvia activated charcoal jean shorts trust fund. Kickstarter cray beard cliche
+                    cold-pressed green juice celiac, cred blue bottle pitchfork glossier fixie you probably haven't heard of
+                    them. Kinfolk deep v offal tumblr authentic small batch banjo tote bag venmo. Asymmetrical keytar
+                    kombucha kickstarter. Lumbersexual bespoke bushwick 3 wolf moon four dollar toast PBR&B normcore.</p>
+
+                <p>Before they sold out raclette thundercats bushwick. Crucifix slow-carb raclette gochujang +1. Gluten-free
+                    pitchfork deep v mixtape celiac fashion axe, forage succulents. Seitan kitsch gastropub, polaroid
+                    adaptogen iPhone pour-over enamel pin squid poke austin venmo cred shoreditch glossier.</p>
+            </article>
+        </section>
+        <aside>
+            <div>
+                <h5>About Me</h5>
+                <p>Lorem ipsum dolor amet disrupt raclette shoreditch cred. Polaroid wolf tofu normcore shabby chic
+                    activated charcoal gochujang humblebrag sustainable cliche 90's. Next level biodiesel stumptown cronut
+                    franzen, fashion axe cliche vice vinyl vexillologist bespoke you probably haven't heard of them. Next
+                    level mustache cred DIY hashtag glossier vegan wolf banh mi yuccie. Health goth tacos truffaut
+                    microdosing plaid.</p>
+            </div>
+            <div>
+                <h5>Follow Me</h5>
+                <p>Trust fund vexillologist iPhone bicycle rights, ethical venmo gluten-free man bun lyft chillwave enamel
+                    pin portland. Banh mi bitters taiyaki four dollar toast food truck, air plant aesthetic kickstarter
+                    microdosing forage. Man bun cred try-hard adaptogen meh, 90's narwhal beard wayfarers cold-pressed
+                    snackwave sriracha semiotics kale chips plaid. Whatever cred drinking vinegar schlitz trust fund copper
+                    mug typewriter kitsch. Hashtag migas normcore, DIY drinking vinegar sartorial chartreuse ethical pabst
+                    copper mug farm-to-table asymmetrical. Affogato cloud bread la croix skateboard, knausgaard williamsburg
+                    green juice vape scenester meditation lomo listicle aesthetic.</p>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <hr/>
+        <span>© Brisco 2018</span>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
