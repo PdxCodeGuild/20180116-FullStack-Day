@@ -32,6 +32,9 @@ footer {
   width: 100%;
 }
 
+aside {
+    float: right;
+}
 
 
 .header {
@@ -107,7 +110,7 @@ footer {
     border-radius: 60% 60% 60% 60%;
     height: 18.75em;
     width: 30em;
-    background-size: 125%;
+    background-size: 130%;
     background-position: center;
 }
 
