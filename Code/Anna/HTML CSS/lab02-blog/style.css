@@ -1,0 +1,96 @@
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+}
+
+/*OFFSET FOR LOWER NAVBAR*/
+.navbar-fixed {
+  top:-284px;
+}
+
+.padding-left {
+    padding-left: 10px;
+}
+
+.parallax{
+  position:static;
+}
+
+.spacer {
+    padding: 50px 50px;
+    background-color: #303030;
+}
+
+.top-margin {
+    margin-top: 20px;
+}
+
+.icons-sm {
+    padding-right: 25px;
+}
+
+.main-color {
+    background-color: #ef6c00;
+}
+
+.btn{
+    background-color: #ef6c00;
+}
+
+/*Fancy looking title CSS below!*/
+
+#header-container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+
+.title {
+    box-sizing: border-box;
+    line-height: 1.1;
+    color: white;
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.subtitle {
+    box-sizing: border-box;
+    color: rgb(22, 160, 133);
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.subtitle + .subtitle {
+    color: white;
+}
+
+.gradient {
+    background-image: linear-gradient(45deg, rgb(76, 217, 100) 0%, rgb(90, 200, 250) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+}

@@ -1,0 +1,40 @@
+header{
+    background: url("back_pic.jpg");
+    padding: 10%;
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    background-size: cover;
+    background-position: center;
+}
+header h1,h3,h6{
+    color: white;
+    font-family: Papyrus, 'Thonburi', sans-serif;
+}
+
+
+nav {
+    background-color: #6effc4;
+    margin: 40px;
+    padding: 10px;
+    border-radius: 10px;
+}
+nav a {
+    margin: 85px;
+    font-family: Papyrus, 'Thonburi', sans-serif;
+    font-weight: bold;
+
+}
+
+p {
+    margin-left: 30px;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+.container h1 {
+    background-color: #6effc4;
+    border-radius: 10px;
+}

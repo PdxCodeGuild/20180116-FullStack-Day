@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+
+
+}
+
+body{
+    background-image: url(logo.png);
+}
+
+html {
+    font-family:Verdana, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+}
+h1 {
+    font-color:white;
+    font-size:40px;
+}
+
+header {
+    text-align:center;
+    padding:30px;
+}
+nav {
+    padding:10px;
+}
+nav a {
+    color:white;
+    text-decoration:none;
+    margin:20px;
+}
+nav a:hover {
+    color:blue;
+}
+
+aside {
+    padding:10px;
+    float:right;
+    width:25%;
+}
+aside > div {
+    padding:20px;
+    padding: 10px;
+    margin:10px;
+    border-radius:4px;
+}
+
+section {
+    padding:10px;
+    float:left;
+    width:75%;
+}
+article {
+    padding:20px;
+    margin:10px;
+    border-radius:4px;
+}
+/* footer */
+footer {
+    text-align:center;
+    clear:both;
+}
+
+article,
+section,
+aside {
+    color: white;
+    background-color: rgba(246, 246, 255, 0);
+}

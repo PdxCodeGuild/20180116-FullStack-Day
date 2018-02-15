@@ -1,6 +1,14 @@
 
 
-def rot(x):
+
+
+
+
+
+
+
+def rot():
+
     x = int(input('> Type the rotation amount. \n> '))     # increment amount is assigned to variable x
 
     instring = input('> Type something. \n> ')             # string input is assigned to variable instring
@@ -23,5 +31,14 @@ def rot(x):
 
     print(result)                                          # prints result
 
-rot(13)
+rot()
+
+
+
+
+
+
+
+
+
 
