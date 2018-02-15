@@ -7,13 +7,12 @@ A better approach is to have your website resize to match any screen, this is ca
 
 Many [CSS frameworks](03%20-%20CSS%20Overview.md#css-frameworks) have responsiveness built-in. [Flexbox and CSS Grid](08%20-%20CSS%20Flexbox%20+%20Grid.md) also help, particularly when paired with [auto-fill and auto-fit](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/).
 
-To help you test, there are various browser extensions to change your browser's size to match that of phones and tables: [firefox](https://addons.mozilla.org/en-US/firefox/addon/window-resizer-webextension/), [chrome](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en), [safari](http://resizesafari.com/).
+To help you test, the major browsers have tools which let you change your browser's size to match that of phones and tablets: [firefox](https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode), [chrome](https://developers.google.com/web/tools/chrome-devtools/device-mode/emulate-mobile-viewports), and [safari](https://support.apple.com/kb/PH26266?locale=en_US). There are also various browser extensions which have additional features: [firefox](https://addons.mozilla.org/en-US/firefox/addon/window-resizer-webextension/), [chrome](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en), [safari](http://resizesafari.com/).
 
 
 ## Media Queries
 
-Media queries let you control what style rules are applied when certain conditions are present. This can include the width of the page, the orientation of the page, the 
-You can read more about media queries on the [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) and [here](https://www.w3schools.com/cSS/css_rwd_mediaqueries.asp). You can view a list of each feature on the [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media).
+Media queries let you control what style rules are applied when certain conditions are present. This can include the width of the page, the orientation, the aspect ratio, etc. You can read more about media queries on the [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) and [here](https://www.w3schools.com/cSS/css_rwd_mediaqueries.asp). You can view a list of each feature on the [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media).
 
 | Media Type | Description |
 |--- |--- |
