@@ -1,0 +1,73 @@
+* {
+    font-family: 'Encode Sans Condensed', sans-serif;
+
+}
+
+div {
+    color: white;
+    padding: 30px;
+
+}
+.header {
+    background-color: black;
+
+}
+
+.bc {
+    background-color: red;
+
+}
+
+.content {
+    background-color: grey;
+
+}
+
+.gallery {
+    background-color: lightgrey;
+
+}
+
+.footer {
+    background-color: black;
+
+}
+
+
+
+/*text styles*/
+
+body {
+    margin:0;
+    background-color: darkgray;
+    line-height: 26px;
+    letter-spacing: 1px;
+}
+
+.skills {
+    margin-bottom: 24px;
+}
+
+h3 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+}
+
+h4 {
+    margin-top: 28px;
+    margin-bottom: -14px;
+}
+
+
+/*p {*/
+    /*margin-bottom: 1px;*/
+/*}*/
+
+li {
+    margin-bottom: 12px;
+}
+
+.unstyled {
+  list-style-type: none;
+    margin-left: -40px;
+}
