@@ -39,6 +39,19 @@ body {
     padding: 0;
     background-color: #9c27b0;
     margin-bottom: .5em;
+    color:#37535B;
+    font-family: "Arial Narrow", "American Typewriter", "Droid Serif", "Times New Roman", sans-serif;
+}
+
+.header img {
+
+    position: absolute;
+    margin: 0 0 20em 20em;
+    border-radius: 50%;
+    border: (width) (color)
+    width:
+    height:
+
 }
 
 .title {
@@ -49,6 +62,15 @@ body {
     font-size: 5vh;
     font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
     color: #00C853;
+    padding-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin: 0;
+    line-height: 1em;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    width:310px;
+    float:left;
 
 }
 
@@ -57,9 +79,11 @@ body {
     -moz-box-align: center;
     text-align: center;
     vertical-align: middle;
-    font-size: large;
     font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
     color: #00C853;
+    float: right;
+    margin: 10em 1.2em 0 0;
+    font-size: 1.5em;
 
 }
 
@@ -70,3 +94,7 @@ body {
     font-size: medium;
 
 }
+
+
+
+
