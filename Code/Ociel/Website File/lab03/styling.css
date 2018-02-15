@@ -1,0 +1,104 @@
+header {
+
+
+    background: darkgreen; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom right, darkgreen, greenyellow); /* Standard syntax (must be last) */
+    height: 150px;
+}
+
+header h1{
+    font-family: Papyrus,"Times New Roman",sans-serif;
+    padding-top: 45px;
+    font-size: 72px;
+}
+
+.img-responsive{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+#sidebar {
+    position: fixed;
+    z-index: 10;
+    background-color: black;
+    width: 200px; /* The Width from left to right is only 200px*/
+    height: 100%; /* The Height of the entire page*/
+
+    /*This negative left makes my side bar start on the left side of the
+    screen so it is not visible until the toggle button is clicked*/
+    left: -200px;
+    /*This thing of code will make the transition go smooth when the
+    side bar is opened. */
+    transition: all 500ms linear;
+}
+#sidebar.active{
+    /*When toggle button is clicked the smooth transition set above will
+    keep going until the left is at 0px once the left is at zero it will
+    stop moving*/
+    left: 0;
+}
+
+#sidebar .toggle-btn{
+
+    position: absolute;
+    /*The toggle is set at 230px so that it is 30 px away from
+    the side bar and 20 px away from the top of the screen.*/
+    left: 230px;
+    top: 20px;
+
+
+}
+
+#sidebar .toggle-btn span{
+    /*Display block */
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    margin: 3px 0;
+}
+#sidebar ul li {
+    /*Font Color*/
+    color: white;
+    /*style none will take of the bullet points of the list*/
+    list-style: none;
+    /*Type of Font*/
+    font-family: Papyrus,"Times New Roman",sans-serif;
+    /*Padding*/
+    padding: 15px ;
+
+    /*Border Bottom Width: 1px
+      Border Bottom Style: Solid
+      Border Bottom Color: dim grey
+    */
+    border-bottom: 1px solid dimgrey;
+
+}
+
+.row {
+    background-color: black;
+}
+section {
+    margin-left: 30px;
+    margin-top: 40px;
+    font-family: Papyrus, "Times New Roman", sans-serif;
+    font-weight: bold;
+    color: white;
+}
+.coolpic {
+    width: 100%;
+    align-items: center;
+    margin-top: 40px;
+    padding-right: 60px;
+}
+
+.movies{
+    margin-top: 20px;
+}
+
+.movies iframe{
+    margin-left: 25px;
+}
+
+.under_picture section{
+       margin-right: 20px;
+}

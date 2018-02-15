@@ -12,7 +12,7 @@ contents = contents.split()
 for i in range(len(contents)):
     for char in punctuation:
         contents[i] = contents[i].replace(char, '')
-
+# counting words
 for key in contents:
     if key not in word_set.keys():
         word_set[key] = 1

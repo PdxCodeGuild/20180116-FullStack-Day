@@ -1,0 +1,81 @@
+body {
+    margin:50px 0;
+    padding:0;
+    text-align:center;
+    background-color: black;
+}
+
+.quote{
+    overflow: auto;
+    font-size: 24px;
+    margin: 10px 50px;
+    padding: 20px;
+    color: floralwhite;
+    font-family: AppleGothic, sans-serif;
+}
+
+.intro p {
+    font-size: 20px;
+    margin: auto 200px;
+    padding: 20px;
+    text-align: left;
+    color: floralwhite;
+}
+
+.intro h3 {
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+h2 {
+    color: floralwhite;
+}
+
+.big_picture img{
+    margin: 5px auto auto auto;
+}
+
+.residence_text {
+    margin-top: 100px;
+    margin-right: 80px;
+    overflow: auto;
+    text-align: center;
+    padding: auto;
+    position: relative;
+    color: white;
+    font-size: 17px;
+}
+
+.residence_text ul {
+    list-style-type: none;
+}
+
+.residence img{
+    float: right;
+    margin: auto;
+    border-radius: 100%;
+    border: 5px solid
+}
+
+a:link {
+   color: white;
+}
+
+a:visited {
+    color: darkturquoise;
+}
+
+a:hover {
+    background-color: crimson;
+}
+
+.footer p {
+    color: white;
+    font-size:14px;
+    text-align: center;
+}
