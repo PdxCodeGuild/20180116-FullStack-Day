@@ -112,24 +112,17 @@
                     </p>
                     </form>
                     <h5>Choose your protein:</h5>
-                    <form action="#">
-                    <p>
-                      <input name="group4" type="radio" id="meat1" />
-                      <label for="meat1">Carnitas</label>
-                    </p>
-                    <p>
-                      <input name="group4" type="radio" id="meat2" />
-                      <label for="meat2">Chicken</label>
-                    </p>
-                    <p>
-                      <input name="group4" type="radio" id="meat3"  />
-                      <label for="meat3">Sofritas</label>
-                    </p>
-                    <p>
-                      <input name="group4" type="radio" id="meat4"/>
-                      <label for="meat4">None</label>
-                    </p>
-                    </form>
+                    <div class="input-field">
+                        <form action="#">
+                        <select class="icons">
+                            <option value="" disabled selected>Choose a protein</option>
+                            <option value="" data-icon="img/carnitas.png" class="left circle">Carnitas</option>
+                            <option value="" data-icon="img/chicken.png" class="left circle">Chicken</option>
+                            <option value="" data-icon="img/tofu.png" class="left circle">Sofritas</option>
+                            <option value="" data-icon="img/none.png" class="left circle">None</option>
+                        </select>
+                        </form>
+                    </div>
                 </div>
             </div>
     </div>
