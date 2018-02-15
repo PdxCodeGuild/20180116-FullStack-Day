@@ -1,41 +1,106 @@
 
 body {
-    background-color: #6a7a87;
-    color: #c8e6ff;
+    background: linear-gradient(224deg, #6a7a87, #9ddee8, #de9de8);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 45s ease infinite;
+    -moz-animation: AnimationName 45s ease infinite;
+    -o-animation: AnimationName 45s ease infinite;
+    animation: AnimationName 45s ease infinite;
     min-width: 57em;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 2%;
+    opacity: .9;
+    filter: alpha(opacity=99);
+    box-shadow: 2px 0px 8px 8px darkslateblue;
 }
 
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+
 .centered {
-    background-color: #c8e6ff;
-    color: lightpink;
+    /*background: linear-gradient(224deg, #9ddee8, #de9de8, #a1e89d);*/
+    background-width: content-box;
+    -webkit-animation: AnimationName 45s linear infinite;
+    -moz-animation: AnimationName 45s linear infinite;
+    -o-animation: AnimationName 45s linear infinite;
+    animation: AnimationName 45s linear infinite;
+    color: hotpink;
     height: 20vh;
     width: content-box;
     border-radius: 0.5em;
     display: block;
     text-align: center;
     vertical-align: middle;
+    padding: 2%;
+    opacity: 0.5;
+    filter: alpha(opacity=80);
+    box-shadow: 2px 0px 4px 4px lightblue;
+    margin-bottom: 3em;
 
+}
+
+.title {
+    display: flex;
+    color: hotpink;
+
+}
+
+.centered {
+    background-image: url("purplepcb.jpg");
 }
 
 #about-me img {
+    display: flex;
+    justify-content: center;
+    align-content: right;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    border-radius: 100em;
 }
 
-form.u-full-width;
+/*form.u-full-width;*/
 
-aside {
+.aside {
     background-color: #d84315;
     color: #00acc1;
     display: flex;
+    justify-content: center;
+    align-content: center;
 
-    }
+
 
 }
 
-aside.u-pull-right {
-    float: right;
+
+.box1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
 }
 
 
