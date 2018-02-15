@@ -4,6 +4,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
     $('ul.tabs').tabs('select_tab', 'tab_id');
+    $('select').material_select();
     $('.collapsible').collapsible();
     $(".button-collapse").sideNav();
     $('a.smooth-scroll[href*="#"]:not([href="#"])').click(function() {
@@ -19,3 +20,13 @@ $( document ).ready(function() {
     }
   });
 });
+
+
+submitForms = function(){
+    document.getElementById("form1").submit();
+    document.getElementById("form2").submit();
+    document.getElementById("form3").submit();
+    document.getElementById("form4").submit();
+    document.getElementById("form5").submit();
+    document.getElementById("form6").submit();
+}
