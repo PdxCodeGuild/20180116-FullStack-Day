@@ -1,0 +1,51 @@
+html {
+    background-color:lightgray;
+}
+h1 {
+    font-size:25px;
+}
+#about {
+    margin-top:60px;
+    text-align:center;
+}
+#skills {
+    margin-top: 60px;
+    text-align:center;
+}
+#resume {
+    margin-top:60px;
+    text-align:center;
+}
+#contact {
+    margin-top:60px;
+    text-align:center;
+}
+p {
+    font-size:15px;
+}
+ul {
+    list-style-type:none;
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color:#333;
+    margin:0 auto;
+    padding:0;
+    overflow:hidden;
+    display:inline;
+}
+li {
+    float:left;
+}
+
+li a {
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+
+}
+li a:hover {
+    background-color:#97E8CF;
+}
