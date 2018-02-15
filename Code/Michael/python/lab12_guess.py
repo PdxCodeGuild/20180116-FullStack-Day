@@ -5,18 +5,18 @@ correct = 0
 
 while guesses < 10:
 
-    guess = input('> guess the number?\n> ')
+    guess = int(input('> guess the number?\n> '))
 
     guesses += 1
 
     x = random.randint(1, 10)
 
-    if int(guess) == x:
+    if guess == x:
         correct += 1
         print('correct')
 
-    elif int(guess) != x:
+    else:
         print('try again!')
 
-
 print(f'You got {correct} correct!')
+
