@@ -1,6 +1,6 @@
 
 
-# Lab 2: Burrito Order Form
+# Lab 5: Burrito Order Form
 
 Create a burrito order form with the following input controls. Try to incorporate some images and semantic elements. Below are some recommended fields, feel free to use your own. You should include all elements in a `form`, and use `fieldset`s. You may draw some inspiration from [this image](burrito-order-form.png).
 
