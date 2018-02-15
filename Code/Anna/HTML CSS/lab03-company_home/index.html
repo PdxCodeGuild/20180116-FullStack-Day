@@ -41,11 +41,13 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a class="smooth-scroll" href="#features">Features</a></li>
                     <li><a class="smooth-scroll" href="#about">About</a></li>
+                    <li><a class="smooth-scroll" href="#price">Pricing</a></li>
                     <li><a class="smooth-scroll" href="#contact">Contact Us</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#price">Pricing</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -111,7 +113,7 @@
     </div>
     </div>
 
-
+    <!-- Parallax FTW  -->
     <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
     <div class="container">
@@ -172,6 +174,7 @@
     </div>
     </div>
 
+    <!-- Parallax FTW  -->
 
     <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
@@ -184,13 +187,147 @@
     <div class="parallax"><img src="img/phone1.png" alt="Our app will get you laid!"></div>
     </div>
 
+    <!-- Pricing section  -->
+    <div id="price"></div>
+    <div class="row">
+    <div class="col s12 center">
+      <h3><i class="mdi-content-send cyan-text"></i></h3>
+      <h4>Buy Our Stuff</h4>
+    </div>
+    </div>
 
-    <!-- Contact map -->
+        <!-- Pricing Tables -->
+    <div class="container">
+    <div class="pricing-table">
+        <div class="pricing-option">
+            <i class="material-icons">art_track</i>
+            <h3>UI<br />design</h3>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+            <hr />
+            <div class="price">
+                <div class="front">
+                    <span class="price">$199</span>
+                </div>
+                <div class="back">
+                    <a href="#contact" class="button">Purchase now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-option">
+            <i class="material-icons">perm_identity</i>
+            <h3>UX<br />design</h3>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+            <hr />
+            <div class="price">
+                <div class="front">
+                    <span class="price">$399</span>
+                </div>
+                <div class="back">
+                    <a href="#contact" class="button">Purchase now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-option">
+            <i class="material-icons">important_devices</i>
+            <h3>App<br />creation</h3>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+            <hr />
+            <div class="price">
+                <div class="front">
+                    <span class="price">$999</span>
+                </div>
+                <div class="back">
+                    <a href="#contact" class="button">Purchase now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Parallax FTW  -->
+    <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+    <div class="container">
+    <div class="row center">
+      <h5 class="header col s12 light"></h5>
+    </div>
+    </div>
+    </div>
+    <div class="parallax"><img src="img/iphone_x.png" alt="Our app will get you laid!"></div>
+    </div>
+
+    <!-- Contact form -->
     <div id="contact"></div>
     <div class="row">
     <div class="col s12 center">
       <h3><i class="mdi-content-send cyan-text"></i></h3>
-      <h4>Our Headquarters</h4>
+      <h4>Get in touch</h4>
+    </div>
+    </div>
+    <div class="container">
+    <!--form fields-->
+    <form class="row">
+        <form class="col s12">
+            <form class="row">
+                <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </form>
+            <form class="row">
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+                <div class="input-field col s6">
+                    <select multiple>
+                        <option value="" disabled selected>Select your industry</option>
+                        <option value="1">IT/tech</option>
+                        <option value="2">Graphic design</option>
+                        <option value="3">Web development</option>
+                        <option value="4">Marketing</option>
+                        <option value="5">Other</option>
+                    </select>
+                    <label>What industry are you in?</label>
+                </div>
+            </form>
+            <form class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Message:</label>
+                </div>
+            </form>
+        </form>
+    </form>
+    <button class="btn waves-effect waves-light right modal-trigger" type="submit" name="action" href="#modal1">Submit
+        <i class="material-icons right">send</i>
+    </button>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>We own you now!</h4>
+            <p>By pressing agree, you sign over your first-born, and their first-born, as the property of App-tizer. Buahahahaha! You won't read this anyway, it might as well be Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+    <!-- Contact map -->
+
+    <div class="row">
+    <div class="col s12 center">
+        <h3><i class="mdi-content-send cyan-text"></i></h3>
+        <h4>Our Headquarters</h4>
     </div>
     </div>
     <div id="map">
