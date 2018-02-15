@@ -1,0 +1,156 @@
+/* Add a black background color to the top navigation */
+@keyframes gradient1 {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes gradient2 {
+
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.bckgrnd1, .bckgrnd2{
+    margin: 0px;
+    z-index: -1;
+    animation-duration: 6s;
+    animation-name: gradient1;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    min-height: 1000px;
+
+}
+div.bckgrnd1{
+    background: radial-gradient(purple, white);
+    animation-name: gradient1;
+    animation-timing-function: linear;
+}
+
+div.bckgrnd2{
+    background: radial-gradient(black, white);
+    animation-name: gradient2;
+    animation-timing-function: linear;
+}
+
+div.bckgrnd3{
+    background-color: gray;
+}
+
+nav{
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+@keyframes dancing {
+    0%{border-radius: 0px 0px 0px 10px;}
+    25%{border-radius: 0px 10px 0px 0px;}
+    50%{border-radius: 0px 0px 10px 0px;}
+    75%{border-radius: 10px 0px 0px 0px;}
+}
+
+@keyframes spinning {
+    100%{transform: rotate(360deg)}
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes press {
+    100% {
+        transform: translate(3px, 3px);
+        box-shadow: 0px 0px 0px;
+    }
+}
+
+@keyframes color {
+    50% {
+        background-color: white;
+        color: plum;
+    }
+    100% {
+        background-color: plum;
+        color: white;
+    }
+}
+
+.nav-button{
+    padding: 10px 10px 0px 10px;
+    margin-right: 5px;
+    border-radius: 10px;
+    box-shadow: dimgrey 3px 3px 3px;
+    background-color: plum;
+    color: white;
+    border: 2px solid purple;
+    height: 50px;
+    font-family: Verdana;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 500px){
+    .nav-button{
+        margin-bottom: 5px;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 501px){
+    .nav-button{
+        margin-right: 5px;
+        display: inline-block;
+    }
+}
+
+.b1:hover{
+    animation-name: dancing;
+    animation-duration: 2s;
+    animation-direction: alternate;
+}
+
+.b2:hover{
+
+    animation-name: spinning;
+    animation-duration: 2s;
+    animation-direction: normal;
+}
+
+.b3:hover{
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-iteration-count: 5;
+}
+
+.b4:hover {
+    animation-name: color;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.b1:active, .b2:active, .b3:active, .b4:active{
+    animation-iteration-count: 1;
+    animation-name: press;
+    animation-duration: .25s;
+    animation-fill-mode: both;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
