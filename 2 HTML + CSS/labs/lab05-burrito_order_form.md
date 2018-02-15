@@ -2,7 +2,7 @@
 
 # Lab 2: Burrito Order Form
 
-Create a burrito order form with the following input controls. Try to incorporate some images and semantic elements. Below are some recommended fields, feel free to use your own. You should include all elements in a `form`, and use `fieldset`s.
+Create a burrito order form with the following input controls. Try to incorporate some images and semantic elements. Below are some recommended fields, feel free to use your own. You should include all elements in a `form`, and use `fieldset`s. You may draw some inspiration from [this image](burrito-order-form.png).
 
 Tortilla (radio buttons)
 - White Flour
@@ -31,6 +31,8 @@ Additional Ingredients (check boxes)
 For personal info, use the `required`, `pattern` and `title` attributes of the input fields to verify that the information the user entered is legitimate.
 
 Personal Info
+- Username (at least 6 characters)
+- Password (at least 6 characters)
 - Name (First and Last) (two words, at lease 3 characters each)
 - Email Address (one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters)
 - Phone Number: (e.g. 293-213-5555)

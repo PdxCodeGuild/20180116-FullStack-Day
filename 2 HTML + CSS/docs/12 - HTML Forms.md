@@ -3,6 +3,37 @@
 
 Forms are a particular element that allows us to submit data to the back-end. You can read more about forms on the [MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms).
 
+## Input and Select Elements
+
+An `input` element allow for user input, and has a `type` attribute. You can read more about `input` on the [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
+
+```html
+<input type="text"/>
+<input type="date"/>
+<input type="color"/>
+<input type="password"/>
+<input type="radio"/>
+<input type="checkbox"/>
+```
+
+If radio buttons are given the same `name` attribute, only allow one among them can be selected at any time.
+
+```html
+<input type="radio" name="gender" value="male"> Male<br>
+<input type="radio" name="gender" value="female"> Female<br>
+<input type="radio" name="gender" value="other"> Other
+```
+
+A `select` tag defines a dropdown list. Each `option` defines an option of that dropdown list. Note that the `value` attribute differs from the inner text. The inner text servers human interests, the `value` serves the code's interests.
+
+```html
+<select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+```
 
 ## Form
 
