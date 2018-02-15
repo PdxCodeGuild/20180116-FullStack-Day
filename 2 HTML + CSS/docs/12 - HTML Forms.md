@@ -24,10 +24,10 @@ If radio buttons are given the same `name` attribute, only allow one among them 
 <input type="radio" name="gender" value="other"> Other
 ```
 
-A `select` tag defines a dropdown list. Each `option` defines an option of that dropdown list. Note that the `value` attribute differs from the inner text. The inner text servers human interests, the `value` serves the code's interests.
+A `select` tag defines a dropdown list. Each `option` defines an option of that dropdown list. Note that the `value` attribute differs from the inner text. The inner text servers human interests, the `value` serves the code's interests. Note that the `name` goes on the `select` and not the `option`.
 
 ```html
-<select>
+<select name="car">
   <option value="volvo">Volvo</option>
   <option value="saab">Saab</option>
   <option value="mercedes">Mercedes</option>
