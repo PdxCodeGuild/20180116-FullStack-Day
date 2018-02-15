@@ -38,11 +38,25 @@ If a form has many input fields, you should group them together using a `fieldse
 </form>
 ```
 
+## The Placeholder Attribute
+
+You can also add a `placeholder` attribute to show some text in the 'background' of the input field. This text disappears when a value is entered.
+
+```html
+<input type="text" name="name" value="jane" placeholder="enter your name"/>
+```
+
+## The Disabled Attribute
+
+To disabled an input field, you can add the `disabled` attribute without any parameters. This will prevent the user from entering any value into the input field. It doesn't matter what the value of the attribute is, as long as it's present, the input will be disabled.
+
+```html
+<input type="text" name="name" value="jane" disabled/>
+```
 
 ## The Required Attribute
 
 You can place the attribute `required` with no value to prevent the form from being submitted without that field being filled. Like `disabled`, the attribute doesn't need a value.
-
 
 ```html
 <input type="text" name="name" required/>
