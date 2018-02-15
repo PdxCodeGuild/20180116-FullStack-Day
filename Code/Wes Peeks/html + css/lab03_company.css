@@ -1,0 +1,31 @@
+body {
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #1b1e21;
+    color: #985f0d;
+    border: 0px;
+}
+
+header  {
+    width: 100%;
+    margin-left: 0px;
+    height: 400px;
+    background-image:url('https://godsandradicals.files.wordpress.com/2016/05/death-clock.jpg?w=885');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 105%;
+}
+
+nav ul {
+    margin: 10px;
+    float: right;
+    list-style-type: none;
+    margin-left: 30px;
+    padding-left: 30px;
+    letter-spacing: 5px;
+}
+
+li {
+    margin-left: 50px;
+    padding-left: 25px;
+    color: #9d9d9d;
+}
