@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Lab</title>
+    <link rel="stylesheet" type="text/css" href="lab05.css"/>
+</head>
+
+<body>
+
+<form action="https://requestb.in/1j7blhi1" method="post">
+    <fieldset>
+        <legend>Contact Information</legend>
+        <input type="text" name="user_name" placeholder="User Name" pattern="^[a-zA-Z\d]{6,}$" title="Please enter at least 6 characters" required/><br/>
+        <input type="password" name="password" placeholder="Password" pattern="^[a-zA-Z\d]{6,}$" title="Please enter at least 6 characters" required/><br/>
+        Name<input type="text" name="name" pattern="^[A-Z][a-z]{2,} [A-Z][a-z]{2,}$" title="Please enter a first and last name" required/><br/>
+        E-mail<input type="email" name="email" pattern="^[a-zA-Z\d]+@[a-zA-Z\d]+\.[a-z]{1,3}$" title="please enter a valid email" required/><br/>
+        Phone Number<input type="tel" name="phone" pattern="^\d{3}[.-]?\d{3}[.-]?\d{4}$" title="Please enter a number of the form (XXX-XXX-XXXX)"/><br/>
+        Date of Birth<input type="date" name="dob"/><br/>
+        SSN<input type="num" name="ssn" pattern="^\d{3}-?\d{2}-?\d{4}$" title="PLease enter a valid SSN 123-45-7890"/><br/>
+        Street<input type="text" name="street" pattern="^[\d]+ [A-Za-z]+ (St|st|ln|Ln)$" title="Please enter a valid street address" required/><br/>
+        City, State, Zip<input type="text" name="city_state_zip" pattern="^[A-Za-z]+, [A-Z]{2}, [\d]{5}" title="Please enter a valid city state and zip" required/><br/>
+    </fieldset>
+    <fieldset>
+        <legend>Tortilla</legend>
+        White Flour <input type="radio" name="white_flour"/><br/>
+        Wheat Flour <input type="radio" name="wheat_flour"/><br/>
+        Spinach <input type="radio" name="spinach"/><br/>
+        Corn <input type="radio" name="corn"/><br/>
+    </fieldset>
+    <fieldset>
+        <legend>Rice</legend>
+        White Rice <input type="radio" name="white_rice"/><br/>
+        Brown Rice <input type="radio" name="brown_rice"/><br/>
+    </fieldset>
+    <fieldset>
+        <legend>Beans</legend>
+        Black Beans <input type="radio" name="black_beans"/><br/>
+        Pinto Beans <input type="radio" name="pinto_beans"/><br/>
+    </fieldset>
+    <fieldset>
+        <legend>Protein</legend>
+        Carnitas <input type="radio" name="carnitas"/><br/>
+        Chiken <input type="radio" name="chicken"/><br/>
+        Sofritas <input type="radio" name="Sofritas"/><br/>
+        None <input type="radio" name="none"/><br/>
+    </fieldset>
+    <fieldset>
+        <legend>Additional Ingredients</legend>
+        Cheese <input type="checkbox" name="cheese"/><br/>
+        Sour Cream <input type="checkbox" name="sour_cream"/><br/>
+    </fieldset>
+    <button type="submit">submit</button>
+</form>
+</body>

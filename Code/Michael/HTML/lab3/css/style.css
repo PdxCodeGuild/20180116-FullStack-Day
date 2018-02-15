@@ -1,0 +1,57 @@
+html {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body {
+    margin:0;
+    background-color: darkgray;
+}
+
+#wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: 'Encode Sans Condensed', sans-serif
+}
+
+.bttn {
+    background-color: black;
+    height: 100vh;
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+a {
+    display: block;
+    padding: 20px;
+    background-color: dimgray;
+    color: white;
+    text-decoration: none;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main {
+    padding: 20px 20px 100px 40px;
+    background-color: darkgray;
+}
+
+.bttn > img {
+    border-radius: 3px;
+}
+
+footer {
+    background-color: dimgray;
+    color: white;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+

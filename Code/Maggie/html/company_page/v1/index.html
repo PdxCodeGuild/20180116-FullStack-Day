@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Phrexie Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="fontawesome-all.css">
+      <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon-chevron-up.ico">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="header-inner" id="myHeader">
+                <div class="menu">
+                    <div class="dropdown">
+                         <i class="fas fa-bars"></i>
+                        <div class="dropdown-content">
+                         <ul>
+                             <li><a href="#home">Home</a></li>
+                             <li><a href="#news">News</a></li>
+                             <li><a href="#contact">Contact</a></li>
+                             <li><a href="#about">About</a></li>
+                         </ul>
+
+                        </div>
+                    </div>
+                    <!--<h4>left menu</h4>-->
+
+                </div>
+                <div class="center">
+                    <h1>PHREXIE</h1>
+                    <!--<div class="line"></div>-->
+                </div>
+                <div class="search">
+                    <!--<h4>right search bar</h4>-->
+                    <i class="fas fa-neuter fa-rotate-45"></i>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="images/pexels-photo-803243.jpeg" width="100%">
+
+                    <q>It's your world.</q>
+                    <p class="author"></p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/grass_sunset.jpeg" width="100%">
+                <q>See how easy it is to create a little tree right in your world.</q>
+                <p class="author"></p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="images/oceancliff.jpeg" width="100%">
+
+                    <q>With practice comes confidence.</q>
+                 <p class="author"></p>
+                </div>
+            <div class="shuttle-container">
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            </div> <!--- slideshow container -->
+
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <!--<h2>Slideshow with hover words</h2>-->
+        </div> <!--- gallery -->
+        <div class="left-text">
+            <!--<h4> all the buzz</h4>-->
+            <div class="star">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+             </div>
+            <p>"The shadows are just like the highlights, but we're going in the opposite direction. Let's put a touch more of the magic here. Painting should do one thing. It should put happiness in your heart. Anything you want to do you can do here." -Bob Ross</p>
+        </div>
+        <div class="right-image">
+            <img src="images/pexels-photo-770679.jpeg" width="100%">
+            <!--<h4>look, pretty. you want to buy.</h4>-->
+        </div>
+        <footer>
+            <h5> copyright 2018 Maggie Geise</h5>
+        </footer>
+    </div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>
