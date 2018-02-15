@@ -1,0 +1,19 @@
+body {
+    background:lightgray;
+}
+input[type=text] {
+    margin:8px;
+}
+legend {
+    padding:10px;
+}
+fieldset {
+    margin-left:15px;
+}
+button {
+    margin-top: 15px;
+}
+.primary {
+    color:white;
+    background-color:slategray;
+}

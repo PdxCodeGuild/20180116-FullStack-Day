@@ -1,0 +1,176 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: repeating-radial-gradient(rgba(232,33,6,1), rgba(242,242,21,1) 10%, rgba(66,244,92,1) 20%);
+}
+
+h1{
+    margin-left: 20px;
+    font-size: 70px;
+    font-family: "Apple Chancery", sans-serif;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: radial-gradient(grey, white);
+    display: inline-block;
+}
+
+h2 {
+    font-size: 35px;
+    font-family: "Apple Chancery", sans-erif;
+    text-align: center;
+}
+
+h3{
+    font-size: 25px;
+    font-family: Chalkboard, sans-serif;
+}
+
+nav{
+    justify-content: center;
+}
+
+@media only screen and (min-width: 900px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main {
+        margin-top: 75px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-button{
+        margin: 10px;
+        font-size: 35px;
+        justify-content: center;
+    }
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        margin-top: 225px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-button{
+        margin: 5px;
+        font-size: 25px;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 600px){
+    #side_pics{
+        display: flex;
+        flex-direction: row;
+    }
+
+}
+
+.navbar {
+    background: linear-gradient(aqua, white 100%);
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    border-bottom: 2px solid black;
+    margin-left: 0px;
+    padding-left: 0px;
+    border-left: 2px solid black;
+    border-bottom-left-radius:10px;
+}
+
+a.nav-button{
+    text-decoration: none;
+    font-family: Phosphate;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: radial-gradient(grey, white);
+}
+
+a.nav-button:link{
+    color: indigo;
+}
+
+a.nav-button:hover{
+    color: chocolate;
+}
+
+section {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+}
+
+article{
+    margin: 20px;
+    padding: 10px;
+    background: aqua;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: linear-gradient(aqua, white 100%);
+}
+
+a.nav-button:link{
+    color: indigo;
+}
+
+a.nav-button:hover{
+    color: chocolate;
+}
+
+ul {
+    list-style: none;
+    padding-left: 10px;
+
+}
+
+ul > li:before {
+    content: "🦄";
+    margin: 0 16px 0 0;
+}
+
+figure{
+    justify-content: center;
+    text-align: center;
+    font-family: Chalkboard;
+}
+
+#side_pics > figure{
+    flex: 1;
+}
+
+img{
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+footer{
+    /*background: linear-gradient(aqua, white 100%);*/
+    text-align: center;
+}
+
+
+

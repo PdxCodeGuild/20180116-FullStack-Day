@@ -151,7 +151,7 @@ HSL is short for [hue saturation lightness](https://en.wikipedia.org/wiki/HSL_an
 
 CSS frameworks can be used to make your site look pretty quickly and easily. Each framework has its own style and number of features. You can find icons at [fontawesome.com](https://fontawesome.com/).
 
-- [Bootstrap](http://getbootstrap.com/), [w3schools tutorial](https://www.w3schools.com/bootstrap/default.asp)
+- [Bootstrap](http://getbootstrap.com/), [w3schools tutorial](https://www.w3schools.com/bootstrap4/default.asp)
 - [Materialize](http://materializecss.com/)
 - [Pure.css](https://purecss.io/)
 - [Foundation](http://foundation.zurb.com/sites/docs/)
