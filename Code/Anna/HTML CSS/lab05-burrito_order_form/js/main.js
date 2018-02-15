@@ -51,8 +51,6 @@ window.addEventListener("load", function () {
   var form2 = document.getElementById("form2");
   var form3 = document.getElementById("form3");
   var form4 = document.getElementById("form4");
-  var form5 = document.getElementById("form5");
-  var form6 = document.getElementById("form6");
 
   // ...and take over its submit event.
   form1.addEventListener("submit", function (event) {
@@ -71,16 +69,6 @@ window.addEventListener("load", function () {
     sendData();
   });
   form4.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    sendData();
-  });
-  form5.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    sendData();
-  });
-  form6.addEventListener("submit", function (event) {
     event.preventDefault();
 
     sendData();
