@@ -67,6 +67,9 @@ body {
 .title {
     display: flex;
     color: hotpink;
+    background: whitesmoke;
+    trans
+    z-index: 10;
 
 }
 
