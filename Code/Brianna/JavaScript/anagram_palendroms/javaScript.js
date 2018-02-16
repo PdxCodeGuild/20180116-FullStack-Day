@@ -1,11 +1,12 @@
 
 var word = prompt("Type in a word to check and see if it's a palendrome.");
 
-function check_palendrome(a_string)
-    if word[:] == word[::-1]:
-        alert = ("This is a palendrome.")
-    else:
-        console.log = ("This is not a palendrome.")
+function check_palendrome(a_string); {
+    if word == word.reverse();
+    alert = ("This is a palendrome.")
+  } else {
+        alert = ("This is not a palendrome.")
+}
 
 
 
