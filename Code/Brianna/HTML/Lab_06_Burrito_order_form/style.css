@@ -13,6 +13,7 @@ nav {
     display: flex;
     position: absolute;
     left: 0;
+    padding: 5em;
     width: -moz-max-content;
     margin-bottom: .5em;
 

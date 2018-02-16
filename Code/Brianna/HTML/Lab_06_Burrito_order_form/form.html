@@ -48,14 +48,43 @@
       </select>
     </div>
   </div>
+      <div class="row">
+        <div class="two columns">
+          <label>Enter Username:</label>
+          <input type="text" name="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,}$" placeholder="My Username">
+        </div>
+        <div class="two columns">
+          <label>Password:</label>
+            <input type="password" name="password" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Password must be 6 characters long and contain uppercase, lower case, number, and special character.">
+        </div>
+        <div class="two columns">
+          <label>First Name:</label>
+            <input type="text" name="firstname" pattern="^[a-z][A-Z]{3,}$">
+        </div>
+        <div class="two columns">
+          <label>Last Name:</label>
+            <input type="text" name="lastname" pattern="^[a-z][A-Z]{3,}$">
+        </div>
+        <div class="two columns">
+              <label>Phone:</label>
+            <input type="tel" name="phonenumber" pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Please enter a valid phone number in the format 123-456-7890">
+        </div>
+         <div class="two columns">
+              <label>Birthdate:</label>
+            <input type="date" name="birthdate" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))
+    " title="Please enter a valid birthday in the format YYYY-MM-DD" placeholder="enter YYYY-MM-DD">
+        </div>
+  </div>
+    <hr>
+    <h3>Menu Selections</h3>
     <div class="row">
         <div class="two columns">
                 <label>Select your Tortilla type</label>
                 <label>
-                    <input type="radio" name="tortilla" value="wheat"> Wheat
+                    <input type="radio" name="tortilla" value="wheat" required> Wheat
                 </label>
                 <label>
-                    <input type="radio" name="tortilla" value="corn"> Corn
+                    <input type="radio" name="tortilla" value="corn" required> Corn
                 </label>
         </div>
          <div class="two columns">
@@ -85,8 +114,8 @@
                     <input type="radio" name="protein" value="carrot"> GMO Carrots
                 </label>
                 </div>
-        </div>
-        <div class="row">
+             </div>
+             <div class="row">
               <div class="four columns">
                 <label>Select your cheese</label>
                 <label>
@@ -105,16 +134,18 @@
                     <input type="radio" name="greens" value="orange"> I prefer them orange.
                 </label>
                 </div>
-        </div>
-        </div>
-    </div>
-  <label for="exampleMessage">Message</label>
-  <textarea class="u-full-width" placeholder="eg: I like my burritos served cold …" id="exampleMessage"></textarea>
-  <label class="example-send-yourself-copy">
-    <input type="checkbox">
-    <span class="label-body">Send a copy to yourself</span>
-  </label>
-  <input class="button-primary" type="submit" value="Submit">
+              </div>
+             </div>
+            </div>
+            <label>
+
+            </label>
+            <label for="exampleMessage">Message</label>
+                <textarea class="u-full-width" placeholder="eg: I like my burritos served cold …" id="exampleMessage"></textarea>
+            <label class="example-send-yourself-copy">
+                <input type="checkbox"> <span class="label-body">Send a copy to yourself</span>
+            </label>
+            <input class="button-primary" type="submit" value="Submit">
 </form>
 
 
