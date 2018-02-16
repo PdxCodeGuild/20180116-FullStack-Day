@@ -15,9 +15,12 @@ check_palendrome(word);
 
 
 var regularize = function(word) {
-    return word.toLowerCase().replace(/[^a-z\d]+/g, '').split('').sort().join('').trim();
+    word = word.toLowerCase();
+    word = word.replace(/[^a-z\d]+/g, '');
+    word = word.split('').sort().join('');
+    word = word.trim();
+    return word
 };
-
 
 
 
