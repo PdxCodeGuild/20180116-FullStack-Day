@@ -6,8 +6,6 @@
 #
 import csv
 
-
-
 def load_contacts():
     with open('contacts_csv.csv', 'r') as file:
         lines = file.read().split('\n')
