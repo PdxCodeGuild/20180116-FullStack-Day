@@ -2,21 +2,27 @@ html {
     background-color:lightgray;
 }
 h1 {
-    font-size:25px;
-}
-#about {
     margin-top:60px;
     text-align:center;
+    font-size:25px;
 }
-#skills {
+h2 {
+    margin-top:60px;
+    text-align:center;
+    font-size:25px;
+}
+h2 {
+    font-size:25px;
     margin-top: 60px;
     text-align:center;
 }
-#resume {
+h3 {
+    font-size:25px;
     margin-top:60px;
     text-align:center;
 }
-#contact {
+h4 {
+    font-size:25px;
     margin-top:60px;
     text-align:center;
 }

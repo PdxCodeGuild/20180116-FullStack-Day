@@ -6,15 +6,13 @@ answer = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes definit
           'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good,', 'Very doubtful']
 
 print('Welcome')
-question = input('Ask a question. ')
-output = random.choice(answer)
-print(output)
-cont = input('Do you wish to ask another question? ')
+cont = "yes"
 #Version 2
 while cont == 'yes':
     output = random.choice(answer)
     question = input('Ask a question. ')
     print(output)
     cont = input('Do you wish to ask another question? ')
-else:
-    print('Thank you.')
+    if cont == 'no':
+        break
+
