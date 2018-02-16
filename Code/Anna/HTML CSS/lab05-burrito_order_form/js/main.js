@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
 
     // Define what happens in case of error
     XHR.addEventListener("error", function(event) {
-      alert('Oups! Something goes wrong.');
+      alert('Oops! Something went wrong.');
     });
 
     // Set up our request
@@ -52,6 +52,7 @@ window.addEventListener("load", function () {
     XHR.send(FD3);
     XHR.send(FD4);
   }
+  console.log("listening!");
 
   // Access the form element...
   var form1 = document.getElementById("form1");
