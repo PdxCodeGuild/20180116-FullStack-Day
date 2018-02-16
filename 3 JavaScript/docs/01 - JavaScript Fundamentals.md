@@ -1,16 +1,16 @@
 
 # Fundamentals
 
+You can read more about JavaScript syntax on the [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar).
+
 ## Declaring Variables
 
-There are three ways to declare variables: `var`, `let` and `const`.
+There are three ways to declare variables: `var`, `let` and `const`. The only difference between `var` and `let` is that `let` has a more limited scope. In general, `let` is preferable, unless you your code needs to be compatible with older browsers.
 
-`var` and `let` are very similar, the only difference is that `let` more closely follows scope. You should use `let` by default.
-
-```
+```javascript
 if (2 < 10) {
-    var x = 10;
-    let y = 11;
+    var x = 10; // scope extends beyond the if
+    let y = 11; // scope is limited to the if
 }
 console.log(x); // 10
 console.log(y); // error
@@ -20,11 +20,9 @@ alert(x); // 10
 
 for (let y=0; y<10; ++i) {}
 alert(y); // error
-
-
 ```
 
-`const` variables cannot change value, this is advantageous for declaring constants.
+Variables declared `const` cannot change value, this is advantageous for declaring constants.
 
 ```javascript
 const pi = 3.1415;
@@ -42,11 +40,18 @@ let d = true; // boolean
 let e = null; // null
 let f = undefined; // undefined
 
-let fruits = ["apple", "bananana", "pear"]; // array
+// arrays are like python lists
+let fruits = ["apple", "bananana", "pear"];
+fruits[0] = 'cherry';
 
-let person = {firstName:"John", lastName:"Doe", age:46}; // object
+// objects are like Python dictionaries
+let person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:46
+};
 person.age += 1;
-person.favorite_fruit = "orange";
+person['age'] += 1;
 ```
 
 To convert between types, use `parseInt`, `parseFloat` and `toString`.
@@ -69,43 +74,8 @@ let x = 10; // this is another line comment
 which can span multiple lines*/
 ```
 
-## The Script Tag
-
-In an HTML page, we can specify blocks of JavaScript code using `<script>` tags. You can put these anywhere, but most often you'll put them in the `<head>` or at the bottom of the `<body>`. You may see a `type="text/javascript"` attribute on script tags. This was necessary in HTML4.01, but not in HTML5.
-
-```html
-<html>
-    <head>
-        <script>
-            alert('put your code here');
-        </script>
-    </head>
-    <body>
-        ...
-        <script>
-            alert('or here');
-        </script>
-    </body>
-</html>
-```
-
-If you put in the head, you cannot do `document.getElementById`, `document.querySelector`, etc, on the elements in the body, because the JavaScript would be executed before the body is loaded. You have to either wrap it in a `window.onload = function () {...}` or put it at the bottom of the body.
-
-A script tag may also reference an external file containing JavaScript, denoted with a `.js` suffix.
-
-```html
-<script src="myscript.js"></script>
-```
-
-JavaScript can also be written in-line.
-
-```html
-<button onclick="alert('Hello World!');">click me</button>
-```
-
 
 ## Input
-
 
 An easy way to get input from a user is `prompt`, a function which takes the text to display as a parameter and returns whatever the user entered.
 
@@ -114,27 +84,36 @@ let name = prompt("Please enter your name");
 alert("Hello " + name + "! How are you today?");
 ```
 
+You can also use `input` elements.
+```html
+<input id="name_input" type="text"/>
+<script>
+    let name_input = document.querySelector('#name_input');
+    let name_value = name_input.value;
+    alert(name_value);
+</script>
+```
+
+
 ## Output
 
 Below are three simple ways of getting output to the user.
 
-`alert` shows the given sting to the use in a pop-up
+The `alert` function shows the user text in the form of a popup.
 
 ```javascript
 alert('Hello World!');
 ```
 
-
-`console.log` will print an object in the developer console (F12), giving much more control than `alert`.
-
+The `console.log` function will print the parameter in the developer console (F12). If the parameter is an object, you'll be able to look through the data much more easily than if it were one giant string.
 
 ```javascript
 console.log("Hello World!");
 ```
 
-`document.write(s)` will replace all existing HTML on the page with whatever you give it (which can be a string containing HTML)
+The `document.write(s)`  function will replace all existing HTML on the page with whatever you give it (which can be a string containing HTML)
 
 ```javascript
-document.write('Hello World!');
+document.write('<span>Hello World!</span>');
 ```
 
