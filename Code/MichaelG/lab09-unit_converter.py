@@ -126,25 +126,32 @@
 
 units = ['feet', 'miles', 'meters', 'kilometers']
 distance = float(input('What is the distance? '))
-unitin = input('Are the input units in Feet, Miles, Meters, or Kilometers? ')
-unitout = input('What are the output units? ')
+unitin = input('Are the input units in Feet, Miles, Meters, or Kilometers? ').lower()
+unitout = input('What are the output units? ').lower()
 
 ftm = distance*0.3048
 mitm = distance*1609.34
 # mtm = distance*1
 kmtm = distance*1000
-convert_to_meters = {0: ftm, 1: mitm, 2: kmtm}
+conv = {"feet": 0.3048, "miles": 1609.34, "meters": 1, "kilometers": 1000}
 
-mtf = convert_to_meters[0]*3.28084
-mtmi = convert_to_meters[1]*0.000621371
-mtkm = convert_to_meters[3]*0.001
-convert_from_meters = {0: mtf, 1: mtmi, 2:  3: mtkm}
+if unitin == 'meters' and unitout in units:
+    distance = distance/conv[unitout]
+elif unitin != 'meters' and unitin in units and unitout in units:
+    distance = distance*conv[unitin]
+    distance = distance/conv[unitout]
 
-if unitin == 'feet' and unitout == 'meters':
-    print(f"That is {convert_to_meters[0]} {unitout}.")
-if unitin == 'miles' and unitout == 'meters':
-    print(f"That is {convert_to_meters[1]} {unitout}.")
-if unitin == 'kilometers' and unitout == 'meters':
-    print(f"That is {convert_to_meters[2]} {unitout}.")
+#
+# mtf = convert_to_meters[0]*3.28084
+# mtmi = convert_to_meters[1]*0.000621371
+# mtkm = convert_to_meters[3]*0.001
+# convert_from_meters = {}
+
+# if unitin == 'feet' and unitout == 'meters':
+#     print(f"That is {convert_to_meters[0]} {unitout}.")
+# if unitin == 'miles' and unitout == 'meters':
+#     print(f"That is {convert_to_meters[1]} {unitout}.")
+# if unitin == 'kilometers' and unitout == 'meters':
+#     print(f"That is {convert_to_meters[2]} {unitout}.")
 
 

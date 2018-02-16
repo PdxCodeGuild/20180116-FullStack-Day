@@ -21,13 +21,17 @@ $( document ).ready(function() {
   });
 });
 
-// // Function for sending all of the forms
+
+// Function for sending all of the forms... kinda
 // window.addEventListener("load", function () {
 //   function sendData() {
-//     var XHR = new XMLHttpRequest();
+//     let XHR = new XMLHttpRequest();
 //
 //     // Bind the FormData object and the form element
-//     var FD = new FormData(form);
+//     let FD1 = new FormData(form1);
+//     let FD2 = new FormData(form2);
+//     let FD3 = new FormData(form3);
+//     let FD4 = new FormData(form4);
 //
 //     // Define what happens on successful data submission
 //     XHR.addEventListener("load", function(event) {
@@ -36,41 +40,45 @@ $( document ).ready(function() {
 //
 //     // Define what happens in case of error
 //     XHR.addEventListener("error", function(event) {
-//       alert('Oups! Something goes wrong.');
+//       alert('Oops! Something went wrong.');
 //     });
 //
 //     // Set up our request
 //     XHR.open("POST", "https://requestb.in/1f84cwu1");
 //
 //     // The data sent is what the user provided in the form
-//     XHR.send(FD);
+//     XHR.send(FD1);
+//     XHR.send(FD2);
+//     XHR.send(FD3);
+//     XHR.send(FD4);
 //   }
+//   console.log("listening!");
 //
 //   // Access the form element...
-//   var form1 = document.getElementById("form1");
-//   var form2 = document.getElementById("form2");
-//   var form3 = document.getElementById("form3");
-//   var form4 = document.getElementById("form4");
+//   let form1 = document.querySelector("#form1");
+//   let form2 = document.querySelector("#form2");
+//   let form3 = document.querySelector("#form3");
+//   let form4 = document.querySelector("#form4");
 //
 //   // ...and take over its submit event.
 //   form1.addEventListener("submit", function (event) {
 //     event.preventDefault();
-//
+//     console.log("intercepting form 1");
 //     sendData();
 //   });
 //   form2.addEventListener("submit", function (event) {
 //     event.preventDefault();
-//
+//     console.log("intercepting form 2");
 //     sendData();
 //   });
 //   form3.addEventListener("submit", function (event) {
 //     event.preventDefault();
-//
+//     console.log("intercepting form 3");
 //     sendData();
 //   });
 //   form4.addEventListener("submit", function (event) {
 //     event.preventDefault();
-//
+//     console.log("intercepting form 4");
 //     sendData();
 //   });
 // });
@@ -111,3 +119,82 @@ $( document ).ready(function() {
 //     });
 // }
 //
+
+
+
+// Another unction for sending all of the forms... hopefully
+$('#submit_all_bt').on('click', function() {
+    console.log("Place your order pressed")
+
+    // let data = {};
+    // $('input').each(function() {
+    //     data[$(this).attr('name')] = $(this).val();
+    // });
+    // console.log(data);
+    // alert(data);
+
+    let tortilla_val = $('input[name="group1"]:checked').val();
+    let rice_val = $('input[name="group2"]:checked').val();
+    let bean_val = $('input[name="group3"]:checked').val();
+    let meat_val = $("#meat option:selected").val();
+    let options_val = $('input[name="group4"]:checked').val();
+    let user_name = $('#user_name').val();
+    let password = $('#password').val();
+    let email = $('#email').val();
+    let phone = $('#phone').val();
+    let first_name = $('#first_name').val();
+    let last_name = $('#last_name').val();
+    let dob = $('#dob').val();
+    let social = $('#social').val();
+    let address = $('#address').val();
+    let city = $("#city option:selected").val();
+    let zip_val = $('#zip').val();
+    console.log("collected data");
+
+    let order_results = document.querySelector('#order_results');
+    order_results.innerHTML = "Tortilla: " + tortilla_val +
+        "<br>" + "Rice: " + rice_val +
+        "<br>" + "Beans: " + bean_val +
+        "<br>" + "Meat: " + meat_val +
+        "<br>" + "Additional options: " + options_val +
+        "<br>" +
+        "<br>" + "<h5>Your burrito will be delivered to: </h5>" +
+        "<br>" + first_name + " " + last_name +
+        "<br>" + "<h5>At the address: </h5>" +
+        "<br>" + address +
+        "<br>" + city + ", " + zip_val +
+        "<br>" +
+        "<br>" + "<h4>Thank you for your order!</h4>";
+    console.log("order printed");
+
+    $.ajax({
+        type: "POST",
+        url: "https://requestb.in/1f84cwu1",
+        data: {
+            tortilla: tortilla_val,
+            rice: rice_val,
+            bean: bean_val,
+            meat: meat_val,
+            additions: options_val,
+            user: user_name,
+            pw: password,
+            email: email,
+            phone_numer: phone,
+            first_name: first_name,
+            last_name: last_name,
+            date_of_birth: dob,
+            social_security: social,
+            address: address,
+            city: city,
+            zip: zip_val
+        }
+        // },
+        // success: function() {
+        //     alert('Your order has been placed. Burritos await!');
+        // },
+        // error: function() {
+        //     alert('Your order was lost amongst the atoms... no burrito for you!');
+        // }
+    });
+});
+

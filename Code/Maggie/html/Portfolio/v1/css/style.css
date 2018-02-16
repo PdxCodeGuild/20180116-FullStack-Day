@@ -1,0 +1,163 @@
+
+html {
+    background: linear-gradient(270deg, #00beff, #00fffd, #16bab9, #1697ba, #1697ba);
+    background-size: 100% 100%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 71%}
+    50%{background-position:100% 30%}
+    100%{background-position:0% 71%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 71%}
+    50%{background-position:100% 30%}
+    100%{background-position:0% 71%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 71%}
+    50%{background-position:100% 30%}
+    100%{background-position:0% 71%}
+}
+html, body { height: 100%;
+            margin: 0;
+}
+.grid-container {
+    min-height: 100%;
+    /*display: grid;*/
+    /*grid-template-rows: 1fr 1fr;*/
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+}
+.sky {
+    width: 100%;
+    height: 50%;
+
+}
+/* OBJECTS */
+.cloud_container {
+    position: relative;
+    top: 100px;
+    left: 50%;
+}
+.circle1 {
+	width: 150px;
+	height: 50px;
+	background: white;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    z-index: 10;
+	position: relative;
+	top: 0px;
+	box-shadow:
+		inset 5px -9px 5px rgba(225, 245, 253, 0.9),
+		0px 10px 10px 6px rgba(240, 240, 240, 0.7);
+}
+.circle2 {
+	width: 75px;
+	height: 75px;
+	background: white;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    z-index: 10;
+    position: absolute;
+    bottom: 45%;
+    left: 10px
+}
+
+.circle3 {
+	width: 50px;
+	height: 50px;
+	background: white;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+    z-index: 10;
+    position: relative;
+    bottom: 80px;
+    left: 75px;
+}
+
+.ground {
+    position: absolute;
+	width: 100%;
+	height: 50%;
+	background: darkgreen;
+    /*position: absolute;*/
+    bottom: -10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.left-side {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;}
+
+.tree {
+    position: relative;
+    top: 10px;
+    /*left: 50%;*/
+}
+.tree .top{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 200px solid green;
+    position: relative;
+    bottom: 20%;
+    left: 0%;
+}
+.tree .bottom {
+    width: 25px;
+	height: 50px;
+	background: #524c4d;
+    position: relative;
+    bottom: 20%;
+    left: 35%;
+}
+.path {
+    width: 0;
+    height: 0;
+    position: relative;
+    border-left: 400px solid transparent;
+    border-right: 400px solid transparent;
+    border-bottom: 400px solid #95685d;
+}
+.right-side {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;}
+
+.tree {
+    position: relative;
+    top: 10px;
+    /*left: 50%;*/
+}
+.tree .top{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 200px solid green;
+    position: relative;
+    bottom: 20%;
+    left: 0%;
+}
+.tree .bottom {
+    width: 25px;
+	height: 50px;
+	background: #524c4d;
+    position: relative;
+    bottom: 20%;
+    left: 35%;
+}
