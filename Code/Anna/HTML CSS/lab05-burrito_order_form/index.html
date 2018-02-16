@@ -45,7 +45,7 @@
         <li class="tab col s3"><a class="grey-text" href="#test-swipe-2">Main Ingredients</a></li>
         <li class="tab col s3"><a class="grey-text" href="#test-swipe-3">Additional Ingredients</a></li>
         <li class="tab col s3"><a class="grey-text" href="#test-swipe-4">Order Information</a></li>
-        <li class="tab col s3"><a class="grey-text" href="#test-swipe-5">Place Your Order</a></li>
+        <!--<li class="tab col s3"><a class="grey-text" href="#test-swipe-5">Place Your Order</a></li>-->
         </div>
     </ul>
 
@@ -58,7 +58,7 @@
             </div>
             <div class="col l6 s6 offset-l2">
                 <h5>Select a tortilla type:</h5>
-                <form action="#">
+                <form id="order-form" action="https://requestb.in/1f84cwu1" method="post">
                 <p>
                   <input name="group1" type="radio" id="tort1" />
                   <label for="tort1">White Flour</label>
@@ -75,8 +75,9 @@
                   <input name="group1" type="radio" id="tort4"/>
                   <label for="tort4">Corn</label>
                 </p>
-                </form>
-
+                <!--<input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Save">-->
+                <input class="waves-effect waves-light btn orange lighten-1" type="reset">
+                <!--</form>-->
             </div>
         </div>
     </div>
@@ -90,7 +91,7 @@
                 </div>
                 <div class="col l6 s6 offset-l2">
                     <h5>Choose your rice:</h5>
-                    <form action="#">
+                    <!--<form id="form2">-->
                     <p>
                     <input name="group2" type="radio" id="rice1"/>
                     <label for="rice1">White rice</label>
@@ -99,9 +100,7 @@
                     <input name="group2" type="radio" id="rice2"/>
                     <label for="rice2">Brown rice</label>
                     </p>
-                    </form>
                     <h5>Choose your beans:</h5>
-                    <form action="#">
                     <p>
                     <input name="group3" type="radio" id="bean1"/>
                     <label for="bean1">Black beans</label>
@@ -110,10 +109,8 @@
                     <input name="group3" type="radio" id="bean2"/>
                     <label for="bean2">Pinto beans</label>
                     </p>
-                    </form>
                     <h5>Choose your protein:</h5>
                     <div class="input-field">
-                        <form action="#">
                         <select class="icons">
                             <option value="" disabled selected>Choose a protein</option>
                             <option value="" data-icon="img/carnitas.png" class="left circle">Carnitas</option>
@@ -121,8 +118,9 @@
                             <option value="" data-icon="img/tofu.png" class="left circle">Sofritas</option>
                             <option value="" data-icon="img/none.png" class="left circle">None</option>
                         </select>
-                        </form>
                     </div>
+                <!--<input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Save">-->
+                    <!--</form>-->
                 </div>
             </div>
     </div>
@@ -136,7 +134,7 @@
                 </div>
                 <div class="col l6 s6 offset-l2">
                     <h5>Add some additional ingredients:</h5>
-                    <form action="#">
+                    <!--<form id="form3">-->
                     <p>
                       <input type="checkbox" class="filled-in" id="cheese" />
                       <label for="cheese">Cheese</label>
@@ -161,37 +159,108 @@
                       <input type="checkbox" class="filled-in" id="salsa" />
                       <label for="salsa">Salsa</label>
                     </p>
-                    </form>
+                    <!--<input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Save">-->
+                    <input class="waves-effect waves-light btn orange lighten-1" type="reset">
+                    <!--</form>-->
                 </div>
             </div>
     </div>
     </div>
+
     <div id="test-swipe-4" class="col s12 grey-text enlargen">
     <div class="container">
     <h2 class="center-align">Enter Your Payment Information</h2>
             <div class="row">
-                <div class="col l4 s4">
-                    <img src="img/credit-card.png" class="responsive-img">
-                </div>
-                <div class="col l6 s6 offset-l2">
-                    form will go here
+            <div class="col l4 s4">
+                <img src="img/credit-card.png" class="responsive-img">
+            </div>
+            <div class="col l6 s6 offset-l2">
+                    <!--<form class="col s12" id="form4">-->
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="user_name" type="text" class="validate" minlength="6" required>
+                          <label for="user_name">Username</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="password" type="password" class="validate" minlength="6" required>
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="email" type="email" class="validate" required>
+                          <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                          <div class="input-field col s6">
+                          <input id="phone" type="tel" class="validate" minlength="10">
+                          <label for="phone">Phone Number</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input id="first_name" type="text" class="validate" minlength="3">
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="last_name" type="text" class="validate" minlength="3" required>
+                          <label for="last_name">Last Name</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <h6>For some reason we need to know your DOB and SSN...</h6>
+                        <div class="input-field col s6">
+                          <input placeholder="Date of Birth" id="dob" type="date" class="validate" required>
+                          <label for="dob"></label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="social" type="text" class="validate" minlength="9" required>
+                          <label for="social">Social Security Number</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <input id="address" type="text" class="validate" required>
+                          <label for="address">Address</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                        <select>
+                          <option value="" disabled selected>Delivery cities:</option>
+                          <option value="1">Portland</option>
+                          <option value="2">Vancouver</option>
+                          <option value="3">Gresham</option>
+                        </select>
+                        <label>City</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="zip" type="text" class="validate" minlength="5" required>
+                          <label for="zip">Zip Code</label>
+                        </div>
+                      </div>
+                <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Place Your Order">
+                <input class="waves-effect waves-light btn orange lighten-1" type="reset">
+                    </form>
+                  </div>
                 </div>
             </div>
     </div>
-    </div>
-    <div id="test-swipe-5" class="col s12 grey-text enlargen">
-    <div class="container">
-    <h2 class="center-align">Place Your Order</h2>
-            <div class="row">
-                <div class="col l4 s4">
-                    <img src="img/delivery-truck.png" class="responsive-img">
-                </div>
-                <div class="col l6 s6 offset-l2">
-                    form will go here
-                </div>
-            </div>
-    </div>
-    </div>
+    <!--</div>-->
+    <!--<div id="test-swipe-5" class="col s12 grey-text enlargen">-->
+    <!--<div class="container">-->
+    <!--<h2 class="center-align">Place Your Order</h2>-->
+            <!--<div class="row">-->
+                <!--<div class="col l4 s4">-->
+                    <!--<img src="img/delivery-truck.png" class="responsive-img">-->
+                <!--</div>-->
+                <!--<div class="col l6 s6 offset-l2">-->
+                    <!--<button class="waves-effect waves-light btn orange lighten-1" type="submit" name="action">Place Your Order-->
+                        <!--<i class="material-icons right">send</i>-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
 
 
     <!-- Footer -->
@@ -229,6 +298,7 @@
 
     <!-- scripts here  -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>if (!window.jQuery) { document.write('<script src="bin/jquery-3.3.1.min.js"><\/script>'); }
     </script>
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>

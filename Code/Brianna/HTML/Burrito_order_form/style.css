@@ -1,15 +1,22 @@
 
-
+body {
+  margin-bottom: 120px;
+  background-color: #90CAF9;
+  color: whitesmoke;
+}
 
 .container {
   position: relative;
 }
 
 nav {
-  position: absolute;
-  left: 0px;
-  width: 200px;
-  margin-bottom: .5em;
+    display: flex;
+    position: absolute;
+    left: 0;
+    padding: 5em;
+    width: -moz-max-content;
+    margin-bottom: .5em;
+
 }
 
 section {
@@ -26,11 +33,9 @@ footer {
   width: 100%;
 }
 
-body {
-  margin-bottom: 120px;
-  background-color: #90CAF9;
+aside {
+    float: right;
 }
-
 
 
 .header {
@@ -43,15 +48,92 @@ body {
     font-family: "Arial Narrow", "American Typewriter", "Droid Serif", "Times New Roman", sans-serif;
 }
 
-.header img {
-
+.bunnyimg1 {
+    background-image: url("bunnyPortrait.jpg");
     position: absolute;
     margin: 0 0 20em 20em;
-    border-radius: 50%;
-    border: (width) (color)
-    width:
-    height:
+    border-radius: 60% 60% 60% 60%;
+    height: 18.75em;
+    width: 30em;
+    background-size: 105%;
+    background-position: center;
 
+}
+
+.bunnyimg2 {
+    background-image: url("bunnyportrait2.jpg");
+    position: absolute;
+    margin: 0 0 20em 20em;
+    border-radius: 60% 60% 60% 60%;
+    height: 18.75em;
+    width: 30em;
+    background-size: 105%;
+    background-position: center;
+}
+
+.bunnyimg3 {
+    background-image: url("bunnyportrait3.jpg");
+    position: absolute;
+    margin: 0 0 20em 20em;
+    border-radius: 60% 60% 60% 60%;
+    height: 18.75em;
+    width: 30em;
+    background-size: 105%;
+    background-position: center;
+}
+
+.bunnyimg4 {
+    background-image: url("bunnyportrait4.jpg");
+    position: absolute;
+    margin: 0 0 20em 20em;
+    border-radius: 60% 60% 60% 60%;
+    height: 18.75em;
+    width: 30em;
+    background-size: 105%;
+    background-position: center;
+}
+
+.bunnyimg5 {
+    background-image: url("bunnyportrait5.jpg");
+    position: absolute;
+    margin: 0 0 20em 20em;
+    border-radius: 60% 60% 60% 60%;
+    height: 18.75em;
+    width: 30em;
+    background-size: 105%;
+    background-position: center;
+}
+
+.bunnyimg6 {
+    background-image: url("bunnyportrait6.jpg");
+    position: absolute;
+    margin: 0 0 40em 40em;
+    border-radius: 60% 60% 60% 60%;
+    height: 18.75em;
+    width: 30em;
+    background-size: 130%;
+    background-position: center;
+}
+
+.tacobunny {
+    background-image: url("buntaco.jpg");
+    position: absolute;
+    margin-left: 23em;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    border-radius: 90% 90% 90% 90%;
+    height: 80vh;
+    width: 80vh;
+    background-size: 100%;
+    background-position: center;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .title {
@@ -93,6 +175,30 @@ body {
     font-family: "American Typewriter", "Droid Serif", "Times New Roman", sans-serif;
     font-size: medium;
 
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 
