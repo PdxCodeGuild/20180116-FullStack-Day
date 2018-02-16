@@ -6,6 +6,8 @@ input[type=text] {
 }
 legend {
     padding:10px;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 fieldset {
     margin-left:15px;
@@ -16,4 +18,28 @@ button {
 .primary {
     color:white;
     background-color:slategray;
+}
+div.bgtortilla {
+    background:url(https://i.imgur.com/WW2XMdA.png);
+    background-repeat: no-repeat;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+div.bgrice {
+    background:url(https://i.imgur.com/epIfZ7L.png);
+    background-repeat:no-repeat;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+div.bgbeans {
+    background:url(https://i.imgur.com/8tZ1IsL.png);
+    background-repeat:no-repeat;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+div.bgprotein {
+    background:url(https://i.imgur.com/FtCOCWE.png);
+    background-repeat:no-repeat;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
