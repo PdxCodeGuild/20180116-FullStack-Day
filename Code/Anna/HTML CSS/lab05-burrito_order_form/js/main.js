@@ -133,11 +133,11 @@ $('#submit_all_bt').on('click', function() {
     // console.log(data);
     // alert(data);
 
-    let tortilla_val = document.querySelector('input[name="group1"]:checked').value;
-    let rice_val = document.querySelector('input[name="group2"]:checked').value;
-    let bean_val = document.querySelector('input[name="group3"]:checked').value;
+    let tortilla_val = $('input[name="group1"]:checked').val();
+    let rice_val = $('input[name="group2"]:checked').val();
+    let bean_val = $('input[name="group3"]:checked').val();
     let meat_val = $("#meat option:selected").val();
-    let options_val = document.querySelector('input[name="group4"]:checked').value;
+    let options_val = $('input[name="group4"]:checked').val();
     let user_name = $('#user_name').val();
     let password = $('#password').val();
     let email = $('#email').val();
@@ -150,6 +150,23 @@ $('#submit_all_bt').on('click', function() {
     let city = $("#city option:selected").val();
     let zip_val = $('#zip').val();
     console.log("collected data");
+
+    let order_results = document.querySelector('#order_results');
+    order_results.innerHTML = "Tortilla: " + tortilla_val +
+        "<br>" + "Rice: " + rice_val +
+        "<br>" + "Beans: " + bean_val +
+        "<br>" + "Meat: " + meat_val +
+        "<br>" + "Additional options: " + options_val +
+        "<br>" +
+        "<br>" + "<h5>Your burrito will be delivered to: </h5>" +
+        "<br>" + first_name + " " + last_name +
+        "<br>" + "<h5>At the address: </h5>" +
+        "<br>" + address +
+        "<br>" + city + ", " + zip_val +
+        "<br>" +
+        "<br>" + "<h4>Thank you for your order!</h4>";
+    console.log("order printed");
+
     $.ajax({
         type: "POST",
         url: "https://requestb.in/1f84cwu1",
@@ -170,12 +187,14 @@ $('#submit_all_bt').on('click', function() {
             address: address,
             city: city,
             zip: zip_val
-        },
-        success: function() {
-            alert('Your order has been placed. Burritos await!');
-        },
-        error: function() {
-            alert('Your order was lost amongst the atoms... no burrito for you!');
         }
+        // },
+        // success: function() {
+        //     alert('Your order has been placed. Burritos await!');
+        // },
+        // error: function() {
+        //     alert('Your order was lost amongst the atoms... no burrito for you!');
+        // }
     });
 });
+
