@@ -22,16 +22,16 @@ $( document ).ready(function() {
 });
 
 
-// Function for sending all of the forms
+// Function for sending all of the forms... kinda
 window.addEventListener("load", function () {
   function sendData() {
-    var XHR = new XMLHttpRequest();
+    let XHR = new XMLHttpRequest();
 
     // Bind the FormData object and the form element
-    var FD1 = new FormData(form1);
-    var FD2 = new FormData(form2);
-    var FD3 = new FormData(form3);
-    var FD4 = new FormData(form4);
+    let FD1 = new FormData(form1);
+    let FD2 = new FormData(form2);
+    let FD3 = new FormData(form3);
+    let FD4 = new FormData(form4);
 
     // Define what happens on successful data submission
     XHR.addEventListener("load", function(event) {
@@ -55,10 +55,10 @@ window.addEventListener("load", function () {
   console.log("listening!");
 
   // Access the form element...
-  var form1 = document.getElementById("form1");
-  var form2 = document.getElementById("form2");
-  var form3 = document.getElementById("form3");
-  var form4 = document.getElementById("form4");
+  let form1 = document.querySelector("#form1");
+  let form2 = document.querySelector("#form2");
+  let form3 = document.querySelector("#form3");
+  let form4 = document.querySelector("#form4");
 
   // ...and take over its submit event.
   form1.addEventListener("submit", function (event) {
