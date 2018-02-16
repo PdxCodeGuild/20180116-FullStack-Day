@@ -18,7 +18,7 @@ You can compare values using comparison operators.
 - `>` greater-than
 - `>=` greater-than-or-equal-to
 
-## Type Coersion
+## Type Coercion
 
 If the two operands of `==` aren't of the same type, the JavaScript interpreter will try to convert them to the same type so they can be compared. This may result in unexpected behavior. In practice, it's better to use `===` which will only be true if both operands are of the **same type and value**.
 
