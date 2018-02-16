@@ -1,0 +1,54 @@
+body {
+    width: 100%;
+    font-family: "Helvetica Neue", "Times New Roman", sans-serif;
+    font-size: 25px;
+    color: #0c5460;
+    background: #856404;
+
+}
+
+#header {
+    height: 400px;
+    width: 100%;
+    background-image:url('http://www.meh.ro/wp-content/uploads/2010/08/meh.ro4999.jpg');
+}
+
+aside {
+    width: 15%;
+    text-align: left;
+    border: 1px solid;
+}
+
+#hamlet {
+    margin-left: 50px;
+    float: right;
+    height: 300px;
+    width: 200px;
+}
+
+p {
+    width: 30%;
+    padding: 20px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.text-secondary {
+    width: 50%;
+    float: right;
+    margin-top: 100px;
+}
+
+.nav {
+    text-align: center;
+    padding-left: 100px;
+    margin-left: 100px;
+}
+
+#pork   {
+    height: 300px;
+    width: 500px;
+    border: 2px solid;
+    float: right;
+    margin-left: 100px;
+}

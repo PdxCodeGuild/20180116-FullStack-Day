@@ -1,0 +1,31 @@
+body {
+font-family: -apple-system, system-ui, BlinkMacSystemFont,
+"Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif,
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.navbar-dark {
+    background: rgba(0, 0, 0, .9);
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center .font-weight-bold {
+    color: ghostwhite;
+    text-decoration: none;
+    text-transform: lowercase;
+    letter-spacing: 7px;
+    text-shadow: 1px 1px lightslategrey;
+}
+
+.text-lowercase .font-weight-bold {
+    color: ghostwhite;
+    text-decoration: none;
+    letter-spacing: 5px;
+    line-height: 1.5;
+
+}
+
