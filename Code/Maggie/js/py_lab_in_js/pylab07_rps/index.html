@@ -20,14 +20,26 @@
         font-size: 50px;
     }
     button {
-        top:50%
-        height: 60px;
         overflow: hidden;
         border: 5px solid black;
+        border-radius: 10px;
         background: linear-gradient(#0ece7b, darkslateblue);
         font-size: 50px;
+        box-shadow: 2px 5px black;
+        /*margin-bottom: 5px;*/
+
+    }
+    button:hover {
+        background: linear-gradient(#0ece7b, red);
     }
 
+    button:active {
+        background: red;
+        /*border: 0px solid black;*/
+        box-shadow: 0 0px #666;
+        transform: translateY(4px);
+        /*padding-bottom: 5px;*/
+    }
 </style>
 
 </head>
