@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="lab05css.css">
+    <meta charset="UTF-8">
+    <title>Burrito Form</title>
+</head>
+<body>
+    <form action="https://requestb.in/u96nubu9" method="post">
+        <fieldset>
+            <legend>Personal Info</legend>
+            Name: <input type="text" name="name"/>
+            Email: <input type="text" name="email"/>
+        </fieldset>
+        <fieldset>
+            <div class="p-3 mb-2" style="background-color: #829CA7">
+                <div class="bgtortilla">
+                    <legend>Tortilla</legend>
+                    <input type="radio" name="tortilla" value="white flour"> White Flour<br>
+                    <input type="radio" name="tortilla" value="wheat flour"> Wheat Flour<br>
+                    <input type="radio" name="tortilla" value="spinach"> Spinach<br>
+                    <input type="radio" name="tortilla" value="corn"> Corn
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="p-3 mb-2" style="background-color: #729A9D">
+                <div class="bgrice">
+                    <legend>Rice</legend>
+                    <input type="radio" name="rice" value="white"> White<br>
+                    <input type="radio" name="rice" value="brown"> Brown
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="p-3 mb-2" style="background-color: #7A86A7">
+                <div class="bgbeans">
+                    <legend>Beans</legend>
+                    <input type="radio" name="beans" value="pinto"> Pinto<br>
+                    <input type="radio" name="beans" value="black" > Black
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="p-3 mb-2" style="background-color: #72759D">
+                <div class="bgprotein">
+                    <legend>Protein</legend>
+                    <input type="radio" name="protein" value="asada"> Carne Asada<br>
+                    <input type="radio" name="protein" value="carnitas"> Carnitas<br>
+                    <input type="radio" name="protein" value="chicken"> Chicken<br>
+                    <input type="radio" name="protein" value="sofritas"> Sofritas<br>
+                    <input type="radio" name="protein" value="none"> None
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="p-3 mb-2" style="background-color: #7080A8">
+                <div class="bgadditional">
+                    <legend>Additional Ingredients</legend>
+                    <input type="checkbox" name="additional" value="sour cream"> Sour Cream<br>
+                    <input type="checkbox" name="additional" value="guacamole"> Guacamole<br>
+                    <input type="checkbox" name="additional" value="cheese"> Cheese<br>
+                    <input type="checkbox" name="additional" value="jalapenos"> Jalapenos
+                </div>
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

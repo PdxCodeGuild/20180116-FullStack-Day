@@ -1,0 +1,310 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Compiled and minified Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div id="top"></div>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Header -->
+    <div class="full-width gradient z-depth-2" id="wrapper">
+    <header class="header center">
+        <img src="img/burrito.png" class="responsive-img">
+        <h1 class="title">BURRITO FTW!</h1>
+        <h2 class="subtitle">Order yours below</h2>
+        <a class="btn-floating btn-large waves-effect waves-light orange lighten-1 z-depth-2 smooth-scroll" href="#menu"><i class="material-icons">arrow_downward</i></a>
+    </header>
+    </div>
+
+    <!-- Order forms go here -->
+    <div id="menu"></div>
+
+    <ul id="tabs-swipe-demo" class="tabs orange lighten-5 z-depth-2">
+        <div class="container">
+        <li class="tab col s3"><a class="active grey-text" href="#page-1">Tortilla</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-2">Main Ingredients</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-3">Additional Ingredients</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-4">Order Information</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-5">Review Your Order</a></li>
+        </div>
+    </ul>
+
+    <div id="page-1" class="col s12 grey-text enlargen">
+    <div class="container">
+    <h2 class="center-align">Choose Your Tortilla</h2>
+        <div class="row">
+            <div class="col l4 s4">
+                <img src="img/tortillas.png" class="responsive-img">
+            </div>
+            <div class="col l6 s6 offset-l2">
+                <h5>Select a tortilla type:</h5>
+                <form id="form1">
+                <p>
+                  <input name="group1" type="radio" id="tort1" value="White" />
+                  <label for="tort1">White Flour</label>
+                </p>
+                <p>
+                  <input name="group1" type="radio" id="tort2" value="Wheat" />
+                  <label for="tort2">Wheat Flour</label>
+                </p>
+                <p>
+                  <input name="group1" type="radio" id="tort3" value="Spinach" />
+                  <label for="tort3">Spinach</label>
+                </p>
+                <p>
+                  <input name="group1" type="radio" id="tort4" value="Corn" />
+                  <label for="tort4">Corn</label>
+                </p>
+                <a class="waves-effect waves-light btn orange lighten-1" href="#page-2">Next</a>
+                <input class="waves-effect waves-light btn orange lighten-1" type="reset">
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="page-2" class="col s12 grey-text enlargen">
+    <div class="container">
+    <h2 class="center-align">Choose Rice, Beans, and Protein</h2>
+            <div class="row">
+                <div class="col l4 s4">
+                    <img src="img/meat.png" class="responsive-img">
+                </div>
+                <div class="col l6 s6 offset-l2">
+                    <h5>Choose your rice:</h5>
+                    <form id="form2">
+                    <p>
+                    <input name="group2" type="radio" id="rice1" value="White"/>
+                    <label for="rice1">White rice</label>
+                    </p>
+                    <p>
+                    <input name="group2" type="radio" id="rice2" value="Brown"/>
+                    <label for="rice2">Brown rice</label>
+                    </p>
+                    <h5>Choose your beans:</h5>
+                    <p>
+                    <input name="group3" type="radio" id="bean1" value="Black"/>
+                    <label for="bean1">Black beans</label>
+                    </p>
+                    <p>
+                    <input name="group3" type="radio" id="bean2" value="Pinto"/>
+                    <label for="bean2">Pinto beans</label>
+                    </p>
+                    <h5>Choose your protein:</h5>
+                    <div class="input-field">
+                        <select class="icons" id="meat">
+                            <option value="" disabled selected>Choose a protein</option>
+                            <option value="Carnitas" data-icon="img/carnitas.png" class="left circle">Carnitas</option>
+                            <option value="Chicken" data-icon="img/chicken.png" class="left circle">Chicken</option>
+                            <option value="Sofritas" data-icon="img/tofu.png" class="left circle">Sofritas</option>
+                            <option value="None" data-icon="img/none.png" class="left circle">None</option>
+                        </select>
+                    </div>
+                        <a class="waves-effect waves-light btn orange lighten-1" href="#page-3">Next</a>
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div id="page-3" class="col s12 grey-text enlargen">
+    <div class="container">
+    <h2 class="center-align">Choose Additional Ingredients</h2>
+            <div class="row">
+                <div class="col l4 s4">
+                    <img src="img/burrito2.png" class="responsive-img">
+                </div>
+                <div class="col l6 s6 offset-l2">
+                    <h5>Add some additional ingredients:</h5>
+                    <form id="form3">
+                    <p>
+                      <input type="checkbox" class="filled-in" id="cheese" name="group4" value="Cheese" />
+                      <label for="cheese">Cheese</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" class="filled-in" id="cream" name="group4" value="Sour cream" />
+                      <label for="cream">Sour cream</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" class="filled-in" id="lettuce" name="group4" value="Lettuce" />
+                      <label for="lettuce">Lettuce</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" class="filled-in" id="cilantro" name="group4" value="Cilantro" />
+                      <label for="cilantro">Cilantro</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" class="filled-in" id="jalapenos" name="group4" value="Jalapenos" />
+                      <label for="jalapenos">Jalapenos</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" class="filled-in" id="salsa" name="group4" value="Salsa" />
+                      <label for="salsa">Salsa</label>
+                    </p>
+                    <a class="waves-effect waves-light btn orange lighten-1" href="#page-4">Next</a>
+                    <input class="waves-effect waves-light btn orange lighten-1" type="reset">
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <div id="page-4" class="col s12 grey-text enlargen">
+    <div class="container">
+    <h2 class="center-align">Enter Your Payment Information</h2>
+            <div class="row">
+            <div class="col l4 s4">
+                <img src="img/credit-card.png" class="responsive-img">
+            </div>
+            <div class="col l6 s6 offset-l2">
+                    <form class="col s12" id="form4">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="user_name" type="text" class="validate" minlength="6" required>
+                          <label for="user_name">Username</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="password" type="password" class="validate" minlength="6" required>
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="email" type="email" class="validate" required>
+                          <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
+                          <div class="input-field col s6">
+                          <input id="phone" type="tel" class="validate" minlength="10">
+                          <label for="phone">Phone Number</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                          <input id="first_name" type="text" class="validate" minlength="3">
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="last_name" type="text" class="validate" minlength="3" required>
+                          <label for="last_name">Last Name</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <h6>For some reason we need to know your DOB and SSN...</h6>
+                        <div class="input-field col s6">
+                          <input placeholder="Date of Birth" id="dob" type="date" class="validate" required>
+                          <label for="dob"></label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="social" type="text" class="validate" minlength="9" required>
+                          <label for="social">Social Security Number</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <input id="address" type="text" class="validate" required>
+                          <label for="address">Address</label>
+                        </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                        <select id="city">
+                          <option value="" disabled selected>Delivery cities:</option>
+                          <option value="Portland">Portland</option>
+                          <option value="Vancouver">Vancouver</option>
+                          <option value="Gresham">Gresham</option>
+                        </select>
+                        <label>City</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="zip" type="text" class="validate" minlength="5" required>
+                          <label for="zip">Zip Code</label>
+                        </div>
+                      </div>
+                <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Place Your Order" id="submit_all_bt">
+                <input class="waves-effect waves-light btn orange lighten-1" type="reset">
+                    </form>
+                  </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div id="page-5" class="col s12 grey-text enlargen">
+    <div class="container">
+    <h2 class="center-align">Review Your Order</h2>
+            <div class="row">
+                <div class="col l4 s4">
+                    <img src="img/delivery-truck.png" class="responsive-img">
+                </div>
+                <div class="col l6 s6 offset-l2">
+                    <h5>This is what you ordered:</h5>
+                    <div id="order_results"></div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer class="page-footer orange lighten-1 z-depth-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Burrito FTW!</h5>
+            <p class="grey-text text-lighten-4">Artisanal burritos at food truck prices.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Follow Us</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Our Burritos</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                © 2018 Burrito FTW!
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <a class="grey-text text-lighten-4 smooth-scroll" href="#top">To the top!</a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scripts here  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="bin/jquery-3.3.1.min.js"><\/script>'); }
+    </script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Compiled and minified Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</body>
+</html>
