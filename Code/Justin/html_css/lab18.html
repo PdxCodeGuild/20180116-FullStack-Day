@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peaks and Valleys</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <style>
+        body {
+            font-family: Inconsolata;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+<canvas id="peaks" width="784" height="420"></canvas>
+<div id="data"></div>
+
+
+<script>
+    function buildData(height, length) {
+        var options = [1, -1];
+        var data = [Math.floor(Math.random() * height) + 1];
+        for (var i = 0; i < (length - 1); i++) {
+            var last = data.slice(-1)[0];
+            if (last == height) {
+                data.push(height - 1);
+            }
+            else if (last == 1) {
+                data.push(2);
+            }
+            else {
+                var choice = Math.floor(Math.random() * 2);
+                var next = last + options[choice];
+                data.push(next);
+            }
+        }
+        return data;
+    }
+
+    function findWater(data) {
+        var start = 0;
+        var end = 0;
+        for (var i = 0; i < (length - 2); i++) {
+            if (data[i] > data[i + 1]) {
+                var start = i;
+                for (var j = i + 2; j < (length); j++) {
+                    if (data[start] == data[j]) {
+                        var end = j;
+                        i = j - 1;
+                        break;
+                    }
+
+                }
+            }
+            if (end == 0) {
+                continue;
+            }
+            ctx.beginPath();
+            ctx.moveTo((start * 16), (420 - (data[start] * 20)));
+            for (var j = (start + 1); j < (end + 1); j++) {
+                ctx.lineTo((j * 16), (420 - (data[j] * 20)));
+                ctx.strokeStyle = "blue";
+                ctx.stroke();
+            }
+            ctx.lineTo((start * 16), (420 - (data[start] * 20)));
+            ctx.fillStyle = "blue";
+            ctx.fill();
+        }
+    }
+
+    function buildLine(n, data) {
+        var ln = "";
+        for (var j = 0; j < data.length; j++) {
+            if (data[j] <= (height - n - 1)) {
+                ln += "&nbsp&nbsp";
+            }
+            else {
+                ln += "X&nbsp";
+            }
+        }
+        return ln;
+    }
+
+    var height = 20;
+    var length = 50;
+    var data = buildData(height, length);
+    var canvas = document.getElementById("peaks");
+
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = "pink";
+    ctx.fillRect(0, 0, 800, 420);
+    ctx.beginPath();
+    ctx.moveTo(0, (420 - (data[0] * 20)));
+    for (var i = 1; i < length; i++) {
+        ctx.lineTo((i * 16), (420 - (data[i] * 20)));
+        ctx.strokeStyle = "green";
+        ctx.stroke();
+    }
+    ctx.lineTo(784, 420);
+    ctx.lineTo(0, 420);
+    ctx.lineTo(0, (420 - (data[0] * 20)));
+    ctx.fillStyle = "green";
+    ctx.fill();
+
+    findWater(data);
+
+
+    for (var i = 0; i < height; i++) {
+        var line = document.createElement("p");
+        line.innerHTML = buildLine(i, data);
+        document.querySelector("#data").appendChild(line);
+    }
+
+    var line = document.createElement("p");
+    line.innerHTML = data;
+    document.querySelector("#data").appendChild(line);
+</script>
+
+</body>
+</html>
+
+
