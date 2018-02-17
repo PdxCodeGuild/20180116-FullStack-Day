@@ -112,14 +112,13 @@ textarea {
 
 #generator_div {
     min-height: 60vh;
-    font-size: 18em;
-    padding-top: 50px;
+    font-size: 16em;
+    padding-top: 100px;
 }
 
 /* animated button */
 
 .btn {
-  background-color: DarkSlateBlue;
   width:100px;
   height:40px;
   border-radius:5px;
@@ -155,7 +154,37 @@ textarea {
 
 /* animated emoticons */
 
+/*@keyframes rotate-emoticons {*/
+    /*0%  {*/
+    /*transform:rotate(0deg);*/
+    /*}*/
+    /*100% {*/
+    /*transform:rotate(90deg);*/
+    /*}*/
+/*}*/
 
+/*.animate {*/
+    /*animation-name: rotate-emoticons;*/
+    /*animation-duration: 2s;*/
+    /*animation-delay: 1s;*/
+    /*animation-iteration-count: 1;*/
+    /*animation-fill-mode: forwards;*/
+    /*!*animation-play-state: running;*!*/
+/*}*/
+
+#rotating {
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}
+
+.rotated {
+    transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+}
 
 /* pop-up footer */
 

@@ -31,7 +31,7 @@ let mouths = ['O', '0', 'o', ')', '(', ']', '}', '%', '#', '@', '*', '|', 'D', '
 let happy = [')', ']', '}', '*', 'D', 'P']
 let sad = ['(', '[', '{', '(', '<']
 let meh = ['O', '0', 'o', '%', '#', '@', '*', '|']
-
+let rotated = false;
 
 function generator() {
     let randomEyes = eyes[Math.floor(Math.random() * eyes.length)];
@@ -45,9 +45,33 @@ function generator() {
     eyeOutput.innerText = randomEyes;
     noseOutput.innerText = randomNose;
     mouthOutput.innerText = randomMouth;
+
+    // document.getElementById('generator_div').className = 'animate';
+
+    $('#generator_div').toggleClass('rotated');
+    console.log("I should be done now.");
 }
 
 
+$(document).ready(function() {
+    $('#clicker').click(function() {
+        let randomEyes = eyes[Math.floor(Math.random() * eyes.length)];
+        let randomNose = noses[Math.floor(Math.random() * noses.length)];
+        let randomMouth = mouths[Math.floor(Math.random() * mouths.length)];
 
+        let eyeOutput = document.querySelector('#eye');
+        let noseOutput = document.querySelector('#nose');
+        let mouthOutput = document.querySelector('#mouth');
+
+        eyeOutput.innerText = randomEyes;
+        noseOutput.innerText = randomNose;
+        mouthOutput.innerText = randomMouth;
+
+        // document.getElementById('generator_div').className = 'animate';
+
+        $('#rotating').toggleClass('rotated');
+        console.log("I should be done now.");
+    });
+});
 
 

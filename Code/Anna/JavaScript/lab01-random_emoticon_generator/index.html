@@ -32,21 +32,20 @@
     <div class="jumbotron" id="wrapper">
         <div class="header">
             <h1 class="text-center">Random Emoticon Generator</h1>
-            <p class="text-center top-padding"> <button class="btn btn-outline-primary btn-lg" onclick="generator()">Generate!</button></p>
+            <div class="row">
+                <div class="col-lg-2 col-sm-2"></div>
+                <div class="col-lg-10 col-sm-10">
+            <p class="top-padding"> <button class="btn btn-outline-primary btn-lg" id="clicker">Generate!</button></p>
+        </div></div>
         </div>
     </div>
     <div class="container text-center" id="generator_div">
-        <span id="eye"></span>
-        <span id="nose"></span>
-        <span id="mouth"></span>
+        <div id="rotating">
+            <span id="eye"></span>
+            <span id="nose"></span>
+            <span id="mouth"></span>
+        </div>
     </div>
-
-
-
-
-
-
-
 
 
     <!--  fancy pop-up footer!  -->
