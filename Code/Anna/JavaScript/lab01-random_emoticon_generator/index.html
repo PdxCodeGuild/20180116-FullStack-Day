@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 
 </head>
 <body>
@@ -33,7 +31,9 @@
     <div class="jumbotron" id="wrapper">
         <div class="header">
             <h1 class="text-center">Random Emoticon Generator</h1>
-            <p class="text-center top-padding"><button class="btn btn-outline-primary btn-lg" id="clicker">Generate!</button><button class="btn btn-outline-primary btn-lg" id="more">Give Me More!</button></p>
+            <p class="text-center">How are you feeling today?</p>
+            <p class="text-center"><input id="mood_input" type="text"/></p>
+            <p class="text-center top-padding"><button class="btn engraved-text" id="clicker">Generate!</button><button class="btn engraved-text" id="more">Give Me More!</button></p>
         </div>
     </div>
     <div class="container text-center" id="generator_div">
@@ -61,13 +61,12 @@
 
     <!--  fancy pop-up footer!  -->
     <div id="footerSlideContainer">
-	<div id="footerSlideButton"><i class="fas fa-arrow-alt-circle-up fa-7x"></i></div>
+	<div class="up-arrow" id="footerSlideButton">⬆️</div>
 	<div id="footerSlideContent">
 		<div id="footerSlideText">
             <div class="container">
 			<h1>Random Emoticon Generator</h1>
-			<p>Lorem ipsum dolor amet pour-over dolore craft beer kombucha palo santo ipsum thundercats offal chartreuse hashtag mustache in twee yr. Viral kogi la croix unicorn, aliqua pinterest hell of cred sartorial narwhal everyday carry before they sold out qui YOLO edison bulb. Knausgaard drinking vinegar celiac dolore raw denim. Duis portland woke ad, vaporware lomo sed tbh synth nulla celiac yr tattooed bespoke.</p>
-			<p>DIY tempor man braid, church-key selfies roof party deserunt. Hella thundercats live-edge waistcoat cronut elit mollit etsy proident wayfarers tempor craft beer organic food truck. Banjo shabby chic fugiat, proident fashion axe consequat poke cold-pressed excepteur hexagon YOLO williamsburg meh. Umami cold-pressed art party, culpa cloud bread small batch franzen biodiesel deserunt. Shabby chic ipsum consequat sartorial kogi tote bag church-key poke synth asymmetrical photo booth cliche aliqua.</p>
+			<p>A silly random emoticon generator built with JavaScript. Because the world needs more emojis.</p>
             </div>
 		</div>
 	</div>
