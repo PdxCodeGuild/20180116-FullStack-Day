@@ -6,7 +6,7 @@ jQuery(function($) {
 			if(Modernizr.csstransitions) {
 				$('#footerSlideContent').addClass('open');
 			} else {
-				$('#footerSlideContent').animate({ height: '300px' });
+				$('#footerSlideContent').animate({ height: '30vh' });
 			}
 			$(this).css('backgroundPosition', 'bottom left');
 			open = true;
@@ -32,32 +32,20 @@ let happy = [')', ']', '}', '*', 'D', 'P']
 let sad = ['(', '[', '{', '(', '<']
 let meh = ['O', '0', 'o', '%', '#', '@', '*', '|']
 let rotated = false;
+let mood_input = document.querySelector('#mood_input');
+let mood = mood_input.value;
 
-function generator() {
-    let randomEyes = eyes[Math.floor(Math.random() * eyes.length)];
-    let randomNose = noses[Math.floor(Math.random() * noses.length)];
-    let randomMouth = mouths[Math.floor(Math.random() * mouths.length)];
 
-    let eyeOutput = document.querySelector('#eye');
-    let noseOutput = document.querySelector('#nose');
-    let mouthOutput = document.querySelector('#mouth');
-
-    eyeOutput.innerText = randomEyes;
-    noseOutput.innerText = randomNose;
-    mouthOutput.innerText = randomMouth;
-
-    // document.getElementById('generator_div').className = 'animate';
-
-    $('#generator_div').toggleClass('rotated');
-    console.log("I should be done now.");
-}
-
+// start the animations
 
 $(document).ready(function() {
+    console.log("ready!");
     $('#clicker').click(function() {
         let randomEyes = eyes[Math.floor(Math.random() * eyes.length)];
         let randomNose = noses[Math.floor(Math.random() * noses.length)];
-        let randomMouth = mouths[Math.floor(Math.random() * mouths.length)];
+        let randomHappy = happy[Math.floor(Math.random() * happy.length)];
+        let randomSad = sad[Math.floor(Math.random() * sad.length)];
+        let randomMeh = meh[Math.floor(Math.random() * meh.length)];
 
         let eyeOutput = document.querySelector('#eye');
         let noseOutput = document.querySelector('#nose');
@@ -65,12 +53,30 @@ $(document).ready(function() {
 
         eyeOutput.innerText = randomEyes;
         noseOutput.innerText = randomNose;
-        mouthOutput.innerText = randomMouth;
+
+        if (mood === "happy" || mood === "good") {
+            mouthOutput.innerText = randomHappy;
+        }
+        else if (mood === "sad" || mood === "bad") {
+            mouthOutput.innerText = randomSad;
+        }
+        else  {
+            mouthOutput.innerText = randomMeh;
+        }
+
 
         // document.getElementById('generator_div').className = 'animate';
 
         $('#rotating').toggleClass('rotated');
         console.log("I should be done now.");
+    });
+    $('#more').on('click', function(){
+        for (let i=1; i<11; ++i) {
+            let element = document.querySelector('.x'+i);
+            element.style.AnimationPlayState = "running";
+            element.style.webkitAnimationPlayState = "running";
+        }
+        console.log("started the floating emojis");
     });
 });
 
