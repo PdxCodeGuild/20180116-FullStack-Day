@@ -1,7 +1,10 @@
 
+* {
+  box-sizing: border-box; }
+
 body {
-    background-color: #0d004c;
-    color: ghostwhite;
+    background-color: black;
+    color: pink;
 }
 
 button {
@@ -10,5 +13,5 @@ button {
     background-color: #1b6d85;
     padding: 0.1em;
 
-
 }
+
