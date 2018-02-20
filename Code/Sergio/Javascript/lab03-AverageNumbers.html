@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+
+<h1>Average Numbers v2</h1>
+
+<div id=""></div>
+
+
+<script>
+    let nums = [];
+    let user_input = prompt('How many numbers would you like to average out?');
+    let number;
+    for (i = 0; i < user_input; i++) {
+        number = prompt('Enter a number: ');
+        nums.push(parseInt(number));
+    }
+    /// make ints
+    function getSum(total, num) {
+        return total + num;
+    }
+    let sum = nums.reduce(getSum);
+    let avg = sum / user_input;
+    alert(avg);
+</script>
+
+</body>
+</html>

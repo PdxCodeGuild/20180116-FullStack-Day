@@ -110,6 +110,9 @@ textarea {
 #wrapper {
     min-height: 20vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 0px;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
 }
 
 .top-padding {
@@ -129,8 +132,8 @@ textarea {
 /* animated button */
 
 .btn {
-    width:12vw;
-    height:4vw;
+    width:150px;
+    height:40px;
     border-radius:5px;
     color: #D06800;
     font-family: 'Noto Sans', sans-serif;
