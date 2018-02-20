@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Random Emoticon Generator</title>
+    <meta name="description" content="Because the world needs more emoticons!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+</head>
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- guts go here -->
+    <div id="background-wrap">
+    <div class="jumbotron" id="wrapper">
+        <div class="header">
+            <h1 class="text-center">Random Emoticon Generator</h1>
+            <p class="text-center">How are you feeling today?</p>
+            <p class="text-center"><input id="mood_input" type="text"/></p>
+            <p class="text-center top-padding"><button class="btn engraved-text" id="clicker">Generate!</button><button class="btn engraved-text" id="more">Give Me More!</button></p>
+        </div>
+    </div>
+    <div class="container text-center" id="generator_div">
+        <div id="emoji">
+        <div id="rotating">
+            <span id="eye"></span>
+            <span id="nose"></span>
+            <span id="mouth"></span>
+        </div>
+        </div>
+    </div>
+
+    <!-- floating emojis!! -->
+    <div class="emoji x1"><span class="big_face">😀</span></div>
+    <div class="emoji x2"><span class="big_face">😊</span></div>
+    <div class="emoji x3"><span class="big_face">🙄</span></div>
+    <div class="emoji x4"><span class="big_face">😎</span></div>
+    <div class="emoji x5"><span class="big_face">🤤</span></div>
+    <div class="emoji x6"><span class="big_face">🤓</span></div>
+    <div class="emoji x7"><span class="big_face">😯</span></div>
+    <div class="emoji x8"><span class="big_face">💩</span></div>
+    <div class="emoji x9"><span class="big_face">😝</span></div>
+    <div class="emoji x10"><span class="big_face">🤯</span></div>
+    </div>
+
+    <!--  fancy pop-up footer!  -->
+    <div id="footerSlideContainer">
+	<div class="up-arrow" id="footerSlideButton">⬆️</div>
+	<div id="footerSlideContent">
+		<div id="footerSlideText">
+            <div class="container">
+			<h1>Random Emoticon Generator</h1>
+			<p>A silly random emoticon generator built with JavaScript. Because the world needs more emojis.</p>
+            </div>
+		</div>
+	</div>
+    </div>
+
+    <!-- all the scripts -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
