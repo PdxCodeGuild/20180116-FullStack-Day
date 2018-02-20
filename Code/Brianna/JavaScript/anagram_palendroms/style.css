@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box; }
+
+
+body {
+    background-color: #0d004c;
+    color: ghostwhite;
+    font-size: x-large;
+    -moz-text-size-adjust: auto;
+    font-family: "American Typewriter", "Droid Serif", "Times New Roman", sans-serif;
+}
+
+button {
+    height: 5vh;
+    width: 10vh;
+    background-color: #1b6d85;
+    padding: 0.1em;
+
+
+}

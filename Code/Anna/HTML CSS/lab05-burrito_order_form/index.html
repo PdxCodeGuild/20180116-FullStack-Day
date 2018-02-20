@@ -41,15 +41,15 @@
 
     <ul id="tabs-swipe-demo" class="tabs orange lighten-5 z-depth-2">
         <div class="container">
-        <li class="tab col s3"><a class="active grey-text" href="#test-swipe-1">Tortilla</a></li>
-        <li class="tab col s3"><a class="grey-text" href="#test-swipe-2">Main Ingredients</a></li>
-        <li class="tab col s3"><a class="grey-text" href="#test-swipe-3">Additional Ingredients</a></li>
-        <li class="tab col s3"><a class="grey-text" href="#test-swipe-4">Order Information</a></li>
-        <!--<li class="tab col s3"><a class="grey-text" href="#test-swipe-5">Place Your Order</a></li>-->
+        <li class="tab col s3"><a class="active grey-text" href="#page-1">Tortilla</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-2">Main Ingredients</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-3">Additional Ingredients</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-4">Order Information</a></li>
+        <li class="tab col s3"><a class="grey-text" href="#page-5">Review Your Order</a></li>
         </div>
     </ul>
 
-    <div id="test-swipe-1" class="col s12 grey-text enlargen">
+    <div id="page-1" class="col s12 grey-text enlargen">
     <div class="container">
     <h2 class="center-align">Choose Your Tortilla</h2>
         <div class="row">
@@ -60,29 +60,29 @@
                 <h5>Select a tortilla type:</h5>
                 <form id="form1">
                 <p>
-                  <input name="group1" type="radio" id="tort1" />
+                  <input name="group1" type="radio" id="tort1" value="White" />
                   <label for="tort1">White Flour</label>
                 </p>
                 <p>
-                  <input name="group1" type="radio" id="tort2" />
+                  <input name="group1" type="radio" id="tort2" value="Wheat" />
                   <label for="tort2">Wheat Flour</label>
                 </p>
                 <p>
-                  <input name="group1" type="radio" id="tort3"  />
+                  <input name="group1" type="radio" id="tort3" value="Spinach" />
                   <label for="tort3">Spinach</label>
                 </p>
                 <p>
-                  <input name="group1" type="radio" id="tort4"/>
+                  <input name="group1" type="radio" id="tort4" value="Corn" />
                   <label for="tort4">Corn</label>
                 </p>
-                <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Save">
+                <a class="waves-effect waves-light btn orange lighten-1" href="#page-2">Next</a>
                 <input class="waves-effect waves-light btn orange lighten-1" type="reset">
                 </form>
             </div>
         </div>
     </div>
     </div>
-    <div id="test-swipe-2" class="col s12 grey-text enlargen">
+    <div id="page-2" class="col s12 grey-text enlargen">
     <div class="container">
     <h2 class="center-align">Choose Rice, Beans, and Protein</h2>
             <div class="row">
@@ -93,39 +93,39 @@
                     <h5>Choose your rice:</h5>
                     <form id="form2">
                     <p>
-                    <input name="group2" type="radio" id="rice1"/>
+                    <input name="group2" type="radio" id="rice1" value="White"/>
                     <label for="rice1">White rice</label>
                     </p>
                     <p>
-                    <input name="group2" type="radio" id="rice2"/>
+                    <input name="group2" type="radio" id="rice2" value="Brown"/>
                     <label for="rice2">Brown rice</label>
                     </p>
                     <h5>Choose your beans:</h5>
                     <p>
-                    <input name="group3" type="radio" id="bean1"/>
+                    <input name="group3" type="radio" id="bean1" value="Black"/>
                     <label for="bean1">Black beans</label>
                     </p>
                     <p>
-                    <input name="group3" type="radio" id="bean2"/>
+                    <input name="group3" type="radio" id="bean2" value="Pinto"/>
                     <label for="bean2">Pinto beans</label>
                     </p>
                     <h5>Choose your protein:</h5>
                     <div class="input-field">
-                        <select class="icons">
+                        <select class="icons" id="meat">
                             <option value="" disabled selected>Choose a protein</option>
-                            <option value="" data-icon="img/carnitas.png" class="left circle">Carnitas</option>
-                            <option value="" data-icon="img/chicken.png" class="left circle">Chicken</option>
-                            <option value="" data-icon="img/tofu.png" class="left circle">Sofritas</option>
-                            <option value="" data-icon="img/none.png" class="left circle">None</option>
+                            <option value="Carnitas" data-icon="img/carnitas.png" class="left circle">Carnitas</option>
+                            <option value="Chicken" data-icon="img/chicken.png" class="left circle">Chicken</option>
+                            <option value="Sofritas" data-icon="img/tofu.png" class="left circle">Sofritas</option>
+                            <option value="None" data-icon="img/none.png" class="left circle">None</option>
                         </select>
                     </div>
-                <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Save">
+                        <a class="waves-effect waves-light btn orange lighten-1" href="#page-3">Next</a>
                     </form>
                 </div>
             </div>
     </div>
     </div>
-    <div id="test-swipe-3" class="col s12 grey-text enlargen">
+    <div id="page-3" class="col s12 grey-text enlargen">
     <div class="container">
     <h2 class="center-align">Choose Additional Ingredients</h2>
             <div class="row">
@@ -136,30 +136,30 @@
                     <h5>Add some additional ingredients:</h5>
                     <form id="form3">
                     <p>
-                      <input type="checkbox" class="filled-in" id="cheese" />
+                      <input type="checkbox" class="filled-in" id="cheese" name="group4" value="Cheese" />
                       <label for="cheese">Cheese</label>
                     </p>
                     <p>
-                      <input type="checkbox" class="filled-in" id="cream" />
+                      <input type="checkbox" class="filled-in" id="cream" name="group4" value="Sour cream" />
                       <label for="cream">Sour cream</label>
                     </p>
                     <p>
-                      <input type="checkbox" class="filled-in" id="lettuce" />
+                      <input type="checkbox" class="filled-in" id="lettuce" name="group4" value="Lettuce" />
                       <label for="lettuce">Lettuce</label>
                     </p>
                     <p>
-                      <input type="checkbox" class="filled-in" id="cilantro" />
+                      <input type="checkbox" class="filled-in" id="cilantro" name="group4" value="Cilantro" />
                       <label for="cilantro">Cilantro</label>
                     </p>
                     <p>
-                      <input type="checkbox" class="filled-in" id="jalapenos" />
+                      <input type="checkbox" class="filled-in" id="jalapenos" name="group4" value="Jalapenos" />
                       <label for="jalapenos">Jalapenos</label>
                     </p>
                     <p>
-                      <input type="checkbox" class="filled-in" id="salsa" />
+                      <input type="checkbox" class="filled-in" id="salsa" name="group4" value="Salsa" />
                       <label for="salsa">Salsa</label>
                     </p>
-                    <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Save">
+                    <a class="waves-effect waves-light btn orange lighten-1" href="#page-4">Next</a>
                     <input class="waves-effect waves-light btn orange lighten-1" type="reset">
                     </form>
                 </div>
@@ -167,7 +167,7 @@
     </div>
     </div>
 
-    <div id="test-swipe-4" class="col s12 grey-text enlargen">
+    <div id="page-4" class="col s12 grey-text enlargen">
     <div class="container">
     <h2 class="center-align">Enter Your Payment Information</h2>
             <div class="row">
@@ -225,11 +225,11 @@
                       </div>
                     <div class="row">
                         <div class="input-field col s6">
-                        <select>
+                        <select id="city">
                           <option value="" disabled selected>Delivery cities:</option>
-                          <option value="1">Portland</option>
-                          <option value="2">Vancouver</option>
-                          <option value="3">Gresham</option>
+                          <option value="Portland">Portland</option>
+                          <option value="Vancouver">Vancouver</option>
+                          <option value="Gresham">Gresham</option>
                         </select>
                         <label>City</label>
                         </div>
@@ -238,29 +238,28 @@
                           <label for="zip">Zip Code</label>
                         </div>
                       </div>
-                <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Place Your Order">
+                <input class="waves-effect waves-light btn orange lighten-1" type="submit" value="Place Your Order" id="submit_all_bt">
                 <input class="waves-effect waves-light btn orange lighten-1" type="reset">
                     </form>
                   </div>
                 </div>
             </div>
     </div>
-    <!--</div>-->
-    <!--<div id="test-swipe-5" class="col s12 grey-text enlargen">-->
-    <!--<div class="container">-->
-    <!--<h2 class="center-align">Place Your Order</h2>-->
-            <!--<div class="row">-->
-                <!--<div class="col l4 s4">-->
-                    <!--<img src="img/delivery-truck.png" class="responsive-img">-->
-                <!--</div>-->
-                <!--<div class="col l6 s6 offset-l2">-->
-                    <!--<button class="waves-effect waves-light btn orange lighten-1" type="submit" name="action">Place Your Order-->
-                        <!--<i class="material-icons right">send</i>-->
-                    <!--</button>-->
-                <!--</div>-->
-            <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
+    </div>
+    <div id="page-5" class="col s12 grey-text enlargen">
+    <div class="container">
+    <h2 class="center-align">Review Your Order</h2>
+            <div class="row">
+                <div class="col l4 s4">
+                    <img src="img/delivery-truck.png" class="responsive-img">
+                </div>
+                <div class="col l6 s6 offset-l2">
+                    <h5>This is what you ordered:</h5>
+                    <div id="order_results"></div>
+                </div>
+            </div>
+    </div>
+    </div>
 
 
     <!-- Footer -->

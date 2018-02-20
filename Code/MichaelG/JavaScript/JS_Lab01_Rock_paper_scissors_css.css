@@ -1,0 +1,84 @@
+.title_container {
+    height:75px;
+    width:100%;
+    background:#377D7F;
+    margin-top:0;
+}
+#title {
+    text-align:center;
+    font-size:30px;
+    color:White;
+    margin-top:0;
+}
+.choices_container {
+    margin-top:0;
+    height:8rem;
+    background:#52BBBF;
+}
+#choice_rock {
+    padding:12px;
+    margin-left:33%;
+    border-radius:50%;
+    width:100px;
+}
+#choice_paper {
+    padding:12px;
+    margin-left:30px;
+    border-radius:50%;
+    width:100px;
+}
+#choice_scissors {
+    padding:12px;
+    margin-left:30px;
+    border-radius:50%;
+    width:100px;
+}
+.outcome_and_score_container {
+    background:#3D6A7F;
+    margin-top:0;
+    text-align:center;
+    height:15rem;
+    font-size:40px
+}
+#outcome {
+    margin-top:0;
+    color:white;
+}
+#wins {
+    color:green;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#ties {
+    margin-left:-100%;
+    color:yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#losses {
+    color:red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/*.table {*/
+    /*display:table;*/
+    /*margin:0 auto;*/
+}
+ul#tally {
+    list-style-type:none;
+}
+ul#tally li{
+    display:inline;
+    margin:3rem;
+}
+#wincount {
+    text-align:center;
+    margin-left:-30%;
+}
+#tiecount {
+    text-align:center;
+    margin-top:-6.2%;
+}
+#losscount {
+    text-align:center;
+    position:relative;
+    bottom:87px;
+    left:200px;
+}
