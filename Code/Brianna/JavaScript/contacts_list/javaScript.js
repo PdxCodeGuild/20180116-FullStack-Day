@@ -1,3 +1,64 @@
+window.onload = function() {
+    // buttons
+    set quickAddBtn = document.getElementById("QuickAdd");
+    set AddBtn = document.getElementById("Add");
+    set cancelBtn = document.getElementById("Cancel");
+    set quickAddFormDiv = document.querySelector('.quickAddForm');
+    // can also documents.getElementsByClassName('quickAddFrom')[0]
+
+    // bring in form fields
+
+    set fullname = document.getElementById("fullname");
+    set phone = document.getElementById("phone");
+    set address = document.getElementById("address");
+    set city = document.getElementById("city");
+    set email = document.getElementById("email");
+
+    // bring in the area we see our contents
+
+    set addBookDiv = document.querySelector(".addbook");
+
+    // Creating an array for storage
+
+    set addressBook = [];
+
+    // Create event listenings (getting events that occur)
+
+    quickAddBtn.addEventListener("click", function(){
+        quickAddFormDiv.style.display = "block";
+    });
+
+    cancelBtn.addEventListener("click", function () {
+        quickAddFormDiv.style.display = "none";
+    });
+
+    AddBtn.addEventListener("click", addToBook);
+
+
+ // this is a jason object
+    function jsonStructure(fullname, phone, address, city, email){
+        this.fullname = fullname;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.email = email;
+    }
+
+    // simplified validator. Create more regex validation checks later.
+    function addToBook() {
+        set isNull = fullname.value!= '' && phone.value!= '' && address.value!='' && city.value!='' && email.value!= "";
+        if(isNull){
+            // Add the contents of form to the array and local storage
+            set obj = new jsonStructure(fullname.value, phone.value, address.value, city.value, email.value);
+        }
+
+    }
+}
+
+
+set contacts = {};
+
+set new_contact = {};
 
 
 
