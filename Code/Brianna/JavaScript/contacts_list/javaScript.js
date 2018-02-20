@@ -94,14 +94,27 @@ window.onload = function() {
             addBookDiv.innerHTML = '';
             for(let n in addressBook) {
                 let str = '<div class="entry">';
-                    str += '<div class="six columns>';
-                    str += '<div class="name"><p> Name: ' + addressBook[n].fullname + '</p></div>';
-                    str += '<div class="email"><p> Email: ' + addressBook[n].email + '</p></div>';
-                    str += '<div class="phone"><p> Phone: ' + addressBook[n].phone + '</p></div>';
-                    str += '<div class="address"><p> Address: ' + addressBook[n].address + '</p></div>';
-                    str += '<div class="city"><p> City: ' + addressBook[n].city + '</p></div>';
+                    str += '<table class="u-full-width">';
+                    str += '<thead>';
+                    str += '<tr>';
+                    str += '<th> Name </th>';
+                    str += '<th> Email </th>';
+                    str += '<th> Phone </th>';
+                    str += '<th> Address </th>';
+                    str += '<th> City</th>';
+                    str += '</tr>';
+                    str += '<thead>';
+                    str += '<tbody>';
+                    str += '<tr>';
+                    str += '<td class="name"><p>' + addressBook[n].fullname + '</p></td>';
+                    str += '<td class="email"><p>' + addressBook[n].email + '</p></td>';
+                    str += '<td class="phone"><p>' + addressBook[n].phone + '</p></td>';
+                    str += '<td class="address"><p>' + addressBook[n].address + '</p></td>';
+                    str += '<td class="city"><p>' + addressBook[n].city + '</p></td>';
+                    str += '</tr>';
                     str += '<div class="del"><a href="#" class ="delbutton button" data-id="' + n + '"> Delete </a></div>';
-                    str += '</div>';
+                    str += '</tbody>';
+                    str += '</table>';
                     str += '</div>';
                     addBookDiv.innerHTML += str;
 
