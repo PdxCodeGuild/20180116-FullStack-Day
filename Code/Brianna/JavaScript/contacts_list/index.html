@@ -8,30 +8,43 @@
     <link rel="stylesheet" href="style.css">
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <script src="javaScript.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: pink;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="title">
             <h1> Awesome Little Black Page of Addresses </h1>
         </div>
-        <div class="quickadd"><button id="QuickAdd"> + Add </button></div>
-        <form class="quickAddForm">
-            <label for="fullname">Name</label>
-                <input type="text" id="fullname" class="formfields">
-            <label for="phone">Phone</label>
-                <input type="tel" id="phone" class="formfields">
-            <label for="address">Address</label>
-                <textarea type="text" id="address" cols="30" rows="10" class="formfields"></textarea>
-            <label for="city">City</label>
-                <input type="text" id="city" class="formfields">
-            <label for="email">e-mail</label>
-                <input type="email" id="email" class="formfields">
-            <br>
-            <br>
-            <button type="submit" id="Add">Add Now</button>
-            <button id="Cancel">Cancel</button>
-        </form>
-        <div class="addbook"></div>
+        <div class="quickadd"><button class="button button-primary u-pull-right" id="QuickAdd"> + Add </button></div>
+        <div class="container">
+            <div class="row">
+                <form class="quickAddForm six columns u-pull-left">
+                    <div class="row">
+                    <label for="fullname">Name</label>
+                        <input type="text" id="fullname" class="formfields">
+                    <label for="phone">Phone</label>
+                        <input type="tel" id="phone" class="formfields">
+                    </div>
+                    <div class="row">
+                    <label for="address">Address</label>
+                        <textarea type="text" id="address" cols="30" rows="10" class="formfields"></textarea>
+                    <label for="city">City</label>
+                        <input type="text" id="city" class="formfields">
+                    <label for="email">e-mail</label>
+                        <input type="email" id="email" class="formfields">
+                    <br>
+                    <br>
+                    <button class="button button-primary" type="submit" id="Add">Add Now</button>
+                    <button class="button button-primary" id="Cancel">Cancel</button>
+                </form>
+            </div>
+            <div class="addbook u-pull-right six columns"></div>
+        </div>
     </div>
 
 
