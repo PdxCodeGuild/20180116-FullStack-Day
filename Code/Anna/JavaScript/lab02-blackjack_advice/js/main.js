@@ -24,7 +24,7 @@ function play(playerHand) {
     if(playerHand.playerCards.includes('A')) {
         let value = 'A';
         playerHand.playerCards = playerHand.playerCards.filter(item => item !== value);
-
+        playerHand.playerTotal = 0;
         for (i=0; i<playerHand.playerCards.length; i++) {
             playerHand.playerTotal += card_obj[playerHand.playerCards[i]];
         }
@@ -34,16 +34,17 @@ function play(playerHand) {
             playerHand.playerTotal += 11;
             playerHand.playerCards.push('A');
             console.log("Ace value: " + ace_value);
-            card_div.innerHTML += "<p>Ace value: " + ace_value + "</p>";
+            card_div.innerHTML += "<p>Ace value: 11</p>";
         } else {
             let ace_value = 1;
             playerHand.playerTotal += 1;
             playerHand.playerCards.push('A');
             console.log("Ace value: " + ace_value);
-            card_div.innerHTML += "<p>Ace value: " + ace_value + "</p>";
+            card_div.innerHTML += "<p>Ace value: 1</p>";
         }
     }
     else {
+        playerHand.playerTotal = 0;
         for (i=0; i < playerHand.playerCards.length; i++) {
             playerHand.playerTotal += card_obj[playerHand.playerCards[i]];
         }
@@ -226,18 +227,14 @@ $( document ).ready(function() {
         card_div.innerHTML = "<p>Dealing</p>";
         startGame();
     });
-    document.getElementById('bt_hit').addEventListener('click', function() {
-        bt_hit.onclick = hit(playerHand);
-    });
-    document.getElementById('bt_stay').addEventListener('click', function() {
-        bt_stay.onclick = stay(playerHand);
-    });
+    bt_hit.addEventListener('click', function() {bt_hit.onclick = hit(playerHand);});
+    bt_stay.addEventListener('click', function() {bt_stay.onclick = stay(playerHand);});
 });
 
 
 // this makes the fancy pop-up footer work
 jQuery(function($) {
-	var open = false;
+	let open = false;
 	$('#footerSlideButton').click(function () {
 		if(open === false) {
 			if(Modernizr.csstransitions) {
