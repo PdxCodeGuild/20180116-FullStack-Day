@@ -28,6 +28,8 @@
     <button id="run_backspace">backspace</button>
 
     <script>
+        let run_0 = document.querySelector('#run_0');
+        let run_1 = document.querySelector('#run_1');
         let number = 0;
         let array = [];
         let display = 0;
@@ -35,7 +37,7 @@
 
         run_0.onclick = function() {
             number = 0;
-            console.log(number.push('0'));
+            console.log(array.push('0'));
             display = document.querySelector('0');
         }
 
