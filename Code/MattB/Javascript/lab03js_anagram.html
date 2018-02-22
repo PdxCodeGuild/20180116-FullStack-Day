@@ -11,7 +11,7 @@
             let bt_ana = document.querySelector('#bt_ana');
             bt_ana.onclick = function () {
                 let anagram = anagram_input.value;
-                let anagram_str = anagram.split(' ').join('');
+                let anagram_str = anagram.split(' ').join(''); // anagram = anagram.replace(' '. '');
                 let check = anagram_check.value;
                 let check_str = check.split(' ').join('');
                 if (anagram_str.length != check_str.length) {
@@ -28,7 +28,8 @@
                     for (let k = 0; k < check_arr.length; ++k) {
                         if (ana_arr[k] != check_arr[k]) {
                             anagram_output.innerHTML = anagram + ' is not an anagram of ' + check;
-                        } else if (k = check_arr.length) {
+                            break;
+                        } else if (k  == check_arr.length - 1) {
                             anagram_output.innerHTML = anagram + ' is an anagram of ' + check;
                         }
                     }
