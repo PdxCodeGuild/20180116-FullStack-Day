@@ -12,7 +12,7 @@
     <div>Choose 'rock', 'paper', or 'scissors':</div>
     <input id="name_input" type="text"/>
     <button id="run_bt">Shoot</button>
-    <p>Computer chooses:</p>
+    <p>Computer chose:</p>
     <div id="output_div"/>
     <div id="outcome_div"/>
     <!--<button class="user_options">Rock</button>-->
@@ -22,6 +22,7 @@
     <script>
         let run_bt = document.querySelector('#run_bt');
         let output_div = document.querySelector('#output_div');
+        let name_input = document.querySelector('#name_input');
         let options = [
             "rock",
             "paper",
@@ -38,13 +39,24 @@
         run_bt.onclick = function() {
             let comp_choice = Math.floor(Math.random()*options.length);
             output_div.innerText = options[comp_choice];
-            if (options[comp_choice] === (#input) {
-
-            }
-
-
-            outcome_div.innerText =
-
+            if (options[comp_choice] === name_input.value) {
+                alert("you tie");
+                } else if (options[comp_choice] === "rock" && name_input.value === "scissors") {
+                alert("you lose");
+                } else if (options[comp_choice] === "paper" && name_input.value === "scissors") {
+                alert("you win");
+                } else if (options[comp_choice] === "rock" && name_input.value === "paper") {
+                alert("you win");
+                } else if (options[comp_choice] === "scissors" && name_input.value === "paper") {
+                alert("you lose");
+                } else if (options[comp_choice] === "scissors" && name_input.value === "rock") {
+                alert("you win");
+                } else if (options[comp_choice] === "paper" && name_input.value === "rock") {
+                alert("you lose");
+                } else {
+                alert("Could not understand your selection, please try again")
+                }
+            //outcome_div.innerText =
         }
 
     </script>
