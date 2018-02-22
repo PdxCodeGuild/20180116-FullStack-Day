@@ -5,17 +5,17 @@
 
 import random
 
-adjective1 = str(input('Type first adjective. '))
-adjective2 = str(input('Type second adjective. '))
-adjective3 = str(input('Type third adjective. '))
+adjective1 = input('Type first adjective. ')
+adjective2 = input('Type second adjective. ')
+adjective3 = input('Type third adjective. ')
 
-verb1 = str(input('Type first verb. '))
-verb2 = str(input('Type second verb. '))
-verb3 = str(input('Type third verb. '))
+verb1 = input('Type first verb. ')
+verb2 = input('Type second verb. ')
+verb3 = input('Type third verb. ')
 
-noun1 = str(input('Type first noun. '))
-noun2 = str(input('Type second noun. '))
-noun3 = str(input('Type third noun. '))
+noun1 = input('Type first noun. ')
+noun2 = input('Type second noun. ')
+noun3 = input('Type third noun. ')
 
 adjectives = [adjective1, adjective2, adjective3]
 verbs = [verb1, verb2, verb3]
