@@ -10,14 +10,14 @@
             let output_div = document.querySelector('#output_div');
             run_bt.onclick = function () {
                 let palindrome = palindrome_input.value;
-                    for (let i = 0; i < palindrome.length; ++i) {
-                        if (palindrome[i] != palindrome[palindrome.length - 1 -i]) {
-                            output_div.innerHTML = palindrome + ' is not a palindrome';
-                            break;
-                        } else if (i == palindrome.length - 1) {
-                            output_div.innerHTML = palindrome + ' is a palindrome.';
-                        }
+                for (let i = 0; i < palindrome.length; ++i) {
+                    if (palindrome[i] != palindrome[palindrome.length - 1 -i]) {
+                        output_div.innerHTML = palindrome + ' is not a palindrome.';
+                        break;
+                    } else if (i == palindrome.length - 1) {
+                        output_div.innerHTML = palindrome + ' is a palindrome.';
                     }
+                }
             }
         </script>
     </body>
