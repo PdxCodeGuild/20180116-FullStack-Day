@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Not Chipotle</title>
+    <style>
+        header {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<header><h1>Welcome to totally not Chipotle!</h1></header>
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body"><strong>Tortillas</strong></div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <input type="radio" name="tortilla" value="Flour"> Flour<br>
+            <input type="radio" name="tortilla" value="Wheat"> Wheat<br>
+            <input type="radio" name="tortilla" value="Spinach"> Spinach<br>
+            <input type="radio" name="tortilla" value="Corn"> Corn<br>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body"><strong>Rice</strong></div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <input type="radio" name="starch" value="White Rice"> White Rice<br>
+            <input type="radio" name="starch" value="Brown Rice"> Brown Rice<br>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body"><strong>Beans</strong></div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <input type="radio" name="beans" value="Black Beans"> Black Beans<br>
+            <input type="radio" name="beans" value="Pinto Beans"> Pinto Beans
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body"><strong>Protein</strong></div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <input type="radio" name="meat" value="Carnitas"> Carnitas<br>
+            <input type="radio" name="meat" value="Sofritos"> Sofritas<br>
+            <input type="radio" name="meat" value="Pollo"> Pollo<br>
+            <input type="radio" name="meat" value="Veggies"> Veggies<br>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body"><strong>Extras</strong></div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <input type="checkbox" name="beans" value="Cheese"> Cheeses<br>
+            <input type="checkbox" name="beans" value="Sour Cream"> Sour Cream
+        </div>
+    </div>
+</div>
+
+<div class="user">
+    <form action="..." method="post">
+        <fieldset>
+            <legend>User info</legend>
+            User Name: <input type="text" pattern="[a-z]{1,6}" title="User name must be between 1 and 6 characters" name="User Name" required><br>
+            Password: <input type="text" pattern="[a-z]{1,6}" title="Password must be between 1 and 6 characters" name="Password" required><br>
+            Name: <input type="text" pattern="[a-z]{3,}" title="Name" name="name" required/><br/>
+            Email: <input type="text" name="email" required/><br/>
+            Date of birth(XX/XX/XXXX): <input type="text" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))
+            " name="dob"/>
+        </fieldset>
+        <fieldset>
+            <legend>Address</legend>
+            Street: <input type="text" name="street" required/><br/>
+            City: <input type="text" name="city" required/><br/>
+            State: <input type="text" name="state" required/>
+        </fieldset>
+        <button type="submit">submit</button>
+    </form>
+</div>
+
+
+</body>
+</html>
