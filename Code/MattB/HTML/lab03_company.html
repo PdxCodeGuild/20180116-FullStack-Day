@@ -1,0 +1,125 @@
+<html>
+<head>
+    <link rel="stylesheet" href="Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="Skeleton-2.0.4/css/skeleton.css">
+    <title>Company Name</title>
+    <style>
+        #maindiv {
+            margin: 2.0 10.0em;
+            display: flex;
+            flex-direction: row;
+        }
+
+        header {
+            background-color: black;
+            color: darkgoldenrod;
+            text-align: center;
+            font-family: Inconsolata;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 5.0em;
+            padding: 0.2em;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav > a {
+            margin: 0 1.0em;
+        }
+
+        img {
+            float: left;
+            height: 10em;
+        }
+
+
+        #prods > div {
+            width: 100%;
+            height: 12em;
+            float: left;
+        }
+
+        #prods > div > div{
+            float: left;
+            margin: 0 2em;
+        }
+
+        aside{
+            width: 40%;
+        }
+
+    </style>
+
+</head>
+<body>
+<header>
+    <h1>Company Name</h1>
+</header>
+<nav>
+    <a class="button" href="#">Link 1</a>
+    <a class="button" href="#">Link 2</a>
+    <a class="button" href="#">Link 3</a>
+    <a class="button" href="#">Link 4</a>
+</nav>
+<div id="maindiv">
+    <aside>
+        <h2>Contact Us</h2>
+        <ul>
+            <li>Phone:              (555)555-555</li>
+            <li>Email:              555@fiver.five</li>
+            <li>Fax:                (555)555-555</li>
+            <li>Mailing Address:    555 NS Lane, Fivetown, OR 55555</li>
+        </ul>
+    </aside>
+    <div id="prods">
+        <h2>Products</h2>
+        <div>
+            <img src="pizza.jpeg">
+            <div>
+                <ul>
+                    <li>
+                        Pizza
+                        <ul>
+                            <li>Tasty</li>
+                            <li>Not Healthy</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <img src="bike.jpg">
+            <div>
+            <ul>
+                <li>
+                    Bike
+                    <ul>
+                        <li>Not Tasty</li>
+                        <li>Healthy</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div>
+            <img src="sofa.jpg">
+            <div>
+            <ul>
+                <li>
+                    Sofa
+                    <ul>
+                        <li>Not Tasty</li>
+                        <li>Not Healthy</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
