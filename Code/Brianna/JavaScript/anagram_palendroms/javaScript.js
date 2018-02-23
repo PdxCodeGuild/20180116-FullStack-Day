@@ -1,5 +1,5 @@
 
-var word = prompt("Type in a word to check and see if it's a palindrome.");
+let word = prompt("Type in a word to check and see if it's a palindrome.");
 
 function check_palendrome(a_string)
 {
@@ -14,7 +14,7 @@ function check_palendrome(a_string)
 check_palendrome(word);
 
 
-var regularize = function(word) {
+let regularize = function(word) {
     word = word.toLowerCase();
     word = word.replace(/[^a-z\d]+/g, '');
     word = word.split('').sort().join('');
