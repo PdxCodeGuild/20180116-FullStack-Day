@@ -72,8 +72,8 @@ while (x) {
     }
 
     // play again
-    let again =["yes", "no"];
-    again = [];
+    // let again =["yes", "no"];
+    // again = [];
 
     if(confirm("u wanna play again?")) {
         alert("woo lets doit!");
