@@ -20,8 +20,9 @@
     <button id="run_9" value="9" class="numbt">9</button>
     <div></div>
     <button id="run_equals" id="calc">=</button>
-    <button id="run_negate">+/-</button>
+    <button id="run_negate">clear</button>
     <button id="run_percent">%</button>
+    <button id="negate">+/-</button>
     <div></div>
     <button id="run_add" id="plus">+</button>
     <button id="run_subtract">-</button>
@@ -72,11 +73,14 @@
                     display.value = (display.value / 100);
                 } else if (this.innerText === 'backspace') {     // backspace
                     display.value = Math.floor((display.value / 10));
-                } else if (this.innerText === '+/-') {                 // clear
+                } else if (this.innerText === 'clear') {                 // clear
                     display.value = '';
                     first_number = '';
                     second_number = '';
+                } else if (this.innerText === '+/-') {
+                    display.value = ;
                 }
+
             }
         }
 
