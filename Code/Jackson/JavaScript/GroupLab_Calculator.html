@@ -43,29 +43,30 @@
         for (let i=0; i<num_bts.length; ++i) {
             num_bts[i].onclick = function() {
                 // alert(this.innerText);
-                if (this.innerText === '+' || this.innerText === '-' || this.innerText === '*' || this.innerText === '%') {
+                if (!isNaN(parseInt(this.innerText))) {
+                    display.value += this.innerText;
+                } else if (this.innerText === '+' || this.innerText === '-' || this.innerText === '*' || this.innerText === '%') {
                     first_number = parseInt(display.value);
                     display.value = '';
                     operator = this.innerText;
                     // alert(operator); //check
 
+                } else if (this.innerText === '=') {
+                    second_number = parseInt(display.value);
+
+                    if (operator === '+') {
+                        answer = first_number + second_number;
+                    }
+                    display.value = answer;
                 }
-                display.value += this.innerText;
+
+
             }
         }
 
         // plus.onclick = function() {
         //     operator = '+'
         // }
-
-        eq_bt.onclick = function() {
-            second_number = this.innerText;
-            if (operator = '+') {
-                answer = first_number + second_number;
-            }
-
-            display.value = answer;
-        }
 
         // run_0.onclick = function() {
         //     number = 0;
