@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+
+    </style>
+
+    <title>Check Your Grade</title>
+</head>
+<body>
+
+<div id="get_grade_div">
+    <label for="first_number">first Number:</label>
+    <input type="text" id="first_number">
+    <select id="arithmetic">
+        <option id="multiply">Multiply</option>
+        <option id="subtract">Subtract</option>
+        <option id="divide">Divide</option>
+        <option id="add">Add</option>
+    </select>
+    <label for="second_number">second number:</label>
+    <input type="text" id="second_number"><br><br>
+</div>
+
+<button id="calculate"> Predict</button>
+<script>
+
+    let calculate = document.querySelector('#calculate');
+
+    calculate.onclick = function () {
+        let arithmetic = document.querySelector('#arithmetic');
+        let first_number = parseInt(document.querySelector('#first_number').value);
+        let second_number = parseInt(document.querySelector('#second_number').value);
+
+        let index_value = arithmetic.selectedIndex;
+
+        let answer = undefined;
+        if (index_value === 0) {
+            answer = first_number * second_number;
+        } else if (index_value === 1) {
+            answer = first_number - second_number;
+        } else if (index_value === 2) {
+            answer = first_number / second_number;
+        } else if (index_value === 3) {
+            answer = first_number + second_number;
+        }
+
+        if (isNaN(answer)){
+            alert("Please enter a number");
+        }else {
+            alert(answer);
+        }
+
+
+    }
+</script>
+</body>
+</html>
