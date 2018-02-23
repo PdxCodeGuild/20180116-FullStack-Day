@@ -13,11 +13,13 @@
 
 </div>
 <script>
+
+
     let bt_grade = document.querySelector('#bt_grade'); // button that runs function from text_area input
     let span_output = document.querySelector('#span_output'); // where my output/grade will be displayed
-    bt_grade.onclick = function get_grade() {
-        let text_grade = parseInt(document.querySelector('#text_grade').value); // text area input box
+    bt_grade.onclick = function () {
 
+        let text_grade = parseInt(document.querySelector('#text_grade').value); // text area input box
         if (text_grade >= 90) {
             span_output.innerHTML = "You got an A!";
         } else if (text_grade >= 80) {
@@ -26,7 +28,7 @@
             span_output.innerHTML = "You got a C!";
         } else if (text_grade >= 60) {
             span_output.innerHTML = "You got a D!";
-        } else if (text_grade >= 0) {
+        } else {
             span_output.innerHTML = "You got an F yay!";
         }
 
