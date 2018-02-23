@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input id="display" type = "text" value="0">
+    <div></div>
+    <button id="run_0" value="0" class="numbt">0</button>
+    <button id="run_1" value="1" class="numbt">1</button>
+    <button id="run_2" value="2" class="numbt">2</button>
+    <button id="run_3" value="3">3</button>
+    <button id="run_4" value="4">4</button>
+    <button id="run_5" value="5">5</button>
+    <button id="run_6" value="6">6</button>
+    <button id="run_7" value="7">7</button>
+    <button id="run_8" value="8">8</button>
+    <button id="run_9" value="9">9</button>
+    <button id="run_equals">=</button>
+    <button id="run_negate">+/-</button>
+    <button id="run_percent">%</button>
+    <button id="run_add">+</button>
+    <button id="run_subtract">-</button>
+    <button id="run_multiply">*</button>
+    <button id="run_divide">%</button>
+    <button id="run_backspace">backspace</button>
+
+    <script>
+        let run_0 = document.querySelector('#run_0');
+        let run_1 = document.querySelector('#run_1');
+
+        let array = [];
+        let display = 0;
+
+
+        let num_bts = document.querySelectorAll('button');
+        console.log(num_bts);
+        for (let i=0; i<num_bts.length; ++i) {
+            num_bts[i].onclick = function() {
+                alert(this.innerText);
+                if (this.innerText === '+') {
+
+                }
+            }
+        }
+
+
+        // run_0.onclick = function() {
+        //     number = 0;
+        //     console.log(number.push('0'));
+        //     display = document.querySelector('0');
+        // }
+        //
+        // run_1.onclick = function() {
+        //     alert(this.value);
+        //     number = 1;
+        //     console.log(array.push('1'));
+        //     display = document.querySelector('1');
+        // }
+
+
+    </script>
+
+</body>
+</html>
