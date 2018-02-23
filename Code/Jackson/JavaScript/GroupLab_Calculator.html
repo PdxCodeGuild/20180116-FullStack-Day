@@ -18,20 +18,22 @@
     <button id="run_7" value="7" class="numbt">7</button>
     <button id="run_8" value="8" class="numbt">8</button>
     <button id="run_9" value="9" class="numbt">9</button>
+    <div></div>
     <button id="run_equals" id="calc">=</button>
     <button id="run_negate">+/-</button>
     <button id="run_percent">%</button>
+    <div></div>
     <button id="run_add" id="plus">+</button>
     <button id="run_subtract">-</button>
     <button id="run_multiply">*</button>
-    <button id="run_divide">%</button>
+    <button id="run_divide">/</button>
+    <div></div>
     <button id="run_backspace">backspace</button>
 
     <script>
         let display = document.querySelector('#display');
         let first_number = 0;
         let second_number = 0;
-        let equation = '';
         let answer = 0;
         let operator = '';
         let num_bts = document.querySelectorAll('button');
@@ -45,7 +47,7 @@
                 // alert(this.innerText);
                 if (!isNaN(parseInt(this.innerText))) {
                     display.value += this.innerText;
-                } else if (this.innerText === '+' || this.innerText === '-' || this.innerText === '*' || this.innerText === '%') {
+                } else if (this.innerText === '+' || this.innerText === '-' || this.innerText === '*' || this.innerText === '/') {
                     first_number = parseInt(display.value);
                     display.value = '';
                     operator = this.innerText;
@@ -53,14 +55,28 @@
 
                 } else if (this.innerText === '=') {
                     second_number = parseInt(display.value);
-
                     if (operator === '+') {
                         answer = first_number + second_number;
                     }
+                    if (operator === '-') {
+                        answer = first_number - second_number;
+                    }
+                    if (operator === '*') {
+                        answer = first_number * second_number;
+                    }
+                    if (operator === '/') {
+                        answer = first_number / second_number;
+                    }
                     display.value = answer;
+                } else if (this.innerText === '%') {                 // percent
+                    display.value = (display.value / 100);
+                } else if (this.innerText === 'backspace') {     // backspace
+                    display.value = Math.floor((display.value / 10));
+                } else if (this.innerText === '+/-') {                 // clear
+                    display.value = '';
+                    first_number = '';
+                    second_number = '';
                 }
-
-
             }
         }
 
