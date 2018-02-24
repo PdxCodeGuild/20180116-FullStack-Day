@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <input id="anagram_input" type="text"/>
+        <input id="anagram_check" type="text"/>
+        <button id="bt_ana">anagram check</button>
+        <div id="anagram_output"></div>
+        <script>
+            let anagram_input = document.querySelector('#anagram_input');
+            let anagram_check = document.querySelector('#anagram_check');
+            let anagram_output = document.querySelector('#anagram_output');
+            let bt_ana = document.querySelector('#bt_ana');
+            bt_ana.onclick = function () {
+                let anagram = anagram_input.value;
+                let anagram_str = anagram.split(' ').join(''); // anagram = anagram.replace(' '. '');
+                let check = anagram_check.value;
+                let check_str = check.split(' ').join('');
+                if (anagram_str.length != check_str.length) {
+                    anagram_output.innerHTML = anagram + ' is not an anagram of ' + check;
+                } else {
+                    let ana_arr = [];
+                    let check_arr = [];
+                    for (let j = 0; j < check.length; ++j) {
+                        ana_arr.push(anagram_str[j]);
+                        check_arr.push(check_str[j]);
+                    }
+                    ana_arr.sort();
+                    check_arr.sort();
+                    for (let k = 0; k < check_arr.length; ++k) {
+                        if (ana_arr[k] != check_arr[k]) {
+                            anagram_output.innerHTML = anagram + ' is not an anagram of ' + check;
+                            break;
+                        } else if (k  == check_arr.length - 1) {
+                            anagram_output.innerHTML = anagram + ' is an anagram of ' + check;
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
