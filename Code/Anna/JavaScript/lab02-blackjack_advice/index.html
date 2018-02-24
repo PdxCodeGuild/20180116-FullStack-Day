@@ -31,23 +31,24 @@
 
 </head>
 <body>
+    <!--TODO: fix more than one A math problem-->
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
     <!-- guts go here -->
     <div id="wrapper" class="wrapper">
-        <h1 class="text-center animated flip player2">Blackjack!</h1>
+        <h1 class="text-center animated flipInY player2">Blackjack!</h1>
         <div class="container" id="card_cont">
             <div class="row">
                 <div class="col-lg-6 col-sm-12">
                     <div class="cardDiv" id="human_cards_go_here"></div>
-                    <h3 class="text-center player2"><img src="img/human.png" alt="8-bit person">Human Score: <span id="humanScore"></span></h3>
+                    <h3 class="text-center player2"><img src="img/human.png" alt="8-bit person" id="human">Human Score: <span id="humanScore"></span></h3>
                     <h4 class="text-center player2" id="human_result"></h4>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <div class="cardDiv" id="comp_cards_go_here"></div>
-                    <h3 class="text-center player2"><img src="img/comp.png" alt="8-bit computer">Computer Score: <span id="compScore"></span></h3>
+                    <h3 class="text-center player2"><img src="img/comp.png" alt="8-bit computer" id="comp">Computer Score: <span id="compScore"></span></h3>
                     <h4 class="text-center player2" id="comp_result"></h4>
                 </div>
                 </div>

@@ -19,8 +19,8 @@ let compResult = document.querySelector("#comp_result");
 let result = document.querySelector("#result");
 
 
-function pause() {
-    return new Promise(resolve => setTimeout(resolve, 2000));
+function pause(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 //     Less than 17, advise to "Hit"
@@ -98,7 +98,7 @@ async function compPlay(compHand) {
     console.log("The cards drawn are: " + compHand.compCards);
     console.log("The computer's current total is: " + compHand.compTotal);
     compScore.innerText = compHand.compTotal;
-    await pause();
+    await pause(2200);
     return compHand;
 }
 
@@ -117,8 +117,8 @@ function hit(playerHand) {
     // make card show up on the board
     let newCardImg = document.createElement('img');
     let currentCard = card_img[new_card];
-    newCardImg.setAttribute('class', 'animate tada');
     newCardImg.setAttribute('src', 'img/playingCards/' + currentCard);
+    newCardImg.setAttribute('class', 'animated slideInLeft');
     human_card_div.appendChild(newCardImg);
     playerHand.playerCards.push(new_card);
     play(playerHand);
@@ -129,11 +129,11 @@ function hit(playerHand) {
 async function stay(playerHand) {
     console.log("Stay. Your total is: " + playerHand.playerTotal);
     humanResult.innerText = "Stay. Your total is: " + playerHand.playerTotal;
-    await pause();
+    await pause(2200);
     checkTotal(playerHand.playerTotal);
     console.log("Now it's the computer's turn!");
     result.innerText = "Now it's the computer's turn!";
-    await pause();
+    await pause(2200);
     compGame();
     return playerHand;
 }
@@ -143,15 +143,19 @@ async function checkTotal(total) {
         console.log("Blackjack!");
         console.log("Now it's the computer's turn!");
         humanResult.innerText = "Blackjack!";
-        await pause();
         result.innerText = "Now it's the computer's turn!";
+        humanResult.innerHTML = "<h4 class='animated tada'>Blackjack!</h4>";
+        await pause(3000);
         compGame();
     } else if (total > 21) {
         console.log("Busted :(");
         console.log("Now it's the computer's turn!");
         humanResult.innerText = "Busted :(";
-        await pause();
         result.innerText = "Now it's the computer's turn!";
+        await pause(1200);
+        humanResult.innerHTML = "<h4 class='animated hinge'>Busted :(</h4>";
+        await pause(3000);
+        humanResult.innerText = "Busted :(";
         compGame();
     }
 }
@@ -169,6 +173,7 @@ async function compGame() {
         let newCardImg = document.createElement('img');
         let currentCard = card_img[new_card];
         newCardImg.setAttribute('src', 'img/playingCards/' + currentCard);
+        newCardImg.setAttribute('class', 'animated slideInRight');
         comp_card_div.appendChild(newCardImg);
         compHand.compCards.push(new_card);
         compPlay(compHand);
@@ -176,28 +181,28 @@ async function compGame() {
         if (compHand.compTotal > 21) {
             console.log("Computer busted!");
             compResult.innerText = "Computer busted!";
-            await pause();
+            await pause(2200);
             checkWinner(compHand);
             hit = false;
             break;
         } else if (compHand.compTotal === 21) {
             console.log("Computer gets Blackjack!");
-            compResult.innerText = "Computer gets Blackjack!";
-            await pause();
+            compResult.innerHTML = "<span class='animated tada'>Computer gets Blackjack!</span>";
+            await pause(2200);
             checkWinner(compHand);
             hit = false;
             break;
         } else if (compHand.compTotal >= 17) {
             console.log("Computer stays");
             compResult.innerText = "Computer stays";
-            await pause();
+            await pause(2200);
             checkWinner(compHand);
             hit = false;
             break;
         } else {
             console.log("Computer hits");
             compResult.innerText = "Computer hits";
-            await pause();
+            await pause(2000);
             hit = true;
         }
     }
@@ -208,23 +213,45 @@ async function compGame() {
 async function checkWinner(compHand) {
     console.log("Checking winner");
     let winner = "";
-    if (21 >= playerHand.playerTotal > compHand.compTotal) {
+    if (playerHand.playerTotal > compHand.compTotal && playerHand.playerTotal <= 21) {
         winner = "The human wins!";
         console.log(winner);
         result.innerText = winner;
-        await pause();
+        $('#human').addClass('animated bounce');
+        await pause(3200);
         result.innerText = "Hit 'Deal' to play again!";
-    } else if (21 >= compHand.compTotal > playerHand.playerTotal) {
+    } else if (compHand.compTotal > playerHand.playerTotal && compHand.compTotal <= 21) {
         winner = "The computer wins!";
         console.log(winner);
         result.innerText = winner;
-        await pause();
+        $('#comp').addClass('animated bounce');
+        await pause(3200);
+        result.innerText = "Hit 'Deal' to play again!";
+    } else if (compHand.compTotal === playerHand.playerTotal) {
+        winner = "It's a tie!";
+        console.log(winner);
+        result.innerText = winner;
+        await pause(3200);
         result.innerText = "Hit 'Deal' to play again!";
     } else if (compHand.compTotal > 21 && playerHand.playerTotal > 21) {
         winner = "Both players busted";
         console.log(winner);
         result.innerText = winner;
-        await pause();
+        await pause(3200);
+        result.innerText = "Hit 'Deal' to play again!";
+    } else if (compHand.compTotal > 21) {
+        winner = "The human wins!";
+        console.log(winner);
+        result.innerText = winner;
+        $('#human').addClass('animated bounce');
+        await pause(3200);
+        result.innerText = "Hit 'Deal' to play again!";
+    }   else if (playerHand.playerTotal > 21) {
+        winner = "The computer wins!";
+        console.log(winner);
+        result.innerText = winner;
+        $('#comp').addClass('animated bounce');
+        await pause(3200);
         result.innerText = "Hit 'Deal' to play again!";
     } else {
         winner = "Hit 'Deal' to play again!"
@@ -239,6 +266,8 @@ async function checkWinner(compHand) {
 $( document ).ready(function() {
     console.log( "ready!" );
     $("#bt_deal").click(function() {
+        $('#human').removeClass('animated bounce');
+        $('#comp').removeClass('animated bounce');
         humanScore.innerText = 0;
         compScore.innerText = 0;
         human_card_div.innerHTML = '';
