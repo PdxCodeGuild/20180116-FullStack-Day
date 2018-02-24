@@ -1,6 +1,5 @@
 //
 // Blackjack Simulator
-// Ascii art: https://www.ascii-code.com/ascii-art/miscellaneous/playing-cards.php
 //
 
 let card_list = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
@@ -118,6 +117,7 @@ function hit(playerHand) {
     // make card show up on the board
     let newCardImg = document.createElement('img');
     let currentCard = card_img[new_card];
+    newCardImg.setAttribute('class', 'animate tada');
     newCardImg.setAttribute('src', 'img/playingCards/' + currentCard);
     human_card_div.appendChild(newCardImg);
     playerHand.playerCards.push(new_card);
@@ -171,30 +171,33 @@ async function compGame() {
         newCardImg.setAttribute('src', 'img/playingCards/' + currentCard);
         comp_card_div.appendChild(newCardImg);
         compHand.compCards.push(new_card);
-        await pause();
         compPlay(compHand);
 
         if (compHand.compTotal > 21) {
             console.log("Computer busted!");
             compResult.innerText = "Computer busted!";
-            checkWinner(playerHand, compHand);
+            await pause();
+            checkWinner(compHand);
             hit = false;
             break;
         } else if (compHand.compTotal === 21) {
             console.log("Computer gets Blackjack!");
             compResult.innerText = "Computer gets Blackjack!";
-            checkWinner(playerHand, compHand);
+            await pause();
+            checkWinner(compHand);
             hit = false;
             break;
         } else if (compHand.compTotal >= 17) {
             console.log("Computer stays");
             compResult.innerText = "Computer stays";
-            checkWinner(playerHand, compHand);
+            await pause();
+            checkWinner(compHand);
             hit = false;
             break;
         } else {
             console.log("Computer hits");
             compResult.innerText = "Computer hits";
+            await pause();
             hit = true;
         }
     }
@@ -202,21 +205,27 @@ async function compGame() {
 }
 
 
-function checkWinner(playerHand, compHand) {
+async function checkWinner(compHand) {
     console.log("Checking winner");
     let winner = "";
     if (21 >= playerHand.playerTotal > compHand.compTotal) {
         winner = "The human wins!";
         console.log(winner);
         result.innerText = winner;
+        await pause();
+        result.innerText = "Hit 'Deal' to play again!";
     } else if (21 >= compHand.compTotal > playerHand.playerTotal) {
         winner = "The computer wins!";
         console.log(winner);
         result.innerText = winner;
+        await pause();
+        result.innerText = "Hit 'Deal' to play again!";
     } else if (compHand.compTotal > 21 && playerHand.playerTotal > 21) {
         winner = "Both players busted";
         console.log(winner);
         result.innerText = winner;
+        await pause();
+        result.innerText = "Hit 'Deal' to play again!";
     } else {
         winner = "Hit 'Deal' to play again!"
         console.log(winner);
@@ -230,6 +239,8 @@ function checkWinner(playerHand, compHand) {
 $( document ).ready(function() {
     console.log( "ready!" );
     $("#bt_deal").click(function() {
+        humanScore.innerText = 0;
+        compScore.innerText = 0;
         human_card_div.innerHTML = '';
         comp_card_div.innerHTML = '';
         humanResult.innerText = "";
@@ -250,7 +261,7 @@ jQuery(function($) {
 			if(Modernizr.csstransitions) {
 				$('#footerSlideContent').addClass('open');
 			} else {
-				$('#footerSlideContent').animate({ height: '40vh' });
+				$('#footerSlideContent').animate({ height: '25vh' });
 			}
 			$(this).css('backgroundPosition', 'bottom left');
 			open = true;

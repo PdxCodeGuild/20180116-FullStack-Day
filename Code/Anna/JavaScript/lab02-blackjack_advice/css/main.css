@@ -123,6 +123,10 @@ textarea {
     color:inherit;
 }
 
+.cardDiv {
+    min-height: 33vh;
+}
+
 .player2 {
     font-family: 'Press Start 2P', monospace;
 }
@@ -139,10 +143,6 @@ textarea {
 
 .cardDiv img {
     padding: 5px;
-}
-
-#wrapper h1, h3 {
-    font-family: 'Press Start 2P', monospace;
 }
 
 #card_cont {
@@ -298,6 +298,16 @@ textarea {
 
 #footerSlideContent p {
     font-size: 2vw;
+}
+
+#footerSlideContent a {
+    color: #92CD41;
+    text-decoration: none;
+}
+
+#footerSlideContent a:hover {
+    color: #4AA52E;
+    text-decoration: none;
 }
 
 #footerSlideText {
