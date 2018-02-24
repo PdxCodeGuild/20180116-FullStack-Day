@@ -416,4 +416,6 @@ $('#bt_dark').click(function() {
     $('body').addClass('darkTheme');
     $('#wrapper').removeClass('wrapper');
     $('#wrapper').addClass('darkTheme');
+    $('#card_cont').removeClass('card_cont');
+    $('#card_cont').addClass('darkTheme');
 });
