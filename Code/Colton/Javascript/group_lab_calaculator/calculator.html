@@ -8,37 +8,37 @@
     <h1>Calculator</h1>
     <input id="display" type = "text" value="">
     <div></div>
-    <button id="run_0" value="0" class="numbt">0</button>
-    <button id="run_1" value="1" class="numbt">1</button>
+    <button id="run_1" value="1" class="numbt"> 1 </button>
     <button id="run_2" value="2" class="numbt">2</button>
-    <button id="run_3" value="3" class="numbt">3</button>
+    <button id="run_3" value="3" class="numbt">3</button><br>
     <button id="run_4" value="4" class="numbt">4</button>
     <button id="run_5" value="5" class="numbt">5</button>
-    <button id="run_6" value="6" class="numbt">6</button>
+    <button id="run_6" value="6" class="numbt">6</button><br>
     <button id="run_7" value="7" class="numbt">7</button>
     <button id="run_8" value="8" class="numbt">8</button>
-    <button id="run_9" value="9" class="numbt">9</button>
-    <div></div>
+    <button id="run_9" value="9" class="numbt">9</button><br>
     <button id="run_equals" id="calc">=</button>
-    <button id="run_negate">clear</button>
+    <button id="run_0" value="0" class="numbt">0</button>
+    <button id="run_negate">+/-</button><br>
     <button id="run_percent">%</button>
-    <button id="negate">+/-</button>
-    <div></div>
     <button id="run_add" id="plus">+</button>
-    <button id="run_subtract">-</button>
-    <button id="run_multiply">*</button>
-    <button id="run_divide">/</button>
-    <div></div>
+    <button id="run_subtract">-</button><br>
+    <button id="run_multiply">X</button>
+    <button id="run_divide">÷</button>
+    <button id="run_clear">C</button><br>
     <button id="run_backspace">backspace</button>
+
 
     <script>
         let display = document.querySelector('#display');
         let first_number = 0;
         let second_number = 0;
+        let equation = '';
         let answer = 0;
         let operator = '';
         let num_bts = document.querySelectorAll('button');
         let plus = document.querySelectorAll('.plus');
+
 
         console.log(num_bts);
         let eq_bt = document.querySelectorAll(".calc");
@@ -48,7 +48,7 @@
                 // alert(this.innerText);
                 if (!isNaN(parseInt(this.innerText))) {
                     display.value += this.innerText;
-                } else if (this.innerText === '+' || this.innerText === '-' || this.innerText === '*' || this.innerText === '/') {
+                } else if (this.innerText === '+' || this.innerText === '-' || this.innerText === 'X' || this.innerText === '÷' || this.innerText === '%') {
                     first_number = parseInt(display.value);
                     display.value = '';
                     operator = this.innerText;
@@ -56,34 +56,22 @@
 
                 } else if (this.innerText === '=') {
                     second_number = parseInt(display.value);
+
                     if (operator === '+') {
                         answer = first_number + second_number;
-                    }
-                    if (operator === '-') {
-                        answer = first_number - second_number;
-                    }
-                    if (operator === '*') {
+                    } else if (operator === '-') {
+                        answer - first_number - second_number;
+                    } else if (operator === 'X') {
                         answer = first_number * second_number;
-                    }
-                    if (operator === '/') {
+                    } else if (operator === '÷') {
                         answer = first_number / second_number;
+                    } else if (operator === '%') {
+                        answer = (first_number / second_number) / (second_number/second_number) * 100;
                     }
                     display.value = answer;
-                } else if (this.innerText === '%') {                 // percent
-                    display.value = (display.value / 100);
-                } else if (this.innerText === 'backspace') {     // backspace
-                    display.value = Math.floor((display.value / 10));
-                } else if (this.innerText === 'clear') {                 // clear
-                    display.value = '';
-                    first_number = '';
-                    second_number = '';
-                } else if (this.innerText === '+/-') {
-                    if (display.value > 0) {
-                        display.value = Math.abs(display.value) * -1;
-                    } else if (display.value > 0) {
-                        display.value = Math.abs(display.value);
-                    }
-                }
+                } else if (this.innerText === 'C'){
+                    display.value = '';}
+
 
             }
         }
