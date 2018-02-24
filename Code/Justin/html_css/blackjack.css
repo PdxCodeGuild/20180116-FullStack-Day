@@ -1,0 +1,131 @@
+body{
+    box-sizing: border-box;
+}
+
+h1{
+    color: white;
+    height: 40px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 0px;
+    text-align: center;
+}
+
+#main {
+    border: 1px solid black;
+    position: relative;
+    width: 1200px;
+    height: 700px;
+}
+
+#table {
+    postion:relative;
+    width: 1200px;
+    height: 700px;
+    perspective: 1000px;
+}
+
+#title{
+    padding-left: 20px;
+    padding-top: 10px;
+    color: white;
+    font-size: 60px;
+    position: absolute;
+    width: 100px;
+    height: 70px;
+}
+
+#player_box, #dealer_box {
+    display: flex;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    width: 900px;
+    left: 200px;
+    height: 70px;
+}
+
+#player_box{
+    top: 80px;
+}
+
+#dealer_box{
+    top: 380px;
+}
+
+#player_score, #dealer_score, #player_message, #dealer_message,
+#player_buttons, #dealer_extra{
+    flex:1;
+}
+
+.card{
+    border-radius: 10px;
+    position: absolute;
+    justify-content: center;
+    vertical-align: middle;
+    width: 117px;
+    height: 180px;
+    left: 20px;
+    top: 80px;
+    transition-duration: 1s;
+    transform-style: preserve-3d;
+}
+
+.front {
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    width: 117px;
+    height: 180px;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.back{
+    padding: 0px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: radial-gradient(black, red);
+    width: 117px;
+    height: 180px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card.dealt{
+    transform: rotateY(180deg) rotate(-180deg) ;
+}
+
+.front.dealt{
+    transform: rotateY(180deg);
+}
+
+.back.dealt{
+    transform: rotateY(0deg);
+}
+
+img{
+    background: radial-gradient(black, red);
+    box-shadow: dimgrey;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+button{
+    background: transparent;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color:white;
+    height: 40px;
+    width: 70px;
+}
+
+button:disabled{
+    opacity: .2;
+}
+
+
+
+

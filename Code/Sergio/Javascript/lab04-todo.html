@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>To do list</title>
+</head>
+<body>
+<div>
+    <h3>To do list instructions</h3>
+    <p>Let's make a simple todo-list which supports the following operations:
+    <ul>
+        <li>add an item to the list</li>
+        <li>remove an item from the list</li>
+        <li>mark an item as completed</li>
+    </ul>
+    <p>Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with
+        a line through them.
+
+</div>
+
+
+    <h1>Add to your to-do list</h1>
+    <input id="user_input" type="text"/>
+    <button id="bt_todo">Add to list</button>
+
+<h3>Your to-do list: </h3>
+<div id="user_output"></div>
+
+<script>
+    to_do_list = [];
+    let user_input = document.querySelector('#user_input');
+    let user_output = document.querySelector('#user_output');
+    let bt_todo = document.querySelector('#bt_todo');
+
+    bt_todo.onclick = function () {
+        let user_todo = user_input.value;
+        let para = document.createElement("li");
+        let user_list = document.createTextNode(user_output);
+        // use for loop to keep adding elements
+        user_output.innerText = user_todo;
+        //alert(user_todo); works ...
+    }
+
+</script>
+</body>
+</html>
