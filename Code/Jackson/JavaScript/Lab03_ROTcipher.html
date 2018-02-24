@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROT13</title>
+</head>
+
+<body>
+    <H1>Let me encrypt your code for you:</H1>
+    <input id="input_code" type="text"/>
+    <button id="run_bt">encode</button>
+    <div></div>
+    <output id="output_code" type = "text"></output>
+
+    <script>
+        let run_it = document.querySelector('#run_bt');
+        let all_letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let output_code = document.querySelector('#output_code');
+        let letter = '';
+        let new_letter = '';
+
+        //console.log("input code", input_code);
+        run_it.onclick = function() {
+            output_code.innerText = '';
+            let input_code = document.querySelector('#input_code').value;
+            for (i=0; i < input_code.length; i++) {
+                //alert('hey');
+                letter = all_letters.indexOf(input_code[i]) + 13;
+                console.log(letter);
+                if (letter > 26) {
+                    letter -= 26;
+                }
+                new_letter = all_letters[letter];
+                output_code.innerText += new_letter;
+            }
+       }
+
+
+    </script>
+
+</body>
+
+</html>
