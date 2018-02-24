@@ -16,6 +16,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 
     <!-- Optional font -->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
@@ -28,14 +29,28 @@
     <![endif]-->
 
     <!-- guts go here -->
-    <div id="wrapper">
-        <h1 class="text-center">Blackjack!</h1>
+    <div id="wrapper" class="wrapper">
+        <h1 class="text-center animated flip">Blackjack!</h1>
         <div class="container" id="card_cont">
-            <div id="cards_go_here"></div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="cardDiv" id="human_cards_go_here"></div>
+                    <h3 class="text-center player2"><img src="img/human.png" alt="8-bit person">Human Score: <span id="humanScore"></span></h3>
+                    <h4 class="text-center player2" id="human_result"></h4>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="cardDiv" id="comp_cards_go_here"></div>
+                    <h3 class="text-center player2"><img src="img/comp.png" alt="8-bit computer">Computer Score: <span id="compScore"></span></h3>
+                    <h4 class="text-center player2" id="comp_result"></h4>
+                </div>
+                </div>
+            <div class="row">
+                <h3 class="text-center player2 padded" id="result"></h3>
+            </div>
         </div>
     </div>
     <div class="text-center">
-        <a id="bt_deal" class="eightbit-btn">Deal!</a><a id="bt_hit" class="eightbit-btn eightbit-btn--proceed">Hit</a><a id="bt_stay" class="eightbit-btn eightbit-btn--reset">Stay</a>
+        <a id="bt_deal" class="eightbit-btn">Deal!</a><a id="bt_hit" class="eightbit-btn eightbit-btn--proceed">Hit</a><a id="bt_stay" class="eightbit-btn eightbit-btn--reset">Stay</a><a id="bt_dark" class="eightbit-btn eightbit-btn--dark">Dark Mode</a>
     </div>
 
     <!--  fancy pop-up footer!  -->

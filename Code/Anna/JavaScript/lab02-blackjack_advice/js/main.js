@@ -1,14 +1,28 @@
 //
 // Blackjack Simulator
+// Ascii art: https://www.ascii-code.com/ascii-art/miscellaneous/playing-cards.php
 //
 
-let card_list = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
-let card_obj = {'A': 0, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10}
+let card_list = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+let card_obj = {'A': 0, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10};
+let card_img = {'A': 'A.png', '2': '2.png', '3': '3.png', '4': '4.png', '5': '5.png', '6': '6.png', '7': '7.png', '8': '8.png', '9': '9.png', '10': '10.png', 'J': 'J.png', 'Q': 'Q.png', 'K': 'K.png'};
 let playerHand = {playerCards: [], playerTotal: 0};
 let compHand = {compCards: [], compTotal: 0};
 let bt_hit = document.querySelector("#bt_hit");     // buttons pushed by user
 let bt_stay = document.querySelector("#bt_stay");
-let card_div = document.querySelector('#cards_go_here');
+let card_cont = document.querySelector('#card_cont');
+let human_card_div = document.querySelector('#human_cards_go_here');    // div where the cards go
+let comp_card_div = document.querySelector('#comp_cards_go_here');    // div where the cards go
+let humanScore = document.querySelector("#humanScore");
+let compScore = document.querySelector("#compScore");
+let humanResult = document.querySelector("#human_result");
+let compResult = document.querySelector("#comp_result");
+let result = document.querySelector("#result");
+
+
+function pause() {
+    return new Promise(resolve => setTimeout(resolve, 2000));
+}
 
 //     Less than 17, advise to "Hit"
 //     Over or equal to 17, advise to "Stay"
@@ -34,13 +48,11 @@ function play(playerHand) {
             playerHand.playerTotal += 11;
             playerHand.playerCards.push('A');
             console.log("Ace value: " + ace_value);
-            card_div.innerHTML += "<p>Ace value: 11</p>";
         } else {
             let ace_value = 1;
             playerHand.playerTotal += 1;
             playerHand.playerCards.push('A');
             console.log("Ace value: " + ace_value);
-            card_div.innerHTML += "<p>Ace value: 1</p>";
         }
     }
     else {
@@ -52,16 +64,15 @@ function play(playerHand) {
 
     console.log("The cards drawn are: " + playerHand.playerCards);
     console.log("The current total is: " + playerHand.playerTotal);
-    card_div.innerHTML += "<p>The cards drawn are: " + playerHand.playerCards + "</p>";
-    card_div.innerHTML += "<p>The current total is: " + playerHand.playerTotal + "</p>";
+    humanScore.innerText = playerHand.playerTotal;
     return playerHand;
 }
 
-function compPlay(compHand) {
+async function compPlay(compHand) {
     if(compHand.compCards.includes('A')) {
         let value = 'A';
         compHand.compCards = compHand.compCards.filter(item => item !== value);
-
+        compHand.compTotal = 0;
         for (i=0; i<compHand.compCards.length; i++) {
             compHand.compTotal += card_obj[compHand.compCards[i]];
         }
@@ -71,16 +82,15 @@ function compPlay(compHand) {
             compHand.compTotal += 11;
             compHand.compCards.push('A');
             console.log("Ace value: " + ace_value);
-            card_div.innerHTML += "<p>Ace value: " + ace_value + "</p>";
         } else {
             let ace_value = 1;
             compHand.compTotal += 1;
             compHand.compCards.push('A');
             console.log("Ace value: " + ace_value);
-            card_div.innerHTML += "<p>Ace value: " + ace_value + "</p>";
         }
     }
     else {
+        compHand.compTotal = 0;
         for (i=0; i < compHand.compCards.length; i++) {
             compHand.compTotal += card_obj[compHand.compCards[i]];
         }
@@ -88,8 +98,8 @@ function compPlay(compHand) {
 
     console.log("The cards drawn are: " + compHand.compCards);
     console.log("The computer's current total is: " + compHand.compTotal);
-    card_div.innerHTML += "<p>The cards drawn are: " + playerHand.playerCards + "</p>";
-    card_div.innerHTML += "<p>The computer's current total is: " + playerHand.playerTotal + "</p>";
+    compScore.innerText = compHand.compTotal;
+    await pause();
     return compHand;
 }
 
@@ -97,134 +107,134 @@ function compPlay(compHand) {
 function startGame() {
     playerHand = {playerCards: [], playerTotal: 0};
     console.log("Starting game. Press 'hit' to get a card.");
-    card_div.innerHTML += "<p>Starting game. Press 'hit' to get a card.</p>";
+    result.innerText = "Starting game. Press 'Hit' to get a card, 'Stay' to finish your turn.";
     return playerHand;
 }
 
 function hit(playerHand) {
+    result.innerText = "";
     let new_card = deal();
     console.log("The card dealer gives you: " + new_card);
-    card_div.innerHTML += "<p>The card dealer gives you: " + new_card + "</p>";
+    // make card show up on the board
+    let newCardImg = document.createElement('img');
+    let currentCard = card_img[new_card];
+    newCardImg.setAttribute('src', 'img/playingCards/' + currentCard);
+    human_card_div.appendChild(newCardImg);
     playerHand.playerCards.push(new_card);
     play(playerHand);
     checkTotal(playerHand.playerTotal);
     return playerHand;
 }
 
-function stay(playerHand) {
+async function stay(playerHand) {
     console.log("Stay. Your total is: " + playerHand.playerTotal);
-    card_div.innerHTML += "<p>Stay. Your total is: " + playerHand.playerTotal + "</p>";
+    humanResult.innerText = "Stay. Your total is: " + playerHand.playerTotal;
+    await pause();
     checkTotal(playerHand.playerTotal);
     console.log("Now it's the computer's turn!");
-    card_div.innerHTML += "<p>Now it's the computer's turn!</p>";
+    result.innerText = "Now it's the computer's turn!";
+    await pause();
     compGame();
     return playerHand;
 }
 
-function checkTotal(total) {
+async function checkTotal(total) {
     if (total === 21) {
         console.log("Blackjack!");
         console.log("Now it's the computer's turn!");
-        card_div.innerHTML += "<p>Blackjack!</p>";
-        card_div.innerHTML += "<p>Now it's the computer's turn!</p>";
+        humanResult.innerText = "Blackjack!";
+        await pause();
+        result.innerText = "Now it's the computer's turn!";
         compGame();
     } else if (total > 21) {
         console.log("Busted :(");
         console.log("Now it's the computer's turn!");
-        card_div.innerHTML += "<p>Busted :(</p>";
-        card_div.innerHTML += "<p>Now it's the computer's turn!</p>";
+        humanResult.innerText = "Busted :(";
+        await pause();
+        result.innerText = "Now it's the computer's turn!";
         compGame();
     }
 }
 
 
-function compGame() {
+async function compGame() {
+    result.innerText = "";
     compHand = {compCards: [], compTotal: 0};
+    let hit = true;
 
     while (hit === true) {
         let new_card = deal();
-        console.log("<p>The computer gets: " + new_card + "</p>");
+        console.log("The computer gets: " + new_card);
+        // make card show up on the board
+        let newCardImg = document.createElement('img');
+        let currentCard = card_img[new_card];
+        newCardImg.setAttribute('src', 'img/playingCards/' + currentCard);
+        comp_card_div.appendChild(newCardImg);
         compHand.compCards.push(new_card);
+        await pause();
         compPlay(compHand);
 
         if (compHand.compTotal > 21) {
             console.log("Computer busted!");
-            card_div.innerHTML += "<p>Computer busted!</p>";
+            compResult.innerText = "Computer busted!";
+            checkWinner(playerHand, compHand);
             hit = false;
             break;
         } else if (compHand.compTotal === 21) {
             console.log("Computer gets Blackjack!");
-            card_div.innerHTML += "<p>Computer gets Blackjack!</p>";
+            compResult.innerText = "Computer gets Blackjack!";
+            checkWinner(playerHand, compHand);
             hit = false;
             break;
         } else if (compHand.compTotal >= 17) {
             console.log("Computer stays");
-            card_div.innerHTML += "<p>Computer stays</p>";
+            compResult.innerText = "Computer stays";
+            checkWinner(playerHand, compHand);
             hit = false;
             break;
         } else {
             console.log("Computer hits");
-            card_div.innerHTML += "<p>Computer hits</p>";
+            compResult.innerText = "Computer hits";
             hit = true;
         }
     }
     return compHand;
 }
 
-// Original version - didn't work
-// function game() {
-//     let cards = [];
-//     let hitting = true;
-//     let total = 0;
-//     let choice = '';
-//     // this loop did not wait for player input
-//     while (hitting === true) {
-//         let new_card = deal();
-//         console.log("The card dealer gives you: " + new_card);
-//         cards.push(new_card);
-//         total = play(cards);
-//         // wait for user input
-//         console.log("Do you hit or stay?");
-//
-//         let hit = document.querySelector("#bt_hit");
-//         let stay = document.querySelector("#bt_stay");
-//         hit.onclick = function(){
-//             choice = "stay";
-//         };
-//         stay.onclick = function(){
-//             choice = "hit";
-//         };
-//
-//         if (total > 21) {
-//             console.log("Busted! 😞");
-//             hitting = false;
-//             break;
-//         } else if (total === 21) {
-//             console.log("Blackjack!");
-//             hitting = false;
-//             break;
-//         } else if (choice === 'stay') {
-//             console.log("Stay");
-//             hitting = false;
-//             break;
-//         } else if (choice === 'hit') {
-//             console.log("Hit");
-//             hitting = true;
-//         } else {
-//             console.log("Not a valid choice");
-//         }
-//     }
-//     return total;
-// }
 
+function checkWinner(playerHand, compHand) {
+    console.log("Checking winner");
+    let winner = "";
+    if (21 >= playerHand.playerTotal > compHand.compTotal) {
+        winner = "The human wins!";
+        console.log(winner);
+        result.innerText = winner;
+    } else if (21 >= compHand.compTotal > playerHand.playerTotal) {
+        winner = "The computer wins!";
+        console.log(winner);
+        result.innerText = winner;
+    } else if (compHand.compTotal > 21 && playerHand.playerTotal > 21) {
+        winner = "Both players busted";
+        console.log(winner);
+        result.innerText = winner;
+    } else {
+        winner = "Hit 'Deal' to play again!"
+        console.log(winner);
+        result.innerText = winner;
+    }
+    return winner;
+}
 
 
 // Load when ready.
 $( document ).ready(function() {
     console.log( "ready!" );
     $("#bt_deal").click(function() {
+        human_card_div.innerHTML = '';
+        comp_card_div.innerHTML = '';
+        humanResult.innerText = "";
+        compResult.innerText = "";
         console.log("Dealing");
-        card_div.innerHTML = "<p>Dealing</p>";
         startGame();
     });
     bt_hit.addEventListener('click', function() {bt_hit.onclick = hit(playerHand);});
@@ -254,4 +264,12 @@ jQuery(function($) {
 			open = false;
 		}
 	});
+});
+
+
+// activate dark mode!
+$('#bt_dark').click(function() {
+    $('body').addClass('darkTheme');
+    $('#wrapper').removeClass('wrapper');
+    $('#wrapper').addClass('darkTheme');
 });
