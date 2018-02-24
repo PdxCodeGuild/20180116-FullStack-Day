@@ -48,7 +48,7 @@ window.onload = function() {
         this.email = email;
     }
 
-    // simplified validator. Create more regex validation checks later.
+    // simplified validator. Create more complex regex validation checks later.
     function addToBook() {
         let isNull = fullname.value!= '' && phone.value!= '' && address.value!='' && city.value!='' && email.value!= "";
         if(isNull){
