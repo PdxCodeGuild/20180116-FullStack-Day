@@ -1,0 +1,84 @@
+<html>
+    <body>
+        <span id="inputs">
+            <input id="input_one" type="number" required/>  <!-- first input -->
+        </span>
+        <span class="operators">                            <!-- buttons for operators -->
+            <button id="bt_plus">+</button>
+            <button id="bt_minus">-</button>
+            <button id="bt_multiply">*</button>
+            <button id="bt_divide">/</button>
+            <button id="bt_factorial">!</button>
+            <button id="bt_power">^</button>
+        </span>
+        <span>
+            <input id="input_two" type="number"/>           <!-- second input -->
+        </span>
+        <span id="output"></span>
+        <script>
+            let input_one = document.querySelector('#input_one'); //grabbing inputs from html for js
+            let input_two = document.querySelector('#input_two');
+            let bt_plus = document.querySelector('#bt_plus');
+            let bt_minus = document.querySelector('#bt_minus');
+            let bt_multiply = document.querySelector('#bt_multiply');
+            let bt_divide = document.querySelector('#bt_divide');
+
+            bt_plus.onclick = function() {                       //addition button function
+                let i_one = parseFloat(input_one.value);
+                let i_two = parseFloat(input_two.value);
+                let result = (i_one + i_two);
+                output.innerHTML = i_one + ' + ' + i_two + ' = ' + result;  //output statement
+                input_one.value = result;                                   //reset input box to result
+                input_two.value = '';
+            };
+
+            bt_minus.onclick = function() {                                 //subtraction button function
+                let i_one = parseFloat(input_one.value);
+                let i_two = parseFloat(input_two.value);
+                let result = (i_one - i_two);
+                output.innerHTML = i_one + ' - ' + i_two + ' = ' + result;
+                input_one.value = result;
+                input_two.value = '';
+            };
+
+            bt_multiply.onclick = function() {                              //multiplication button function
+                let i_one = parseFloat(input_one.value);
+                let i_two = parseFloat(input_two.value);
+                let result = (i_one * i_two);
+                output.innerHTML = i_one + ' * ' + i_two + ' = ' + result;
+                input_one.value = result;
+                input_two.value = '';
+            };
+
+            bt_divide.onclick = function() {                                //division button function
+                let i_one = parseFloat(input_one.value);
+                let i_two = parseFloat(input_two.value);
+                let result = (i_one / i_two);
+                output.innerHTML = i_one + ' / ' + i_two + ' = ' + result;
+                input_one.value = result;
+                input_two.value = '';
+            };
+
+            bt_factorial.onclick = function() {                             //factorial button function
+                let i_one = parseFloat(input_one.value);
+                let result = 1;
+                for (let i = i_one; i > 0; --i) {
+                    result *= i;
+                }
+                output.innerHTML = i_one + '!' + ' = ' + result;
+                input_one.value = result;
+                input_two.value = '';
+            };
+
+            bt_power.onclick = function() {                                 //exponential button function
+                let i_one = parseFloat(input_one.value);
+                let i_two = parseFloat(input_two.value);
+                let result = Math.pow(i_one, i_two);
+                output.innerHTML = i_one + ' ^ ' + i_two + ' = ' + result;
+                input_one.value = result;
+                input_two.value = '';
+            };
+
+        </script>
+    </body>
+</html>

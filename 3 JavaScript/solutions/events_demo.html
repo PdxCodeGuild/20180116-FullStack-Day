@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            let user_input1 = document.querySelector('#user_input1');
+            //let user_input1 = document.getElementById('user_input1');
+            let bt = document.querySelector('#bt');
+
+            user_input1.onchange = function () {
+                alert(user_input1.value);
+            };
+            user_input1.oninput = function () {
+                console.log(user_input1.value);
+            };
+
+            bt.onclick = function () {
+                alert('click!');
+            };
+
+            bt.addEventListener('click', function() {
+                alert('hello world!');
+            });
+
+            user_input1.onclick = function () {
+                alert('input click!!');
+            };
+
+            document.body.onkeydown = function (evt) {
+                if (evt.keyCode === 13) {
+                    alert('you pressed enter!')
+                }
+            };
+        };
+
+    </script>
+</head>
+<body>
+<input id="user_input1" type="text" placeholder="enter some text"/>
+<button id="bt">click</button>
+</body>
+</html>

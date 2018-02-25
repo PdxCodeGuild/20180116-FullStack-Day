@@ -33,8 +33,8 @@ pi += 1 // error
 ## Data Types
 
 ```JavaScript
-let a = 5; // int
-let b = 10.4; // float
+let a = 5; // number
+let b = 10.4; // number
 let c = "hello!"; // string
 let d = true; // boolean
 let e = null; // null

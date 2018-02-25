@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+
+    </style>
+
+    <title>Check Your Grade</title>
+</head>
+<body>
+
+<div id="get_grade_div">
+    <label for="question">Ask Daddy a question: </label>
+    <input type="text" id="question" placeholder="ask son">
+</div>
+
+<button id="prediction"> Predict </button>
+<script>
+
+alert("Ask daddy anything!")
+
+let prediction = document.querySelector('#prediction');
+prediction.onclick = function () {
+    let my_list = ["it is certain", "it is decidedly", "without a doubt",
+          "Yes Definetly", " You may rely on it", "As i see it, yes",
+          "Most Likely", "OutLook good", "Yes", "Signs point to Yes",
+          "Reply hazy try again", " Ask again Later", "Better not tell you now",
+          "Cannot predict now", "Concentrate and ask again", "Don't Count on it",
+          "My reply is No", "My sources say no", "Outlook not so good", "Very Doubtful"];
+
+    let random_index = Math.floor(Math.random() * my_list.length);
+    alert(my_list[random_index])
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <input id="password_input" type="text"/>
+        <button id="run_bt">run</button>
+        <div id="output_div"></div>
+        <script>
+            let password_input = document.querySelector('#password_input');
+            let run_bt = document.querySelector('#run_bt');
+            let output_div = document.querySelector('#output_div');
+            run_bt.onclick = function(){
+                let letters_index = 'abcdefghijklmnopqrstuvwxyz ';
+                let rot13 = '';
+                let password = password_input.value;
+                for (let i = 0; i < password.length; ++i) {
+                    let num = letters_index.indexOf(password[i]);
+                    if (num <= 13) {
+                        let new_num = num + 13;
+                        let new_char = letters_index[new_num];
+                        rot13 = rot13 + new_char;
+                    } else if (num > 13 && num <= 25) {
+                        let new_num = num - 13;
+                        let new_char = letters_index[new_num];
+                        rot13 = rot13 + new_char;
+                    } else {
+                        rot13 = rot13 + ' ';
+                    }
+                }
+                output_div.innerHTML = rot13
+            }
+        </script>
+    </body>
+
+</html>
