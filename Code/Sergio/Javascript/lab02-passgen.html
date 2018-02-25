@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+
+<h1>Random password generator v1</h1>
+
+<div id="passg"></div>
+
+
+<script>
+    document.getElementById("passg").innerHTML =
+        Math.random().toString(36).substr(2, 10);
+    // Math.random gets random nums
+    // toString returns value of string
+    // The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters. Needs (start,length)
+
+</script>
+
+</body>
+</html>
