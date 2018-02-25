@@ -13,6 +13,43 @@ function buildGameBoard() {
         }
     }
 }
+
+function createPageElement(parent_element, element_type, element_class, element_id) {
+	//create any empty element on the page
+	let element = document.createElement(element_type);
+	element.className = element_class || null;
+	element.id = element_id || null;
+	document.querySelector(parent_element).appendChild(element);
+	console.log(`created element: ${element_type} parent: ${parent_element} class: ${element_class} id: ${element_id}`);
+}
+
+function create_main_elements() {
+	createPageElement('body', 'div', );
+	document.querySelector('.container').onload(createPageElement('container', 'h1', 'main_text', 'main_text'));
+	// const main_input_field = create_page_element('container', 'input', 'input_field', 'input_field');
+	// const main_button = create_page_element('container', 'button', 'button', 'button');
+}
+
+function buildGameBoard2() {
+    const gameBoardWidth = 10;
+    const gameBoardHeight = 10;
+    for ( y = 0; y < ; y++)
+     {
+        for (x = 0; x < 10; x++) {
+            // console.log(`x:${x}, y:${y}`)
+        gridcell = document.createElement('div');
+        gridcell.className = 'col' + x + ' row' + y;
+        // gridcell.innerText = `x:${x}, y:${y}`;
+        gridcell.innerText = ".";
+        // console.log(gridcell);
+        board.appendChild(gridcell)
+        }
+    }
+}
+
+
+
+
 // function redCell() {
 //     board.querySelector(".col5.row5").style.background = 'red';
 //     console.log('redCell ran!')
@@ -25,22 +62,11 @@ function buildGameBoard() {
 
 // window.onload(+
 
-
-
-
-
 function changeBackground(color) {
    document.body.style.background = color; }
 function changeColor(color) {
    document.body.style.color = color; }
 
-changeBackground("black");
-changeColor("white");
-buildGameBoard();
-
-const names = ['mike', 'vere', 'marcy', 'kim', 'joy', 'mildred', 'marty', 'Jeff', 'Manny', 'megan', 'mad max', 'Moore',
-     'junior', 'Minty', 'myspace tom', 'Hugh Jass', 'john', 'jacob', 'jingleheimer', 'smith', 'Morticia',
-     'Rick', 'Morty', 'jon smith', 'not sure', 'Beef Supreme', 'Mob', 'Toffle', 'moore'];
 
 class PlayerCharacter {
     constructor(player_x, player_y) {
@@ -109,6 +135,15 @@ class NPC {
         console.log(`@ drawn at ${this.x_location}, ${this.y_location} `);
     }
 
+    move(dx, dy) {
+        let move = this.check_move(dx, dy);
+        console.log(`at location x:${move[0]}, y:${move[1]} ${getStrAtLoc(move[0], move[1])}`);
+        if (getStrAtLoc(move[0], move[1]) === '.') {
+        // if (!(this.player_x + dx) instanceof NPC.location) {
+            this.clearCharacter();
+            this.x_location += dx;
+            this.y_location += dy;
+            this.drawCharacter();
     // get name() {
     // return this.name;
     // }
@@ -119,14 +154,6 @@ class NPC {
     }
 
 
-
-    move(dx, dy) {
-            this.clearCharacter();
-            console.log("");
-            this.player_x += dx;
-            this.player_y += dy;
-            this.drawCharacter();
-        }
     // }
 
     // chat() {
@@ -162,3 +189,6 @@ window.onkeyup = function(e) {
 
 // (`.col${x}.row${y}`);
 
+changeBackground("black");
+changeColor("white");
+buildGameBoard();
