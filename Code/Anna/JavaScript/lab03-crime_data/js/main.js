@@ -1,6 +1,16 @@
+let choice = document.querySelector("#choice");
+let getData = document.querySelector("#get_data");
+
 $(document).ready(function() {
    $('.selectpicker').selectpicker();
+    getData.addEventListener('click', function() {getData.onclick = loadFile(choice);});
 });
+
+
+function loadFile(choice) {
+    let data = $.csv.toObjects(input);
+}
+
 
 // // Original python:
 //
