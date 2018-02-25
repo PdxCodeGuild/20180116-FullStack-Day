@@ -1,0 +1,16 @@
+body {
+    padding: 20px;
+}
+
+button {
+    margin-top: 20px;
+    line-height: 60px;
+    font-weight: bold;
+    padding: 0 40px;
+    background: darkred;
+    border: none;
+}
+
+button:hover {
+    background: orangered;
+}
