@@ -1,9 +1,22 @@
-let choice = document.querySelector("#choice");
-let getData = document.querySelector("#get_data");
+let choice = $("#choice").val();
+let getData = document.querySelector("");
 
 $(document).ready(function() {
    $('.selectpicker').selectpicker();
-    getData.addEventListener('click', function() {getData.onclick = loadFile(choice);});
+   getData.addEventListener('click', function() {
+       if (choice === 1) {
+           let file = '../data/crime_incident_data_2011.csv';
+       } else if (choice === 2) {
+           let file = '../data/crime_incident_data_2012.csv';
+       } else if (choice === 3) {
+           let file = '../data/crime_incident_data_2013.csv';
+       } else if (choice === 4) {
+           let file = '../data/crime_incident_data_2014.csv';
+       } else if (choice === 5) {
+           let file = '../data/crime_incident_data_recent.csv';
+       }
+       getData.onclick = loadFile(file);
+   });
 });
 
 
