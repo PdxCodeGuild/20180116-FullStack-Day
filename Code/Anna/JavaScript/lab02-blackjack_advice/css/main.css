@@ -16,6 +16,11 @@ html {
     line-height: 1.4;
 }
 
+.darkTheme {
+    background-color: #1A1A1A;
+    color: #92CD41;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -104,29 +109,53 @@ textarea {
 
 #wrapper {
     width: 100vw;
-    background-color:#eee;
     padding-top:10px;
     padding-bottom:10px;
     padding-right:15px;
     padding-left:15px;
     margin-bottom:20px;
-    color:inherit;
     border-radius:6px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#wrapper h1 {
+.wrapper {
+    background-color:#eee;
+    color:inherit;
+}
+
+.cardDiv {
+    min-height: 33vh;
+}
+
+.player2 {
     font-family: 'Press Start 2P', monospace;
 }
 
-#card_cont {
-    background-color: white;
+.padded {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.cardDiv {
+    padding: 10px;
+}
+
+.cardDiv img {
+    padding: 5px;
+}
+
+.card_cont {
+    background-color: #92CD41;
+    min-height: 70vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
 }
 
 #cards_go_here {
     font-family: 'Roboto Mono', monospace;
     font-size: 1vw;
-    background-color:#eee;
+    background-color: #92CD41;
 }
 
 
@@ -206,6 +235,21 @@ textarea {
   -webkit-box-shadow: inset 4px 4px 0px 0px #E59400;
           box-shadow: inset 4px 4px 0px 0px #E59400;
 }
+.eightbit-btn--dark {
+  background: #323232;
+    color: #999999;
+  -webkit-box-shadow: inset -4px -4px 0px 0px #1A1A1A;
+          box-shadow: inset -4px -4px 0px 0px #010101;
+}
+.eightbit-btn--dark:hover, .eightbit-btn--proceed:focus {
+  background: #1A1A1A;
+  -webkit-box-shadow: inset -6px -6px 0px 0px #010101;
+          box-shadow: inset -6px -6px 0px 0px #010101;
+}
+.eightbit-btn--dark:active {
+  -webkit-box-shadow: inset 4px 4px 0px 0px #010101;
+          box-shadow: inset 4px 4px 0px 0px #010101;
+}
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -254,6 +298,16 @@ textarea {
 
 #footerSlideContent p {
     font-size: 2vw;
+}
+
+#footerSlideContent a {
+    color: #92CD41;
+    text-decoration: none;
+}
+
+#footerSlideContent a:hover {
+    color: #4AA52E;
+    text-decoration: none;
 }
 
 #footerSlideText {
