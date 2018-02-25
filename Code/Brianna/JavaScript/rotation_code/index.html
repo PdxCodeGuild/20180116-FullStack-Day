@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Address Book</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script src="javaScript.js"></script>
+</head>
+<body>
+
+<form>
+    <label class="user_input"> Please input a word and select "encrypt," "decrypt" and how far it needs to be shifted." </label>
+        <input class="user_input" type="text" id="code_input" pattern="{1,}">
+     <label>Would you like to encrypt or decrypt this word?</label>
+     <label>
+        <input type="radio" name="encryption" value="encrypt" id="encyption_type" required> Encrypt
+     </label>
+     <label>
+        <input type="radio" name="encryption" value="decrypt" id="encryption_type" required> Decrypt
+    </label>
+    <label>How far would you like to shift?</label>
+     <select class="u-full-width user_input" id="rotation">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="6">5</option>
+         <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+         <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+         <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+         <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+      </select>
+    <button class="user_input button primary-button" id="submit_code" type="submit">Encrypt</button>
+</form>
+
+<div id="output_div"></div>
+
+</body>
+
+</html>
