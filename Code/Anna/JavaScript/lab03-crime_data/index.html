@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
 <head>
     <!-- map source: https://www.pdx.edu/crime-data -->
+    <!-- data: https://www.kaggle.com/katzwigmore/portland-oregon-crime-data/data -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PDX Crime Data Visualization</title>
@@ -29,7 +30,7 @@
     <!-- header -->
     <div class="jumbotron box-shadow">
         <h1>Portland Crime Data</h1>
-        <p class="text-muted">All data taken from: <a href="https://www.portlandoregon.gov/police/71978" target="_blank">The City of Portland</a></p>
+        <p class="text-muted">All data taken from: <a href="https://www.portlandoregon.gov/police/71978" target="_blank">The City of Portland</a> via <a href="https://www.kaggle.com/katzwigmore/portland-oregon-crime-data/data" target="_blank">Kaggle.com</a></p>
         <!-- cool looking progress bars -->
         <div class="progress bt-margin">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 5%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
@@ -54,7 +55,9 @@
                 <option value="2">2012</option>
                 <option value="3">2013</option>
                 <option value="4">2014</option>
-                <option value="5">Most recent</option>
+                <option value="5">2015</option>
+                <option value="6">2016</option>
+                <option value="7">2017</option>
               </select>
             </div>
           </div>
@@ -66,13 +69,9 @@
         <img class="img-fluid bg-img" src="img/pdx-map.png">
     </div>
 
-
     <!-- guts go here -->
 
-
-
-
-
+    <div class="visualize"></div>
 
 
     <!-- scripts go here -->

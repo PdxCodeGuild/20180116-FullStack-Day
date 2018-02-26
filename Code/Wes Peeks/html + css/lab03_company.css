@@ -13,19 +13,38 @@ header  {
     background-attachment: fixed;
     background-position: center;
     background-size: 105%;
+    border: 1px solid #856404;
 }
 
 nav ul {
-    margin: 10px;
-    float: right;
+    float: top;
     list-style-type: none;
     margin-left: 30px;
     padding-left: 30px;
     letter-spacing: 5px;
+    display: flex;
+    flex-direction: row;
+
 }
 
+.nav-navbar{
+    flex-direction: row;
+
+}
 li {
+    display: inline;
+    float: left;
+}
+
+a {
     margin-left: 50px;
     padding-left: 25px;
     color: #9d9d9d;
+
+
+}
+
+p {
+    margin: 30px;
+    color: #856404;
 }
