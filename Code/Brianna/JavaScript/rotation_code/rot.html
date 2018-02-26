@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ROT-N</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: #335;
+      color: white;
+    }
+
+    button,
+    input,
+    #encoded_ul {
+      margin-top: 20%;
+      font-size: 28px;
+      list-style-type: none;
+      indent: none;
+    }
+
+    #rotation_input {
+      width: 64px;
+    }
+  </style>
+</head>
+
+<body>
+  <input id="message_input" type="text" placeholder="Message">
+  <input id="rotation_input" type="number" value=0>
+  <button id="rotate_btn">rotate</button>
+  <ul id="encoded_ul">
+  </ul>
+</body>
+<script type="text/javascript">
+  function ROT(rotation, message) {
+    return message.split('').map(function(c){
+      return String.fromCharCode(c.charCodeAt(0) + rotation);
+    }).join('');
+  }
+
+  // helper function
+  function dqs(element) {
+    return document.querySelector(element);
+  }
+
+
+  let btn = dqs('#rotate_btn');
+  let message_input = dqs('#message_input');
+  let rotation_input = dqs('#rotation_input');
+  let encoded_ul = dqs('#encoded_ul');
+
+  btn.addEventListener('click', function() {
+    if (message_input.value !== '') {
+      var node = document.createElement("li");
+      var encoded = ROT(Number(rotation_input.value), message_input.value)
+      var textnode = document.createTextNode(encoded);
+      node.appendChild(textnode);
+      document.getElementById("encoded_ul").appendChild(node);
+    }
+  });
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+    <script>
+        function get_grade(grade) {
+            if (grade >= 90) {
+                return "You got an A!";
+            } else if (grade >= 80) {
+                return "You got a B!";
+            } else if (grade >= 70) {
+                return "You got a C!";
+            } else if (grade >= 60) {
+                return "You got a D!";
+            } else if (grade >= 0) {
+                return "You got an F yay!";
+            }
+        }
+
+        let grade = prompt('Grade yourself! Enter a number between 0 and 100');
+
+        alert(get_grade(grade));
+    </script>
+</head>
+</html>

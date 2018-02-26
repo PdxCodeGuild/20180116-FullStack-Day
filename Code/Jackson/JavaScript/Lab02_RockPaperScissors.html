@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+    <h1>
+        Let's Play Rock Paper Scissors!
+    </h1>
+    <div>Choose 'rock', 'paper', or 'scissors':</div>
+    <input id="name_input" type="text"/>
+    <button id="run_bt">Shoot</button>
+    <p>Computer chose:</p>
+    <div id="output_div"/>
+    <div id="outcome_div"/>
+    <!--<button class="user_options">Rock</button>-->
+    <!--<button class="user_options">Paper</button>-->
+    <!--<button class="user_options">Scissors</button>-->
+
+    <script>
+        let run_bt = document.querySelector('#run_bt');
+        let output_div = document.querySelector('#output_div');
+        let name_input = document.querySelector('#name_input');
+        let options = [
+            "rock",
+            "paper",
+            "scissors"
+        ];
+
+        let outcomes = [
+            "You win",
+            "You Lose",
+            "You Tie"
+        ];
+
+
+        run_bt.onclick = function() {
+            let comp_choice = Math.floor(Math.random()*options.length);
+            output_div.innerText = options[comp_choice];
+            if (options[comp_choice] === name_input.value) {
+                alert("you tie");
+                } else if (options[comp_choice] === "rock" && name_input.value === "scissors") {
+                alert("you lose");
+                } else if (options[comp_choice] === "paper" && name_input.value === "scissors") {
+                alert("you win");
+                } else if (options[comp_choice] === "rock" && name_input.value === "paper") {
+                alert("you win");
+                } else if (options[comp_choice] === "scissors" && name_input.value === "paper") {
+                alert("you lose");
+                } else if (options[comp_choice] === "scissors" && name_input.value === "rock") {
+                alert("you win");
+                } else if (options[comp_choice] === "paper" && name_input.value === "rock") {
+                alert("you lose");
+                } else {
+                alert("Could not understand your selection, please try again")
+                }
+            //outcome_div.innerText =
+        }
+
+    </script>
+
+
+</body>
+</html>
