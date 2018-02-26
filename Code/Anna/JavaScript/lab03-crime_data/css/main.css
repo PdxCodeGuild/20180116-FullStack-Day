@@ -21,6 +21,10 @@ body {
     color: #cccccc;
 }
 
+p a:hover {
+    text-decoration: none;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -114,6 +118,23 @@ textarea {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.lg-btn {
+    min-height: 40px;
+}
+
+.jumbotron {
+    /*background: url(img/pdx-map.png) no-repeat right;*/
+    max-height: 70vh;
+    position: relative;
+}
+
+.bg-img {
+    position:absolute;
+    right: 0;
+    top: 0;
+    max-height: 70vh;
+}
+
 /* Hotfix for Bootstrap v4.0.0-alpha.6*/
 .bootstrap-select.btn-group .dropdown-menu.inner {
   display: block;
@@ -131,9 +152,6 @@ textarea {
     background: 0 0;
     border: 0;
 }
-
-
-
 
 
 
