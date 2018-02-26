@@ -5,16 +5,19 @@ $(document).ready(function() {
    $('.selectpicker').selectpicker();   // makes the drop-down work
     // testing
     $("#bt_now").click(function() {
-        "use strict";
-        $.ajax({
-            type: "GET",
-            url: "../data/crime_incident_data_recent.csv",
-            dataType: "text",
-            success: function(data) {processData(data);}
-     });
+        // "use strict";
+        // $.ajax({
+        //     type: "GET",
+        //     url: "../data/crime_incident_data_recent.csv",
+        //     dataType: "text",
+        //     success: function(data) {processData(data);}
+        // });
         // let file = $.get('../data/crime_incident_data_recent.csv');
         // console.log("Loading data");
         // loadFile(file);
+        d3.csv("../data/crime_incident_data_recent.csv", function(data) {
+          console.log(data[0]);
+        });
     });
     // listening for selection
     getData.addEventListener('click', function() {
