@@ -3,7 +3,7 @@ let getData = document.querySelector("#get_data");
 $(document).ready(function() {
     console.log("Ready!");
    $('.selectpicker').selectpicker();   // makes the drop-down work
-    // testing
+    // test button
     $("#bt_now").click(function() {
         // "use strict";
         // $.ajax({
@@ -15,8 +15,8 @@ $(document).ready(function() {
         // let file = $.get('../data/crime_incident_data_recent.csv');
         // console.log("Loading data");
         // loadFile(file);
-        d3.csv("../data/crime_incident_data_recent.csv", function(data) {
-          console.log(data[0]);
+        d3.csv("../1 Python/data/crime_incident_data_recent.csv", function(data) {
+            console.log("getting data");
         });
     });
     // listening for selection
@@ -24,25 +24,30 @@ $(document).ready(function() {
        let choice = $("#choice").val();
        console.log(choice);
        if (choice === '1') {
-           let file = $.get('../data/crime_incident_data_2011.csv');
-           console.log("1 selected");
-           loadFile(file);
+           d3.csv("../1 Python/data/crime_incident_data_2011.csv", function(data) {
+                console.log("1 selected");
+                loadFile(data);
+           });
        } else if (choice === '2') {
-           let file = $.get('../data/crime_incident_data_2012.csv');
-           console.log("2 selected");
-           loadFile(file);
+           d3.csv("../1 Python/data/crime_incident_data_2012.csv", function(data) {
+                console.log("1 selected");
+                loadFile(data);
+           });
        } else if (choice === '3') {
-           let file = $.get('../data/crime_incident_data_2013.csv');
-           console.log("3 selected");
-           loadFile(file);
+           d3.csv("../1 Python/data/crime_incident_data_2013.csv", function(data) {
+                console.log("1 selected");
+                loadFile(data);
+           });
        } else if (choice === '4') {
-           let file = $.get('../data/crime_incident_data_2014.csv');
-           console.log("4 selected");
-           loadFile(file);
+           d3.csv("../1 Python/data/crime_incident_data_2014.csv", function(data) {
+                console.log("1 selected");
+                loadFile(data);
+           });
        } else if (choice === '5') {
-           let file = $.get('../data/crime_incident_data_recent.csv');
-           console.log("5 selected");
-           loadFile(file);
+           d3.csv("../1 Python/data/crime_incident_data_recent.csv", function(data) {
+                console.log("1 selected");
+                loadFile(data);
+           });
        } else {
            console.log("Something's not right");
        }
@@ -50,17 +55,11 @@ $(document).ready(function() {
 });
 
 
-function loadFile(file) {
-    console.log("file loading: " + file);
-    let data = $.csv.toObjects(file);
-    console.log("file loaded");
+function loadFile(data) {
+    console.log("file loading");
     return data;
 }
 
-function processData(data) {
-    console.log("processing");
-    console.log(data);
-}
 
 
 // // Original python:
