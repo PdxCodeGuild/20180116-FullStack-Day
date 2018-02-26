@@ -1,0 +1,28 @@
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.gray {
+    background-color: #696969;
+    color: cornsilk;
+}
+
+#earlyLife img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+#earlyLife {
+    flex-wrap: wrap
+}

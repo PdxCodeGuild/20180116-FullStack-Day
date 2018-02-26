@@ -1,0 +1,77 @@
+body, html {
+    height: 100%;
+}
+
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+}
+
+#initial_body {
+    background-image: url("burrito.jpg");
+    font-family: Papyrus, sans-serif;
+    font-size: 25px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#body_order_form {
+    background-color: black;
+    font-family: Papyrus, sans-serif;
+    font-size: 25px;
+}
+
+#order {
+
+    text-align: center;
+    padding-top: 400px;
+    color: #6effc4;
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+.tortilla {
+
+    background-color: lightgreen;
+    color: Yellow;
+    text-align: center;
+    margin: 10px;
+
+}
+
+.rice {
+    background-color: lightblue;
+    text-align: center;
+
+}
+
+.beans {
+    background-color: lightcoral;
+    text-align: center;
+    margin: 10px;
+
+}
+
+.protein {
+    background-color: lightcyan;
+    text-align: center;
+}
+
+.additional {
+    background-color: lightsalmon;
+    text-align: center;
+    margin: 10px;
+
+}
+

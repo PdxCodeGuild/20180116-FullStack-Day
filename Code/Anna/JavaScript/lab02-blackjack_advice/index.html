@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <!--
+    Credits:
+    // Ascii art: https://www.ascii-code.com/ascii-art/miscellaneous/playing-cards.php
+    // Playing card images taken from: https://www.kickstarter.com/projects/45166364/8-bit-bicycle-playing-cards-0
+    // Pure CSS 8bit buttons: https://codepen.io/MatthewShields/pen/pwrXpV
+    // JQuery pop-up slider tutorial: https://return-true.com/jquery-pop-up-footer-version-2/
+    // everything else: thanks, Google image search!
+    -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Let's Play Blackjack!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+    <!-- Optional font -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+</head>
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- guts go here -->
+    <div id="wrapper" class="wrapper">
+        <h1 class="text-center animated flipInY player2">Blackjack!</h1>
+        <div class="container card_cont" id="card_cont">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="cardDiv" id="human_cards_go_here"></div>
+                    <h3 class="text-center player2"><img src="img/human.png" alt="8-bit person" id="human">Human Score: <span id="humanScore"></span></h3>
+                    <h4 class="text-center player2" id="human_result"></h4>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="cardDiv" id="comp_cards_go_here"></div>
+                    <h3 class="text-center player2"><img src="img/comp.png" alt="8-bit computer" id="comp">Computer Score: <span id="compScore"></span></h3>
+                    <h4 class="text-center player2" id="comp_result"></h4>
+                </div>
+                </div>
+            <div class="row">
+                <h3 class="text-center player2 padded" id="result"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a id="bt_deal" class="eightbit-btn">Deal!</a><a id="bt_hit" class="eightbit-btn eightbit-btn--proceed">Hit</a><a id="bt_stay" class="eightbit-btn eightbit-btn--reset">Stay</a><a id="bt_dark" class="eightbit-btn eightbit-btn--dark">Dark Mode</a>
+    </div>
+
+    <!--  fancy pop-up footer!  -->
+    <!--<span class="text-left"><button class="btn btn-outline-secondary">Blackjack After Dark!</button></span>-->
+    <div id="footerSlideContainer">
+	<div class="up-arrow" id="footerSlideButton"><img src="img/card.png"></div>
+	<div id="footerSlideContent">
+		<div id="footerSlideText">
+            <div class="container">
+                <div class="row>">
+                    <h1>Blackjack!</h1>
+                    <p>Let's play some blackjack tonight...</p>
+                    A silly blackjack game made by <a href="http://annaspysz.com/" target="_blank">Anna Spysz</a>. See source HTML for image credits.
+                    <div class="ascii-art text-right">
+_ _ _ _ ___ ___ _ _ _ ___ _ _ _________
+|A|Q|1|5|4  |7  |J|1|9|7  |A|K|2        |
+|@|@|@|@|@  |## |O|O|O|OO |+|+|+        |
+| | | | | @ |   | | | |   | | |    +    |
+| | | | |   | # | | | | O | | |         |
+| | | | | @ |   | | | |   | | |    +    |
+| | | | |   | # | | | | O | | |        +|
+| | | | |   |   | | | |   | | |        Z|
+~ ~ ~ ~ ~~~ ~~~ ~ ~ ~ ~~~ ~ ~ ~~~~~~~~~
+                </div>
+                </div>
+            </div>
+		</div>
+	</div>
+    </div>
+
+    <!-- scripts go here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

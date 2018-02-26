@@ -9,11 +9,21 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Noto Sans', sans-serif;
 }
 
 /*
@@ -98,8 +108,11 @@ textarea {
    ========================================================================== */
 
 #wrapper {
-    min-height: 30vh;
+    min-height: 20vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 0px;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
 }
 
 .top-padding {
@@ -112,28 +125,34 @@ textarea {
 
 #generator_div {
     min-height: 60vh;
-    font-size: 18em;
-    padding-top: 50px;
+    font-size: 6vw;
+    padding-top: 100px;
 }
 
 /* animated button */
 
 .btn {
-  background-color: DarkSlateBlue;
-  width:100px;
-  height:40px;
-  border-radius:5px;
-  color:white;
-  text-align:center;
-  vertical-align: middle;
-  display: table-cell;
-  box-shadow: 0px 2px 2px grey;
-  cursor:pointer;
-  user-select: none;
-  position:relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    width:150px;
+    height:40px;
+    border-radius:5px;
+    color: #D06800;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #FDE045;
+    text-align:center;
+    vertical-align: middle;
+    box-shadow: 0px 2px 2px grey;
+    cursor:pointer;
+    user-select: none;
+    position:relative;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.engraved-text {
+    color: #FB8C00;
+    font-size: 2vw;
+    text-shadow: 0px 1px 0px rgba(255,255,255,.2), 0px -1px 0px rgba(0,0,0,.4);
 }
 
 @keyframes btn_press {
@@ -155,30 +174,267 @@ textarea {
 
 /* animated emoticons */
 
+/*@keyframes rotate-emoticons {*/
+    /*0%  {*/
+    /*transform:rotate(0deg);*/
+    /*}*/
+    /*100% {*/
+    /*transform:rotate(90deg);*/
+    /*}*/
+/*}*/
+
+/*.animate {*/
+    /*animation-name: rotate-emoticons;*/
+    /*animation-duration: 2s;*/
+    /*animation-delay: 1s;*/
+    /*animation-iteration-count: 1;*/
+    /*animation-fill-mode: forwards;*/
+    /*!*animation-play-state: running;*!*/
+/*}*/
+
+/* keeps the emoji from overlapping over the buttons */
+#emoji {
+    writing-mode: tb-rl;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: visible;
+}
+
+#rotating {
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}
+
+.rotated {
+    transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+}
+
+/* floating smileys */
+
+#background-wrap {
+    bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+@keyframes animateSmiley {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+    -webkit-animation: animateSmiley 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateSmiley 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: -5%;
+	top: 5%;
+
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+}
+
+.x2 {
+    -webkit-animation: animateSmiley 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	animation: animateSmiley 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+	left: 5%;
+	top: 80%;
+
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+.x3 {
+    -webkit-animation: animateSmiley 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateSmiley 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 10%;
+	top: 40%;
+
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	transform: scale(0.7);
+}
+
+.x4 {
+    -webkit-animation: animateSmiley 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	animation: animateSmiley 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+
+	left: 20%;
+	top: 0;
+
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+.x5 {
+    -webkit-animation: animateSmiley 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	animation: animateSmiley 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+	left: 30%;
+	top: 50%;
+
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+.x6 {
+    -webkit-animation: animateSmiley 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateSmiley 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 50%;
+	top: 0;
+
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+}
+
+.x7 {
+    -webkit-animation: animateSmiley 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateSmiley 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 65%;
+	top: 70%;
+
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+.x8 {
+    -webkit-animation: animateSmiley 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+	animation: animateSmiley 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+
+	left: 80%;
+	top: 10%;
+
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+.x9 {
+    -webkit-animation: animateSmiley 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+	animation: animateSmiley 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+
+	left: 90%;
+	top: 50%;
+
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+}
+
+.x10 {
+    -webkit-animation: animateSmiley 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	-moz-animation: animateSmiley 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+	animation: animateSmiley 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+
+	left: 80%;
+	top: 80%;
+
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+/* OBJECTS */
+
+.big_face {
+    font-size: 20em;
+}
+
+
+.emoji {
+    -webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+
+    height: 200px;
+	position: absolute;
+	width: 200px;
+}
+
+.emoji:after {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+
+	content: "";
+    height: 180px;
+	left: 10px;
+	position: absolute;
+	width: 180px;
+}
+
 
 
 /* pop-up footer */
 
 #footerSlideContainer {
 	position: fixed;
-	bottom:0;
+	bottom: 0;
 	width: 100%;
 }
+
+.up-arrow {
+    font-size: 5em;
+}
+
 #footerSlideButton {
 	position: absolute;
-    color: #251b15;
-	top: -55px;
-	right: 20px;
+	top: -70px;
+	right: 25px;
 	width:50px;
 	height:50px;
 	border: none;
 	cursor: pointer;
 }
+
 #footerSlideContent {
 	width: 100%;
 	height: 0px;
-	background: #251b15;
-	color: #CCCCCC;
+	background: #FDE045;
+	color: #222222;
 	border: none;
     /* ... Original CSS - Add this to end ... */
 	-webkit-transition: height 300ms ease-in;
@@ -187,8 +443,12 @@ textarea {
 	-o-transition: height 300ms ease-in;
     transition: height 300ms ease-in;
 }
+#footerSlideContent h1 {
+    font-size: 4vw;
+}
+
 #footerSlideContent p {
-    font-size: 2em;
+    font-size: 2vw;
 }
 
 #footerSlideText {
@@ -198,13 +458,6 @@ textarea {
 #footerSlideContent.open {
 	height: auto;
 }
-
-
-
-
-
-
-
 
 
 /* ==========================================================================

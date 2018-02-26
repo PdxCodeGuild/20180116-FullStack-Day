@@ -1,0 +1,86 @@
+* {
+    margin: 1em;
+}
+body {
+    font-family: "Helvetica Neue";
+    text-align: center;
+    background-color: black;
+    background-image: url("https://www.billboard.com/files/media/wendy-carlos-composer-bw-1979-billboard-1548.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20em;
+}
+header {text-align: center;
+    font-size: larger;
+    font-variant: petite-caps;
+    font-weight: bolder;
+    background-color: #276664;
+    width: 52rem;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+
+}
+h1 {
+    color:black;
+    /*border: red;*/
+    /*font-weight: bolder;*/
+    /*font-size: xx-large;*/
+    /*font-family: "Helvet;*/
+    margin: 0;
+}
+p {
+    color: white;
+}
+main {
+}
+#container {
+    /*width: 40rem;*/
+    /*margin-outside: 2em;*/
+    background-color: black;
+    text-align: center;
+    border: 1em white;
+}
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 20em;
+    float:right
+}
+.caption {
+    display: block;
+    color: white;
+    font-size: small;
+}
+#content {
+    width: 50em;
+    margin: 2em;
+    padding: 1em;
+    color: #d6470a;
+    background-color: #276664;
+    opacity: 0.8;
+}
+a:visited {
+    color: white;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+img {
+    /*float: right;*/
+    padding: 1em;
+    width: 20em;
+    background-color: grey;
+}
+#places {
+    float:left;
+    padding: 1em;
+    background-color:black;
+    color:floralwhite;
+    font-size: small;
+}
+footer {
+    clear: both;
+    /*background-color: forestgreen;*/
+}

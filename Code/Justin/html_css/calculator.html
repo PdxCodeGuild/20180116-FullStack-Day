@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="calculator.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+</head>
+
+
+<body>
+<div id="calculator">
+    <div id="operations_record">op</div>
+
+    <div id="input_record">input</div>
+
+    <div id="'buttons">
+        <button id='bt0'>0</button>
+        <button id='bt1'>1</button>
+        <button id='bt2'>2</button>
+        <button id='bt3'>3</button>
+        <button id='bt4'>4</button>
+        <button id='bt5'>5</button>
+        <button id='bt6'>6</button>
+        <button id='bt7'>7</button>
+        <button id='bt8'>8</button>
+        <button id='bt9'>9</button>
+        <button id='btplus'>+</button>
+        <button id="btminus">-</button>
+        <button id="bttimes">*</button>
+        <button id="btdivision">/</button>
+        <button id="btbackspace">bs</button>
+        <button id="btclear">C</button>
+        <button>~</button>
+        <button>~</button>
+        <button>~</button>
+        <button>~</button>
+        <button>~</button>
+        <button>~</button>
+        <button>~</button>
+        <button id="btequals">=</button>
+
+
+
+    </div>
+
+
+</div>
+
+
+<script>
+    let numbers = [];
+    let operations = [];
+    let current_number = '';
+    let full_string = '';
+    let input_record = document.querySelector('#input_record');
+
+    let bt0 = document.querySelector('#bt0');
+    bt0.onclick = function(){
+        full_string += "0";
+        current_number += '0';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt1 = document.querySelector('#bt1');
+    bt1.onclick = function(){
+        full_string += "1";
+        current_number += '1';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt2 = document.querySelector('#bt2');
+    bt2.onclick = function(){
+        full_string += "2";
+        current_number += '2';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt3 = document.querySelector('#bt3');
+    bt3.onclick = function(){
+        full_string += "3";
+        current_number += '3';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt4 = document.querySelector('#bt4');
+    bt4.onclick = function(){
+        full_string += "4";
+        current_number += '4';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt5 = document.querySelector('#bt5');
+    bt5.onclick = function(){
+        full_string += "5";
+        current_number += '5';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt6 = document.querySelector('#bt6');
+    bt6.onclick = function(){
+        full_string += "6";
+        current_number += '6';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt7 = document.querySelector('#bt7');
+    bt7.onclick = function(){
+        full_string += "7";
+        current_number += '7';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt8 = document.querySelector('#bt8');
+    bt8.onclick = function(){
+        full_string += "8";
+        current_number += '8';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+    let bt9 = document.querySelector('#bt9');
+    bt9.onclick = function(){
+        full_string += "9";
+        current_number += '9';
+        console.log(full_string);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+
+    let btplus = document.querySelector('#btplus');
+    btplus.onclick = function(){
+        full_string += "+";
+        numbers.push(current_number);
+        operations.push('+');
+        current_number = '';
+        console.log(full_string);
+        console.log(current_number);
+        console.log(numbers);
+        console.log(operations);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+
+    let btminus = document.querySelector('#btminus');
+    btminus.onclick = function(){
+        full_string += "-";
+        numbers.push(current_number);
+        operations.push('-');
+        current_number = '';
+        console.log(full_string);
+        console.log(current_number);
+        console.log(numbers);
+        console.log(operations);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+
+    let bttimes = document.querySelector('#bttimes');
+    bttimes.onclick = function(){
+        full_string += "*";
+        numbers.push(current_number);
+        operations.push('*');
+        current_number = '';
+        console.log(full_string);
+        console.log(current_number);
+        console.log(numbers);
+        console.log(operations);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+
+    let btdivision = document.querySelector('#btdivision');
+    btdivision.onclick = function(){
+        full_string += "/";
+        numbers.push(current_number);
+        operations.push('/');
+        current_number = '';
+        console.log(full_string);
+        console.log(current_number);
+        console.log(numbers);
+        console.log(operations);
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+    }
+
+    let btbackspace = document.querySelector('#btbackspace');
+    btbackspace.onclick = function(){
+        if (current_number.length > 0) {
+            current_number = current_number.slice(0, -1);
+            full_string = full_string.slice(0,-1);
+            input_record.innerText = current_number;
+            operations_record.innerText = full_string;
+            console.log(current_number);
+        }
+    }
+    // let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }
+    // let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }
+    // let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }
+    // let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }
+    // let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }let bt0 = document.querySelector('#bt0');
+    // bt0.onclick = function(){
+    //     current_number += "0";
+    //     console.log(current_number);
+    // }
+    //
+    let btclear = document.querySelector('#btclear');
+    btclear.onclick = function(){
+        current_number = "";
+        numbers = [];
+        operations = [];
+        full_string = '';
+        input_record.innerText = current_number;
+        operations_record.innerText = full_string;
+        console.log(current_number);
+    }
+    //
+    let btequals = document.querySelector('#btequals');
+    btequals.onclick = function(){
+        numbers.push(current_number);
+        let answer = parseInt(numbers[0]);
+        for (let i=0; i<operations.length; i++){
+            console.log(answer);
+            if (operations[i] ==='+'){
+                answer += parseInt(numbers[i+1]);
+            }
+            else if (operations[i] ==='-'){
+                answer -= parseInt(numbers[i+1]);
+            }
+            else if (operations[i] ==='*'){
+                answer *= parseInt(numbers[i+1]);
+            }
+            else if (operations[i] ==='/'){
+                answer /= parseInt(numbers[i+1]);
+            }
+        }
+        input_record.innerText = answer;
+        operations_record.innerText = full_string;
+        console.log(answer);
+    }
+
+
+</script>
+
+</body>
+</html>

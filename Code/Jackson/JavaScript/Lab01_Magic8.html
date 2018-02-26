@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic 8 Ball</title>
+    <style>
+        <!-- CSS blank for now -->
+    </style>
+
+</head>
+<body>
+    <div>Ask the Magic 8 Ball a question!</div>
+    <input id="question_input" type="text"/>
+    <button id="run_it">Shake!</button>
+    <div id="output_div"></div>
+
+    <script>
+        let run_it = document.querySelector('#run_it');
+        let output_div = document.querySelector('#output_div');
+        let answers = [
+                "It is certain",
+                "It is decidedly so",
+                "Without a doubt",
+                "Yes definitely",
+                "You may rely on it",
+                "I mean yeah sure I guess",
+                "Fuckin... I don't know",
+                "Very doubtful",
+                "Outlook not so good",
+                "My sources say no",
+            ];
+        run_it.onclick = function() {
+            let x = Math.floor(Math.random() * answers.length);
+            //alert(answers[x]);
+            output_div.innerText = answers[x];
+        }
+
+    </script>
+</body>
+</html>

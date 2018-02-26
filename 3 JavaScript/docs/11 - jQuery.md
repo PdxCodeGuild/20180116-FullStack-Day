@@ -1,24 +1,30 @@
 
 # jQuery
 
-[jQuery](https://jquery.com/) is a JavaScript library that can make general DOM manipulation easier, enables some operations that are difficult in 'Vanilla' JS, and standardizes cross-browser compatibility. It's still very popular (and thus worth familiarizing yourself with), but it was more useful in the past. JavaScript got better, and front-end frameworks like Angular, Reach, and Vue emerged. You shouldn't build complex pages using jQuery because they quickly become unmanageable, but it's still very common and useful for simpler pages. You can learn more about jQuery [here](https://learn.jquery.com/) and [here](https://www.w3schools.com/jquery/default.asp). There's also [jQuery Mobile](http://jquerymobile.com/) and [jQuery UI](https://jqueryui.com/).
+[jQuery](https://jquery.com/) is a JavaScript library that can make general DOM manipulation easier, enables some operations that are difficult in 'Vanilla' JS, and standardizes cross-browser compatibility. It's still very popular (and thus worth familiarizing yourself with), but it was more useful in the past. JavaScript got better, and front-end frameworks like Angular, Reach, and Vue emerged. You shouldn't build complex pages using jQuery because they quickly become unmanageable, but it's still very common and useful for simpler pages. You can learn more about jQuery [here](https://learn.jquery.com/) and [here](https://www.w3schools.com/jquery/default.asp). There's also [jQuery Mobile](http://jquerymobile.com/) and [jQuery UI](https://jqueryui.com/). There's also an [anti-jQuery blog](https://blog.garstasio.com/you-dont-need-jquery/).
 
 
-You can include jQuery by adding the following tag in your `head`.
+You can include jQuery by adding a script tag to a cdn in your head, you can find links [here](http://code.jquery.com/). The 'minified' code has newlines and spaces removed so it's smaller and faster to parse. The 'slim' version has some features (e.g. ajax and animations) removed so it's more lightweight. 
 
-```html
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+## Wrappers
+
+jQuery uses special 'wrappers' around elements in order to add additional functionality.
+
+```javascript
+let mydiv = document.getElementById('mydiv'); // vanilla js
+mydiv.innerText = 'hello world!';
+$(mydiv).text('hello world!'); // wrap mydiv in a jquery wrapper and set the text
+$(mydiv)[0].innerText = 'hello again!'; // wrap and unwrap
 ```
 
-## Executing code on page load
+## Executing On Page Load
+
+jQuery uses a special `ready` event which occurs after the HTML of the page has been loaded, but before the content (images, etc) have been loaded. The `load` event is executed after the content has been loaded.
 
 Without jQuery:
 ```javascript
 window.onload = function() {
-  console.log('ready!');
+  console.log('loaded!');
 };
 ```
 
@@ -39,7 +45,7 @@ $(function() {
 
 ## Selecting Elements
 
-One major advantage of jQuery is that it simplifies the selection of elements, and enable you to use CSS selectors. Note that these return special jQuery objects, which are wrapped around the Vanilla JS objects. You can find more about selectors [here](http://api.jquery.com/category/selectors/).
+One major advantage of jQuery is that it simplifies the selection of elements. Note that these return special jQuery objects, which are wrapped around the Vanilla JS objects. You can find more about selectors [here](http://api.jquery.com/category/selectors/).
 
 - `$('#header')` select the element with an ID of 'header'
 - `$('li')` select all li tags on the page
