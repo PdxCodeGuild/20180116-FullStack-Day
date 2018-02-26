@@ -5,50 +5,46 @@ $(document).ready(function() {
    $('.selectpicker').selectpicker();   // makes the drop-down work
     // test button
     $("#bt_now").click(function() {
-        // "use strict";
-        // $.ajax({
-        //     type: "GET",
-        //     url: "../data/crime_incident_data_recent.csv",
-        //     dataType: "text",
-        //     success: function(data) {processData(data);}
-        // });
-        // let file = $.get('../data/crime_incident_data_recent.csv');
-        // console.log("Loading data");
-        // loadFile(file);
-        d3.csv("../1 Python/data/crime_incident_data_recent.csv", function(data) {
-            console.log("getting data");
-            loadFile(data);
+        let c = 0;
+        let currentData = {};
+        d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv", function(data) {
+            currentData.push(data);
+            // currentData = data;
+            // makeGraph(currentData);
+            c += 1;
+            if (c%100 == 0) {
+                console.log("getting data");
+                console.log(data);
+                console.log(c);
+            }
         });
+
     });
     // listening for selection
     getData.addEventListener('click', function() {
        let choice = $("#choice").val();
        console.log(choice);
        if (choice === '1') {
-           d3.csv("../1 Python/data/crime_incident_data_2011.csv", function(data) {
-                console.log("1 selected");
-                loadFile(data);
-           });
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2011.csv";
+           makeGraph(file);
        } else if (choice === '2') {
-           d3.csv("../1 Python/data/crime_incident_data_2012.csv", function(data) {
-                console.log("1 selected");
-                loadFile(data);
-           });
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2012.csv";
+           makeGraph(file);
        } else if (choice === '3') {
-           d3.csv("../1 Python/data/crime_incident_data_2013.csv", function(data) {
-                console.log("1 selected");
-                loadFile(data);
-           });
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2013.csv";
+           makeGraph(file);
        } else if (choice === '4') {
-           d3.csv("../1 Python/data/crime_incident_data_2014.csv", function(data) {
-                console.log("1 selected");
-                loadFile(data);
-           });
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2014.csv";
+           makeGraph(file);
        } else if (choice === '5') {
-           d3.csv("../1 Python/data/crime_incident_data_recent.csv", function(data) {
-                console.log("1 selected");
-                loadFile(data);
-           });
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2015.csv";
+           makeGraph(file);
+       } else if (choice === '6') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2016.csv";
+           makeGraph(file);
+       } else if (choice === '7') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv";
+           makeGraph(file);
        } else {
            console.log("Something's not right");
        }
@@ -56,11 +52,22 @@ $(document).ready(function() {
 });
 
 
-function loadFile(data) {
-    console.log("file loading");
-    console.log(data[0]);
-    return data;
+function makeGraph(file) {
+    let c = 0;
+    let currentData = {};
+    d3.csv(file, function(data) {
+        currentData.push(data);
+        // currentData = data;
+        // makeGraph(currentData);
+        c += 1;
+        if (c%100 == 0) {
+            console.log("getting data");
+            console.log(data);
+            console.log(c);
+        }
+    });
 }
+
 
 
 
