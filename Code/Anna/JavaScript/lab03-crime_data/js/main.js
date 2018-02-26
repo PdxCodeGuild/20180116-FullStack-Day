@@ -17,6 +17,7 @@ $(document).ready(function() {
         // loadFile(file);
         d3.csv("../1 Python/data/crime_incident_data_recent.csv", function(data) {
             console.log("getting data");
+            loadFile(data);
         });
     });
     // listening for selection
@@ -57,6 +58,7 @@ $(document).ready(function() {
 
 function loadFile(data) {
     console.log("file loading");
+    console.log(data[0]);
     return data;
 }
 
