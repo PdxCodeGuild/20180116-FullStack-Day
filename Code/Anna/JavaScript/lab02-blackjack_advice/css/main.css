@@ -18,7 +18,7 @@ html {
 
 .darkTheme {
     background-color: #1A1A1A;
-    color: whitesmoke;
+    color: #92CD41;
 }
 
 /*
@@ -145,7 +145,7 @@ textarea {
     padding: 5px;
 }
 
-#card_cont {
+.card_cont {
     background-color: #92CD41;
     min-height: 70vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
