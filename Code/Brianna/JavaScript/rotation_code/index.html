@@ -7,7 +7,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <script src="javaScript.js"></script>
+
 </head>
 <body>
 
@@ -16,7 +16,7 @@
         <input class="user_input" type="text" id="code_input" pattern="{1,}">
      <label>Would you like to encrypt or decrypt this word?</label>
      <label>
-        <input type="radio" name="encryption" value="encrypt" id="encyption_type" required> Encrypt
+        <input type="radio" name="encryption" value="encrypt" id="encyption_type" required checked> Encrypt
      </label>
      <label>
         <input type="radio" name="encryption" value="decrypt" id="encryption_type" required> Decrypt
@@ -54,6 +54,7 @@
 
 <div id="output_div"></div>
 
+ <script src="javaScript.js"></script>
 </body>
 
 </html>
