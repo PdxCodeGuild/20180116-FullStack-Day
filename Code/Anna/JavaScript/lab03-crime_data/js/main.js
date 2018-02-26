@@ -1,27 +1,62 @@
-let choice = $("#choice").val();
-let getData = document.querySelector("");
+let getData = document.querySelector("#get_data");
 
 $(document).ready(function() {
-   $('.selectpicker').selectpicker();
-   getData.addEventListener('click', function() {
-       if (choice === 1) {
-           let file = '../data/crime_incident_data_2011.csv';
-       } else if (choice === 2) {
-           let file = '../data/crime_incident_data_2012.csv';
-       } else if (choice === 3) {
-           let file = '../data/crime_incident_data_2013.csv';
-       } else if (choice === 4) {
-           let file = '../data/crime_incident_data_2014.csv';
-       } else if (choice === 5) {
-           let file = '../data/crime_incident_data_recent.csv';
+    console.log("Ready!");
+   $('.selectpicker').selectpicker();   // makes the drop-down work
+    // testing
+    $("#bt_now").click(function() {
+        "use strict";
+        $.ajax({
+            type: "GET",
+            url: "../data/crime_incident_data_recent.csv",
+            dataType: "text",
+            success: function(data) {processData(data);}
+     });
+        // let file = $.get('../data/crime_incident_data_recent.csv');
+        // console.log("Loading data");
+        // loadFile(file);
+    });
+    // listening for selection
+    getData.addEventListener('click', function() {
+       let choice = $("#choice").val();
+       console.log(choice);
+       if (choice === '1') {
+           let file = $.get('../data/crime_incident_data_2011.csv');
+           console.log("1 selected");
+           loadFile(file);
+       } else if (choice === '2') {
+           let file = $.get('../data/crime_incident_data_2012.csv');
+           console.log("2 selected");
+           loadFile(file);
+       } else if (choice === '3') {
+           let file = $.get('../data/crime_incident_data_2013.csv');
+           console.log("3 selected");
+           loadFile(file);
+       } else if (choice === '4') {
+           let file = $.get('../data/crime_incident_data_2014.csv');
+           console.log("4 selected");
+           loadFile(file);
+       } else if (choice === '5') {
+           let file = $.get('../data/crime_incident_data_recent.csv');
+           console.log("5 selected");
+           loadFile(file);
+       } else {
+           console.log("Something's not right");
        }
-       getData.onclick = loadFile(file);
    });
 });
 
 
-function loadFile(choice) {
-    let data = $.csv.toObjects(input);
+function loadFile(file) {
+    console.log("file loading: " + file);
+    let data = $.csv.toObjects(file);
+    console.log("file loaded");
+    return data;
+}
+
+function processData(data) {
+    console.log("processing");
+    console.log(data);
 }
 
 
