@@ -1,6 +1,82 @@
+let getData = document.querySelector("#get_data");
+
 $(document).ready(function() {
-   $('.selectpicker').selectpicker();
+    console.log("Ready!");
+   $('.selectpicker').selectpicker();   // makes the drop-down work
+    // test button
+    $("#bt_now").click(function() {
+        console.log("doing something");
+        d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
+            console.log(data);
+        });
+
+        // let c = 0;
+        // let currentData = {};
+        // d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv", function(data) {
+        //     currentData.push(data);
+        //     // currentData = data;
+        //     // makeGraph(currentData);
+        //     c += 1;
+        //     if (c%100 == 0) {
+        //         console.log("getting data");
+        //         console.log(data);
+        //         console.log(c);
+        //     }
+        // });
+
+    });
+    // listening for selection
+    getData.addEventListener('click', function() {
+       let choice = $("#choice").val();
+       console.log(choice);
+       if (choice === '1') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2011.csv";
+           makeGraph(file);
+       } else if (choice === '2') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2012.csv";
+           makeGraph(file);
+       } else if (choice === '3') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2013.csv";
+           makeGraph(file);
+       } else if (choice === '4') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2014.csv";
+           makeGraph(file);
+       } else if (choice === '5') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2015.csv";
+           makeGraph(file);
+       } else if (choice === '6') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2016.csv";
+           makeGraph(file);
+       } else if (choice === '7') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv";
+           makeGraph(file);
+       } else {
+           console.log("Something's not right");
+       }
+   });
 });
+
+
+// function makeGraph(file) {
+//     let c = 0;
+//     let currentData = {};
+//     d3.csv(file, function(data) {
+//         currentData.push(data);
+//         // currentData = data;
+//         // makeGraph(currentData);
+//         c += 1;
+//         if (c%100 == 0) {
+//             console.log("getting data");
+//             console.log(data);
+//             console.log(c);
+//         }
+//     });
+// }
+
+
+
+
+
 
 // // Original python:
 //

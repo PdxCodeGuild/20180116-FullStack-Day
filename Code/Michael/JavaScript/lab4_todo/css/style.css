@@ -1,0 +1,38 @@
+
+body {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 40px;
+    background-color: #9e9e9e;
+    color: white;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 14px;
+}
+
+#wrapper {
+    width: 100%;
+    align-content: center;
+}
+
+div {
+    display: inline;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+}
+
+li {
+    width: 70%;
+}
+
+button {
+    padding: 10px;
+    width: 80px;
+    color: white;
+    background-color: #1b1e21;
+    border-radius: 5px;
+
+}
