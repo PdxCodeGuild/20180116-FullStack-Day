@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <input id="card_input" type="text"/>
+        <button id="add_card_bt">Add Card</button>
+        <button id="advice_bt">Get Advice</button>
+        <div id="card_list">
+            <ul>
+            </ul>
+        </div><br>
+        <div id="current_score_div"></div>
+        <div id="advice_output"></div>
+        <script>
+            let card_input = document.querySelector('#card_input');
+            let add_card_bt = document.querySelector('#add_card_bt');
+            let advice_bt = document.querySelector('#advice_bt');
+            let card_list = document.querySelector('#card_list');
+            let current_score_div = document.querySelector('#current_score_div');
+            let advice_output = document.querySelector('#advice_output');
+            let score = 0;
+
+            add_card_bt.onclick = function () {
+                let card = card_input.value;
+                let li = document.createElement('li');
+                li.innerText = card;
+                card_list.appendChild(li);
+                if (card == 'J' || card == 'Q' || card == 'K') {
+                    card = 10;
+                } else if (card == 'A') {
+                    card = 1
+                }
+                score += parseFloat(card);
+                current_score_div.innerHTML = 'Current score: ' + score;
+                card_input.value = '';
+                return score
+            }
+
+            advice_bt.onclick = function () {
+                if (score <= 16) {
+                    advice_output.innerHTML = 'You should hit with a score of ' + score;
+                } else if (score >= 17 && score < 21) {
+                    advice_output.innerHTML = 'You should stay with a score of ' + score;
+                } else if (score == 21){
+                    advice_output.innerHTML = 'Blackjack!';
+                } else {
+                    advice_output.innerHTML = 'You already busted. :('
+                }
+                card_list.value = '';
+            }
+        </script>
+    </body>
+</html>

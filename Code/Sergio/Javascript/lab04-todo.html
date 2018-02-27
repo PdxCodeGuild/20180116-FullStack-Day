@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>To do list</title>
+</head>
+<body>
+
+<p><h3>actual raw to do list</h3>
+<p>- fix/expand python labs
+<p>- burrito lab (im hungry...)
+<p>- javascript practice
+<p>- attempt to put together a functional site with python/javascript etc
+<p>- not get sidetracked and attempt to squeeze a college education into 3 months
+<p>- breathe deeper
+<p>- shower
+<p>- remember what else is on my to do list
+<p>- be there for my gf since I'm always in my head
+<p>- call family
+<p>- take a break and chill and become one with the earth
+
+    <h1>Javascript Add to your to-do list (not fully functional yet)</h1>
+    <input id="user_input" type="text"/>
+    <button id="bt_todo">Add to list</button>
+
+<h3>Your to-do list: </h3>
+<div id="user_output"></div>
+
+<script>
+    to_do_list = [];
+    let user_input = document.querySelector('#user_input');
+    let user_output = document.querySelector('#user_output');
+    let bt_todo = document.querySelector('#bt_todo');
+
+    bt_todo.onclick = function () {
+        let user_todo = user_input.value;
+        let para = document.createElement("li");
+        let user_list = document.createTextNode(user_output);
+        // use for loop to keep adding elements
+        user_output.innerText = user_todo;
+        //alert(user_todo); works ...
+    }
+
+</script>
+</body>
+</html>
