@@ -1,19 +1,22 @@
 
 let submit_grade = document.querySelector('#submit_grade');
+let output = document.querySelector('#output');
 
 submit_grade.onclick = function () {
     let grade = document.getElementById("grade").value;
 
+
     grade = parseInt(grade);
     if (grade >= 90){
-        alert("You get an A");
+        output.innerText = "You get a A!";
     }else if (grade < 90 && grade >= 80){
-        alert("You get a B");
+        output.innerText = "You get a B!";;
     }else if(grade < 80 && grade >= 70){
-        alert("You get a C");
+        output.innerText = "You get a C!";
     }else if (grade < 70){
-        alert("You failed Son");
+        output.innerText = "You Failed Son!";
     }else if (!grade){
-        alert("Please enter a integer value");
+        output.innerText = "Enter a Value";
     }
-}
+
+};
