@@ -17,12 +17,13 @@
     <input type="text" id="question" placeholder="ask son">
 </div>
 
-<button id="prediction"> Predict </button>
+<button id="prediction"> Predict </button><br>
+<span id="output"></span>
 <script>
 
-alert("Ask daddy anything!")
 
 let prediction = document.querySelector('#prediction');
+let output = document.querySelector('#output');
 prediction.onclick = function () {
     let my_list = ["it is certain", "it is decidedly", "without a doubt",
           "Yes Definetly", " You may rely on it", "As i see it, yes",
@@ -32,8 +33,10 @@ prediction.onclick = function () {
           "My reply is No", "My sources say no", "Outlook not so good", "Very Doubtful"];
 
     let random_index = Math.floor(Math.random() * my_list.length);
-    alert(my_list[random_index])
+    output.innerText = my_list[random_index]
 }
+
+
 
 </script>
 </body>
