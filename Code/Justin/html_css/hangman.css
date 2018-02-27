@@ -1,0 +1,82 @@
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes spinning {
+    100%{transform: rotate(360deg)}
+}
+
+body {
+    font-family: Inconsolata, Verdana, sans-serif;
+}
+
+#main{
+    display: flex;
+    border: 2px solid black;
+}
+
+#left_side{
+    flex: 1;
+}
+
+#middle{
+    flex: 0 0 250px;
+}
+
+canvas {
+    border: 1px solid purple;
+    margin:30px;
+}
+
+#right_side{
+    flex: 1;
+    justify-content: center;
+}
+
+#buttons, #puzzle, #tries_left{
+    font-size: 40px;
+    display: inline-block;
+    margin: 30px;
+    vertical-align: middle;
+}
+
+button.letter{
+    margin: 5px;
+    font-size: 20px;
+    color: purple;
+    bprder: 1px solid grey;
+    border-radius: 3px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+button.animate{
+    animation-name: spinning;
+    animation-duration: 1s;
+    animation-direction: normal;
+
+}
+
+button.picked{
+    color: lightgrey;
+}
+
+button.picked.animate{
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}

@@ -11,6 +11,7 @@ def lottery():
         while num in ticket:
             num = random.randint(1, 48)
         ticket.append(num)
+
     ticket.sort()
 
     return ticket
@@ -20,7 +21,7 @@ tot_wins = [0, 0, 0, 0, 0, 0]
 games = 0
 account = 0
 
-while games < 1000000:
+while games < 2:
 
     games += 1
     account -= 1
@@ -34,7 +35,10 @@ while games < 1000000:
     while numbered < 6:
         if me[numbered] == cpu[numbered]:
             matches += 1
+            print(numbered)
+
         numbered += 1
+
 
     if matches > 1:
         account += win_list[matches]

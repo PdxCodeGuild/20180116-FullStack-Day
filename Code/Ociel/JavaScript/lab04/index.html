@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add A list</title>
+</head>
+
+<body>
+<input type="text" id="item" placeholder="Enter an item"><br>
+<button id="add_to_list">Add a list</button>
+<br>
+<label for="make_a_list">Select item inside list to Delete</label>
+<select id="make_a_list">
+</select><br>
+<button id="delete_from_list">Delete from List</button><br><br>
+
+Completed List:
+<ul id="un-ordered_list">
+</ul>
+
+<script>
+    let add_to_list = document.querySelector('#add_to_list');
+    let delete_from_list = document.querySelector('#delete_from_list');
+    let unordered_list = document.querySelector('#un-ordered_list');
+    let make_a_list = document.querySelector('#make_a_list');
+
+    // the add list will get the value inside the input field and
+    // store it inside an option which is a list we are creating.
+    add_to_list.onclick = function () {
+        let item = document.getElementById('item').value;
+        let option = document.createElement('option');
+        option.innerHTML = item;
+        make_a_list.appendChild(option);
+
+    };
+    //Delete from list will go inside the list that we added all the names
+    //        called make_a_list with the code:
+    //         make_a_list.options[make_a_list.selectedIndex].text
+    //         the code above will go inside the make_a_list inside the square
+    //         brackets it will go to the index that we select and with the .text it
+    //         will get the text that is related to that index.
+    //          Then it will append it into the unordered list we created to strike the
+    //          results.
+    delete_from_list.onclick = function () {
+        let li = document.createElement('li');
+        li.innerHTML = '<strike>' + make_a_list.options[make_a_list.selectedIndex].text + '</strike>';
+        unordered_list.appendChild(li);
+        make_a_list.remove(make_a_list.selectedIndex);
+    };
+</script>
+</body>
+</html>

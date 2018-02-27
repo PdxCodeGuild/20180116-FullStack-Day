@@ -1,0 +1,53 @@
+body{
+    font-family: 'Share Tech Mono', monospace;
+}
+
+div{
+    border: 1px solid black;
+}
+
+#calculator{
+    background-color: darkslategray;
+    postion: relative;
+    width: 530px;
+    height: 800px;
+}
+
+#operations_record{
+    margin: 5px;
+    background-color: white;
+    display:block;
+    font-size:20px;
+    position: relative;
+    display: block;
+    height: 50px;
+}
+
+#input_record{
+    margin: 5px;
+    background-color: white;
+    font-size:35px;
+    display:block;
+
+    position: relative;
+    height: 50px;
+}
+
+#buttons{
+    align-content: center;
+}
+
+button{
+    font-family: 'Share Tech Mono', monospace;
+    border: 2px solid green;
+    border-radius: 4px;
+    margin: 2px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline;
+    padding: 2px;
+    width: 120px;
+    height: 50px;
+    background-color: #00C853;
+}
