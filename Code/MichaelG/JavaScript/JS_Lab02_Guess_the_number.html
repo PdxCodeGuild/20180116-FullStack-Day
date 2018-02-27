@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2 Guess The Number</title>
+</head>
+<body>
+    <p id="title_statement">Guess the number between 1 and 99</p>
+    <input id="number_guessed" type="text" placeholder="Enter your Number here">
+    <button id="guess" onclick = 'countdown()'>Guess!</button>
+    <p id="remaining"></p>
+    <script>
+        let winnum = Math.floor(Math.random() * 99 ) + 1;
+        console.log(winnum);
+        var i = 10;
+        function guessed() {
+            return document.getElementById("number_guessed").value;
+        }
+        function countdown() {
+            console.log(guessed());
+            if (i > 0) {
+                if (guessed() == winnum) {
+                    document.getElementById("remaining").innerHTML = "You guessed the correct number!";
+                } else if (guessed() > winnum) {
+                    document.getElementById("remaining").innerHTML = "Too high! Tries remaining: " + i;
+                    i--;
+                } else if (guessed() < winnum) {
+                    document.getElementById("remaining").innerHTML = "Too low! Tries remaining: " + i;
+                    i--;
+                } else if (i == 0) {
+                    document.getElementById("remaining").innerHTML = "Too bad, try again!";
+                }
+            }
+        }
+
+    </script>
+
+  </body>
+</html>
