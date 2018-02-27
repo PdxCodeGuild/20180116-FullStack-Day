@@ -5,19 +5,24 @@ $(document).ready(function() {
    $('.selectpicker').selectpicker();   // makes the drop-down work
     // test button
     $("#bt_now").click(function() {
-        let c = 0;
-        let currentData = {};
-        d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv", function(data) {
-            currentData.push(data);
-            // currentData = data;
-            // makeGraph(currentData);
-            c += 1;
-            if (c%100 == 0) {
-                console.log("getting data");
-                console.log(data);
-                console.log(c);
-            }
+        console.log("doing something");
+        d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
+            console.log(data);
         });
+
+        // let c = 0;
+        // let currentData = {};
+        // d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv", function(data) {
+        //     currentData.push(data);
+        //     // currentData = data;
+        //     // makeGraph(currentData);
+        //     c += 1;
+        //     if (c%100 == 0) {
+        //         console.log("getting data");
+        //         console.log(data);
+        //         console.log(c);
+        //     }
+        // });
 
     });
     // listening for selection
@@ -52,21 +57,23 @@ $(document).ready(function() {
 });
 
 
-function makeGraph(file) {
-    let c = 0;
-    let currentData = {};
-    d3.csv(file, function(data) {
-        currentData.push(data);
-        // currentData = data;
-        // makeGraph(currentData);
-        c += 1;
-        if (c%100 == 0) {
-            console.log("getting data");
-            console.log(data);
-            console.log(c);
-        }
-    });
-}
+// function makeGraph(file) {
+//     let c = 0;
+//     let currentData = {};
+//     d3.csv(file, function(data) {
+//         currentData.push(data);
+//         // currentData = data;
+//         // makeGraph(currentData);
+//         c += 1;
+//         if (c%100 == 0) {
+//             console.log("getting data");
+//             console.log(data);
+//             console.log(c);
+//         }
+//     });
+// }
+
+
 
 
 
