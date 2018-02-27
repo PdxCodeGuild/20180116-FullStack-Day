@@ -1,0 +1,88 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+        <style>
+            .check_bt {
+                color:green;
+                cursor:pointer;
+                user-select:none;
+            }
+
+            .delete_bt {
+                color:red;
+                cursor:pointer;
+                user-select:none;
+            }
+
+            .done {
+                text-decoration: line-through
+            }
+        </style>
+    </head>
+    <body>
+        <input id="add_item">
+        <bt id="add_item_bt">Add</bt>
+        <table id="item_table">
+            <tr>
+                <th>To do:</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <script>
+            //Pulling and declaring variables
+            let add_item = document.querySelector('#add_item');
+            let add_item_bt = document.querySelector('#add_item_bt');
+            let item_table = document.querySelector('#item_table');
+
+            //setting button symbols;
+            let check_bt_text = '✓';
+            let delete_bt_text = '✘';
+
+            //button that adds new row to table with input and buttons
+            add_item_bt.onclick = function () {
+                let tr = document.createElement('tr');
+                let td_item = document.createElement('td');
+                let td_delete = document.createElement('td');
+                let td_check = document.createElement('td');
+
+                td_item.innerText = add_item.value;
+                td_item.classList.add('not_done');              //adds class so we can strikethru text later
+
+                add_item.value = '';                            //clears input box
+
+                td_check.innerText = check_bt_text;
+                td_check.classList.add('check_bt');
+                td_check.onclick = function() {                 //function for check button
+                    let tr = this.parentElement;
+                    let table = tr.parentElement;
+                    let text = tr.firstChild.innerText;         //grabs text for first element in row
+                    let td_done = document.createElement('td');
+                    let new_tr = document.createElement('tr');
+                    td_done.classList.add('done');              //changes class for strikethru
+                    td_done.innerText = text;
+                    table.removeChild(tr);                      //deletes row
+
+                    new_tr.appendChild(td_done);
+                    new_tr.appendChild(td_delete);
+
+                    table.appendChild(new_tr);                  //adds "done" row at bottom of list
+                }
+
+                td_delete.innerText = delete_bt_text;
+                td_delete.classList.add('delete_bt');
+                td_delete.onclick = function () {
+                    let tr = this.parentElement;
+                    let table = tr.parentElement;
+                    table.removeChild(tr);
+                }
+
+                tr.appendChild(td_item);
+                tr.appendChild(td_delete);
+                tr.appendChild(td_check);
+
+                item_table.appendChild(tr);
+            }
+        </script>
+    </body>
+</html>
