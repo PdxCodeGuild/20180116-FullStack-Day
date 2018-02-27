@@ -9,12 +9,12 @@ def addition(one_num, two_num):
     sum_total = ''
     carry = 0
     # Find bigger number in order to set length of both numbers
-    if len(first_num) >= len(second_num):
+    if len(one_num) >= len(two_num):
         longer = one_num
         shorter = two_num
     else:
-        longer = one_num
-        shorter = two_num
+        longer = two_num
+        shorter = one_num
 
     # Add zeroes to the front of the smaller number until lengths are equal.
     for i in range(len(longer) - len(shorter)):
@@ -28,7 +28,7 @@ def addition(one_num, two_num):
         # Adds extra place if remainder for highest places exists
         if i ==0 and carry != 0:
             sum_total = str(carry) + sum_total
-    print(sum_total)
+    print(str(one_num) + ' + ' + str(two_num) + ' = ' + str(sum_total))
 
 
 def multiplication(one_num, two_num):
@@ -36,7 +36,7 @@ def multiplication(one_num, two_num):
     other_count = 0
 
     # Find bigger number in order to set length of both numbers
-    if len(first_num) >= len(second_num):
+    if len(one_num) >= len(two_num):
         longer = one_num
         shorter = two_num
     else:
@@ -55,7 +55,7 @@ def multiplication(one_num, two_num):
             total += product
             count += 1
         other_count += 1
-    print(total)
+    print(str(one_num) + ' * ' + str(two_num) + ' = ' + str(total))
 
 
 if choice == '+':

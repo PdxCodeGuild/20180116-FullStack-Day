@@ -10,7 +10,7 @@ ul {
 ul li {
     cursor: pointer;
     position: relative;
-    padding: 12 8 12 40;
+    padding: 12px 8px 12px 40px;
     background: #eee;
     font-size: 18px;
     transition: 0.2s;
@@ -21,11 +21,21 @@ ul li {
     user-select: none;
 }
 
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
 ul li:hover {
     background: #ddd;
 }
 
-ul li.checked: :before {
+ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
     content: '';
     position: absolute;
     border-color: #fff;
@@ -47,7 +57,7 @@ ul li.checked: :before {
 
 .close:hover {
     background-color: #f44336;
-    padding: 30px 40px;
+    padding: auto;
     color: white;
     text-align: center;
 }
