@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal JS Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+</head>
+<body>
+    <div class="container calculator" id="calculator">
+      <h1>Calculate!</h1>
+      <div class="row">
+        <div class="column column-50">
+        <input class="input" placeholder="numbers go here!" type="text"></input>
+      </div>
+          <div class="column column-50">
+        <span class="output" id="output"></span>
+          </div>
+      </div>
+    </div>
+
+    <div class="container calc">
+      <div class="numbers" id="numbers">
+      <div class="row">
+            <button class="num button button-4 button-outline" id="num1" value="1">one</button>
+            <button class="num button button-4 button-outline" id="num2" value="2">two</button>
+          <button class="num button button-4 button-outline" id="num3" value="3">three</button>
+        <button class="op button button-4" id="divide" value="/">divided by</button>
+      </div>
+      <div class="row">
+            <button class="num button button-4 button-outline" id="num4" value="4">four</button>
+            <button class="num button button-4 button-outline" id="num5" value="5">five</button>
+            <button class="num button button-4 button-outline" id="num6" value="6">six</button>
+        <button class="op button button-4" id="multiply" value="*">times</button>
+      </div>
+      <div class="row">
+          <button class="num button button-4 button-outline" id="num7" value="7">seven</button>
+          <button class="num button button-4 button-outline" id="num8" value="8">eight</button>
+          <button class="num button button-4 button-outline" id="num9" value="9">nine</button>
+        <button class="op button button-4" id="subtract" value="-">minus</button>
+      </div>
+      <div class="row">
+            <button class="num button button-4 button-outline" id="num0" value="0">zero</button>
+        <button class="num button button-4" id="decimal" value=".">point</button>
+        <button class="num button button-4" id="inverse" value="inverse">inverse</button>
+        <button class="op button button-4" id="add" value="+">plus</button>
+      </div>
+      </div>
+      <div class="operands" id="operands">
+      <div class="row">
+        <button class="num button button-2" id="clear" value="clear">clear</button>
+        <button class="num button button-last" id="backspace" value="backspace">backspace</button>
+      </div>
+      <div class="equals_button" id="equals_button">
+        <div class="row">
+        <button class="button equals" id="equals">equals</button>
+          </div></div>
+      </div>
+    </div>
+
+
+    <!-- scripts go here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="scripts.js"></script>
+</body>
+</html>
