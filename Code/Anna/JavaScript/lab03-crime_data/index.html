@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
 <head>
     <!-- map source: https://www.pdx.edu/crime-data -->
+    <!-- data: https://www.kaggle.com/katzwigmore/portland-oregon-crime-data/data -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PDX Crime Data Visualization</title>
@@ -29,7 +30,7 @@
     <!-- header -->
     <div class="jumbotron box-shadow">
         <h1>Portland Crime Data</h1>
-        <p class="text-muted">All data taken from: <a href="https://www.portlandoregon.gov/police/71978" target="_blank">The City of Portland</a></p>
+        <p class="text-muted">All data taken from: <a href="https://www.portlandoregon.gov/police/71978" target="_blank">The City of Portland</a> via <a href="https://www.kaggle.com/katzwigmore/portland-oregon-crime-data/data" target="_blank">Kaggle.com</a></p>
         <!-- cool looking progress bars -->
         <div class="progress bt-margin">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 5%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
@@ -54,37 +55,35 @@
                 <option value="2">2012</option>
                 <option value="3">2013</option>
                 <option value="4">2014</option>
-                <option value="5">Most recent</option>
+                <option value="5">2015</option>
+                <option value="6">2016</option>
+                <option value="7">2017</option>
               </select>
             </div>
           </div>
             <div class="col-3 col-lg-6">
                 <button class="btn btn-secondary box-shadow lg-btn" id="get_data">Get data</button>
-                <button class="btn btn-secondary box-shadow lg-btn" id="bt_now">Just load a damn file for now</button>
+                <button class="btn btn-secondary box-shadow lg-btn" id="bt_now">Just load a damn test file for now</button>
             </div>
         </div>
         <img class="img-fluid bg-img" src="img/pdx-map.png">
     </div>
 
-
     <!-- guts go here -->
-
-
-
-
-
-
+    <div class="container"> <!--contain that data!-->
+        <div id="gridContainer" class="visualize"></div>
+    </div>
 
     <!-- scripts go here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
 </body>
