@@ -3,41 +3,71 @@
     <title>To do list</title>
 </head>
 <body>
+<style>
+    body {
+        color: dark;
+        background-color: #effff0;
+    }
 
-<p><h3>actual raw to do list</h3>
-<p>- fix/expand python labs
-<p>- burrito lab (im hungry...)
-<p>- javascript practice
-<p>- attempt to put together a functional site with python/javascript etc
-<p>- not get sidetracked and attempt to squeeze a college education into 3 months
-<p>- breathe deeper
-<p>- shower
-<p>- remember what else is on my to do list
-<p>- be there for my gf since I'm always in my head
-<p>- call family
-<p>- take a break and chill and become one with the earth
+</style>
+<div>
+    <h3>To do list instructions</h3>
+    <p>Let's make a simple todo-list which supports the following operations:
+    <ul>
+        <li>add an item to the list</li>
+        <li>remove an item from the list</li>
+        <li>mark an item as completed</li>
+    </ul>
+    <p>Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with
+        a line through them.
 
-    <h1>Javascript Add to your to-do list (not fully functional yet)</h1>
-    <input id="user_input" type="text"/>
-    <button id="bt_todo">Add to list</button>
+</div>
+
+
+<h1>Add to your to-do list</h1>
+<input id="user_input" type="text"/>
+<button id="bt_add">Add to list</button>
 
 <h3>Your to-do list: </h3>
-<div id="user_output"></div>
+<div>
+    <ul id="user_list">
+
+    </ul>
+
+</div>
 
 <script>
-    to_do_list = [];
-    let user_input = document.querySelector('#user_input');
-    let user_output = document.querySelector('#user_output');
-    let bt_todo = document.querySelector('#bt_todo');
 
-    bt_todo.onclick = function () {
-        let user_todo = user_input.value;
-        let para = document.createElement("li");
-        let user_list = document.createTextNode(user_output);
-        // use for loop to keep adding elements
-        user_output.innerText = user_todo;
-        //alert(user_todo); works ...
-    }
+    let user_input = document.querySelector('#user_input');
+    let user_list = document.querySelector('#user_list');
+    let bt_todo = document.querySelector('#bt_add');
+    let bt_del = document.createElement('span');
+
+    //
+
+    // adds user_input to li element
+    bt_add.onclick = function () {
+        let list = document.createElement('li');
+        list.innerText = user_input.value;
+        // done button
+        let done_bt = document.createElement('button');
+        done_bt.innerText = "done";
+        list.appendChild(done_bt);
+        // del button
+        let del = document.createElement('button');
+        del.innerText = "delete";
+        list.appendChild(del);
+
+        user_list.appendChild(list);
+
+    };
+    // delete function
+    bt_del.onclick = function () {
+        let li = this.parentElement;
+        user_list.removeChild(li);
+    };
+    // done button function
+
 
 </script>
 </body>
