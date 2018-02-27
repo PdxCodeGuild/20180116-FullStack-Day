@@ -1,0 +1,146 @@
+<html>
+<head>
+    <style>
+
+        body {
+            background-color: black;
+            color:white;
+        }
+
+        #container {
+            display: grid;
+            width: 200px;
+            height: 200px;
+        }
+
+        #topleft {
+            width: 100px;
+            height: 100px;
+            background-color: turquoise;
+            border-radius: 100% 0 0 0;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        #topright {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 0 100% 0 0;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        #bottomleft {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 0 0 0 100%;
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        #bottomright {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 0 0 100% 0;
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+
+    </style>
+</head>
+<body>
+<span id="levelspan">level: 1</span>
+<div id="container">
+    <div id="topleft"></div>
+    <div id="topright"></div>
+    <div id="bottomleft"></div>
+    <div id="bottomright"></div>
+</div>
+
+<script>
+
+
+    let topleft = document.querySelector('#topleft');
+    let topright = document.querySelector('#topright');
+    let bottomleft = document.querySelector('#bottomleft');
+    let bottomright = document.querySelector('#bottomright');
+    let levelspan = document.querySelector('#levelspan');
+
+    let button_on = 1.0;
+    let button_off = 0.5;
+
+    let buttons = [topleft, topright, bottomleft, bottomright];
+
+    function turn_off_all_buttons() {
+        for (let i = 0; i < buttons.length; ++i) {
+            buttons[i].style.opacity = button_off;
+        }
+    }
+
+    turn_off_all_buttons();
+
+    // function turn_on_button(button) {
+    //     button.style.opacity =
+    // }
+
+
+    let sequence = [0];
+
+    let button_on_time = 400;
+    let button_change_interval_time = 500;
+
+    let user_sequence_position = 0;
+    let automatic_sequence_position = 0;
+    let automatic_sequence_running = false;
+
+    function play_sequence() {
+        automatic_sequence_position = 0;
+        automatic_sequence_running = true;
+        let interval = setInterval(function () {
+            setTimeout(turn_off_all_buttons, button_on_time);
+            buttons[sequence[automatic_sequence_position]].style.opacity = button_on;
+            automatic_sequence_position += 1;
+            if (automatic_sequence_position >= sequence.length) {
+                clearInterval(interval);
+                automatic_sequence_running = false;
+            }
+        }, button_change_interval_time);
+    }
+
+    play_sequence();
+
+
+    for (let i = 0; i < buttons.length; ++i) {
+        buttons[i].onclick = function () {
+            if (automatic_sequence_running) {
+                alert('AUTOMATIC SEQUENCE IS RUNNING')
+            } else {
+                if (sequence[user_sequence_position] === i) {
+                    user_sequence_position += 1;
+                    this.style.opacity = button_on;
+                    setInterval(function () {
+                        buttons[i].style.opacity = button_off;
+                    }, button_on_time);
+                    if (user_sequence_position >= sequence.length) {
+                        user_sequence_position = 0;
+                        sequence.push(Math.floor(Math.random() * buttons.length));
+                        //alert('LEVEL ' + sequence.length);
+                        levelspan.innerText = 'level: ' + sequence.length;
+                        play_sequence();
+                    }
+                } else {
+                    user_sequence_position = 0;
+                    alert('you lose!');
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
