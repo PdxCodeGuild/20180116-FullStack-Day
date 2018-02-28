@@ -40,34 +40,37 @@
 
     let user_input = document.querySelector('#user_input');
     let user_list = document.querySelector('#user_list');
-    let bt_todo = document.querySelector('#bt_add');
+    let bt_add = document.querySelector('#bt_add');
     let bt_del = document.createElement('span');
 
-    //
-
-    // adds user_input to li element
+    // adds user_input and creates li element
     bt_add.onclick = function () {
         let list = document.createElement('li');
         list.innerText = user_input.value;
-        // done button
+        // create done button
         let done_bt = document.createElement('button');
         done_bt.innerText = "done";
         list.appendChild(done_bt);
-        // del button
+        // create del button
         let del = document.createElement('button');
         del.innerText = "delete";
+        del.id = 'bt_del';
         list.appendChild(del);
-
         user_list.appendChild(list);
+        // event listener
+        document.getElementById('bt_del').addEventListener(bt_del);
 
     };
     // delete function
     bt_del.onclick = function () {
         let li = this.parentElement;
         user_list.removeChild(li);
+
     };
     // done button function
+   // done_bt.onclick = function () {
 
+    //};
 
 </script>
 </body>
