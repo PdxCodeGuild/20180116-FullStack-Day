@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 </head>
 <body>
@@ -37,24 +36,23 @@
             <input type="submit" id="todo_submit" class="hidden-input" value="ADD">
         </form>
         <div class="plus" id="plus">
-        <div class="plus__line plus__line--v">
-            <a id="new_todo" href="#" class="plus__link ion-ios-list"></a>
-            <a id="new_appt" href="#" class="plus__link ion-android-calendar"></a>
-            <a id="new_work" href="#" class="plus__link ion-briefcase"></a>
-            <a id="new_meet" href="#" class="plus__link ion-chatboxes"></a>
-            <a id="new_play" href="#" class="plus__link ion-ios-football"></a>
+            <div class="plus__line plus__line--v"></div>
+            <div class="plus__line plus__line--h"></div>
         </div>
-        <div class="plus__line plus__line--h"></div>
-    </div>
     </div>
 
     <!-- list goes here -->
 
     <div class="listDiv">
-        <ul>
-            <li>A todo here</li>
-            <li>A todo here</li>
-        </ul>
+        <table id="todo_table">
+            <col span="1" class="wide">
+            <tr>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+                <td scope="col"></td>
+            </tr>
+        </table>
     </div>
 
 

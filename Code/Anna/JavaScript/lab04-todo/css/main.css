@@ -86,6 +86,31 @@ input[type="text"] {
     display: none !important;
 }
 
+td {
+    color: #fff;
+    font-size: 18px;
+    min-width: 25%;
+}
+
+table {
+    table-layout:fixed;
+    width: 100%;
+    margin-left: 10px;
+}
+
+th {
+    height: 50px;
+    width: auto;
+}
+
+.wide {
+  width: 70%;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
 input[type="submit"] {
   width: 60px;
   border: 1px solid #fff;
@@ -100,7 +125,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background: #fff;
-  color: #28abf6;
+  color: #82A8FF;
 }
 
 .plus {
@@ -135,32 +160,9 @@ input[type="submit"]:hover {
   overflow: hidden;
   transition: all .4s ease 0s;
 }
-.plus__link {
-  color: #fff;
-  font-size: 30px;
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s ease 0s;
-  transform: scale(0.5);
-}
-.plus--active {
-  height: 32px;
-  border-radius: 30px;
-}
-.plus--active .plus__line--v {
-  height: 68px;
-  top: calc(-100% - 60px);
-  padding: 0 5px;
-  box-sizing: border-box;
-  width: 220px;
-  border-radius: 60px;
-  left: calc(50% - 110px);
-}
-.plus--active .plus__link {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  transition-delay: .05s;
+
+.plus:hover {
+    background: #82A8FF;
 }
 
 .centered {
@@ -169,4 +171,19 @@ input[type="submit"]:hover {
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.edit_bt {
+  cursor:pointer;
+  user-select:none;
+}
+
+.save_bt {
+  cursor:pointer;
+  user-select:none;
+}
+
+.delete_bt {
+  cursor:pointer;
+  user-select:none;
 }
