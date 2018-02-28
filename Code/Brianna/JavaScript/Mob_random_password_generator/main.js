@@ -15,7 +15,7 @@ let close_overlay_bt = document.querySelector('#close_overlay_bt');
 
 close_overlay_bt.onclick = function() {
   overlay.style.display = 'none';
-}
+};
 
 password_length_input.value = 10;
 //making lists
@@ -58,7 +58,7 @@ generate_bt.onclick = function() {
   // itterate that number of times
   for (let i=0; i<password_length; ++i) {
     new_password += get_random_character(master_characters);
-  };
+  }
   // show the new password to the user
 
   show_output('I have your password! ' + new_password);
@@ -67,7 +67,7 @@ generate_bt.onclick = function() {
 function get_random_character(str) {
     let random_index = Math.floor(Math.random() * str.length);
     return str[random_index];
-};
+}
 
 
 // check boxes for if we want upper and lower case characters

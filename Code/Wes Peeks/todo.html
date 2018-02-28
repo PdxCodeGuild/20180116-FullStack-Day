@@ -20,10 +20,6 @@
             background: #eee;
             font-size: 18px;
             transition: 0.2s;
-
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
         }
 
@@ -104,16 +100,28 @@
     <div id="myDiv" class="header">
         <h2>To Do List</h2>
         <input type="text" id="myInput" placeholder="Add To Do....">
-        <span onclick="newElement()" class="addBtn" onkeypress="newElement()">Add</span>
+        <span id="btn" class="addBtn">Add</span>
     </div>
 
     <ul id="myUL">
 
     </ul>
     <script>
+
+        let btn = document.querySelector('#btn');
+        btn.onclick = function() {
+            newElement();
+        };
+
+        let myinput = document.querySelector('#myInput');
+        myinput.onkeydown = function(evt) {
+            if (evt.keyCode === 13) {
+                newElement();
+            }
+        };
+
         var myNodelist = document.getElementsByTagName("LI");
-        var i;
-        for (i = 0; i < myNodelist.length; i++) {
+        for (let i = 0; i < myNodelist.length; i++) {
             var span = document.createElement("SPAN");
             var txt = document.createTextNode("\u00D7");
             span.className = "close";
@@ -122,8 +130,7 @@
         }
 
         var close = document.getElementsByClassName("close");
-        var i;
-        for (i = 0; i < close.length; i++) {
+        for (let i = 0; i < close.length; i++) {
             close[i].onclick = function () {
                 var div = this.parentElement;
                 div.style.display = "none";
@@ -151,7 +158,7 @@
             li.addEventListener('click', function () {
                     this.setAttribute('class', 'checked');
                 }, false);
-            for (i = 0; i < close.length; i++) {
+            for (let i = 0; i < close.length; i++) {
                 close[i].onclick = function () {
                     var div = this.parentElement;
                     div.style.display = "none";
