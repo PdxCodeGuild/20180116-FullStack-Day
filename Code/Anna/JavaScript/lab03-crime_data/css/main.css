@@ -110,18 +110,13 @@ textarea {
     display: none;
 }
 
-.table-div {
-    color: white;
-}
-
-/*table {*/
-    /*table-layout: fixed;*/
-    /*width: 100%;*/
-/*}*/
-
 button {
     position:relative;
     z-index: 10;
+}
+
+.dark {
+    background-color: #222 !important;
 }
 
 th {
@@ -130,6 +125,10 @@ th {
 
 td {
     width: auto;
+}
+
+tr:hover {
+    background-color: #222;
 }
 
 #form-wrapper {
