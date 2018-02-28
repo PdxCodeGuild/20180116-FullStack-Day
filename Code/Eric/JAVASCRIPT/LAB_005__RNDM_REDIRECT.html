@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab 005 Random Redirect</title>
+</head>
+<body>
+	<div>
+		<!-- countdown text -->
+		<h2>countdown to extinction in <span id="countdown">5</span>....</h2>
+		<!-- optional progress bar -->
+		<!--<progress value="0" max="5" id="progressBar"></progress> ***-->
+		<!-- surprise metal!!! -->
+		<img src="https://media.giphy.com/media/F6PP14eEFC44o/giphy.gif" alt="megadeth">
+	</div>
+
+	<script type="text/javascript">
+		// my fav websites
+		let link_list = ["http://rinse.fm/player/", "http://www.crunchyroll.com/", "https://soundcloud.com/stream",
+			"https://www.youtube.com/watch?v=DMj1ACAnuMs&list=RDDMj1ACAnuMs", "https://www.netflix.com/", "https://bandcamp.com/",
+			"https://www.wikipedia.org/", "https://genius.com/", "https://www.w3schools.com/" ];
+
+		let time_left = 5;
+		// optional progress bar function ***
+		// let bar_timer = setInterval(function(){
+         //    document.getElementById("progressBar").value = 5 - --time_left;
+         //    if(time_left <= 0) {
+         //        clearInterval(bar_timer);
+         //        window.location.href = link_list[Math.floor(Math.random() * link_list.length)];
+         //    }
+		// 	},500);
+
+		// countdown to extinction
+		let text_timer = setInterval(function(){
+		time_left--;
+		document.getElementById("countdown").textContent = time_left;
+			if(time_left <= 0) {
+				clearInterval(text_timer);
+				window.location.href = link_list[Math.floor(Math.random() * link_list.length)];
+			}
+			},1000);
+	</script>
+
+</body>
+</html>
