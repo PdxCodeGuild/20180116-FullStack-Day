@@ -13,7 +13,7 @@
 <body>
 
 <div id="get_grade_div">
-    <label for="first_number">first Number:</label>
+    <label for="first_number">First Number:</label>
     <input type="text" id="first_number">
     <select id="arithmetic">
         <option id="multiply">Multiply</option>
@@ -21,14 +21,17 @@
         <option id="divide">Divide</option>
         <option id="add">Add</option>
     </select>
-    <label for="second_number">second number:</label>
+    <label for="second_number">Second number:</label>
     <input type="text" id="second_number"><br><br>
 </div>
 
-<button id="calculate"> Predict</button>
+<button id="calculate"> Predict</button><br>
+
+<span id="output"></span>
 <script>
 
     let calculate = document.querySelector('#calculate');
+    let output = document.querySelector('#output');
 
     calculate.onclick = function () {
         let arithmetic = document.querySelector('#arithmetic');
@@ -49,9 +52,9 @@
         }
 
         if (isNaN(answer)){
-            alert("Please enter a number");
+            output.innerHTML = "Please enter a number";
         }else {
-            alert(answer);
+            output.innerHTML = "The answer is: " + answer;
         }
 
 
