@@ -106,19 +106,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.visualize {
-    color: white;
-}
-
-table {
-    border-collapse: collapse;
-    border: 2px #222222 solid;
-    color: white;
-}
-
-td {
-    border: 1px #222222 solid;
-    padding: 5px;
+.table-div {
     color: white;
 }
 

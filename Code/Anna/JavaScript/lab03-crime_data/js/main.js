@@ -1,31 +1,87 @@
+// Object { Address: "9900 BLOCK OF SE MILL ST", "Case Number": "17-22122", "Crime Against": "Property", Neighborhood: "Hazelwood", "Number of Records": "1", "Occur Date": "1/1/17", "Occur Month Year": "1/1/17", "Occur Time": "0", "Offense Category": "Burglary", "Offense Count": "1", … }
+
 let getData = document.querySelector("#get_data");
+let getTable = document.querySelector("#bt_table");
+let dataContainer = document.querySelector("#dataContainer");
 
 $(document).ready(function() {
     console.log("Ready!");
    $('.selectpicker').selectpicker();   // makes the drop-down work
     // test button
-    $("#bt_now").click(function() {
-        console.log("doing something");
-        d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
-            console.log(data);
-        });
+    // $("#bt_now").click(function() {
+    //     console.log("doing a thing");
+    //     d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
+    //         // console.log(data);
+    //         dataArray.push(data);
+    //         let tr = document.createElement('tr');
+    //         let tdAddress = document.createElement('td');
+    //         let tdCaseNumber = document.createElement('td');
+    //         let tdCrimeAgainst = document.createElement('td');
+    //         let tdNeighborhood = document.createElement('td');
+    //         let tdNumberRecords = document.createElement('td');
+    //         let tdOccurDate = document.createElement('td');
+    //         let tdOccurMonth = document.createElement('td');
+    //         let tdOccurTime = document.createElement('td');
+    //         let tdOffenseCategory = document.createElement('td');
+    //         let tdOffenseCount = document.createElement('td');
+    //
+    //         let valArray = Object.values(data);
+    //         tdAddress.innerText = valArray[0];
+    //         tdCaseNumber.innerText = valArray[1];
+    //         tdCrimeAgainst.innerText = valArray[2];
+    //         tdNeighborhood.innerText = valArray[3];
+    //         tdNumberRecords.innerText = valArray[4];
+    //         tdOccurDate.innerText = valArray[5];
+    //         tdOccurMonth.innerText = valArray[6];
+    //         tdOccurTime.innerText = valArray[7];
+    //         tdOffenseCategory.innerText = valArray[8];
+    //         tdOffenseCount.innerText = valArray[9];
+    //
+    //         tr.appendChild(tdAddress);
+    //         tr.appendChild(tdCaseNumber);
+    //         tr.appendChild(tdCrimeAgainst);
+    //         tr.appendChild(tdNeighborhood);
+    //         tr.appendChild(tdNumberRecords);
+    //         tr.appendChild(tdOccurDate);
+    //         tr.appendChild(tdOccurMonth);
+    //         tr.appendChild(tdOccurTime);
+    //         tr.appendChild(tdOffenseCategory);
+    //         tr.appendChild(tdOffenseCount);
+    //
+    //         dataContainer.appendChild(tr);
+    //     });
+    // });
 
-        // let c = 0;
-        // let currentData = {};
-        // d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv", function(data) {
-        //     currentData.push(data);
-        //     // currentData = data;
-        //     // makeGraph(currentData);
-        //     c += 1;
-        //     if (c%100 == 0) {
-        //         console.log("getting data");
-        //         console.log(data);
-        //         console.log(c);
-        //     }
-        // });
-
-    });
     // listening for selection
+    getTable.addEventListener('click', function() {
+       let choice = $("#choice").val();
+       console.log(choice);
+       if (choice === '1') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2011.csv";
+           makeTable(file);
+       } else if (choice === '2') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2012.csv";
+           makeTable(file);
+       } else if (choice === '3') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2013.csv";
+           makeTable(file);
+       } else if (choice === '4') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2014.csv";
+           makeTable(file);
+       } else if (choice === '5') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2015.csv";
+           makeTable(file);
+       } else if (choice === '6') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2016.csv";
+           makeTable(file);
+       } else if (choice === '7') {
+           let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv";
+           makeTable(file);
+       } else {
+           console.log("Something's not right");
+       }
+     });
+
     getData.addEventListener('click', function() {
        let choice = $("#choice").val();
        console.log(choice);
@@ -57,23 +113,54 @@ $(document).ready(function() {
 });
 
 
-// function makeGraph(file) {
-//     let c = 0;
-//     let currentData = {};
-//     d3.csv(file, function(data) {
-//         currentData.push(data);
-//         // currentData = data;
-//         // makeGraph(currentData);
-//         c += 1;
-//         if (c%100 == 0) {
-//             console.log("getting data");
-//             console.log(data);
-//             console.log(c);
-//         }
-//     });
-// }
+function makeTable(file) {
+    let dataArray = [];
+    console.log("Loading the table...");
+    d3.csv(file, function(data) {
+        // console.log(data);
+        dataArray.push(data);
+        let tr = document.createElement('tr');
+        let tdAddress = document.createElement('td');
+        let tdCaseNumber = document.createElement('td');
+        let tdCrimeAgainst = document.createElement('td');
+        let tdNeighborhood = document.createElement('td');
+        let tdNumberRecords = document.createElement('td');
+        let tdOccurDate = document.createElement('td');
+        let tdOccurMonth = document.createElement('td');
+        let tdOccurTime = document.createElement('td');
+        let tdOffenseCategory = document.createElement('td');
+        let tdOffenseCount = document.createElement('td');
 
+        let valArray = Object.values(data);
+        tdAddress.innerText = valArray[0];
+        tdCaseNumber.innerText = valArray[1];
+        tdCrimeAgainst.innerText = valArray[2];
+        tdNeighborhood.innerText = valArray[3];
+        tdNumberRecords.innerText = valArray[4];
+        tdOccurDate.innerText = valArray[5];
+        tdOccurMonth.innerText = valArray[6];
+        tdOccurTime.innerText = valArray[7];
+        tdOffenseCategory.innerText = valArray[8];
+        tdOffenseCount.innerText = valArray[9];
 
+        tr.appendChild(tdAddress);
+        tr.appendChild(tdCaseNumber);
+        tr.appendChild(tdCrimeAgainst);
+        tr.appendChild(tdNeighborhood);
+        tr.appendChild(tdNumberRecords);
+        tr.appendChild(tdOccurDate);
+        tr.appendChild(tdOccurMonth);
+        tr.appendChild(tdOccurTime);
+        tr.appendChild(tdOffenseCategory);
+        tr.appendChild(tdOffenseCount);
+
+        dataContainer.appendChild(tr);
+    });
+}
+
+function makeGraph(file) {
+    return null;
+}
 
 
 

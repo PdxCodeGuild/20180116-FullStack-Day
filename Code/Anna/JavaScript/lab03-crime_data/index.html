@@ -13,7 +13,6 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
 
@@ -48,7 +47,7 @@
         <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <div class="row" id="form-wrapper">
-          <div class="col-9 col-lg-6">
+          <div class="col-6 col-lg-4">
             <div class="form-group box-shadow">
               <select class="selectpicker form-control" id="choice" title="Choose a year to get statistics" data-style="btn-secondary">
                 <option value="1">2011</option>
@@ -61,9 +60,9 @@
               </select>
             </div>
           </div>
-            <div class="col-3 col-lg-6">
-                <button class="btn btn-secondary box-shadow lg-btn" id="get_data">Get data</button>
-                <button class="btn btn-secondary box-shadow lg-btn" id="bt_now">Just load a damn test file for now</button>
+            <div class="col-6 col-lg-8">
+                <button class="btn btn-secondary box-shadow lg-btn" id="get_data">Make something pretty</button>
+                <button class="btn btn-secondary box-shadow lg-btn" id="bt_table">Just display a table for now</button>
             </div>
         </div>
         <img class="img-fluid bg-img" src="img/pdx-map.png">
@@ -71,7 +70,26 @@
 
     <!-- guts go here -->
     <div class="container"> <!--contain that data!-->
-        <div id="gridContainer" class="visualize"></div>
+        <table class="table table-dark" id="data_table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Case Number</th>
+                <th scope="col">Crime Against</th>
+                <th scope="col">Neighborhood</th>
+                <th scope="col">Number of Records</th>
+                <th scope="col">Occur Date</th>
+                <th scope="col">Occur Month Year</th>
+                <th scope="col">Occur Time</th>
+                <th scope="col">Offense Category</th>
+                <th scope="col">Offense Count</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <table class="table table-dark">
+            <div id="dataContainer" class="table-div"></div>
+        </table>
     </div>
 
     <!-- scripts go here -->
