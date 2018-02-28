@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome and Anagram Lab</title>
+</head>
+<body>
+    <p>Is it a Palindrome?</p>
+    <input id="pal_entry" type="text" placeholder="Enter word">
+    <button id="pal_submit" onclick= 'submit_pal()'>Submit</button>
+    <p id="pal_answer"></p>
+    <p>Is it an Anagram?</p>
+    <input id="first_entry" type="text" placeholder="first word">
+    <input id="second_entry" type="text" placeholder="second word">
+    <button id="an_submit" onclick="submit_an()">Submit</button>
+    <p id="an_answer"></p>
+    <script>
+        let first_entry = document.getElementById("first_entry");
+        let second_entry = document.getElementById("second_entry");
+        let pal_entry = document.getElementById("pal_entry");
+        let pal_answer = document.getElementById("pal_answer");
+        let an_answer = document.getElementById("an_answer");
+
+        let fentry = [];
+        let sentry = [];
+        function reversestring(str) {
+            return str.split("").reverse().join("");
+        }
+        // console.log(reversestring(submitted_pal()));
+        function submit_pal() {
+            if (pal_entry.value == reversestring(pal_entry.value)) {
+                pal_answer.innerHTML = "This is a Palindrome."
+            } else {
+                pal_answer.innerHTML = "This is not a Palindrome."
+            }
+
+        }
+
+        function are_anagrams(word1, word2) {
+
+            if (word1.length !== word2.length) {
+                return false;
+            }
+
+            for (let i=0; i<word1.length; ++i) {
+                fentry.push(word1[i]);
+            }
+
+            for (let i=0; i<word2.length; ++i) {
+                sentry.push(word2[i]);
+            }
+
+            fentry.sort();
+            sentry.sort();
+
+            for (let i=0; i<fentry.length; ++i){
+                if (fentry[i] !== sentry[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function submit_an() {
+            // get the elements out of the dom
+            // get the strings using .value
+            // console.log("submit function")
+
+            if (are_anagrams(first_entry.value, second_entry.value)) {
+                an_answer.innerHTML = "This is an anagram.";
+            } else {
+                an_answer.innerHTML = "This is not an anagram.";
+            }
+
+            // // iterate over the strings using .length and []
+            // for (let i=0; i<first_entry.value.length; ++i) {
+            //     fentry.push(first_entry.value[i]);
+            //
+            // }
+            // fentry.sort();
+            // for (let i=0; i<second_entry.value.length; ++i) {
+            //     sentry.push(second_entry.value[i]);
+            //
+            // }
+            // sentry.sort();
+            // console.log(fentry);
+            // console.log(sentry);
+            // // push the character into an array
+            // // fentry.sort();
+            // // sentry.sort();
+            // for (let i=0; i<fentry.length; ++i){
+            //     if (fentry[i] != sentry[i]) {
+            //         an_answer.innerHTML = "This is not an anagram.";
+            //         fentry.length = 0;
+            //         sentry.length = 0;
+            //     } else {
+            //         an_answer.innerHTML = "This is an anagram.";
+            //         fentry.length = 0;
+            //         sentry.length = 0;
+            //
+            //     }
+            // }
+
+        }
+
+
+
+        // let myarr = [];
+        // let mystr = 'hello world!';
+        // for (let i=0; i<mystr.length; ++i) {
+        //     myarr.push(mystr[i]);
+        // }
+        // myarr.sort();
+        // console.log(myarr);
+    </script>
+</body>
+</html>
