@@ -110,6 +110,15 @@ textarea {
     color: white;
 }
 
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th {
+    width: auto;
+}
+
 #form-wrapper {
     margin-top: 30px;
 }

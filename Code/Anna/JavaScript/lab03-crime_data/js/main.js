@@ -56,25 +56,25 @@ $(document).ready(function() {
     getTable.addEventListener('click', function() {
        let choice = $("#choice").val();
        console.log(choice);
-       if (choice === '1') {
+       if (choice === '2011') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2011.csv";
            makeTable(file);
-       } else if (choice === '2') {
+       } else if (choice === '2012') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2012.csv";
            makeTable(file);
-       } else if (choice === '3') {
+       } else if (choice === '2013') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2013.csv";
            makeTable(file);
-       } else if (choice === '4') {
+       } else if (choice === '2014') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2014.csv";
            makeTable(file);
-       } else if (choice === '5') {
+       } else if (choice === '2015') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2015.csv";
            makeTable(file);
-       } else if (choice === '6') {
+       } else if (choice === '2016') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2016.csv";
            makeTable(file);
-       } else if (choice === '7') {
+       } else if (choice === '2017') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv";
            makeTable(file);
        } else {
@@ -85,25 +85,25 @@ $(document).ready(function() {
     getData.addEventListener('click', function() {
        let choice = $("#choice").val();
        console.log(choice);
-       if (choice === '1') {
+       if (choice === '2011') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2011.csv";
            makeGraph(file);
-       } else if (choice === '2') {
+       } else if (choice === '2012') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2012.csv";
            makeGraph(file);
-       } else if (choice === '3') {
+       } else if (choice === '2013') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2013.csv";
            makeGraph(file);
-       } else if (choice === '4') {
+       } else if (choice === '2014') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2014.csv";
            makeGraph(file);
-       } else if (choice === '5') {
+       } else if (choice === '2015') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2015.csv";
            makeGraph(file);
-       } else if (choice === '6') {
+       } else if (choice === '2016') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2016.csv";
            makeGraph(file);
-       } else if (choice === '7') {
+       } else if (choice === '2017') {
            let file = "https://s3-us-west-2.amazonaws.com/web-hosted-files/crime_incident_data2017.csv";
            makeGraph(file);
        } else {
@@ -120,39 +120,40 @@ function makeTable(file) {
         // console.log(data);
         dataArray.push(data);
         let tr = document.createElement('tr');
+        let tdRecord = document.createElement('td');
+        let tdReportDate = document.createElement('td');
+        let tdReportTime = document.createElement('td');
+        let tdMajorOffense = document.createElement('td');
         let tdAddress = document.createElement('td');
-        let tdCaseNumber = document.createElement('td');
-        let tdCrimeAgainst = document.createElement('td');
         let tdNeighborhood = document.createElement('td');
-        let tdNumberRecords = document.createElement('td');
-        let tdOccurDate = document.createElement('td');
-        let tdOccurMonth = document.createElement('td');
-        let tdOccurTime = document.createElement('td');
-        let tdOffenseCategory = document.createElement('td');
-        let tdOffenseCount = document.createElement('td');
+        let tdPolicePrecinct = document.createElement('td');
+        let tdPoliceDistrict = document.createElement('td');
+        let tdXCoor = document.createElement('td');
+        let tdYCoor = document.createElement('td');
+
 
         let valArray = Object.values(data);
-        tdAddress.innerText = valArray[0];
-        tdCaseNumber.innerText = valArray[1];
-        tdCrimeAgainst.innerText = valArray[2];
-        tdNeighborhood.innerText = valArray[3];
-        tdNumberRecords.innerText = valArray[4];
-        tdOccurDate.innerText = valArray[5];
-        tdOccurMonth.innerText = valArray[6];
-        tdOccurTime.innerText = valArray[7];
-        tdOffenseCategory.innerText = valArray[8];
-        tdOffenseCount.innerText = valArray[9];
+        tdRecord.innerText = valArray[0];
+        tdReportDate.innerText = valArray[1];
+        tdReportTime.innerText = valArray[2];
+        tdMajorOffense.innerText = valArray[3];
+        tdAddress.innerText = valArray[4];
+        tdNeighborhood.innerText = valArray[5];
+        tdPolicePrecinct.innerText = valArray[6];
+        tdPoliceDistrict.innerText = valArray[7];
+        tdXCoor.innerText = valArray[8];
+        tdYCoor.innerText = valArray[9];
 
+        tr.appendChild(tdRecord);
+        tr.appendChild(tdReportDate);
+        tr.appendChild(tdReportTime);
+        tr.appendChild(tdMajorOffense);
         tr.appendChild(tdAddress);
-        tr.appendChild(tdCaseNumber);
-        tr.appendChild(tdCrimeAgainst);
         tr.appendChild(tdNeighborhood);
-        tr.appendChild(tdNumberRecords);
-        tr.appendChild(tdOccurDate);
-        tr.appendChild(tdOccurMonth);
-        tr.appendChild(tdOccurTime);
-        tr.appendChild(tdOffenseCategory);
-        tr.appendChild(tdOffenseCount);
+        tr.appendChild(tdPolicePrecinct);
+        tr.appendChild(tdPoliceDistrict);
+        tr.appendChild(tdXCoor);
+        tr.appendChild(tdYCoor);
 
         dataContainer.appendChild(tr);
     });
