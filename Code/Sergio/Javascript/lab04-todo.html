@@ -1,8 +1,7 @@
 <html>
 <head>
-    <title>To do list</title>
+    <title>Javascript To do list</title>
 </head>
-<body>
 <style>
     body {
         color: dark;
@@ -17,18 +16,7 @@
         color: black;
     }
 </style>
-<div>
-    <h3>To do list instructions</h3>
-    <p>Let's make a simple todo-list which supports the following operations:
-    <ul>
-        <li>add an item to the list</li>
-        <li>remove an item from the list</li>
-        <li>mark an item as completed</li>
-    </ul>
-    <p>Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with
-        a line through them.
-
-</div>
+<body>
 
 
 <h1>Add to your to-do list</h1>
@@ -62,7 +50,7 @@
             let li = this.parentElement;
             li.classList.add('strike');
             // removes done button after clicking the done button
-            done_bt.removeChild(done_bt);
+            list.removeChild(done_bt);
 
         };
         list.appendChild(done_bt);
@@ -70,14 +58,13 @@
         // create del button
         let del = document.createElement('button');
         del.innerText = "delete";
-        del.onclick = function() {
+        del.onclick = function () {
             let li = this.parentElement;
             user_list.removeChild(li);
         };
         list.appendChild(del);
         user_list.appendChild(list);
-        // event listener
-        //document.getElementById('bt_del').addEventListener(bt_del);
+
 
     };
 
