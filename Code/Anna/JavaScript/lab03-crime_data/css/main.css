@@ -106,6 +106,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.hide-me {
+    display: none;
+}
+
 .table-div {
     color: white;
 }

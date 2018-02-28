@@ -2,6 +2,7 @@
 
 let getData = document.querySelector("#get_data");
 let getTable = document.querySelector("#bt_table");
+let mainContainer = document.querySelector("#main_cont");
 let dataContainer = document.querySelector("#dataContainer");
 
 $(document).ready(function() {
@@ -114,6 +115,7 @@ $(document).ready(function() {
 
 
 function makeTable(file) {
+    mainContainer.classList.remove('hide-me');
     let dataArray = [];
     console.log("Loading the table...");
     d3.csv(file, function(data) {
