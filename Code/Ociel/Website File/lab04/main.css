@@ -1,0 +1,129 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.welcome_image {
+    /* The image used */
+    background-image: url("over_pass.jpg");
+
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.words_in_image {
+    opacity: 1;
+    position: center;
+    font-family: Papyrus, Roboto, sans-serif;
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 25%;
+}
+
+.typewrite {
+    color: black;
+}
+
+.bottom {
+    background-color: dimgrey;
+    height: 10px;
+    width: 100%;
+}
+
+.text-in-footer {
+    text-align: center;
+    padding-top: 50%;
+
+}
+
+/*****************************************************************
+* THe CSS Below is for the Navigation Bar
+******************************************************************/
+
+.img-responsive {
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 70%;
+}
+
+#sidebar {
+    position: fixed;
+    z-index: 10;
+    background-color: black;
+    width: 200px; /* The Width from left to right is only 200px*/
+    height: 100%; /* The Height of the entire page*/
+
+    /*This negative left makes my side bar start on the left side of the
+    screen so it is not visible until the toggle button is clicked*/
+    left: -200px;
+    /*This thing of code will make the transition go smooth when the
+    side bar is opened. */
+    transition: all 500ms linear;
+}
+
+#sidebar.active {
+    /*When toggle button is clicked the smooth transition set above will
+    keep going until the left is at 0px once the left is at zero it will
+    stop moving*/
+    left: 0;
+}
+
+#sidebar .toggle-btn {
+
+    position: absolute;
+    /*The toggle is set at 230px so that it is 30 px away from
+    the side bar and 20 px away from the top of the screen.*/
+    left: 230px;
+    top: 20px;
+
+}
+
+#sidebar .toggle-btn span {
+    /*Display block */
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: lightblue;
+    margin: 3px 0;
+
+}
+
+li {
+    /*Type of Font*/
+    font-family: Roboto, Arial, sans-serif;
+    /*Padding*/
+    padding: 20px;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: black;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: white;
+    color: black;
+
+}
