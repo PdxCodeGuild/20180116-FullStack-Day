@@ -9,6 +9,13 @@
         background-color: #effff0;
     }
 
+    .strike {
+        text-decoration: line-through;
+    }
+
+    button {
+        color: black;
+    }
 </style>
 <div>
     <h3>To do list instructions</h3>
@@ -47,30 +54,33 @@
     bt_add.onclick = function () {
         let list = document.createElement('li');
         list.innerText = user_input.value;
-        // create done button
+
+        // create done/check button // same function delete done button
         let done_bt = document.createElement('button');
         done_bt.innerText = "done";
+        done_bt.onclick = function () {
+            let li = this.parentElement;
+            li.classList.add('strike');
+            // removes done button after clicking the done button
+            done_bt.removeChild(done_bt);
+
+        };
         list.appendChild(done_bt);
+
         // create del button
         let del = document.createElement('button');
         del.innerText = "delete";
-        del.id = 'bt_del';
+        del.onclick = function() {
+            let li = this.parentElement;
+            user_list.removeChild(li);
+        };
         list.appendChild(del);
         user_list.appendChild(list);
         // event listener
-        document.getElementById('bt_del').addEventListener(bt_del);
+        //document.getElementById('bt_del').addEventListener(bt_del);
 
     };
-    // delete function
-    bt_del.onclick = function () {
-        let li = this.parentElement;
-        user_list.removeChild(li);
 
-    };
-    // done button function
-   // done_bt.onclick = function () {
-
-    //};
 
 </script>
 </body>
