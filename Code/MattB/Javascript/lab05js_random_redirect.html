@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <button id="random_bt">Randomize!!</button>
+    </body>
+    <script>
+        let random_bt = document.querySelector('#random_bt');
+
+        let site_list = ['https://www.google.com/', 'https://www.netflix.com/', 'https://www.youtube.com/', 'https://www.reuters.com/'];
+        
+        random_bt.onclick = function () {
+            let random_index = Math.floor(Math.random()*site_list.length);
+            location = site_list[random_index]
+        }
+    </script>
+</html>
