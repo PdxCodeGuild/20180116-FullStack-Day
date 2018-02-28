@@ -11,7 +11,7 @@ JavaScript is part of the 'C Family' of languages, those with syntax based on th
 
 JavaScript (as its name implies) is a **scripting** language, meaning it was designed to be quick to write and ad-hoc. This worked well when pages were simple, but as web applications became more complex, its loose syntax became more of a hindrance. It is much easier to write messy code which is difficult to read, debug, and extend. Therefore it's important to impose upon yourself strict organization and 'best practices'.
 
-The latest iteration of the JavaScript specification (called EcmaScript) is EcmaScript 6. All major browsers support ES6, but older browsers might not. You can view a table of features and browse compatibility [here](https://kangax.github.io/compat-table/es6/).
+The latest iteration of the JavaScript specification (called ECMAScript) is ECMAScript 6. All major browsers support ES6, but older browsers might not. You can view a table of features and browse compatibility [here](https://kangax.github.io/compat-table/es6/).
 
 
 ## The Script Tag
