@@ -1,5 +1,3 @@
-// add button - from https://codepen.io/knyttneve/pen/rGLxbP
-
 let plus = document.querySelector('#plus');
 
 let edit_bt_text = '<i class="material-icons">edit</i>';
