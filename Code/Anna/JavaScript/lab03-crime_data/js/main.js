@@ -3,55 +3,31 @@
 let getData = document.querySelector("#get_data");
 let getTable = document.querySelector("#bt_table");
 let mainContainer = document.querySelector("#main_cont");
+let graphContainer = document.querySelector("#graph_cont");
 let dataContainer = document.querySelector("#dataContainer");
 
 $(document).ready(function() {
     console.log("Ready!");
    $('.selectpicker').selectpicker();   // makes the drop-down work
     // test button
-    // $("#bt_now").click(function() {
-    //     console.log("doing a thing");
-    //     d3.csv("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
-    //         // console.log(data);
-    //         dataArray.push(data);
-    //         let tr = document.createElement('tr');
-    //         let tdAddress = document.createElement('td');
-    //         let tdCaseNumber = document.createElement('td');
-    //         let tdCrimeAgainst = document.createElement('td');
-    //         let tdNeighborhood = document.createElement('td');
-    //         let tdNumberRecords = document.createElement('td');
-    //         let tdOccurDate = document.createElement('td');
-    //         let tdOccurMonth = document.createElement('td');
-    //         let tdOccurTime = document.createElement('td');
-    //         let tdOffenseCategory = document.createElement('td');
-    //         let tdOffenseCount = document.createElement('td');
-    //
-    //         let valArray = Object.values(data);
-    //         tdAddress.innerText = valArray[0];
-    //         tdCaseNumber.innerText = valArray[1];
-    //         tdCrimeAgainst.innerText = valArray[2];
-    //         tdNeighborhood.innerText = valArray[3];
-    //         tdNumberRecords.innerText = valArray[4];
-    //         tdOccurDate.innerText = valArray[5];
-    //         tdOccurMonth.innerText = valArray[6];
-    //         tdOccurTime.innerText = valArray[7];
-    //         tdOffenseCategory.innerText = valArray[8];
-    //         tdOffenseCount.innerText = valArray[9];
-    //
-    //         tr.appendChild(tdAddress);
-    //         tr.appendChild(tdCaseNumber);
-    //         tr.appendChild(tdCrimeAgainst);
-    //         tr.appendChild(tdNeighborhood);
-    //         tr.appendChild(tdNumberRecords);
-    //         tr.appendChild(tdOccurDate);
-    //         tr.appendChild(tdOccurMonth);
-    //         tr.appendChild(tdOccurTime);
-    //         tr.appendChild(tdOffenseCategory);
-    //         tr.appendChild(tdOffenseCount);
-    //
-    //         dataContainer.appendChild(tr);
-    //     });
-    // });
+    $("#bt_now").click(function() {
+        console.log("testing a thing");
+        graphContainer.classList.remove('hide-me');
+        d3.text("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
+            let parsedCSV = d3.csv.parseRows(data);
+            let container = d3.select("body")
+                .append("table")
+
+                .selectAll("tr")
+                    .data(parsedCSV).enter()
+                    .append("tr")
+
+                .selectAll("td")
+                    .data(function(d) { return d; }).enter()
+                    .append("td")
+                    .text(function(d) { return d; });
+        });
+    });
 
     // listening for selection
     getTable.addEventListener('click', function() {
@@ -162,6 +138,7 @@ function makeTable(file) {
 }
 
 function makeGraph(file) {
+    graphContainer.classList.remove('hide-me');
     return null;
 }
 

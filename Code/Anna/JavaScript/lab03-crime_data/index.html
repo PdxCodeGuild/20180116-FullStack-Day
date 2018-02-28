@@ -61,6 +61,7 @@
             </div>
           </div>
             <div class="col-6 col-lg-8">
+                <button class="btn btn-secondary box-shadow lg-btn" id="bt_now">Test</button>
                 <button class="btn btn-secondary box-shadow lg-btn" id="get_data">Make something pretty</button>
                 <button class="btn btn-secondary box-shadow lg-btn" id="bt_table">Just display a table for now</button>
             </div>
@@ -68,9 +69,14 @@
         <img class="img-fluid bg-img" src="img/pdx-map.png">
     </div>
 
-    <!-- guts go here -->
-    <div class="container hide-me" id="main_cont"> <!--contain that data!-->
-        <table class="table table-dark" id="data_table">
+    <!-- graph goes here -->
+    <div class="container hide-me" id="graph_cont">
+
+    </div>
+    <!-- table goes here -->
+    <div class="container hide-me" id="main_cont">
+        <div class="table-responsive">
+        <table class="table table-dark table-sm" id="data_table">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">Record ID</th>
@@ -87,9 +93,12 @@
           </thead>
           <tbody></tbody>
         </table>
-        <table class="table table-dark">
-            <div id="dataContainer" class="table-div"></div>
-        </table>
+        </div>
+         <div class="table-responsive">
+            <table class="table table-dark table-sm">
+                <div id="dataContainer" class="table-div"></div>
+            </table>
+        </div>
     </div>
 
     <!-- scripts go here -->
