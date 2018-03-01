@@ -18,42 +18,53 @@
 
     <!-- Bootstrap/fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 
 </head>
 <body>
 
     <!-- current date -->
-    <div class="container top-margin">
-        <h3 class="typewriter">Today's date is: <span id="date-display"></span></h3>
+    <div class="date-container">
+        <h3 class="text-center"><span class="date-class">Today's date is: </span><span class="date-date" id="date-display"></span></h3>
     </div>
     <!-- basic clock -->
+    <div class="outer-container">
     <div class="clock-container container">
-        <div class="clock">
-            <div id="hour" class="hour"></div>
-            <div id="minute" class="minute"></div>
-            <div id="second" class="second"></div>
+        <div class="row">
+            <div class="col-4">
+            <div class="clock">
+                <div id="hour" class="hour"></div>
+                <div id="minute" class="minute"></div>
+                <div id="second" class="second"></div>
+            </div>
+            </div>
+            <div class="col-8 countdown-cont">
+                <h2 id="countdownh2">Time until the last day of class:</h2>
+                <h2 id="timerh2" class="hidden">Timing:</h2>
+                <h1 class="mono-font" id="countdown"></h1>
+                <h1 class="mono-font hidden" id="timer"><span id="seconds">00</span>:<span id="tens">00</span></h1>
+            </div>
         </div>
-        <!--<div class="clock2">-->
-            <!--<div id="hour" class="hour"></div>-->
-            <!--<div id="minute" class="minute"></div>-->
-            <!--<div id="second" class="second"></div>-->
-        <!--</div>-->
+    </div>
     </div>
 
+    <!-- timer nav -->
 
+    <div class="nav">
+        <button id="button-start">Start</button>
+        <button id="button-stop">Stop</button>
+        <button id="button-reset">Reset</button>
+    </div>
 
 
     <!-- scripts go here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="js/countdown.min.js"></script>
-    <script src="js/moment-countdown.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
