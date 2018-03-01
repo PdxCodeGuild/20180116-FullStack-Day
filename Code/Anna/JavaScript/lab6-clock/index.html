@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All the Clocks</title>
+    <meta name="description" content="Tick, tock x 4.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+    <!-- Bootstrap/fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- current date -->
+    <div class="container top-margin">
+        <h3 class="typewriter">Today's date is: <span id="date-display"></span></h3>
+    </div>
+    <!-- basic clock -->
+    <div class="clock-container container">
+        <div class="clock">
+            <div id="hour" class="hour"></div>
+            <div id="minute" class="minute"></div>
+            <div id="second" class="second"></div>
+        </div>
+        <!--<div class="clock2">-->
+            <!--<div id="hour" class="hour"></div>-->
+            <!--<div id="minute" class="minute"></div>-->
+            <!--<div id="second" class="second"></div>-->
+        <!--</div>-->
+    </div>
+
+
+
+
+    <!-- scripts go here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="js/countdown.min.js"></script>
+    <script src="js/moment-countdown.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

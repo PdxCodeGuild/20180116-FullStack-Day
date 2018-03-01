@@ -26,6 +26,6 @@ Allow the user to keep performing operations until they say 'done'. Use `while T
 ```
 
 
-## Version 3
+## Version 3 (optional)
 
 Allow the user to enter a full arithmetic expression and use [eval](https://docs.python.org/3/library/functions.html#eval) to evaluate it.

@@ -1,0 +1,109 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background-color: #0c5460 !important;
+    color: white !important;
+}
+
+.top-margin {
+    margin-top: 5vh;
+}
+
+
+/* typing text */
+.typewriter {
+  color: #222;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #0c5460; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 5s steps(30, end),
+    blink-caret .5s step-end;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #0c5460 }
+}
+
+
+/* clock styles */
+.clock-container {
+    background-color: #222;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+}
+.clock {
+    margin-top: 10px;
+    border: 5px solid #FFF;
+    border-radius: 100%;
+    display: block;
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+.clock .hour {
+    background: #fff;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: -50px -2px 0;
+    padding: 50px 2px 0;
+}
+.clock .minute {
+    background: #fff;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: -85px -2px 0;
+    padding: 85px 2px 0;
+}
+
+.clock .second {
+    background: #fff;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: -125px -2px 0;
+    padding: 125px 2px 0;
+}
