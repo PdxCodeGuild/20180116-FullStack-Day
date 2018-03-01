@@ -1,8 +1,12 @@
-let btTimer = document.querySelector('#button-start');
-let btStopTimer = document.querySelector('#button-stop');
-let btResetTimer = document.querySelector('#button-reset');
-let output = document.querySelector('#timer');
-
+// declare all the things
+let buttonStart = document.querySelector('#button-start');
+let buttonStop = document.querySelector('#button-stop');
+let buttonReset = document.querySelector('#button-reset');
+let appendTens = document.querySelector("#tens");
+let appendSeconds = document.querySelector("#seconds");
+let tm_seconds = '00';
+let tm_tens = '00';
+let Interval ;
 
 // make the clock tick
 $(function() {
@@ -64,33 +68,54 @@ setInterval(function () {
 }, 1000);
 
 
-btTimer.addEventListener('click', function() {
+buttonStart.addEventListener('click', function() {
     console.log("start clicked");
     // make the timer appear
     $('#timer').toggleClass("hidden");
     $('#countdown').toggleClass("hidden");
     $('#timerh2').toggleClass("hidden");
     $('#countdownh2').toggleClass("hidden");
+    clearInterval(Interval);
+    Interval = setInterval(startTimer, 10);
 });
 
-btStopTimer.addEventListener('click', function() {
+buttonStop.addEventListener('click', function() {
     console.log("stop clicked");
-
+    clearInterval(Interval);
 });
 
-btResetTimer.addEventListener('click', function() {
+buttonReset.addEventListener('click', function() {
     console.log("stop clicked");
     // make the timer disappear
     $('#timer').toggleClass("hidden");
     $('#countdown').toggleClass("hidden");
     $('#timerh2').toggleClass("hidden");
     $('#countdownh2').toggleClass("hidden");
+    clearInterval(Interval);
+    tm_tens = "00";
+    tm_seconds = "00";
+    appendTens.innerHTML = tm_tens;
+    appendSeconds.innerHTML = seconds;
 });
 
 
-
-// Load when ready.
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+function startTimer () {
+    tm_tens++;
+    if (tm_tens < 9) {
+        appendTens.innerHTML = "0" + tm_tens;
+    }
+    if (tm_tens > 9) {
+        appendTens.innerHTML = tm_tens;
+    }
+    if (tm_tens > 99) {
+        console.log("seconds");
+        tm_seconds++;
+        appendSeconds.innerHTML = "0" + tm_seconds;
+        tm_tens = 0;
+        appendTens.innerHTML = "0" + 0;
+    }
+    if (tm_seconds > 9) {
+        appendSeconds.innerHTML = tm_seconds;
+    }
+}
 

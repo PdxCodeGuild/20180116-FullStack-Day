@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -11,6 +13,10 @@ body {
 
 .hidden {
     display: none;
+}
+
+.mono-font {
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 .container {
@@ -62,6 +68,7 @@ body {
     height: 40%;
 }
 .clock {
+    font-family: 'Ubuntu Mono', monospace;
     margin-top: 10px;
     border: 5px solid #222;
     border-radius: 100%;

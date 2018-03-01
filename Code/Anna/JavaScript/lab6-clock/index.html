@@ -18,13 +18,12 @@
 
     <!-- Bootstrap/fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 
 </head>
-<div>
 
     <!-- current date -->
     <div class="date-container">
-
         <h3 class="text-center"><span class="date-class">Today's date is: </span><span class="date-date" id="date-display"></span></h3>
     </div>
     <!-- basic clock -->
@@ -41,8 +40,8 @@
             <div class="col-8 countdown-cont">
                 <h2 id="countdownh2">Time until the last day of class:</h2>
                 <h2 id="timerh2" class="hidden">Timing:</h2>
-                <h1 id="countdown"></h1>
-                <h1><time class="hidden" id="timer">0:00:00.00</time></h1>
+                <h1 class="mono-font" id="countdown"></h1>
+                <h1 class="mono-font hidden" id="timer"><span id="seconds">00</span>:<span id="tens">00</span></h1>
             </div>
         </div>
     </div>
@@ -65,5 +64,6 @@
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
