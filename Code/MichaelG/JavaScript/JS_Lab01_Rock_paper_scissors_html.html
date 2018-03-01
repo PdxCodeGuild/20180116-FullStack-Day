@@ -42,7 +42,7 @@
         let win_count = document.getElementById("wincount");
         let tie_count = document.getElementById("tiecount");
         let loss_count = document.getElementById("losscount");
-        // functions.
+        // functions for scores.
         function rock_choice() {
         let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
         outcome_txt.innerHTML = "Your opponent has chosen " + rand;
@@ -72,7 +72,7 @@
                 tie_count.innerHTML = t;
                 t++;
                 } else {
-                    console.log('win')
+                    console.log('win');
                     win_count.innerHTML = w;
                     w++;
                 }
@@ -89,7 +89,7 @@
                 win_count.innerHTML = w;
                 w++
                 } else {
-                    console.log('loss')
+                    console.log('loss');
                     loss_count.innerHTML = l;
                     l++;
             }
@@ -98,9 +98,7 @@
         rock.onclick = rock_choice;
         paper.onclick = paper_choice;
         scissors.onclick = scissors_choice;
-        // check for equivalency between player's choice and random outcome.
 
-        // make score reflect.
     </script>
 </body>
 </html>
