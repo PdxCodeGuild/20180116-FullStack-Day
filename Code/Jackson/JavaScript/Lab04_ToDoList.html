@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Let's make a simple to do list -->
+<!-- - add an item to the list-->
+<!-- - remove an item from the list-->
+<!-- - mark an item as completed-->
+<!-- - Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with a-->
+<!--line through them.-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <style>
+         table {
+          text-align:center;
+          width:100%;
+        }
+        table td {
+          padding:4px;
+        }
+
+        td[contenteditable="true"] {
+          border: 1px solid blue;
+        }
+
+
+        .delete_bt {
+          color:red;
+          cursor:pointer;
+          user-select:none;
+        }
+
+        .complete_bt {
+          color:green;
+          cursor:pointer;
+          user-select:none;
+        }
+
+        .strike_through {
+            text-decoration: line-through;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    <input id="todo_item_input" placeholder="Enter a task"/>
+    <button id="add_bt">add</button>
+
+    <table id="todo_table">
+      <tr>
+        <!--<th>number</th>-->
+        <th>To Do Item</th>
+        <th></th>
+        <th></th>
+      </tr>
+</table>
+
+<script>
+    let todo_list_input = document.querySelector('#todo_item_input');
+    let add_bt = document.querySelector('#add_bt');
+    let todo_table = document.querySelector('#todo_table');
+
+    let complete_bt_text = '✓';
+    let delete_bt_text = '✘';
+
+
+    add_bt.onclick = function() {
+      // create various elements for a given row
+      let tr = document.createElement('tr');
+      let td_complete = document.createElement('td');
+      let td_task = document.createElement('td');
+      let td_delete = document.createElement('td');
+
+      // set the inner text
+      td_complete.innerText = complete_bt_text;
+      td_task.innerText = todo_list_input.value;
+      td_delete.innerText = delete_bt_text;
+
+
+      // // edit the row
+      // td_edit.innerText = edit_bt_text;
+      // td_edit.classList.add('edit_bt');
+      // td_edit.onclick = function() {
+      //   td_edit.style.display = 'none';
+      //   td_save.style.display = 'initial';
+      //   td_task.setAttribute('contenteditable', 'true');
+      //   td_ff.setAttribute('contenteditable', 'true');
+      //   td_fc.setAttribute('contenteditable', 'true');
+      // };
+
+      // delete the row
+      td_delete.innerText = delete_bt_text;
+      td_delete.classList.add('delete_bt');
+      td_delete.onclick = function() {
+        let tr = this.parentElement;
+        let table = tr.parentElement;
+        table.removeChild(tr);
+      };
+
+
+
+      todo_list_input.value = '';
+
+      // put it all together
+      tr.appendChild(td_complete);
+      tr.appendChild(td_task);
+      // tr.appendChild(td_edit);
+      tr.appendChild(td_delete);
+      todo_table.appendChild(tr);
+
+        //complete the task.  Put it at the end, and put a line through it.
+      td_complete.innerText = complete_bt_text;
+      td_complete.classList.add('complete_bt');
+      td_complete.onclick = function(){
+        let tr = this.parentElement;
+        let table = tr.parentElement;
+        table.removeChild(tr);
+        tr.classList.add('strike_through');
+        tr.appendChild(td_task);
+        tr.appendChild(td_delete);
+        todo_table.appendChild(tr);
+
+
+      }
+    }
+
+
+</script>
+
+</body>
+</html>

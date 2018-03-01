@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Redirector v2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div> this page will redirect in: <span id="timer">5</span></div>
+
+
+    <script>
+
+        let website_list = ['https://www.whois.net/', 'https://www.mlbtraderumors.com/', 'https://github.com/'];
+
+        function next_website(){
+            let x = Math.floor(Math.random()* website_list.length);
+            window.location = website_list[x];}
+
+        let time_left = 5; //countdown from 5 seconds
+
+        function myFunction() {
+            if (time_left == 0) {
+                next_website();
+            }
+            else {
+                time_left--;
+                document.getElementById("timer").innerText = time_left;
+            }
+        }
+
+        setInterval(myFunction, 1000);
+
+
+
+        // let timeleft = 5;
+        // let download_timer = setInterval(myfunction(){
+        //     timeleft--; document.getElementById("timer").textContent = timeleft;
+        //     if (timeleft ==0) {
+        //         clearInterval(downloadTimer);
+        //         next_website();
+        //     }
+        //     }, 1000);
+    </script>
+</body>
+</html>
