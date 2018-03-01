@@ -1,5 +1,5 @@
 
-# Lab 9: Clock
+# Lab 6: Clock
 
 Make a clock that displays the current time and updates every second. Check out [JavaScript timing events](https://www.w3schools.com/js/js_timing.asp) and [dates](https://www.w3schools.com/jsref/jsref_obj_date.asp). Writing `new Date()` creates a date with the current date and time. You can then create a string from that date, and set it in the DOM.
 
