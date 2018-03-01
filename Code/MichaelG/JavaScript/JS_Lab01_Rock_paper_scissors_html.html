@@ -11,13 +11,13 @@
     </div>
     <div class="choices_container">
         <div class="choice">
-            <input type="image" src="http://picoplex.net/games/rpslp/rock.png" id="choice_rock" alt="rock" >
-            <input type="image" src="http://picoplex.net/games/rpslp/paper.png" id="choice_paper" alt="paper">
-            <input type="image" src="http://picoplex.net/games/rpslp/scissors.png" id="choice_scissors" alt="scissors">
+            <input type="image" src="http://picoplex.net/games/rpslp/rock.png" id="rock" alt="rock" >
+            <input type="image" src="http://picoplex.net/games/rpslp/paper.png" id="paper" alt="paper">
+            <input type="image" src="http://picoplex.net/games/rpslp/scissors.png" id="scissors" alt="scissors">
         </div>
     </div>
     <div class="outcome_and_score_container">
-        <p id="outcome">Outcome Placeholder</p>
+        <p id="outcome">Your opponent has chosen</p>
         <div class="divresults">
             <!--<div class="table">-->
                 <ul id="tally">
@@ -30,7 +30,58 @@
             <p id="losscount">0</p>
             <!--</div>-->
         </div>
-
     </div>
+    <script>
+        // wins, ties and losses counter.
+        w=0;
+        t=0;
+        l=0;
+        // variables.
+        let opponent_choice = ['rock', 'paper', 'scissors'];
+        let outcome_txt = document.getElementById("outcome");
+        let win_count = document.getElementById("wincount");
+        let tie_count = document.getElementById("tiecount");
+        let loss_count = document.getElementById("losscount");
+        // functions.
+        function rock_choice() {
+            let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+            outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+           if (rand === 'scissors') {
+           console.log('win');
+           } else if (rand === 'paper') {
+               console.log('loss');
+               } else {
+                   console.log('tie')
+               }
+           }function paper_choice() {
+            let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+            outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+           if (rand === 'scissors') {
+           console.log('loss');
+
+           } else if (rand === 'paper') {
+               console.log('tie');
+               } else {
+                   console.log('win')
+               }
+           }function scissors_choice() {
+            let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+            outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+           if (rand === 'scissors') {
+           console.log('tie');
+           } else if (rand === 'paper') {
+               console.log('win');
+               } else {
+                   console.log('loss')
+               }
+           }
+        // on click of player's choice to show computer's choice.
+        rock.onclick = rock_choice;
+        paper.onclick = paper_choice;
+        scissors.onclick = scissors_choice;
+        // check for equivalency between player's choice and random outcome.
+
+        // make score reflect.
+    </script>
 </body>
 </html>
