@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
-<body>
+<div>
 
     <!-- current date -->
     <div class="date-container">
@@ -39,22 +39,28 @@
             </div>
             </div>
             <div class="col-8 countdown-cont">
-                <h2>Time until the last day of class:</h2>
+                <h2 id="countdownh2">Time until the last day of class:</h2>
+                <h2 id="timerh2" class="hidden">Timing:</h2>
                 <h1 id="countdown"></h1>
+                <h1><time class="hidden" id="timer">0:00:00.00</time></h1>
             </div>
         </div>
     </div>
     </div>
 
+    <!-- timer nav -->
 
-
+    <div class="nav">
+        <button id="button-start">Start</button>
+        <button id="button-stop">Stop</button>
+        <button id="button-reset">Reset</button>
+    </div>
 
 
     <!-- scripts go here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-    <script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>

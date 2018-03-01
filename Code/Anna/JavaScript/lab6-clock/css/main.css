@@ -9,6 +9,10 @@ body {
     color: #222 !important;
 }
 
+.hidden {
+    display: none;
+}
+
 .container {
     width: 100vw;
 }
@@ -111,4 +115,39 @@ body {
     transform-origin: 50% 100%;
     margin: -125px -2px 0;
     padding: 125px 2px 0;
+}
+
+/* start button */
+
+.nav {
+    background: #EBEBEB;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+}
+
+button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    background: #b3e0f2;
+    opacity: .8;
+    color: #fff;
+    border: solid 1px #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 33.3%;
+    margin: 10px;
+    outline: none;
+}
+button:hover {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background: #fff;
+    border: solid 1px #fff;
+    color: #b3e0f2;
 }

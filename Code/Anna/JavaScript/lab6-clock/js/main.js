@@ -1,4 +1,8 @@
-let btTime = document.querySelector('#bt_timer');
+let btTimer = document.querySelector('#button-start');
+let btStopTimer = document.querySelector('#button-stop');
+let btResetTimer = document.querySelector('#button-reset');
+let output = document.querySelector('#timer');
+
 
 // make the clock tick
 $(function() {
@@ -60,9 +64,33 @@ setInterval(function () {
 }, 1000);
 
 
+btTimer.addEventListener('click', function() {
+    console.log("start clicked");
+    // make the timer appear
+    $('#timer').toggleClass("hidden");
+    $('#countdown').toggleClass("hidden");
+    $('#timerh2').toggleClass("hidden");
+    $('#countdownh2').toggleClass("hidden");
+});
+
+btStopTimer.addEventListener('click', function() {
+    console.log("stop clicked");
+
+});
+
+btResetTimer.addEventListener('click', function() {
+    console.log("stop clicked");
+    // make the timer disappear
+    $('#timer').toggleClass("hidden");
+    $('#countdown').toggleClass("hidden");
+    $('#timerh2').toggleClass("hidden");
+    $('#countdownh2').toggleClass("hidden");
+});
+
+
+
 // Load when ready.
 $( document ).ready(function() {
     console.log( "ready!" );
 });
-
 
