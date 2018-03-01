@@ -15,7 +15,7 @@ $(document).ready(function() {
         graphContainer.classList.remove('hide-me');
         d3.text("https://s3-us-west-2.amazonaws.com/web-hosted-files/test.csv", function(data) {
             let parsedCSV = d3.csv.parseRows(data);
-            let container = d3.select("body")
+            let container = d3.select("#graph_cont")
                 .append("table")
 
                 .selectAll("tr")
