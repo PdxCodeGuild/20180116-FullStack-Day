@@ -1,6 +1,8 @@
+let btTime = document.querySelector('#bt_timer');
+
+// make the clock tick
 $(function() {
     function updateClock(){
-        // moment.tz.setDefault("America/Los_Angeles");
         let now = moment(),
             second = now.seconds() * 6,
             minute = now.minutes() * 6 + second / 60,
@@ -19,17 +21,48 @@ $(function() {
     timedUpdate();
 });
 
-let today = moment().format('MMMM Do YYYY, h:mm a');
-let dateDisplay = document.querySelector('#date-display');
-dateDisplay.innerText = today;
+
+// show the current time
+setInterval(function () {
+    let today = moment().format('MMMM Do YYYY, h:mm:ss a');
+    let dateDisplay = document.querySelector('#date-display');
+    dateDisplay.innerText = today;
+
+}, 1000);
+
+// countdown clock
+let target_date = new Date("Apr 13, 2018").getTime();
+
+// variables for time units
+let days, hours, minutes, seconds;
+let countdown = document.querySelector("#countdown");
+
+// update the countdown every 1 second
+setInterval(function () {
+
+    // find the amount of "seconds" between now and target
+    let current_date = new Date().getTime();
+    let seconds_left = (target_date - current_date) / 1000;
+
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+
+    // format countdown string + set tag value
+    countdown.innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+}, 1000);
 
 
 // Load when ready.
 $( document ).ready(function() {
     console.log( "ready!" );
-
-
-    // redirect
 });
 
 

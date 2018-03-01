@@ -5,64 +5,69 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #0c5460 !important;
-    color: white !important;
+    background: linear-gradient(to bottom, #ff9cce, #b3e0f2); !important;
+    color: #222 !important;
 }
 
-.top-margin {
-    margin-top: 5vh;
+.container {
+    width: 100vw;
 }
 
-
-/* typing text */
-.typewriter {
-  color: #222;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #0c5460; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation:
-    typing 5s steps(30, end),
-    blink-caret .5s step-end;
+.date-class {
+    color: white;
+    opacity: .2;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+.date-date {
+    color: white;
+    opacity: .5;
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #0c5460 }
+.date-container {
+    width: 100vw;
+    padding: 10px;
+    background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.countdown-cont {
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.countdown-cont h1 {
+    font-size: 7vw;
+}
+
+.outer-container {
+    min-width: 100vw;
+    min-height: 50vh;
+    background-color: white;
+    opacity: .6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 /* clock styles */
 .clock-container {
-    background-color: #222;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 35%;
     transform: translate(-50%, -50%);
-    width: 40%;
+    width: 100vw;
     height: 40%;
 }
 .clock {
     margin-top: 10px;
-    border: 5px solid #FFF;
+    border: 5px solid #222;
     border-radius: 100%;
     display: block;
     height: 20vw;
     width: 20vw;
     position: relative;
-    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 .clock .hour {
-    background: #fff;
+    background: #222;
     height: 0;
     left: 50%;
     position: absolute;
@@ -77,7 +82,7 @@ body {
     padding: 50px 2px 0;
 }
 .clock .minute {
-    background: #fff;
+    background: #222;
     height: 0;
     left: 50%;
     position: absolute;
@@ -93,7 +98,7 @@ body {
 }
 
 .clock .second {
-    background: #fff;
+    background: #222;
     height: 0;
     left: 50%;
     position: absolute;
