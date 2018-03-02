@@ -1,0 +1,125 @@
+<!-- TODO: opt version 3: countdown timer
+	 TODO: opt version 4: animations to switch between the 3 timer options -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lab 006 Clock Txt</title>
+</head>
+
+<body onload="clockTimer()">
+
+<!-- clock -->
+<p>clock</p>
+<h1><span id="clock"></span></h1>
+
+<!-- stopwatch -->
+<p>stopwatch</p>
+<h1 id="stopwatch"><time>00:00:00:00</time></h1>
+<button id="bt_start" type="button">start</button>
+<button id="bt_stop" type="button">stop</button>
+<button id="bt_lap" type="button">lap</button>
+<button id="bt_clear_lap" type="button">clear laps</button>
+<button id="bt_reset" type="button">reset</button>
+<div id="lap_records">
+	<p>laps</p>
+	<ol id="lap_list">
+
+	</ol>
+</div>
+
+<script>
+	// basic clock v1
+	let time = setInterval(function() {
+		clockTimer();
+		}, 1000);
+
+	function clockTimer() {
+		let date = new Date();
+		document.getElementById("clock").innerHTML = date.toLocaleTimeString();
+	}
+
+	// stopwatch v2
+	let stopwatch = document.getElementById("stopwatch");
+	let bt_start = document.getElementById("bt_start");
+	let bt_stop = document.getElementById("bt_stop");
+	let bt_lap = document.getElementById("bt_lap");
+	let bt_clear_lap = document.getElementById("bt_clear_lap");
+	let bt_reset = document.getElementById("bt_reset");
+
+		// values starting at null to account for linear time
+	let beginTime = null;
+	let stopTime = null;
+	let stopDuration = 0;
+	let started = null;
+
+		// start button
+	function start() {
+	    if (beginTime === null) {
+	        beginTime = new Date();
+	    }
+
+	    if (stopTime !== null) {
+	        stopDuration += (new Date() - stopTime);
+	    }
+	    console.log(stopDuration);
+
+	    started = setInterval(tick, 10);
+	}
+
+	bt_start.addEventListener("click", start);
+
+		// stop button
+	function stop() {
+	    stopTime = new Date();
+	    clearInterval(started);
+	}
+
+	bt_stop.addEventListener("click", stop);
+
+
+		// reset button
+	function reset() {
+	    clearInterval(started);
+	    stopDuration = 0;
+	    beginTime = null;
+	    stopTime = null;
+	    stopwatch.innerHTML = "00:00:00.000";
+	}
+
+	bt_reset.addEventListener("click", reset);
+
+		// make it tick, make it tock
+	function tick(){
+	    let currentTime = new Date();
+		let timeElapsed = new Date(currentTime - beginTime - stopDuration);
+		let hr = timeElapsed.getUTCHours();
+		let min = timeElapsed.getUTCMinutes();
+		let sec = timeElapsed.getUTCSeconds();
+		let ms = timeElapsed.getUTCMilliseconds();
+
+	    stopwatch.innerHTML =
+	        (hr > 9 ? hr : "0" + hr) + ":" +
+	        (min > 9 ? min : "0" + min) + ":" +
+	        (sec > 9 ? sec : "0" + sec) + "." +
+	        (ms > 99 ? ms : ms > 9 ? "0" + ms : "00" + ms);
+
+	    // lap button
+		let lap_list = document.getElementById("lap_list");
+		let lap = document.createElement("li");
+		lap.innerHTML = stopwatch.innerHTML;
+		bt_lap.onclick = function() {
+		    lap_list.appendChild(lap);
+		};
+
+		// clear lap button
+		bt_clear_lap.onclick = function () {
+			lap_list.innerHTML = '';
+        }
+	}
+</script>
+
+</body>
+</html>
