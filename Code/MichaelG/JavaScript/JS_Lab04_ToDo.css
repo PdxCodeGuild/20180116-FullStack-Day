@@ -1,0 +1,32 @@
+#todo {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+#needs_done {
+    position:relative;
+    left: 40%;
+    width:20%;
+    text-align: center;
+}
+.todo_container {
+    margin-top: 0;
+    width:100%;
+    height:auto;
+}
+#submit {
+
+}
+#done {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin-top: 0;
+}
+.completed_container {
+    margin-top: 0;
+    width:100%;
+    background-color: lightgrey;
+    height:auto;
+}
+html {
+    background-color: gainsboro;
+}
