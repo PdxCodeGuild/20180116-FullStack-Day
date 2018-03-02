@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to bottom, #ff9cce, #b3e0f2); !important;
+    color: #222 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.mono-font {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.container {
+    width: 100vw;
+}
+
+.date-class {
+    color: white;
+    opacity: .2;
+}
+
+.date-date {
+    color: white;
+    opacity: .5;
+}
+
+.date-container {
+    width: 100vw;
+    padding: 10px;
+    background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.countdown-cont {
+    margin-top: 5vw;
+    text-align: center;
+}
+
+.countdown-cont h1 {
+    font-size: 7vw;
+}
+
+.outer-container {
+    min-width: 100vw;
+    min-height: 50vh;
+    background-color: white;
+    opacity: .6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* clock styles */
+.clock-container {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 40%;
+}
+.clock {
+    font-family: 'Ubuntu Mono', monospace;
+    margin-top: 10px;
+    border: 5px solid #222;
+    border-radius: 100%;
+    display: block;
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+}
+.clock .hour {
+    background: #222;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: -50px -2px 0;
+    padding: 50px 2px 0;
+}
+.clock .minute {
+    background: #222;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: -85px -2px 0;
+    padding: 85px 2px 0;
+}
+
+.clock .second {
+    background: #222;
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    margin: -125px -2px 0;
+    padding: 125px 2px 0;
+}
+
+/* start button */
+
+.nav {
+    background: #EBEBEB;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+}
+
+button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    background: #b3e0f2;
+    opacity: .8;
+    color: #fff;
+    border: solid 1px #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 18px 10px;
+    width: 33.3%;
+    margin: 10px;
+    outline: none;
+}
+button:hover {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background: #fff;
+    border: solid 1px #fff;
+    color: #b3e0f2;
+}

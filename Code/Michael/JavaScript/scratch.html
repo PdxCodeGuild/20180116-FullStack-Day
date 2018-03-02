@@ -4,47 +4,128 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #demo_div {
-            background-color: #0FA0CE;
-            color: white;
-            padding: 20px;
-        }
+
+        #overlay {
+  background-color:rgba(0,0,0,0.8);
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
+
+#overlay > div {
+  margin: 100px auto;
+  width:200px;
+  height:100px;
+  text-align:center;
+  background-color:white;
+  padding:10px;
+  border-radius:10px;
+  overflow: scroll;
+}
+
+
+
     </style>
 </head>
 <body>
 
-<!--<div id="demo_div"></div>-->
-<!--<input id="user_input" type="text"/>-->
-<!--<div id="container_div"></div>-->
-<!--<button id="bt">click</button>-->
+<input type="number" id="password_length_input" />
 
+<ul>
+  <li>
+    <label>lower case</label>
+    <input type="checkbox" id="lower_case_cb" />
+  </li>
+  <li>
+    <label>UPPER CASE</label>
+    <input type="checkbox" id="upper_case_cb" />
+  </li>
+  <li>
+    <label>num63r5</label>
+    <input type="checkbox" id="numbers_cb" />
+  </li>
+  <li>
+    <label>s|?3(|/-\|</label>
+    <input type="checkbox" id="specials_cb" />
+  </li>
+</ul>
 
+<button id="generate_bt">generate</button>
 
+<div id="overlay" style="display:none">
+  <div>
+    <span id="messagebox"></span>
+    <button id="close_overlay_bt">close</button>
+  </div>
+</div>
 
 
 <script>
 
 
+let password_length_input = document.querySelector('#password_length_input');
+let lower_case_cb = document.querySelector('#lower_case_cb');
+let upper_case_cb = document.querySelector('#upper_case_cb');
+let numbers_cb = document.querySelector('#numbers_cb');
+let specials_cb = document.querySelector('#specials_cb');
+let generate_bt = document.querySelector('#generate_bt');
+let overlay = document.querySelector('#overlay');
+let messagebox = document.querySelector('#messagebox');
+let close_overlay_bt = document.querySelector('#close_overlay_bt');
 
-    // let bt = document.querySelector('#bt');
-    // bt.addEventListener('click', function() {
-    //     alert('hello world');
-    // });
+close_overlay_bt.onclick = function() {
+  overlay.style.display = 'none';
+}
 
-    // let btn = document.createElement("button");
-    // btn.style.backgroundColor = "lightblue";
-    // btn.style.border = "1px solid white";
-    // btn.innerText = 'click';
-    // let container_div = document.getElementById('container_div');
-    // container_div.appendChild(btn);
+password_length_input.value = 10;
 
-    // let text_field = document.getElementById('user_input');
-    // let user_input = text_field.value;
+let lower_case_characters = 'abcdefghijklmnopqrstuvwxyz';
+let upper_case_characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let number_characters = '12345567890';
+let special_characters = '`~!@#$%^^&*()_+=-\\/|[]{}<>,.:;';
 
-// let demo_div = document.querySelector('#demo_div');
-// demo_div.innerHTML = "Hello World";
-// demo_div.style.fontSize = '36px';
-// demo_div.name = "demo_div";
+
+
+function show_output(str) {
+  messagebox.innerText = str;
+  overlay.style.display = 'initial';
+}
+
+generate_bt.onclick = function() {
+  let master_characters = '';
+  if (lower_case_cb.checked) {
+    master_characters += lower_case_characters;
+  }
+  if (upper_case_cb.checked) {
+    master_characters += upper_case_characters;
+  }
+  if (numbers_cb.checked) {
+    master_characters += number_characters;
+  }
+  if (specials_cb.checked) {
+    master_characters += special_characters;
+  }
+  if (master_characters === '') {
+    show_output('Your password is \'password123\'');
+    return;
+  }
+
+
+  let password_length = parseInt(password_length_input.value);
+  let new_password = '';
+  for (let i=0; i<password_length; ++i) {
+    new_password += get_random_character(master_characters);
+  };
+
+  show_output('I have your password! ' + new_password);
+};
+
+function get_random_character(str) {
+  let random_index = Math.floor(Math.random() * str.length);
+  return str[random_index];
+};
 
 
 </script>

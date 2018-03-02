@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+           text-align: center;
+           width: 100%;
+        }
+
+        table td {
+            padding: 4px;
+        }
+
+        td[contenteditable="True"] {
+            border: 1px solid blue;
+        }
+
+        .edit_bt {
+            color: blue;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .save_bt {
+            color:green;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .delete_bt {
+            color: red;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .arrow_bt {
+            color: plum;
+            cursor: pointer;
+            user-select: none;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <input id="contact_name_input" placeholder="name"/>
+    <input id="contact_ff_input" placeholder="favorite fruit"/>
+    <input id="contact_fc_input" placeholder="favorite color"/>
+
+    <button id="add_bt">add</button>
+    <button id="save_bt">save</button>
+
+    <table id="contact_table">
+        <tr>
+            <th>name</th>
+            <th>favorite fruit</th>
+            <th>favorite color</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+
+<script>
+
+    let contact_name_input = document.querySelector('#contact_name_input');
+    let contact_ff_input = document.querySelector('#contact_ff_input');
+    let contact_fc_input = document.querySelector('#contact_fc_input');
+    let add_bt = document.querySelector('#add_bt');
+
+    let contact_table = document.querySelector('#contact_table');
+    let save_bt = document.querySelector('#save_bt');
+
+    let edit_bt_text = 'pen';
+    let save_bt_text = 'check mark';
+    let delete_by_text = 'X';
+    // let up_bt_text = 'move up';
+    // let down_bt_text = 'move down';
+
+    add_bt.onclick = function() {
+
+        let tr = document.createElement('tr');
+        let td_name = document.createElement('td');
+        let td_ff = document.createElement('td');
+        let td_fc = document.createElement('td');
+        // let td_up_arrow = document.createElement('td');
+        // let td_down_arrow = document.createElement('td');
+        let td_edit = document.createElement('td');
+        let td_save = document.createElement('td');
+        let td_delete = document.createElement('td');
+
+        td_name.innerText = contact_name_input.value;
+        td_ff.innerText = contact_ff_input.value;
+        td_fc.innerText = contact_fc_input.value;
+    };
+
+    td_save.innerText = save_bt_text;
+    td_save.classList.add('save_bt');
+    td_save.style.display = 'none';
+    td_save.onclick = function() {
+        td_edit.style.display = 'initial';
+        td_save.style.display = 'display';
+        td_name.setAttribute('contenteditable', 'false');
+        td_ff.setAttribute('contenteditable', 'false');
+        td_fc.setAttribute('contenteditable', 'false');
+    };
+
+    // td_edit.innerText = edit_bt_text;
+
+    contact_name_input.value = '';
+    contact_ff_input.value = '';
+    contact_fc_input.value = '';
+
+    tr.appendChild(td_name);
+    tr.appendChild(td_ff);
+    tr.appendChild(td_fc);
+    // tr.appendChild(td_up_arrow);
+    // tr.appendChild(td_down_arrow);
+    // tr.appendChild(td_edit);
+    // tr.appendChild(td_save);
+    // tr.appendChild(td_delete);
+
+
+
+
+
+
+
+
+    // contact_name_input.value = '';
+    // contact_ff_input.value = '';
+    // contact_fc_input.value = '';
+    //
+    // tr.appendChild(td_name);
+    // tr.appendChild(td_ff);
+    // tr.appendChild(td_fc);
+    // tr.appendChild(td_up_arrow);
+    // tr.appendChild(td_down_arrow);
+    // tr.appendChild(td_edit);
+    // tr.appendChild(td_save);
+    // tr.appendChild(td_delete);
+
+
+</script>
+
+</body>
+</html>

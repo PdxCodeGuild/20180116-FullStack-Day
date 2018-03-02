@@ -1,0 +1,55 @@
+<!--Version 2-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    #show_timer {
+
+        font-family: "Helvetica Neue", "Times New Roman", sans-serif;
+        font-size: 40px;
+        background-color: yellow;
+        color: #000;
+
+
+
+    }
+</style>
+<body>
+<span id="show_timer"></span><br>
+<button id="random_url_btn">Go to a random page</button>
+
+<script>
+    let random_url = ['https://www.google.com', 'https://www.w3schools.com', 'https://www.facebook.com'];
+    let random_url_btn = document.querySelector('#random_url_btn');
+    let random_index = Math.floor(Math.random() * random_url.length);
+    let show_timer = document.querySelector('#show_timer');
+    let picked_url = random_url[random_index];
+    let timer = 6;
+
+    function print_timer() {
+        timer -= 1;
+        console.log("above" + timer)
+        show_timer.innerHTML = "You will be relocated in : " + timer;
+        if (timer !== 1) {
+            setTimeout(print_timer, 1000);
+        }
+
+        if (timer === 1){
+            console.log(timer);
+            window.location.assign(picked_url);
+        }
+    };
+
+    random_url_btn.onclick = function () {
+           print_timer();
+    };
+
+
+
+
+
+</script>
+</body>
+</html>
