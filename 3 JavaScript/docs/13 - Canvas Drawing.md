@@ -3,7 +3,7 @@
 # Canvas Drawing
 
 
-Canvas elements were introduced with HMTL5 and give you complete control over the colors and shapes that occur within it. You can find more info [here](https://www.w3schools.com/graphics/canvas_reference.asp) and [here](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial). Canvas elements **must** have `width` and `height` attributes.
+Canvas elements were introduced with HMTL5 and give you complete control over the colors and shapes that are drawn within it. You can find more info on the [MDN]([here](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)) and [w3schools](https://www.w3schools.com/graphics/canvas_reference.asp). Canvas elements **must** have `width` and `height` attributes.
 
 
 ```html
@@ -80,6 +80,20 @@ for (let i=0; i<cnv.width; ++i) {
 ctx.putImageData(img, 0, 0);
 ```
 
+## Determining the Mouse's Position
 
+The event parameter that's passed to the function contains the coordinates of the mouse, and which button is pressed.
+
+```html
+<canvas id="cnv" width="100" height="100"></canvas>
+<script>
+let cnv = document.getElementById('cnv');
+cnv.onclick = function(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    alert('position: '+x+', '+y);
+}
+</script>
+```
 
 
