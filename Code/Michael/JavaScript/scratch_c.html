@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title></title>
+<link type="text/css" href="css/smoothness/jquery-ui-1.8.2.custom.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("ul").sortable({
+            connectWith: '.sectionDesignMode',
+        }).disableSelection();
+
+        $(".sectionDesignMode").droppable({
+            activeClass: "ui-state-default",
+            hoverClass: "ui-state-hover",
+            accept: "li",
+        });
+    });
+</script>
+
+<style type="text/css">
+.ucfInput
+{
+width: 100%;
+margin-top:5px;
+margin-bottom:1px;
+}
+.ucfLabel
+{
+width: 100px;
+text-align: right;
+padding-right:4px;
+margin-top:8px;
+float:left;
+word-wrap:break-word; /*Work on IE 8.0 and Firefox 3.6.8*/
+}
+
+.sectionDesignMode
+{
+position:relative;
+left:1px;
+margin-right:1px;
+margin-left:1px;
+border:1px solid #4040ff;
+margin-bottom:5px;
+margin-top:5px;
+
+padding-right:5px;
+min-height:20px;
+}
+ul
+{
+list-style:none;
+}
+</style>
+</head>
+<body>
+
+<label>Section 1</label>
+<div id="div-1">
+<ul id="source" class="sectionDesignMode">
+<li>
+<table style="width:100%">
+<tr>
+<td class="ucfLabel"><label>Field 1</label></td>
+<td class="ucfInput"><input type="text" class="ucfInput"/></td>
+</tr>
+</table>
+</li>
+<li>
+<table style="width:100%">
+<tr>
+<td class="ucfLabel"><label>Field 2</label></td>
+<td class="ucfInput"><input type="text" class="ucfInput"/></td>
+</tr>
+</table>
+</li>
+</ul>
+</div>
+<label>Section 2</label>
+<div id="div-2">
+<ul id="target" class="sectionDesignMode">
+</ul>
+</div>
+
+</body>
+</html>
