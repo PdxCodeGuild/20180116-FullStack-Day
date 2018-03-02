@@ -3,7 +3,7 @@
 # Canvas Drawing
 
 
-Canvas elements were introduced with HMTL5 and give you complete control over the colors and shapes that are drawn within it. You can find more info on the [MDN]([here](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)) and [w3schools](https://www.w3schools.com/graphics/canvas_reference.asp). Canvas elements **must** have `width` and `height` attributes.
+Canvas elements were introduced with HMTL5 and give you complete control over the colors and shapes that are drawn within it. You can find more info on the [MDN]((https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)) and [w3schools](https://www.w3schools.com/graphics/canvas_reference.asp). Canvas elements **must** have `width` and `height` attributes.
 
 
 ```html
