@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body {
+    background-color: #222 !important;
+    font-family: 'VT323', monospace;
+    color: white;
+}
+
+/* blink the text */
+
+.blinking {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+	font-size: 15vw;
+    color: white;
+	font-family: 'VT323', monospace;
+    z-index: 500;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+/* make the circle! */
+
+.wrapper {
+    position: relative;
+    margin: 40px auto;
+    background: #222;
+    z-index: 0;
+}
+
+.wrapper, .wrapper * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 50vw;
+    height: 50vw;
+}
+
+.wrapper .pie {
+    width: 50%;
+    height: 100%;
+    transform-origin: 100% 50%;
+    position: absolute;
+    animation: change-color 5s linear infinite;
+    border: 5px solid rgba(0,0,0,0.5);
+    background-color:#f44336;
+    opacity: 0.5;
+}
+
+.wrapper .spinner {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    z-index: 200;
+    border-right: none;
+    animation: rota 5s linear infinite;
+}
+
+.wrapper:hover .spinner,
+.wrapper:hover .filler,
+.wrapper:hover .mask {
+    animation-play-state: running;
+}
+
+.wrapper .filler {
+      border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+      left: 50%;
+      opacity: 0;
+      z-index: 100;
+      animation: opa 5s steps(1, end) infinite reverse;
+      border-left: none;
+}
+
+.wrapper .mask {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      background: inherit;
+      opacity: 1;
+      z-index: 300;
+      animation: opa 5s steps(1, end) infinite;
+}
+
+@keyframes rota {
+      0% {
+        transform: rotate(0deg);
+        background-color:#4caf50;
+      }
+      100% {
+        transform: rotate(360deg);
+        background-color:#f44336;
+  }
+}
+@keyframes opa {
+      0% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+}
+
+@keyframes change-color {
+    0%     {
+        background-color:#4caf50;
+    }
+    50.0%  {
+        background-color:#ffeb3b;
+    }
+    100.0%  {
+        background-color:#f44336;
+    }
+}
