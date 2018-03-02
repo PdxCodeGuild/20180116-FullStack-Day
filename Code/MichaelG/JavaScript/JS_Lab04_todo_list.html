@@ -24,7 +24,6 @@
     <script>
         let needs_done = document.querySelector('#needs_done');
         let submit = document.querySelector('#submit');
-        let to_do_list =
 
         // enter key to list text entry.
         needs_done.addEventListener("keyup", function(event) {
@@ -40,7 +39,14 @@
             new_li.innerText = needs_done.value;
             document.getElementById("to_do").appendChild(new_li);
             needs_done.value = "";
+            new_list_bt();
         }
+        function new_list_bt() {
+            let new_btn = document.createElement("BUTTON");
+            let text_bt = document.createTextNode("✔");
+            new_btn.appendChild(text_bt);
+            document.getElementById("to_do").appendChild(new_btn);
+}
         // remove item from list.
 
         // move item to completed list.
