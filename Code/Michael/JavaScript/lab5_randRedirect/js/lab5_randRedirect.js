@@ -18,6 +18,8 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Alva-Noto-Xerrox-Vol2/master/173456',
     'https://www.discogs.com/Byetone-Symeta/master/391269',
     'https://www.discogs.com/Godspeed-You-Black-Emperor-Luciferian-Towers/master/1240374',
+    'https://www.discogs.com/CoH-Mask-Of-Birth/master/9500',
+    'https://www.discogs.com/Fennesz-Venice/release/252767?ev=rr',
     'https://www.discogs.com/Sonic-Youth-Bad-Moon-Rising/master/9808',
     'https://www.discogs.com/Autechre-Confield/master/1374',
     'https://www.discogs.com/Coil-The-Ape-Of-Naples/master/5642',
