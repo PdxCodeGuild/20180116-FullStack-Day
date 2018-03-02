@@ -5,6 +5,7 @@
 document.getElementById("clicked").onclick = function () {
 
     let favoriteRecords = [
+    'https://www.discogs.com/COH-Above-Air/master/960452',
     'https://www.discogs.com/Current-93-Thunder-Perfect-Mind/master/22268',
     'https://www.discogs.com/Alva-Noto-Xerrox-Vol2/master/173456',
     'https://www.discogs.com/Byetone-Symeta/master/391269',
