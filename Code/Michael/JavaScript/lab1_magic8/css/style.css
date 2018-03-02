@@ -1,11 +1,24 @@
-#submit {
-    font-family: "Helvetica Neue", "Times New Roman", sans-serif
-    background-color: #ff00d6;
-    color: white
-    margin: 100px;
 
+body {
+    font-family: "Helvetica Neue", "Times New Roman", sans-serif;
+    padding: 5px;
 }
 
-/*input {*/
-    /*width: 400px;*/
-/*}*/
+
+button {
+    background-color: #ff00d6;
+    margin: 20px;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+input {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#answer {
+    margin-left: 25px;
+}

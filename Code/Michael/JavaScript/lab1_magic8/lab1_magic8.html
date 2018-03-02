@@ -10,8 +10,8 @@
     <button id="submit">ask</button>
 </div>
 <div id="answer"></div>
-<script>
 
+<script>
     let question = document.getElementById('question');
     let submit = document.getElementById("submit");
     submit.onclick = function () {
@@ -22,7 +22,7 @@
         let magicks = ans[index];
         document.getElementById("answer").innerHTML = `Q: ${question.value} A: ${magicks}`;
     };
-
 </script>
 </body>
 </html>
+
