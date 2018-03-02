@@ -1,0 +1,18 @@
+body {
+    background-color: #b388ff;
+    color: #90CAF9;
+}
+
+
+
+button {
+    position: absolute;
+    height: 30%;
+    width: 60%;
+    background-color: #90CAF9;
+    color: #00acc1;
+    font-size: 4em;
+    font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+    border-radius: 5%;
+
+};

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+</head>
+<body>
+<fieldset>
+    <legend>Palindrome Detector</legend>
+    Palindrome <input type="text" id="display" name="palindrome" pattern="[A-Za-z]" placeholder="What is it?" required/><br/>
+    <button id="bt">Is it a palindrome?</button>
+</fieldset>
+
+<p id="answer"></p>
+
+<script>
+
+    let bt = document.querySelector('#bt')
+    bt.onclick = output_2
+
+    function output() {
+
+        let array = document.querySelector('#display').value.split("")
+        let array_2 = document.querySelector('#display').value.split("")
+        let reverse = array_2.reverse()
+        console.log(array, reverse)
+
+        for (let i=0; i < array_2.length; i++) {
+            if (array[i] != reverse[i]) {
+                return false
+            }
+        }
+        return true
+    }
+
+    function output_2() {
+        if (output()) {
+            document.querySelector('#answer').innerText =
+                "Palindrome"
+        } else {
+            document.querySelector('#answer').innerText =
+                "Not a Palindrome"
+        }
+    }
+</script>
+</body>
+</html>
+
+
