@@ -8,6 +8,7 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Various-Blue-Skied-An-Clear-A-Morr-Music-Compilation/master/60921',
     'https://www.discogs.com/William-Basinski-Watermusic-II/master/476858',
     'https://www.discogs.com/Windsor-For-The-Derby-How-We-Lost/master/104957',
+    'https://www.discogs.com/Andrew-Chalk-Blue-Eyes-Of-The-March/release/620988?ev=rr',
     'https://www.discogs.com/Vikki-Jackman-Of-Beauty-Reminiscing/master/42075',
     'https://www.discogs.com/Gary-Numan-The-Pleasure-Principle/master/70133',
     'https://www.discogs.com/Section-25-Always-Now/master/55226',
