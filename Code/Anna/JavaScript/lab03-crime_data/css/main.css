@@ -21,6 +21,10 @@ body {
     color: #cccccc;
 }
 
+p a:hover {
+    text-decoration: none;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -102,6 +106,31 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.hide-me {
+    display: none;
+}
+
+button {
+    position:relative;
+    z-index: 10;
+}
+
+.dark {
+    background-color: #222 !important;
+}
+
+th {
+    width: auto;
+}
+
+td {
+    width: auto;
+}
+
+tr:hover {
+    background-color: #222;
+}
+
 #form-wrapper {
     margin-top: 30px;
 }
@@ -112,6 +141,23 @@ textarea {
 
 .box-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lg-btn {
+    min-height: 40px;
+}
+
+.jumbotron {
+    /*background: url(img/pdx-map.png) no-repeat right;*/
+    max-height: 70vh;
+    position: relative;
+}
+
+.bg-img {
+    position:absolute;
+    right: 0;
+    top: 0;
+    max-height: 70vh;
 }
 
 /* Hotfix for Bootstrap v4.0.0-alpha.6*/
@@ -131,9 +177,6 @@ textarea {
     background: 0 0;
     border: 0;
 }
-
-
-
 
 
 
@@ -224,97 +267,4 @@ textarea {
 
 .clearfix:after {
     clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }
