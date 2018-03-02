@@ -35,10 +35,7 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Cylob-Cylobian-Sunset/release/82128',
     'https://www.discogs.com/Various-MASK-500/master/203080',
     'https://www.discogs.com/Autechre-Gescom-Keynell-Keynell/master/134096',
-    'https://www.discogs.com/Suicidal-Tendencies-Suicidal-Tendencies/master/18713',
     'https://www.discogs.com/Cyclobe-Wounded-Galaxies-Tap-At-The-Window/master/289307',
-    'https://www.discogs.com/Christian-Death-Only-Theatre-Of-Pain/master/2053',
-    'https://www.discogs.com/Black-Flag-The-First-Four-Years/master/28709',
     ];
 
     let picked = Math.floor(Math.random() * recs.length);
