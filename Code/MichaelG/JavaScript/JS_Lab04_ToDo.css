@@ -14,7 +14,8 @@
     height:auto;
 }
 #submit {
-
+    position:relative;
+    left:40%;
 }
 #done {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
