@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="JS_Lab04_ToDo.css"/>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+</head>
+<body>
+    <div class="todo_container">
+        <p id="todo">To do</p>
+        <input id="needs_done" type="text" placeholder="Enter to-dos">
+        <button id="submit">submit</button>
+        <ul id="to_do">
+
+        </ul>
+
+    </div>
+    <div class="completed_container">
+        <p id="done">Done</p>
+        <ul id="finished">
+
+        </ul>
+    </div>
+    <script>
+
+        let needs_done = document.querySelector('#needs_done');
+        let submit = document.querySelector('#submit');
+        // enter key to list text entry.
+
+        needs_done.addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                new_list_item();
+            }
+        });
+
+        // create new list item.
+        function new_list_item() {
+            let new_li = document.createElement("LI");
+            new_li.innerText = needs_done.value;
+            document.getElementById("to_do").appendChild(new_li);
+        }
+        submit.onclick = new_list_item;
+    </script>
+</body>
+</html>
