@@ -8,6 +8,7 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Various-Blue-Skied-An-Clear-A-Morr-Music-Compilation/master/60921',
     'https://www.discogs.com/William-Basinski-Watermusic-II/master/476858',
     'https://www.discogs.com/Windsor-For-The-Derby-How-We-Lost/master/104957',
+    'https://www.discogs.com/Andrew-Chalk-Blue-Eyes-Of-The-March/release/620988?ev=rr',
     'https://www.discogs.com/Vikki-Jackman-Of-Beauty-Reminiscing/master/42075',
     'https://www.discogs.com/Gary-Numan-The-Pleasure-Principle/master/70133',
     'https://www.discogs.com/Section-25-Always-Now/master/55226',
@@ -18,6 +19,8 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Alva-Noto-Xerrox-Vol2/master/173456',
     'https://www.discogs.com/Byetone-Symeta/master/391269',
     'https://www.discogs.com/Godspeed-You-Black-Emperor-Luciferian-Towers/master/1240374',
+    'https://www.discogs.com/CoH-Mask-Of-Birth/master/9500',
+    'https://www.discogs.com/Fennesz-Venice/release/252767?ev=rr',
     'https://www.discogs.com/Sonic-Youth-Bad-Moon-Rising/master/9808',
     'https://www.discogs.com/Autechre-Confield/master/1374',
     'https://www.discogs.com/Coil-The-Ape-Of-Naples/master/5642',
@@ -35,10 +38,7 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Cylob-Cylobian-Sunset/release/82128',
     'https://www.discogs.com/Various-MASK-500/master/203080',
     'https://www.discogs.com/Autechre-Gescom-Keynell-Keynell/master/134096',
-    'https://www.discogs.com/Suicidal-Tendencies-Suicidal-Tendencies/master/18713',
     'https://www.discogs.com/Cyclobe-Wounded-Galaxies-Tap-At-The-Window/master/289307',
-    'https://www.discogs.com/Christian-Death-Only-Theatre-Of-Pain/master/2053',
-    'https://www.discogs.com/Black-Flag-The-First-Four-Years/master/28709',
     ];
 
     let picked = Math.floor(Math.random() * recs.length);
