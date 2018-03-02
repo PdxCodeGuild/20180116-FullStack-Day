@@ -1,19 +1,28 @@
 <html>
 <head>
-    <script>
-
-        function eightB() {
-            let ans = ['It is certain', 'It is decidedly so ', 'Without a doubt', 'Yes definitely', 'You may rely on it', 'As I see it, yes',
-                'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now',
-                'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
-            let magic = prompt('> Ask a question? ');
-            let index = Math.floor(Math.random() * ans.length);
-            let magicks = ans[index];
-            alert(`Q: ${magic} A: ${magicks}`)
-        }
-
-        eightB();
-
-    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
+<div>
+    <input id="question" type="text" size="80" placeholder="ask ye old' magick 8ball something and feel the wisdom!"/>
+    <button id="submit">ask</button>
+</div>
+<div id="answer"></div>
+
+<script>
+    let question = document.getElementById('question');
+    let submit = document.getElementById("submit");
+    submit.onclick = function () {
+        let ans = ['It is certain', 'It is decidedly so ', 'Without a doubt', 'Yes definitely', 'You may rely on it', 'As I see it, yes',
+            'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now',
+            'Cannot predict now', 'Concentrate and ask again', 'Don\'t count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful'];
+        let index = Math.floor(Math.random() * ans.length);
+        let magicks = ans[index];
+        document.getElementById("answer").innerHTML = `Q: ${question.value} A: ${magicks}`;
+    };
+</script>
+</body>
 </html>
+
