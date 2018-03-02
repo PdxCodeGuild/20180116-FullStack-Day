@@ -30,7 +30,6 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Cyclobe-Wounded-Galaxies-Tap-At-The-Window/master/289307',
     'https://www.discogs.com/Christian-Death-Only-Theatre-Of-Pain/master/2053',
     'https://www.discogs.com/Current-93-With-The-Black-And-Red-Menstrual-Show-Christ-And-The-Pale-Queens-Mighty-In-Sorrow/master/21939',
-    'https://www.discogs.com/93-Current-93-Sickness-Of-Snakes-Nightmare-Culture/master/215096',
     ];
 
     let picked = Math.floor(Math.random() * favoriteRecords.length);
