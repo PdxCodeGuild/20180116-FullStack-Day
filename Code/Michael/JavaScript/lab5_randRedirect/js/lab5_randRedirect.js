@@ -14,8 +14,9 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Coil-Presents-Black-Light-District-A-Thousand-Lights-In-A-Darkened-Room/master/6807',
     'https://www.discogs.com/DRI-Dealing-With-It/master/16443',
     'https://www.discogs.com/Angels-Of-Light-We-Are-Him/master/8511',
+    'https://www.discogs.com/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven/release/74260?ev=rr',
+    'https://www.discogs.com/Nick-Cave-The-Bad-Seeds-Push-The-Sky-Away/master/519359',
     'https://www.discogs.com/These-Immortal-Souls-Im-Never-Gonna-Die-Again-/master/213907',
-
     'https://www.discogs.com/Black-Marble-Its-Immaterial/master/1071230',
     'https://www.discogs.com/Brendan-Walls-Andrew-Chalk-This-Growing-Clearing/release/582278',
     'https://www.discogs.com/Aglaia-Mondi-Sensibili/release/803661',
@@ -24,6 +25,7 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Various-MASK-500/master/203080',
     'https://www.discogs.com/Autechre-Gescom-Keynell-Keynell/master/134096',
     'https://www.discogs.com/Suicidal-Tendencies-Suicidal-Tendencies/master/18713',
+    'https://www.discogs.com/Cyclobe-Wounded-Galaxies-Tap-At-The-Window/master/289307',
     'https://www.discogs.com/Christian-Death-Only-Theatre-Of-Pain/master/2053',
     'https://www.discogs.com/Current-93-With-The-Black-And-Red-Menstrual-Show-Christ-And-The-Pale-Queens-Mighty-In-Sorrow/master/21939',
     'https://www.discogs.com/93-Current-93-Sickness-Of-Snakes-Nightmare-Culture/master/215096',
