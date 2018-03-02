@@ -6,6 +6,7 @@ document.getElementById("clicked").onclick = function () {
 
     let favoriteRecords = [
     'https://www.discogs.com/Current-93-Thunder-Perfect-Mind/master/22268',
+    'https://www.discogs.com/Alva-Noto-Xerrox-Vol2/master/173456',
     'https://www.discogs.com/Byetone-Symeta/master/391269',
     'https://www.discogs.com/Godspeed-You-Black-Emperor-Luciferian-Towers/master/1240374',
     'https://www.discogs.com/Sonic-Youth-Bad-Moon-Rising/master/9808',
