@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clocks Clocks Clocks</title>
+</head>
+<body>
+<p id="current_time"></p>
+<script>
+    // runs every second
+    let timer = setInterval(function() {
+		real_time();
+		}, 1000);
+    //
+	function real_time() {
+		let date = new Date();
+		document.getElementById("current_time").innerHTML = date.toLocaleTimeString();
+	}
+
+</script>
+
+</body>
+</html>
