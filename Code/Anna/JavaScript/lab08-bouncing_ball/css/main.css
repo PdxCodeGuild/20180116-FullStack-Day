@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0;}
+
+body, html { height:100%; }
+
+#cnv {
+	background: radial-gradient(ellipse at bottom, #1b2735 0%, #171036 100%);
+	position:absolute;
+}
+
+canvas {
+	display:block;
+}
