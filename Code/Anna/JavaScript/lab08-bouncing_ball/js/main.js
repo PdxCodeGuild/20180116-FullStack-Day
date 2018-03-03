@@ -3,6 +3,16 @@ let ctx = canvas.getContext('2d');
 let height = window.innerHeight;
 let ratio = canvas.width/canvas.height;
 let width = height * ratio;
+let raf;
+let running = false;
+let start = document.querySelector('#bt-start');
+let stop = document.querySelector('#bt-stop');
+
+// make musics!
+//create a synth and connect it to the master output
+let pingPong = new Tone.PingPongDelay("4n", 0.2).toMaster(); // add ping-pong delay on one synth
+let wallSynth1 = new Tone.DuoSynth().connect(pingPong);
+let wallSynth2 = new Tone.DuoSynth().toMaster();
 
 // for the musics
 // noteArray = ['C#4', 'D4', 'E4', 'F#4', 'G#4', 'A#4', 'B4', 'C#5', 'C#3', 'D3', 'E3', 'F#3', 'G#3', 'A#3', 'B3', 'A#2', 'A#5', 'D5', 'F#5'];
@@ -33,12 +43,13 @@ function clear() {
 	ctx.fillStyle = 'rgba(23, 16, 54, 0.3)';
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
-	// make more balls!
-	let balls = [];
-	for (let i=0; i<10; ++i) {
-		let ball = new Ball();
-		balls.push(ball);
-	}
+
+// make more balls!
+let balls = [];
+for (let i=0; i<10; ++i) {
+    let ball = new Ball();
+    balls.push(ball);
+}
 
 // make all the balls move
 function move() {
@@ -65,15 +76,23 @@ function move() {
 			wallSynth2.triggerAttackRelease(note2, '8n');
 		}
 	}
-	window.requestAnimationFrame(move);
+	raf = window.requestAnimationFrame(move);
 }
-window.requestAnimationFrame(move);
 
-// make musics!
-//create a synth and connect it to the master output
-let pingPong = new Tone.PingPongDelay("4n", 0.2).toMaster(); // add ping-pong delay on one synth
-let wallSynth1 = new Tone.DuoSynth().connect(pingPong);
-let wallSynth2 = new Tone.DuoSynth().toMaster();
+start.addEventListener('click', function(e) {
+    console.log('starting animation');
+    if (!running) {
+        raf = window.requestAnimationFrame(move);
+        running = true;
+  }
+});
+
+stop.addEventListener('click', function(e) {
+    console.log('stopping animation');
+    window.cancelAnimationFrame(raf);
+    running = false;
+});
+
 
 // makes the canvas responsive. Yay!
 function resize() {
