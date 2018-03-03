@@ -7,6 +7,7 @@ let raf;
 let running = false;
 let start = document.querySelector('#bt-start');
 let stop = document.querySelector('#bt-stop');
+let reset = document.querySelector('#bt-reset');
 
 // make musics!
 //create a synth and connect it to the master output
@@ -44,12 +45,21 @@ function clear() {
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-// make more balls!
-let balls = [];
-for (let i=0; i<10; ++i) {
-    let ball = new Ball();
-    balls.push(ball);
+// resets the canvas
+function allClear() {
+	ctx.clearRect(0,0, canvas.width, canvas.height);
 }
+
+// make more balls!
+function makeBalls() {
+    let balls = [];
+    for (let i=0; i<10; ++i) {
+        let ball = new Ball();
+        balls.push(ball);
+    }
+    return balls;
+}
+let balls = makeBalls();
 
 // make all the balls move
 function move() {
@@ -84,13 +94,21 @@ start.addEventListener('click', function(e) {
     if (!running) {
         raf = window.requestAnimationFrame(move);
         running = true;
-  }
+    }
 });
 
 stop.addEventListener('click', function(e) {
     console.log('stopping animation');
     window.cancelAnimationFrame(raf);
     running = false;
+});
+
+reset.addEventListener('click', function(e) {
+    console.log('resetting animation');
+    allClear();
+    window.cancelAnimationFrame(raf);
+    running = false;
+    let balls = makeBalls();
 });
 
 
