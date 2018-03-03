@@ -2,7 +2,7 @@ import datetime
 import math
 import matplotlib.pyplot as plt
 
-with open('astor.txt', 'r') as file:
+with open('astor_rain.txt', 'r') as file:
     lines = file.readlines()
     lines = [line.strip() for line in lines]
     lines = [line for line in lines if line != '']

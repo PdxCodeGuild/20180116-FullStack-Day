@@ -80,7 +80,7 @@ while play:
         print("Letters used: ", ','.join(already_used))
         guess = input('Enter a letter: ').lower()
         while guess in already_used:
-            guess = input('You already used that letter, guess again.')
+            guess = input('You already used that letter, guess again: ')
         already_used.append(guess)
         for i in range(len(word)):
             if guess == word[i]:

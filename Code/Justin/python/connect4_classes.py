@@ -3,6 +3,7 @@
 import random
 import itertools
 
+
 class Board():
     """ This is the game board, stores number of rows, number of columns
     :var status is a dictionary of each board location (0 if empty, player number if occupied
@@ -54,7 +55,7 @@ class Board():
         """returns the number of spaces left in column i"""
         return self.column_spaces[i]
 
-    def changes_spaces(self, i):
+    def change_spaces(self, i):
         """lowers the number of spaces left in a column by 1 when a player chooses to play that column"""
         self.column_spaces[i] -= 1
 
@@ -156,7 +157,7 @@ while True:
         # Board status is updated, location (board.get_spaces(choice), choice) gets value equal to i (player number)
         board.change_status(board.get_spaces(choice), choice, i)
         # Update the number of spaces left in that column
-        board.changes_spaces(choice)
+        board.change_spaces(choice)
 
         # Check if player number i has a win
         results[i] = check_win(i)

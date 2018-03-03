@@ -9,7 +9,7 @@ def pick6():
 
 def compare (m, w):
     # Compares 2 lists by index.
-    # Counts and returns number of matches.
+    # Counts and returns number of matches. match must be in same index
     count = 0
     for i in range(6):
         if m[i] == w[i]:
@@ -32,15 +32,15 @@ for i in range(100000):
     print(i)
     my_ticket = pick6() # Get player ticket
     print(my_ticket)
-    losses -= 2
+    losses -= 2 # Accumulate dollar losses
     winning_numbers = pick6() # Get winning numbers
     print(winning_numbers)
     matches = compare(my_ticket, winning_numbers)
-    wins[matches] += 1
-    winnings += awards[matches]
+    wins[matches] += 1 # Accumulate number of games with each number of matches
+    winnings += awards[matches] # Accumulate dollars won
     if matches > 0:
-        print(f'You won ${awards[matches]} with {matches} matches')
-        print('*' * 40 + '*' * 20 * matches) # Visiual indicator of won game
+        print(f'You won ${awards[matches]} with {matches} matches!!!') # Print congratualtory message
+        print('*' * 30 + '*' * 20 * matches) # Visiual indicator of won game
     else:
         print('Better luck next time :(')
 

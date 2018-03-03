@@ -11,7 +11,7 @@ def check_anagram(w1, w2):
 
 
 print('You can \n1) check for anagram \n2) check for a palindrome \n3) quit')
-choice = input('Enter the numner of your choice. ')
+choice = input('Enter the number of your choice. ')
 
 while choice != '3':
     # Check to make sure user choice is valid.
