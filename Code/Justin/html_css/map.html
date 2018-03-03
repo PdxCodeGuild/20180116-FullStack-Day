@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="D3byEX 12.2" />
+    <meta charset="utf-8">
+</head>
+<body>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var width = 200, height = 200;
+        var svg = d3.select("body").append("svg").attr({ width: width, height: height});
+        svg.attr('viewBox', '0 0 1000 1000');
+        var url = "https://opendata.arcgis.com/datasets/c11815647b3949faa20b16cf50ab214d_125.geojson";
+        d3.json(url, function (error, data) {
+            var path = d3.geo.path();
+            svg.selectAll("path")
+                .data(data.features)
+                .enter().append("path")
+                .attr("d", path)
+                .style({ fill: "none", stroke: "red" });
+        });
+    </script>
+</body>
+</html>
+
+<!--d3.geo.bounds(json.features[0])-->
+
+<!--projection = d3.geo.mercator().center(center)-->
+        <!--.scale(scale).translate(offset);-->
+      <!--path = path.projection(projection);-->
+
+<!--d3.json(jsonfile, function(error, belgique) {-->
+     <!--projection.fitSize([width,height], belgique);-->
