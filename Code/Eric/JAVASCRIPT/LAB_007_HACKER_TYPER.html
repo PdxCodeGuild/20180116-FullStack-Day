@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LAB 007 Hacker Typer</title>
+
+	<style>
+		#terminal {
+			opacity:1;
+		    background-color:#000000;
+		    position: fixed;
+		    width:100%;
+		    height:100%;
+		    top:0;
+		    left:0;
+		    z-index:1000;
+			color: #ff0066;
+            font-family: monospace;
+			font-size: 18pt;
+			overflow-wrap: break-word;
+			overflow-x: scroll;
+			outline: none;
+			resize: none;
+		}
+
+		div {
+			display: block;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div id="screen">
+		<textarea id="terminal" placeholder="type anything to hackzor"
+		          style="height: 100%; width: 100%"></textarea>
+	</div>
+
+	<script type="text/javascript">
+		let terminal = document.getElementById("terminal");
+
+		terminal.onkeypress = function (evt) {
+		    let chars =
+			    "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz~!@#$%^&*()_+{}|:<>?,./;'[]//-=]/\n\n\n\t\t\t";
+			let string_length = 3;
+			let randomstring = '';
+
+			for (let i=0; i<string_length; i++) {
+				let rnum = Math.floor(Math.random() * chars.length);
+				randomstring += chars.substring(rnum, rnum+1);
+				document.getElementById("terminal").value += randomstring;
+				terminal.scrollTop = terminal.scrollHeight - terminal.clientHeight;
+			}
+			evt.preventDefault();
+		}
+
+	</script>
+</body>
+</html>
