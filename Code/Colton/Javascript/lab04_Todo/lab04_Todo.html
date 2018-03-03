@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <style>
+        .checked{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>To Do List</legend>
+    Add to To Do List <input type="text" id="input" placeholder="Type task here">
+    <button id="submit">Submit</button>
+</fieldset>
+<ul id="list">To Do</ul>
+<ul id="completed">Completed</ul>
+
+
+<script>
+    let bt = document.querySelector('#submit')
+    bt.onclick = function () {
+        let node = document.createElement('li');
+        let new_task = document.createTextNode(document.getElementById('input').value);
+        document.querySelector('#list').appendChild(node); //creates the bullet
+        node.appendChild(new_task); //should append the input to the bullet
+
+        //delete button
+        let delete_button = document.createElement('button');
+        delete_button.innerHTML = "Delete";
+        delete_button.onclick = function() {
+            document.querySelector('#list').removeChild(node);//deletes item
+        }
+
+        // finish button
+        let finish_button = document.createElement('button');
+        finish_button.innerHTML = "Complete"
+        finish_button.onclick = function() {
+            document.querySelector('#list').removeChild(node);
+            node.removeChild(delete_button)
+            node.removeChild(finish_button)
+            document.querySelector('#completed').append(node);
+            node.classList.toggle('checked')
+
+        }
+
+        // creates buttons for list items
+        node.appendChild(delete_button)
+        node.appendChild(finish_button)
+
+    }
+</script>
+
+</body>
+</html>
