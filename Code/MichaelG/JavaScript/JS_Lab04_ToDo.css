@@ -33,4 +33,23 @@ html {
 }
 #to_do {
     margin-left:5%;
+    overflow:visible;
+}
+#to_do >li:hover {
+    background-color:gray;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width:-moz-fit-content;
+}
+li>button {
+    background-color: white;
+    margin-left:10px;
+    position:relative;
+    opacity: 0.6;
+
+}
+li>button:hover {
+    background-color:white;
+    color:black;
+    opacity: 1;
 }

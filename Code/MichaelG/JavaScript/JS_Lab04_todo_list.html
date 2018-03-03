@@ -37,20 +37,24 @@
         function new_list_item() {
             let new_li = document.createElement("LI");
             new_li.innerText = needs_done.value;
+            new_li.appendChild(new_button("✔"));
+            new_li.appendChild(new_button("✘"));
             document.getElementById("to_do").appendChild(new_li);
             needs_done.value = "";
-            new_list_bt();
+
         }
-        function new_list_bt() {
+        function new_button(button_text) {
             let new_btn = document.createElement("BUTTON");
-            let text_bt = document.createTextNode("✔");
+            let text_bt = document.createTextNode(button_text);
             new_btn.appendChild(text_bt);
-            document.getElementById("to_do").appendChild(new_btn);
-}
+            return new_btn;
+        }
+
         // remove item from list.
+        function delete_list_item() {}
 
         // move item to completed list.
-
+        function finish_list_item() {}
         submit.onclick = new_list_item;
     </script>
 </body>
