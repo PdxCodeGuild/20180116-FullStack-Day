@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="JS_Lab04_ToDo.css"/>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+</head>
+<body>
+    <div class="todo_container">
+        <p id="todo">To do</p>
+        <input id="needs_done" type="text" placeholder="Enter to-dos">
+        <button id="submit">submit</button>
+        <ul id="to_do">
+
+        </ul>
+
+    </div>
+    <div class="completed_container">
+        <p id="done">Done</p>
+        <ul id="finished">
+
+        </ul>
+    </div>
+    <script>
+        let needs_done = document.querySelector('#needs_done');
+        let submit = document.querySelector('#submit');
+
+        // enter key to list text entry.
+        needs_done.addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                new_list_item();
+
+            }
+        });
+        // create new list item.
+        function new_list_item() {
+            let new_li = document.createElement("LI");
+            new_li.innerText = needs_done.value;
+            new_li.appendChild(new_button("✔"));
+            let delete_button = new_button("✘");
+            delete_button.onclick = delete_list_item;
+            new_li.appendChild(delete_button);
+            document.getElementById("to_do").appendChild(new_li);
+            needs_done.value = "";
+            // create button, add on click, append to new list.
+        }
+        function new_button(button_text) {
+            let new_btn = document.createElement("BUTTON");
+            let text_bt = document.createTextNode(button_text);
+            new_btn.appendChild(text_bt);
+            return new_btn;
+        }
+
+        // remove item from list.
+        function delete_list_item() {
+            this.parentNode.parentNode.removeChild(this.parentNode);
+
+        }
+
+        // move item to completed list.
+        function finish_list_item() {}
+        submit.onclick = new_list_item;
+    </script>
+</body>
+</html>

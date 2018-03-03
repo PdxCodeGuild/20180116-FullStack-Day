@@ -9,27 +9,33 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>To do list</h1>
+<h1>Listed</h1>
 <div id="wrapper">
     <div>
-    <input type="text" value="things to do">
-        <button id="add">add</button>
+    <h3>To do </h3>
+    <div>
+    <input type="text" id="todo" placeholder="add to do list"/>
+    <button id="add_bt">add</button>
     </div>
-
-    <div class="added">
+    <br>
         <ul id="listA">
-            <li>item</li>
+            <!--<li>item</li>-->
         </ul>
-        <button class="move">move</button>
-        <button class="remove">remove</button>
+        <button id="moveA">move</button>
+        <button id="remove_btA">remove</button>
     </div>
 
-    <div class="added">
+    <div>
+        <h3>Completed</h3>
+        <div>
+        <input type="text" id="complete" placeholder="add to move"/>
+        <button id="complete_bt">completed</button>
+        </div>
         <ul id="listB">
-            <li>item</li>
+            <!--<li>item</li>-->
         </ul>
-        <button class="move">move</button>
-        <button class="remove">remove</button>
+        <button id="moveB">move</button>
+        <button id="remove_btB">remove</button>
     </div>
 
 </div>

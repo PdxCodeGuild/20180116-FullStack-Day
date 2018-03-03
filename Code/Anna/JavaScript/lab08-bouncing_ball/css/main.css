@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+* { margin: 0; padding: 0;}
+
+body, html {
+    height: 100%;
+    background-color: #171036;
+}
+
+#cnv {
+	background: radial-gradient(ellipse at bottom, #1b2735 0%, #171036 100%);
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+canvas {
+	display:block;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    display: block;
+    background-color: #ecf0f1;
+    border: 1px solid #95a5a6;
+    color: #171036;
+    box-shadow: 0px 5px 0px 0px #95a5a6;
+    z-index: 100;
+    margin: 20px;
+    font-family: 'Ubuntu Mono', monospace;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button h3{
+    padding-top: 9px;
+}
+
+.one {
+    border-radius: 3px;
+    border: none;
+}
+
+.one:active {
+    box-shadow: none;
+    transform:translate(0px, 5px);
+}
+
+.one:hover {
+    opacity: 0.8;
+}
+
+.white:active {
+    background-color: #DEE2E3;
+}

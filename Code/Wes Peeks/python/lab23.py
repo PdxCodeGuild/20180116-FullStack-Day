@@ -3,7 +3,7 @@
 #Headers might consist of name, favorite fruit, favorite color. Open the CSV,
 #convert the lines of text into a list of dictionaries, one dictionary for each user.
 #The text in the header represents the keys, the text
-#
+
 import csv
 
 def load_contacts():
