@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <link rel="stylesheet" type="text/css" href="clock.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="clockcontainer">
+
+</div>
+
+
+<script>
+
+
+    function redraw() {
+        d3.select("svg").remove();
+        d3.select("input").remove();
+
+        let window_width = window.innerWidth;
+        let clock_width = .3 * window_width;
+        let clock_height = clock_width;
+        let clock_center = clock_width / 2;
+        let radius = clock_center;
+
+        let now = new Date;
+        let seconds = now.getSeconds();
+        let minutes = now.getMinutes();
+        let hours = now.getHours() % 12;
+        console.log(seconds, minutes, hours);
+
+        let seconds_degrees = 90 - seconds * 6;
+        let minutes_degrees = 90 - ((minutes * 6) + (seconds / 10));
+        let hours_degrees = 90 - ((hours * 30) + (minutes / 2) + (seconds / 120));
+        console.log(seconds_degrees, minutes_degrees, hours_degrees);
+
+        function get_x(d) {
+            let degrees = d.degrees;
+            let radians = degrees * (Math.PI) / 180;
+            let x = (d.radius * clock_center * Math.cos(radians));
+            return clock_center + x;
+        }
+
+        function get_y(d) {
+            let degrees = d.degrees;
+            let radians = degrees * (Math.PI) / 180;
+            let y = (d.radius * clock_center * Math.sin(radians));
+            return clock_center - y;
+        }
+
+
+        let hand_data = [{"name": "seconds", "degrees": seconds_degrees, "radius": .9},
+            {"name": "minutes", "degrees": minutes_degrees, "radius": .8},
+            {"name": "hours", "degrees": hours_degrees, "radius": .6}];
+
+
+        let clock = d3.select('body').append('svg')
+            .attr('width', clock_width)
+            .attr('height', clock_height)
+            .style('border', '1px solid black')
+            .style('margin-bottom', '10px');
+
+
+        let face = d3.select('svg').append('circle')
+            .attr('cx', clock_center)
+            .attr('cy', clock_center)
+            .attr('r', radius)
+            .style('fill', 'plum');
+
+        let center = d3.select('svg').append('circle')
+            .attr('cx', clock_center)
+            .attr('cy', clock_center)
+            .attr('r', radius * .1)
+            .style('fill', 'black');
+
+        let hands = d3.select('svg').selectAll('lines')
+            .data(hand_data)
+            .enter()
+            .append('line');
+
+        let hand_attributes = hands
+            .attr('id', function (d) {
+                return d["name"]
+            })
+            .attr('x1', clock_center)
+            .attr('y1', clock_center)
+            .attr('x2', get_x)
+            .attr('y2', get_y)
+            .attr('r', function (d) {
+                return d["radius"]
+            })
+            .attr('stroke-width', function(d){if (d["name"] === 'seconds') {return '1px'}
+                else if (d["name"] === 'minutes') {return '2px'}
+                else {return '3px'}
+            })
+            .attr('stroke', function(d){if (d["name"] === 'seconds') {return 'red'}
+                else {return 'black'}
+            });
+
+        function adjustHands() {
+            hand_data[0]["degrees"] -= 6;
+            hand_data[1]["degrees"] -= 1 / 10;
+            hand_data[2]["degrees"] -= 1 / 120;
+            hands.attr('x2', get_x);
+            hands.attr('y2', get_y);
+        }
+
+
+        let keepTime = setInterval(adjustHands, 1000);
+
+    }
+
+
+    redraw();
+    window.addEventListener("resize", redraw);
+
+
+
+
+</script>
+</body>
