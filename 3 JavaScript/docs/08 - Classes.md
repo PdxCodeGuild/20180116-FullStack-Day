@@ -41,8 +41,7 @@ class Animal {
     move() {
         if (this.legs > 0) {
             console.log('walk');
-        }
-        else {
+        } else {
             console.log('slither');
         }
     }
@@ -78,8 +77,7 @@ function Animal(legs) {
 Animal.prototype.move = function () {
     if (this.legs > 0) {
         console.log('walk');
-    }
-    else {
+    } else {
         console.log('slither');
     }
 };

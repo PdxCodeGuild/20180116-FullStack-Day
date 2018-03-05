@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bouncing Balls</title>
+    <link rel="stylesheet" type="text/css" href="bouncing_balls.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <script src="http://doc.gold.ac.uk/~mus02mg/_maxiLib.js"></script>
+    <script src="https://tonejs.github.io/build/Tone.min.js"></script>
+    <style>
+        canvas{
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        ul{
+            display: inline-block;
+            top: 0px;
+        }
+
+        li.on{
+            border:2px solid red;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<canvas id="main_canvas" width="500px" height="500px"></canvas>
+<ul id="ball_list"></ul>
+
+
+<ul id="slider_list">
+    <li>
+        <input type="range", id="hue_slider", min="0", max="360", step="1", value="180">
+    </li>
+    <li>
+        <input type="range", id="radius_slider", min="5", max="10", step=".1", value="7.5">
+    </li>
+    <li>
+        <input type="range", id="speed_slider", min=".1", max="2", step="0.1", value="1">
+    </li>
+    <li>
+        <button id="apply_button">Apply</button>
+    </li>
+</ul>
+
+
+
+
+<script>
+    let width = 500;
+    let height = 500;
+    let balls = [];
+    var synth = new Tone.MonoSynth().toMaster();
+    let number_of_balls = 30;
+
+    let main_canvas = document.querySelector('#main_canvas');
+    let main_ctx = main_canvas.getContext('2d');
+
+    let ball_list = document.querySelector('#ball_list');
+
+    let slider_list = document.querySelector('#slider_list');
+    let hue_slider = document.querySelector('#color_slider');
+    let speed_slider = document.querySelector('#speed_slider');
+    let radius_slider = document.querySelector('#size_selector')
+
+    class Ball{
+        constructor(i, x, y, radius, hue) {
+            this.id = i;
+            this.px = x;
+            this.py = y;
+            this.vx = (Math.random() * 2) - 1;
+            this.vy = (Math.random() * 2) - 1;
+            this.speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+            this.radius = radius;
+            this.hue = hue;
+            this.color = 'hsl(' + hue + ', 70%, 20%)';
+            this.selected = false;
+        }
+
+        draw (){
+            if (this.px + this.vx > width - this.radius || this.px + this.vx < this.radius){
+                this.vx *= -1;
+                this.playSound();
+            }
+
+            if (this.py + this.vy > height - this.radius || this.py + this.vy < this.radius){
+                this.vy *= -1;
+                this.playSound();
+            }
+            this.px += this.vx;
+            this.py += this.vy;
+            main_ctx.beginPath();
+            main_ctx.arc(this.px, this.py, this.radius, 2*Math.PI, false);
+            main_ctx.fillStyle = this.color;
+            main_ctx.fill();
+        }
+
+        playSound(){
+            synth.triggerAttackRelease(this.hue * 5, .5 * this.speed) * (this.radius - 4) * .1;
+        }
+    }
+
+    function makeBall(i){
+        let id = i;
+        let radius = Math.floor(Math.random()*5) + 5;
+        let x = Math.floor(Math.random()* (width - 2*radius)) + radius;
+        let y = Math.floor(Math.random()* (height - 2*radius)) + radius;
+        let hue = Math.floor(Math.random()* 360);
+        console.log(i, radius, x, y, hue);
+        let ball = new Ball(i, x, y, radius, hue);
+        return ball;
+    }
+
+    function makeBallList(){
+        for (let i = 0; i < number_of_balls; i++) {
+            let li = document.createElement('li');
+            li.setAttribute('id', 'ball_i.toString()');
+            li.addEventListener("click", selectBall);
+            ball_list.appendChild(li);
+
+            let list_canvas = document.createElement('canvas');
+            list_canvas.setAttribute('width', '20px');
+            list_canvas.setAttribute('height', '20px');
+            li.appendChild(list_canvas);
+
+            let list_ctx = list_canvas.getContext('2d');
+            list_ctx.beginPath();
+            list_ctx.arc(10, 10, balls[i].radius, 2 * Math.PI, false);
+            list_ctx.fillStyle = balls[i].color;
+            list_ctx.fill();
+        }
+    }
+
+    function selectBall(){
+        let index = parseInt(this.id);
+        for (let i = 0; i < number_of_balls; i++){
+            let li = document.querySelector('#' + i);
+            if (li.classList.contains("on")){
+                li.classList.remove("on")
+            }
+            if (balls[i].selected){
+                balls[i].selected = false;
+            }
+        }
+        this.classList.add("on");
+        balls[index].selected = true;
+        alert(balls[index].radius);
+        hue_slider.value = balls[index].hue;
+        radius_slider.value = balls[index].radius;
+        speed_slider.value = balls[index].speed;
+
+    }
+
+    function init(){
+        for (let i = 0; i < number_of_balls; i++){
+            balls.push(makeBall(i))
+        }
+        makeBallList();
+        window.requestAnimationFrame(drawBalls);
+    }
+
+    function drawBalls(){
+        main_ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < number_of_balls; i++){
+            balls[i].draw();
+        }
+        window.requestAnimationFrame(drawBalls);
+    }
+
+    window.onload = init;
+
+</script>
+</body>
