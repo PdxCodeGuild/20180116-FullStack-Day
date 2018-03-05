@@ -1,4 +1,4 @@
-#Post Bootcamp
+# Post Bootcamp
 
 So you've graduated from PDX Code Guild, time to go out and fend off all those sweet job offers right? Believe it or not theres more you can do to make yourself valuable to potential employers. Now that you've learned to code, you can/should:
 
@@ -9,41 +9,41 @@ So you've graduated from PDX Code Guild, time to go out and fend off all those s
 4. Consider freelancing, either for your job or during your job search.
 5. Attend meet-ups, network!
 
-##What kind of job are you looking for?
+## What kind of job are you looking for?
 
-###Full-Stack
+### Full-Stack
 	
 A full-stack web developer does a little bit of everything. You might be expected to work on individual features both on the front-end and back-end of things if you're a part of a team. You may spend your time working on making the code from the back-end and fron-end teams compatible with each other and make sure the site is functional as they make changes. You might work as a freelancer helping people with any myriad of problems or issues with their websites. A full-stack developer does it all but specializes in none, you're the jack of all trades.
 
-###Back-end
+### Back-end
 
 Back-end developers work on the functional parts of the website. You'll spend your time programming applications, databases, and/or server management. Your job is to ensure that when the server communicates with the client, everything runs quickly and efficiently. Back end development is for you if you're somebody who loves data manipulation, functional programming, and are fascinated by the behind the scenes aspects of the world wide web as a whole.
 
 You've already learned Python, but other server side languages like PHP, Ruby, Java, .Net might be helpful to learn to further your understanding, and may in fact be required or demanded by your workplace. SQL, MySQL, and/or Oracle may also be helpful to study to further your understanding of server and database programming.
 
-###Front-end
+### Front-end
 
 As a front-end web developer you're all about presentation. You're going to be making everything that people see when they open your site. You thrive on making sites that look absolutely fantastic, and smile when your client's eyes light up when they see how great their new site looks before they've even begun to get into the site's functionality. You're a web artist of sorts, styling and formatting your website in a clean, efficient, and visually stunning manner.
 
 You'll be doing most of your work in HTML, CSS, and Javascript, and using libraries like JQUERY to make your code more efficient. An understanding of front end Frameworks, like those listed below, will help with device compatibility and version control to ensure consistently great looking content.
 
-###Software Engineer
+### Software Engineer
 
 If you just love programming and want to do as much of it as possible, but perhaps weren't entranced by the web aspect of programming, maybe a job in software engineering could be for you. A software engineer may do a number of things but focuses mainly on systems level programming and application development for businesses, either as an employee or as a contractor. They may also be responsible for determining the needs of different departments within a corporation and handling their networking and technical work so they can do their work as efficiently as possible.
 
-###Systems Analyst
+### Systems Analyst
 
 Systems Analysts are all about efficiency. As a systems analyst you don't just love clean code, but fast code too. This is a good job for you if you enjoy code, talking tech, and mathematics but not necessarily doing the actual coding yourself. As a systems analyst you'll spend a lot of your time creating predictive models, doing cost analysis, and determining the best design schemes and implementations for solving problems using information technology. A knowledge of many programming languages, operating systems, etc. is very helpful to a systems analyst even though they may not be doing most of the programming. Also a good job for you if you'd like to spend your actual programming time on personal projects instead of your job, while still utilizing your programming knowledge in the workplace.
 
-###Quality Assurance
+### Quality Assurance
 
 Working in quality assurance can be highly rewarding if you're interested in the design process as a whole, and enjoy interacting with and talking to the many different people you may be working with. You oversee the design process and test code throughout (though you're not exclusively a software tester, which is another job you could pursue if you so wished) to ensure that you get a product out on time that meets the standards of both the government and the company that you're working for. As the name might suggest, you're responsible for the quality of the product, and it's ability to bring monetary success to your company.
 
-###Technical Writing
+### Technical Writing
 
 Like a systems analyst, maybe you love coding and technology but don't necessarily want to be doing it every day in your workplace? Maybe you would like to continue expanding your knowledge about all aspects of technology rather than specializing in a specific field. If that sounds like something that interests you then technical writing could be for you. As a technical writer you can write about all industries of science and technology as long as you're willing to study enough to build a good foundation of knowledge on the subject matter (the more knowledgeable you are about a subject the better your writing on it will be). You'll spend a lot of your time writing of course, but a lot of your time will also be spent studying and keeping up with the latest trends and developments in science and technology.
 
-##**Personal Coding Projects**
+## Personal Coding Projects
 
 Have an idea for a program or website? Make it! chances are you'll learn something new in the process. And, even if you don't, if you create a polished enough looking or functional enough product you can slap it on your portfolio and showcase it to the world.
 
@@ -64,7 +64,7 @@ The best reason to take on independent projects is for the sake of learning new 
 - Security techniques
 
 
-##**Resume and Portfolio**
+## Resume and Portfolio
 
 [Resumonk](https://www.resumonk.com/) Though resumonk has very few formatting options, there are numerous pre-built templates to choose from to help you create a pretty and professional resume. Requires small one time payment to download your resumes without watermark but is	otherwise simple and user friendly.
 
@@ -82,7 +82,7 @@ Remember to always have another individual review your resume before you send it
 
 [Wordpress.org](https://wordpress.org/) Wordpress is easy to use to build simple and responsive sites. There are differences between Wordpress.com and Wordpress.org that make Wordpress.com better if you don't know anything about developing websites. As an experienced developer and programmer you're better off using/learning Wordpress.org. High demand for wordpress skills in freelancing if you're interested in going that route, generally to accomplish something simple or help less experienced developers with	their wordpress sites but also sometimes for creation and development of a fully featured site.
 
-##Freelancing
+## Freelancing
 
 Freelancing is a great way to both gain experience that you can potentially add to your resume and/or portfolio, and also to learn new skills and take on new projects that you may not have considered tackling before. Additionally, theres the added benefits (not to say there aren't also drawbacks) of being in charge of your own schedule,your own work location and essentially being your own boss (although you'll still often be at the mercy of the desires of the client).
 
@@ -98,7 +98,7 @@ There are several websites and options to consider when approaching freelancing,
 
 
 
-##Meetups and Networking
+## Meetups and Networking
 
 Meetups and Networking?!?! But I became a programmer so I could speak the language of computers instead of people right? Maybe, it honestly depends what kind of job you're interested in. Chances are pretty good though that no matter what job you get though you'll still have to talk to people every once in a while.
 
