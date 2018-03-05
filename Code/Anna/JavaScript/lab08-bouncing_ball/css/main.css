@@ -4,7 +4,7 @@
 
 body, html {
     height: 100%;
-    background-color: #171036;
+    background-color: #171036 !important;
 }
 
 #cnv {
@@ -57,4 +57,25 @@ canvas {
 
 .white:active {
     background-color: #DEE2E3;
+}
+
+.form-group {
+    border-radius: 3px;
+    border: none;
+    width: 100px;
+    height: 100px;
+    display: block;
+    color: #fff;
+    z-index: 100;
+    margin: 20px;
+    font-family: 'Ubuntu Mono', monospace;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form-control {
+    color: #171036;
+    font-family: 'Ubuntu Mono', monospace;
+    text-align: center;
+    cursor: pointer;
 }

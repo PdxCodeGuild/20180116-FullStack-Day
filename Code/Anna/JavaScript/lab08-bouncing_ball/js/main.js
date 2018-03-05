@@ -8,16 +8,36 @@ let running = false;
 let start = document.querySelector('#bt-start');
 let stop = document.querySelector('#bt-stop');
 let reset = document.querySelector('#bt-reset');
+let key = document.querySelector('#bt-key');
 
 // make musics!
 //create a synth and connect it to the master output
 let pingPong = new Tone.PingPongDelay("4n", 0.2).toMaster(); // add ping-pong delay on one synth
+let reverb = new Tone.JCReverb(0.5).connect(Tone.Master); // add reverb to the other synth
 let wallSynth1 = new Tone.DuoSynth().connect(pingPong);
-let wallSynth2 = new Tone.DuoSynth().toMaster();
+let wallSynth2 = new Tone.DuoSynth().connect(reverb);
 
 // for the musics
-// noteArray = ['C#4', 'D4', 'E4', 'F#4', 'G#4', 'A#4', 'B4', 'C#5', 'C#3', 'D3', 'E3', 'F#3', 'G#3', 'A#3', 'B3', 'A#2', 'A#5', 'D5', 'F#5'];
-noteArray = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3', 'A2', 'A5', 'D5', 'F5'];
+let noteArray = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3', 'A2', 'A5', 'D5', 'F5'];
+
+function chooseKey() {
+    console.log(key.value);
+    let chosenKey = key.value;
+    if (chosenKey === 'C') {
+        noteArray = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3', 'A2', 'A5', 'D5', 'F5'];
+    } else if (chosenKey === 'A') {
+        noteArray = ['C#4', 'D4', 'E4', 'F#4', 'G#4', 'A#4', 'B4', 'C#5', 'C#3', 'D3', 'E3', 'F#3', 'G#3', 'A#3', 'B3', 'A#2', 'A#5', 'D5', 'F#5'];
+    } else if (chosenKey === 'G') {
+        noteArray = ['C4', 'D4', 'E4', 'F#4', 'G4', 'A4', 'B4', 'C5', 'C3', 'D3', 'E3', 'F#3', 'G3', 'A3', 'B3', 'A2', 'A5', 'D5', 'F5', 'G5', 'G2'];
+    } else if (chosenKey === 'Bb') {
+        noteArray = ['D#2', 'C4', 'D#4', 'E4', 'F4', 'G4', 'A#4', 'C5', 'C3', 'D#3', 'E3', 'F3', 'G3', 'A#3', 'A#2', 'A#5', 'D5', 'D#5'];
+    }
+}
+
+// dropdown button
+key.addEventListener('click', function() {
+    chooseKey();
+});
 
 // define the Ball class
 class Ball {
@@ -28,6 +48,7 @@ class Ball {
 		this.vy = (2*Math.random()-1)*10;
 		this.radius = ((5*Math.random()-1)*10)+10;
 		this.color = '#'+Math.random().toString(16).substr(-6);
+		this.volume = new Tone.Volume(this.radius/4); // bases the volume of each ball on its radius, but /4 because otherwise it's loud AF
 	}
 	draw(ctx) {
 		ctx.beginPath();
@@ -47,7 +68,6 @@ function clear() {
 // resets the canvas
 function allClear() {
 	ctx.clearRect(0,0, canvas.width, canvas.height);
-	makeBalls();
 }
 
 // make more balls!
@@ -80,10 +100,12 @@ function move() {
 		if (balls[i].y + balls[i].vy > canvas.height || balls[i].y + balls[i].vy < 0) {
 			balls[i].vy = -balls[i].vy;
 			wallSynth1.triggerAttackRelease(note1, '8n');
+			wallSynth1.chain(balls[i].volume, Tone.Master);
 		}
 		if (balls[i].x + balls[i].vx > canvas.width || balls[i].x + balls[i].vx < 0) {
 			balls[i].vx = -balls[i].vx;
 			wallSynth2.triggerAttackRelease(note2, '8n');
+			wallSynth2.chain(balls[i].volume, Tone.Master);
 		}
 	}
 	raf = window.requestAnimationFrame(move);
