@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        #main {
+            position:absolute;
+            opacity: 1;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="main">
+
+</div>
+
+
+<script>
+
+    let r1 = Math.floor(Math.random() * 256);
+    let g1 = Math.floor(Math.random() * 256);
+    let b1 = Math.floor(Math.random() * 256);
+    let r2 = Math.floor(Math.random() * 256);
+    let g2 = Math.floor(Math.random() * 256);
+    let b2 = Math.floor(Math.random() * 256);
+    let main = document.querySelector('#main');
+    let color1_string = 'rgb(' + r1 + ', ' + g1 + ', ' + b1 + ')';
+    let color2_string = 'rgb(' + r2 + ', ' + g2 + ', ' + b2 + ')';
+    let r1_step = [-1,1][Math.floor(Math.random() * 2)];
+    let g1_step = [-1,1][Math.floor(Math.random() * 2)];
+    let b1_step = [-1,1][Math.floor(Math.random() * 2)];
+    let r2_step = [-1,1][Math.floor(Math.random() * 2)];
+    let g2_step = [-1,1][Math.floor(Math.random() * 2)];
+    let b2_step = [-1,1][Math.floor(Math.random() * 2)];
+
+    requestAnimationFrame(rotateColor);
+
+    function rotateColor () {
+        if (r1 + r1_step < 0) {
+            r1_step = 1;
+        } else if (r1 + r1_step > 255) {
+            r1_step = -1;
+        }
+        if (b1 + b1_step < 0) {
+            b1_step = 1;
+        } else if (b1 + b1_step > 255) {
+            b1_step = -1;
+        }
+        if (g1 + g1_step < 0) {
+            g1_step = 1;
+        } else if (g1 + g1_step > 255) {
+            g1_step = -1;
+        }
+
+        r1 += r1_step;
+        g1 += g1_step;
+        b1 += b1_step;
+
+        color1_string = 'rgb(' + r1 + ', ' + g1 + ', ' + b1 + ')';
+
+        if (r2 + r2_step < 0) {
+            r2_step = 1;
+        } else if (r2 + r2_step > 255) {
+            r2_step = -1;
+        }
+        if (b2 + b2_step < 0) {
+            b2_step = 1;
+        } else if (b2 + b2_step > 255) {
+            b2_step = -1;
+        }
+        if (g2 + g2_step < 0) {
+            g2_step = 1;
+        } else if (g2 + g2_step > 255) {
+            g2_step = -1;
+        }
+
+        r2 += r2_step;
+        g2 += g2_step;
+        b2 += b2_step;
+
+        color2_string = 'rgb(' + r2 + ', ' + g2 + ', ' + b2 + ')';
+
+
+
+        main.setAttribute('style', 'background: radial-gradient(' + color1_string + ',' + color2_string + ')');
+        requestAnimationFrame(rotateColor);
+    }
+
+</script>
+</body>
