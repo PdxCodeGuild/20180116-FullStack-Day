@@ -49,19 +49,24 @@ class Animal {
 
 class Dog extends Animal {
     constructor(legs = 4, sound = 'ruff') {
-        super(legs);
+        super(legs); // invoke the parent class's constructor
         this.sound = sound;
     }
 
     bark() {
         console.log(this.sound);
     }
+    
+    move() { // override the parent method
+      super.move(); // call the parent method (optional)
+      console.log('dog moving');
+    }
 }
 
 let myDog = new Dog(4);
 
 console.log(myDog.legs); // logs 4
-myDog.move(); // logs 'walk'
+myDog.move(); // logs 'walk', 'dog moving'
 myDog.bark(); // logs 'ruff'
 ```
 
