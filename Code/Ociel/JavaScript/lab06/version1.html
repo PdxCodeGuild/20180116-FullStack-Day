@@ -1,0 +1,62 @@
+<!--Create a page which randomly re-directly to another. Create an array of urls (as strings), -->
+<!--and randomly pick one using Math.random(). Then redirect to the page using window.location.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+#timer_display {
+    position:center;
+    font-size: 50px;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    line-height: 500px;
+    background-color: blue;
+    border-radius: 50%;
+    border:40px black solid;
+    text-align: center;
+
+
+}
+</style>
+<body>
+
+
+<div id="timer_display"></div>
+
+
+<script>
+
+    let timer_display = document.querySelector('#timer_display');
+
+
+    function display_timer(){
+        let time = new Date();
+        let hour = time.getHours();
+        let minutes = time.getMinutes();
+        let seconds = time.getSeconds();
+
+        minutes = check_for_less_than_10(minutes);
+        seconds = check_for_less_than_10(seconds);
+
+        timer_display.innerHTML = hour+ ":" + minutes+ ":"  + seconds;
+        //This will change it every single time
+        window.requestAnimationFrame(display_timer);
+    }
+
+    function check_for_less_than_10(number) {
+        if (number < 10){
+            return '0' + number;
+        }
+        return number;
+    }
+
+    display_timer();
+
+</script>
+</body>
+</html>
