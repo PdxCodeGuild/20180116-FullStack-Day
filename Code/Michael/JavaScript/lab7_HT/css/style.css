@@ -1,0 +1,22 @@
+span {
+  min-width: 5px;
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 1.5px;
+  color: #FFF;
+}
+
+body {
+  background: #111;
+  position: relative;
+}
+
+body, html {
+   height: 100%;
+}
+
+.text {
+  overflow: hidden;
+  height: auto;
+}
