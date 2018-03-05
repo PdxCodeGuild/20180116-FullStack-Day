@@ -17,7 +17,6 @@ let wallSynth2 = new Tone.DuoSynth().toMaster();
 
 // for the musics
 // noteArray = ['C#4', 'D4', 'E4', 'F#4', 'G#4', 'A#4', 'B4', 'C#5', 'C#3', 'D3', 'E3', 'F#3', 'G#3', 'A#3', 'B3', 'A#2', 'A#5', 'D5', 'F#5'];
-
 noteArray = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3', 'A2', 'A5', 'D5', 'F5'];
 
 // define the Ball class
@@ -48,6 +47,7 @@ function clear() {
 // resets the canvas
 function allClear() {
 	ctx.clearRect(0,0, canvas.width, canvas.height);
+	makeBalls();
 }
 
 // make more balls!
@@ -89,7 +89,7 @@ function move() {
 	raf = window.requestAnimationFrame(move);
 }
 
-start.addEventListener('click', function(e) {
+start.addEventListener('click', function() {
     console.log('starting animation');
     if (!running) {
         raf = window.requestAnimationFrame(move);
@@ -97,18 +97,18 @@ start.addEventListener('click', function(e) {
     }
 });
 
-stop.addEventListener('click', function(e) {
+stop.addEventListener('click', function() {
     console.log('stopping animation');
     window.cancelAnimationFrame(raf);
     running = false;
 });
 
-reset.addEventListener('click', function(e) {
+reset.addEventListener('click', function() {
     console.log('resetting animation');
     allClear();
     window.cancelAnimationFrame(raf);
     running = false;
-    let balls = makeBalls();
+    balls = makeBalls();
 });
 
 
