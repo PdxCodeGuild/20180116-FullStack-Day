@@ -76,12 +76,12 @@
 
         draw (){
             if (this.px + this.vx > width - this.radius || this.px + this.vx < this.radius){
-                this.vx *= (-1 * .5);
+                this.vx *= -1;
                 this.playSound();
             }
 
             if (this.py + this.vy > height - this.radius || this.py + this.vy < this.radius){
-                this.vy *= (-1 * .5);
+                this.vy *= (-1 * .7);
                 this.playSound();
             }
             this.px += this.vx;
@@ -118,6 +118,7 @@
     function drawBalls(){
         main_ctx.clearRect(0, 0, width, height);
         for (let i = 0; i < number_of_balls; i++){
+            balls[i].vy += 0.01;
             balls[i].draw();
         }
         window.requestAnimationFrame(drawBalls);
