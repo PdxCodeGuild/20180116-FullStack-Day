@@ -28,6 +28,9 @@
     background-color: lightgrey;
     height:auto;
 }
+#finished>li {
+    text-decoration:line-through;
+}
 html {
     background-color: gainsboro;
 }
