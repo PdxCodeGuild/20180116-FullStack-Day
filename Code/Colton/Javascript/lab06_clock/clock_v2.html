@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <style>
+
+        time {
+            align-content: center;
+            font-size: 150px;
+        }
+
+        button {
+            height: 90px;
+            width: 90px;
+            margin: 50px;
+            font-weight: bolder;
+        }
+        button:hover {
+            background-color: #00C853;
+        }
+        #stop:hover {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<p id="time_display"></p><time>00:00:00:00</time></p><br>
+<div id="push_things">
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <button id="lap">LAP</button>
+    <button id="reset">RESET</button>
+</div>
+
+<ul id="laps">Laps</ul>
+
+<script>
+    let start_button = document.getElementById('#start');
+    let stop_button = document.getElementById('#stop');
+    let lap_button = document.getElementById('#lap');
+    let reset_button = document.getElementById('#reset');
+    let timer = event.setHours(0,0,0,0);
+
+</script>
+</body>
+</html>

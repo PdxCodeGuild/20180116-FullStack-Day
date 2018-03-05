@@ -1,0 +1,30 @@
+<!--Create a page which randomly redirectly to another. Create an array of urls (as strings), -->
+<!--and randomly pick one using Math.random(). Then redirect to the page using window.location.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+
+</style>
+<body>
+<button id="random_url_btn">Go to Random URL</button>
+
+<script>
+    let random_url = ['https://www.google.com', 'https://www.w3schools.com', 'https://www.facebook.com'];
+    let random_url_btn = document.querySelector('#random_url_btn');
+
+    let random_index = Math.floor(Math.random() * random_url.length);
+    let picked_url = random_url[random_index];
+
+    random_url_btn.onclick = function () {
+        window.location.assign(picked_url);
+    };
+
+
+
+
+</script>
+</body>
+</html>

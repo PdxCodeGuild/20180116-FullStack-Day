@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portlfolio</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css"/>
+</head>
+
+<body>
+    <nav>
+        <button id="b4" class="menu_item" onclick="dropDown()" href="#resume">Resume</button>
+        <button id="b3" class="menu_item" onclick="dropDown()" href="#projects">Projects</button>
+        <button id="b2" class="menu_item" onclick="dropDown()" href="#about">About</button>
+        <button id="b1" class="menu_item" onclick="dropDown()" href="#home">Home</button>
+        <button id="b0" class="menu_button" onclick="dropDown()" href="#menu">Menu</button>
+    </nav>
+
+
+<div class="bckgrnd1">
+    <div class="bckgrnd2">
+    </div>
+</div>
+
+<script>
+    function dropDown() {
+        document.getElementById("b1").classList.toggle('open');
+        document.getElementById("b2").classList.toggle('open');
+        document.getElementById("b3").classList.toggle('open');
+        document.getElementById("b4").classList.toggle('open');
+    }
+</script>
+
+
+</body>
+</html>

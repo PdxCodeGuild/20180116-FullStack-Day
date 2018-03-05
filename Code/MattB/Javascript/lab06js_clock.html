@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <div id="display_div"></div>
+        <script>
+            let display_div = document.querySelector('#display_div');
+
+            function get_time () {
+                let date = new Date();
+                let sec = date.getSeconds();
+                let min = date.getMinutes();
+                let hour = date.getHours();
+                if (sec < 10) {
+                    sec = '0' + sec;
+                }
+                if (min < 10) {
+                    min = '0' + min;
+                }
+                if (hour < 10) {
+                    hour = '0' + hour;
+                }
+                display_div.innerHTML = hour + ':' + min + ':' + sec;
+            }
+
+            setInterval(get_time, 500);
+
+        </script>
+    </body>
+</html>
