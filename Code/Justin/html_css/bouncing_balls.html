@@ -60,13 +60,6 @@
     let main_canvas = document.querySelector('#main_canvas');
     let main_ctx = main_canvas.getContext('2d');
 
-    let ball_list = document.querySelector('#ball_list');
-
-    let slider_list = document.querySelector('#slider_list');
-    let hue_slider = document.querySelector('#color_slider');
-    let speed_slider = document.querySelector('#speed_slider');
-    let radius_slider = document.querySelector('#size_selector')
-
     class Ball{
         constructor(i, x, y, radius, hue) {
             this.id = i;
@@ -83,12 +76,12 @@
 
         draw (){
             if (this.px + this.vx > width - this.radius || this.px + this.vx < this.radius){
-                this.vx *= -1;
+                this.vx *= (-1 * .5);
                 this.playSound();
             }
 
             if (this.py + this.vy > height - this.radius || this.py + this.vy < this.radius){
-                this.vy *= -1;
+                this.vy *= (-1 * .5);
                 this.playSound();
             }
             this.px += this.vx;
@@ -115,51 +108,10 @@
         return ball;
     }
 
-    function makeBallList(){
-        for (let i = 0; i < number_of_balls; i++) {
-            let li = document.createElement('li');
-            li.setAttribute('id', 'ball_i.toString()');
-            li.addEventListener("click", selectBall);
-            ball_list.appendChild(li);
-
-            let list_canvas = document.createElement('canvas');
-            list_canvas.setAttribute('width', '20px');
-            list_canvas.setAttribute('height', '20px');
-            li.appendChild(list_canvas);
-
-            let list_ctx = list_canvas.getContext('2d');
-            list_ctx.beginPath();
-            list_ctx.arc(10, 10, balls[i].radius, 2 * Math.PI, false);
-            list_ctx.fillStyle = balls[i].color;
-            list_ctx.fill();
-        }
-    }
-
-    function selectBall(){
-        let index = parseInt(this.id);
-        for (let i = 0; i < number_of_balls; i++){
-            let li = document.querySelector('#' + i);
-            if (li.classList.contains("on")){
-                li.classList.remove("on")
-            }
-            if (balls[i].selected){
-                balls[i].selected = false;
-            }
-        }
-        this.classList.add("on");
-        balls[index].selected = true;
-        alert(balls[index].radius);
-        hue_slider.value = balls[index].hue;
-        radius_slider.value = balls[index].radius;
-        speed_slider.value = balls[index].speed;
-
-    }
-
     function init(){
-        for (let i = 0; i < number_of_balls; i++){
+        for (let i = 0; i < number_of_balls; i++) {
             balls.push(makeBall(i))
         }
-        makeBallList();
         window.requestAnimationFrame(drawBalls);
     }
 
