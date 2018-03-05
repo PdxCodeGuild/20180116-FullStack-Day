@@ -1,13 +1,14 @@
 
-
-
-
+# Capstone Ideas
 
 ## General Capstone Ideas
 
 - Blog
 - Dating Site
-
+- Twitter Clone
+- Codepen/JSFiddle Clone
+- Stack Overflow Clone
+- Chatting App
 
 ## Past Capstones
 
@@ -22,7 +23,7 @@
 - **Viewsic** connects to your Spotify account to show the artists, genres, and songs you play most often. It also shows the overall scores of your music by happiness, dancibility, and energy, and compares them to the average. By Matthew. [screenshot 1](Past%20Capstone%20Screenshots/viewsic01-cover.png) [2](Past%20Capstone%20Screenshots/viewsic02-top_artists.png) [3](Past%20Capstone%20Screenshots/viewsic03-genres.png) [4](Past%20Capstone%20Screenshots/viewsic04-top_songs.png) [5](Past%20Capstone%20Screenshots/viewsic05-popularity.png) [6](Past%20Capstone%20Screenshots/viewsic06-valence_index.png) [repo](https://github.com/Matt-Brown503/viewsic)
 
 
-## 20171003 Full Stack Day
+### 20171003 Full Stack Day
 
 - **Molecule**: group messaging, with login and group management. By Zia Dawn. [repo](https://github.com/ziadawn/Capstone)
 - **Hauto**: browse vehicle parts by make, model, system, and manufacturer. By Allen Matasy. [repo](https://github.com/Spitfire22/hauto)
@@ -37,8 +38,25 @@
 
 ### 20170724 Full Stack Night
 
-- **Food Access** By Jessica Pavlinko [screenshot 1](Past%20Capstone%20Screenshots/food_access0.png), [2](Past%20Capstone%20Screenshots/food_access1.png), [3](Past%20Capstone%20Screenshots/food_access2.png), [repo](https://github.com/jpavs1010/pdxcodeguild/tree/master/capstone_project)
-- **Brain Exchange** by Rudolph Valentine [screenshot 1](Past%20Capstone%20Screenshots/brain_exchange1.png), [repo](https://github.com/IcarusSprite/profile/tree/master/Capstone)
-- **Space Explorer** by Samantha Moad [repo](https://github.com/smoad/pdxcodeguild/tree/master/capstone/capstonesite)
+- **Food Access** a site which uses d3.js to visualize food access with a choropleth map. It loads an XLSX from [the Food Environment Atlas from the USDA Economic Research Service](https://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads/) into a database. The front page then loads the data from the database via AJAX and uses it to populate the map. The front page has a drop-down to select which variable to visualize. There's another page to visualize the correlation matrix between the various variables, and another to see a scatter plot between two selected variables. By Jessica Pavlinko. [screenshot 1](Past%20Capstone%20Screenshots/food_access0.png), [2](Past%20Capstone%20Screenshots/food_access1.png), [3](Past%20Capstone%20Screenshots/food_access2.png), [repo](https://github.com/jpavs1010/pdxcodeguild/tree/master/capstone_project)
+- **Brain Exchange** a site which matches teachers and students. When users register on the site, they list which skills they know (and are willing to teach) and which skills they want to learn. After registering, the user is matched up with those who can teach what they want to learn, and learn what they want to teach. By Rudolf Valentine [screenshot 1](Past%20Capstone%20Screenshots/brain_exchange1.png), [repo](https://github.com/IcarusSprite/profile/tree/master/Capstone)
+- **Space Explorer** a game in d3.js like Flappy Bird, except you're an astronaut dodging asteroids and collecting space crystals. The user enters their name at the start, and when they finish, their score is entered into a table of high scores. By Samantha Moad. [repo](https://github.com/smoad/pdxcodeguild/tree/master/capstone/capstonesite)
 
 
+### 20170626 Day Class
+
+- Musilux: you can upload a midi file, the application will parse it and begin playing the notes (audio) while displaying the notes played on a keyboard. By Roger Scherer.
+
+
+
+<!--
+By Robert Shiple.
+By Chris Hayden.
+By Cynthia Prevatte.
+-->
+
+### Other Past Capstones
+
+- Disc Caddy is a Django based app that allows disc golfers to keep a virtual version of their disc bag, search local courses, and to see and provide updates on course conditions. You can also check-in to a hole, rate it for playability, leave comments, and post your score. Users can leave comments on a friends' check-in, or just give them a high five. If you provide your score and what disc you threw, Disc Caddy will offer disc suggestions based on what is in your bag and how your score is trending.  By Kasey Watters
+
+- RunAround is a GeoDjango project that automatically builds runs for you based on the most popular runs for your area. You can find safe, popular runs even when you're in new cities or spots you aren't familiar with. It utilizes the Strava API to grab the most popular segments, decomposes them into points ranked by popularity, and then sends those points to the Google Maps API to build a route. Finally, when you've selected the run you'd like, it texts the route to you so you can open it in Google Maps for hands-free turn-by-turn directions on your phone while you run. By Michael Jolliffe

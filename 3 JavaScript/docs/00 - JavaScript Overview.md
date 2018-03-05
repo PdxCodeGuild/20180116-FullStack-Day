@@ -3,7 +3,7 @@
 
 ## Intro
 
-JavaScript is a front-end language, written in `<script>` tags or in external `.js` files, and run by an interpreter in the browser. You can find more info in JavaScript [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) and [here](https://www.w3schools.com/js/default.asp). 
+JavaScript is a front-end language, written in `<script>` tags or in external `.js` files, and run by an interpreter in the browser. You can find more info in JavaScript [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) and [here](https://www.w3schools.com/js/default.asp). You can view a list of JavaScript frameworks [here](../../Libraries%20and%20Frameworks.md#javascript-frameworks).
 
 JavaScript has become the de-factor standrard for front-end. There used to be Flash (which had a JavaScript-like language called ActionScript), Java Applets, and Microsoft's Silverlight. But with the development of stronger standards for JavaScript and the discovery of security holes in the other frameworks, browsers began dropping support.
 
@@ -47,35 +47,6 @@ JavaScript can also be written in-line.
 ```html
 <button onclick="alert('Hello World!');">click me</button>
 ```
-
-## JavaScript Frameworks
-
-#### General UI
-
-- [AngularJS](https://angularjs.org/)
-- [Angular](https://angular.io/)
-- [React](https://facebook.github.io/react/)
-- [Vue.js](https://vuejs.org/)
-- [Ember.js](https://www.emberjs.com/)
-- [Riot.js](http://riotjs.com/)
-
-#### Data Visualization
-
-- [D3](https://d3js.org/)
-- [Chart.js](http://www.chartjs.org/)
-- [Dygraph](http://dygraphs.com/)
-- [Vega](https://vega.github.io/vega/)
-
-#### 3D Graphics
-
-- [three.js](https://threejs.org/)
-- [A-Frame](https://aframe.io/)
-
-#### Games
-
-- [Phaser](https://phaser.io/)
-- [Babylon.js](http://www.babylonjs.com/)
-
 
 
 ## JavaScript Preprocessors
