@@ -1,0 +1,66 @@
+
+
+<html>
+<head>
+    <script type="text/javascript" src="api_demo1_secrets.js"></script>
+    <script>
+
+        window.onload = function() {
+            let container = document.querySelector('container');
+
+            let photo_ids = document.querySelector('#photo_ids');
+            function http_get(url, success) {
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        let data = JSON.parse(xhttp.responseText);
+                        success(data);
+                    }
+                };
+                xhttp.open("GET", url);
+                xhttp.send();
+            }
+
+
+            let url_user_photos = 'https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key='+flickr_api_key+'&user_id=23175884@N05&format=json&nojsoncallback=1';
+            http_get(url_user_photos, function(data) {
+                let photos = data.photos.photo;
+                // for (let i=0; i<photos.length; ++i) {
+                //     let li = document.createElement('li');
+                //     li.innerText = photos[i].title + ' - ' + photos[i].id;
+                //     photo_ids.appendChild(li);
+                // }
+                for (let i=0; i<photos.length; ++i) {
+                    let photo_id = photos[i].id;
+                    let url_get_photo_sizes = 'https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key='+flickr_api_key+'&photo_id='+photo_id+'&format=json&nojsoncallback=1';
+                    http_get(url_get_photo_sizes, function(data) {
+                        let photo_url = data.sizes.size[data.sizes.size.length-1].source;
+
+                        let a_element = document.createElement('a');
+                        img_element.setAttribute(a_element);
+
+
+
+                    });
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="container">
+    <a href=""><img src="https://farm4.staticflickr.com/3322/3434020443_6b7e54694e_s.jpg"/></a>
+    <a href=""><img src="https://farm4.staticflickr.com/3322/3434020443_6b7e54694e_s.jpg"/></a>
+    <a href=""><img src="https://farm4.staticflickr.com/3322/3434020443_6b7e54694e_s.jpg"/></a>
+    <a href=""><img src="https://farm4.staticflickr.com/3322/3434020443_6b7e54694e_s.jpg"/></a>
+    <a href=""><img src="https://farm4.staticflickr.com/3322/3434020443_6b7e54694e_s.jpg"/></a>
+    <a href=""><img src="https://farm4.staticflickr.com/3322/3434020443_6b7e54694e_s.jpg"/></a>
+</div>
+
+
+
+    <ul id="photo_ids"></ul>
+</body>
+</html>
