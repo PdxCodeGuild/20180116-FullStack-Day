@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Toc</title>
+</head>
+<body>
+<div><span id="hook"></span></div>
+<div><time id="stopIt"></time></div>
+<button id="start">START</button>
+<button id="stop">STOP</button>
+<br/>
+<button id="clear">CLEAR</button>
+<button id="lap">LAP</button>
+<div id="output"></div>
+
+<style>
+
+</style>
+
+<script>
+    setInterval(function () {
+        let date = new Date()
+        let date_str = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear() + '--->' + date.getHours()
+            + ':' + date.getMinutes() + '.' + date.getSeconds();
+        document.querySelector('#hook').innerText = date_str;
+    }, 500)
+
+    let stopIt = document.querySelector('#stopIt'),
+        start = document.querySelector('#start'),
+        stop = document.querySelector('#stop'),
+        clear = document.querySelector('#clear'),
+        seconds = 0,
+        minutes = 0,
+        hours = 0,
+        t,
+        prev_hours = 0,
+        prev_minutes = 0,
+        prev_seconds = 0;
+
+
+
+    function add() {
+            seconds++;
+            if (seconds >= 60) {
+                seconds = 0;
+                minutes++;
+                if (minutes >= 60) {
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+
+        stopIt.innerText =
+            (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" +
+            (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" +
+            (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00");
+
+        timer();
+    }
+
+    function timer() {
+        t = setTimeout(add, 1000);
+    }
+
+
+
+    /* Start button */
+    start.onclick = timer;
+
+
+    /* Stop button */
+    stop.onclick = function () {
+        clearTimeout(t);
+    }
+
+    /* Clear button */
+    clear.onclick = function clear () {
+
+        stopIt.innerText = "00:00:00";
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        let outputs = document.querySelector('#output');
+        while (outputs.hasChildNodes()) {
+            outputs.removeChild(outputs.lastChild);
+        }
+    }
+
+    /* Lap button */
+    lap.onclick = function() {
+        let laps = document.createElement("div");
+        let outputs = document.querySelector('#output');
+        laps.innerText = Math.abs(hours - prev_hours).toString() + ":" + Math.abs(minutes - prev_minutes).toString() + ":" + Math.abs(seconds - prev_seconds).toString();
+        outputs.appendChild(laps);
+        prev_hours = hours;
+        prev_minutes = minutes;
+        prev_seconds = seconds;
+    }
+
+</script>
+</body>
+</html>

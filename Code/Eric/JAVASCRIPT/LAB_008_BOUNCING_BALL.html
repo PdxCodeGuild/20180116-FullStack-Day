@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LAB 008 BOUNCING BALL</title>
+</head>
+<body>
+
+<h1><span>super bounce!</span></h1>
+<canvas id="canvas" width="500" height="500" style="border: 2px solid black;"></canvas>
+<br>
+<p>click button to throw again!</p>
+<button id="bt_throw">throw again!</button>
+
+<script>
+	// canvas go!
+	let canvas = document.getElementById('canvas'); // canvas
+	let ctx = canvas.getContext('2d'); // context
+
+	// ball specs
+	let positionX = Math.random() * canvas.width; // x position random
+	let positionY = Math.random() * canvas.height; // y position random
+	let radius = 15; // radius
+	let gravity = .2; // gravity
+	let damping = .9;
+	let traction = .8;
+
+	let velocityX = 2; // x movement increment per framerate
+	let velocityY = -2; // y movement increment per framerate
+
+	// ball funk
+	let ball = function() {
+		// draw ball
+		ctx.beginPath();
+		ctx.arc(positionX, positionY, radius, 0, 2 * Math.PI);
+		ctx.fillStyle = 'indigo';
+		ctx.fill();
+		ctx.closePath();
+	};
+
+	// move funk
+	function move() {
+	    ctx.clearRect(0, 0, canvas.width, canvas.height); // clear frame every redraw
+		ball();
+		positionX += velocityX; // add movement increment to position x
+		positionY += velocityY; // add movement increment to position y
+		// left & right bounce + grav + fric
+		if (positionX + radius >= canvas.width) {
+	    velocityX = -velocityX * damping;
+	    positionX = canvas.width - radius;
+		} else if (positionX - radius <=0) {
+		    velocityX = -velocityX * damping;
+		    positionX = radius;
+		} // top & bottom bounce + grav + fric
+		if (positionY + radius >= canvas.height) {
+		    velocityY = -velocityY * damping;
+		    positionY = canvas.height - radius;
+		    velocityX *= traction;
+		} else if (positionY - radius <= 0) {
+		    velocityY = -velocityY * damping;
+		    positionY = radius;
+		}
+		velocityY += gravity; // Y axis movement to account for gravity at all times
+
+		positionX += velocityX; // adjust position x to movement x
+		positionY += velocityY; // adjust position y to movement y
+
+	}
+	setInterval(move, 10); // ball move every amount of ms
+
+
+	let bt_throw = document.getElementById('bt_throw');
+	bt_throw.onclick = function() {
+	    location.reload();
+	}
+
+
+
+
+	// v1 bounce conditions
+	// left & right bounce
+	/* if (positionX + movementX < radius || positionX + movementX > canvas.width - radius) {
+		    movementX = -movementX;
+		}
+		// top & bottom bounce
+		if (positionY + movementY < radius || positionY + movementY > canvas.height - radius) {
+	    movementY = -movementY;
+		} */
+</script>
+
+</body>
+</html>

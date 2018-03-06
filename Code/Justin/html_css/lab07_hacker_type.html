@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Type</title>
+
+</head>
+
+<body>
+
+<textarea id="display_window" cols="70" rows="25" value=""></textarea>
+<script>
+
+    let string = "ab cdefghijklmn opqrstuvwxyz1234 567890!@#$ %^&*()_ +[{:;";
+
+    function showText(event) {
+        display = string[Math.floor(Math.random() * 57)] + string[Math.floor(Math.random() * 57)] +
+            string[Math.floor(Math.random() * 57)]
+
+        display_window.value += display;
+        event.preventDefault();
+
+    }
+
+    let display_window = document.querySelector('#display_window');
+    console.log(display_window);
+    display_window.addEventListener("keypress", showText);</script>
+</body>
