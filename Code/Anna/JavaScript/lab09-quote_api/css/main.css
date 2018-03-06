@@ -1,0 +1,166 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background:-webkit-linear-gradient( #b2d8ff , #8bb5e0) !important;
+}
+
+.headDiv {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 25%;
+    padding: 20px;
+    background: white;
+    opacity: .9;
+    color: #222;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+}
+
+.btn {
+    margin-top: 2vh;
+}
+
+.headDiv h1 {
+    font-size: 4vw;
+}
+
+#quote{
+    position: relative;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40%;
+    padding: 20px;
+    background: white;
+    opacity: .9;
+    color: #222;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 400;
+}
+
+
+input[type="text"] {
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding: 6px;
+    font-size: 18px;
+    min-width: 50%;
+    text-transform: uppercase;
+    top: 30px;
+    left: 130px;
+    background: none;
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ************************************************************ */
+/* pure CSS clouds from: https://codepen.io/pip36/pen/dZywVB */
+/* ************************************************************ */
+
+.clouds-container{
+  position: relative;
+  height:100vh;
+  padding-top: 200px;
+  overflow: hidden;
+}
+
+.cloud{
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background: white;
+    border-radius: 100px;
+    border-bottom: 3px solid grey;
+    left: -20%;
+    opacity: .6;
+}
+.cloud::before{
+    content: '';
+    position: absolute;
+    width:50%;
+    height:150%;
+    left:13%;
+    top: -60%;
+    background:white;
+    background: -webkit-linear-gradient(#e6f0f2, white 30%);
+    background: -o-linear-gradient(#e6f0f2, white 30%);
+    background: -moz-linear-gradient(#e6f0f2, white 30%);
+    background: linear-gradient(#e6f0f2, white 30%);
+    border-radius: 50%;
+}
+.cloud::after{
+  content: '';
+  position: absolute;
+  width:30%;
+  height:80%;
+  right:15%;
+  top: -25%;
+  background:white;
+  background: -webkit-linear-gradient(#e6f0f2, white 20%);
+  background: -o-linear-gradient(#e6f0f2, white 20%);
+  background: -moz-linear-gradient(#e6f0f2, white 20%);
+  background: linear-gradient(#e6f0f2, white 20%);
+  border-radius: 50%;
+}
+.cloud .shadow {
+	width: 80%;
+	position: absolute;
+  bottom: -10%;
+  left:5%;
+	z-index: -1;
+	box-shadow: 0 0 20px 6px rgba(0, 0, 0, 0.4);
+	border-radius: 50%;
+}
+
+.is-small{
+  width: 75px;
+  height: 25px;
+}
+.is-medium{
+  width: 150px;
+  height: 50px;
+}
+.is-large{
+  width: 240px;
+  height: 80px;
+}
+
+.slow{
+  -o-animation: float 45s infinite linear;
+  -moz-animation: float 45s infinite linear;
+  -webkit-animation: float 45s infinite linear;
+  animation: float 45s infinite linear;
+}
+.medium{
+  -o-animation: float 35s infinite linear;
+  -moz-animation: float 35s infinite linear;
+  -webkit-animation: float 35s infinite linear;
+  animation: float 35s infinite linear;
+}
+.fast{
+  -o-animation: float 25s infinite linear;
+  -moz-animation: float 25s infinite linear;
+  -webkit-animation: float 25s infinite linear;
+  animation: float 25s infinite linear;
+}
+
+.delay{
+  animation-delay: 7s;
+}
+
+@keyframes float{
+  0% { left:-20%; }
+  100% { left:110%; }
+}
