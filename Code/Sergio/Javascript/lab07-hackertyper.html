@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Hacker Thyper</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-color: black;
+        font-family: monospace;
+    }
+
+    textarea {
+        background-color: black;
+        color: white;
+        border: 0;
+        font-family: monospace;
+
+    }
+
+    div {
+
+        position: absolute;
+        background-color: black;
+        color: lime;
+        opacity: 0.7;
+        filter: alpha(opacity=98);
+        border-style: solid;
+        border-color: red;
+    }
+
+    #binary {
+
+        position: absolute;
+        left: 100px;
+        top: 150px;
+        background-color: black;
+        color: white;
+        border: 1px;
+    }
+
+    h3 {
+        color: red;
+    }
+</style>
+<body>Welcome to Whonix Anonymous Operating System.
+<!--<div id="binary"><h3>Access Denied</h3>-->
+<!--<p>Decrypt Message, but first retrieve public key. Or better yet, <br>-->
+    <!--the private key.<br>-->
+
+        <!-- -&#45;&#45;&#45;&#45;BEGIN PGP MESSAGE-&#45;&#45;&#45;&#45;<br>-->
+
+<!--hQIMA1ok4LwNPOQRAQ/+J2Eh06zsD8tiIBl6dsO9v8N7x/cMv1W6Z3GBb8oxY9dl<br>-->
+<!--6RZl5VQ5U4Zgj0pZ9NHYIjZpv/jAW3NUikwo3WJepYLWbJOp0U1+Eef+XYrDyhkr<br>-->
+<!--KdIIBYwEzdyvhlR6+IhOm3bC3ZiJ7U5VMBbbvvCVs8T9llKQW5Jh81rFu5Pc0m8m<br>-->
+<!--rdP0bANmbVOSA+4ugLM2gC8LRQwYayn7xmE1jzycZlKndnbtJhieXepbxCex5Zjm<br>-->
+<!--lNUiNoklZ3e+YKiGkUNTKtIRCm0xGOW7NKSAUEmHtkc01rPmgEjyFXLxN8UOu5LG<br>-->
+<!--pDSVg6tmBLpF2mMeQJJmhdn+crVBcTFTBdVrEbN0ndXisrxYQwKU1FWsjeTSBOR/<br>-->
+<!--4Di3L2aOQiLW5kFXTC4+rjIFXGEKwTHjg+a7jeUR8qUcyQ+VWU6pQi0ITN32uxaD<br>-->
+<!--W9/7CzQssuWYyg5QVMp3TNGich7blESfuCyt0X56Y2mWYKuMOPI/Vs32rpTD3PfV<br>-->
+<!--Y64Vzjc42FmU4s9sYYDkK+ALVRYv+F/scCrBPqhfJNOfSrlMLz/LYtS/Cm9KONIh<br>-->
+<!--7yIYsGh+izYBU8lrAc86mUdzNVfe0xEFuRbhOBRxzWMFTwLGrLxSLMpsaP3rrBvt<br>-->
+<!--Tl/wEb1qIMnso9c/zroJbZl6k298rE7PJNBnpfSKRcc8PdK/q3RxZYeudw1CfHCM<br>-->
+<!--LgQHAwLTHwq19sKQSOHwjZevILLN1V/TEVHAr4CWZQWW9s2Yf+L3zKoXuZVbeQPS<br>-->
+<!--6QGXwD+ZBM/e2LgkfO2yTvpx1AI/WN3K/Lv/AK5+jPHrME6ZV2/izS24tcy6nKUI<br>-->
+<!--5dSC8wwYlStIeNlQnoQcJqlOabTxOCfDGkAG09CL6LxAdSKvdKIZlh7gOgivZytM<br>-->
+<!--3FfmyRHErBqujkrel54Ir7KFkRrTpzpmAw00fkTSHvkT0ZHYEQPYBVVUlnNgYDEB<br>-->
+<!--ktWw+eB57eM0EZk97aJOrdQwU2giJatnc2CejtQWqm174G3n6Dg1plAnG3nQMotW<br>-->
+<!--Hr91E+aw+SdRgu0n1rz3CvXXspE8ZAYhk6ipre+ad8jDJvtlG/SaQpdLXLlcnI6K<br>-->
+<!--/g6WXHbr7hHCPd12D8D6AtQXW9rep6ZqkvfCz+FFNqtNk0Ji/lIDW7BCh1Tk2AaO<br>-->
+<!--<p>-->
+<!-- -&#45;&#45;&#45;&#45;END PGP MESSAGE-&#45;&#45;&#45;&#45;<br>-->
+<!--</div>-->
+<textarea id="text_input" style="width:100%;height:100%" value="" onclick="removeFirstLetter()"></textarea>
+
+<script>
+
+    let pre_msg = ["Ghost Tor Activated... tots invisible now\n", "Connecting to custom VPN\n", "Initializing Packet Sniffer...\n", "DNS leak detected\n", "Scanning ports...\n", "Cracking neighbor's WIFI... IP Address detected: 192.168.1.1\n", "White House-Maincomputer:~ Trump_PC$\n", "python3", "ssh root@192.168.1.1\n", "Welcome to build Linux from scratch\n", "ls\n", "cd home/pictures/nudes/getdatcash\n", "from sys import argv\n" +
+    "from os.path import exists\n", "in_file = open(from_file)\n" +
+    "indata = in_file.read()", "input()\n" +
+    "\n" +
+    "out_file = open(to_file, 'w')\n" +
+    "out_file.write(indata)\n", "cat > crypto_private_keys.txt\n", "cmake .\n" +
+    "  make      \n" +
+    "  make install\n", "rm /home/classified/aliens.txt/*\n", "         fetching secret 12 word phrase....\n    witch collapse practice feed shame open despair creek road again ice least\n" + "sudo apt-get install virtualbox linux-headers-$(uname -r)" + "wget https://download.whonix.org/linux/13.0.0.1.4/.0.0.1.4.ova", "indices = [i for i, x in enumerate(my_list) if x == \"whatever\"\n", "import pandas as pd\n" + "import matplotlib.pyplot as plt\n" + "In [4]: s = pd.Series([1,3,5,np.nan,6,8])\n"];
+
+
+    let text_input = document.querySelector('#text_input');
+    text_input.onkeypress = function (evt) {
+
+        let index = Math.floor(Math.random() * pre_msg.length);
+        text_input.value += pre_msg[index] + " ";
+        window.scrollTo(0, document.body.textarea.scrollHeight);
+        evt.preventDefault();
+
+
+        // onkeyup, set the text area's text to everything but the last character
+        function removeFirstLetter() {
+            let str = "";
+            let res = str.substring(1, str.length - 1);
+            document.getElementById("text").innerText = res;
+        }
+    }
+
+
+</script>
+</body>
+</html>
