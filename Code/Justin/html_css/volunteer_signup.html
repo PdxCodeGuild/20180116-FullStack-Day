@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PJF Volunteer Sign-up Form</title>
+    <link rel="stylesheet" type="text/css" href="volunteer_signup.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="title">
+    <h1>2018 Portland Juggling Festival Volunteer Sign Up Form</h1>
+</div>
+
+<div class="navigation"></div>
+
+<div class="form"></div>
+<form action="https://requestb.in/1j7blhi1" method="post">
+    <fieldset>
+        <legend>Contact Information</legend>
+        First Name<br>
+        <input type="text" name="first_name" required/><br/>
+        Last Name<br>
+        <input type="text" name="last_name" required/><br/>
+        E-mail<br>
+        <input type="text" name="email" required/><br/>
+        Phone Number<br>
+        (<input id="phone1" class="phone" name="phone1" type="text" size="3" value="" maxlength="3"/>)
+        <input id="phone2" class="phone" name="phone2" type="text" size="3" value="" maxlength="3"/>&nbsp-
+        <input id="phone3" class="phone" name="phone3" type="text" size="4" value="" maxlength="4"/>
+    </fieldset>
+    <fieldset>
+        <legend>Are you a Reed College student?</legend>
+        <input type="radio" name="reedie" value="yes" required/>Yes<br/>
+        <input type="radio" name="reedie" value="no" checked/>No<br/>
+    </fieldset>
+    <fieldset>
+        <legend>Have you volunteered for the Portland Juggling Festival before?</legend>
+        <input type="radio" name="previous" value="yes" required/>Yes<br/>
+        <input type="radio" name="previous" value="no" checked/>No<br/>
+    </fieldset>
+    <fieldset>
+        <legend>Please check the times you are interested in volunteering.</legend>
+        <input type="checkbox" name="setup"/>Set-up (Friday 3pm-6pm)<br/>
+        <input type="checkbox" name="friday-evening"/>Friday Evening<br/>
+        <input type="checkbox" name="saturday-morning"/>Saturday Morning<br/>
+        <input type="checkbox" name="saturday-afternoon"/>Saturday Afternoon<br/>
+        <input type="checkbox" name="saturday-evening"/>Saturday Evening<br/>
+        <input type="checkbox" name="sunday-morning"/>Sunday Morning<br/>
+        <input type="checkbox" name="sunday-afternoon"/>Sunday Afternoon<br/>
+        <input type="checkbox" name="cleanup"/>Clean-Up (Sunday 3pm-6pm)<br/>
+    </fieldset>
+    <fieldset>
+        <legend>Any Questions or Comments?</legend>
+        Enter or your question or comments here.<br>
+        <textarea name="comment" style="width:50%;height:150px;"></textarea><br/>
+    </fieldset>
+    <button type="submit">Submit Form</button>
+</form>
+</body>
