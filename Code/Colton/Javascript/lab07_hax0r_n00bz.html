@@ -30,12 +30,12 @@
     let hax_field = document.getElementById('hax_field')
 
     hax_field.onkeypress = function (stop) {
-        let characters = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*(){}[] ?.,<>`~+=-_\n\t";
+        let characters = "a\nb\nc\nd\ne\nf\ng\nh\ni\tj\tk\tl\tm\tn\to\tp\tq\tr\ts\ttuvwxyz1234567890!@#$%^&*(){}[] ?.,<>`~+=-_\n\t";
         let input_length = 5;
         let input = "";
         for (let i = 0; i < input_length; i++) {
-            let rando = Math.floor(Math.random(characters) * characters.length); //selects random bits from the characters
-            input += rando; //puts string into the input variable
+            let rando = Math.floor(Math.random() * characters.length); //selects random bits from the characters
+            input += characters.substring(rando); //puts string into the input variable
             document.getElementById('hax_field').value += input;//puts the random string into the hax field
 
         }
