@@ -1,7 +1,7 @@
 
 # CSS Overview
 
-CSS stands for [Cascading Style Sheets](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), "cascading" meaning that style rules are evaluated by priority. That is, if a style rule is applied to a particular element, it'll override the rules applied to its parent. Whereas HTML is the raw skeleton of a page, CSS adds fonts, colors, margins, positioning, animations, and more.
+CSS stands for [Cascading Style Sheets](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), "cascading" meaning that style rules are evaluated by priority. That is, if a style rule is applied to a particular element, it'll override the rules applied to its parent. Whereas HTML is the raw skeleton of a page, CSS adds fonts, colors, margins, positioning, animations, and more. You can view a list of CSS libraries and frameworks [here](../../Libraries%20and%20Frameworks.md#css-frameworks).
 
 ## CSS Syntax
 
@@ -146,22 +146,6 @@ HSL is short for [hue saturation lightness](https://en.wikipedia.org/wiki/HSL_an
 | HSLA | `hsla(120, 100%, 50%, 0.3)` |
 | named color | `red`, `goldenrod`, `magenta` |
 
-
-## CSS Frameworks
-
-CSS frameworks can be used to make your site look pretty quickly and easily. Each framework has its own style and number of features. You can find icons at [fontawesome.com](https://fontawesome.com/).
-
-- [Bootstrap](http://getbootstrap.com/), [w3schools tutorial](https://www.w3schools.com/bootstrap4/default.asp)
-- [Materialize](http://materializecss.com/)
-- [Pure.css](https://purecss.io/)
-- [Foundation](http://foundation.zurb.com/sites/docs/)
-- [Skeleton](http://getskeleton.com/)
-- [Material Design](https://material.io/guidelines/#)
-- [Kube](https://imperavi.com/kube/)
-- [Milligram](http://milligram.io/)
-- [Bulma](http://bulma.io/)
-- [Vuetify](https://vuetifyjs.com/) - for use with Vue.js
-- [Material UI](http://www.material-ui.com/#/) - for use with React
 
 
 

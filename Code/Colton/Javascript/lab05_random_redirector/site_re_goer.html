@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Random Redirector</title>
+<style>
+    p {
+        text-align: center;
+        font-size: 100px;
+    }
+</style>
 </head>
 <body>
-<button id="bt">I don't wanna be here anymore</button>
+
 <p id="count_down"></p>
 
 
@@ -14,31 +20,24 @@
     let sites = ['https://www.google.com', 'https://www.facebook.com', 'https://www.spotify.com',
         'https://www.warnerbros.com/archive/spacejam/movie/jam.htm']
 
-    let bt = document.querySelector('#bt')
 
     let count = 6;
 
     let counter = setInterval(timer, 1000); //Runs ever second
-
+    // creates countdown
     function timer() {
         count -= 1;
         if (count <= 0) {
-            clearInterval(counter);
-            return;
+            clearInterval(counter)
+            random_place()
         }
         document.getElementById("count_down").innerHTML = count + " secs";
-    }
-
-    function redirect() {
-        setTimeout(random_place, 5000)
     }
 
     function random_place() {
         window.location = sites[Math.floor(Math.random() * sites.length)];
         }
 
-    bt.onclick = redirect
-    document.getElementById("#bt").addEventListener("click", timer);
 </script>
 </body>
 </html>

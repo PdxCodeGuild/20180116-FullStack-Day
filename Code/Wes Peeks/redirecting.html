@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="redirecting.css">
+    <title>Redirecting</title>
+</head>
+<body>
+<button id="redirect_bt">Make it so</button>
+<div><span id="time"></span></div>
+<script>
+    // let redirect_bt = document.querySelector('#redirect_bt');
+    // redirect_bt.onclick = function() {
+    //     setTimeout(function() {
+    //         let randomPage = ['https://www.w3schools.com', 'https://www.google.com', 'https://www.amazon.com'];
+    //         window.location = randomPage[Math.floor(Math.random() * randomPage.length)];
+    //     },5000);
+    // };
+
+
+
+
+    setTimeout(function () {
+        let randomPage = ['https://www.w3schools.com', 'https://www.google.com', 'https://www.amazon.com'];
+        window.location = randomPage[Math.floor(Math.random() * randomPage.length)];
+    }, 5000);
+
+    function timeIt(duration, display) {
+        let timer = duration;
+            display.innerText = timer;
+            setInterval(function () {
+                timer--;
+                if(timer => 0) {
+                    display.innerText = timer;
+                }
+                }, 1000);
+        }
+
+    window.onload = function () {
+        let fiveSeconds = 60 / 12,
+            display = document.querySelector('#time');
+        timeIt(fiveSeconds, display);
+    }
+
+
+
+</script>
+
+</body>
+</html>
