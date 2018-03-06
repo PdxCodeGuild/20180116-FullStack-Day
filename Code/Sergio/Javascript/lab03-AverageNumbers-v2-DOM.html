@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Average Numbers</title>
+</head>
+<body>
+
+
+<h1>Average Numbers v2</h1>
+<p>Which numbers would you like to average out? Separate them by commas like so: "1,2,3,4,5,6,"</p>
+<input type="text" id="avg_num_input">
+<button id="bt_avg">Get Average</button>
+<div id="avg_output"></div>
+<script>
+    let bt_avg = document.querySelector('#bt_avg');
+    let avg_output = document.getElementById("avg_output");
+
+    // take the input element's value
+    bt_avg.onclick = function () {
+        let avg_num_input = document.querySelector('#avg_num_input').value;
+        let nums = avg_num_input.split(',');
+        for (let i = 0; i < nums.length; i++) { // iterates through numbers and strips commas
+            nums[i] = nums[i].replace(/^\s*/, "").replace(/\s*$/, "");
+            nums[i] = parseInt(nums[i]); // converts string to int
+        }
+        // gets sum
+        function getSum(number_list) {
+            let num_sum = 0;
+            for (let i = 0; i < number_list.length; i++) {
+                num_sum += number_list[i];
+                console.log(num_sum);
+            }
+            return num_sum;
+        }
+        // sum divided by nums = avg
+        let sum = getSum(nums);
+        let avg = sum / nums.length;
+        avg_output.innerHTML = avg.toString();
+    }
+
+
+</script>
+
+</body>
+</html>

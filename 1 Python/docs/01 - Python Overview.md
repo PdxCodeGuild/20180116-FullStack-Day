@@ -65,30 +65,3 @@ For all the built-in functions, check the [official docs](https://docs.python.or
 
 
 
-## Common Built-in modules
-
-- math: additional math functions like cos, sin, 
-- decimal: more advanced floating point arithmetic
-- random: generate random numbers
-- datetime, time, calendar: working with dates and times
-- re: regular expressions
-- os, os.path: file operations
-- itertools, functools: advanced operations on iterables and functions
-- collections: data structures
-- csv: csv file parsing
-
-
-## Common Non-built-in Modules
-
-These can be installed using `pip install <module>`.
-
-- [Pillow](https://python-pillow.org/): image manipulation
-- [Requests](http://requests.readthedocs.io/en/master/): http requests
-- [Twisted](http://twistedmatrix.com/trac/): networking engine
-- [Scrapy](https://scrapy.org/), [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/): web scraping
-- [nltk](http://www.nltk.org/): natural language processing
-- [NumPy](http://www.numpy.org/): advanced mathematics
-- [SciPy](https://www.scipy.org/): scientific computing
-- [PyGame](http://www.pygame.org/news.html): game framework
-- [matplotlib](http://matplotlib.org/): 2D/3D plotting
-- [TkInter](https://wiki.python.org/moin/TkInter), [wxPython](https://www.wxpython.org/), [PyQT](https://sourceforge.net/projects/pyqt/), [PyGTK](https://wiki.python.org/moin/PyGtk): GUI
