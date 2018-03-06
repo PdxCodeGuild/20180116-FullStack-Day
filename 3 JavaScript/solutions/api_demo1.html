@@ -1,0 +1,91 @@
+
+
+<html>
+<head>
+    <script type="text/javascript" src="api_demo1_secrets.js"></script>
+    <script>
+        function http_get(url, success) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    let data = JSON.parse(xhttp.responseText);
+                    success(data);
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+    </script>
+    <script>
+
+        window.onload = function() {
+            let container = document.querySelector('#container');
+            let flickr_username_input = document.querySelector('#flickr_username_input');
+            let get_flickr_user_id = document.querySelector('#get_flickr_user_id');
+
+            flickr_username_input.value = 'leelerbaby';
+
+            get_flickr_user_id.onclick = function() {
+
+                container.innerHTML = '';
+
+                let user_url = 'https://api.flickr.com/services/rest/?method=flickr.urls.lookupUser&api_key=8f72686dc20df017227937369d0aca9f&url=https://www.flickr.com/photos/'+flickr_username_input.value+'/&format=json&nojsoncallback=1';
+                http_get(user_url, function(data) {
+
+                    let url_user_photos = 'https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key='+flickr_api_key+'&user_id='+data.user.id+'&format=json&nojsoncallback=1';
+                    http_get(url_user_photos, function(data) {
+                        let photos = data.photos.photo;
+                        // for (let i=0; i<photos.length; ++i) {
+                        //     let li = document.createElement('li');
+                        //     li.innerText = photos[i].title + ' - ' + photos[i].id;
+                        //     photo_ids.appendChild(li);
+                        // }
+                        for (let i=0; i<photos.length; ++i) {
+                            let photo_id = photos[i].id;
+                            let url_get_photo_sizes = 'https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key='+flickr_api_key+'&photo_id='+photo_id+'&format=json&nojsoncallback=1';
+                            http_get(url_get_photo_sizes, function(data) {
+                                let photo_size_array = data.sizes.size;
+                                let little_photo_url = photo_size_array[0].source;
+                                let original_photo_url = photo_size_array[photo_size_array.length-1].source;
+
+                                let a_element = document.createElement('a');
+                                a_element.setAttribute('href', original_photo_url);
+
+                                let img_element = document.createElement('img');
+                                img_element.setAttribute('src', little_photo_url);
+
+                                a_element.appendChild(img_element);
+                                container.appendChild(a_element);
+
+
+                            });
+                        }
+                    });
+                });
+            };
+        }
+
+    </script>
+    <style>
+        body {
+          background-color:black;
+        }
+
+        #container {
+          display:flex;
+          flex-wrap: wrap;
+        }
+        #container > * {
+          margin:10px;
+          border: 0.5px solid white;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="flickr_username_input"/>
+    <button id="get_flickr_user_id">Get Photos!</button>
+    <div id="container">
+
+    </div>
+</body>
+</html>
