@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Random Quote API</title>
+</head>
+<style>
+    body {
+        font-size: 1.4em;
+        color: white;
+        background-color: black;
+        font-family: monospace;
+    }
+    #container {
+        color: white;
+        width: 450px;
+        font-family: monospace;
+    }
+    #author {
+        size: 1em;
+        color: white;
+        text-align: right;
+        padding-right: 10px;
+        font-family: monospace;
+    }
+    blockquote:before {
+        position: absolute;
+        content: open-quote;
+        font-size: 2em;
+        margin-left: -18px;
+        margin-top: -8px;
+        /*padding-left: 4px;*/
+
+    }
+    blockquote:after {
+        position: absolute;
+        content: close-quote;
+        font-size: 2em;
+        margin-left: 4px;
+        margin-top: -4px;
+    }
+    blockquote p {
+        display: inline;
+    }
+</style>
+<body>
+<div id="container">
+<h2>Random Quote:</h2>
+<blockquote id="rand_quote">
+    <p></p>
+</blockquote>
+<div id="author">- </div>
+</div>
+<script>
+
+function http_get(url, success) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 1) {
+            xhttp.setRequestHeader('Authorization', 'Token token="3373ba34fe2285b35174cc6048d6e129"')
+        } else if (this.readyState === 4 && this.status === 200) {
+            let data = JSON.parse(xhttp.responseText);
+            success(data);
+
+        } else if (this.readyState === 4 && this.status === 404) {
+            // handle 404
+        }
+    };
+    xhttp.open("GET", url);
+    xhttp.send();
+
+
+}
+http_get("https://favqs.com/api/qotd?format=json", success_handler);
+
+function success_handler(data) {
+    document.getElementById('rand_quote').innerText += data.quote.body;
+    document.getElementById('author').innerText += data.quote.author;
+
+    console.log(data);
+}
+
+
+</script>
+</body>
+</html>

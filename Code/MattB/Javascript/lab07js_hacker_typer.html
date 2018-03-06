@@ -1,0 +1,30 @@
+
+<html>
+    <head>
+        <script src="hacker_txt.js"></script>
+        <style>
+            body {
+                background-color: black;
+                color: lawngreen;
+            }
+            textarea {
+                background-color: black;
+                color: lawngreen;
+            }
+
+        </style>
+    </head>
+    <body id="my_page" onkeydown="add_chars()">
+        <pre id="output_div"></pre>
+        <script>
+            let output_div = document.querySelector('#output_div');
+            let counter = 0;
+
+            function add_chars() {
+                counter += Math.floor(Math.random() * 3) + 1;
+                output_div.innerHTML = hackertext.substring(0, counter);
+            }
+        </script>
+    </body>
+</html>
+
