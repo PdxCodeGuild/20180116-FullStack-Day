@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="JS_Lab06_Clock.css"/>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body>
+    <p id="time"></p>
+    <div class="stop_watch_container">
+        <p id ="stop_time">Stop Watch</p>
+        <button id="start_button">Start</button>
+        <button id="lap_button">Lap</button>
+        <span id="stop_watch_timer"></span>
+        <ol id="times">Lap Times</ol>
+    </div>
+</body>
+</html>
+
+<script>
+    // Begin V.1 Current time
+    let time_now = setInterval(mytimer, 1000);
+    function mytimer(){
+        let time = new Date();
+        document.getElementById("time").innerHTML = "The current time is: " + time.toLocaleTimeString();
+    }
+    // End V.1
+    let start_button_switch = document.getElementById("start_button");
+    let lap_button_append = document.getElementById("lap_button");
+    // Begin V.2 Stopwatch
+    // let track_time = setHours(0,0,0,0);
+    function start_toggle () {
+        console.log(start_button_switch);
+        if (start_button_switch.innerHTML === "Start") {
+            start_button_switch.innerHTML = "Stop";
+            console.log("Button Clicked.");
+        } else {
+            start_button_switch.innerHTML = "Start";
+        }
+
+    }
+    function lap_save() {
+        console.log("lap");
+
+    }
+    // console.log(track_time);
+    start_button_switch.onclick = start_toggle;
+    lap_button_append.onclick = lap_save;
+
+</script>
