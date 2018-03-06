@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Clock</title>
+</head>
+<body onload="clockTime()">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Aldrich');
+
+    body {
+        background-color: whitesmoke;
+        color: #1b1e21;
+        text-align: center;
+        font-family: 'Aldrich', sans-serif;
+
+    }
+
+    h1 {
+        color: #274982;
+        font-size: 8em;
+        margin-bottom: 7px;
+
+    }
+
+    #clock {
+        color: #274982;
+        font-size: 5em;
+        text-align: center;
+    }
+</style>
+<h1>Clock</h1>
+<div id="clock"></div>
+
+<script>
+    function clockTime() {
+        let d = new Date();
+        let n = d.toLocaleTimeString();
+        document.getElementById("#clock").innerHTML = n;
+    }
+
+    function clockTime() {
+        let today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('clock').innerHTML =
+        h + ":" + m + ":" + s;
+        let t = setTimeout(clockTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+</script>
+</body>
+</html>
