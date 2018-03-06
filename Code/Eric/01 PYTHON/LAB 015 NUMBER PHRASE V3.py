@@ -17,7 +17,7 @@ def roman_numeralize(integer):
 
 
 int_ans = False  # accounting for integer answer by starting the type status as false
-number = input('\nhello! i am going to convert your number into a word for you!\n'
+number = input('\nhello! i am going to convert your number into a roman numeral for you!\n'
 			   'please enter a number that you would like to convert\n\n:')
 
 while int_ans is False:  # while the answer is not an integer
