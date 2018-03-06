@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="JS_Lab05_redirect.css"/>
+    <meta charset="UTF-8">
+    <title>Redirector</title>
+</head>
+<body>
+    <p id="title">Random Redirector.</p>
+    <button id="roll">GO!</button>
+    <p id="countdown"></p>
+    <script>
+        let site_array = ['https://www.reddit.com/', 'https://imgur.com/', 'https://pdxcodeguild.com/',
+            'https://www.ebenefits.va.gov/ebenefits/homepage', 'https://www.google.com/',
+            'http://www.oregon.gov/odot/dmv/Pages/index.aspx',];
+
+        function site_slots() {
+            let timer = document.getElementById("countdown");
+            let time_left = 5;
+            timer.innerHTML = 'Redirecting in ' + time_left + ' seconds...';
+            let random_site = site_array[Math.floor(Math.random() * site_array.length)];
+            let redirect_timer = setInterval (function() {
+            time_left--;
+            timer.innerHTML = time_left;
+            if (time_left <=0) {
+                clearInterval(redirect_timer);
+                window.location = random_site
+            }
+            },1000);
+        }
+        roll.onclick = site_slots;
+    </script>
+</body>
+</html>

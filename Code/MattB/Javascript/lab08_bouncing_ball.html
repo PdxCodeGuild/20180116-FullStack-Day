@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color:black;
+            }
+            canvas {
+                border: 1px solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="cnv" width="800" height="500"></canvas>
+        <script>
+            let cnv = document.getElementById('cnv');
+            let ctx = cnv.getContext('2d');
+
+            let ball = {
+                radius: (Math.random() * 100) +20,
+                px: 200,
+                py: 150,
+                vx: 10,
+                vy: 10
+            };
+
+            function position_update(dt) {
+                check_sides();
+                ball.px += ball.vx*dt;
+                ball.py += ball.vy*dt;
+                }
+
+            function check_sides() {
+                let left_x = ball.px - ball.radius;
+                let right_x = ball.radius + ball.px;
+                let top_y = ball.py - ball.radius;
+                let bottom_y = ball.radius + ball.py;
+                if (left_x < 0 || right_x > cnv.width){
+                    ball.vx *= -1;
+                }
+                if (top_y < 0 || bottom_y > cnv.height) {
+                    ball.vy *= -1;
+                }
+            }
+
+            function draw() {
+                ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+                ctx.fillRect(0, 0, cnv.width, cnv.height);
+                ctx.beginPath();
+                ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = 'green';
+                ctx.fill();
+            }
+
+
+            function main_loop() {
+                window.requestAnimationFrame(main_loop);
+                position_update(0.8);
+                draw();
+            }
+            window.requestAnimationFrame(main_loop);
+
+        </script>
+    </body>
+</html>
