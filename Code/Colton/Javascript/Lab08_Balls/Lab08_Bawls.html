@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B@lls</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="ball_sack" height="900" width="1000"></canvas>
+
+<script>
+    let ball_sack = document.getElementById('ball_sack')
+    let ball = {
+    radius: 100,
+    px: Math.random() * ball_sack.width,
+    py: Math.random() * ball_sack.height,
+    vx: (2 * Math.random() - 1) * 10,
+    vy: (2 * Math.random() - 1) * 10
+    };
+
+    let ctx = ball_sack.getContext('2d')
+    function main_loop() {
+        ctx.clearRect(0,0,ball_sack.width, ball_sack.height);
+        if (ball.px + ball.radius >= ball_sack.width) {
+            ball.vx = -ball.vx;
+            ball.px = ball_sack.width - ball.radius;
+            console.log('first')
+        }
+         else if (ball.px - ball.radius <= 0){
+            ball.vx = -ball.vx;
+            ball.px = 0 + ball.radius
+            console.log('second branch')
+        }
+        if (ball.py + ball.radius >= ball_sack.height){
+            ball.vy = -ball.vy
+            ball.py = ball_sack.height - ball.radius;
+
+        } else if ( ball.py - ball.radius <= 0){
+            ball.vy = -ball.vy;
+            ball.py = 0 + ball.radius
+        }
+
+        ctx.beginPath();
+        ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ball.py += ball.vy;
+        ball.px += ball.vx;
+        window.requestAnimationFrame(main_loop);
+    }
+    window.requestAnimationFrame(main_loop)
+
+</script>
+
+</body>
+</html>
