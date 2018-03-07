@@ -31,10 +31,6 @@
                 ball.vy = ball.vy + (gravity * dt);
                 ball.px += ball.vx*dt;
                 ball.py += ball.vy*dt;
-                let floor_check = ball.radius + ball.py;
-                if (floor_check === cnv.height) {
-                    ball.py = cnv.height - ball.radius;
-                }
             }
 
             //Reverses the direction of the velocity if ball hits the side
@@ -46,14 +42,34 @@
                 let bottom_y = ball.radius + ball.py;
 
                 //Checks positions against canvas border then reverses velocity component.
-                if (left_x < 1 || right_x > cnv.width - 1){
+                if (left_x < 0) {
                     ball.vx *= -1;
                     ball.vx *= 0.95;
+                    ball.px = 0 + ball.radius;
                 }
-                if (top_y < 1 || bottom_y > cnv.height - 1) {
+                if (right_x > cnv.width) {
+                    ball.vx *= -1;
+                    ball.vx *= 0.95;
+                    ball.px = cnv.width - ball.radius;
+                }
+                if (top_y < 0) {
                     ball.vy *= -1;
                     ball.vy *= 0.95;
+                    ball.py = 0 + ball.radius;
                 }
+                if (bottom_y > cnv.height) {
+                    ball.vy *= -1;
+                    ball.vy *= 0.95;
+                    ball.py = cnv.height - ball.radius;
+                }
+                // if (left_x < 1 || right_x > cnv.width - 1){
+                //     ball.vx *= -1;
+                //     ball.vx *= 0.95;
+                // }
+                // if (top_y < 1 || bottom_y > cnv.height - 1) {
+                //     ball.vy *= -1;
+                //     ball.vy *= 0.95;
+                // }
             }
 
             //Draws current and fills in previous frame

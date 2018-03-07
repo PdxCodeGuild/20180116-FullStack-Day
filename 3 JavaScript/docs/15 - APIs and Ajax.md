@@ -39,7 +39,7 @@ The response to an HTTP request will have a **status code** which indicates whet
 AJAX stands for "asynchronous javascript and XML", and allows you to execute HTTP requests from JavaScript. You can read more about AJAX [here](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started), [here](https://developer.mozilla.org/en-US/docs/AJAX) and [here](https://www.w3schools.com/xml/ajax_intro.asp).
 
 
-Here's how to execute an AJAX request in native JavaScript. You can read more about XMLHttpRequest [here](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest). Remember status 200 means 'success'.
+Here's how to execute an AJAX request in native JavaScript. You can read more about XMLHttpRequest [here](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest). If you have many query parameters, consider using a function to [convert an object](https://stackoverflow.com/questions/111529/how-to-create-query-parameters-in-javascript). Remember status 200 means 'success'.
 
 ```javascript
 let xhttp = new XMLHttpRequest();
@@ -91,15 +91,24 @@ $.ajax({
     alert("error"); // indicate that an error has occurred
 });
 ```
+
+## CORS
+
+CORS stands for 'cross-origin resources sharing', and represents a relaxation of the [same origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). You can read more about CORS on the [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+
 If you receive the response "No 'Access-Control-Allow-Origin' header is present on the requested resource", it's because the remote server you're sending to the request from has security controls in place that prevent access from a client. You can read more about CORS [here](https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe) and [here](https://security.stackexchange.com/questions/108835/how-does-cors-prevent-xss).
 
+
+## JSONP
+
+JSONP (short for "JSON with Padding") is an additional security feature some APIs offer or require. You can read more about JSONP [here](https://stackoverflow.com/questions/3839966/can-anyone-explain-what-jsonp-is-in-layman-terms) and [here](https://stackoverflow.com/questions/16097763/jsonp-callback-function).
 
 
 ## JSON + XML
 
 JSON and XML are two popular ways of formatting data. Most APIs either return information in JSON or XML.
 
-[JSON](http://www.json.org/) is very similar to javascript object declarations, but the major difference is that the names are strings, and the values can only be numbers, strings, arrays, booleans, null, or objects.
+[JSON](http://www.json.org/) is very similar to javascript object declarations, but the major difference is that the names are strings, and the values can only be numbers, strings, arrays, booleans, null, or objects. You can read more about the differences between JSON and JavaScript objects [here](https://stackoverflow.com/questions/8294088/javascript-object-vs-json).
 
 ```json
 {"employees":[

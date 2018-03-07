@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="JS_Lab06_Clock.css"/>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body>
+    <p id="time"></p>
+    <div class="stop_watch_container">
+        <p id ="stop_time">Stop Watch</p>
+        <button id="start_button">Start</button>
+        <button id="lap_button">Lap</button></div>
+        <span id="stop_watch_timer"></span><br>
+        <ol id="times">Lap Times</ol>
+    </div>
+</body>
+</html>
+
+<script>
+    // Begin V.1 Current time
+    let time_now = setInterval(mytimer, 1000);
+    function mytimer(){
+        let time = new Date();
+        document.getElementById("time").innerHTML = "The current time is: " + time.toLocaleTimeString();
+    }
+    // End V.1
+
+    // Begin V.2 Stopwatch
+
+    let start_button_switch = document.getElementById("start_button");
+    let lap_button_append = document.getElementById("lap_button");
+    let watch_timer = document.getElementById("stop_watch_timer");
+
+    let current_time = new Date();
+    let initial_time = current_time.setHours(0,0,0,0);
+    let hours = current_time.getHours();
+    let minutes = current_time.getMinutes();
+    let seconds = current_time.getSeconds();
+    let milliseconds = current_time.getMilliseconds();
+    let t;
+    let times = document.getElementById("times").value;
+
+    // Toggle start/stop of timer.
+    function start_toggle () {
+
+        if (start_button_switch.innerHTML === "Start") {
+            start_button_switch.innerHTML = "Stop";
+            watch_timer.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
+            t =setInterval(time_update, 50);
+
+        } else {
+            start_button_switch.innerHTML = "Start";
+            clearInterval(t);
+        }
+
+    }
+    // keep time.
+    function time_update() {
+        milliseconds = milliseconds +50;
+        if (milliseconds >999) {
+            seconds +=1;
+            milliseconds = 0;
+        }
+
+        if (seconds >59) {
+            minutes +=1;
+            seconds = 0
+        }
+
+        if (minutes > 59) {
+            hours +=1;
+            minutes = 0
+        }
+        watch_timer.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
+
+    }
+    // append lap time to ordered list.
+    function lap_save() {
+        console.log("lap");
+        let new_li = document.createElement("li");
+        new_li.innerText = watch_timer.innerText;
+        document.getElementById("times").appendChild(new_li);
+    }
+
+    start_button_switch.onclick = start_toggle;
+    lap_button_append.onclick = lap_save;
+
+</script>
