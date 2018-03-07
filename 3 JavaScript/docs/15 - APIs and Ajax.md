@@ -101,7 +101,7 @@ If you receive the response "No 'Access-Control-Allow-Origin' header is present 
 
 ## JSONP
 
-JSONP (short for "JSON with Padding") is an additional security feature some APIs offer or require. You can read more about JSONP [here](https://stackoverflow.com/questions/16097763/jsonp-callback-function).
+JSONP (short for "JSON with Padding") is an additional security feature some APIs offer or require. You can read more about JSONP [here](https://stackoverflow.com/questions/3839966/can-anyone-explain-what-jsonp-is-in-layman-terms) and [here](https://stackoverflow.com/questions/16097763/jsonp-callback-function).
 
 
 ## JSON + XML
