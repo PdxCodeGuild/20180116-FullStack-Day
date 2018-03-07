@@ -6,19 +6,71 @@
 
     <script>
         $.ajax({
-        url: 'https://randomuser.me/api/',
-        dataType: 'json',
-        success: function(data) {
-        console.log(data);
+            method: "GET", // specify the HTTP Verb
+            url: 'https://randomuser.me/api/?results=5000', // specify the URL
+            dataType: 'json',
+            success: function(data) {
+                console.log(data); // log the data we get in response
+            }.fail(function () {
+                 alert("error"); // indicate that an error has occurred
+            });
+        })
+    </script>
+    <script>
+        function http_get(url, success) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    let data = JSON.parse(xhttp.responseText);
+                    success(data);
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
         }
-    });
-
+// https://randomuser.me/api/?gender=female  <--  Can request users by gender using gender parameter
+// https://randomuser.me/api/?results=5000   <-- can get up to 5000 random users using results parameter
+// https://randomuser.me/api/?seed=foobar   <-- allows you to always bring up same set of users.
 
     </script>
+    <script>
 
+        window.onload = function() {
+            let container = document.querySelector('#container');
+            let username_input = document.querySelector('#username_input');
+            let get_user_id = document.querySelector('#get_user_id');
 
+            let random_user_photos = 'https://randomuser.me/api/?inc=gender,name,nat';
+            http_get(random_user_photos, function(data) {
+                let photos = data.photos.photo;
+                for (let i=0; i<photos.length; ++1) {
+                    let photo_id = photos[i].id;
+                    let random_user_photos =
+                }
+
+            })
+        }
+    </script>
+    <style>
+
+        body {
+          background-color:black;
+        }
+        #container {
+          display:flex;
+          flex-wrap: wrap;
+        }
+        #container > * {
+          margin:5em;
+          border: 0.25em solid white;
+        }
+
+    </style>
 </head>
 <body>
 
-</body>
+    <input type="text" id="username_input"/>
+    <button id="get_user_id">Get Photos!</button>
+    <div id="container">
+
 </html>
