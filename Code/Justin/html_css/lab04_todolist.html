@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="todolist.css"/>
+
+    <style>
+        table {
+            width: 50%;
+        }
+
+        #save_new_bt, #cancel_new_bt {
+            display: none;
+        }
+
+        table {
+            display: flex;
+        }
+
+        #completed{
+            text-decoration: line-through;
+
+        }
+
+        button{
+            width:30px;
+            height: 30px;
+            padding: 2px;
+            border-radius: 3px;
+        }
+
+        tr td:nth-child(1) {
+            width: 300px;
+            text-align: left;
+        }
+
+        tr td:nth-child(2) {
+            width: 100px;
+            text-align: center;
+        }
+
+        tr td:nth-child(3) {
+            width: 100px;
+            text-align: center;
+        }
+
+        tr td:nth-child(4) {
+            width: 200px;
+            text-align: center;
+        }
+        tr th:nth-child(1) {
+            width: 300px;
+            text-align: center;
+        }
+
+        tr th:nth-child(2) {
+            width: 100px;
+            text-align: center;
+        }
+
+        tr th:nth-child(3) {
+            width: 100px;
+            text-align: center;
+        }
+
+        tr th:nth-child(4) {
+            width: 200px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1>To-Do</h1>
+<table id="to_do">
+    <tbody id="to_do_body">
+    <tr>
+        <th>Item</th>
+        <th>Priority</th>
+        <th>Due Date</th>
+        <th>Buttons</th>
+    </tr>
+    </tbody>
+</table>
+
+<table id="add_new">
+    <tr id="new_row">
+        <td id="item_box">
+            <input type="text" name="new_item" style="display:none">
+        </td>
+        <td id="priority_box">
+            <select name="new_priority" style="display:none">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </td>
+        <td id="date_box">
+            <input type="date" name="new_date" style="display:none">
+        </td>
+        <td>
+            <button id="add_new_bt">➕</button>
+            <button id="save_new_bt">💾</button>
+            <button id="cancel_new_bt">❌</button>
+        </td>
+    </tr>
+
+</table>
+
+
+<h1>Completed</h1>
+<table id="completed">
+    <tbody id="completed_body"></tbody>
+</table>
+
+<script>
+
+    let add_new_bt = document.querySelector('#add_new_bt');
+    let save_new_bt = document.querySelector('#save_new_bt');
+    let cancel_new_bt = document.querySelector('#cancel_new_bt');
+    let mark_bt = document.querySelector('.mark_bt');
+    let remove_bt = document.querySelector('.remove_bt');
+
+
+    add_new_bt.onclick = function () {
+        save_new_bt.style.display = 'initial';
+        cancel_new_bt.style.display = 'initial';
+        add_new_bt.style.display = 'none';
+
+        document.querySelector('input[type="text"]').value = '';
+        document.querySelector('input[type="text"]').setAttribute('placeholder','To-Do Item');
+        document.querySelector('input[type="date"]').style.display = 'initial';
+        document.querySelector('input[type="text"]').style.display = 'initial';
+        document.querySelector('select').style.display = 'initial';
+    }
+
+    save_new_bt.onclick = function () {
+        save_new_bt.style.display = 'none';
+        cancel_new_bt.style.display = 'none';
+        add_new_bt.style.display = 'initial';
+
+        let row = document.createElement('tr');
+        let item_cell = document.createElement('td');
+        item_cell.innerText = document.querySelector('input[type="text"]').value;
+        row.appendChild(item_cell);
+        let priority_cell = document.createElement('td');
+        priority_cell.innerText = document.querySelector('select').value;
+        row.appendChild(priority_cell);
+        let date_cell = document.createElement('td');
+        date_cell.innerText = document.querySelector('input[type="date"]').value;
+        row.appendChild(date_cell);
+        let button_cell = document.createElement('td');
+        let mark_bt = document.createElement('button');
+        mark_bt.innerText = '✅';
+        mark_bt.onclick = completeRow;
+        button_cell.appendChild(mark_bt);
+        let remove_bt = document.createElement('button');
+        remove_bt.innerText = '❌';
+        remove_bt.onclick = removeRow;
+
+        button_cell.appendChild(remove_bt);
+        row.appendChild(button_cell);
+        document.querySelector('#to_do_body').appendChild(row);
+
+        document.querySelector('input[type="date"]').style.display = 'none';
+        document.querySelector('input[type="text"]').style.display = 'none';
+        document.querySelector('select').style.display = 'none';
+    }
+
+    cancel_new_bt.onclick = function () {
+        save_new_bt.style.display = 'none';
+        cancel_new_bt.style.display = 'none';
+        add_new_bt.style.display = 'initial';
+
+        document.querySelector('input[type="text"]').value = '';
+        document.querySelector('input[type="text"]').setAttribute('placeholder','To-Do Item');
+        document.querySelector('input[type="date"]').style.display = 'none';
+        document.querySelector('input[type="text"]').style.display = 'none';
+        document.querySelector('select').style.display = 'none';
+    }
+
+
+    function removeRow() {
+        let row = this.parentElement.parentElement;
+        let table = this.parentElement.parentElement.parentElement;
+        table.removeChild(row);
+    }
+
+    function completeRow() {
+        let row = this.parentElement.parentElement;
+        let item_cell = row.firstChild;
+        let table_body = document.querySelector('#completed_body');
+        let completed_row = document.createElement('tr');
+        let completed_cell = document.createElement('td');
+        completed_cell.innerText = item_cell.innerText;
+        completed_row.appendChild(completed_cell);
+        table_body.appendChild(completed_row);
+
+        let table = row.parentElement;
+        table.removeChild(row);
+    }
+</script>
+
+</body>
+

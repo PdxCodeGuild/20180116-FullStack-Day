@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <button id="random_bt">Randomize!!</button>
+    <div id="display_seconds"></div>
+    </body>
+    <script>
+        let random_bt = document.querySelector('#random_bt');
+        let display_seconds = document.querySelector('#display_seconds');
+        let site_list = ['https://www.google.com/', 'https://www.netflix.com/', 'https://www.youtube.com/', 'https://www.reuters.com/'];
+
+
+        function randomize () {
+            let random_index = Math.floor(Math.random()*site_list.length);
+            location = site_list[random_index]
+        }
+        function second1 () {
+            display_seconds.innerHTML = 'Randomizing in : 5';
+        }
+        function second2 () {
+            display_seconds.innerHTML = 'Randomizing in : 4';
+        }
+        function second3 () {
+            display_seconds.innerHTML = 'Randomizing in : 3';
+        }
+        function second4 () {
+            display_seconds.innerHTML = 'Randomizing in : 2';
+        }
+        function second5 () {
+            display_seconds.innerHTML = 'Randomizing in : 1';
+        }
+
+        random_bt.onclick = function() {
+            setTimeout(second1, 0);
+            setTimeout(second2, 1000);
+            setTimeout(second3, 2000);
+            setTimeout(second4, 3000);
+            setTimeout(second5, 4000);
+            setTimeout(randomize, 5000);
+        }
+
+    </script>
+</html>

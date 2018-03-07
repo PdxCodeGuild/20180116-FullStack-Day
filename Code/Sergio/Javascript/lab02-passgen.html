@@ -1,19 +1,29 @@
 <!DOCTYPE HTML>
 <html>
+<head>
+    <title>JavaScript Random Password Generator</title>
+</head>
+<style>
+    div {
+        padding-left: 2px;
+    }
+</style>
 <body>
-
 
 <h1>Random password generator v1</h1>
 
+
+<button id="bt_gen">Create random password</button>
+<p></p>
 <div id="passg"></div>
-
-
 <script>
-    document.getElementById("passg").innerHTML =
-        Math.random().toString(36).substr(2, 10);
-    // Math.random gets random nums
-    // toString returns value of string
-    // The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters. Needs (start,length)
+
+    bt_gen.onclick = function () {
+        document.getElementById("bt_gen"); // gets button's ID to...
+        document.getElementById("passg").innerHTML = // gets the output (password) div and passes to..
+        Math.random().toString(36).substr(2, 10); // this creates random password from strings and substr() extracts part of a string and returns specified number of characters (in this case also random)
+    };
+
 
 </script>
 

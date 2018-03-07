@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Typer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="hackertext.js"></script>
+    <style>
+        body {background-color: black}
+        body {color: chartreuse}
+    </style>
+</head>
+<body>
+    <!--<button id = "link_off">click me</button>-->
+
+    <!--<a href="https://w3schools.com/">Go to W3Schools.com</a>-->
+    <pre id="code_pre">
+    </pre>
+
+    <script>
+        // define a counter variable to be 0
+        let counter = 0;
+        // set keydown event on pre tag
+        document.addEventListener('keydown', myFunction);
+
+        function myFunction(){
+            // every time the user presses a key, increase the counter variable
+            //console.log("hello");
+            counter += 5;
+            // get a substring of the hackertext from 0 to counter
+            let x = Math.floor(Math.random() * hackertext.length);
+            let word = hackertext.substr(0, counter);
+            //alert(word);
+            // console.log(word);
+            // put code in pre tag
+            $('#code_pre').text(word);
+        }
+
+
+        //alert(hackertext);
+        // $(document).ready(function(){
+        //     $("a").click(function(event){
+        //         event.preventDefault();
+        //     });
+        // });
+        //
+        // var link_off = document.getElementById("link_off");
+        //
+        // link_off.onclick = function(){
+        //     alert("Test");
+        // }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

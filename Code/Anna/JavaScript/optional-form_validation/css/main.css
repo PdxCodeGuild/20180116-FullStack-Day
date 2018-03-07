@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Jura:300,400,500');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #e8eaf6 35%, #aed581 100%);
+    overflow: hidden;
+    color: #455a64;
+    font-family: 'Jura', sans-serif;
+}
+
+.headDiv {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    min-height: 50vh;
+    padding: 20px;
+    background: white;
+    opacity: .9;
+    color: #455a64;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+

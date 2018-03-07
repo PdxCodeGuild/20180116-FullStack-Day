@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Libs</title>
+</head>
+<body>
+<input type="text" id="verb" placeholder="Verb" required/><br/>
+<input type="text" id="location" placeholder="Location" required/><br/>
+<input type="text" id="person" placeholder="Name someone" required/><br/>
+<input type="text" id="noun" placeholder="Noun" required/><br/>
+<input type="text" id="adjective" placeholder="Adjective" required/><br/>
+<input type="text" id="food" placeholder="Favorite Food" required/><br/>
+<input type="text" id="planet" placeholder="Name a planet" required/><br/>
+<button id="submit">Let's make a story</button>
+<div id="bob"></div>
+
+<script>
+    let verb = document.querySelector('#verb');
+    let place = document.querySelector('#location');
+    let person = document.querySelector('#person');
+    let noun = document.querySelector('#noun');
+    let adjective = document.querySelector('#adjective');
+    let food = document.querySelector('#food');
+    let planet = document.querySelector('#planet');
+
+    let bt = document.querySelector('#submit');
+    bt.onclick = function() {
+        document.getElementById('bob').innerText = ` Do you like to ${verb.value}? Do you live in the ${place.value} area?
+        Our CEO ${person.value} is looking for YOU!. We are looking for a qualified ${noun.value} to make ${adjective.value} ${food.value}. Please
+        inquire at our location on ${planet.value}.`;
+    }
+</script>
+
+</body>
+</html>

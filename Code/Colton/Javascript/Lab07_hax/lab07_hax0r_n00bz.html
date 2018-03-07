@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hax0rz n00bz0rs</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: limegreen;
+            position: fixed;
+            font-weight: bolder;
+            font-size: 32px;
+            font-family: monospace;
+            border: none
+        }
+
+    </style>
+</head>
+<body>
+<textarea id="hax_field" placeholder="initializing..."></textarea>
+
+
+<script>
+    let hax_field = document.getElementById('hax_field')
+
+    hax_field.onkeypress = function (stop) {
+        let characters = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*(){}[] ?.,<>`~+=-_\n\t";
+        let input_length = 2;
+        let input = "";
+        for (let i = 0; i < input_length; i++) {
+            let rando = Math.floor(Math.random() * characters.length); //selects random bits from the characters
+            input += characters.substring(rando); //puts string into the input variable
+            document.getElementById('hax_field').value += input;//puts the random string into the hax field
+            hax_field.scrollTop = hax_field.scrollHeight;
+
+        }
+        stop.preventDefault(); //prevents the original keystroke from being typed
+    }
+</script>
+</body>
+</html>

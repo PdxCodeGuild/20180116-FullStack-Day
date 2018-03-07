@@ -32,7 +32,7 @@ pi += 1 // error
 
 ## Data Types
 
-```JavaScript
+```javascript
 let a = 5; // number
 let b = 10.4; // number
 let c = "hello!"; // string
@@ -42,7 +42,8 @@ let f = undefined; // undefined
 
 // arrays are like python lists
 let fruits = ["apple", "bananana", "pear"];
-fruits[0] = 'cherry';
+fruits[0] = 'cherry'; // set the element at that position
+fruits.push('pomegranate'); // add a new element
 
 // objects are like Python dictionaries
 let person = {
@@ -56,7 +57,7 @@ person['age'] += 1;
 
 To convert between types, use `parseInt`, `parseFloat` and `toString`.
 
-```JavaScript
+```javascript
 let x = parseInt('4');
 let y = parseFloat('4.2');
 let z = x.toString();
@@ -85,6 +86,7 @@ alert("Hello " + name + "! How are you today?");
 ```
 
 You can also use `input` elements.
+
 ```html
 <input id="name_input" type="text"/>
 <script>

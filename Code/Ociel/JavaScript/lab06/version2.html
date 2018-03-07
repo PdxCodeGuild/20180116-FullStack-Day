@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    #timer_display {
+        position: center;
+        font-size: 52px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        line-height: 200px;
+        border: 10px black solid;
+        margin-top: 100px;
+    }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+
+<!--Initial display of the timer.-->
+<div id="timer_display">00:00:00</div>
+
+
+<!--All buttons in one line-->
+<div id="all_button">
+    <button id="start_btn">Start Time</button>
+    <button id="stop_btn">Stop Time</button>
+    <button id="lap_btn">Add a Lap</button>
+    <button id="reset_btn">Reset</button>
+</div>
+
+<!--We will create li inside of the ul and delete
+    them when we reset them.-->
+<ul id="laps"></ul>
+
+<script>
+    let timer_display = document.querySelector('#timer_display');
+    let start_btn = document.querySelector('#start_btn');
+    let stop_btn = document.querySelector('#stop_btn');
+    let lap_btn = document.querySelector('#lap_btn');
+    let reset_btn = document.querySelector('#reset_btn');
+    let laps = document.querySelector('#laps');
+
+    let is_running = false;
+    let time = new Date();
+    let count = 0;
+    let count_minutes = 0;
+    let count_hours = 0;
+    let lap_number = 1;
+    time.setHours(0, 0, 0, 0);
+
+
+    // Disable buttons
+    lap_btn.disabled = true;
+
+    function run_stop_watch() {
+        if (is_running) {
+            let time_object = {
+                hours: time.getHours(),
+                minutes: time.getMinutes(),
+                seconds: time.getSeconds()
+            };
+
+
+            add_one(time_object);
+            time_object.seconds = check_for_less_than_10(count);
+            time_object.minutes = check_for_less_than_10(count_minutes);
+            time_object.hours = check_for_less_than_10(count_hours);
+
+            timer_display.innerHTML = time_object.hours + ':' + time_object.minutes +
+                ':' + time_object.seconds;
+
+            setTimeout(run_stop_watch, 1000);
+
+
+        }
+    }
+
+    function add_one(time_object) {
+        count += 1;
+
+        time_object.seconds = count;
+        // console.log(time_object.seconds);
+
+
+        if (time_object.seconds === 60) {
+            count = 1;
+            count_minutes += 1;
+            time_object.minutes += count_minutes;
+            // // console.log('You  ' + time_object.minutes);
+        }
+
+
+        if (time_object.minutes === 60) {
+            count_minutes = 1;
+            count_hours += 1;
+        }
+
+
+    }
+
+    start_btn.onclick = function () {
+        is_running = true;
+        lap_btn.disabled = true;
+        run_stop_watch();
+    };
+
+    stop_btn.onclick = function () {
+        is_running = false;
+        lap_btn.disabled = false;
+
+    };
+    lap_btn.onclick = function () {
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode("Lap " + lap_number + ": " + timer_display.innerHTML));
+        lap_number += 1;
+        laps.appendChild(li);
+
+    };
+
+    reset_btn.onclick = function () {
+        is_running = false;
+        count = 0;
+        count_minutes = 0;
+        count_hours = 0;
+        timer_display.innerHTML = "00:00:00";
+        start_btn.disabled = false;
+        lap_btn.disabled = true;
+        // I use jQuery to delete.
+        $('#laps').empty();
+
+    };
+
+    function check_for_less_than_10(number) {
+        if (number < 10) {
+            return '0' + number;
+        }
+        return number;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grading</title>
+</head>
+<body>
+
+<fieldset>
+    <legend>Grades</legend>
+    Grade <input type="number" id="display" name="Grade" pattern="{0,99}" required/><br/>
+    <button onclick="grading()">Find your grade</button>
+</fieldset>
+
+<p id="output"></p>
+<script>
+    function grading() {
+
+        var display = document.querySelector('#display').value
+        if (display === 100) {
+            document.getElementById("output").innerHTML =
+                "You got an A+";
+        } else if (display >= 90 && display <= 99) {
+            document.getElementById("output").innerHTML =
+                "You got an A";
+        } else if (display >= 80 && display <= 89) {
+            document.getElementById("output").innerHTML =
+                "You got a B";
+        } else if (display >= 70 && display <= 79) {
+            document.getElementById("output").innerHTML =
+                "You got a C";
+        } else if (display >= 60 && display <= 69) {
+            document.getElementById("output").innerHTML =
+                "You got a D";
+        } else if (display < 60) {
+            document.getElementById("output").innerHTML =
+                "You failed";
+        }
+    }
+
+</script>
+
+</body>
+</html>

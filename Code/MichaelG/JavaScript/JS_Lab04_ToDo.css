@@ -1,0 +1,58 @@
+#todo {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+#needs_done {
+    position:relative;
+    left: 40%;
+    width:20%;
+    text-align: center;
+}
+.todo_container {
+    margin-top: 0;
+    width:100%;
+    height:auto;
+}
+#submit {
+    position:relative;
+    left:40%;
+}
+#done {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin-top: 0;
+}
+.completed_container {
+    margin-top: 0;
+    width:100%;
+    background-color: lightgrey;
+    height:auto;
+}
+#finished>li {
+    text-decoration:line-through;
+}
+html {
+    background-color: gainsboro;
+}
+#to_do {
+    margin-left:5%;
+    overflow:visible;
+}
+#to_do >li:hover {
+    background-color:gray;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width:-moz-fit-content;
+}
+li>button {
+    background-color: white;
+    margin-left:10px;
+    position:relative;
+    opacity: 0.3;
+
+}
+li>button:hover {
+    background-color:white;
+    color:black;
+    opacity: 1;
+}
