@@ -19,22 +19,27 @@
     radius: 100,
     px: Math.random() * ball_sack.width,
     py: Math.random() * ball_sack.height,
-    vx: (2 * Math.random() - 1) * 10,
-    vy: (2 * Math.random() - 1) * 10
+    vx: 7,
+    vy: 7,
     };
 
     let ctx = ball_sack.getContext('2d')
+    let gravity = .5;
+    let friction = .8;
     function main_loop() {
         ctx.clearRect(0,0,ball_sack.width, ball_sack.height);
+
         if (ball.px + ball.radius >= ball_sack.width) {
-            ball.vx = -ball.vx;
+            ball.vx = -ball.vx * friction;
             ball.px = ball_sack.width - ball.radius;
-            console.log('first')
+
+
         }
          else if (ball.px - ball.radius <= 0){
-            ball.vx = -ball.vx;
-            ball.px = 0 + ball.radius
-            console.log('second branch')
+            ball.vx = -ball.vx * friction;
+            ball.px = 0 + ball.radius;
+
+
         }
         if (ball.py + ball.radius >= ball_sack.height){
             ball.vy = -ball.vy
@@ -49,6 +54,7 @@
         ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
         ctx.fillStyle = 'green';
         ctx.fill();
+        ball.vy += gravity; // GRAVITY!!!
         ball.py += ball.vy;
         ball.px += ball.vx;
         window.requestAnimationFrame(main_loop);
