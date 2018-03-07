@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme:300,400');
+
 html, body {
     height: 100%;
 }
 
 body {
     background:-webkit-linear-gradient( #b2d8ff , #8bb5e0) !important;
+    font-family: 'BioRhyme', serif;
 }
 
 .headDiv {
@@ -23,18 +26,25 @@ body {
 }
 
 .btn {
-    margin-top: 2vh;
+    background-color: #8bb5e0 !important;
+    margin-top: -10px;
+}
+
+.btn:hover {
+    background-color: #8bb5e0 !important;
+    border-color: #8bb5e0 !important;
 }
 
 .headDiv h1 {
     font-size: 4vw;
+    font-family: 'BioRhyme', serif;
 }
 
-#quote{
+#container{
     position: relative;
     left: 50%;
-    top: 0%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    transform: translate(-50%, -150%);
     width: 60%;
     height: 40%;
     padding: 20px;
@@ -57,7 +67,7 @@ input[type="text"] {
     top: 30px;
     left: 130px;
     background: none;
-    color: #fff;
+    color: #222;
 }
 
 .hidden {
@@ -70,10 +80,10 @@ input[type="text"] {
 /* ************************************************************ */
 
 .clouds-container{
-  position: relative;
-  height:100vh;
-  padding-top: 200px;
-  overflow: hidden;
+    position: relative;
+    height:100vh;
+    padding-top: 200px;
+    overflow: hidden;
 }
 
 .cloud{

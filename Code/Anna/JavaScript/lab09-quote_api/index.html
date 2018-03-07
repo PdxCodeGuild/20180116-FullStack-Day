@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="css/main.css">
 
     <!-- Bootstrap/fonts -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/4/minty/bootstrap.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
@@ -32,16 +32,19 @@
     </div>
 
     <!-- header -->
-    <div class="headDiv text-center">
+    <div class="headDiv center-align">
         <h1>INSPIRATION AWAITS!</h1>
-        <button id="bt_getQuote" class="btn btn-outline-dark">Inspire me!</button>
+        <button id="bt_getQuote" class="btn waves-effect waves-light">Inspire me!</button>
     </div>
 
     <!-- input -->
 
 
     <!-- quote goes here -->
-    <div id="quote" class="hidden"></div>
+    <div id="container" class="hidden">
+        <p id="quoteP" class="flow-text"></p>
+        <p id="authorP" class="flow-text right-align">- </p>
+    </div>
 
 
 
@@ -49,7 +52,8 @@
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
 
 </body>
