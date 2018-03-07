@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--//Make a clock that displays the current time and updates every second. Check out JavaScript timing events and dates.-->
+<!--Writing new Date() creates a date with the current date and time. You can then create a string from that date, and set-->
+<!--it in the DOM.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock v1</title>
+    <div id="clock"></div>
+</head>
+<body>
+<script>
+
+    function my_timer() {
+    let t = new Date();
+    document.getElementById("clock").innerText = t.toLocaleTimeString();
+    }
+    setInterval(my_timer, 1000);
+
+
+</script>
+</body>
+</html>
