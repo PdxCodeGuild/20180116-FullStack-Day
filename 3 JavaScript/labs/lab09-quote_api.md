@@ -36,8 +36,9 @@ function http_get(url, success) {
 
 ## Version 2
 
-The API also supports browsing quotes by change, and lists 25 per page. Have buttons for changing the page at the bottom. Every time the page is changed, do an HTTP get to `"https://favqs.com/api/quotes?page="+page_id`.
+The API also supports browsing quotes. You can use the `page` and `filter` parameters to get a bunch of quotes. You can add page buttons and/or an `input` field and `button` for filtering.
 
-## Version 3 (optional)
+`"https://favqs.com/api/quotes?page="+page_id+"&filter=" + text`.
 
-Add an `input` field and a `button`, allow users to enter some text and find quotes by using `https://favqs.com/api/quotes/?filter=<text>`. Retrieve the quotes you get in response and show them in a list. Note that if the text has spaces or special characters will have to encode the parameters using [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) which takes a string and returns a new encoded string.
+Then you can show those quotes in a list.Note that if the text has spaces or special characters will have to encode the parameters using [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) which takes a string and returns a new encoded string.
+
