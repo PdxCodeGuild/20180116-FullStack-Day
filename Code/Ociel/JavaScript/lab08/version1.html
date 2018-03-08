@@ -1,0 +1,87 @@
+<!--Making a Bouncing Ball-->
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #canvas_id {
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas_id" height="500" width="500"></canvas>
+
+<script>
+    let canvas_id = document.querySelector("#canvas_id");
+    let ctx = canvas_id.getContext('2d');
+
+    // I create an Object with Radius, Initial Position (px) + (py) and Velocity (Vx) + (vy)
+    let ball = {
+        radius: 10,
+        px: Math.random() * canvas_id.width, //Starting X Coordinate
+        py: Math.random() * canvas_id.height,// Starting Y Coordinate
+        vx: (2 * Math.random() - 1) * 10,    // Starting Velocity in X
+        vy: (2 * Math.random() - 1) * 10     // Starting Velocity in Y
+    };
+
+    function check_for_wall() {
+
+        //Checks if positions get to the size of the screen. If it does..
+        // it changes the velocity to the other direction by putting it as a
+        // negative.
+
+        // CHECKS: LEFT TO RIGHT
+        if (ball.px > canvas_id.width || ball.px < 0) {
+            ball.vx = -ball.vx;
+        }
+
+        //CHECKS: BOTTOM TO TOP
+        if (ball.py > canvas_id.height || ball.py < 0) {
+            ball.vy = -ball.vy;
+        }
+
+    }
+
+    function move_ball() {
+        // Adding Velocity to location. which moves the position
+        // of the ball.
+        ball.px += ball.vx;
+        ball.py += ball.vy;
+
+    }
+
+    function draw() {
+
+        // clear rect deletes the last ball so that in Arc we can re draw it.
+        ctx.clearRect(0, 0, canvas_id.width, canvas_id.height);
+        ctx.beginPath();
+
+        // redrawing it
+        ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'black';
+
+        //Filling it.
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function main_loop() {
+        // update the ball's position
+        // Update but i call it move.
+        move_ball();
+        // check if it hit a boundary
+        check_for_wall();
+        // draw the ball
+        draw();
+
+        window.requestAnimationFrame(main_loop);
+    }
+
+    main_loop();
+
+</script>
+</body>
+</html>
