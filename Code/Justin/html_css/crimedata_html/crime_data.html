@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Data</title>
+    <link rel="stylesheet" type="text/css" href="crime_data.css"/>
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+
+<script>
+
+    function loadData(crime_data_2014){
+        console.log(crime_data_2014[0]);
+        console.log(typeof crime_data_2014);
+        //
+        let circles = svg.selectAll("circle")
+            .data(crime_data_2014)
+            .enter()
+            .append("circle");
+
+        let circleAttributes = circles
+            .attr("cx", function (d) { return d['x_shifted']/2000; })
+            .attr("cy", function (d) { return 2000-d['y_shifted']; })
+            .attr("r", 1)
+            .style("fill", function (d){
+                if (d['major_offense_type'] === 'Assault'){return 'red'}
+                else if (d['major_offense_type'] === 'Burglary'){return 'blue'}
+                else if (d['major_offense_type'] === 'Larceny'){return 'purple'}
+                else if (d['major_offense_type'] === 'Vandalism'){return 'orange'}
+                else if (d['major_offense_type'] === 'DUII'){return 'green'}
+                else {return 'black'}
+            });
+        };
+
+
+    d3.csv("crime_location_data_2014.csv" function(data){" +
+        "" +
+        ");
+
+    let svg = d3.select("body")
+        .append("svg")
+        .attr('id', 'map')
+        .attr("width", 2000)
+        .attr("height", 2000);
+
+
+
+
+</script>
+
+
+
+</body>
