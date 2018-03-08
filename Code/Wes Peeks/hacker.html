@@ -9,7 +9,8 @@
             height: 100%;
             position: fixed;
             border: none;
-
+            margin: 0;
+            outline: none;
         }
     </style>
 
@@ -34,22 +35,19 @@
         }
 
         http_get("https://raw.githubusercontent.com/dspinellis/unix-history-repo/Research-PDP7-Snapshot-Development/chmod.s", function(data) {
-            console.log(data);
+            text = data;
         });
 
+        let counter = 0;
+        let text = '';
 
 
 
         let hack = document.querySelector('#hack');
 
         hack.onkeydown = function hacker(end) {
-            let text = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()';
-            let input = 3;
-            for (let i = 0; i < input; i++) {
-                let rand_choice = Math.floor(Math.random() * text.length);
-                hacktxt = +rand_choice.substring;
-                document.querySelector('#hack').value += hacktxt;
-            }
+            counter += 3;
+            hack.value = text.substring(0, counter);
             end.preventDefault();
         }
     </script>
