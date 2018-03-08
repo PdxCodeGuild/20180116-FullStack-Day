@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock 2</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="button_div">
+        <button id="button_stopwatch">stopwatch</button>
+    </div>
+    <div id="stopwatch_div">
+            <div id="view_stopwatch"></div>
+            <button id="bt_start_stopwatch">start</button>
+            <button id="bt_new_lap">new lap</button>
+            <button id="bt_stop_stopwatch">stop</button>
+    </div>
+    <div>
+        <ul id ="lap_list"></ul>
+    </div>
+
+    <script>
+        var button_stopwatch = document.getElementById('button_stopwatch');
+        var stopwatch_div = document.getElementById('stopwatch_div');
+        var lap_list = document.getElementById("lap_list");
+
+        stopwatch_div.style.display = 'none';
+        lap_list.style.display = 'none';
+
+        var view_stopwatch = document.getElementById('view_stopwatch');
+        var bt_start_stopwatch = document.getElementById('bt_start_stopwatch');
+        var bt_stop_stopwatch = document.getElementById('bt_stop_stopwatch');
+        var bt_new_lap = document.getElementById("bt_new_lap");
+
+        bt_stop_stopwatch.style.display = 'none';
+        bt_new_lap.style.display = 'none';
+
+        let last_lap_date = null;
+        let stopwatch_date = null;
+
+
+        button_stopwatch.onclick = function() {
+            stopwatch_div.style.display = 'block'; //not sure what this did
+            button_stopwatch.disabled = 'disabled';
+        };
+
+        function add0(n) {
+            return (n < 10)? '0'+n: n;
+        }
+
+        function time_str(date) {
+            var hh = add0(date.getHours());
+            var mm = add0(date.getMinutes());
+            var ss = add0(date.getSeconds());
+            return hh+':'+mm+':'+ss;
+        }
+
+
+
+
+        bt_start_stopwatch.onclick = function() {
+            stopwatch_date = new Date();
+            stopwatch_date.setHours(0, 0, 0, 0);
+            stopwatch_interval = setInterval(update_stopwatch, 1000);
+            view_stopwatch.innerHTML = time_str(stopwatch_date);
+            bt_start_stopwatch.style.display = 'none';
+            bt_new_lap.style.display = 'initial';
+            bt_stop_stopwatch.style.display = 'initial';
+        };
+
+        bt_stop_stopwatch.onclick = function() {
+            clearInterval(stopwatch_interval);
+            stopwatch_interval = null;
+            stopwatch_date = new Date();
+            stopwatch_date.setHours(0, 0, 0, 0);
+            view_stopwatch.innerHTML = time_str(stopwatch_date);
+            bt_start_stopwatch.style.display = 'initial';
+            bt_stop_stopwatch.style.display = 'none';
+        };
+
+        //Trying to get the lap time to show up
+        bt_new_lap.onclick = function() {
+            // if the last_lap_date is null, display the current time as the lap
+            if (last_lap_date === null) {
+                lap_list.style.display = 'block';
+                let li = document.createElement('li');
+                li.innerText = time_str(stopwatch_date);
+                lap_list.appendChild(li);
+            }
+            // otherwise, take the difference between stopwatch_date and last_lap_date, set that as the displayed lap
+            else {
+                // lap_list.style.display = 'block';
+                let li = document.createElement('li');
+                //alert('test')
+                //console.log(new Date(stopwatch_date - last_lap_date));
+
+                let temp_date = new Date();
+                temp_date.setHours(0, 0, 0, stopwatch_date - last_lap_date);
+
+                li.innerText = time_str(temp_date);
+                lap_list.appendChild(li);
+            }
+            // either way, last_lap_date to a copy of stopwatch_date
+            last_lap_date = new Date(stopwatch_date.getTime());
+        };
+
+        function update_stopwatch() {
+            stopwatch_date.setSeconds(stopwatch_date.getSeconds()+1);
+            view_stopwatch.innerHTML = time_str(stopwatch_date);
+        };
+
+        //examples of creating a copy (I think)
+        // let a = new Date();
+        // let b = new Date();
+        // console.log(b-a);
+
+
+        // let a = new Date();
+        // let b = new Date(a.getTime());
+        // a.setSeconds(10);
+        // alert(b.getSeconds());
+
+
+    </script>
+</body>
+</html>

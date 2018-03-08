@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        $.ajax({
+            method: "GET", // HTTP request
+            url: "https://favqs.com/api/qotd",// give the URL
+        }).done(function(data) {
+            console.log(data); // log the data we get back
+        }).fail(function() {
+            alert("error");
+        });
+
+    </script>
+</head>
+<body>
+
+<div></div>
+</body>
+</html>
