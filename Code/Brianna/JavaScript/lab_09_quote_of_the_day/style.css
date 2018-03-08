@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script');
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+body {
+    background-color: #82A8FF;
+    color: #da00cf;
+    font-size: 2.5em;
+    font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+div {
+    display: flex;
+    background-color: #6681cc;
+    color: #da00cf;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 2%
+    /*box-shadow: 3em 3em #b388ff;*/
+}
+
+
+blockquote {
+    display: flex;
+    background-color: #6681cc;
+    color: #c1c2f2;
+    justify-content: center;
+    border-radius: 15%
+}
+
+
+
+svg {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+}
+/* add ripple effect */
+
+
+.ripple,.ripple:before,.ripple:after {
+  display:block;
+  border-radius:2px;
+  width:2px;
+  height:2px;
+  -webkit-animation:rip 6s infinite ease-out;
+  -moz-animation:rip 6s infinite ease-out;
+}
+.ripple {
+  position:absolute;
+  z-index:-1;
+    left: 28%;
+    top: 60%
+  /*top:40px;*/
+  /*left:15px;*/
+}
+.ripple:before,.ripple:after {
+  content:'';
+  position:absolute;
+}
+.ripple:before {-webkit-animation-delay:.2s;-moz-animation-delay:.2s;top:5px;left:25px;}
+.ripple:after {-webkit-animation-delay:.8s;-moz-animation-delay:.8s;top:25px;left:0;}
+@-webkit-keyframes rip
+{
+  0%  {
+    box-shadow:0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent;
+  }
+  15%  {
+    box-shadow:0 0 0 0 #82A8FF,
+               0 0 0 0 rgba(255,255,255,0.1),
+               0 0 0 0 #82A8FF,
+               0 0 0 0 rgba(0,0,0,0.03);
+  }
+  100% {
+    box-shadow:0 0 40px 200px #82A8FF,
+               0 0 10px 210px transparent,
+               0 0 30px 220px #82A8FF,
+               0 0 5px 230px transparent;
+  }
+}
+@-moz-keyframes rip
+{
+  0%  {
+    box-shadow:0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent;
+  }
+  15%  {
+    box-shadow:0 0 0 0 #82A8FF,
+               0 0 0 0 rgba(255,255,255,0.1),
+               0 0 0 0 #82A8FF,
+               0 0 0 0 rgba(0,0,0,0.03);
+  }
+  100% {
+    box-shadow:0 0 40px 200px #82A8FF,
+               0 0 10px 210px transparent,
+               0 0 30px 220px #82A8FF,
+               0 0 5px 230px transparent;
+  }
+}
+
+/* animating paper airplane  */
+.back-to-school__plane {
+  -webkit-filter: drop-shadow(40px 40px 0 rgba(0,0,0,0.15));
+          filter: drop-shadow(40px 40px 0 rgba(0,0,0,0.15));
+  -webkit-animation: back-to-school__animation 1.5s ease-in-out infinite alternate;
+          animation: back-to-school__animation 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes back-to-school__animation {
+  from {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+    -webkit-filter: drop-shadow(40px 40px 0 rgba(0,0,0,0.15));
+            filter: drop-shadow(40px 40px 0 rgba(0,0,0,0.15));
+  }
+  to {
+    -webkit-transform: translateX(5px) translateY(5px);
+            transform: translateX(5px) translateY(5px);
+    -webkit-filter: drop-shadow(35px 35px rgba(0,0,0,0.25));
+            filter: drop-shadow(35px 35px rgba(0,0,0,0.25));
+  }
+}
+@keyframes back-to-school__animation {
+  from {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+    -webkit-filter: drop-shadow(40px 40px 0 rgba(0,0,0,0.15));
+            filter: drop-shadow(40px 40px 0 rgba(0,0,0,0.15));
+  }
+  to {
+    -webkit-transform: translateX(5px) translateY(5px);
+            transform: translateX(5px) translateY(5px);
+    -webkit-filter: drop-shadow(35px 35px rgba(0,0,0,0.25));
+            filter: drop-shadow(35px 35px rgba(0,0,0,0.25));
+  }
+}
