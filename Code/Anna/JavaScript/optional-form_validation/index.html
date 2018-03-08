@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Form Validation</title>
+    <meta name="description" content="Practice with form validation and REGEX.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Bootstrap/fonts -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+
+    <!-- form -->
+    <div id="headDiv" class="headDiv">
+        <div class="row">
+            <p class="flow-text center-align">Give me all of your sensitive information!<sup>*</sup></p>
+        </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate" minlength="1">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" minlength="1">
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="user_name" type="text" class="validate" minlength="5" required>
+              <label for="user_name">Username</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" minlength="6" required>
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="email" type="email" class="validate" required>
+              <label for="email">Email</label>
+            </div>
+          <div class="input-field col s6">
+              <input id="phone" type="number" class="validate" placeholder="503-123-4567" required>
+              <label for="phone">Phone Number</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6">
+                Date of birth:
+                <div class="input-field inline">
+              <input id="dob" type="date" class="validate">
+              <label for="dob"></label>
+            </div>
+            </div>
+              <div class="input-field col s6">
+                  <input id="ssn" type="text" class="validate" placeholder="123-45-6789" onBlur = "validateSSN()" required>
+                  <label for="ssn">Social Security Number</label>
+            </div>
+          </div>
+        </form>
+          <div class="right-align">
+          <a id="bt_submit" class="btn waves-effect waves-light light-green lighten-2">Submit
+              <i class="material-icons right">send</i></a>
+          </a>
+          </div>
+      </div>
+        <div class="row">
+            <p class="right-align tiny">*Your information will solely be used to set up offshore bank accounts for the author's fun and profit!</p>
+        </div>
+    </div>
+
+    <!-- result goes here -->
+
+    <div id="resultDiv" class="headDiv hidden center-align">
+        <h1 class="flow-text">Thank you for funding the purchase of my private island. Maybe one day I'll let you visit!</h1>
+        <img class="responsive-img" src="http://www.realclearlife.com/wp-content/uploads/2017/06/gladden-private-island-0615.jpg">
+        <div class="right-align">
+          <a class="btn waves-effect waves-light light-green lighten-2" onclick="window.location.reload()">Back
+              <i class="material-icons left">arrow_back</i></a>
+          </a>
+      </div>
+    </div>
+
+
+    <!-- scripts go here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
