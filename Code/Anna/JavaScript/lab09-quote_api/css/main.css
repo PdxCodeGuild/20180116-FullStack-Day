@@ -16,7 +16,7 @@ body {
     top: 20%;
     transform: translate(-50%, -50%);
     width: 60%;
-    height: 25%;
+    height: 40%;
     padding: 20px;
     background: white;
     opacity: .9;
@@ -44,10 +44,10 @@ body {
 #container{
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 65%;
     transform: translate(-50%, -50%);
     width: 60%;
-    height: 40%;
+    min-height: 40%;
     padding: 20px;
     background: white;
     opacity: .9;
@@ -57,22 +57,13 @@ body {
     z-index: 1000;
 }
 
-
-input[type="text"] {
-    border: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
-    padding: 6px;
-    font-size: 18px;
-    min-width: 50%;
-    text-transform: uppercase;
-    top: 30px;
-    left: 130px;
-    background: none;
-    color: #222;
-}
-
 .hidden {
     display: none !important;
+}
+
+input {
+    border-color: #8bb5e0 !important;
+    text-transform: uppercase;
 }
 
 

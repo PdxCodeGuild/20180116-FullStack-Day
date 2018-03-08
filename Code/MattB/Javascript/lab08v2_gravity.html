@@ -45,21 +45,25 @@
                 if (left_x < 0) {
                     ball.vx *= -1;
                     ball.vx *= 0.95;
+                    ball.vy *= 0.95;
                     ball.px = 0 + ball.radius;
                 }
                 if (right_x > cnv.width) {
                     ball.vx *= -1;
                     ball.vx *= 0.95;
+                    ball.vy *= 0.95;
                     ball.px = cnv.width - ball.radius;
                 }
                 if (top_y < 0) {
                     ball.vy *= -1;
                     ball.vy *= 0.95;
+                    ball.vx *= 0.95;
                     ball.py = 0 + ball.radius;
                 }
                 if (bottom_y > cnv.height) {
                     ball.vy *= -1;
                     ball.vy *= 0.95;
+                    ball.vx *= 0.95;
                     ball.py = cnv.height - ball.radius;
                 }
                 // if (left_x < 1 || right_x > cnv.width - 1){

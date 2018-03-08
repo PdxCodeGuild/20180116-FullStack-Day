@@ -29,22 +29,7 @@
 
 
 <script>
-    function initializeGame(data, success) {
-        if (initial){
-           if (success){
-               data = data.split("\n");
-               for (var i = 0; i < data.length; i++) {
-                   if (data[i].length >= 8) {
-                       word_list.push(data[i].toUpperCase());
-                   }
-               }
-               alert(word_list.length);
-            }
-            else{
-                word_list = ['HOPSCOTCH', 'BAMBOOZLE', 'RHINOCEROS']
-           }
-           initial = false;
-        }
+    function initializeGame() {
         drawNewButtons();
         drawNoose();
         pickWord();
@@ -183,7 +168,6 @@
         }
     }
 
-    var initial = true;
     var word;
     var word_list = [];
     var puzzle;
@@ -192,9 +176,22 @@
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext('2d');
     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    // initializeGame();
-    $.get("https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/1%20Python/data/english.txt",
-        function(data, success){initializeGame(data, success)});
+
+    $.ajax({ method: "GET", url: "https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/1%20Python/data/english.txt"})
+    .done(function(data) {
+        data = data.split("\n");
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].length >= 8) {
+                word_list.push(data[i].toUpperCase());
+            }
+        }
+        initializeGame();
+    })
+    .fail(function() {
+        word_list = ['HOPSCOTCH', 'BAMBOOZLE', 'RHINOCEROS'];
+        initializeGame();
+    });
+
 </script>
 
 
