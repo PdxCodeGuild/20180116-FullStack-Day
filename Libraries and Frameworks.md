@@ -95,3 +95,16 @@ You can view a long list on [wikipedia](https://en.wikipedia.org/wiki/List_of_Ja
 - [Babylon.js](http://www.babylonjs.com/)
 
 
+## Public APIs
+
+You can view long lists of public APIs [here](https://github.com/toddmotto/public-apis), [here](https://github.com/abhishekbanthia/Public-APIs), and [here](https://apilist.fun/).
+
+- Users
+    - [randomuser.me](https://randomuser.me/documentation)
+    - [reques.in](https://reqres.in/)
+    - [jsonplaceholder](https://jsonplaceholder.typicode.com/)
+- Weather: [openweathermap.org](http://openweathermap.org/api)
+- Number Facts: [numbersapi.com](http://numbersapi.com/#42)
+- Photos: [flickr.com](https://www.flickr.com/services/api/) (requires key)
+- Astronomical Data: [api.nasa.gov](https://api.nasa.gov/#live_example)
+- USA Population Data: [datausa.io](https://datausa.io/about/api/)
