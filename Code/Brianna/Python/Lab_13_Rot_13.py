@@ -2,7 +2,7 @@ import string
 
 input_phrase = input("Please type your word to by encrypted in Upper Case letters with no spaces or additional characters.\n:")
 new_phrase = ''
-alphabe t_list = list(string.ascii_uppercase)
+alphabet_list = list(string.ascii_uppercase)
 rotation = int(input("By how much would you like to rotate your cypher? Please enter a number.\n:"))
 
 for i in range(len(input_phrase)):
