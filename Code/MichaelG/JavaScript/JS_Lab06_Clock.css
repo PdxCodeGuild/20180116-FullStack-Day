@@ -20,7 +20,8 @@
     opacity:1;
 }
 #stop_watch_timer {
-    text-align: center;
+    margin-left: 48%;
+    font-weight: bold;
 }
 ol {
     margin-left:44%;
