@@ -6,11 +6,8 @@ import string
 
 
 password_list = [random.choice(string.ascii_letters), random.choice(string.ascii_lowercase), \
-random.choice(string.ascii_letters), random.choice(string.digits), random.choice(string.hexdigits),\
-random.choice(string.digits), random.choice(string.ascii_uppercase), random.choice(string.digits), \
-random.choice(string.ascii_letters), random.choice(string.ascii_lowercase), \
-random.choice(string.ascii_letters), random.choice(string.digits), random.choice(string.hexdigits),\
-random.choice(string.digits), random.choice(string.ascii_uppercase), random.choice(string.digits)]
+random.choice(string.digits), random.choice(string.hexdigits), random.choice(string.ascii_uppercase),   \
+random.choice(string.ascii_letters), random.choice(string.hexdigits)]
 
 password_string = ""
 

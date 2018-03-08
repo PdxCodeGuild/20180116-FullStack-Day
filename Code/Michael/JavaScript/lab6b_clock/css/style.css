@@ -1,0 +1,25 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-align: center;
+    font-size: 24px;
+}
+
+#container {
+    width: 800px;
+    margin: 20px auto;
+}
+
+#seconds, #tens{
+    font-size: 86px;
+}
+
+button {
+    background-color: #1b1e21;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100px;
+    margin: 5px;
+    border-radius: 6px;
+}
