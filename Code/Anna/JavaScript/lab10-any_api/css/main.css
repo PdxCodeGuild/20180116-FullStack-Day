@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=BioRhyme:300,400');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%);
+    overflow: hidden;
+    font-family: 'BioRhyme', serif;
+}
+
+.headDiv {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40%;
+    padding: 20px;
+    background: white;
+    opacity: .9;
+    color: #222;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+}
+
+.btn {
+    background-color: #8bb5e0 !important;
+    margin-top: -10px;
+}
+
+.btn:hover {
+    background-color: #8bb5e0 !important;
+    border-color: #8bb5e0 !important;
+}
+
+.headDiv h1 {
+    font-size: 4vw;
+    font-family: 'BioRhyme', serif;
+}
+
+#container{
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    min-height: 40%;
+    padding: 20px;
+    background: white;
+    opacity: .9;
+    color: #222;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+input {
+    border-color: #8bb5e0 !important;
+    text-transform: uppercase;
+}
+

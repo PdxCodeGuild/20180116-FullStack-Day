@@ -41,6 +41,7 @@
     let t;
     let times = document.getElementById("times").value;
 
+    // Toggle start/stop of timer.
     function start_toggle () {
 
         if (start_button_switch.innerHTML === "Start") {
@@ -54,7 +55,7 @@
         }
 
     }
-
+    // keep time.
     function time_update() {
         milliseconds = milliseconds +50;
         if (milliseconds >999) {
@@ -74,10 +75,11 @@
         watch_timer.innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
 
     }
-
+    // append lap time to ordered list.
     function lap_save() {
         console.log("lap");
         let new_li = document.createElement("li");
+        new_li.innerText = watch_timer.innerText;
         document.getElementById("times").appendChild(new_li);
     }
 
