@@ -26,6 +26,9 @@
         document.querySelector('#hook').innerText = date_str;
     }, 500)
 
+    let checker = false;
+
+
     let stopIt = document.querySelector('#stopIt'),
         start = document.querySelector('#start'),
         stop = document.querySelector('#stop'),
@@ -57,11 +60,14 @@
             (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" +
             (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00");
 
-        timer();
+
     }
 
     function timer() {
-        t = setTimeout(add, 1000);
+        if (checker == false) {
+            t = setInterval(add, 1000);
+            checker = true;
+        }
     }
 
 
@@ -72,7 +78,8 @@
 
     /* Stop button */
     stop.onclick = function () {
-        clearTimeout(t);
+        clearInterval(t);
+        checker = false;
     }
 
     /* Clear button */
