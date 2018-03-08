@@ -21,43 +21,43 @@
 </head>
 <body>
 
-    <!-- header -->
-    <div class="headDiv">
+    <!-- form -->
+    <div id="headDiv" class="headDiv">
         <div class="row">
-            <p class="flow-text center-align">Give me all of your sensitive information!</p>
+            <p class="flow-text center-align">Give me all of your sensitive information!<sup>*</sup></p>
         </div>
       <div class="row">
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate">
+              <input id="first_name" type="text" class="validate" minlength="1">
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
+              <input id="last_name" type="text" class="validate" minlength="1">
               <label for="last_name">Last Name</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="user_name" type="text" class="validate">
+              <input id="user_name" type="text" class="validate" minlength="5" required>
               <label for="user_name">Username</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
+              <input id="password" type="password" class="validate" minlength="6" required>
               <label for="password">Password</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="email" type="email" class="validate">
+              <input id="email" type="email" class="validate" required>
               <label for="email">Email</label>
             </div>
           <div class="input-field col s6">
-              <input id="phone" type="number" class="validate">
-              <label for="phone">Phone number</label>
+              <input id="phone" type="number" class="validate" placeholder="503-123-4567" required>
+              <label for="phone">Phone Number</label>
             </div>
           </div>
           <div class="row">
@@ -69,17 +69,33 @@
             </div>
             </div>
               <div class="input-field col s6">
-                  <input id="social" type="password" class="validate">
-                  <label for="social">Social security</label>
+                  <input id="ssn" type="text" class="validate" placeholder="123-45-6789" onBlur = "validateSSN()" required>
+                  <label for="ssn">Social Security Number</label>
             </div>
           </div>
         </form>
+          <div class="right-align">
+          <a id="bt_submit" class="btn waves-effect waves-light light-green lighten-2">Submit
+              <i class="material-icons right">send</i></a>
+          </a>
+          </div>
       </div>
+        <div class="row">
+            <p class="right-align tiny">*Your information will solely be used to set up offshore bank accounts for the author's fun and profit!</p>
+        </div>
     </div>
 
-    <!-- form goes here -->
+    <!-- result goes here -->
 
-
+    <div id="resultDiv" class="headDiv hidden center-align">
+        <h1 class="flow-text">Thank you for funding the purchase of my private island. Maybe one day I'll let you visit!</h1>
+        <img class="responsive-img" src="http://www.realclearlife.com/wp-content/uploads/2017/06/gladden-private-island-0615.jpg">
+        <div class="right-align">
+          <a class="btn waves-effect waves-light light-green lighten-2" onclick="window.location.reload()">Back
+              <i class="material-icons left">arrow_back</i></a>
+          </a>
+      </div>
+    </div>
 
 
     <!-- scripts go here -->
