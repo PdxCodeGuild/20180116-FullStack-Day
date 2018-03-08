@@ -4,73 +4,174 @@
     <meta charset="UTF-8">
     <title>Input testing</title>
     <script type="text/javascript">
-    	
-    	let width = 500;
-    	let height = 500;
-		let ball = {
-    		radius: 4*10,
-    		px: Math.random()*width,
-    		py: Math.random()*height,
-    		vx: (2*Math.random()-1)*10,
-    		vy: (2*Math.random()-1)*10 
-    	};
- 
+        function get_random_color(light) {
+                //optional argument to favor higher hex colors
+                let letters = light? '789ABCDEF' : '0123456789' ;
+                console.log(letters);
 
-    	window.onload = function () {
+                let color = '#';
+                for (var i = 0; i < 6; i++) {
+                    // pull random indexes
+                    color += letters[Math.floor(Math.random() * letters.length)];
+                }
+                console.log(color);
+          return color;
+        }
+
+        // function get_random_color_pair(gradient) {
+        //     let high_table ='789ABCDEF';
+        //     let low_table = '012345678';
+        //     let color_index = '#';
+        //     for (let i = 0; i < 6; i++) {
+        //         // pull random indexes
+        //         color_index += Math.floor(Math.random() * high_table.length);
+        //     }
+        //         console.log(color_index);
+        //         gradient.addColorStop(0, low_table[color_index]);
+        //         gradient.addColorStop(1, high_table[color_index]);
+        //
+        //     console.log(color);
+        //   return color;
+        //
+        //     }
+            // various attempts, stack overflow to the rescue
+            //https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors/13542669#13542669
+            //shades a color hex by a percent expressed as a decimal
+        function shadeColor2(color, percent) {
+           let f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
+           return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
+}
+        window.onload = function () {
+
+    		//selectors
     		let canvas = document.querySelector('canvas');
     		let ctx = canvas.getContext("2d");
-    		ctx.beginPath();
-			ctx.fillStyle = 'green';
-			ctx.fill();
+
+            //constants
+    		let gravity = .3;
+			let friction = 0.85;
+			
+    		//make balls
+    		let balls = [];
+    		for (let i = 0; i < 100; i++) {
+				let ball = {
+                    //should always produce a 6 digit hex
+				color: get_random_color(false),
+                // color: "#"+ get_random_color('light'),
+                // color2: "#"+((1<<24)*Math.random()|0).toString(16),
+    			radius: Math.random()*30 + 5,
+    			px: Math.random()*window.innerWidth,
+    			py: Math.random()*window.innerHeight/2, //upper half for more bounce
+    			vx: (2*Math.random()-1)*10,
+    			vy: (2*Math.random()-1)*10 
+    			
+                };
+
+    			balls.push(ball);
+    			// console.log(balls)
+    		}
+   //  		ctx.beginPath();
+			// ctx.fillStyle = 'green';
+			// ctx.fill();
     		function main_loop() {
-    			canvas.width = window.innerWidth;
+				//updating window size on resize
+				canvas.width = window.innerWidth;
     			canvas.height = window.innerHeight;
-    			//gravity
+
+
+
+
 
     			//note: clever solutions are not a substitution for thoroughness
-    			//bouncing ball radius is x left edge y top edge, positive velocity
-    			let friction = 0.90
-    			if (ball.px <= ball.radius) {
-    				ball.vx = Math.abs(ball.vx) * friction;
+    			//bouncing balls[i] radius is x left edge y top edge, positive velocity
+				for (let i = 0; i < balls.length; i++) {    	
+
+
+    			//other ball collisions, not currently implemented
+    		// 	for (let j = 0; j < balls.length; j++) {
+    		// 		if (balls[j].color !== balls[i].color) {
+    		// 			//1st ball right side
+    		// 			if (balls[i].px + balls[i].radius + balls[j].radius > balls[j].px &&
+    		// 				balls[i].px < balls[i].radius + balls[j].radius + balls[j].px &&
+    		// 				balls[i].py + balls[i].radius + balls[j].radius > balls[j].py &&
+    		// 				balls[i].py < balls[j].py + balls[i].radius + balls[j].radius) {
+    		//
+    		// 				console.log(`collision! 1: ${balls[i].px}, ${balls[i].py}  2: ${balls[j].px},${balls[j].py}`);
+            //
+    		// 				//mass = area... pi * r^2
+    		// 				let mass1 = Math.PI * Math.pow(balls[i].radius,2);
+    		// 				let mass2 = Math.PI * Math.pow(balls[j].radius,2);
+    		// 				//new velocities formula found here https://gamedevelopment.tutsplus.com/tutorials/when-worlds-collide-simulating-circle-circle-collisions--gamedev-769
+    		//
+    		// 				balls[i].vx = -(balls[i].vx * (mass1 - mass2) + (2 * mass2 * balls[j].vx)) / (mass1 + mass2) * friction;
+    		// 				balls[i].vy = -(balls[i].vy * (mass1 - mass2) + (2 * mass2 * balls[j].vy)) / (mass1 + mass2) * friction;
+            //
+    		// 				balls[j].vx = -(balls[j].vx * (mass2 - mass1) + (2 * mass1 * balls[i].vx)) / (mass1 + mass2) * friction;
+    		// 				balls[j].vy = -(balls[j].vy * (mass2 - mass1) + (2 * mass1 * balls[i].vy)) / (mass1 + mass2) * friction;
+    		//
+    		// 				//move them
+    		// 				balls[i].px += balls[i].vx;
+    		// 				balls[i].py += balls[i].vy;
+    		// 				//gravity
+				// 			balls[i].vy += 1;
+				// 			balls[j].vy += 1;
+            //
+            //
+    		// 		}
+    		// 	}
+    		// }
+
+
+
+    			if (balls[i].px <= balls[i].radius) {
+    				balls[i].vx = Math.abs(balls[i].vx) * friction;
 
     			};
     			//right edge
-    			if (ball.px + ball.radius >= canvas.width) {
-    				ball.vx = -Math.abs(ball.vx) * friction;
+    			if (balls[i].px + balls[i].radius >= canvas.width) {
+    				balls[i].vx = -Math.abs(balls[i].vx) * friction;
 
     			}; //upper edge
-    			if (ball.py <= ball.radius) {
-    				ball.vy = Math.abs(ball.vy)  * friction //inverse to positive
+    			if (balls[i].py <= balls[i].radius) {
+    				balls[i].vy = Math.abs(balls[i].vy)  * friction //inverse to positive
    
     			}; //lower edge
-    			if (ball.py + ball.radius >= canvas.height) {
-    				ball.vy = -Math.abs(ball.vy) * friction;
+    			if (balls[i].py + balls[i].radius >= canvas.height) {
+    				balls[i].vy = -Math.abs(balls[i].vy) * friction;
     			};
 
     			//
-				ball.px += ball.vx;
-    			ball.py += ball.vy;
+				balls[i].px += balls[i].vx;
+    			balls[i].py += balls[i].vy;
 
-    			//apply gravity
-				ball.vy += 1;
-    			// ctx.beginPath();
+    				//apply gravity
+					balls[i].vy += gravity;
+    			ctx.beginPath();
 
     			// ctx.fillStyle = 'rgba(255,255,255,0.5)'; 
 				// ctx.fill();
 
     			// ctx.fillRect(0, 0, canvas.width, canvas.height);
 				// ctx.clearRect(0, 0, canvas.width, canvas.height);
+				let gradient = ctx.createRadialGradient(balls[i].px, balls[i].py, 0, balls[i].px, balls[i].py, balls[i].radius);
+                gradient.addColorStop(1, balls[i].color);
+                let color2 = shadeColor2(balls[i].color, .9);
+				gradient.addColorStop(0, color2);
+                // get_random_color_pair(gradient);
 
-				
-				ctx.fillStyle = 'green';
-				ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
-    			ctx.fillRect(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
+
+
+				// ctx.fillStyle = balls[i].color;
+                ctx.fillStyle = gradient;
+
+				ctx.arc(balls[i].px, balls[i].py, balls[i].radius, 0, 2 * Math.PI, false);
 				
 				ctx.fill();
 
-
-    			// console.log(ball.px);
+				}
+    			// console.log(balls[i].px);
     			window.requestAnimationFrame(main_loop);
+    		
     		}
     	window.requestAnimationFrame(main_loop);
     	}
@@ -82,7 +183,7 @@
     * {
     	overflow: hidden;
     	margin: auto;
-    	background-color: black;
+    	background-color: rgb(40,40,40);
     }
     canvas {
     	border: 1px solid black;
