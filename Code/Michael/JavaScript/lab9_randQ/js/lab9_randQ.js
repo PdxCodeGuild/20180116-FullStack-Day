@@ -16,8 +16,6 @@ clicked.addEventListener("click", function() {
         let ourData = JSON.parse(ourRequest.responseText);
         renderHTML(ourData)
     };
-    ourRequest.open("GET", url);
-    ourRequest.send();
 
 });
 
