@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script src="hackcode.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: greenyellow;
+            font-size: 20px;
+            font-family: Roboto, sans-serif;
+        }
+    </style>
+</head>
+<body id="listen_for_key_touch">
+<pre id="display_text"></pre>
+
+<script>
+    let display_text = document.querySelector('#display_text');
+    let listen_for_key_touch = document.querySelector('#listen_for_key_touch');
+
+    let increase_word_length = 0;
+    let speed = 6; // "technically" All it is is that it makes it so that there is more words
+
+    listen_for_key_touch.addEventListener('keydown', function () {
+        increase_word_length += Math.floor(Math.random() * speed);
+        display_text.innerHTML = hackcode.substring(0, increase_word_length);
+    }, false)
+
+</script>
+</body>
+</html>
