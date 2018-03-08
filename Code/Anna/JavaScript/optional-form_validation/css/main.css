@@ -6,7 +6,6 @@ html, body {
 
 body {
     background: radial-gradient(ellipse at center, #fffeea 0%, #e8eaf6 35%, #aed581 100%);
-    overflow: hidden;
     color: #455a64;
     font-family: 'Jura', sans-serif;
 }
@@ -31,5 +30,17 @@ body {
     display: none !important;
 }
 
+.tiny {
+    font-size: x-small;
+}
 
+/* materialize label focus color */
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #aed581 !important;
+}
 
+/* materialize label underline focus color */
+.input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+     border-bottom: 1px solid #aed581 !important;
+     box-shadow: 0 1px 0 0 #aed581 !important;
+}
