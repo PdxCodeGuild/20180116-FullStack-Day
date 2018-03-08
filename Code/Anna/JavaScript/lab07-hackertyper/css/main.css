@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
+html, body {
+  height: 100%;
+}
+
+body {
+    background-color: #222 !important;
+    font-family: 'Share Tech Mono', monospace;
+    color: #20C20E !important;
+}
+
+pre {
+    font-family: 'Share Tech Mono', monospace;
+    color: #20C20E !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.hack-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 70vh;
+    width: 60vw;
+    color: #20C20E;
+	font-family: 'Share Tech Mono', monospace;
+    background-color: black;
+    border: 5px inset #20C20E;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    color: #20C20E;
+	font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    background-color: rgba(0,0,0,.8) !important;
+}
+
+.surprise-modal {
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+    background-color: #222;
+    border: 2px inset #20C20E;
+    color: #20C20E;
+	font-family: 'Share Tech Mono', monospace;
+    font-size: 2em;
+}
+
+/* blink the text */
+
+.blinking {
+    margin-top: 20px;
+    text-align: center;
+	font-size: 5vw;
+    color: #20C20E;
+	font-family: 'Share Tech Mono', monospace;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}

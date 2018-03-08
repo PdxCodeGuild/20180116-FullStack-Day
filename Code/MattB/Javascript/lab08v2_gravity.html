@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-color:black;
+            }
+            canvas {
+                border: 1px solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="cnv" width="800" height="500"></canvas>
+        <script>
+            let cnv = document.getElementById('cnv');
+            let ctx = cnv.getContext('2d');
+            const gravity = .8;
+
+            //Ball with radius size, position, and velocity values
+            let ball = {
+                radius: (Math.random() * 100) +20,
+                px: 200,
+                py: 150,
+                vx: 10,
+                vy: 10
+            };
+
+            //Adds the speed multiplied by the time step to the position for each x and y components
+            function position_update(dt) {
+                check_sides();
+                ball.vy = ball.vy + (gravity * dt);
+                ball.px += ball.vx*dt;
+                ball.py += ball.vy*dt;
+            }
+
+            //Reverses the direction of the velocity if ball hits the side
+            function check_sides() {
+                //Coordinates of ball boundaries
+                let left_x = ball.px - ball.radius;
+                let right_x = ball.radius + ball.px;
+                let top_y = ball.py - ball.radius;
+                let bottom_y = ball.radius + ball.py;
+
+                //Checks positions against canvas border then reverses velocity component.
+                if (left_x < 0) {
+                    ball.vx *= -1;
+                    ball.vx *= 0.95;
+                    ball.vy *= 0.95;
+                    ball.px = 0 + ball.radius;
+                }
+                if (right_x > cnv.width) {
+                    ball.vx *= -1;
+                    ball.vx *= 0.95;
+                    ball.vy *= 0.95;
+                    ball.px = cnv.width - ball.radius;
+                }
+                if (top_y < 0) {
+                    ball.vy *= -1;
+                    ball.vy *= 0.95;
+                    ball.vx *= 0.95;
+                    ball.py = 0 + ball.radius;
+                }
+                if (bottom_y > cnv.height) {
+                    ball.vy *= -1;
+                    ball.vy *= 0.95;
+                    ball.vx *= 0.95;
+                    ball.py = cnv.height - ball.radius;
+                }
+                // if (left_x < 1 || right_x > cnv.width - 1){
+                //     ball.vx *= -1;
+                //     ball.vx *= 0.95;
+                // }
+                // if (top_y < 1 || bottom_y > cnv.height - 1) {
+                //     ball.vy *= -1;
+                //     ball.vy *= 0.95;
+                // }
+            }
+
+            //Draws current and fills in previous frame
+            function draw() {
+                ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+                ctx.fillRect(0, 0, cnv.width, cnv.height);
+                ctx.beginPath();
+                ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = 'green';
+                ctx.fill();
+            }
+
+
+            //Make loop that calls itself for animation
+            function main_loop() {
+                window.requestAnimationFrame(main_loop);
+                position_update(0.8);
+                draw();
+            }
+            window.requestAnimationFrame(main_loop);
+
+        </script>
+    </body>
+</html>

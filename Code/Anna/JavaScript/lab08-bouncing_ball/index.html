@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Musical Bouncing Balls!</title>
+    <meta name="description" content="Musical bouncing balls using HTML Canvas, JavaScript, and tone.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <!-- tone.js for making sounds! https://tonejs.github.io/ 	-->
+    <script src="https://tonejs.github.io/build/Tone.min.js"></script>
+
+</head>
+<body>
+
+    <!-- the full-screen canvas where the balls go -->
+    <div class="button one" id="bt-start"><h3>Start</h3></div>
+    <div class="button one" id="bt-stop"><h3>Stop</h3></div>
+    <div class="button one" id="bt-reset"><h3>Reset</h3></div>
+    <div class="form-group">
+        <label for="bt-key"><h5>Choose Key</h5></label>
+        <select class="form-control" id="bt-key">
+            <option selected value="C">C Major</option>
+            <option value="A">A Major</option>
+            <option value="G">G Major</option>
+            <option value="Bb">Bb Major</option>
+        </select>
+    </div>
+
+    <!-- HTML Canvas -->
+    <canvas id="cnv" width="1440" height="900"></canvas>
+
+    <!-- scripts go here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="js/plugins.js"></script>
+
+</body>
+</html>

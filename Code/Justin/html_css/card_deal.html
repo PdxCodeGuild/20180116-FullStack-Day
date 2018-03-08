@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CardDeal</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="blackjack_html/blackjack.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+
+        body {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(blue, lightblue);
+        }
+
+        #card {
+            position: absolute;
+            height: 200px;
+            width: 150px;
+            animation-duration: 1s;
+            perspective: 1000px;
+            transition: all 2s linear;
+        }
+
+        button {
+            position: absolute;
+            top: 220px;
+        }
+
+        #side_green {
+            transition: all 2s linear;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background: radial-gradient(black, green);
+            backface-visibility: hidden;
+        }
+
+        #side_red {
+            transition: all 2s linear;
+            transform: rotateY(180deg);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(45deg, black, red);
+
+        }
+
+        img{
+            position: absolute;
+            margin: auto;
+            display: block;
+            backface-visibility: hidden;
+        }
+
+        .deal {
+            transform-style: preserve-3d;
+            transform: rotate(-180deg) rotateY(-180deg);
+            margin: 200px 0px 0px 200px;
+        }</style>
+</head>
+
+<html>
+<body>
+
+
+<body>
+<div id='table'>
+    <div id='card'>
+        <div id='side_red'></div>
+        <div id='side_green'></div>
+    </div>
+    <button onclick='deal()'>Deal</button>
+</div>
+
+<script>
+    function deal() {
+        // let side_red = document.getElementById('side_red');
+        // let side_green = document.getElementById('side_green');
+        let card = document.getElementById('card');
+        // side_green.classList.toggle('deal');
+        // side_red.classList.toggle('deal');
+        card.classList.toggle('deal');
+    }</script>
+</body>
+
+</body>
+</html>
