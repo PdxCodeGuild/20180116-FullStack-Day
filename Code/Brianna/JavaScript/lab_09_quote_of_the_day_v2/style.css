@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script');
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     background-color: #82a8ff;
     color: #da00cf;
@@ -18,12 +23,16 @@ body {
 }
 
 .row {
-    position: absolute;
-    top: 90%;
     display: flex;
     justify-content: flex-start;
+    align-content: flex-end;
+    margin-top: 30%;
+    top: 90%;
+}
 
-
+.tag_div {
+    display: flex;
+    justify-content: flex-end;
 }
 
 button {
