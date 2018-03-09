@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script');
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+
+body {
+    background-color: #7da7c1;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #387651;
+    color: #110000;
+    font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
+}
+
+#button {
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+    height: 2em;
+    width: 4em;
+    font-size: medium;
+}
+
+#quote {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #387651;
+    color: #110000;
+    font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
+}

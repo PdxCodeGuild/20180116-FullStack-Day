@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <title>Clock 2</title>
     <style>
-
+        div#encouragement_div {
+            font-style: italic;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -18,6 +21,8 @@
             <button id="bt_new_lap">new lap</button>
             <button id="bt_stop_stopwatch">stop</button>
     </div>
+    <div id="encouragement_div">
+    </div>
     <div>
         <ul id ="lap_list"></ul>
     </div>
@@ -26,6 +31,7 @@
         var button_stopwatch = document.getElementById('button_stopwatch');
         var stopwatch_div = document.getElementById('stopwatch_div');
         var lap_list = document.getElementById("lap_list");
+        var encouragement_div = document.getElementById("encouragement_div");
 
         stopwatch_div.style.display = 'none';
         lap_list.style.display = 'none';
@@ -40,6 +46,15 @@
 
         let last_lap_date = null;
         let stopwatch_date = null;
+
+        let encouragements = [
+                "You Rock!",
+                "Keep Going!",
+                "Wow, you're Fast!",
+                "Burn, Baby, Burn!",
+                "Yeaaaaaaaaahhhhhhh!",
+                "Speed Demon!",
+            ];
 
 
         button_stopwatch.onclick = function() {
@@ -74,11 +89,12 @@
         bt_stop_stopwatch.onclick = function() {
             clearInterval(stopwatch_interval);
             stopwatch_interval = null;
-            stopwatch_date = new Date();
-            stopwatch_date.setHours(0, 0, 0, 0);
+            // stopwatch_date = new Date();
+            // stopwatch_date.setHours(0, 0, 0, 0);
             view_stopwatch.innerHTML = time_str(stopwatch_date);
-            bt_start_stopwatch.style.display = 'initial';
+            bt_start_stopwatch.style.display = 'none';
             bt_stop_stopwatch.style.display = 'none';
+            bt_new_lap.style.display = 'none';
         };
 
         //Trying to get the lap time to show up
@@ -88,6 +104,8 @@
                 lap_list.style.display = 'block';
                 let li = document.createElement('li');
                 li.innerText = time_str(stopwatch_date);
+                let x = Math.floor(Math.random() * encouragements.length);
+                encouragement_div.innerText = encouragements[x];
                 lap_list.appendChild(li);
             }
             // otherwise, take the difference between stopwatch_date and last_lap_date, set that as the displayed lap
@@ -101,6 +119,8 @@
                 temp_date.setHours(0, 0, 0, stopwatch_date - last_lap_date);
 
                 li.innerText = time_str(temp_date);
+                let x = Math.floor(Math.random() * encouragements.length);
+                encouragement_div.innerText = encouragements[x];
                 lap_list.appendChild(li);
             }
             // either way, last_lap_date to a copy of stopwatch_date

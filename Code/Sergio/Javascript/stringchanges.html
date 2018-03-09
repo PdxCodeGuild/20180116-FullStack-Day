@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Astrings</title>
+</head>
+<body>
+
+
+<h1>strings2</h1>
+<p>supppp???/</p>
+
+<p><input type="text" id="name" placeholder="name"></p>
+<p><input type="text" id="acronym" placeholder="acronym"></p>
+<p><input type="text" id="supply" placeholder="supply"></p>
+<p><input type="text" id="whatever" placeholder="whatever"></p>
+<p><button id="create_bt">create text area</button></p>
+<code id="mycode"></code>
+
+
+<script>
+    let name = document.getElementById("name");
+    let acronym = document.getElementById("acronym");
+    let supply = document.getElementById("supply");
+    let whatever = document.getElementById("whatever");
+    let create_bt = document.getElementById("create_bt");
+    let mycode = document.getElementById("mycode");
+    let output_strings = [name, acronym, supply, whatever];
+
+
+    create_bt.onclick = function () {
+        let out = output_strings[0].value + "name goes here " + acronym.value + "scronym goes here " + supply.value +
+        "supply goes here " + whatever.value + "whatever goes here";
+        //let script = out.innerText;
+        //let textarea = document.createElement("code");
+        //textarea.innerText = out;
+        //console.log(script);
+
+        //document.body.appendChild(textarea);
+
+        mycode.innerText = out;
+
+    }
+
+</script>
+
+</body>
+</html>
