@@ -35,7 +35,6 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Godspeed-You-Black-Emperor-Lift-Your-Skinny-Fists-Like-Antennas-To-Heaven/release/74260?ev=rr',
     'https://www.discogs.com/Nick-Cave-The-Bad-Seeds-Push-The-Sky-Away/master/519359',
     'https://www.discogs.com/These-Immortal-Souls-Im-Never-Gonna-Die-Again-/master/213907',
-    'https://www.discogs.com/Black-Marble-Its-Immaterial/master/1071230',
     'https://www.discogs.com/Brendan-Walls-Andrew-Chalk-This-Growing-Clearing/release/582278',
     'https://www.discogs.com/The-Misfits-Static-Age/master/105468',
     'https://www.discogs.com/Aglaia-Mondi-Sensibili/release/803661',
