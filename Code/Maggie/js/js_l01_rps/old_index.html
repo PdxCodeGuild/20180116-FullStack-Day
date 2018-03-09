@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+<style>
+    body {
+        background: #3f4c60;
+        font-family: "Courier New";
+        height: 100%;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        font-size: 50px;
+    }
+    #rps_input {
+        height: 50px;
+        font-size: 50px;
+    }
+    button {
+        overflow: hidden;
+        border: 5px solid black;
+        border-radius: 10px;
+        background: linear-gradient(#0ece7b, darkslateblue);
+        font-size: 50px;
+        box-shadow: 2px 5px black;
+        /*margin-bottom: 5px;*/
+
+    }
+    button:hover {
+        background: linear-gradient(#0ece7b, red);
+    }
+    button:active {
+        background: red;
+        box-shadow: 0 0px #666;
+        transform: translateY(4px);
+    }
+</style>
+
+</head>
+<body>
+    <h1> ROCK PAPER-SCISSORS</h1>
+    <br>
+    <span>Type in 'rock', 'paper', or 'scissors' to play the computer.</span>
+    <br>
+     <br>
+    <input id="rps_input" type="text"/>
+
+    <button id="play_bt">PLAY!</button>
+    <div id="output_div"></div>
+
+
+<script>
+
+
+//sleep function requires async and await
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//definining variables for html fields
+let rps_input = document.querySelector('#rps_input');
+let play_bt = document.querySelector('#play_bt');
+let output_div = document.querySelector('#output_div');
+
+
+//comparison function... comparing indexes
+function compare(user_index, comp_choice_index) {
+    // let index = rps_list.indexOf(rps_input);
+    let result = (user_index - comp_choice_index) % 3;
+    if (result == 1) {
+        output_div.innerText +='you win!!'
+    }
+    else if (result == 0) {
+       output_div.innerText +='you tied!'
+    }
+    else {
+       output_div.innerText +='Computer wins!!'
+    }
+    }
+
+let rps_list = ['rock', 'paper', 'scissors'];
+
+//when pressing 'play'
+play_bt.onclick = async function() {
+    //get user input
+    let rps_choice = rps_input.value;
+  //check if valid entry, valid if in rps_list
+    if (rps_list.includes(rps_choice)) {
+        output_div.innerText = 'You chose ' + rps_choice + '\n';
+
+      //pause
+      await sleep(500);
+
+      let user_index = rps_list.indexOf(rps_choice);
+      let choose_index = Math.floor(Math.random()*3);
+      //random number between 1-3
+      //get comp
+      output_div.innerText += 'computer chose ' + rps_list[choose_index] + '.\n';
+
+         //pause
+      await sleep(500);
+
+      //compare choices
+      compare(user_index, choose_index);
+    }
+
+    else {
+        output_div.innerText = 'Enter rock, paper, or scissors';
+    }
+}
+</script>
+
+
+</body>
+</html>

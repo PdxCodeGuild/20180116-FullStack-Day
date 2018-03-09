@@ -1,0 +1,43 @@
+
+:root {
+}
+/* #transport { */
+  background-color: #424242;
+  width: 50vw;
+  
+}
+#info_text {
+ font-size: 6px; 
+}
+* {
+	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  text-align: center;
+/*   font-size: 10vw; */
+  padding: 0px 0px;
+/*   margin: auto; */
+/*   background-color: rgb(40,20,20); */
+  
+  color: #4A148C;
+  text-shadow: 1px 1px 2px #424242;
+}
+body {
+  padding: 10px;
+  background-color: rgba(100,80,140,0.5);
+/*   background-color: linear-gradient(to right, red, yellow); */
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="1.0" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E')
+  
+}
+.num_display, button {
+  width: 10vw;
+  background-color: #D1C4E9;
+}
+select {
+  background-color: #D1C4E9;
+}
+
+header {
+  margin: 20px;
+  border: 1px solid #424242;
+  box-shadow: 2px 2px 2px #424242;
+  background-color:#D1C4E9;
+}
