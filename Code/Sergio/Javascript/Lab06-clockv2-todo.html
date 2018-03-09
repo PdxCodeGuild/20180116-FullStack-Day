@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Stopwatch</title>
+</head>
+<body onload="clockTime()">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Aldrich');
+
+    h1 {
+        color: #274982;
+        font-size: 6em;
+        margin-bottom: 2px;
+
+    }
+
+    body {
+        background-color: whitesmoke;
+        color: #1b1e21;
+        text-align: center;
+    }
+
+    #stopwatch {
+        color: #274982;
+        font-size: 4em;
+        text-align: center;
+    }
+
+</style>
+<p>Version 2
+
+    Next make a stopwatch. Start with a button that says 'start'. You can then create a date to keep track of the time,
+    and use setHours(0,0,0,0). This function will set the date's time to 0 hours, 0 minutes, 0 seconds, and 0
+    milliseconds. Then set an interval to add 1 to the seconds of that date every second, and show the time in an html
+    element. Add a 'lap' button which takes takes the current time and shows it in a separate list. E.g.
+
+<p>Lap 1: 00:01:03
+<p>Lap 2: 00:02:34
+<p>Lap 3: 00:04:21
+</p>
+<h1>Stopwatch</h1>
+<div id="timer">
+</div>
+
+<button id="start_bt">start</button>
+<button id="stop_bt">stop</button>
+<button id="reset_bt">reset</button>
+<button id="lap_bt">lap</button>
+<ul id="lap_list">
+
+</ul>
+
+<script>
+
+    window.onload = function () {
+
+    }
+
+    let stopWatch = new Date();
+    stopWatch.setHours(0, 0, 0, 0);
+    let time_output = document.getElementById('timer');
+    let hours = stopWatch.getHours();
+    let minutes = stopWatch.getMinutes();
+    let seconds = stopWatch.getSeconds();
+    let milliseconds = stopWatch.getMilliseconds();
+    time_output.innerText = add0(hours) + ':' + add0(minutes) + ':' + add0(seconds) + ':' + add0(milliseconds);
+
+    function add0(num) {
+        if (num < 10) {
+            return '0' + num;
+        }
+        return num;
+    }
+
+    // let timer = document.querySelector('#timer');
+    // let counter = 0;
+    // setInterval(function(time_output) {
+    //     time_output.innerText = counter;
+    //     counter += 1;
+    // }, 100);
+    let counter = 0;
+    start_bt.onclick = setInterval(function(time_output) {
+        time_output.innerText = counter;
+        counter +=1;
+
+    }, 100);
+    // start_bt.onclick = function () {
+    //     let time_counter = document.getElementById('timer');
+    //     for (i = 0; i < time_counter.length; i++) {
+    //         time_output += add0;
+    //     }
+    // }
+
+
+</script>
+</body>
+</html>

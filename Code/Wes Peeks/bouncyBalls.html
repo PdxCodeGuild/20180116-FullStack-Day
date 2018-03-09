@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balls</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1500" height="700">
+
+</canvas>
+<script>
+    let c = document.querySelector('#myCanvas');
+    let ctx = c.getContext('2d');
+
+
+    let balls_list = [];
+    for (let i = 0; i < 5; i++) {
+        let ball = {
+            radius: 20,
+            px: Math.random() * c.width,
+            py: Math.random() * c.height,
+            vx: (2 * Math.random() - 1) * 10,
+            vy: (2 * Math.random() - 1) * 10,
+            gb: Math.random(),
+            left: function() {
+                return this.px - this.radius;
+            },
+            right: function() {
+                return this.px + this.radius;
+            },
+            top: function() {
+                return this.py - this.radius;
+            },
+            bottom: function() {
+                return this.py + this.radius;
+            }
+        };
+        balls_list.push(ball);
+    }
+
+    //  function bounce () {
+    //      setInterval(main_loop, 10);
+    // }
+
+    function main_loop() {
+        ctx.clearRect(0, 0, c.width, c.height);
+        for (let i = 0; i < balls_list.length; i++) {
+
+            let bi = balls_list[i];
+
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(bi.px, bi.py, bi.radius, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'teal';
+            ctx.fill();
+
+            if (bi.px - bi.radius < 0 && bi.vx < 0|| bi.px + bi.radius > c.width && bi.vx > 0) {
+                bi.vx *= -1;
+                bi.px += bi.vx;
+            }
+            if (bi.py - bi.radius < 0 && bi.vy < 0 || bi.py + bi.radius > c.height && bi.vy > 0) {
+                bi.vy *= -1;
+                bi.py += bi.vy;
+
+            }
+            for (let j = 0; j < balls_list.length; j++) {
+                if (i === j) {
+                    continue;
+                }
+                let bj = balls_list[j];
+                if ((bi.right() > bj.left() && bi.right() < bj.right()) || (bi.left() > bj.left() && bi.left() < bj.right())) {
+                    if ((bi.top() > bj.top() && bi.top() < bj.bottom()) || (bi.bottom() > bj.top() && bi.bottom() < bj.bottom())) {
+                        bi.vx *= -1;
+                        bi.vy *= -1;
+                        bj.vx *= -1;
+                        bj.vy *= -1;
+                    }
+                }
+            }
+            bi.py += bi.vy;
+            bi.px += bi.vx;
+            bi.vy += bi.gb;
+        }
+        window.requestAnimationFrame(main_loop);
+    }
+
+    window.requestAnimationFrame(main_loop);
+
+</script>
+</body>
+</html>
