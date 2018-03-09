@@ -31,7 +31,15 @@
     <!-- header -->
     <div class="headDiv center-align">
         <h1>INSPIRATION AWAITS!</h1>
+        <p>Click below to get a random quote, or add a keyword to get a quote containing that word.</p>
         <button id="bt_getQuote" class="btn waves-effect waves-light">Inspire me!</button>
+        <p></p>
+        <div class="input-field inline">
+            <input id="keyword" type="text">
+            <label for="keyword" data-error="wrong" data-success="right">Enter a keyword</label>
+          </div>
+        <button id="bt_keyword" class="btn waves-effect waves-light">Get quote</button>
+        <button id="bt_another" class="btn waves-effect waves-light hidden">Next quote</button>
     </div>
 
     <!-- input -->
