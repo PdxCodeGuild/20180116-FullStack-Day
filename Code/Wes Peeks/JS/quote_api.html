@@ -5,22 +5,38 @@
     <title>QuoteApi</title>
 </head>
 <body>
+<button id="touchMeh">Touch Meh</button>
+<blockquote id='quote'></blockquote>
 <script>
+
+    let blockquote = document.getElementById('quote');
+    let clicked = document.getElementById('touchMeh');
+
+
     function http_get(url, success) {
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState === 1) {
-                xhttp.setRequestHeader('Authorization', 'Token token="<api kep here>"')
+                xhttp.setRequestHeader('Authorization', 'Token token=""')
             } else if (this.readyState === 4 && this.status === 200) {
                 let data = JSON.parse(xhttp.responseText);
                 success(data);
-            } else if (this.readyState === 4 && this.status === 404) {
-                // handle 404
             }
         };
         xhttp.open("GET", url);
         xhttp.send();
     }
+
+    clicked.addEventListener("click", function () {
+        http_get('https://favqs.com/api/quotes/', renderHTML);
+    });
+
+    function renderHTML(data) {
+        console.log(data);
+        blockquote.innerHTML = data.quotes[0].body + ' - ' + data.quotes[0].author;
+    }
+
+
 </script>
 </body>
 </html>
