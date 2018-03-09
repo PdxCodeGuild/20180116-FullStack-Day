@@ -50,23 +50,23 @@
         console.log('win');
         win_count.innerHTML = w;
         w++;
-        } else if (rand === 'paper') {
-            console.log('loss');
-            loss_count.innerHTML = l;
-            l++;
-            } else {
-                console.log('tie');
-                tie_count.innerHTML = t;
-                t++;
-            }
+            } else if (rand === 'paper') {
+                console.log('loss');
+                loss_count.innerHTML = l;
+                l++;
+                } else {
+                    console.log('tie');
+                    tie_count.innerHTML = t;
+                    t++;
+                }
         }
         function paper_choice() {
-            let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
-            outcome_txt.innerHTML = "Your opponent has chosen " + rand;
-            if (rand === 'scissors') {
-            console.log('loss');
-            loss_count.innerHTML = l;
-            l++;
+        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+        if (rand === 'scissors') {
+        console.log('loss');
+        loss_count.innerHTML = l;
+        l++;
             } else if (rand === 'paper') {
                 console.log('tie');
                 tie_count.innerHTML = t;
