@@ -1,0 +1,70 @@
+<!-- <h1> Rock. Paper. Scissors.</h1> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>rock paper scissors</title>
+
+<body>
+
+    <!-- the game description  -->
+    <div class="header">
+      <h1>Rock. Paper. Scissors.</h1>
+    </div>
+
+    <!-- [messages from all parties] -->
+    <div id="message_div">
+        <div id="player_div">
+          <i class="far fa-user"></i>
+          <span id="player_msg_sp"></span>
+        </div>
+        <div id="computer_div">
+          <i class="fas fa-hdd"></i>
+          <span id="computer_msg_sp"></span>
+        </div>
+      <div id="action message_div">
+        <i id="msg1_icon" class="fas fa-exclamation-circle"></i>
+        <span id="msg1_sp"></span>
+      </div>
+      <div id="outcome_message_div">
+        <i id="msg2_icon" class="fas fa-exclamation-circle"></i>
+        <span id="msg2_sp"></span>
+      </div>
+    </div>
+
+    <!-- the presentation of choices -->
+    <div id="container_div">
+        <div class="choice_div" id="rock_div">
+          <i class="far fa-hand-rock"></i>
+        </div>
+        <div class="choice_div" id="paper_div">
+          <i class="far fa-hand-paper"></i> 
+        </div>
+        <div class="choice_div" id="scissors_div">
+          <i class="far fa-hand-scissors"></i>
+        </div>
+    </div>
+    
+
+
+<!-- menu for replay -->
+  <div id="menu">
+    <div id=play_again_div>
+      <i class="fas fa-reply"></i> 
+      <span id="play_again_span">Play again!</span>
+    </div>
+  </div>
+
+
+
+    <!-- scripts [fontawesome, script.js] -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <script type="text/javascript" src="script.js"></script>
+
+
+
+</body>

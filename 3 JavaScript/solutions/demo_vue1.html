@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <style>
+            #completed_todos_ul {
+                text-decoration:line-through;
+            }
+            .remove_todo_bt {
+                color:red;
+            }
+            .complete_todo_bt {
+                color:green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="new_todo"/>
+            <button v-on:click="addNewTodo">add</button>
+            <ol>
+                <li v-for="(todo, index) in todos">
+                    <span>{{ todo }}</span>
+                    <button v-on:click="removeTodo(index)" class="remove_todo_bt">✗</button>
+                    <button v-on:click="completeTodo(index)" class="complete_todo_bt">✓</button>
+                </li>
+            </ol>
+            <ul id="completed_todos_ul">
+                <li v-for="completed_todo in completed_todos">
+                    {{ completed_todo }}
+                </li>
+            </ul>
+        </div>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    new_todo: '',
+                    todos: [
+                        'Learn JavaScript',
+                        'Learn Vue',
+                        'Build something awesome'
+                    ],
+                    completed_todos: [
+                    ]
+                },
+                methods: {
+                    addNewTodo: function() {
+                        this.todos.push(this.new_todo);
+                    },
+                    removeTodo: function(index) {
+                        this.todos.splice(index, 1);
+                    },
+                    completeTodo: function(index) {
+                        let text = this.todos[index];
+                        this.removeTodo(index);
+                        this.completed_todos.push(text);
+                    }
+                }
+            });
+
+            // function add1(a, b) {
+            //     return a + b;
+            // }
+            //
+            // function add2(o) {
+            //     return o.a + o.b;
+            // }
+            //
+            // add1(5, 2);
+            // add2({a: 5, b: 2});
+
+
+        </script>
+    </body>
+</html>

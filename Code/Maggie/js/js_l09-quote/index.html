@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quote generator</title>
+      <script>
+      	//unauthenticated http request
+        function http_get(url, success) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    let data = JSON.parse(xhttp.responseText);
+                    success(data);
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+        //authenticated request
+        function http_token_get(token, url, success) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 1) {
+            xhttp.setRequestHeader('Authorization', 'Token token=' + token)
+        } else if (this.readyState === 4 && this.status === 200) {
+            let data = JSON.parse(xhttp.responseText);
+            success(data);
+        } else if (this.readyState === 4 && this.status === 404) {
+            // handle 404
+        }
+    };
+    xhttp.open("GET", url);
+    xhttp.send();
+}
+    </script>
+    	<script>
+
+	//Quote of the day. Make the ajax request when the window loads.
+	window.onload = function() {
+		let container = document.querySelector('#container')
+
+		//get info
+		let quote_url = "https://favqs.com/api/qotd"
+		let quote_request = http_get(quote_url, function(data) {
+			// console.log(data);
+			let quote_body = data.quote.body;
+			let author = data.quote.author;
+			container.innerText += quote_body + ' - ' + author;
+
+		});
+	//defining selectors!!
+	let search_inp = document.querySelector('#search_inp');
+	let search_bt = document.querySelector('#search_bt');
+
+	//clicking search. 
+	search_bt.onclick = function () {
+		let container = document.querySelector('#container');
+		let search_ul = document.querySelector('ol');
+		//get info
+		let search_url = "https://favqs.com/api/quotes/?filter=" + search_inp.value;
+		let quote_request = http_token_get('bfe01e16cf7dfc4e12632d2cdc5f7b21',search_url, function(data) {
+			// console.log(data);
+			//returns an array at
+			let q_array = data.quotes;
+			console.log(q_array);
+			container.style.display = 'none';
+			search_ul.innerText = 'your results:';
+			for (let i=0; i<q_array.length; i++) {
+				li = document.createElement('li');
+				li.innerText = q_array[i].body + ' - ' + q_array[i].author;
+				search_ul.appendChild(li);
+
+			}
+	})
+	};
+
+	} //window onload end
+
+	</script>
+	<style>
+	* {
+		background-color: black;
+		color: white;
+
+	}
+	#container {
+		text-align: center;
+		vertical-align: middle;
+		font-size: 100%;
+		font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	position: absolute;
+   	top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+	}
+	#search_div {
+		margin: auto;
+		width: 50%;
+		padding: 5px;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<!-- <button id="get_quote_bt">get quotes!</button> -->
+	<div id="container">
+	<p>quote of the day:</p>
+	<br>
+	</div>
+	<div id='search_div'>
+		<input id="search_inp"><button id='search_bt'>search</button>
+		<ol></ol>
+	</div>
+</body>
