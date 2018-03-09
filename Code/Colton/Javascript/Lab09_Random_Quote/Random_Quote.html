@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sluchaynaya tsitata</title>
+</head>
+<body>
+<p id="quote"></p>
+
+<script>
+    function success_handler(data) {
+        console.log(data)
+        console.log(data.quote.body)
+    }
+
+    function http_get(url, success) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 1) {
+                xhttp.setRequestHeader('Authorization', 'Token token="0"')
+            } else if (this.readyState === 4 && this.status === 200) {
+                let data = JSON.parse(xhttp.responseText);
+                success(data);
+            } else if (this.readyState === 4 && this.status === 404) {
+                // handle 404
+            }
+        };
+        xhttp.open("GET", url);
+        xhttp.send();
+    }
+
+    http_get('https://favqs.com/api/qotd',success_handler)
+</script>
+</body>
+</html>
