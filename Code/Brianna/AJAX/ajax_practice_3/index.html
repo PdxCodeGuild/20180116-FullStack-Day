@@ -8,9 +8,6 @@
         $.ajax({
             method: "GET", // HTTP request
             url: "https://favqs.com/api/qotd",// give the URL
-            "author": "Albert Einstein",
-            "id": 4,
-            "body": "Make everything as simple as possible, but not simpler.",
         }).done(function(data) {
             console.log(data); // log the data we get back
         }).fail(function() {
