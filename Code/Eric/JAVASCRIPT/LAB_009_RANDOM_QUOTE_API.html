@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>lab 009 random quote</title>
 	<style>
-		/*crazy styles*/
+		/*crazy style: self explanatory*/
 		body {
 			background-color: black;
 			color: #b388ff;
@@ -96,7 +96,7 @@
 
 <script>
 
-// DOMME vars: we will need these later 😈
+// DOMME vars: 😈
 let quote_section = document.querySelector('#quote_section');
 let page_bts = document.querySelector('#page_bts');
 let page_nav = document.getElementById('page_nav');
@@ -173,6 +173,7 @@ v2_bt.onclick = function () {   // wrapped this in a funk button for version swi
 	            page_bt.onclick = function() {      // page button funk
 	                get25(i + 1);                   // gets new set of 25 quotes for every page
 	            };
+	            window.scrollTo(0, 0);              // reset scroll position after page switch for swag
 	            page_bts.appendChild(page_bt);      // add new page button to <span #page_bts>
 	            page_nav.appendChild(page_bts);     // add populated <span #page_bts> to <div #page_nav>
 	        }
