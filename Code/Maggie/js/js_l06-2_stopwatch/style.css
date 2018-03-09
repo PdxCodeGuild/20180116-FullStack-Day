@@ -1,0 +1,11 @@
+* {
+  text-align: center;
+  font-family: 'Courier New';
+  background-color: rgb(39,40,34);
+  color: rgb(214, 214, 214);
+}
+
+li {
+    list-style: none;
+    margin-right: auto;
+}

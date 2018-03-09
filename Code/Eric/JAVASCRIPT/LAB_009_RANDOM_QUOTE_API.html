@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lab 009 random quote</title>
+</head>
+<body>
+<div id="quote_section">
+	<p id="quote">
+
+	</p>
+	<p id="author">
+
+	</p>
+
+</div>
+
+
+<span id="page_bts">
+
+</span>
+<p>^ page nav ^</p>
+
+<script>
+
+// // Version 1: quotes of the day on a 7 sec rotation
+
+// function httpGet() {
+//     let url = "https://favqs.com/api/qotd";
+// 	let xhttp = new XMLHttpRequest();
+// 	xhttp.onreadystatechange = function() {
+// 	    if (this.readyState === 4 && this.status === 200) {
+// 	        console.log(this.responseText);
+// 	        let data = JSON.parse(xhttp.responseText);
+// 			document.getElementById("quote").innerText = data.quote.body;
+// 			document.getElementById("author").innerText = data.quote.author;
+// 	    } else if (this.readyState === 4 && this.status === 404) {
+// 	        document.createElement("h1").innerHTML = "404 Error. Please reload or try again."
+// 	    }
+// 	};
+// 	xhttp.open("GET", url, true);
+// 	xhttp.send();
+// }
+//
+// let t = setInterval(httpGet, 7000);
+// httpGet();
+
+
+// Version 2: 25 quotes on a page with page buttons
+
+let quote_section = document.querySelector('#quote_section');
+let page_bts = document.querySelector('#page_bts');
+let body = document.body;
+
+function httpGet(url, success) {
+    console.log(url);
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState ===1) {
+	        xhttp.setRequestHeader('Authorization', 'Token token="XXX"');
+	    } else if (this.readyState === 4) {
+            if (this.status === 200) {
+                let data = JSON.parse(xhttp.responseText);
+                success(data);
+            } else {
+                alert(this.status);
+            }
+        }
+    };
+    xhttp.open('GET', url);
+    xhttp.send();
+}
+
+function get25(page_id) {
+    let url = 'https://favqs.com/api/quotes?page=' + page_id;
+    httpGet(url, function(data) {
+        console.log(data);
+        page_bts.innerHTML = '';
+        quote_section.innerHTML = '';
+
+        let total_pages = 10;
+        for (let i=0; i<total_pages; ++i) {
+            let page_bt = document.createElement('button');
+            page_bt.innerText = (i + 1);
+            page_bt.onclick = function() {
+                get25(i + 1);
+            };
+            page_bts.appendChild(page_bt);
+        }
+
+        let quotes= data.quotes;
+        for (let i=0; i < quotes.length; ++i) {
+            let quote = quotes[i].body;
+            let author = quotes[i].author;
+            let quote_div = document.createElement('div');
+            quote_div.innerHTML = [i + 1] + '. ' + '"' + quote + '"' + '<br>~' + author + '<br>' + '<br>';
+            quote_section.innerHTML += quote_div.innerHTML;
+        }
+    });
+}
+
+get25(1);
+
+</script>
+</body>
+</html>

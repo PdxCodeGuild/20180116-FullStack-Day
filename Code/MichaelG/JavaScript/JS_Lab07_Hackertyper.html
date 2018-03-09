@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="JS_Lab07_Hackertyper.css"/>
+    <meta charset="UTF-8">
+    <title>Hackerman</title>
+</head>
+<body>
+
+    <p id="hack"></p>
+</body>
+</html>
+<script>
+    let hack_source = "charset=UTF-8> rel=stylesheet type=text/css href=JS_Lab01_Rock_paper_scissors_css.css" +
+        "Rock Paper Scissors class=title_container id=title>Rock Paper Scissors! class=choices_container class=choice" +
+        "input type=image" ;
+
+    document.onkeydown = myFunction;
+    // console.log(process);
+    let counter =0;
+
+    function myFunction() {
+        document.getElementById("hack").innerText += hack_source.substr(counter, 3);
+        counter+=3;
+    }
+
+</script>
