@@ -2,6 +2,24 @@ let  card = new Vue({
     el: "#card",
     data: {
         title: "Dinosaurs",
-        content: "<strong>Dinosaurs</strong> are a diverse group of animals of the clode <em>Dinosauria</em> of the Triasitc Period."
+        items: [
+            {text: "Velociraptor"},
+            {text: "Triceratops"},
+            {text: "Stegasaurus"}
+        ]
+    },
+    methods: {
+        addItem: function() {
+            let input = document.getElementById('itemForm');
+            if (input.value !== ''){
+                this.items.push({
+                    text: input.value
+                })
+                input.value = '';
+            }
+        },
+        deleteItem: function (index) {
+            this.items.splice(index, 1);
+        }
     }
 })
