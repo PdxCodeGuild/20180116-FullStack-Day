@@ -1,0 +1,99 @@
+understanding ecs 
+
+
+1. Assemblage class methods. 
+the assemblages will be k:v pairs that when called, put together and return an entity. so here all of the types of characters will be defined.
+
+ECS.Assemblage {
+	'assemblage name or type' : function name() {
+	add component
+
+	}
+
+}
+
+2. Components
+	components are instances of functions that just return data
+
+ECS.Components.PlayerControlled ( params ){
+    this.pc = true;
+    return this;
+};
+ECS.Components.PlayerControlled.prototype.name = 'playerControlled';
+
+
+// Collision
+// --------------------------------------
+ECS.Components.Collision = function ComponentCollision ( params ){
+    this.collides = true;
+    return this;
+};
+ECS.Components.Collision.prototype.name = 'collision';
+	// collision will need some logic to determine if two entities are overlapping on the gameboard
+
+// Health
+// --------------------------------------
+ECS.Components.Health = function ComponentHealth ( value ){
+    value = value || 20;
+    this.value = value;
+
+    return this;
+};
+ECS.Components.Health.prototype.name = 'health';
+
+
+3. Systems. 
+	logic... iterate through (types) of entities and do something
+
+	Render would iterate through entities with postitional components and draw them at that place on the board.
+
+	Keypress would be a keypress listener that gets user input and updates player controlled components of entities
+
+ECS.Systems.Render = function Render ( entities )
+ECS.Systems.KeyHandler = function Handle ( keypress )
+
+
+4. Game
+	ECS.Game = function Game () {
+
+	let entities = {}
+		//logic .. call assemblages to create entities
+
+	let systems = [ ] .. make sure you put in proper order:
+	user input
+	collisions
+	value updates, AI actions
+	render
+
+	GameLoop = function Gameloop () 
+		if quit != true
+			redraw window 
+
+		this.gameover = function gameover () {
+			quit = true
+			draw game over stuff
+			return game instance
+		}
+	}
+
+ECS.game = new ECS.Game(); <- runs the game loop.
+
+
+SOOO what to do?
+
+mvp.. player, walls and npc entities rendered on gameboard, collisions blocked, npc player interaction rock paper scissors, energy. die and message.
+
+1. entities class. done.
+2. components. create components 
+	position
+	ascii characters
+	messages
+	block
+	visible
+	random walk
+	...
+3. rendering system, keypress system, random walk AI
+
+
+
+
