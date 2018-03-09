@@ -18,21 +18,21 @@ function init() {
 }
  
 function update() {
-  vy += g;
- 
-  x += vx;
-  y += vy; 
- 
-  if (y > canvas.height - radius){
+    vy += g;
+
+    x += vx;
+    y += vy;
+
+    if (y > canvas.height - radius){
     y = canvas.height - radius;
     vy *= -fac;
-  }
- 
-  if (x > canvas.width + radius){
+    }
+
+    if (x > canvas.width + radius){
     x = -radius;
-  }
+    }
  
-  drawBall();
+    drawBall();
 }
  
 function drawBall() {
@@ -43,5 +43,6 @@ function drawBall() {
         arc(x, y, radius, 0, 2*Math.PI, true);
         closePath();
         fill();
+
     }
 }
