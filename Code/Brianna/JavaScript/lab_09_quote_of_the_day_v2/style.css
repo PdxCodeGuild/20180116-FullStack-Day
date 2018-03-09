@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
 body {
-    background-color: #82A8FF;
+    background-color: #82a8ff;
     color: #da00cf;
     font-size: 2.5em;
     font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
@@ -17,7 +17,30 @@ body {
     justify-content: center;
 }
 
-div {
+.row {
+    position: absolute;
+    top: 90%;
+    display: flex;
+    justify-content: flex-start;
+
+
+}
+
+button {
+    background-color: #82a8ff;
+    margin: 1.5em;
+    border-color: hotpink;
+    border-width: medium;
+    border-radius: 10%;
+    color: hotpink;
+    font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
+    font-size: 1em;
+    z-index: 3;
+    height: 3em;
+    width: 2em;
+}
+
+#quote_div {
     display: flex;
     background-color: #6681cc;
     color: #da00cf;

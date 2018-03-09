@@ -1,8 +1,8 @@
 let api_key = "c4ebc4f09dfaf7a2947a90250196a5a9";  // normally this would be hidden away somewhere. Since we do not care if sample random quotes revokes our access we are posting.
 let quote_div = document.getElementById('quote_div'); // hook into my div that contains the quote
 let quote_block = document.getElementById('quote_block'); // Hook into my block quote element
-console.log(quote_div);
-console.log(document);
+let page_number = document.getElementById('page_button');
+let key_word = document.getElementById('key_word');
 
 function http_get(url, success) {   // function to request data from API
     let xhttp = new XMLHttpRequest();
@@ -24,9 +24,11 @@ function http_get(url, success) {   // function to request data from API
 
 
 
-let url = 'https://favqs.com/api/qotd';
+let url = 'https://favqs.com/api/quotes/?filter=' + key_word.value + '&type=tag&page=' + page_number.value;
+
 
 http_get(url, function (data) {
+
     console.log(data);
     quote_block.innerText = data.quote.body + ' ~ ' + data.quote.author;
 });
