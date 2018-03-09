@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input testing</title>
+    	<style type="text/css">
+    		* {
+    			background-color: black;
+    			color: white;
+    		}
+    	</style>
+      <script>
+      	      	//unauthenticated http request
+        function http_get(url, success) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    let data = JSON.parse(xhttp.responseText);
+                    success(data);
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+        //authenticated request
+        function http_token_get(token, url, success) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 1) {
+            xhttp.setRequestHeader('Authorization', 'Token token=' + token)
+        } else if (this.readyState === 4 && this.status === 200) {
+            let data = JSON.parse(xhttp.responseText);
+            success(data);
+        } else if (this.readyState === 4 && this.status === 404) {
+            // handle 404
+        }
+    };
+    xhttp.open("GET", url);
+    xhttp.send();
+}
+      </script>
+      <script type="text/javascript">
+
+      	window.onload = function() {
+      		//html selectors
+			let container = document.querySelector('#container');
+			let weather_div = document.querySelector('#weather_div');
+			let lookup_input = document.querySelector('input');
+			let lookup_bt = document.querySelector('#lookup_bt');
+
+
+			let weather_url = 'http://api.wunderground.com/api/f477ff4bcb25acfb/conditions/q/CA/San_Francisco.json'
+			// let zip_url = `http://api.geonames.org/postalCodeLookupJSON?postalcode=${zip_code}&country=US&username=demo`
+
+			let token = 'f477ff4bcb25acfb';
+			let weather_request = http_get(weather_url, function (data) {
+				console.log(data);
+				weather_div.innerText =`Observation time: ${data.current_observation.observation_time} 
+				City: ${data.current_observation.display_location.full} 
+				Current temperature: ${data.current_observation.temperature_string} 
+				Current Weather: ${data.current_observation.weather}`		
+			});
+
+			lookup_bt.onclick = function () {
+				let u_zip_code = lookup_input.value
+				if (u_zip_code.length < 5) {
+					alert('please enter valid US zip code');
+					return;
+				}
+				let zip_lookup = http_get(`http://api.geonames.org/postalCodeLookupJSON?postalcode=${u_zip_code}&country=US&username=magdalene`, function (data){
+					let city = data.postalcodes[0].placeName;
+					let state = data.postalcodes[0].adminCode1
+					console.log(city);
+					console.log(state);
+					console.log(data);
+				let u_weather_url = `http://api.wunderground.com/api/f477ff4bcb25acfb/conditions/q/${state}/${city}.json`
+				console.log(u_weather_url);
+				http_get(u_weather_url, function (data) {
+				console.log(data);
+				weather_div.innerText =`Observation time: ${data.current_observation.observation_time} 
+				City: ${data.current_observation.display_location.full} 
+				Current temperature: ${data.current_observation.temperature_string} 
+				Current Weather: ${data.current_observation.weather}`		
+			});
+				});
+				}
+		}
+      </script>
+</head>
+<body>
+	<div id="container">
+		<div id="lookup_div">
+			lookup the weather for your location:
+			<input type="text" placeholder="input a US zip code"/>
+			<button id='lookup_bt'>accept</button>
+		</div>
+		<div id="weather_div">
+			weather will be displayed here.
+		</div>
+	</div>
+</body>
