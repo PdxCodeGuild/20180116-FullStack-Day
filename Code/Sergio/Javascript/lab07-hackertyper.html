@@ -70,7 +70,7 @@
 <!--<p>-->
 <!-- -&#45;&#45;&#45;&#45;END PGP MESSAGE-&#45;&#45;&#45;&#45;<br>-->
 <!--</div>-->
-<textarea id="text_input" style="width:100%;height:100%" value="" onclick="removeFirstLetter()"></textarea>
+<pre id="view_code" style="width:100%;height:100%" value="" onclick="removeFirstLetter()"></pre>
 
 <script>
 
@@ -84,21 +84,21 @@
     "  make install\n", "rm /home/classified/aliens.txt/*\n", "         fetching secret 12 word phrase....\n    witch collapse practice feed shame open despair creek road again ice least\n" + "sudo apt-get install virtualbox linux-headers-$(uname -r)" + "wget https://download.whonix.org/linux/13.0.0.1.4/.0.0.1.4.ova", "indices = [i for i, x in enumerate(my_list) if x == \"whatever\"\n", "import pandas as pd\n" + "import matplotlib.pyplot as plt\n" + "In [4]: s = pd.Series([1,3,5,np.nan,6,8])\n"];
 
 
-    let text_input = document.querySelector('#text_input');
-    text_input.onkeypress = function (evt) {
+    let view_code = document.querySelector('#view_code');
+    window.onkeydown = function (evt) {
 
         let index = Math.floor(Math.random() * pre_msg.length);
-        text_input.value += pre_msg[index] + " ";
-        window.scrollTo(0, document.body.textarea.scrollHeight);
+        view_code.innerText += pre_msg[index] + " ";
+        window.scrollTo(0, view_code.scrollHeight);
         evt.preventDefault();
 
 
         // onkeyup, set the text area's text to everything but the last character
-        function removeFirstLetter() {
-            let str = "";
-            let res = str.substring(1, str.length - 1);
-            document.getElementById("text").innerText = res;
-        }
+        // function removeFirstLetter() {
+        //     let str = "";
+        //     let res = str.substring(1, str.length - 1);
+        //     document.getElementById("text").innerText = res;
+        // }
     }
 
 
