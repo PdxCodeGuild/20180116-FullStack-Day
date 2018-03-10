@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lab 009 random quote</title>
+	<style>
+		/*crazy style: self explanatory*/
+		body {
+			background-color: black;
+			color: #b388ff;
+			text-align: center;
+		}
+		h1 {
+			font-family: "Copperplate Gothic Bold", serif ;
+			font-size: 30pt;
+			margin-bottom: 10px;
+		}
+		#header {
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			text-align: left;
+		}
+		#header_buttons > button {
+			color: #b388ff;
+			background-color: black;
+			border: 2px solid #b388ff;
+			border-radius: 12px;
+			font-size: 10pt;
+			width: 65px;
+
+			-webkit-transition-duration: .4s;
+			transition-duration: .4s;
+		}
+		#header_buttons > button:hover {
+			background-color: #b388ff;
+			color: #000;
+		}
+		#header_buttons > button:active {transform: translateY(4px);}
+		#header_buttons > button:focus {outline:0;}
+		#quote_section {
+			font-family: "Lucida Console", serif;
+			margin-left: 150px;
+			margin-right: 50px;
+			line-height: 1.5em;
+			color: #8899ff;
+		}
+		#page_nav {
+			margin-left: 140px;
+			margin-right: 25px;
+			padding-top: 20px;
+			font-family: "Lucida Console", serif;
+			position: sticky;
+			bottom: 0;
+			background-color: black;
+		}
+		#page_bts {justify-content: center}
+		#page_bts > button {
+			color: #b388ff;
+			background-color: black;
+			border: 2px solid #b388ff;
+			border-radius: 50%;
+			font-size: 10pt;
+			width: auto;
+			margin: auto 10px ;
+
+			-webkit-transition-duration: .4s;
+			transition-duration: .4s;
+		}
+		#page_bts > button:hover {
+			background-color: #b388ff;
+			color: #000;
+		}
+		#page_bts > button:active {transform: translateY(4px);}
+		#page_bts > button:focus {outline:0;}
+	</style>
+</head>
+
+<body>
+	<!--minimal page layout-->
+	<div id="page">
+		<div id="header">
+			<h1><span>Quote<br>Query</span></h1>
+			<div id="header_buttons">
+				<button id="v1_bt">v1</button>
+				<button id="v2_bt">v2</button>
+			</div>
+		</div>
+
+		<div id="quote_section"></div>
+
+		<div id="page_nav">
+			<span id="page_bts"></span>
+		</div>
+	</div>
+
+<script>
+
+// DOMME vars: 😈
+let quote_section = document.querySelector('#quote_section');
+let page_bts = document.querySelector('#page_bts');
+let page_nav = document.getElementById('page_nav');
+
+let v1_bt = document.getElementById('v1_bt');
+let v2_bt = document.getElementById('v2_bt');
+
+let interval = null; // null value to reset timing
+
+ // Version 1: quotes of the day on a 9 sec rotation
+
+v1_bt.onclick = function() {    // wrapped this in a funk button for version switches
+    quote_section.innerHTML = '';           // value empty to reset content on switch
+    page_nav.innerHTML = '';                // same as above^
+    clearInterval(interval);                // clears timer every time button is pressed
+
+	function httpGet() {        // AJAX funk
+	    let url = "https://favqs.com/api/qotd";                 // url for content
+		let xhttp = new XMLHttpRequest();                       // new request
+		xhttp.onreadystatechange = function() {                 // ready state function
+		    if (this.readyState === 4 && this.status === 200) { // if the page is ready
+		        console.log(this.responseText);                 // log responseText to console
+		        let data = JSON.parse(xhttp.responseText);      // parse data in JSON format
+		        quote_section.innerHTML = '<p>"' + data.quote.body + '"</p><p>~' + data.quote.author + '</p>'
+			    // ^ create & format <p> for the quote & author & sets innerHTML of #quote_section element
+		    } else if (this.readyState === 4 && this.status === 404) { // if the page doesnt load ur fuq'd
+		        document.createElement("h1").innerHTML = "404 Error. Please reload or try again." // fuq'd
+		    }
+		};
+		xhttp.open("GET", url, true);   // asynchronous GET for the corresponding url
+		xhttp.send();                   // and send
+	}
+
+	interval = setInterval(httpGet, 9000); // interval value from null to send new request every 9 sec
+	httpGet(); // go time! woo!
+};
+
+// Version 2: 10 pages 25 quotes on a page with page buttons
+
+v2_bt.onclick = function () {   // wrapped this in a funk button for version switches
+	quote_section.innerHTML = '';                   // value empty to reset content on switch
+	clearInterval(interval);                        // clears timer every time button is pressed
+
+	function httpGet2(url, success) {   // AJAX funk pretty much the same as v1 w minor differences
+	    console.log(url);                           // log url to console for error check- good idea
+	    let xhttp = new XMLHttpRequest();           //
+	    xhttp.onreadystatechange = function() {     // shouldve used jQuery for this but whatever
+	        if (this.readyState ===1) {             // auz condition
+		        xhttp.setRequestHeader('Authorization', 'Token token="XXX"');
+		    } else if (this.readyState === 4) {
+	            if (this.status === 200) {
+	                let data = JSON.parse(xhttp.responseText); // we still want data as JSON
+	                success(data);
+	            } else {                            // but if anything fuqs up...
+	                alert(this.status);             // heres how
+	            }
+	        }
+	    };
+	    xhttp.open('GET', url, true); // GET url async
+	    xhttp.send();
+	}
+
+	function get25(page_id) {   // funk for getting 25 of these mofos on a page
+	    let url = 'https://favqs.com/api/quotes?page=' + page_id;   // url for content
+	    httpGet2(url, function(data) {  // activate above AJAX & pass anon funk for content manipulation
+	        console.log(data);                          // log data to console for easy access & error checks
+	        page_bts.innerHTML = '';                    // set page buttons empty well see why later
+	        quote_section.innerHTML = '';               // value empty to reset content on switch
+
+	        let total_pages = 9;                        // arbitrary number of pages for fun tbh couldve been just one
+	        for (let i=0; i<total_pages; ++i) {         // for i starting at 0 to the # of total pages, add a new page
+	            let page_bt = document.createElement('button'); // and create a corresponding button
+	            page_bt.innerText = i + 1;                    // set inner text to (index(0) + 1) for pagination
+	            page_bt.onclick = function() {      // page button funk
+	                get25(i + 1);                   // gets new set of 25 quotes for every page
+	            };
+	            window.scrollTo(0, 0);              // reset scroll position after page switch for swag
+	            page_bts.appendChild(page_bt);      // add new page button to <span #page_bts>
+	            page_nav.appendChild(page_bts);     // add populated <span #page_bts> to <div #page_nav>
+	        }
+
+	        let quotes= data.quotes;    // var we need to populate pages
+	        for (let i=0; i < quotes.length; ++i) {
+	            // for i starting at 0 to the # of quotes per page(25), add a new quote
+	            let quote = quotes[i].body;     // each quote will be indexed
+	            let author = quotes[i].author;  // as will each corresponding author
+	            let quote_div = document.createElement('div');  // create a new <div> for each quote/ author pair
+	            quote_div.innerHTML = (i + 1) + '. ' + '"' + quote + '"' + '<br>~' + author + '<br>' + '<br>';
+	            // ^ formats quote/ author & injects it in the innerHTML of our new <div>
+	            quote_section.innerHTML += quote_div.innerHTML; // add each new quote_div to quote_section of page
+	        }
+	    });
+	}
+	get25(1);   // go time! (starting at page 1 duh)
+};
+
+</script>
+</body>
+</html>

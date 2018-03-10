@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="src/data.csv" type="text/csv" id="unparsed">
+    	url
+    	src/data.csv
+    </script>
+    <title>ATM</title>
+</head>
+<body>
+    <div id="main_div">
+        <div id="atm_div">
+            <div id="text_display_div">
+                <span id="top_msg_sp"></span>
+                    <div id='withdraw_div'>     
+                        <input id='withdraw_input' placeholder="cash amount" />
+                        <button id="withdraw_bt">Accept.</button>
+                    </div>  
+                    <div id='deposit_div'>     
+                        <input id='deposit_input' placeholder="cash amount" />
+                        <button id="deposit_bt">Accept.</button>
+
+                    </div>  
+                <ul id='options_ul'>
+                    <span id="opt_sp"></span>
+                    <li id='li_1'></li>
+                    <li id='li_2'></li>
+                    <li id='li_3'></li>
+                    <li id='li_4'></li>
+                    <li id='li_5'></li>
+                    <li id="return_li"></li>
+                <span id="output_sp"></span>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
