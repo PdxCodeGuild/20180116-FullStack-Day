@@ -45,6 +45,10 @@ body {
     text-align: center;
 }
 
+.owf {
+    color: #82b1ff;
+}
+
 .hidden {
     display: none !important;
 }

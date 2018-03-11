@@ -6,7 +6,7 @@ let app = new Vue({
         },
     data: {
         title: "How's the weather in your neck of the woods?",
-        city: 'Portland',
+        city: 'your city',
         selectedWeather: '',
         options: [
             { value: 1,
@@ -28,11 +28,11 @@ let app = new Vue({
         ],
         resultMain: "",
         resultDesc: "",
-        iconSRC: "",
         weatherResults: {
             main: '',
             description: '',
             icon: '',
+            iconSrc: '',
             temp: '',
             clouds: ''
         }
@@ -68,7 +68,7 @@ let app = new Vue({
                 this.weatherResults.main = response.weather[0].main.toLowerCase();
                 this.weatherResults.description = response.weather[0].description.toLowerCase();
                 this.weatherResults.icon = response.weather[0].icon;
-                this.iconSRC = "" + this.weatherResults.icon;
+                this.weatherResults.iconSrc = response.weather[0].id;
                 this.weatherResults.temp = response.main.temp;
                 this.weatherResults.clouds = response.clouds.all;
             });
@@ -78,9 +78,12 @@ let app = new Vue({
         showWeather: function() {
             $('#introDiv').addClass('hidden');
             $('#resultDiv').removeClass('hidden');
+            let owfClass = 'owf-'+ this.weatherResults.iconSrc;
+            console.log(this.weatherResults.iconSrc);
+            $('#weatherIcon').addClass(owfClass);
             this.resultMain = "Right now, it is " + this.weatherResults.main + " in " + this.city + ".";
             this.resultDesc = "The weather is " + this.weatherResults.description + ", the temperature is "
-                + (this.weatherResults.temp - 273.15) + "°C, with " + this.weatherResults.clouds + "% cloud cover."
+                + Math.round(this.weatherResults.temp - 273.15) + "°C, with " + this.weatherResults.clouds + "% cloud cover."
         }
     }
 });
