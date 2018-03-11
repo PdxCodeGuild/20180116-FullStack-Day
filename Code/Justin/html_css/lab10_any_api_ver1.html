@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Any Api</title>
+    <link rel="stylesheet" type="text/css" href="lab09_api.css"/>
+    <script src="api_keys.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=______________________________&callback=initMap"></script>
+    <style>
+        body{
+            box-sizing:border-box;
+        }
+        #app{
+            display: inline-block;
+            height: 300px;
+            width: 750px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0px 0px 0px 10px;
+        }
+
+        li{
+            padding: 5px 0px 5px 0px;
+        }
+
+        #inputs{
+            margin: 20px;
+        }
+        #map {
+            margin: 0px 10px 0px 10px;
+            border-radius: 5px;
+            border : 1px solid black;
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+
+        }
+
+        #data {
+            margin: 0px 10px 0px 10px;
+            border-radius: 5px;
+            border : 1px solid black;
+            display: inline-block;;
+            height: 300px;
+            width: 400px;
+        }
+
+        canvas{
+
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        #container {
+            margin: 0px 10px 0px 10px;
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+<h1>Sunrise and Sunset Times</h1>
+<div id="app">
+    <div id="inputs">
+        <input id="lat" type="text" v-model="lat">
+        <input id="lng" type="text" v-model="lng">
+        <input id="date" type="date" v-model="date">
+        <button id="submit" v-on:click="getData">Submit</button>
+    </div>
+
+    <div id="map"></div>
+    <div id="data">
+      <ul>
+        <li v-for="(val, key) in results">
+          {{ key.split('_').join(' ').toUpperCase()}}: {{ val }}
+        </li>
+      </ul>
+    </div>
+
+
+</div>
+
+<div id="container">
+    <canvas id="cnv" width="300" height="300"></canvas>
+</div>
+
+
+
+<script>
+    let today = getDateString(new Date());
+    let date_input = document.querySelector('#date');
+    date_input.value = getDateString(new Date());
+    let canvas = document.querySelector('#cnv');
+
+    function initMap() {
+        var center = {lat: app.lat, lng: app.lng};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: center,
+            fullscreenControl: false,
+            streetViewControl: false,
+        });
+
+        var icon = {
+            url: "unicorn.png",
+            scaledSize: new google.maps.Size(20, 20),
+        };
+
+        var marker = new google.maps.Marker({
+            position: center,
+            map: map,
+            title: "I'm a Unicorn!",
+            icon: icon
+        });
+
+        google.maps.event.addListener(map, "click", function (event) {
+            app.lat = round(event.latLng.lat());
+            app.lng = round(event.latLng.lng());
+            map.setCenter({lat: app.lat, lng: app.lng});
+            marker.setPosition({lat: app.lat, lng: app.lng});
+        });
+    };
+
+
+    var app = new Vue({
+        el: '#app',
+        data: {date: today,
+                lat: 45.5231,
+                lng: -122.6765,
+                results: {},
+                results_list: []
+        },
+
+        methods: {
+            getData: function () {
+                let url = "https://api.sunrise-sunset.org/json?lat=" + this.lat + '&lng=' + this.lng + '&date=' + this.date;
+                console.log(url);
+                // map.setCenter({lat: app.lat, lng: app.lng});
+                // marker.setPosition({lat: app.lat, lng: app.lng});
+                $.ajax({method: "GET", url: url})
+                .done(function (data) {
+                    data = JSON.parse(JSON.stringify(data));
+
+                    app.results = data.results;
+
+                    console.log(app.results);
+                    app.updateCanvas();
+                })
+                .fail(function () {
+                    alert('Fail!');
+                });
+            },
+
+
+            updateCanvas: function () {
+                let ctx = canvas.getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(150, 150, 100, 0, 2 * -Math.PI);
+                ctx.fillStyle = "#151515";
+                ctx.fill();
+
+                ctx.font = "15px Arial";
+                ctx.fillStyle = "black";
+                ctx.fillText("Noon",130,40);
+                ctx.fillText("Midnight",120,265);
+                ctx.fillText("6PM",260,160);
+                ctx.fillText("6AM",10,160);
+
+                let astro_start_angle = getAngle(this.results.astronomical_twilight_begin);
+                let astro_end_angle = getAngle(this.results.astronomical_twilight_end);
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.arc(150, 150, 100, Math.PI/2 + astro_start_angle, Math.PI/2 + astro_end_angle);
+                ctx.closePath();
+                ctx.fillStyle = "#333300";
+                ctx.fill();
+
+                let naut_start_angle = getAngle(this.results.nautical_twilight_begin);
+                let naut_end_angle = getAngle(this.results.nautical_twilight_end);
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.arc(150, 150, 100, Math.PI/2 + naut_start_angle, Math.PI/2 + naut_end_angle);
+                ctx.closePath();
+                ctx.fillStyle = "#808000";
+                ctx.fill();
+
+                let civil_start_angle = getAngle(this.results.civil_twilight_begin);
+                let civil_end_angle = getAngle(this.results.civil_twilight_end);
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.arc(150, 150, 100, Math.PI/2 + civil_start_angle, Math.PI/2 + civil_end_angle);
+                ctx.closePath();
+                ctx.fillStyle = "#b3b300";
+                ctx.fill();
+
+
+                let sunrise_angle = getAngle(this.results.sunrise);
+                let sunset_angle = getAngle(this.results.sunset);
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.arc(150, 150, 100, Math.PI/2 + sunrise_angle, Math.PI/2 + sunset_angle);
+                ctx.closePath();
+                ctx.fillStyle = "#ffff00";
+                ctx.fill();
+
+                let solarnoon_angle = getAngle(this.results.solar_noon);
+                let solarnoon_x = 100 * Math.cos(Math.PI/2 + solarnoon_angle);
+                let solarnoon_y = -100 * Math.sin(Math.PI/2 + solarnoon_angle);
+
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.lineTo(150 + solarnoon_x, 150 - solarnoon_y);
+                ctx.strokeStyle = "#ff0000";
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(50, 150);
+                ctx.lineTo(250, 150);
+                ctx.moveTo(150, 50);
+                ctx.lineTo(150, 250);
+                ctx.lineWidth=1;
+                ctx.strokeStyle = "#000000";
+                ctx.stroke();
+            }
+        },
+    });
+
+    function getAngle(val){
+        val = val.split(" ");
+        let time = val[0];
+        let ampm = val[1];
+        time = time.split(":");
+        let hour = parseInt(time[0]);
+        if (ampm === "PM") {
+            if (hour != 12) {
+                hour = (hour + 12);
+            }
+        }
+        else {
+            if (hour === 12){
+                hour = 0;
+            }
+        }
+        let minutes = parseInt(time[1]);
+        let seconds = parseInt(time[2]);
+        let total_seconds = hour * 3600 + minutes * 60 + seconds;
+
+        return (total_seconds * 2 * Math.PI / 86400);
+    }
+
+    function round(num) {
+        let factor = Math.pow(10, 5);
+        num *= factor;
+        num = Math.round(num);
+        num /= factor;
+        return num;
+    }
+
+    function getDateString(today) {
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        if (month < 10) {
+            month = "0" + month;
+        }
+        let date = today.getDate();
+        if (date < 10) {
+            date = "0" + date;
+        }
+        return year + "-" + month + "-" + date;
+    }
+
+
+
+    initMap();
+    alert("!");
+    app.getData();
+</script>

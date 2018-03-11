@@ -168,14 +168,14 @@
         }
     }
 
-    var word;
-    var word_list = [];
-    var puzzle;
-    var tries_left;
-    var game_over;
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext('2d');
-    var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let word;
+    let word_list = [];
+    let puzzle;
+    let tries_left;
+    let game_over;
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext('2d');
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     $.ajax({ method: "GET", url: "https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/1%20Python/data/english.txt"})
     .done(function(data) {
