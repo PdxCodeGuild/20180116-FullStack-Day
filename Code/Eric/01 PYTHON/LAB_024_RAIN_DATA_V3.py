@@ -1,6 +1,7 @@
 """want to restructure rainiest year & review logic"""
 
 import datetime
+from  matplotlib import pyplot as plt
 
 
 # LOAD FILE (V1)
@@ -21,7 +22,7 @@ def load_file(filename):
 		return rain_data_points
 
 
-load_file('sunnyside.rain.txt')
+rain_data_points_g = load_file('sunnyside.rain.txt')
 
 
 # VERSION 2: AVG & VAR
@@ -86,3 +87,10 @@ def rainiest_year(rain_data_points: dict):
 
 
 rainiest_year(rain_data_points=load_file('sunnyside.rain.txt'))
+
+
+# V3 CHART:
+plt.plot(rain_data_points_g.keys(), rain_data_points_g.values())
+plt.ylabel('daily totals')
+plt.xlabel('date')
+plt.show()
