@@ -14,52 +14,46 @@
     <link rel="stylesheet" href="css/main.css">
 
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <link href="css/owfont-regular.min.css" rel="stylesheet" type="text/css">
 
-    <!-- VueJS -->
-    <script src="https://unpkg.com/vue"></script>
 
 </head>
 <body>
 
-    <div id="app">
-    <div class="container">
-    <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
-    <h1>{{ greeting }}</h1>
-    <ul>
-      <li>
-        To learn more about Vue, visit
-        <a :href="docsURL" target="_blank">
-          {{ humanizeURL(docsURL) }}
-        </a>
-      </li>
-      <li>
-        For live help with simple questions, check out
-        <a :href="discordURL" target="_blank">
-          the Discord chat
-        </a>
-      </li>
-      <li>
-        For more complex questions, post to
-        <a :href="forumURL" target="_blank">
-          the forum
-        </a>
-      </li>
-    </ul>
+    <div id="app" class="float-container">
+    <div class="headDiv floating center-align">
+        <div id="introDiv">
+        <h1>{{ title }}</h1>
+            <p class="input-field inline">I live in
+                <input placeholder="city" name="city-input" id="city-input" v-model="city"/>
+                and I think it's
+            <select v-model="selectedWeather" name="weather-input" id="weather-input">
+                <option v-for="option in options">{{ option.text }}</option>
+            </select>
+        </p>
+            <button v-on:click="getWeather" class="waves-effect waves-light btn blue accent-1" id="bt-weather">Show me the real weather in {{ city }}!</button>
+        </div>
+        <div id="resultDiv" class="hidden">
+            <h1>{{ resultMain }}</h1>
+            <i class="owf owf-200"></i>
+            <p>{{ resultDesc }}</p>
+        </div>
     </div>
     </div>
-
 
     <!-- scripts go here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+    <script src="https://unpkg.com/vue-material@beta"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-    <script src="js/templates.vue"></script>
     <script src="js/main.js"></script>
+    <script src="js/templates.vue"></script>
 
   <script>
 
