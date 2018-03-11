@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            #display_div {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="display_div"></div>
+        <script>
+            let display_div = document.querySelector('#display_div');
+
+            function http_get(url, success) {
+                let xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    let data = JSON.parse(xhttp.responseText);
+                    success(data);
+                    }
+                };
+                xhttp.open("GET", url);
+                xhttp.send();
+            }
+
+            http_get('https://favqs.com/api/qotd', function (data) {
+                console.log(data);
+                display_div.innerHTML = '\"' + data.quote.body + '\" - ' + data.quote.author;
+            });
+        </script>
+    </body>
+</html>

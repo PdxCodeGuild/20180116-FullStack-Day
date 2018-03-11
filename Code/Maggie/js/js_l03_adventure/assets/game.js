@@ -33,7 +33,7 @@ function create_main_elements() {
 function buildGameBoard2() {
     const gameBoardWidth = 10;
     const gameBoardHeight = 10;
-    for ( y = 0; y < ; y++)
+    for ( y = 0; y < 10; y++)
      {
         for (x = 0; x < 10; x++) {
             // console.log(`x:${x}, y:${y}`)
@@ -139,15 +139,15 @@ class NPC {
         let move = this.check_move(dx, dy);
         console.log(`at location x:${move[0]}, y:${move[1]} ${getStrAtLoc(move[0], move[1])}`);
         if (getStrAtLoc(move[0], move[1]) === '.') {
-        // if (!(this.player_x + dx) instanceof NPC.location) {
+            // if (!(this.player_x + dx) instanceof NPC.location) {
             this.clearCharacter();
             this.x_location += dx;
             this.y_location += dy;
             this.drawCharacter();
-    // get name() {
-    // return this.name;
-    // }
-
+            // get name() {
+            // return this.name;
+        }
+    }
     get location() {
         console.log(`get location ${this.x_location}, ${this.y_location}`);
         return [this.x_location, this.y_location];
@@ -165,11 +165,11 @@ class NPC {
 let player = new PlayerCharacter(5,5);
 let Charlie = new NPC('Charlie', 2, 1);
 
-window.onkeyup = function(e) {
-   let key = e.keyCode ? e.keyCode : e.which;
+window.onkeyup = function(event) {
+   let key = (event.keyCode)? event.keyCode : event.which;
 
   if (key === 37) {
-       player.move(-1,0);
+      player.move(-1,0);
   }
    else if (key === 38) {
        player.move(0,-1);
@@ -189,6 +189,3 @@ window.onkeyup = function(e) {
 
 // (`.col${x}.row${y}`);
 
-changeBackground("black");
-changeColor("white");
-buildGameBoard();
