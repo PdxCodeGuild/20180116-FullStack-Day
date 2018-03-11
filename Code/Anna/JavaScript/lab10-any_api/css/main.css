@@ -18,6 +18,16 @@ body {
     background: radial-gradient(ellipse at center, #fffeea 0%, #78909c 35%, #222 100%);
 }
 
+.muricaMode {
+    background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 0, 0, 0.7) 100px,
+    rgba(255, 255, 255, 0.5) 100px,
+    rgba(0, 0, 255, 0.7) 200px
+    );
+}
+
 .clearSkies {
     background: radial-gradient(ellipse at center, #ffecb3 0%, #b3e5fc 35%, #29b6f6 100%);
 }
@@ -41,6 +51,7 @@ body {
 .extremeSkies {
     background: radial-gradient(ellipse at center, #fffeea 0%, #4527a0 35%, #ff3d00 100%);
 }
+
 
 /* other styles */
 
@@ -75,7 +86,7 @@ body {
     text-align: center;
 }
 
-#bt-again {
+.top-mar {
     margin-top: 15px;
 }
 
