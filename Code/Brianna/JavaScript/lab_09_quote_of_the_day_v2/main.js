@@ -1,10 +1,12 @@
 let api_key = "c4ebc4f09dfaf7a2947a90250196a5a9";  // normally this would be hidden away somewhere. Since we do not care if sample random quotes revokes our access we are posting.
+let quote_div = document.getElementById('quote_div'); // hook into my div that contains the quote
 let quote_block = document.getElementById('quote_block'); // Hook into my block quote element
-let page_number = document.querySelector('#page_button');
-let filter_by = document.querySelector('#filter_by');
+let page_number = document.getElementById('page_button');
+let key_word = document.getElementById('key_word');
 
 
-// My first call to Ajax
+
+
 function http_get(url, success) {   // function to request data from API
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -23,40 +25,7 @@ function http_get(url, success) {   // function to request data from API
     xhttp.send();
 }
 
-console.log(document);
 
-// Build a function to get quotes and append them to the page.
-function get_quotes(key_word) {
-  let url = "https://favqs.com/api/quotes?page="+page_number+"&filter=" + text;
-  http_get(url, function(data) {
-
-    filter_by.innerHTML = '';
-    quote_block.innerHTML = '';
-
-    let total_pages = data.total_pages;
-    for (let i=0; i<total_pages; ++i) {
-      let page_button = document.createElement('button');
-      page_bt.innerText = (i+1);
-      page_bt.onclick = function() {
-        get_users(i+1);
-      };
-      filter_by.appendChild(page_button);
-    }
-    let quote = data.quote.body;
-    for (let i=0; i<quote.length; ++i) {
-
-      quote_block.innerText = data.quote.body + ' ~ ' + data.quote.author
-
-      let img = document.createElement('img');
-      img.src = img_url;
-
-      let user_div = document.createElement('div');
-      user_div.appendChild(quote);
-
-      users_div.appendChild(user_div);
-
-    }
-  });
 
 //
 if (page_number === 2 || page_number === 3 || page_number === 4 || page_number === 5) {
