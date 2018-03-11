@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Any API Lab</title>
-    <meta name="description" content="Pick an API, any API...">
+    <title>Weather API with Vue</title>
+    <meta name="description" content="Let's check out the weather in your neck of the woods.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
     <link rel="apple-touch-icon" href="icon.png">
@@ -26,20 +26,26 @@
     <div id="app" class="float-container">
     <div class="headDiv floating center-align">
         <div id="introDiv">
-        <h1>{{ title }}</h1>
+        <h1>{{ greeting }}</h1>
+        <h4>{{ title }}</h4>
             <p class="input-field inline">I live in
-                <input placeholder="city" name="city-input" id="city-input" v-model="city"/>
-                and I think it's
-            <select v-model="selectedWeather" name="weather-input" id="weather-input">
-                <option v-for="option in options">{{ option.text }}</option>
-            </select>
+                <input placeholder="city" name="city-input" id="city-input" v-model="city" v-on:keypress.enter="getWeather"/>
+                <!--and I think it's-->
+            <!--<select v-model="selectedWeather" name="weather-input" id="weather-input">-->
+                <!--<option v-for="option in options">{{ option.text }}</option>-->
+            <!--</select>-->
         </p>
-            <button v-on:click="getWeather" class="waves-effect waves-light btn blue accent-1" id="bt-weather">Show me the real weather in {{ city }}!</button>
+        <p>
+            <button v-on:click="getWeather" class="waves-effect waves-light btn blue accent-1" id="bt-weather">Show me the weather in {{ city }}!</button>
+        </p>
         </div>
         <div id="resultDiv" class="hidden">
             <h1>{{ resultMain }}</h1>
             <i id="weatherIcon" class="owf owf-5x"></i>
             <p>{{ resultDesc }}</p>
+            <button v-on:click="goAgain" class="top-mar waves-effect waves-light btn blue accent-1" id="bt-again">That was fun, let's do it again!</button>
+            <p>{{ celsius }}</p>
+            <button v-on:click="goFYourTemp" class="waves-effect waves-light btn blue accent-1" id="bt-f">{{ murica }}</button>
         </div>
     </div>
     </div>
@@ -56,8 +62,5 @@
     <script src="js/main.js"></script>
     <script src="js/templates.vue"></script>
 
-  <script>
-
-  </script>
 </body>
 </html>

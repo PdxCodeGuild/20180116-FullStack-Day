@@ -1,13 +1,33 @@
+// determine if it's night or day
+let now = new Date();
+let dayOrNight = "day";
+if (now.getHours() > 18 || now.getHours() < 7 ) {
+    dayOrNight = "night";
+}
+
+
+// the main Vue app
 let app = new Vue({
     el: '#app',
     mounted: function() {
         console.log("Ready!");
         $('select').material_select();
+        if (dayOrNight === "day") {
+            $('body').addClass('dayMode');
+            this.greeting = "Good day!";
+        } else {
+            $('body').addClass('nightMode');
+            this.greeting = "Good night!";
+        }
         },
     data: {
+        greeting: '',
         title: "How's the weather in your neck of the woods?",
         city: 'your city',
+        time: dayOrNight,
         selectedWeather: '',
+        celsius: "Wait, what is this Celsius bullshit?!?",
+        murica: "Show me some 'Murican units!",
         options: [
             { value: 1,
             text: "really nice outside."},
@@ -37,7 +57,7 @@ let app = new Vue({
             clouds: ''
         }
     },
-    watch: {
+    watch: {    // not using this ATM
         displaySelected: function (selectedWeather) {
             if (selectedWeather.value === 1 || selectedWeather.value === 2) {
                 console.log("That's awesome!");
@@ -71,19 +91,69 @@ let app = new Vue({
                 this.weatherResults.iconSrc = response.weather[0].id;
                 this.weatherResults.temp = response.main.temp;
                 this.weatherResults.clouds = response.clouds.all;
+                if (this.weatherResults.main === 'clouds') {
+                    this.weatherResults.main = 'cloudy';
+                } else if (this.weatherResults.main === 'rain') {
+                    this.weatherResults.main = 'raining';
+                } else if (this.weatherResults.main === 'snow') {
+                    this.weatherResults.main = 'snowing';
+                } else if (this.weatherResults.main === 'haze') {
+                    this.weatherResults.main = 'hazy';
+                }
             });
-            console.log("Done!");
+            console.log("It is " + dayOrNight);
             setTimeout(this.showWeather, 2000);
         },
         showWeather: function() {
             $('#introDiv').addClass('hidden');
             $('#resultDiv').removeClass('hidden');
+            $('body').removeClass();
+            console.log("Weather code: "+ this.weatherResults.iconSrc);
+            if (this.weatherResults.iconSrc === 800) {
+                $('body').addClass('clearSkies');
+            } else if (this.weatherResults.iconSrc > 800 && this.weatherResults.iconSrc < 803) {
+                $('body').addClass('mixedSkies');
+            } else if (this.weatherResults.iconSrc === 803 || this.weatherResults.iconSrc === 804 || (this.weatherResults.iconSrc > 700 && this.weatherResults.iconSrc < 800)) {
+                $('body').addClass('greySkies');
+            } else if (this.weatherResults.iconSrc >= 200 && this.weatherResults.iconSrc < 600) {
+                $('body').addClass('rainSkies');
+            } else if (this.weatherResults.iconSrc >= 600 && this.weatherResults.iconSrc < 700) {
+                $('body').addClass('snowSkies');
+            } else if (this.weatherResults.iconSrc >= 900) {
+                $('body').addClass('extremeSkies');
+            } else {
+                $('body').addClass('mixedSkies');
+            }
             let owfClass = 'owf-'+ this.weatherResults.iconSrc;
-            console.log(this.weatherResults.iconSrc);
             $('#weatherIcon').addClass(owfClass);
             this.resultMain = "Right now, it is " + this.weatherResults.main + " in " + this.city + ".";
             this.resultDesc = "The weather is " + this.weatherResults.description + ", the temperature is "
                 + Math.round(this.weatherResults.temp - 273.15) + "°C, with " + this.weatherResults.clouds + "% cloud cover."
+        },
+        goAgain: function(){
+            $('#resultDiv').addClass('hidden');
+            $('#introDiv').removeClass('hidden');
+            $('body').removeClass();
+            if (dayOrNight === "day") {
+                $('body').addClass('dayMode');
+                this.greeting = "Good day!";
+            } else {
+                $('body').addClass('nightMode');
+                this.greeting = "Good night!";
+            }
+            this.celsius = "Wait, what is this Celsius bullshit?!?";
+            this.murica = "Show me some 'Murican units!";
+        },
+        goFYourTemp: function() {
+            this.resultDesc = "The weather is " + this.weatherResults.description + ", the temperature is "
+                + Math.round((this.weatherResults.temp * (9/5)) - 459.67) + "°F, with " + this.weatherResults.clouds + "% cloud cover.";
+            this.murica = "Happy now?";
+            this.celsius = '';
+            $('body').removeClass();
+            $('body').addClass('muricaMode');
         }
     }
 });
+
+
+

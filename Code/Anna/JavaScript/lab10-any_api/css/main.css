@@ -5,10 +5,51 @@ html, body {
 }
 
 body {
-    background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #82b1ff 100%);
     overflow: hidden;
     font-family: 'BioRhyme', serif;
     color: #455a64;
+}
+
+.dayMode {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #ffecb3 100%);
+}
+
+.nightMode {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #78909c 35%, #222 100%);
+}
+
+.muricaMode {
+    background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 0, 0, 0.7) 100px,
+    rgba(255, 255, 255, 0.5) 100px,
+    rgba(0, 0, 255, 0.7) 200px
+    );
+}
+
+.clearSkies {
+    background: radial-gradient(ellipse at center, #ffecb3 0%, #b3e5fc 35%, #29b6f6 100%);
+}
+
+.mixedSkies {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #607d8b 35%, #01579b 100%);
+}
+
+.greySkies {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #607d8b 100%);
+}
+
+.rainSkies {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #311b92 35%, #37474f 100%);
+}
+
+.snowSkies {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #fafafa 100%);
+}
+
+.extremeSkies {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #4527a0 35%, #ff3d00 100%);
 }
 
 
@@ -43,6 +84,10 @@ body {
 
 .center-align {
     text-align: center;
+}
+
+.top-mar {
+    margin-top: 15px;
 }
 
 .owf {
