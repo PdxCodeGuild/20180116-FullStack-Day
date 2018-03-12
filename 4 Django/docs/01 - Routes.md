@@ -11,8 +11,8 @@ from django.conf.urls import path
 from . import views
 
 urlpatterns = [
-    path(r'', views.index, name='index'),
-    path(r'posts/', views.posts, name='posts'),
+    path('', views.index, name='index'),
+    path('posts/', views.posts, name='posts'),
 ]
 ```
 
