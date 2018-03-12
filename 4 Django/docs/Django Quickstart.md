@@ -23,7 +23,7 @@ from . import views
 
 app_name = '<app name>'
 urlpatterns = [
-    url(r'^$', views.<viewname>, name='<viewname>')
+    path(r'<path>', views.<viewname>, name='<viewname>')
 ]
 ```
 - Add a route in your project's `urls.py` which points to the app's `url.py` using `include`
@@ -33,8 +33,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^<path>/', include('<appname>.urls'))
+    url(r'admin/', admin.site.urls),
+    url(r'<path>/', include('<appname>.urls'))
 ]
 ```
 
