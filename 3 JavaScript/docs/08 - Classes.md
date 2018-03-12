@@ -3,7 +3,7 @@
 
 ## Introductory Example
 
-ES6 introduced a much easier way of writing classes:
+ES6 introduced a much easier way of writing classes. Below is an example comparing the use of a class to that of an object. The object behaves similarly, except you'll have to re-write the entire structure every time you create an instance. Also, each instance will have its own copy of the `get_balance` function, resulting in greater memory overhead.
 
 ```javascript
 // using a class
@@ -76,7 +76,7 @@ The way to do classes is ES5 is much more awkward, but you may see it in the wil
 
 ```javascript
 function Animal(legs) {
-    this.legs = legs || 0;
+    this.legs = legs || 0; // use default value if needed
 }
 
 Animal.prototype.move = function () {
@@ -88,7 +88,7 @@ Animal.prototype.move = function () {
 };
 
 function Dog(legs, sound) {
-    Animal.call(this, legs);
+    Animal.call(this, legs); // parent 'constructor'
     this.sound = sound || 'ruff';
 }
 
