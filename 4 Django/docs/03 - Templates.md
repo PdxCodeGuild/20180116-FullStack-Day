@@ -3,7 +3,7 @@
 
 # Templates
 
-Templates are like blueprints for your HTML pages. They contain plain HTML/CSS/JavaScript, but also additional syntax for generating HTML/CSS/JavaScript using variables from your Python view. You can read more about Templates [here](https://docs.djangoproject.com/en/1.11/topics/templates/) and [here](https://docs.djangoproject.com/en/1.11/ref/templates/builtins/)
+Templates are like blueprints for your HTML pages. They contain plain HTML/CSS/JavaScript, but also additional syntax for generating HTML/CSS/JavaScript using variables from your Python view. You can read more about Templates [here](https://docs.djangoproject.com/en/2.0/topics/templates/) and [here](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/)
 
 
 ## if
@@ -55,7 +55,7 @@ urlpatterns = [
 ```
 
 
-The `name` given in `urls.py` and the actual `path` can be different. To keep things simple, use consistent names. You can read more about [routing](https://docs.djangoproject.com/en/1.11/topics/http/urls/) and the [urls package](https://docs.djangoproject.com/en/1.11/ref/urls/).
+The `name` given in `urls.py` and the actual `path` can be different. To keep things simple, use consistent names. You can read more about [routing](https://docs.djangoproject.com/en/2.0/topics/http/urls/) and the [urls package](https://docs.djangoproject.com/en/2.0/ref/urls/).
 
 
 ## Forms
