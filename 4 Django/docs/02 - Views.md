@@ -1,7 +1,7 @@
 
 # Views
 
-**Views** are python functions that are executed when a request follows a route. The view can then respond with HTML, JSON, etc. An app's views are contained in its `views.py` file. You can read more about views [here](https://docs.djangoproject.com/en/1.11/topics/http/views/) and [here](https://docs.djangoproject.com/en/1.11/ref/request-response/).
+**Views** are python functions that are executed when a request follows a route. The view can then respond with HTML, JSON, etc. An app's views are contained in its `views.py` file. You can read more about views [here](https://docs.djangoproject.com/en/2.0/topics/http/views/) and [here](https://docs.djangoproject.com/en/2.0/ref/request-response/).
 
 
 ## Requests
@@ -27,7 +27,7 @@ from . import views
 app_name = 'todoapp'
 urlpatterns = [
     # e.g. /detail/5, /detail/23
-    url(r'^detail/(?P<todo_item_id>[0-9]+)/$', views.detail, name='detail')
+    path('detail/<int:todo_item_id>/', views.detail, name='detail')
 ]
 ```
 

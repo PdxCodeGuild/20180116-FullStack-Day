@@ -4,27 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-<script src="main.js"></script>
 </head>
 <body>
 
     <div id="card">
         <header>{{ title }}</header>
-        <div>
-            <input id="itemForm" v-on:keypress.enter="addItem"/>
-            <button v-on:click="addItem">Add Dinosaur</button>
-        </div>
-        <ul>
-           <li v-for="(item, index) in items">
-               {{ item.text }}
-           </li>
-            <button v-on:click="deleteItem(index)">X</button>
-        </ul>
+        <div v-html="content"></div>
     </div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>

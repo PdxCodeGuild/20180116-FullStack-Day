@@ -125,7 +125,7 @@ def otherview(request):
 
 ### @login_required
 
-Django comes with a built-in decorator which can check if a user is logged in. If the user is logged in, the execution of the view coninues unabated. If not, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-LOGIN_URL). You can read more [here](https://docs.djangoproject.com/en/1.11/topics/auth/default/#the-login-required-decorator).
+Django comes with a built-in decorator which can check if a user is logged in. If the user is logged in, the execution of the view coninues unabated. If not, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-LOGIN_URL). You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#the-login-required-decorator).
 
 ```python
 from django.contrib.auth.decorators import login_required
@@ -137,8 +137,8 @@ def my_view(request):
 
 ### @permission_required
 
-Like `@login_required`, if this fails, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-LOGIN_URL).
-You can read more [here](https://docs.djangoproject.com/en/1.11/topics/auth/default/#the-permission-required-decorator).
+Like `@login_required`, if this fails, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-LOGIN_URL).
+You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#the-permission-required-decorator).
 
 ```python
 from django.contrib.auth.decorators import permission_required
@@ -150,7 +150,7 @@ def my_view(request):
 
 ### @user_passes_test(f)
 
-The `@users_passes_test` decorator takes a function which is given a user. That function can then return `True` or `False` whether that user should be allowed in. Like the others, if this fails, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-LOGIN_URL). You can read more [here](https://docs.djangoproject.com/en/1.11/topics/auth/default/#limiting-access-to-logged-in-users-that-pass-a-test).
+The `@users_passes_test` decorator takes a function which is given a user. That function can then return `True` or `False` whether that user should be allowed in. Like the others, if this fails, the user will be redirected to [settings.LOGIN_URL](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-LOGIN_URL). You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/default/#limiting-access-to-logged-in-users-that-pass-a-test).
 
 
 ```python
@@ -167,5 +167,5 @@ def my_view(request):
 
 ## Extending the User Model
 
-If you want to have a custom user model, you should create one **when you start a project**. It's much more difficult to change once you already have users in your database. You can read more [here](https://docs.djangoproject.com/en/1.11/topics/auth/customizing/#auth-custom-user).
+If you want to have a custom user model, you should create one **when you start a project**. It's much more difficult to change once you already have users in your database. You can read more [here](https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#auth-custom-user).
 
