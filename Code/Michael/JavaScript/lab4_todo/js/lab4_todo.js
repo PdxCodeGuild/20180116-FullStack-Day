@@ -20,7 +20,6 @@ window.onload = function() {
     };
 
     remove_btA.onclick = function() {
-      //let item = document.getElementById(todo.value);
       listA.removeChild(listA.firstChild);
     };
 
@@ -31,7 +30,6 @@ window.onload = function() {
     };
 
     remove_btB.onclick = function() {
-      //let item = document.getElementById(todo.value);
       listB.removeChild(listB.firstChild);
     };
 
