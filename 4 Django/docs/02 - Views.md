@@ -27,7 +27,7 @@ from . import views
 app_name = 'todoapp'
 urlpatterns = [
     # e.g. /detail/5, /detail/23
-    url(r'^detail/(?P<todo_item_id>[0-9]+)/$', views.detail, name='detail')
+    path('detail/<int:todo_item_id>/', views.detail, name='detail')
 ]
 ```
 

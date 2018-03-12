@@ -5,28 +5,28 @@ Routes connect URLs to views. The routes are stored in a **urls.py** file, which
 
 
 ```python
-from django.conf.urls import url
+from django.conf.urls import path
 
 # import your views module, so you can tell Django about the view functions
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^posts$', views.posts, name='posts'),
+    path(r'', views.index, name='index'),
+    path(r'posts/', views.posts, name='posts'),
 ]
 ```
 
 Every path should start with `^` and end with `$` to ensure you don't over-match. Routes are evaluated **in order**: whichever route matches first is the one used.
 
 ```python
-from django.conf.urls import url
+from django.conf.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^base/', views.base),  # if you forget a $, will "eat" longer paths.
-    url(r'^base/(?P<named>.+)/$', views.base_capture),  # captures might "eat" longer paths.
-    url(r'^base/wont_match/$', views.base_wont_match),  # this will never match because of _both_ of above routes.
+    path('admin/', admin.site.urls),
+    path('base/', views.base),
+    path('base/<int:id>/$', views.base_capture),
+    path('base/wont_match/$', views.base_wont_match),  # this will never match because of _both_ of above routes.
 ]
 ```
 
@@ -35,17 +35,15 @@ urlpatterns = [
 The `include` function allows you to combine the routes of multiple `urls.py` files into one. This is used to connect the project's 'main' `urls.py` to the `urls.py` in each of the apps.
 
 ```python
-from django.conf.urls import url, include
+from django.conf.urls import path, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^<path>/', include('<appname>.urls'))
+    path('admin/', admin.site.urls),
+    path('path/', include('<appname>.urls'))
 ]
 ```
 
 ## Parameter Capture
 
 See the [views.md](views.md/#Path_Parameters) file.
-
-
