@@ -29,7 +29,7 @@
         <h1>{{ greeting }}</h1>
         <h4>{{ title }}</h4>
             <p class="input-field inline">I live in
-                <input placeholder="city" name="city-input" id="city-input" v-model="city"/>
+                <input placeholder="city" name="city-input" id="city-input" v-model="city" v-on:keypress.enter="getWeather"/>
                 <!--and I think it's-->
             <!--<select v-model="selectedWeather" name="weather-input" id="weather-input">-->
                 <!--<option v-for="option in options">{{ option.text }}</option>-->
@@ -43,7 +43,9 @@
             <h1>{{ resultMain }}</h1>
             <i id="weatherIcon" class="owf owf-5x"></i>
             <p>{{ resultDesc }}</p>
-            <button v-on:click="goAgain" class="waves-effect waves-light btn blue accent-1" id="bt-again">That was fun, let's do it again!</button>
+            <button v-on:click="goAgain" class="top-mar waves-effect waves-light btn blue accent-1" id="bt-again">That was fun, let's do it again!</button>
+            <p>{{ celsius }}</p>
+            <button v-on:click="goFYourTemp" class="waves-effect waves-light btn blue accent-1" id="bt-f">{{ murica }}</button>
         </div>
     </div>
     </div>

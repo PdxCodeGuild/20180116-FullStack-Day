@@ -26,6 +26,8 @@ let app = new Vue({
         city: 'your city',
         time: dayOrNight,
         selectedWeather: '',
+        celsius: "Wait, what is this Celsius bullshit?!?",
+        murica: "Show me some 'Murican units!",
         options: [
             { value: 1,
             text: "really nice outside."},
@@ -55,7 +57,7 @@ let app = new Vue({
             clouds: ''
         }
     },
-    watch: {
+    watch: {    // not using this ATM
         displaySelected: function (selectedWeather) {
             if (selectedWeather.value === 1 || selectedWeather.value === 2) {
                 console.log("That's awesome!");
@@ -95,6 +97,8 @@ let app = new Vue({
                     this.weatherResults.main = 'raining';
                 } else if (this.weatherResults.main === 'snow') {
                     this.weatherResults.main = 'snowing';
+                } else if (this.weatherResults.main === 'haze') {
+                    this.weatherResults.main = 'hazy';
                 }
             });
             console.log("It is " + dayOrNight);
@@ -137,6 +141,16 @@ let app = new Vue({
                 $('body').addClass('nightMode');
                 this.greeting = "Good night!";
             }
+            this.celsius = "Wait, what is this Celsius bullshit?!?";
+            this.murica = "Show me some 'Murican units!";
+        },
+        goFYourTemp: function() {
+            this.resultDesc = "The weather is " + this.weatherResults.description + ", the temperature is "
+                + Math.round((this.weatherResults.temp * (9/5)) - 459.67) + "°F, with " + this.weatherResults.clouds + "% cloud cover.";
+            this.murica = "Happy now?";
+            this.celsius = '';
+            $('body').removeClass();
+            $('body').addClass('muricaMode');
         }
     }
 });
