@@ -26,9 +26,7 @@ user1 = User(1, 'wendy@gmail.com', 'Wendy', 'Carson')
 user2 = User(2, 'alyssa@gmail.com', 'Alyssa', 'Lyons')
 user3 = User(3, 'brian@gmail.com', 'Brian', 'Barber')
 ```
-All models are automatically given an `id` field, which is an int that uniquely idenifies a row.
-
-
+All models are automatically given an `id` field, which is an int that uniquely identifies a row.
 
 
 ## Field Types
