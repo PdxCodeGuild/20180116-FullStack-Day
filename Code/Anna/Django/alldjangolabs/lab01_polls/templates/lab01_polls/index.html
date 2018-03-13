@@ -17,7 +17,7 @@
     {% if latest_question_list %}
         <ol>
         {% for question in latest_question_list %}
-            <!--<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>-->
+            <!--<li><a href="/lab01_polls/{{ question.id }}/">{{ question.question_text }}</a></li>-->
             <!--because hard-coding URLs is bad!
                 do this instead: -->
             <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
