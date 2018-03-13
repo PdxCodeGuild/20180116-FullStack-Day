@@ -1,0 +1,28 @@
+
+
+<h1>Create Note</h1>
+
+<form id="container" action="{% url 'notesapp:createnote' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <div>
+            <label for="note_name_input">Name</label>
+        </div>
+        <input id="note_name_input" name="note_name" type="text"/>
+    </div>
+    <div>
+        <div>
+        <label for="note_body_input">Body</label>
+        </div>
+        <textarea id="note_body_input" name="note_body"></textarea>
+    </div>
+    <button type="submit">save</button>
+</form>
+
+<style>
+    #container > div {
+        margin:10px;
+    }
+</style>
+
+
