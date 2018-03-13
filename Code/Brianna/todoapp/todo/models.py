@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 
 
 # to-do model
@@ -8,21 +10,19 @@ class Todo(models.Model):
     # created date
     created_date = models.DateTimeField(auto_now_add=True)
     # completed date with boolean (T/F) representing whether the task has been completed.
-    completed_date = models.DateTimeField(auto_now=True, null=True, blank=True)
+    completed_date = models.DateTimeField('date completed', auto_now=True, null=True, blank=True)
     # List out the items already entered
 
     def __str__(self):
-        return self.todo_text + ' : ' + self.created_date + ' Edited on: ' + self.modified_date
+        if str(self.completed_date) != '':  """This doesn't work as intended yet. So far it returns with 'completed on' upon creation of to-do item."""
+            return self.todo_text + ' : ' + str(self.created_date) + ' Completed on: ' + str(self.completed_date)
+        else:
+            return self.todo_text + ' : ' + str(self.created_date)
 
 
 
 
-# Other things to include in the templates section:
-# deleting a row
-# Form with input field and save button
-# After "submit" has been hit it should show new to-do item
 
-# Check box/button for selecting when an item has been completed
 
 
 
