@@ -1,0 +1,55 @@
+<!--My first attempt to Getting an HTTP Request-->
+<html>
+<head>
+    <style>
+        #show_quote {
+            top: 100px;
+            text-align: center;
+            background-color: #00bcd4;
+            margin: 40px 100px 0 100px;
+        }
+
+        #show_author {
+            text-align: center;
+            background-color: yellow;
+            margin: 0 100px 0 100px;
+        }
+
+        #Qoute_of_the_day {
+            font-size: 30px;
+            font-family: Papyrus, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div id="Qoute_of_the_day"> Quote of the Day: </div>
+<div id="show_quote"></div>
+<div id="show_author"></div>
+
+<script>
+    let show_quote = document.querySelector('#show_quote');
+    let show_author = document.querySelector('#show_author');
+    let api = "https://favqs.com/api/qotd";
+
+    let httpRequest = new XMLHttpRequest();
+
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+            //THis will make the data into an Object
+            // If not it comes back all weird looking.
+            let data = JSON.parse(httpRequest.responseText);
+            console.log(data); //This console log is so i know how to access the keys i need.
+            show_quote.innerHTML = '\"' + data.quote.body + '\"';
+            show_author.innerHTML = '- ' + data.quote.author;
+
+
+        }
+    };
+
+
+    httpRequest.open('GET', api, true);
+    httpRequest.send();
+
+</script>
+</body>
+</html>
