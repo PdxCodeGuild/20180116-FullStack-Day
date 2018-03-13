@@ -1,3 +1,6 @@
+
+
+
 from django.urls import path
 
 from . import views
@@ -10,3 +13,4 @@ urlpatterns = [
     path('createnotepage/', views.create_note_page, name='createnotepage'),
     path('createnote/', views.createnote, name='createnote')
 ]
+

@@ -39,3 +39,5 @@ def createnote(request):
     note = Note(name=note_name, body=note_body)
     note.save()
     return HttpResponseRedirect(reverse('notesapp:index'))
+
+
