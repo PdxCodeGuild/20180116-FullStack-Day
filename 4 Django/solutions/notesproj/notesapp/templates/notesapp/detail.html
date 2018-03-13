@@ -1,0 +1,28 @@
+
+<h1>Edit Note</h1>
+
+<form id="container" action="{% url 'notesapp:savenote' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" value="{{note.id}}" name="note_id"/>
+    <div>
+        <div>
+            <label for="note_name_input">Name</label>
+        </div>
+        <input id="note_name_input" name="note_name" type="text" value="{{note.name}}"/>
+    </div>
+    <div>
+        <div>
+        <label for="note_body_input">Body</label>
+        </div>
+        <textarea id="note_body_input" name="note_body">{{note.body}}</textarea>
+    </div>
+    <button type="submit">save</button>
+</form>
+
+
+
+<style>
+    #container > div {
+        margin:10px;
+    }
+</style>
