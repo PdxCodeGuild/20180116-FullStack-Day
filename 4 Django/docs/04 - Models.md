@@ -67,7 +67,7 @@ person.save()
 
 ## Database Relationships
 
-The three types of database relationships: one-to-one, many-to-one, and many-to-many. The `id` field of a table is called the **primary key** because it uniquely identifies a table. When another table contains a reference to that `id` field, it's called a **foreign key**. In the following example, `city_id` on `Users` is a **foreign key**, `id` on Users and `id` on Cities are **Primary Keys**. This is an example of a **many-to-one relationship**.
+The three types of database relationships: one-to-one, many-to-one, and many-to-many. The `id` field of a table is called the **primary key** because it uniquely identifies a row. When another table contains a reference to that `id` field, it's called a **foreign key**. In the following example, `city_id` on `Users` is a **foreign key**, `id` on Users and `id` on Cities are **Primary Keys**. This is an example of a **many-to-one relationship**.
 
 #### Users
 | id | email_address | first_name | last_name | city_id |
