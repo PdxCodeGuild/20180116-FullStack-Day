@@ -14,7 +14,7 @@ class Todo(models.Model):
     # List out the items already entered
 
     def __str__(self):
-        if str(self.completed_date) != '':  #"""This doesn't work as intended yet. """
+        if str(self.completed_date) != '':  # This doesn't work as intended yet. Goes to 1st option on creation.
             return self.todo_text + ' : ' + str(self.created_date) + ' Completed on: ' + str(self.completed_date)
         else:
             return self.todo_text + ' : ' + str(self.created_date)
