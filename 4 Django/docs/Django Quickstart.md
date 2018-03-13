@@ -41,6 +41,7 @@ urlpatterns = [
 ]
 ```
 
+At this point, you should run the server (`python manage.py runserver`) and go to `localhost:8000/app_path/view_path` and verify that you can access the view.
 
 ## Create Models
 
@@ -64,7 +65,18 @@ admin.site.register(<model name 2>)
 
 - Go to `localhost:8000/admin` in your browser, and add some data.
 
-## Other Stuff
 
-- Run the server: `python manage.py runserver`
-- Access the shell `python manage.py shell`
+## Create a Template
+
+- Create a folder inside you app called `templates`, inside of that create another folder with the name of your app, and inside of *that* create a `<filename>.html`. You can view examples of the template syntax [here](03%20-%20Templates.md).
+
+## Render a Template
+
+- Inside your view, you can use the `render` shortcut to render a template. The first parameter is the request, the second parameter is the name of the template, and the third is a dictionary containing the values you'd like to render in the template.
+
+```python
+from django.shortcuts import render
+def <view name>(request):
+    context = {<name-value pairs>}
+    return render(request, '<app name>/<template name>.html', context)
+```
