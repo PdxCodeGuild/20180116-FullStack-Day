@@ -16,10 +16,7 @@
         {% for choice in question.choice_set.all %}
             <li>{{ choice.choice_text }}: {{ choice.votes }} goat{{ choice.votes|pluralize }}
                 <span>
-
-                    {% for choice in question.choice_set.all %}
-                        🐐
-                    {% endfor %}
+                    {{choice.goat_votes}}
                 </span>
             </li>
         {% endfor %}

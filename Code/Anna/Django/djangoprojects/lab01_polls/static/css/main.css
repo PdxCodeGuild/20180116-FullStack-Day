@@ -6,3 +6,7 @@ body {
 .container {
     padding: 50px;
 }
+
+.btn {
+    padding: 5px;
+}
