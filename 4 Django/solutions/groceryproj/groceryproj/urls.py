@@ -20,3 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('groceryapp.urls'))
 ]
+
+handler404 = 'groceryapp.views.handler404'
+handler500 = 'groceryapp.views.handler500'

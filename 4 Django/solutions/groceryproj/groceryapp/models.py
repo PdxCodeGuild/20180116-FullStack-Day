@@ -1,11 +1,13 @@
 from django.db import models
 
+
 class Coupon(models.Model):
     name = models.CharField(max_length=100)
     percent_off = models.FloatField()
 
     def __str__(self):
         return self.name
+
 
 class GroceryItem(models.Model):
     name = models.CharField(max_length=100)
@@ -19,7 +21,7 @@ class GroceryItem(models.Model):
 
 class GroceryList(models.Model):
     name = models.CharField(max_length=100)
-    coupons = models.ManyToManyField(Coupon, blank=True)
+    coupon = models.ForeignKey(Coupon, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -35,9 +37,11 @@ class GroceryList(models.Model):
         for grocery_list_item in self.grocerylistitem_set.all():
             total += grocery_list_item.quantity * grocery_list_item.grocery_item.unit_price
 
-        coupon_percent = 0 if self.coupons.count() == 0 else self.coupons.all()[0].percent_off
+        # coupon_percent = 0 if self.coupons.count() == 0 else self.coupons.all()[0].percent_off
+        coupon_percent = 0 if self.coupon is None else self.coupon.percent_off
 
-        return '{0:.2f}'.format(total*(1.0-coupon_percent/100.0))
+        return '{0:.2f}'.format(total*(1.0-coupon_percent/100.0)) + ' (' + str(coupon_percent) + '% off)'
+
 
 
 class GroceryListItem(models.Model):
