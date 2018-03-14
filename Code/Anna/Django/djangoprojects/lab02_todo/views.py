@@ -10,3 +10,12 @@ def index(request):
     items = Todo.objects.order_by('-created_date')
     context = {'items': items}
     return render(request, 'lab02_todo/index.html', context)
+
+
+# http.cats!
+def handler404(request):
+    return HttpResponseRedirect('https://http.cat/404')
+
+
+def handler500(request):
+    return HttpResponseRedirect('https://http.cat/500')
