@@ -22,3 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+handler404 = 'lab02_todo.views.handler404'
+

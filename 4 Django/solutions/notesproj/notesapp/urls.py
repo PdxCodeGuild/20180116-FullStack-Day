@@ -2,6 +2,12 @@
 
 
 from django.urls import path
+# from django.conf.urls import handler400, handler403, handler404, handler500
+#
+# handler400 = 'my_app.views.bad_request'
+# handler403 = 'my_app.views.permission_denied'
+# handler404 = 'my_app.views.page_not_found'
+# handler500 = 'my_app.views.server_error'
 
 from . import views
 

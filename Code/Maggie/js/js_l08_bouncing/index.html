@@ -2,21 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Input testing</title>
+    <title>Bouncing balls</title>
     <script type="text/javascript">
 
-        //constants
-        let collisions = true;
-        let gravity = .5;
-        let friction = 0.95;
-        let balls = [];
-        let number_of_balls = 3;
-        let size = window.innerWidth / 20;
-        let variance = 1;
-        //returns a random hex value, no arguments or false will be darker, string argument of any kind will return a lighter color
+  
         function get_random_color(light) {
                 //optional argument to favor higher hex colors
-                let letters = light? '789ABCDEF' : '0123456789ABC' ;
+                let letters = light? '789ABCDEF' : '1234567' ;
                 //color string to iterate through
                 let color = '#';
                 for (let i = 0; i < 6; i++) {
@@ -42,6 +34,8 @@
        }
 
         function collide(ball_i, ball_j) {
+
+
             //for collision points equality testing
             // let collision_px = ((ball_i.px * ball_j.radius) + (ball_j.px * ball_i.radius)) / (ball_i.radius + ball_j.radius);
             // let collision_py = ((ball_i.py * ball_j.radius) + (ball_j.py * ball_i.radius)) / (ball_i.radius + ball_j.radius);
@@ -61,19 +55,22 @@
             // //new vy
             ball_j.newvy = (ball_j.vy * (ball_j.mass - ball_i.mass) + 2 * ball_i.mass * ball_i.vy) / (ball_j.mass + ball_i.mass);
             
-            ball_i.vx = ball_i.newvx + 1;
-            ball_i.vy = ball_i.newvy + 1;
-            ball_j.vx = ball_j.newvx + 1;
-            ball_j.vy = ball_j.newvy + 1;
+            ball_i.vx = ball_i.newvx  * (1 + Math.random()/ 10);
+            ball_i.vy = ball_i.newvy * (1 + Math.random() / 100);
+            ball_j.vx = ball_j.newvx * (1 + Math.random() / 10);
+            ball_j.vy = ball_j.newvy * (1 + Math.random() / 100);
         
-            ball_i.px += ball_i.vx;
-            ball_i.py += ball_i.vy;
-            ball_j.px += ball_j.vx;
-            ball_j.py += ball_j.vy;
-        }
+            ball_i.px += ball_i.vx * 1.01;
+            ball_i.py += ball_i.vy * 1.01;
+            ball_j.px += ball_j.vx * 1.01;
+            ball_j.py += ball_j.vy * 1.01;
 
-        function make_ball(size, variance) {
-            let radius = Math.random() * size*variance + size;
+        }
+        let balls = [];
+
+        function make_ball(min_size, size_variance) {
+            
+            let radius = Math.random() * size_variance + min_size;
                 let ball = {
                     //should always produce a 6 digit hex
                     color: get_random_color(),
@@ -81,21 +78,45 @@
                     // color2: "#"+((1<<24)*Math.random()|0).toString(16),
                     radius: radius,
                     //random inital p within window
-                    px: Math.random() * window.innerWidth,
-                    py: Math.random() * window.innerHeight, //upper half for more bounce
-                    vx: (2 * Math.random() ),
-                    vy: (2 * Math.random() ),
-                    mass: Math.PI * Math.pow(radius, 2)
+                    px: Math.random() * window.innerWidth ,
+                    py: Math.random() * window.innerHeight /2 -radius, //upper half for more bounce
+                    vx: (Math.random() > 0.5 ? 1: -1) * Math.random() * 20,
+                    vy: (Math.random() > 0.5 ? 1: -1) * Math.random() * 10,
+                    mass: Math.PI * Math.pow(radius, 2),
+                    colliding: false,
+                    destroy: false
                 }; //single ball declaration
                 return ball }
 
         window.onload = function () {
+
             //selectors
             let canvas = document.querySelector('canvas');
 
+            //updating window size on resize
+            canvas.width = (window.innerWidth) - 5;
+            canvas.height = window.innerHeight - 5;
+
+          //constants
+            fixed_bounce = false;
+            let max_balls = 5;
+            let velocity_cap = canvas.width * canvas.height / 5000;
+            let collisions = true;
+            let gravity = 1.5;
+            let friction = 0.95;
+            let number_of_balls = 3;
+            let min_size = canvas.width * canvas.height / 25000; //size proportion of window area
+            let size_variance = canvas.width * canvas.height / 20000;
+            let pos_fix = 0.5; //amount to push back the balls on edge collision (see update function)
+            //returns a random hex value, no arguments or false will be darker, string argument of any kind will return a lighter color
+
+
+
+
+
             //make balls
             for (let i = 0; i < number_of_balls; i++) {
-                ball = make_ball(size, variance);
+                ball = make_ball(min_size, size_variance);
                 balls.push(ball);
             } //end of ball constructor loop
 
@@ -104,93 +125,135 @@
 
             // run every frame
             function update() {
-                //updating window size on resize
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
 
-                //loop through each ball object
+
+
+                                //secondary ball collisions
+                // loop through second balls.. check for individual by color hex
                 for (let i = 0; i < balls.length; i++) {
-                    
-                    // update positions
-                    balls[i].px += balls[i].vx;
-                    balls[i].py += balls[i].vy;
+                    for (let j = i+1; j < balls.length; j++) {
+                        if (! balls[i].colliding
+                                && !balls[j].colliding) {
 
-                    let pos_fix = 0.1;
-                    //window edge collisions
+                            let dist_x = balls[i].px - balls[j].px;
+                            let dist_y = balls[i].py - balls[j].py;
+
+                            //pythagorean theorum implementation sqrt(c) = (a-b)^2 +
+                            let distance = Math.sqrt(dist_x * dist_x + dist_y * dist_y);
+
+                             //now is the distance within the bounds of the object radii?
+                            if (distance <= balls[i].radius + balls[j].radius) {
+                                //true collision
+                                if (collisions) {
+                                    // balls[i].colliding = true;
+                                    balls[j].colliding = true;
+                                    collide(balls[i], balls[j])
+                                } 
+                            } //end true collision conditional
+                        } //end second ball iterations
+                    } //end of j iterations
+                    balls[i].colliding = false;
+                } //end of i iterations
+            
+                
+                //window edge collisions
+
+                // X WINDOW COLLISIONS 
+                for (let i = 0; i < balls.length; i++) {
                     //left edge
                     if (balls[i].px <= balls[i].radius) {
-                        //reverse velocity towards right
+                        // //reverse velocity towards right
                         balls[i].vx = Math.abs(balls[i].vx) * friction;
                         balls[i].vy *= friction;
                         balls[i].px += pos_fix;
+                        // balls[i].px = balls[i].px % canvas.width;
                     }
 
                     //right edge
                     if (balls[i].px + balls[i].radius >= canvas.width) {
                         //reverse towards left
                         balls[i].vx = -Math.abs(balls[i].vx) * friction;
-                        balls[i].vy *= friction;
+                        // balls[i].vy *= friction;
                         balls[i].px -= pos_fix;
+
                     }
+                // }
+
+                // //Y WINDOW COLLISIONS
+                // for (let i = 0; i < balls.length; i++) {
                     //upper edge
                     if (balls[i].py <= balls[i].radius) {
                         //reverse towards bottom
                         balls[i].vy = Math.abs(balls[i].vy) * friction; //inverse to positive
                         balls[i].vx *= friction;
                         balls[i].py += pos_fix;
+
                     }
 
                     //lower edge
                     if (balls[i].py + balls[i].radius >= canvas.height) {
-                        //reverse towards top
-                        balls[i].vy = -Math.abs(balls[i].vy) * friction;
-                        balls[i].vx *= friction;
-                        balls[i].py -= pos_fix;
+                        if (fixed_bounce) {
+                            balls[i].vy = -fixed_bounce }
+                        else {
+                            balls[i].vy = -Math.abs(balls[i].vy);
+                            balls[i].vx *= friction;
+                            balls[i].py -= pos_fix;
+                        }
                     }
                     else {
                         //apply gravity
                         balls[i].vy += gravity;
 
                     }
+                }
 
-                    //secondary collisions
-                    // loop through second balls.. check for individual by color hex
-                    for (let j = i+1; j < balls.length; j++) {
+                //loop through each ball object
+                for (let i = 0; i < balls.length; i++) {
 
 
-                        let dist_x = balls[i].px - balls[j].px;
-                        let dist_y = balls[i].py - balls[j].py;
+                    if (Math.abs(balls[i].vy) > velocity_cap) {
+                        balls[i].vy *= friction
+                    }
+                    if (Math.abs(balls[i].vx) > velocity_cap) {
+                        balls[i].vx *= friction
+                    }
 
-                        //pythagorean theorum implementation sqrt(c) = (a-b)^2 +
-                        let distance = Math.sqrt(dist_x * dist_x + dist_y * dist_y);
 
-                         //now is the distance within the bounds of the object radii?
-                        if (distance <= balls[i].radius + balls[j].radius) {
-                            //true collision
-                            if (collisions) {
-                                collide(balls[i], balls[j])
-                            }
-                        } //end true collision conditional
-                    } //end second ball iterations
-                } //end of i iterations
+                    // update positions
+                    balls[i].py += balls[i].vy;
+                    balls[i].px += balls[i].vx;                 
+
+                    if (balls[i].destroy) {
+                            balls.splice(balls[i]);
+                    }
+                }
+                  
+
             } //end of update
 
 
 
                 function draw() {
                     let ctx = canvas.getContext("2d");
-                    //draw the balls in their new positions
+                    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height)
                     for (let i = 0; i < balls.length; i++) {
-                        let x_offset = - window.innerWidth / balls[i].px;
-                        let y_offset =  - balls[i].py / 15;
+                        // console.log(balls[i])
+                        let x_offset =  (0.5 - balls[i].px / canvas.width) * balls[i].radius;
+                        let y_offset =  (0.5 - balls[i].py / canvas.height) * balls[i].radius;
                         //radial gradient starting at center, ending at ball edge
                         let gradient = ctx.createRadialGradient(balls[i].px + x_offset, balls[i].py + y_offset, 0, balls[i].px + x_offset, balls[i].py + y_offset, balls[i].radius);
+                        
+
                         //gradient color stop one from ball's randomly chosen color property
                         gradient.addColorStop(1, balls[i].color);
-                        //outer color determined by a percentage shading
-                        let color2 = shadeColor2(balls[i].color, .99);
+                        
+                        //outer color determined by a percentage shading 
+                        let color2 = shadeColor2(balls[i].color, .9);
                         gradient.addColorStop(0, color2);
 
+                        //draw the ball
                         ctx.beginPath();
                         ctx.fillStyle = gradient;
                         ctx.arc(balls[i].px, balls[i].py, balls[i].radius, 0, 2 * Math.PI, false);
@@ -209,6 +272,19 @@
 
         };  //end of window.onload
 
+        function select_ball_with_margin( x, y ) {
+            for (let i = 0; i < balls.length; i++) {
+                let dist_x = x - balls[i].px;
+                let dist_y = y - balls[i].py;
+                let distance = Math.sqrt(dist_x * dist_x + dist_y * dist_y);
+                if (distance <= balls[i].radius * 2) {
+                    return balls[i];
+                }
+            }
+            return false
+        }
+                        
+
         function select_ball( x, y ) {
             for (let i = 0; i < balls.length; i++) {
                 let dist_x = x - balls[i].px;
@@ -218,24 +294,31 @@
                     return balls[i];
                 }
             }
-            return false;
+            return false
         }
+
+        //create or delete a ball by clicking
         window.onclick = function (ev) {
-            let collision = select_ball(ev.clientX, ev.clientY);
+            // conditional collision detection
+
+            let collision = select_ball_with_margin(ev.clientX, ev.clientY);
+            
             if (collision) {
-                balls.splice(balls.indexOf(collision));
-                make_ball(size, variance)
+                balls[balls.indexOf(collision)].destroy = true;
+                // make_ball(min_size, size_variance)
             }
             else {
-                ball = make_ball(size, variance);
+                if (balls.length <= max_balls) {
+                ball = make_ball(min_size, size_variance);
                  ball.px = ev.clientX;
                  ball.py = ev.clientY;
                 balls.push(ball);
-                // balls.splice(0,1);
-                for (let i = 0; i < balls.length; i++) {
-                    balls[i].vx = Math.random() * 20;
-                    balls[i].vy = Math.random() * 20;
                 }
+                // balls.splice(0,1);
+                // for (let i = 0; i < balls.length; i++) {
+                    // balls[i].vx = (Math.random() > 0.5 ? 1: -1) * Math.random() * 20;
+                    // balls[i].vy = (Math.random() > 0.5 ? 1: -1) * Math.random() * 20;
+                // }
             
             }
 
@@ -249,10 +332,17 @@
     	background-color: rgb(40,40,40);
     }
     canvas {
-    	border: 1px solid black;
+        /*position: absolute;*/
+        /*margin: auto;*/
+    	border: 10px solid black;
+    }
+    body {
+        display: flex;
+        align-items: center;
+        vertical-align: center;
     }
 	</style>
 </head>
 <body>
-	<canvas></canvas>
+	<canvas width="500" height="500"></canvas>
 </body>      	
