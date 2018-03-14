@@ -1,0 +1,52 @@
+{% load static %}
+{% load materializecss %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+    <h1>TODOs TO DO</h1>
+    <div class="row">
+      <div class="input-field col s11">
+        <input type="text" id="add_todo" placeholder="Add new todo">
+        <label for="add_todo" data-error="wrong" data-success="right">Add new todo</label>
+      </div>
+        <div class="col s1">
+        <a class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></a>
+      </div>
+    </div>
+    <!-- todo_item table -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Todo Item</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Date Completed</th>
+            <th scope="col">Done?</th>
+            <th scope="col"><i class="material-icons">check_box</i></th>
+        </tr>
+        </thead>
+    {% for todo in items %}
+        <tr>
+            <td>{{todo.item}}</td>
+            <td>{{todo.created_date}}</td>
+            <td>{{todo.complete_date}}</td>
+            <td>{{todo.completed}}</td>
+            <td><input type="checkbox" /></td>
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</body>
+</html>

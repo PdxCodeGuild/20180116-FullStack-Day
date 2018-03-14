@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            border: none;
+            margin: 0;
+            outline: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <textarea id="hack">
+
+    </textarea>
+    <script>
+
+
+        function http_get(url, success) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    success(xhttp.responseText);
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+
+        http_get("https://raw.githubusercontent.com/dspinellis/unix-history-repo/Research-PDP7-Snapshot-Development/chmod.s", function(data) {
+            text = data;
+        });
+
+        let counter = 0;
+        let text = '';
+
+
+
+        let hack = document.querySelector('#hack');
+
+        hack.onkeydown = function hacker(end) {
+            counter += 3;
+            hack.value = text.substring(0, counter);
+            end.preventDefault();
+        }
+    </script>
+</body>
+</html>

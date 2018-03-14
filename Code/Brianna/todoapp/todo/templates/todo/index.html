@@ -1,0 +1,58 @@
+<style>
+    html {
+        background: linear-gradient(to right, red , yellow);
+        color: white;
+        font-size: large;
+        font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: white;
+        font-size: large;
+    }
+
+    a:hover {
+        color: pink;
+    }
+
+    button {
+        background-color: orange;
+        color: white;
+        border: 0;
+        border-radius: 7% 15%;
+    }
+
+    button:hover {
+        background-color: gold;
+    }
+
+    li::first-letter {
+        text-transform: capitalize;
+    }
+
+</style>
+
+<div class="container">
+    <div class="header">
+        <h1>You Have Things To Do  😃 </h1>
+    </div>
+    <div class="todo_list" id="todo_list_div">
+        <form action="{% url 'todo:newtodo'  %}" method="post">
+            {% csrf_token %}
+            <label for="todo_input">What do you need to do?</label>
+            <input type="text" id="todo_input" name="todo_input">
+            <button type="submit" id="todo_submit">Let's Do It!</button>
+        </form>
+        <h3>Things To Do</h3>
+    {% if latest_todo_list %}
+        <ul>
+        {% for todo in latest_todo_list %}
+            <li><a href="/todo/{{ todo.id }}/">{{ todo.todo_text }}</a> <button>X</button> </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No todo items are available.</p>
+    {% endif %}
+    </div>
+</div>
