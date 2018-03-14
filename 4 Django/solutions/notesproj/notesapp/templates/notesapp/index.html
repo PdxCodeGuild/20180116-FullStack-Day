@@ -1,0 +1,29 @@
+
+<style>
+    td {
+        padding: 4px;
+    }
+</style>
+
+<h1>My Note-Taking App</h1>
+<hr/>
+<a href="{% url 'notesapp:createnotepage' %}">create new note</a>
+<table>
+    <tr>
+        <th></th>
+        <th>Note</th>
+        <th>Edited</th>
+        <th>Created</th>
+    </tr>
+    {% for note in notes %}
+    <tr>
+        <td><a href="{% url 'notesapp:detail' note.id %}">edit</a></td>
+        <td>{{note.name}}</td>
+        <td>{{note.edit_date}}</td>
+        <td>{{note.created_date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
