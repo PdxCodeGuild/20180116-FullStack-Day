@@ -1,0 +1,22 @@
+
+<h1>{{grocery_list.name}}</h1>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    {% for grocery_list_item in grocery_list.grocerylistitem_set.all %}
+    <tr>
+        <td>{{grocery_list_item.grocery_item.name}}</td>
+        <td>{{grocery_list_item.quantity}}</td>
+        <td>{{grocery_list_item.grocery_item.pretty_unit_price}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div>total sans coupon: {{grocery_list.get_total_sans_coupon}}</div>
+<div>total: {{grocery_list.get_total}}</div>
+
+
+
