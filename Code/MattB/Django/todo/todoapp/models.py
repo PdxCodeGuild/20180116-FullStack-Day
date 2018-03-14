@@ -9,12 +9,6 @@ class Task(models.Model):
     def __str__(self):
         return self.task_text
 
-    def isCompleted(self):
-        return self.finished_date is None
 
 
-t = Task(models.Model)
-if t.isCompleted():
-    finished_date = models.DateTimeField(auto_now_add=True)
 
-completed_items = Task.objects.filter(finished_date__isnull=False)
