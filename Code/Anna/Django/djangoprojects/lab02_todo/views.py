@@ -7,6 +7,6 @@ from .models import Todo
 # Create your views here.
 
 def index(request):
-    todo_items = Todo.objects.order_by('-edit_date')
-    context = {'todo_item': todo_items}
+    items = Todo.objects.order_by('-created_date')
+    context = {'items': items}
     return render(request, 'lab02_todo/index.html', context)
