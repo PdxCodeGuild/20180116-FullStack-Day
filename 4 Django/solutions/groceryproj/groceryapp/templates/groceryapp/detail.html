@@ -1,0 +1,52 @@
+
+<h1>{{grocery_list.name}}</h1>
+
+
+<form action="{% url 'groceryapp:additem' grocery_list.id %}" method="post">
+    {% csrf_token %}
+    <select name="grocery_item_id">
+        {% for grocery_item in grocery_items %}
+        <option value="{{grocery_item.id}}">{{grocery_item.name}} - ${{grocery_item.pretty_unit_price}}</option>
+        {% endfor %}
+    </select>
+    <input name="quantity" type="number" value="1"/>
+    <button type="submit">add</button>
+</form>
+
+<hr/>
+
+<form action="{% url 'groceryapp:applycoupon' grocery_list.id %}" method="post">
+    {% csrf_token %}
+    <select name="coupon_id">
+        <option value="null">-----------</option>
+        {% for coupon in coupons %}
+        <option value="{{coupon.id}}">{{coupon.name}} ({{coupon.percent_off}}% off)</option>
+        {% endfor %}
+    </select>
+    <button type="submit">apply</button>
+</form>
+
+<hr/>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    {% for grocery_list_item in grocery_list.grocerylistitem_set.all %}
+    <tr>
+        <td>{{grocery_list_item.grocery_item.name}}</td>
+        <td>{{grocery_list_item.quantity}}</td>
+        <td>{{grocery_list_item.grocery_item.pretty_unit_price}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div>total sans coupon: {{grocery_list.get_total_sans_coupon}}</div>
+<div>total: {{grocery_list.get_total}}</div>
+
+
+
+
+
+
