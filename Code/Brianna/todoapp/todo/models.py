@@ -8,7 +8,7 @@ class Todo(models.Model):
     # created date
     created_date = models.DateTimeField(auto_now_add=True)
     # completed date with boolean (T/F) representing whether the task has been completed.
-    completed_date = models.DateTimeField('date completed', auto_now=True, null=True, blank=True)
+    completed_date = models.DateTimeField('date completed', null=True, blank=True)
     # List out the items already entered
 
 

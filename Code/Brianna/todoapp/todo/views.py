@@ -8,10 +8,11 @@ def index(request):
     # Create a way to make a to-do list ordered by the date created
     todo_list = Todo.objects.filter(completed_date__isnull=True).order_by('-created_date')[:5]
     # Create a completed area ordered by completed date
-    completed_todos = TodoItem.objects.filter(completed_date__isnull=False).order_by('-completed_date')[:10]
+    completed_todos = Todo.objects.filter(completed_date__isnull=False).order_by('-completed_date')[:10]
     # Give the context (dictionary)
     context = {'todo_list': todo_list, 'completed_todos': completed_todos}
     #  Render the content to our HTML
+    print(todo_list)
     return render(request, 'todo/index.html', context)
 
 
@@ -32,7 +33,7 @@ def submit_completed(request):
     #Get the to-do id number
     todo_id = request.GET['todo_id']
     # Use the to-do id to get the list item.
-    todo_item = TodoItem.object.get(pk=todo_id)
+    todo_item = Todo.object.get(pk=todo_id)
     # Call model function complete() to mark as complete/add timezone/create a not null value.
     todo_item.complete()
     # Save the completed item in it's new state
