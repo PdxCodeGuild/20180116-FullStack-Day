@@ -18,11 +18,12 @@
     <form action="{% url 'todo:savetodo' %}" method="post">
         {% csrf_token %}
       <div class="input-field col s11">
-        <input type="text" id="add_todo" name="todo_text">
+        <input class="input-field" type="text" id="add_todo" name="todo_text">
         <label for="add_todo">Add new todo</label>
       </div>
         <div class="col s1">
-        <a type="submit" class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></a>
+            <!--this has to be a button!!!-->
+        <button type="submit" class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></button>
         </div>
       </form>
     </div>
