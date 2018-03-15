@@ -44,7 +44,7 @@
             <td><form action="{% url 'todo:completetodo' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="todo_id" value="{{todo.id}}" />
-                <button><i class="material-icons">check_box_outline_blank</i></button>
+                <button type="submit"><i class="material-icons">check_box_outline_blank</i></button>
             </form>
             </td>
         </tr>
