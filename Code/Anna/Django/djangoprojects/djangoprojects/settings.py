@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'lab03_urlshortener.apps.Lab03UrlshortenerConfig',
     'lab02_todo.apps.Lab02TodoConfig',
     'lab01_polls.apps.Lab01PollsConfig',
     'material',
