@@ -1,13 +1,12 @@
 from django.db import models
 from django.utils import timezone
 
-
-# make migrations whenever models are changed - migrations update the database!
 # Create your models here.
 class TodoItem(models.Model):
-    text = models.CharField(max_length=200)
-    completed_date = models.DateTimeField(null=True, blank=True)
+    todo_text = models.CharField(max_length=200)
+    todos_completed = models
     created_date = models.DateTimeField(auto_now_add=True)
+    completed_date = models.DateTimeField(blank=True, null=True)
 
     def completed(self):
         return self.completed_date is not None
@@ -16,6 +15,4 @@ class TodoItem(models.Model):
         self.completed_date = timezone.now()
 
     def __str__(self):
-        return self.text
-
-
+        return self.todo_text
