@@ -1,0 +1,43 @@
+/*variables*/
+:root {
+	--color_a: #15343F;
+	--color_b: #0F46B3;
+	--color_c: #1A90DC;
+	--color_d: #31D1E5;
+	--color_e: #D3ECE5;
+}
+
+* {
+	background-color: var(--color_c);
+	color: var(--color_a);
+	font-family: "Verdana";
+	font-size: 5vw;
+
+}
+
+body {
+	text-align: center;
+}
+
+#container_div {
+	height: 100%;
+	/*margin: auto;*/
+	width: 100%;
+	display: flex;
+	/*border: 2px solid black;*/
+}
+
+/*.far {
+	color: var(--color_e);
+	position: absolute;
+	top: 0px;
+}*/
+
+/*.choice_div {
+	height: 100%;
+	position: relative;
+
+	border: 2px solid black;
+	width: 4vw;
+}*/
+

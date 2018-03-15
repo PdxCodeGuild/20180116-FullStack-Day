@@ -1,0 +1,48 @@
+<style>
+    html, body {
+        background-color: #00bcd4;
+        color: #105cb6;
+    }
+
+    div {
+        display: flex;
+        align-content: space-around;
+        justify-content: center;
+        height: 50%;
+        width: 50%;
+        border-radius: 5%;
+        font-family: "Sacramento", cursive, "Nanum Brush Script", cursive
+        font-size: large;
+        padding: 2em;
+        border-bottom-color: hotpink;
+        box-shadow: hotpink;
+
+    }
+
+    .main {
+        width: 100%;
+        height: 100%;
+    }
+
+    .poll {
+        background-color: #105cb6;
+        color: #00bcd4;
+    }
+</style>
+
+<div class="main">
+    <div class="poll">
+    <h2> A Pretty Poll for your Pretty Day </h2>
+    <div class="poll">
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    </div>
+    </div>
+</div>
