@@ -7,6 +7,7 @@
     <title>ToDo App</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="{% static '/lab02_todo/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static '/lab02_todo/css/main.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -18,10 +19,11 @@
         {% csrf_token %}
       <div class="input-field col s11">
         <input type="text" id="add_todo" name="todo_text">
-        <label for="add_todo" data-error="wrong" data-success="right">Add new todo</label>
+        <label for="add_todo">Add new todo</label>
       </div>
         <div class="col s1">
-        <a type="submit" class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></a>
+            <!--this has to be a button!!!-->
+        <button type="submit" class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></button>
         </div>
       </form>
     </div>
@@ -32,7 +34,6 @@
             <th scope="col">Todo Item</th>
             <th scope="col">Date Created</th>
             <th scope="col">Date Completed</th>
-            <th scope="col">Done?</th>
             <th scope="col"><i class="material-icons">check</i></th>
         </tr>
         </thead>
@@ -44,17 +45,17 @@
             <td><form action="{% url 'todo:completetodo' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="todo_id" value="{{todo.id}}" />
-                <button type="submit"><i class="material-icons">check_box_outline_blank</i></button>
+                <button class="no-btn" type="submit"><i class="material-icons">check_box_outline_blank</i></button>
             </form>
             </td>
         </tr>
     {% endfor %}
     {% for todo in todos_completed %}
         <tr>
-            <td style="text-decoration: line-through">{{completed_todo.text}}</td>
+            <td><span style="text-decoration:line-through">{{todo.text}}</span></td>
             <td>{{todo.created_date}}</td>
             <td>{{todo.completed_date}}</td>
-            <td><button><i class="material-icons">check_box</i></button></td>
+            <td><button class="no-btn"><i class="material-icons">check_box</i></button></td>
         </tr>
     {% endfor %}
     </table>
