@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'lab02_todo.apps.Lab02TodoConfig',
     'lab01_polls.apps.Lab01PollsConfig',
-    'materializecssform',
+    'material',
+    'material.frontend',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

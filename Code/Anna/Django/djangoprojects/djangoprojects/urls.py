@@ -23,4 +23,4 @@ urlpatterns = [
 ]
 
 handler404 = 'lab02_todo.views.handler404'
-
+handler500 = 'lab02_todo.views.handler500'
