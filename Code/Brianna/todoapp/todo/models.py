@@ -13,6 +13,12 @@ class Todo(models.Model):
     completed_date = models.DateTimeField('date completed', auto_now=True, null=True, blank=True)
     # List out the items already entered
 
+    def completed(self):
+        return self.completed_date is not None
+
+    def complete(self):
+        self.completed_date = timezone.now()
+
     def __str__(self):
         if str(self.completed_date) != '':  # This doesn't work as intended yet. Goes to 1st option on creation.
             return self.todo_text + ' : ' + str(self.created_date) + ' Completed on: ' + str(self.completed_date)
