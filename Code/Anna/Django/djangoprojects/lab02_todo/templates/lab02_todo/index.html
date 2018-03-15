@@ -1,12 +1,12 @@
 {% load static %}
-{% load materializecss %}
-
+{% load material_form %}
+<!-- can't comment out django stuff! -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ToDo App</title>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static '/lab02_todo/css/materialize.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -14,13 +14,16 @@
     <div class="container">
     <h1>TODOs TO DO</h1>
     <div class="row">
+    <form action="{% url 'todo:savetodo' %}" method="post">
+        {% csrf_token %}
       <div class="input-field col s11">
-        <input type="text" id="add_todo" placeholder="Add new todo">
+        <input type="text" id="add_todo" name="todo_text">
         <label for="add_todo" data-error="wrong" data-success="right">Add new todo</label>
       </div>
         <div class="col s1">
-        <a class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></a>
-      </div>
+        <a type="submit" class="btn-floating waves-effect waves-light black"><i class="material-icons">add</i></a>
+        </div>
+      </form>
     </div>
     <!-- todo_item table -->
     <table class="table">
@@ -30,23 +33,37 @@
             <th scope="col">Date Created</th>
             <th scope="col">Date Completed</th>
             <th scope="col">Done?</th>
-            <th scope="col"><i class="material-icons">check_box</i></th>
+            <th scope="col"><i class="material-icons">check</i></th>
         </tr>
         </thead>
-    {% for todo in items %}
+    {% for todo in todos %}
         <tr>
-            <td>{{todo.item}}</td>
+            <td>{{todo.text}}</td>
             <td>{{todo.created_date}}</td>
-            <td>{{todo.complete_date}}</td>
-            <td>{{todo.completed}}</td>
-            <td><input type="checkbox" /></td>
+            <td></td>
+            <td><form action="{% url 'todo:completetodo' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="todo_id" value="{{todo.id}}" />
+                <button><i class="material-icons">check_box_outline_blank</i></button>
+            </form>
+            </td>
+        </tr>
+    {% endfor %}
+    {% for todo in todos_completed %}
+        <tr>
+            <td style="text-decoration: line-through">{{completed_todo.text}}</td>
+            <td>{{todo.created_date}}</td>
+            <td>{{todo.completed_date}}</td>
+            <td><button><i class="material-icons">check_box</i></button></td>
         </tr>
     {% endfor %}
     </table>
     </div>
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{% static '/lab02_todo/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/lab02_todo/js/materialize.js' %}"></script>
+    <script src="{% static '/lab02_todo/js/main.js' %}"></script>
 
 </body>
 </html>

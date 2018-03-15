@@ -2,36 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Colton Adkins' Programmer Portfolio</title>
     <style>
-        body{
+        body {
             background-color: black;
         }
-        header{
+
+        header {
             text-align: center;
         }
-        h1{
+
+        h1 {
             font-family: "Palatino Linotype";
             color: white;
+        }
+
+        canvas {
+            align-content: center;
+            border: 1px solid white;
         }
 
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-          <a class="navbar-brand" href="Actor.html">Actor</a>
-          <a class="navbar-brand" href="Programmer.html">Programmer</a>
-          <a class="navbar-brand" href="Chef.html">Chef</a>
-          <a class="navbar-brand" href="Contact.html">Contact</a>
-    </nav>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="Actor.html">Actor</a>
+    <a class="navbar-brand" href="Programmer.html">Programmer</a>
+    <a class="navbar-brand" href="Chef.html">Chef</a>
+    <a class="navbar-brand" href="Contact.html">Contact</a>
+</nav>
 <header><h1>Colton Adkins' Programmer Portfolio</h1></header>
 
+<canvas id="ball_sack" height="900" width="1000"></canvas>
+<button id="again">Press to throw ball again</button>
+<script>
+
+    let ball_sack = document.getElementById('ball_sack')
+    let ball = {
+        radius: 100,
+        px: Math.random() * ball_sack.width,
+        py: Math.random() * ball_sack.height,
+        vx: 7,
+        vy: 7,
+    };
+
+    let ctx = ball_sack.getContext('2d')
+    let gravity = 1;
+    let friction = .5;
+
+    function main_loop() {
+        ctx.clearRect(0, 0, ball_sack.width, ball_sack.height);
+
+        if (ball.px + ball.radius >= ball_sack.width) {
+            ball.vx = -ball.vx * friction;
+            ball.px = ball_sack.width - ball.radius;
 
 
+        }
+        else if (ball.px - ball.radius <= 0) {
+            ball.vx = -ball.vx * friction;
+            ball.px = 0 + ball.radius;
 
 
+        }
+        if (ball.py + ball.radius >= ball_sack.height) {
+            ball.vy = -ball.vy
+            ball.py = ball_sack.height - ball.radius;
 
+        } else if (ball.py - ball.radius <= 0) {
+            ball.vy = -ball.vy;
+            ball.py = 0 + ball.radius
+        }
+
+        ctx.beginPath();
+        ctx.arc(ball.px, ball.py, ball.radius, 0, 2 * Math.PI, false);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        ball.vy += gravity; // GRAVITY!!!
+        ball.py += ball.vy;
+        ball.px += ball.vx;
+        window.requestAnimationFrame(main_loop);
+    }
+
+    window.requestAnimationFrame(main_loop)
+
+    let bt = document.getElementById('again')
+    bt.onclick = function() {
+        location.reload()
+    }
+
+</script>
 
 
 </body>
+</html>

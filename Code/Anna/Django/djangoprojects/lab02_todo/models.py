@@ -1,13 +1,20 @@
 from django.db import models
+from django.utils import timezone
 
 
+# make migrations whenever models are changed - migrations update the database!
 # Create your models here.
 
-class Todo(models.Model):
-    item = models.CharField(max_length=200)
+class TodoItem(models.Model):
+    text = models.CharField(max_length=200)
     created_date = models.DateTimeField(auto_now_add=True)
-    complete_date = models.DateTimeField(auto_now=True)
-    completed = False
+    completed_date = models.DateTimeField(null=True, blank=True)
+
+    def completed(self):
+        return self.completed_date is not None
+
+    def complete(self):
+        self.completed_date = timezone.now()
 
     def __str__(self):
-        return self.item
+        return self.text
