@@ -1,69 +1,43 @@
 
-
-# Create your views here.
-from django.http import Http404
 from django.shortcuts import get_object_or_404, render, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Todo
 
-# todos TodoItem.object.filter(completed_date__isnull=True)
-# todos_completed = TodoItem.object.filter(completed_date__isnull=False)
 
 def index(request):
-    latest_todo_list = Todo.objects.order_by('-created_date')[:5]
-    context = {'latest_todo_list': latest_todo_list}
+    # Create a way to make a to-do list ordered by the date created
+    todo_list = Todo.objects.filter(completed_date__isnull=True).order_by('-created_date')[:5]
+    # Create a completed area ordered by completed date
+    completed_todos = TodoItem.objects.filter(completed_date__isnull=False).order_by('-completed_date')[:10]
+    # Give the context (dictionary)
+    context = {'todo_list': todo_list, 'completed_todos': completed_todos}
+    #  Render the content to our HTML
     return render(request, 'todo/index.html', context)
-
-def savetodo():
-    # name should match the name field for input
-    todo_text = request.POST['todo_input']
-    todo_item = TodoItem(text=todo_text, completed_date=None)
-    todo_item.save()
-    return HttpResponseRedirect(reverse('todoapp:index'))
-
 
 
 def newtodo(request):
+    # Save new to-do items to our to-do list.
+    # name (in this case 'todo_input') should match the name field for input.
     todo_input = request.POST.get('todo_input')
-    todo_item = Todo(todo_text=todo_input)
+    # Take input text and asign it to an item. Explicitly say that there is no completed date.
+    todo_item = Todo(todo_text=todo_input, completed_date=None)
+    # Save our todo_item
     todo_item.save()
+    # Update our apps HTML index page
     return HttpResponseRedirect(reverse('todo:index'))
-
-def delete_todo(request, pk):
-    todo = get_object_or_404(Todo, pk=pk)  # Get your current todo
-
-    if request.method == 'POST':         # If method is POST,
-        todo.delete()                     # delete the todo.
-        return redirect('/')             # Finally, redirect to the homepage.
-
-    return render(request, 'index.html', {'todo': todo})
-
-# def detail(request, todo_id):
-#     todo = get_object_or_404(Todo, pk=todo_id)
-#     context = {'todo': todo}
-#     return render(request, 'todo/detail.html', context)
-#
-#
-# def results(request, todo_id):
-#     response = "You're looking at our completed items in our todo list."
-#     return HttpResponse(response % question_id)
-
-
-# def complete(request, todo_id):
-#     return HttpResponse("You're completing a todo item." % question_id)
 
 
 def submit_completed(request):
+    # Use query string to get completed to-do items
+    #Get the to-do id number
     todo_id = request.GET['todo_id']
+    # Use the to-do id to get the list item.
     todo_item = TodoItem.object.get(pk=todo_id)
+    # Call model function complete() to mark as complete/add timezone/create a not null value.
     todo_item.complete()
+    # Save the completed item in it's new state
     todo_item.save()
+    # update our index HTML
     return HttpResponseRedirect(reverse('todo:index'))
 
 
-# Other things to include in the templates/views section:
-# deleting a row
-# Form with input field and save button
-# After "submit" has been hit it should show new to-do item
-
-# Check box/button for selecting when an item has been completed

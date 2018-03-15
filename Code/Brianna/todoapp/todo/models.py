@@ -2,8 +2,6 @@ from django.db import models
 from django.utils import timezone
 
 
-
-# to-do model
 class Todo(models.Model):
     # Text Description of the to-do item
     todo_text = models.CharField(max_length=200)
