@@ -46,13 +46,21 @@
         </form>
         <h3>Things To Do</h3>
     {% if latest_todo_list %}
+
         <ul>
         {% for todo in latest_todo_list %}
-            <li><a href="/todo/{{ todo.id }}/">{{ todo.todo_text }}</a> <button>X</button> </li>
+            <li><a href="/todo/{{ todo.id }}/">{{ todo.todo_text }}</a> <button type="submit" formaction="{% url 'todo:submit_completed' %}?todo_is={{todo.id}}">X</button> </li>
         {% endfor %}
         </ul>
     {% else %}
         <p>No todo items are available.</p>
     {% endif %}
     </div>
+
+    <ul>
+        {% for todo in completed_todo %}
+    </ul>
 </div>
+
+
+
