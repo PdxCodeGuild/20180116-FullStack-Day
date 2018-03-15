@@ -11,9 +11,11 @@ class Todo(models.Model):
     completed_date = models.DateTimeField('date completed', auto_now=True, null=True, blank=True)
     # List out the items already entered
 
+
     def completed(self):
         return self.completed_date is not None
 
+    # We need this to update our completed to-do items to a not_null state
     def complete(self):
         self.completed_date = timezone.now()
 
