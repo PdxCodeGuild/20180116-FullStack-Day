@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, reverse
 
 from .models import TodoItem
 
@@ -22,7 +22,7 @@ def savetodo(request):
 def completetodo(request):
     todo_id = request.POST['todo_id']
     todo_item = TodoItem.objects.get(pk=todo_id)
-    todo_item.completed()
+    todo_item.complete()
     todo_item.save()
     return HttpResponseRedirect(reverse('todo:index'))
 

@@ -41,7 +41,7 @@
             <td>{{todo.text}}</td>
             <td>{{todo.created_date}}</td>
             <td></td>
-            <td><form action="{% url 'todo:completetodo' %}" method="post">
+            <td><form action="{% url 'todoapp:completetodo' %}" method="post">
                 {% csrf_token %}
                 <input type="hidden" name="todo_id" value="{{todo.id}}" />
                 <button type="submit"><i class="material-icons">check_box_outline_blank</i></button>
@@ -51,7 +51,7 @@
     {% endfor %}
     {% for todo in todos_completed %}
         <tr>
-            <td style="text-decoration: line-through">{{completed_todo.text}}</td>
+            <td><span style="text-decoration:line-through">{{completed_todo.text}}</span></td>
             <td>{{todo.created_date}}</td>
             <td>{{todo.completed_date}}</td>
             <td><button><i class="material-icons">check_box</i></button></td>
