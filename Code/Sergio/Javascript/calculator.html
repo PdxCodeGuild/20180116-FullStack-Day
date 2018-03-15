@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+    <title>JavaScript Calculator</title>
+
+</head>
+<body>
+<h1>JavaScript Calculator</h1>
+
+
+<div id="calculator" class="calculator">
+
+    <div id="viewer" class="viewer">0</div>
+    <button class="num" data-num="0">0</button>
+    <button class="num" data-num="1">1</button>
+    <button class="num" data-num="2">2</button>
+    <button class="num" data-num="3">3</button>
+    <button class="num" data-num="4">4</button>
+    <button class="num" data-num="5">5</button>
+    <button class="num" data-num="6">6</button>
+    <button class="num" data-num="7">7</button>
+    <button class="num" data-num="8">8</button>
+    <button class="num" data-num="9">9</button>
+    <button operators="plus" class="ops">+</button>
+    <button operators="minus" class="ops">-</button>
+    <button operators="multiply" class="ops">*</button>
+    <button operators="divided by" class="ops">/</button>
+    <button class="num" data-num=".">.</button>
+    <button id="equals" class="equals" data-result="">=</button>
+    <button id="clear" class="clear">Clear</button>
+</div>
+
+
+<script>
+
+
+    (function () {
+        "use strict"; // Declaring Strict Mode. Strict mode is declared by adding "use strict"; to the beginning of a script or a function. Declared at the beginning of a script, it has global scope (all code in the script will execute in strict mode):
+
+        // gets elements
+        let elements = function (element) {
+            if (element.charAt(0) === "#") { // ID...
+                return document.querySelector(element);
+            }
+
+            return document.querySelectorAll(element);
+        };
+
+
+        let viewer = elements("#viewer"),
+            equals = elements("#equals"),
+            nums = elements(".num"),
+            operator = elements(".ops"),
+            current_num = "",
+            first_num = "",
+            num_answer,
+            operate;
+
+        // Get current_num when clicked
+        let get_num = function () {
+            if (num_answer) { // If a result was displayed, reset number
+                current_num = this.getAttribute("data-num");
+                num_answer = "";
+            } else {
+                current_num += this.getAttribute("data-num");
+            }
+
+            viewer.innerHTML = current_num; // show current num
+
+        };
+
+        // Click operation, then passes number to first_number and SAVE operator
+        let opNum = function () {
+            first_num = current_num;
+            current_num = "";
+            operator = this.getAttribute("operators");
+
+            equals.setAttribute("operators", "");
+        };
+
+
+        let show_number = function () {
+
+            // converts strings to float
+            first_num = parseFloat(first_num);
+            current_num = parseFloat(current_num);
+
+            // operators
+            switch (operator) {
+                case "plus":
+                    num_answer = first_num + current_num;
+                    break;
+
+                case "minus":
+                    num_answer = first_num - current_num;
+                    break;
+
+                case "multiply":
+                    num_answer = first_num * current_num;
+                    break;
+
+                case "divided by":
+                    num_answer = first_num / current_num;
+                    break;
+
+
+            }
+
+
+            // show answer
+            viewer.innerHTML = num_answer;
+            equals.setAttribute("data-result", num_answer);
+
+            // reset first_num & keep result
+            first_num = 0;
+            current_num = num_answer;
+
+        };
+
+        // clears all
+        let clearAll = function () {
+            first_num = "";
+            current_num = "";
+            viewer.innerHTML = "0";
+            equals.setAttribute("data-result", num_answer);
+        };
+
+        // click event for numbers
+        for (let i = 0, l = nums.length; i < l; i++) {
+            nums[i].onclick = get_num;
+        }
+
+        // on click for operators
+        for (let i = 0, l = operator.length; i < l; i++) {
+            operator[i].onclick = opNum;
+        }
+
+        //  click event for equal sign
+        equals.onclick = show_number;
+
+        // clears all
+        elements("#clear").onclick = clearAll;
+
+
+    }());
+
+
+</script>
+
+</body>
+</html>

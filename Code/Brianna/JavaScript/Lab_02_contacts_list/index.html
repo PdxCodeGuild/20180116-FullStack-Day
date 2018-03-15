@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Address Book</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script src="javaScript.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Little Black Page of Addresses </h1>
+        </div>
+        <div class="quickadd"><button class="button button-primary u-float" id="QuickAdd"> + Add </button></div>
+                <form class="quickAddForm">
+                    <div class="row">
+                        <div class="six columns">
+                        <label for="fullname">Name</label>
+                            <input type="text" id="fullname" class="formfields u-full-width">
+                        </div>
+                        <div class="six columns">
+                        <label for="phone">Phone</label>
+                            <input type="tel" id="phone" class="formfields u-full-width">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="six columns">
+                    <label for="address">Address</label>
+                        <textarea type="text" id="address" class="formfields u-full-width"></textarea>
+                        </div>
+                        <div class="six columns">
+                    <label for="city">City</label>
+                        <input type="text" id="city" class="formfields u-full-width">
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="six columns">
+                    <label for="email">e-mail</label>
+                        <input type="email" id="email" class="formfields u-full-width">
+                            </div>
+                        </div>
+                    <br>
+                    <br>
+                    <button class="button button-primary" type="submit" id="Add">Add Now</button>
+                    <button class="button button-primary" id="Cancel">Cancel</button>
+                </form>
+            </div>
+            <div class="addbook"></div>
+    </div>
+
+
+<div class="row">
+    <div class="u-pull-right">
+        <p> Where all your Black-page needs are met. </p>
+    </div>
+</div>
+
+</body>
+</html>
