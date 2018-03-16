@@ -1,0 +1,35 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Madlib</title>
+    <link rel="stylesheet" href="{% static '/madlibapp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/madlibapp/css/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form action="{% url 'madlibapp:generate' madlib.id %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="madlib_id" value="{{madlib.id}}">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Type of word</th>
+                <th scope="col">Enter your word</th>
+            </tr>
+            </thead>
+        {% for madlibword in madlib.madlibword_set.all %}
+            <tr>
+                <td><label>{{madlibword.pretty_name}}</label></td>
+                <td><input class="form-control" type="text" name="{{madlibword.name}}"/></td>
+            </tr>
+        {% endfor %}
+        </table>
+        <div class="text-right">
+            <button class="btn" type="submit">Generate!</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
