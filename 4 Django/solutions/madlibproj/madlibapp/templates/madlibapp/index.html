@@ -1,0 +1,7 @@
+
+
+<ul>
+{% for madlib in madlibs %}
+    <li><a href="{% url 'madlibapp:detail' madlib.id %}">{{ madlib.name }}</a></li>
+{% endfor %}
+</ul>
