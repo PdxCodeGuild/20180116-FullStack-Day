@@ -65,10 +65,9 @@ function mainLoop() {
 		balls[i].xPosition += balls[i].xVelocity; // adjust the position of y for the movement of y
 
 	 }
-        window.requestAnimationFrame(main_loop);
+        window.requestAnimationFrame(mainLoop);
     }
 
-    window.requestAnimationFrame(main_loop);
+    window.requestAnimationFrame(mainLoop);
 
-setInterval(move, 10); // ball mainLoop every amount of ms
 
