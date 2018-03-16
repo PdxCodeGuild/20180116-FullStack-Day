@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.contrib import admin
+from . import views
 
 urlpatterns = [
+    # path('', views.index, name='index'),
+    path('shorty/', include('lab03_urlshortener')),
     path('todo/', include('lab02_todo.urls')),
     path('polls/', include('lab01_polls.urls')),
     path('admin/', admin.site.urls),
 ]
 
 handler404 = 'lab02_todo.views.handler404'
-
+handler500 = 'lab02_todo.views.handler500'

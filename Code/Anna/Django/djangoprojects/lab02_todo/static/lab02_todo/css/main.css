@@ -1,0 +1,17 @@
+.no-btn {
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+/* materialize label focus color */
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #222 !important;
+}
+
+/* materialize label underline focus color */
+.input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #222 !important;
+    box-shadow: 0 1px 0 0 #222 !important;
+    color: #222 !important;
+}
