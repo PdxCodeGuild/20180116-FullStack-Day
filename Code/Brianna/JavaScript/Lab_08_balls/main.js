@@ -8,8 +8,8 @@ class Balls {
         this.yPosition = Math.random() * canvas.height;
         this.xVelocity = (2 * Math.random() - 1) * 10; // x movement increment per framerate. Keeping this standard for now
         this.yVelocity = (2 * Math.random() - 1) * 10; // y movement increment per framerate
-        this.gravity = .08; // Let's bounce on the moon!
-		this.damping = .3; // The effect of the moon is extra bounce-ability
+        this.gravity = .8; // Let's bounce on the moon!
+		this.damping = .99; // The effect of the moon is extra bounce-ability
         this.friction = .99; // Unfortunately friction is a tough thing
         this.radius = ((5 * Math.random() - 1) * 10) + 10;
         this.color = '#42c5f4';
@@ -45,7 +45,7 @@ function mainLoop() {
 		balls[i].yPosition += balls[i].yVelocity; // add movement increment to position y
 		// Create left and right wall bounce functionality
 		if (balls[i].xPosition + balls[i].radius >=canvas.width) {
-			balls[i].xVelocity = -balls[i].xVelocity * damping;
+			balls[i].xVelocity = -balls[i].xVelocity * balls[i].damping;
 			balls[i].xPosition = canvas.width - balls[i].radius;
 		} else if (balls[i].xPosition - balls[i].radius <=0) {
 			balls[i].xVelocity = -balls[i].xVelocity * balls[i].damping;
