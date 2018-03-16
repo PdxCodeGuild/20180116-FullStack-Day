@@ -1,0 +1,34 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'todolab/style.css' %}" />
+
+<h1>All Completed</h1>
+<form method="post">
+{% csrf_token %}
+
+{% if completed_list %}
+    <table>
+        <tr>
+            <th class="item">Item</th>
+            <th class="date">Due Date</th>
+            <th class="date">Completed Date</th>
+            <th>Action</th>
+        </tr>
+    {% for item in completed_list %}
+        <tr>
+            <td class="item">{{ item.item_text }}</td>
+            <td class="date">{{ item.due_date }}</td>
+            <td class="date">{{ item.completed_date }}</td>
+            <td><input id="delete-{{ item.id }}" class="button delete_bt" type="submit" value="" formaction="{% url 'todolab:delete' item.id %}?redirect=completed"/></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>Get to work buddy! </p>
+{% endif %}
+    <a href="{% url 'todolab:index' %}">
+        <img class="button back_bt" src="{% static 'todolab/images/back.png' %}">
+    </a>
+
+
+</form>

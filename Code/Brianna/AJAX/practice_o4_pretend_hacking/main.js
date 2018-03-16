@@ -1,3 +1,5 @@
+
+// Get our elements from main HTML file
 let code_element = document.querySelector('#code_element');
 
 // let column_limit = 79;

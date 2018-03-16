@@ -5,5 +5,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('todos/', include('todoapp.urls'))
+    path('todos/', include('todoapp.urls')),
+    path('todosajax/', include('todoajax.urls'))
 ]
