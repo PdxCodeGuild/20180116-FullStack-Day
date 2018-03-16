@@ -1,0 +1,20 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Libs</title>
+    <link rel="stylesheet" href="{% static '/madlibapp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/madlibapp/css/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a Mad Lib</h1>
+        <ul>
+            {% for madlib in madlibs %}
+            <li><a href="{% url 'madlibapp:detail' madlib.id %}">{{madlib.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
