@@ -4,15 +4,15 @@ let context = canvas.getContext('2d'); // specify whether it is 2d or 3d?
 
 class Balls {
     constructor() {
-        this.xPosition = Math.random() * width;
-        this.yPosition = Math.random() * height;
+        this.xPosition = Math.random() * context.width;
+        this.yPosition = Math.random() * context.height;
         this.xVelocity = (2 * Math.random() - 1) * 10; // x movement increment per framerate. Keeping this standard for now
         this.yVelocity = (2 * Math.random() - 1) * 10; // y movement increment per framerate
         this.gravity = .08; // Let's bounce on the moon!
 		this.damping = .3; // The effect of the moon is extra bounce-ability
         this.friction = .99; // Unfortunately friction is a tough thing
         this.radius = ((5 * Math.random() - 1) * 10) + 10;
-        this.color = '# ______';
+        this.color = '#42c5f4';
     }
 
     draw(context) {  // start drawing our balls.
@@ -27,7 +27,7 @@ class Balls {
 function makingBalls() {
     let balls = [];
     for (let i=0; i<5; ++i) {
-        let ball = new Ball();
+        let ball = new Balls();
         balls.push(ball);
     }
     return balls;
@@ -56,7 +56,7 @@ function mainLoop() {
 			balls[i].yVelocity = - balls[i].yVelocity *balls.damping;
 			balls[i].yPosition = canvas.height - balls.radius;
 			balls[i].xVelocity *= balls.friction;
-		} else if (balls[i].yPosition - ball.radius <= 0) {
+		} else if (balls[i].yPosition - balls.radius <= 0) {
             balls[i].yVelocity = -balls[i].yVelocity * balls.damping;
             balls[i].yPosition = balls.radius;
         }
