@@ -1,0 +1,113 @@
+<!-- python lab 007 rock paper scissors javascript conversion -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>lab001a_blackjack_js_convert</title>
+</head>
+
+<body>
+	<div class="main_header"><h1>rock, paper, scissors!</h1></div>
+
+	<div class="choose_weapon_header"><h3>choose your weapon!</h3></div>
+
+	<div class="choose_weapon_buttons">
+		<button id="rock_bt">rock</button>
+		<button id="paper_bt">paper</button>
+		<button id="scissors_bt">scissors</button>
+	</div>
+
+	<span id="this_round"></span>
+
+	<div>
+		<span id="span_results"></span>
+
+		<table id="table_results">
+			<tr id="labels">
+				<th>round</th>
+				<th>player</th>
+				<th>opponent</th>
+			</tr>
+		</table>
+	</div>
+
+<script>
+
+let rock_bt = document.getElementById('rock_bt');
+let paper_bt = document.getElementById('paper_bt');
+let scissors_bt = document.getElementById('scissors_bt');
+let hands = ["rock", "paper", "scissors"];
+
+let this_round = document.getElementById('this_round');
+
+let rounds = 0;
+let table_results = document.getElementById('table_results');
+let round_result = document.createElement('p');
+
+this_round.appendChild(round_result);
+
+
+function addData (player_w_text, opponent_w_text) {
+    let new_round = document.createElement('tr');
+	table_results.appendChild(new_round);
+	let round_count = new_round.insertCell(0);
+	let player_w = new_round.insertCell(1);
+	let opponent_w = new_round.insertCell(2);
+	rounds += 1;
+	round_count.innerText = String(rounds);
+	player_w.innerText = player_w_text;
+	opponent_w.innerText = opponent_w_text;
+}
+
+
+rock_bt.onclick = function() {
+    round_result.innerText = '';
+    let opponent = hands[Math.floor(Math.random() * hands.length)];
+    if (opponent === 'rock') {
+        round_result.innerText = 'ur rock = opponents rock. draw!';
+        addData('--', '--')
+    } else if (opponent === 'paper') {
+        round_result.innerText = 'opponents paper > ur rock. defeat!';
+	    addData('--', '1')
+    } else if (opponent === 'scissors') {
+        round_result.innerText = 'ur rock > opponents scissors. victory!';
+		addData('1', '--')
+    }
+};
+
+paper_bt.onclick = function () {
+	round_result.innerText = '';
+    let opponent = hands[Math.floor(Math.random() * hands.length)];
+    if (opponent === 'rock') {
+        round_result.innerText = 'ur paper > opponents rock. victory!';
+        addData('1', '--')
+    } else if (opponent === 'paper') {
+        round_result.innerText = 'ur paper = opponents paper. draw!';
+	    addData('--', '--')
+    } else if (opponent === 'scissors') {
+        round_result.innerText = 'opponents scissors > ur paper. defeat!';
+		addData('--', '1')
+    }
+};
+
+scissors_bt.onclick = function () {
+	round_result.innerText = '';
+    let opponent = hands[Math.floor(Math.random() * hands.length)];
+    if (opponent === 'rock') {
+        round_result.innerText = 'opponents rock > ur scissors. defeat!';
+        addData('--', '1')
+    } else if (opponent === 'paper') {
+        round_result.innerText = 'ur scissors > opponents paper. victory!"';
+	    addData('1', '--')
+    } else if (opponent === 'scissors') {
+        round_result.innerText = 'ur scissors = opponents scissors. draw!';
+        addData('--', '--')
+    }
+};
+
+
+</script>
+</body>
+</html>

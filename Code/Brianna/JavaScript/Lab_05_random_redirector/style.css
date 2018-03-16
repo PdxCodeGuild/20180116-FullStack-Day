@@ -15,4 +15,15 @@ button {
     font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
     border-radius: 5%;
 
-};
+}
+
+#output_span {
+    width: 25%;
+    height: 25%;
+    background-color: #90CAF9;
+    color: #b388ff;
+    font-size: large;
+    font-family: "Brush Script MT", fantasy, "Arial Narrow", "American Typewriter", "Droid Serif", "Times New Roman", sans-serif;
+    margin: 0 auto;
+    border: #00bcd4 1px;
+}

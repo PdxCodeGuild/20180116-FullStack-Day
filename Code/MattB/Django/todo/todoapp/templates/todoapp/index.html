@@ -1,0 +1,46 @@
+
+<h1>Task List</h1>
+<table id="task_table">
+    <tr>
+        <th></th>
+        <th>Task</th>
+        <th>Created</th>
+        <th>Completed</th>
+    </tr>
+    {% for task in task_list %}
+    <tr>
+        <form id="container" action="{% url 'todoapp:completetask' task.id %}" method="post">
+            {% csrf_token %}
+        <td><button id="done" value="submit">done</button></td>
+
+        <td>{{task.task_text}}</td>
+        <td>{{task.created_date}}</td>
+        <td>{{task.finished_date}}</td>
+        </form>
+    </tr>
+    {% endfor %}
+</table>
+
+<table id="completed_task_table">
+    <tr>
+        <th></th>
+        <th>Task</th>
+        <th>Created</th>
+        <th>Completed</th>
+    </tr>
+    {% for task in completed_task_list %}
+    <tr>
+        <td>done</td>
+        <td>{{task.task_text}}</td>
+        <td>{{task.created_date}}</td>
+        <td>{{task.finished_date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<form id="container" action="{% url 'todoapp:createtask' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" id="add_bt">add</button>
+    <textarea id="add_task_input" name="add_task"></textarea>
+</form>

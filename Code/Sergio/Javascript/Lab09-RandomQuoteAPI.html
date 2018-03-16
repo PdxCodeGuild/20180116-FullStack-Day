@@ -55,7 +55,7 @@ function http_get(url, success) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 1) {
-            xhttp.setRequestHeader('Authorization', 'Token token="3373ba34fe2285b35174cc6048d6e129"')
+            xhttp.setRequestHeader('Authorization', 'Token token="xxxxxxxxx"')
         } else if (this.readyState === 4 && this.status === 200) {
             let data = JSON.parse(xhttp.responseText);
             success(data);

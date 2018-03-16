@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'todolab/style.css' %}" />
+
+<h1>Create a New Item</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'todolab:save_new' %}" method="post">
+{% csrf_token %}
+    <h3>To-Do Item</h3>
+    <input type="text" name="item_text" value=""><br>
+    <h3>Item Details</h3>
+    <textarea type="text" name="details_text" value="" maxlength="500" rows="10" cols="50"></textarea><br>
+    <h3>Due Date (Leave blank for None)</h3>
+    <input type="date" name="due_date" value="today"><br>
+    <table>
+        <tr>
+            <td>
+                <input type="submit" class="button save_bt" value="" />
+            </td>
+            <td>
+                <a href="{% url 'todolab:index' %}">
+                    <img class="button back_bt" src="{% static 'todolab/images/back.png' %}">
+                </a>
+            </td>
+        </tr>
+    </table>
+</form>

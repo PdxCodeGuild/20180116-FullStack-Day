@@ -4,35 +4,133 @@
     <meta charset="UTF-8">
     <title>API Lab</title>
     <link rel="stylesheet" type="text/css" href="lab09_api.css"/>
+    <script src="api_keys.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+
+        li{
+            padding:5px;
+            border: 1px solid black;
+        }
+
+        .tooltip {
+            position: relative;
+            border-bottom: 1px dotted black;
+        }
+
+
+        .tooltip .tooltext{
+            visibility: hidden;
+            width: 300px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            opacity: .9;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+        }
+
+        .tooltip:hover {
+            background-color: lightsalmon;
+        }
+
+        .tooltip:hover .tooltext{
+            visibility: visible;
+        }
+    </style>
 
 </head>
 
 <body>
 
+<h1>25 Quotes</h1>
+<button id="prev">Prev</button>
+<button id="next">Next</button>
+<ul></ul>
+
 <script>
+    let next_bt = document.querySelector('#next');
+    let prev_bt = document.querySelector('#prev');
+    let page_id = 1;
+    let url = "https://favqs.com/api/quotes/";
+
+    next_bt.addEventListener("click", function(){
+        page_id += 1;
+        getQuotes();
+    });
+    prev_bt.addEventListener("click", function(){
+        page_id -= 1;
+        getQuotes();
+    });
+
     function http_get(url, success) {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState === 1) {
-            xhttp.setRequestHeader('Authorization', 'Token token="<api kep here>"')
-        } else if (this.readyState === 4 && this.status === 200) {
-            let data = JSON.parse(xhttp.responseText);
-            success(data);
-        } else if (this.readyState === 4 && this.status === 404) {
-            // handle 404
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 1) {
+                xhttp.setRequestHeader('Authorization', 'Token token=' + quotes_key);
+            } else if (this.readyState === 4 && this.status === 200) {
+                let data = JSON.parse(xhttp.responseText);
+                success(data);
+            } else if (this.readyState === 4) {
+                // handle 404
+            }
+        };
+        xhttp.open("GET", url);
+        xhttp.send();
+    }
+
+    function getQuotes() {
+        let page_url = url + '?page=' + page_id;
+        http_get(page_url, displayQuotes)
+
+    }
+
+    function displayQuotes(data){
+        console.log(data);
+        if (data.page === 1){
+             prev_bt.disabled = true;
         }
-    };
-    xhttp.open("GET", url);
-    xhttp.send();
-    document.body.innerText = ''
-}
+        else if (data.last_page){
+            next_bt.disabled = true;
+        }
+        else{
+            next_bt.disabled = false;
+            prev_bt.disabled = false;
+        }
 
-let url = "https://favqs.com/api/qotd";
-http_get(url, function(data){console.log(data.quote.body);document.body.innerText = data.quote.body;});
 
-url = "https://favqs.com/api/quotes";
-http_get(url, function(data){console.log(data);document.body.innerText = data;});
+
+        let ul = document.querySelector("ul");
+        ul.innerText = 'page' + data.page;
+        let number_of_quotes = data.quotes.length;
+        for (let i = 0; i < number_of_quotes; i++){
+            let li = document.createElement('li');
+            li.id = i;
+            li.innerText = data.quotes[i].body;
+            li.setAttribute("data-author", data.quotes[i].author);
+            li.setAttribute("data-tags", data.quotes[i].tags);
+            li.classList.add("tooltip");
+
+            let tooltip = document.createElement('div');
+            tooltip.classList.add('tooltext');
+            let author_tip = document.createElement('p');
+            author_tip.innerHTML = "Author: " + data.quotes[i].author;
+            let tags_tip = document.createElement('p');
+            tags_tip.innerText = "Tags: " + data.quotes[i].tags;
+
+            tooltip.appendChild(author_tip);
+            tooltip.appendChild(tags_tip);
+            li.append(tooltip);
+            ul.appendChild(li);
+        }
+    }
+
+    http_get(url, getQuotes);
 
 </script>
 </body>

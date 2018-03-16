@@ -60,7 +60,7 @@ function play_game() {
  }
  //calculate the number of dice based on their chips;
     // loop - roll the dice
-    // move chips
+    // mainLoop chips
     // check for winner
 
 }

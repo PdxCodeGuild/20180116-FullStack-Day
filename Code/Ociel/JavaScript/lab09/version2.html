@@ -1,0 +1,61 @@
+<!--My first attempt to Getting an HTTP Request-->
+<html>
+<head>
+    <style>
+        #container {
+            top: 100px;
+            text-align: center;
+            background-color: #00bcd4;
+            margin: 40px 100px 0 100px;
+        }
+
+        #Quote_of_the_day {
+            font-size: 30px;
+            font-family: Papyrus, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div id="Quote_of_the_day">25 Quotes of the Day: </div>
+<div id="container"></div>
+
+<script>
+    let container = document.querySelector('#container');
+    let api_key = "Insert API Key Here";
+
+
+    function getQuote(page_one, quote_index) {
+        let url = 'https://favqs.com/api/quotes?page=' + page_one;
+        let httpRequest = new XMLHttpRequest();
+
+        httpRequest.onreadystatechange = function () {
+            let div = document.createElement('div');
+
+            if (httpRequest.readyState === 1){
+                httpRequest.setRequestHeader('Authorization', 'Token token="'+ api_key + '"');
+            } else if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                //THis will make the data into an Object
+                // If not it comes back all weird looking.
+                let data = JSON.parse(httpRequest.responseText);
+                console.log(quote_index); //This console log is so i know how to access the keys i need.
+                div.innerHTML = "Quote " + (quote_index + 1) + ': \"' + data.quotes[quote_index].body + '\"' + "<br>" + '- ' + data.quotes[quote_index].author;
+                container.appendChild(div);
+            }
+        };
+            httpRequest.open('GET', url, true);
+            httpRequest.send();
+    }
+
+
+    function get25Quotes(){
+        let page_one = 1;
+
+        for (let quote_index = 0; quote_index < 25; quote_index++){
+            getQuote(page_one, quote_index);
+        }
+    }
+    get25Quotes()
+
+</script>
+</body>
+</html>
