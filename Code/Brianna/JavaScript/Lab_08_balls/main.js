@@ -9,8 +9,8 @@ class Balls {
         this.xVelocity = (2 * Math.random() - 1) * 10; // x movement increment per framerate. Keeping this standard for now
         this.yVelocity = (2 * Math.random() - 1) * 10; // y movement increment per framerate
         this.gravity = .8; // Let's bounce on the moon!
-		this.damping = .99; // The effect of the moon is extra bounce-ability
-        this.friction = .99; // Unfortunately friction is a tough thing
+		this.damping = .9; // The effect of the moon is extra bounce-ability
+        this.friction = .79; // Unfortunately friction is a tough thing
         this.radius = ((5 * Math.random() - 1) * 10) + 10;
         this.color = '#42c5f4';
     }
