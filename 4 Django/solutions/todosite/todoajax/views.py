@@ -8,7 +8,6 @@ import json
 def index(request):
     return render(request, 'todoajax/index.html')
 
-
 def savetodo(request):
     data = json.loads(request.body)
     todo_text = data['todo_text']
