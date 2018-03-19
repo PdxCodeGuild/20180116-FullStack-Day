@@ -35,3 +35,9 @@ def createnote(request):
     note = Note(name = note_name, body = note_body)
     note.save()
     return HttpResponseRedirect(reverse('todolist:index'))
+
+def deletenote(request, note_id):
+    # note_id = request.POST['note_id']
+    note = Note.objects.get(pk=note_id)
+    note.delete()
+    return HttpResponseRedirect(reverse('todolist:index'))

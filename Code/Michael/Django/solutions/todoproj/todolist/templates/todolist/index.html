@@ -14,20 +14,21 @@
         <tr>
             <th scope="col"></th>
             <th scope="col">Note</th>
-            <th scope="col">Edited</th>
             <th scope="col">Created</th>
+            <th scope="col">Edited</th>
         </tr>
         </thead>
     {% for note in notes %}
         <tr>
-            <td><a href="{% url 'todolist:detail' note.id %}">edit</a></td>
             <td>{{note.name}}</td>
-            <td>{{note.edit_date}}</td>
             <td>{{note.created_date}}</td>
+            <td>{{note.edit_date}}</td>
+            <td><a href="{% url 'todolist:detail' note.id %}">edit</a></td>
+            <td><a href="{% url 'todolist:deletenote' note.id %}">delete</a></td>
         </tr>
     {% endfor %}
     </table>
-    <a href="{% url 'todolist:createnotepage' %}" class="btn btn-primary">Create new note</a>
+    <a href="{% url 'todolist:createnotepage' %}" class="btn btn-secondary">Create new note</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
