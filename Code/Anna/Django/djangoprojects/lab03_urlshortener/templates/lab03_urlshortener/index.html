@@ -1,0 +1,20 @@
+{% extends 'lab03_urlshortener/base.html' %}
+{% block content %}
+<div class="row center-align">
+    <p>Enter a URL to shorten</p>
+</div>
+<form class="col s12" action="{% url 'urlshortener:urlshorten' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="url_id" value="{{url.id}}" />
+    <div class="row">
+        <div class="input-field col s2"></div>
+        <div class="input-field col s8">
+            <input id="newURL" type="url" class="validate">
+        </div>
+        <div class="input-field col s2"></div>
+    </div>
+    <div class="row center-align">
+        <button class="waves-effect waves-light btn grey darken-3" type="submit"><i class="material-icons left">content_cut</i> Go, shorty, go!</button>
+    </div>
+</form>
+{% endblock %}

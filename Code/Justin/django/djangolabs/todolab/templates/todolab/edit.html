@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'todolab/style.css' %}" />
+
+<h1>{{ item.item_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'todolab:save_edit' item.id %}" method="post">
+{% csrf_token %}
+    <h3>To-Do Item</h3>
+    <input type="text" name="item_text" value="{{ item.item_text }}"><br>
+    <h3>Item Details</h3>
+    <textarea type="text" name="details_text" maxlength="500" rows="10" cols="50">{{ item.details_text }}</textarea><br>
+    <h3>Due Date (Leave blank for None)</h3>
+    <input type="date" name="due_date" value="{{ due_date }}"><br>
+    <input type="submit" class="button save_bt" value=""/>
+</form>

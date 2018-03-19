@@ -144,8 +144,8 @@ class Player(pygame.sprite.Sprite):
     def jump(self):
         """ Called when user hits 'jump' button. """
 
-        # move down a bit and see if there is a platform below us.
-        # Move down 2 pixels because it doesn't work well if we only move down 1
+        # mainLoop down a bit and see if there is a platform below us.
+        # Move down 2 pixels because it doesn't work well if we only mainLoop down 1
         # when working with a platform moving down.
         self.rect.y += 2
         platform_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)

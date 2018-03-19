@@ -44,11 +44,11 @@ class Enemies():
         pass
 
 
-class Cave_monster(Enemies):  # Common and can move around. You can see them before you run into them.
+class Cave_monster(Enemies):  # Common and can mainLoop around. You can see them before you run into them.
     pass
 
 
-class Bandit(Enemies):  # Uncommon and you cannot see them unless you run into them. Possibly move around.
+class Bandit(Enemies):  # Uncommon and you cannot see them unless you run into them. Possibly mainLoop around.
     pass
 
 

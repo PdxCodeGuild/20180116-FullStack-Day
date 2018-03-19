@@ -49,7 +49,7 @@
 
         <ul>
         {% for todo in todo_list %}
-            <li><a href="/todo/{{ todo.id }}/">{{ todo.todo_text }}</a> <button type="submit" formaction="{% url 'todo:submit_completed' %}?todo_is={{todo.id}}">X</button> </li>
+            <li><a href="/todo/{{ todo.id }}/">{{ todo.todo_text }}</a> <button type="submit" formaction="{% url 'todo:submit_completed' %}?todo_id={{todo.id}}">X</button> </li>
         {% endfor %}
         </ul>
     {% else %}
@@ -59,6 +59,7 @@
 
     <ul>
         {% for todo in completed_todo %}
+        {% endfor %}
     </ul>
 </div>
 

@@ -1,0 +1,16 @@
+
+<form action="{% url 'madlibapp:generate' madlib.id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="madlib_id" value="{{madlib.id}}"/>
+    <table>
+    {% for madlibword in madlib.madlibword_set.all %}
+        <tr>
+            <td>{{madlibword.pretty_name}}</td>
+            <td>
+                <input type="text" name="{{madlibword.name}}"/>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <button type="submit">generate</button>
+</form>

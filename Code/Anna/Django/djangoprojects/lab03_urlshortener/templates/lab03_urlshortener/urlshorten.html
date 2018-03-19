@@ -1,0 +1,10 @@
+{% extends 'lab03_urlshortener/base.html' %}
+{% block content %}
+<div class="row center-align">
+    <p>Your shortened URL is:</p>
+    <h1>{{shortened}}</h1>
+    <a class="waves-effect waves-light btn grey darken-3" href="{% url 'urlshortener:redirect' %}"><i class="material-icons left">arrow_forward</i> Take me there</a>
+    <a class="waves-effect waves-light btn grey darken-3" href="{% url 'urlshortener:index' %}"><i class="material-icons left">arrow_back</i> Again!</a>
+</div>
+
+{% endblock %}
