@@ -1,4 +1,4 @@
-"""djangoprojects URL Configuration
+"""groceryproj URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -13,20 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import include, path
 from django.contrib import admin
-from . import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('contacts/', include('contactsapp.urls')),
-    path('shorty/', include('lab03_urlshortener.urls')),
-    path('todo/', include('lab02_todo.urls')),
-    path('polls/', include('lab01_polls.urls')),
-    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
+    path('', include('groceryapp.urls'))
 ]
 
-handler404 = 'lab02_todo.views.handler404'
-handler500 = 'lab02_todo.views.handler500'
+handler404 = 'groceryapp.views.handler404'
+handler500 = 'groceryapp.views.handler500'

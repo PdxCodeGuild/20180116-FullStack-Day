@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts App</title>
+
+    <link rel="stylesheet" href="{% static '/contactsapp/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static '/contactsapp/css/main.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+          <nav>
+            <div class="nav-wrapper grey darken-4">
+              <a href="{% url 'contactsapp:index' %}" class="brand-logo center">Contacts App</a>
+              <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{% url 'contactsapp:index' %}">All Contacts</a></li>
+                <li><a href="{% url 'contactsapp:create' %}">Add Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+    {% block content %}{% endblock %}
+    </main>
+
+    <!--footer!-->
+    <footer class="page-footer grey darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer</h5>
+        </div>
+      </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2018 Contacts App
+        </div>
+      </div>
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="{% static '/contactsapp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/contactsapp/js/materialize.js' %}"></script>
+    <script src="{% static '/contactsapp/js/main.js' %}"></script>
+</body>
+</html>
