@@ -19,7 +19,9 @@
         <div class="row center-align">
             <p>Enter a URL to shorten</p>
         </div>
-        <form class="col s12">
+        <form class="col s12" action="{% url 'urlshortener:urlshorten' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="url_id" value="{{url.id}}" />
             <div class="row">
                 <div class="input-field col s2"></div>
                 <div class="input-field col s8">
