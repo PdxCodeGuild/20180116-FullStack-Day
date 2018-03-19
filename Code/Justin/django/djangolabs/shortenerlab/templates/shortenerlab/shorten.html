@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shortenerlab/style.css' %}" />
+
+{% csrf_token %}
+
+<h1>Your Shortened URL</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<h2>{{ short_form }}</h2>
+
+<a href="{% url 'shortenerlab:index' %}">
+    <img class="button back_bt" src="{% static 'shortenerlab/images/back.png' %}">
+</a>

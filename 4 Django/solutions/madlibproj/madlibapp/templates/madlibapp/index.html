@@ -1,0 +1,15 @@
+
+
+{% load static %}
+
+<img src="{% static 'madlibapp/superbowl.jpg' %}" alt="superbowl" style="width:100px"/>
+
+<script src="{% static 'madlibapp/index.js' %}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'madlibapp/index.css' %}"/>
+
+
+<ul>
+{% for madlib in madlibs %}
+    <li><a href="{% url 'madlibapp:detail' madlib.id %}">{{ madlib.name }}</a></li>
+{% endfor %}
+</ul>

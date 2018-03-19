@@ -28,7 +28,7 @@ class Tree(pygame.sprite.Sprite):  # Place holder until I find tree sprites
         self.rect.x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
-        """ Automatically called when we need to move the block. """
+        """ Automatically called when we need to mainLoop the block. """
         self.rect.y += 1
 
         if self.rect.y > SCREEN_HEIGHT + self.rect.height:
@@ -49,7 +49,7 @@ class Enemy(pygame.sprite.Sprite):  # Place holder until I finish defining my en
         self.rect.x = random.randrange(SCREEN_WIDTH)
 
     def update(self):
-        """ Automatically called when we need to move the block. """
+        """ Automatically called when we need to mainLoop the block. """
         self.rect.y += 1
 
         if self.rect.y > SCREEN_HEIGHT + self.rect.height:

@@ -1,0 +1,15 @@
+
+
+<ul>
+{% for grocery_list in grocery_lists %}
+    <li>
+        <a href="{% url 'groceryapp:detail' grocery_list.id %}">{{grocery_list.name}}</a>
+    </li>
+{% endfor %}
+</ul>
+
+
+
+
+
+
