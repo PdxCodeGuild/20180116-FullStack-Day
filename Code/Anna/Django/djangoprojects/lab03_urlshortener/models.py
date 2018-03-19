@@ -8,7 +8,8 @@ class URL(models.Model):
     url_short = models.CharField(max_length=200)
 
     def shorten(self):
-        # this function will shorted the URL through magic
+        # this function will shorten the URL through magic
+
         pass
 
     def __str__(self):

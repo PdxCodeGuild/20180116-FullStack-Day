@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# from .models import TodoItem
+from .models import URL
 
 
 # Create your views here.
@@ -15,5 +15,5 @@ def urlshorten(request):
 
 
 def redirect(request):
-    # after pressing button, redirect the user
+    # after pressing button, redirect the user to the website
     return HttpResponse('ok')
