@@ -6,20 +6,37 @@
     <meta charset="UTF-8">
     <title>URL Shortener</title>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static '/lab02_todo/css/materialize.css' %}">
-    <link rel="stylesheet" href="{% static '/lab02_todo/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/lab03_urlshortener/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static '/lab03_urlshortener/css/main.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
-    <div class="container">
-
+    <div class="header z-depth-2 center-align">
+        <h1>Meet Shorty, the URL <span class="typer" data-typer-targets="shtnr, shortener"></span></h1>
+    </div>
+    <div class="main">
+        <div class="row center-align">
+            <p>Enter a URL to shorten</p>
+        </div>
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s2"></div>
+                <div class="input-field col s8">
+                    <input id="newURL" type="url" class="validate">
+                </div>
+                <div class="input-field col s2"></div>
+            </div>
+            <div class="row center-align">
+                <button class="waves-effect waves-light btn grey darken-3" type="submit"><i class="material-icons left">content_cut</i> Go, shorty, go!</button>
+            </div>
+        </form>
     </div>
 
     <!-- Compiled and minified JavaScript -->
-    <script src="{% static '/lab02_todo/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static '/lab02_todo/js/materialize.js' %}"></script>
-    <script src="{% static '/lab02_todo/js/main.js' %}"></script>
+    <script src="{% static '/lab03_urlshortener/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/lab03_urlshortener/js/materialize.js' %}"></script>
+    <script src="{% static '/lab03_urlshortener/js/main.js' %}"></script>
 
 </body>
 </html>
