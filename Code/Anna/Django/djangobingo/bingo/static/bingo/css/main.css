@@ -48,6 +48,9 @@ nav a {
     margin: auto;
 }
 
+.lighter {
+    font-weight: lighter; !important;
+}
 
 /* making 5 even columns, which is surprisingly complicated in CSS grids */
 .s5ths,

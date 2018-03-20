@@ -23,13 +23,35 @@
 
     <!--footer!-->
     <footer class="page-footer django-green">
-      <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">What is this?</h5>
+            <p class="grey-text text-lighten-4">django_bingo was created by a bored programmer learning django and trying to collect all the errors while working on a new project. They're like Pokemon, but less valuable.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Why?</h5>
+            <ul>
+                <li><a class="grey-text text-lighten-3" href="https://www.google.com/search?q=programming+error+meme&tbm=isch" target="_blank">Are you really going to ask?</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/PdxCodeGuild/20180116-FullStack-Day/tree/master/Code/Anna/Django/djangobingo" target="_blank">Obligatory Github link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright django-green darken-1">
         <div class="container">
-            <h6 class="white-text">Collect all the errors to win (lose)
-            <span class="right">© 2018 django_bingo</span></h6>
+        <div class="row">
+          <div class="col l6 s12">
+                <span class="white-text lighter">Collect all the errors to win ('win'=lose)</span>
+          </div>
+            <div class="col l4 offset-l2 s12">
+                <span class="white-text lighter">© 2018 django_bingo</span>
+            </div>
+        </div>
         </div>
       </div>
     </footer>
+
     <!-- Compiled and minified JavaScript -->
     <script src="{% static '/bingo/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static '/bingo/js/materialize.js' %}"></script>
