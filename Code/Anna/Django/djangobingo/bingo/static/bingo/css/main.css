@@ -16,7 +16,18 @@ nav a {
 }
 
 .django-green {
-    background-color: #092E20;
+    background-color: #092E20 !important;
+    color: #278762
+}
+
+.light-django-green {
+    background-color: #44b78b;
+    color: white;
+}
+
+.footer-green {
+    background-color: #092E20 !important;
+    color: #278762 !important;
 }
 
 .bingo-box:nth-child(13) {
@@ -26,7 +37,8 @@ nav a {
 }
 
 .bingo-container {
-    margin-top: 5vh;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -38,11 +50,14 @@ nav a {
     padding: 10px;
     text-align: center;
     overflow-wrap: break-word;
+    cursor: pointer;
 }
+
 .bingo-box:hover {
 	background-color: #092E20;
     color: white;
 }
+
 .bingo-box p {
     font-size: 1.4vw;
     margin: auto;
