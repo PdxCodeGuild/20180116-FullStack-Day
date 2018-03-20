@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Bingo | When you lose, you win!</title>
+
+    <link rel="stylesheet" href="{% static '/bingo/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static '/bingo/css/main.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+          <nav>
+            <div class="nav-wrapper django-green">
+              <a href="{% url 'bingo:index' %}" class="brand-logo center">django_bingo</a>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+    {% block content %}{% endblock %}
+    </main>
+
+    <!--footer!-->
+    <footer class="page-footer django-green">
+      <div class="footer-copyright">
+        <div class="container">
+            <h6 class="white-text">Collect all the errors to win (lose)
+            <span class="right">© 2018 django_bingo</span></h6>
+        </div>
+      </div>
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="{% static '/bingo/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/bingo/js/materialize.js' %}"></script>
+    <script src="{% static '/bingo/js/main.js' %}"></script>
+</body>
+</html>
