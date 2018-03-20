@@ -1,0 +1,47 @@
+
+{% extends 'contactsapp/base.html' %}
+{% block content %}
+
+
+
+
+<table>
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Age</th>
+        <th>Favorite Number</th>
+        <th>Favorite Fruit</th>
+        <th>Favorite Color</th>
+    </tr>
+    {% for contact in contacts %}
+    <tr>
+        <td>
+            <form action="{% url 'contactsapp:delete' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="contact_id" value="{{contact.id}}"/>
+                <button class="btn-floating btn-large waves-effect waves-light red" type="submit">✗</button>
+            </form>
+        </td>
+        <td>{{contact.name}}</td>
+        <td>{{contact.birthday}}</td>
+        <td>{{contact.age}}</td>
+        <td>{{contact.favorite_number}}</td>
+        <td>{{contact.favorite_fruit}}</td>
+        <td>{{contact.favorite_color}}</td>
+    </tr>
+    {% endfor %}
+
+    <!--<script>-->
+        <!--let csrf_token = '{{csrf_token}}';-->
+        <!--alert(csrf_token);-->
+    <!--</script>-->
+
+</table>
+
+<div style="text-align:center">
+<a href="{% url 'contactsapp:create' %}" class="waves-effect waves-light btn">Create Contact</a>
+</div>
+{% endblock %}
+

@@ -23,6 +23,7 @@ h1 {
   border: 6px solid #7aacda;
   border-radius: 50%;
   margin: 0 auto;
+  margin-top: -50px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }

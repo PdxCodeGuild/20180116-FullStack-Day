@@ -1,0 +1,74 @@
+body{
+    box-sizing: border-box;
+}
+
+input.button, img.button{
+    border: 1px solid black;
+    border-radius: 3px;
+    color: red;
+    justify-content: center;
+    background-color: #dddddd;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+img.button{
+    margin: 3px 3px 3px 3px;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+input.button{
+    margin: 3px 3px 8px 3px;
+    height: 32px;
+    width: 32px;
+}
+
+input.details_bt {
+    background-size: 20px 20px;
+    background-image: url("images/eye.png");
+}
+
+input.complete_bt {
+    background-size: 20px 20px;
+    background-image: url("images/check.png");
+}
+
+input.save_bt {
+    background-size: 20px 20px;
+    background-image: url("images/save.png");
+}
+
+input.delete_bt {
+    background-size: 20px 20px;
+    background-image: url("images/delete.png");
+}
+
+input.edit_bt {
+    background-size: 20px 20px;
+    background-image: url("images/edit.png");
+}
+
+button.list_bt {
+    background-size: 20px 20px;
+    background-image: url("images/list.png");
+}
+
+button.back_bt {
+    background-size: 20px 20px;
+    background-image: url("images/back.png");
+}
+
+th.item, td.item{
+    width: 200px;
+}
+
+th.date, td.date{
+    width: 150px;
+    text-align: center;
+}
+
+h1{
+    background-color:green;
+}
