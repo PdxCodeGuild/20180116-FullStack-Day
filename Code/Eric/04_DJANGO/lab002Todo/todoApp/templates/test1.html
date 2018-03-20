@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>erics todo list</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylish.css' %}">
+</head>
+
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+	<form method="post">
+		{% csrf_token %}
+		{{form.text}}
+		<button class="addBtn" type="submit">Add</button>
+	</form>
+
+</div>
+
+<ul id="myUL">
+  {% for obj in queryset %}
+  {% if obj.done %}
+    <li class="checked"><a href="{% url 'not_done' obj.id%}">{{obj.text}}</a> <a href="{% url 'delete' obj.id %}"><span class="close">x</span></a></li>
+  {% else %}
+    <li><a href="{% url 'done' obj.id%}">{{obj.text}}</a> <a href="{% url 'delete' obj.id %}"><span class="close">x</span></a></li>
+  {% endif %}
+
+  {% endfor %}
+</ul>
+
+</body>
+</html>

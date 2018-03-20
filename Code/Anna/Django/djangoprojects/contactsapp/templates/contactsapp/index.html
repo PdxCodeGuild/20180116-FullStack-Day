@@ -1,0 +1,37 @@
+{% extends 'contactsapp/base.html' %}
+{% block content %}
+<div class="container">
+    <table class="highlight centered">
+        <thead>
+        <tr>
+            <th><i class="material-icons">delete_forever</i></th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Age</th>
+            <th>Favorite Number</th>
+            <th>Favorite Fruit</th>
+            <th>Favorite Color</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <td>
+                <form action="{% url 'contactsapp:delete' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="contact_id" value="{{contact.id}}"/>
+                    <button class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete_forever</i></button>
+                </form>
+            </td>
+            <td>{{contact.name}}</td>
+            <td>{{contact.birthday}}</td>
+            <td>{{contact.age}}</td>
+            <td>{{contact.favorite_number}}</td>
+            <td>{{contact.favorite_fruit}}</td>
+            <td>{{contact.favorite_color}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
