@@ -6,8 +6,8 @@ from .models import Shortener
 
 # Create your views here.
 
-
 def index(request):
+
     return HttpResponse('Boo index!')
 
 def base(request):
