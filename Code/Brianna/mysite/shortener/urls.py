@@ -9,5 +9,3 @@ urlpatterns = [
     path('redirect/', views.redirect, name='redirect'),
     path('base/', views.base, name='base'),
 ]
-
-

@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Shortener(models.Model):
 
     # Create a url field to input a new url to be shortened
@@ -14,5 +13,4 @@ class Shortener(models.Model):
 
     def __str__(self):
       return self.shortener.input_url_field + 'Hello!'
-
 
