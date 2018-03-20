@@ -1,6 +1,6 @@
 
 
-#Class-Based Views
+# Class-Based Views
 
 - [Reference Documentation](https://docs.djangoproject.com/en/2.0/ref/class-based-views/)
 - [Introduction to class-based views](https://docs.djangoproject.com/en/2.0/topics/class-based-views/intro/)
@@ -13,14 +13,14 @@
 - [simpleisbetterthancomplex.com's overview](https://simpleisbetterthancomplex.com/article/2017/03/21/class-based-views-vs-function-based-views.html)
 
 
-##Types of Views
+## Types of Views
 
 - [Base Views: View, TemplateView, RedirectView](https://docs.djangoproject.com/en/2.0/ref/class-based-views/base/)
 - [Display Views: DetailView,List View](https://docs.djangoproject.com/en/2.0/ref/class-based-views/generic-display/)
 - [Editing Views: FormView, CreateView, UpdateView, DeleteView](https://docs.djangoproject.com/en/2.0/ref/class-based-views/generic-editing/)
 
 
-##Routing
+## Routing
 
 To create a route to a class-based view, you have to call `as_view()` and pass the result to `path`. The `DetailView` requires a `pk` in the path.
 
@@ -40,7 +40,7 @@ urlpatterns = [
 ]
 ```
 
-##View
+## View
 
 This the the base class of all other class-based views. It allows you to write a method to handle each HTTP method.
 
@@ -61,7 +61,7 @@ class MyView(View):
         #...
 ```
 
-##TemplateView
+## TemplateView
 
 The `TemplateView` allows you to define a view just by specifying a template name and the data used to render it.
 
@@ -86,7 +86,7 @@ urlpatterns = [
 ```
 
 
-##ListView
+## ListView
 
 A `ListView` 
 
@@ -110,7 +110,7 @@ class MyListView(generic.ListView):
 
 
 
-##DetailView
+## DetailView
 
 DetailView expects a 'pk' in the route: `path('<int:pk>/', views.DetailView.as_view(), name='detail')`.
 
