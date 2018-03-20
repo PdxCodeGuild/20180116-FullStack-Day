@@ -35,6 +35,12 @@ These can be installed using `pip install <module>`.
 - [matplotlib](http://matplotlib.org/): 2D/3D plotting
 - [TkInter](https://wiki.python.org/moin/TkInter), [wxPython](https://www.wxpython.org/), [PyQT](https://sourceforge.net/projects/pyqt/), [PyGTK](https://wiki.python.org/moin/PyGtk): GUI
 
+
+## Django
+
+[django packages](https://djangopackages.org/)
+
+
 ## Front-End
 
 You can view a list [here](https://www.keycdn.com/blog/front-end-frameworks/).

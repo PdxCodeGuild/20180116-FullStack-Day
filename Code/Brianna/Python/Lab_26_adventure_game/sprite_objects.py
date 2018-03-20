@@ -43,7 +43,7 @@ class Wall(pygame.sprite.Sprite):   ### Make walls here? Probably don't need to 
 
 
 class MovingPlatform(Platform):   #Also referenced elsewhere and needs to be changed
-    """ This is a fancier platform that can actually move. """
+    """ This is a fancier platform that can actually mainLoop. """
 
     def __init__(self, sprite_sheet_data):
 

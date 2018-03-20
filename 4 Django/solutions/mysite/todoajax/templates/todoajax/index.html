@@ -1,0 +1,101 @@
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+
+<h1>Todos</h1>
+
+<input id="todo_input" type="text"/><button id="add_bt">add</button>
+
+<ul id="todo_list">
+
+</ul>
+
+
+
+<script>
+    function http_post(url, data, success) {
+        let csrf_token = Cookies.get('csrftoken');
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                success(xhttp.responseText);
+            }
+        };
+        xhttp.open("POST", url);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.setRequestHeader('X-CSRFToken', csrf_token);
+        xhttp.send(JSON.stringify(data));
+    }
+
+
+    function http_get(url, success) {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                let data = JSON.parse(xhttp.responseText);
+                success(data);
+            }
+        };
+        xhttp.open("GET", url);
+        xhttp.send();
+    }
+
+</script>
+
+
+<script>
+    let todo_list = document.querySelector('#todo_list');
+    let add_bt = document.querySelector('#add_bt');
+    let todo_input = document.querySelector('#todo_input');
+
+    function add_item(text) {
+        let li = document.createElement('li');
+        li.innerText = text;
+        todo_list.appendChild(li);
+    }
+
+    function refresh_todos() {
+        let url = "{% url 'todoajax:getlist' %}";
+        http_get(url, function(data) {
+            todo_list.innerHTML = '';
+            let todos = data.todos;
+            for (let i=0; i<todos.length; ++i) {
+                add_item(todos[i].text);
+            }
+        });
+    }
+
+
+    refresh_todos();
+
+    add_bt.addEventListener('click', function() {
+        let url = "{% url 'todoajax:addtodo' %}";
+        let data = {'todo_text': todo_input.value};
+        http_post(url, data, function(result) {
+            console.log(result);
+            //window.location.reload();
+
+            // if (result === 'ok') {
+            //     add_item(todo_input.value);
+            //     todo_input.value = '';
+            // } else {
+            //     alert('error!');
+            // }
+
+            refresh_todos();
+
+        });
+
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
