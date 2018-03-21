@@ -67,43 +67,43 @@ The IFF Task model is just one get-to-do item followed by at least one to-do ite
 
 ## Schedule
 
-#### Milestone 1
+### Milestone 1
 _Due date: March 30th_
 
 Entire project is set up, including installing Webpack, Django, and Vue and getting them to play nicely together in a virtual env. A rough front-end including the landing page and user log-in screen is completed.
-#### Milestone 2
+### Milestone 2
 _Due date: April 6th_
 
 Ability for users to register and add lists is complete. It doesn't have to look pretty yet.
-#### Milestone 3
+### Milestone 3
 _Due date: April 13th_(Capstone presentation day)
 
 An MVP of IFF is deployed and live, with the ability for users to sign up. The frontend is finalized.
-#### Milestone 4
+### Milestone 4
 _Due date: April 20th_
 
 User testing and debugging with actual users.
-#### Milestone 5
+### Milestone 5
 _Due date: May 31st_
 
 All bugs fixed and mass roll-out of platform. Functionality limited to signing up and adding up to 10 IFF lists at a time.
-#### Milestone 6
+### Milestone 6
 _Due date: Fall 2018_
 
 Add social aspect to platform. Users can become friends, invite their friends, and show lists to friends who will keep them accountable.
-#### Milestone 7
+### Milestone 7
 _Due date: end of 2018_
 
 Monetization of platform. Add premium monthly plan for unlimited lists.
-#### Milestone 8
+### Milestone 8
 _Due date: Q1 2019_
 
 Monetization of platform. Add team premium tier where multiple people can share lists.
-#### Milestone 9
+### Milestone 9
 _Due date: Q2 2019_
 
 Launch iOS and Android apps.
-#### Milestone 10
+### Milestone 10
 _Due date: ?_
 
 Sell IFF to Mark Zuckerberg and retire to a private island.
