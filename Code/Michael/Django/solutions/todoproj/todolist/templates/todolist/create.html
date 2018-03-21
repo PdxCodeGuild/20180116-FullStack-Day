@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>New Note</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <style>
+        h1 {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
     <h1>Create Note</h1>
         <form class="form-group" id="container" action="{% url 'todolist:createnote' %}" method="post">
-            {% csrf_token %}    <!-- won't work unless this is included! -->
+            {% csrf_token %}
             <input class="form-control" type="hidden" value="{{note.id}}" name="note_id" />
             <label for="note_name_input">Name</label>
             <input class="form-control" id="note_name_input" name="note_name" type="text" value="{{note.name}}" />
             <label for="note_body_input">Body</label>
             <textarea class="form-control" id="note_body_input" name="note_body">{{note.body}}</textarea>
             <br/>
-            <button class="btn btn-primary" type="submit">Create Note</button>
+            <button class="btn btn-secondary" type="submit">Create Note</button>
         </form>
     </div>
 

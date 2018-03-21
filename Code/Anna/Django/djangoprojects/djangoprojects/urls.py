@@ -18,10 +18,15 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    # path('', views.index, name='index'),
-    path('shorty/', include('lab03_urlshortener')),
+    path('', views.index, name='index'),
+    path('contactcbv/', include('contactcbv.urls')),
+    path('contacts/', include('contactsapp.urls')),
+    path('library/', include('lab04_library.urls')),
+    path('shorty/', include('lab03_urlshortener.urls')),
     path('todo/', include('lab02_todo.urls')),
     path('polls/', include('lab01_polls.urls')),
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
 ]
 
