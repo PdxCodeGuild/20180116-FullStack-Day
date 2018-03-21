@@ -23,7 +23,7 @@
             <td class="date">{{ item.due_date }}</td>
             <td><input id="details-{{ item.id }}" class="button details_bt" type="submit" value="" formaction="{% url 'todolab:details'  item.id %}"/>
                 <input id="complete-{{ item.id }}" class="button complete_bt" type="submit" value="" formaction="{% url 'todolab:complete'  item.id %}"/>
-                <input id="delete-{{ item.id }}" class="button delete_bt" type="submit" value="" formaction="{% url 'todolab:delete' item.id %}"/>
+                <input id="delete-{{ item.id }}" class="button delete_bt" type="submit" value="" formaction="{% url 'todolab:delete' item.id %}?redirect=index"/>
             </td>
         </tr>
     {% endfor %}
