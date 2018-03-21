@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <p>Todo Items</p>
+<form method="post">
+    {% csrf_token %}
+    <input id="new_todo" name="new_todo" placeholder="enter todo here"/>
+    <button formaction="{% url 'todoapp:savetodo' %}" type="submit">enter</button>
+</form>
+    <ul>
+        {% for thing in things %}
+        <li>
+            <form action="{% url 'todoapp:complete' %}" method="post">
+            {% csrf_token %}
+            {{thing.text_description}}
+            <input type="hidden" name="todo_id" value="{{thing.id}}"/>
+            <button id="complete" type="submit">done</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+<form>
+    <ul>
+        <p>Completed Items</p>
+        {% for thing in done_things %}
+        <li>
+            {{thing.text_description}}
+        </li>
+        {% endfor %}
+    </ul>
+</form>
+
+</body>
+</html>

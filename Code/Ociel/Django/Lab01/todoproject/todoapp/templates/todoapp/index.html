@@ -1,0 +1,45 @@
+<style>
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<h1>Todo App</h1>
+<div>
+    <form action="{% url 'todoapp:addnote' %}" method="post">
+        {% csrf_token %}
+        <input name="insert_text" placeholder="Add To Do Item" type="text">
+        <button class="btn waves-effect waves-light" type="submit">Add Note</button>
+    </form>
+
+</div>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Note</th>
+        <th>Date Created</th>
+        <th>Edited</th>
+        <th>Completed</th>
+    </tr>
+    {% for note in note_stuff %}
+    <tr>
+        <form action="{% url 'todoapp:completenote' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="complete_row" value="{{note.id}}">
+            {% if note.is_completed == False%}
+            <td> <button type="submit" class="btn-floating btn-large waves-effect waves-light red" >✖</button> </td>
+            {% endif %}
+
+            {% if note.is_completed %}
+            <td> <button class="btn-floating btn-large waves-effect waves-light green" >Done</button> </td>
+            {% endif %}
+
+        </form>
+        <td>{{note.notes}}</td>
+        <td>{{note.created_date}}</td>
+        <td>{{note.edited_date}}</td>
+        <td>{{note.is_completed}}</td>
+    </tr>
+    {% endfor %}
+</table>
+

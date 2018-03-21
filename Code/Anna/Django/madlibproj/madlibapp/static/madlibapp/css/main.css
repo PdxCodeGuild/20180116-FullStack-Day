@@ -1,0 +1,9 @@
+body {
+    padding: 5vw;
+}
+
+pre {
+    font-family: "Roboto", sans-serif;
+    color: #222;
+    font-size: 2em;
+}

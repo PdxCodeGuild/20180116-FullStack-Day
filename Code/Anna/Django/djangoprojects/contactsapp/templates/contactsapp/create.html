@@ -1,0 +1,40 @@
+{% extends 'contactsapp/base.html' %}
+{% block content %}
+    <div class="container">
+    <div class="row">
+    <form class="col s12" action="{% url 'contactsapp:save' %}" method="post">
+        {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+            <input type="text" id="contact_name" name="contact_name"/>
+            <label for="contact_name">Name</label>
+        </div>
+        <div class="input-field col s6">
+            <!--<input type="text" class="datepicker" placeholder="Birthday" name="contact_birthday">-->
+            <input type="date" name="contact_birthday" id="contact_birthday">
+            <label for="contact_birthday">Birthday</label>
+        </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="number" name="contact_favorite_number" id="contact_favorite_number">
+                <label for="contact_favorite_number">Favorite Number</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" name="contact_favorite_fruit" id="contact_favorite_fruit">
+                <label for="contact_favorite_fruit">Favorite Fruit</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="color" name="contact_favorite_color" id="contact_favorite_color">
+                <label for="contact_favorite_color">Favorite Color</label>
+            </div>
+            <div class="input-field col s6">
+                <button class="btn waves-effect waves-light grey darken-4" type="submit">Create contact <i class="material-icons right">send</i></button>
+            </div>
+        </div>
+    </form>
+    </div>
+    </div>
+{% endblock %}

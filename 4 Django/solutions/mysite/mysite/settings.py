@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'contactsapp.apps.ContactsappConfig',
     'todoapp.apps.TodoappConfig',
     'todoajax.apps.TodoajaxConfig',
     'polls.apps.PollsConfig',
