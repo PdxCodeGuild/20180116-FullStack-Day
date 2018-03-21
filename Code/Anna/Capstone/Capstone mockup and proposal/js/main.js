@@ -12,6 +12,13 @@ $(function () {
     });
 });
 
+// sign-in
+let $input = $('.form-fieldset > input');
+
+$input.blur(function (e) {
+  $(this).toggleClass('filled', !!$(this).val());
+});
+
 // navbar
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {

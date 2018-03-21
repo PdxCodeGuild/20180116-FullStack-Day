@@ -103,7 +103,7 @@ Monetization of platform. Add team premium tier where multiple people can share 
 _Due date: Q2 2019_
 
 Launch iOS and Android apps.
-#### Milestone 10
+### Milestone 10
 _Due date: ?_
 
 Sell IFF to Mark Zuckerberg and retire to a private island.
