@@ -1,0 +1,10 @@
+
+
+<ul>
+{% for contact in contact_list %}
+
+    <li><a href="{% url 'contactcbv:detail' contact.id %}">{{contact.name}}</a></li>
+{% endfor %}
+
+</ul>
+

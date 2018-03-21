@@ -40,7 +40,7 @@ class Platform(pygame.sprite.Sprite):
 
 
 class MovingPlatform(Platform):
-    """ This is a fancier platform that can actually move. """
+    """ This is a fancier platform that can actually mainLoop. """
 
     def __init__(self, sprite_sheet_data):
 

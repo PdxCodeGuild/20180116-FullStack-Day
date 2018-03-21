@@ -1,8 +1,8 @@
 from django.db import models
 
+# TODO: font
+# TODO: history
 
-# font
-# history
 
 class Note(models.Model):
     name = models.CharField(max_length=100)
