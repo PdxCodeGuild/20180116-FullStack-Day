@@ -1,0 +1,227 @@
+
+
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+
+</head>
+<body>
+    <h1 id="header"></h1>
+
+
+    <div id="app">
+        <button id="check_out_bt" v-on:click="showCheckOut">Check Books Out</button>
+        <button id="check_in_bt" v-on:click="showCheckIn">Check Books In</button>
+        <div id="check_out" v-if="view==='check out'">
+            <h1>Check Books Out</h1>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publication Date</th>
+                    <th>Select</th>
+                    <th>Action</th>
+                </tr>
+                <tr v-for="book in books_in">
+                    <td><% book.title %></td>
+                    <td><% book.author %></td>
+                    <td><% book.publication_date %></td>
+                    <td><input type="checkbox" v-bind:value="book.id" v-model="checkout_list"></td>
+                    <td><button type="submit" v-bind:value="book.id" v-on:click="showHistory($event)">Show History</button></td>
+                </tr>
+            </table>
+            <input type="text" placeholder="User ID" v-model="user_id">
+            <button type="submit" :disabled=disableCheckOut v-on:click="submitCheckOut">Submit</button>
+
+        </div>
+
+        <div id="check_in" v-else-if="view==='check in'">
+            <h1>Check Books In</h1>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publication Date</th>
+                    <th>Select</th>
+                    <th>Action</th>
+                </tr>
+                <tr v-for="book in books_out">
+                    <td><% book.title %></td>
+                    <td><% book.author %></td>
+                    <td><% book.publication_date %></td>
+                    <td><input type="checkbox" v-bind:value="book.id" v-model="checkin_list"></td>
+                    <td><button type="submit" v-bind:value="book.id" v-on:click="showHistory($event)">Show History</button></td>
+                </tr>
+            </table>
+            <button type="submit" :disabled=disableCheckIn v-on:click="submitCheckIn">Submit</button>
+        </div>
+
+        <div id="history" v-else-if="view==='history'">
+            <h1>Book History</h1>
+            <h2>History: <% history_title %></h2>
+            <div v-if="history.length > 0">
+                <table>
+                    <tr>
+                        <th>Check Outs</th>
+                        <th>User ID</th>
+                        <th>Check Ins</th>
+                    </tr>
+                    <tr v-for="item in history">
+                        <td><% item.check_outs %></td>
+                        <td><% item.user_id %></td>
+                        <td><% item.check_ins %></td>
+                    </tr>
+                </table>
+            </div>
+            <div v-else>
+                <h2><% history_title %></h2>
+                <p>No check-out history for this book.</p>
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            user_id: '',
+            view: 'check out',
+            books_in: [],
+            books_out: [],
+            history: [],
+            history_title: '',
+            checkout_list: [],
+            checkin_list: [],
+        },
+        delimiters: ["<%","%>"],
+        methods:{
+            refreshLibrary: function(){
+                let url = "{% url 'librarylab:getbookdata' %}";
+                $.ajax({method: "GET", url: url})
+                .done(function (data) {
+                    console.log(data);
+                    app.books_in = data.books_in;
+                    app.books_out = data.books_out;
+                })
+                .fail(function () {
+                    alert('Fail!');
+                })
+            },
+
+            showCheckOut: function(){
+                this.view = 'check out'
+            },
+
+            showCheckIn: function(){
+                this.view = 'check in'
+            },
+
+            submitCheckOut: function(){
+                let url = "{% url 'librarylab:submitcheckout' %}";
+                let csrf_token = Cookies.get('csrftoken');
+                console.log(this.checkout_list);
+                $.ajax({
+                    method: "POST",
+                    url: url,
+                    headers: {'X-CSRFToken': csrf_token},
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({checkout_list:app.checkout_list, user_id: app.user_id}),
+                    dataType: 'json'
+                }).done(function () {
+                    app.refreshLibrary();
+                }).fail(function () {
+                    alert('Fail!');
+                })
+            },
+
+            submitCheckIn: function(){
+                let url = "{% url 'librarylab:submitcheckin' %}";
+                let csrf_token = Cookies.get('csrftoken');
+                $.ajax({
+                    method: "POST",
+                    url: url,
+                    headers: {'X-CSRFToken': csrf_token},
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({checkin_list: app.checkin_list, user_id: app.user_id}),
+                    dataType: 'json'
+                }).done(function () {
+                    app.refreshLibrary();
+                }).fail(function () {
+                    alert('Fail!');
+                })
+            },
+
+            showHistory: function(event){
+                app.history = [];
+                app.history_title = '';
+                this.view = 'history';
+                let book_id = event.target.value;
+                console.log(book_id);
+                let url = "/librarylab/" + book_id + "/history";
+                $.ajax({method: "GET", url: url})
+                .done(function (data) {
+                    console.log(data);
+                    console.log(data.title);
+                    console.log(data.history);
+                    app.history = data.history;
+                    app.history_title = data.title;
+                    console.log(app.history);
+                })
+                .fail(function () {
+                    alert('Fail!');
+                })
+
+            }
+        },
+
+        computed: {
+            disableCheckOut: function (){
+                return this.user_id.length === 0 || this.checkout_list.length === 0;
+            },
+            disableCheckIn: function (){
+                return this.checkin_list.length === 0;
+            }
+        }
+
+    });
+
+    app.refreshLibrary();
+
+    // function http_post(url, data, success) {
+    //     let csrf_token = Cookies.get('csrftoken');
+    //     let xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function() {
+    //         if (this.readyState === 4 && this.status === 200) {
+    //             success(xhttp.responseText);
+    //         }
+    //     };
+    //     xhttp.open("POST", url);
+    //     xhttp.setRequestHeader("Content-Type", "application/json");
+    //     xhttp.setRequestHeader('X-CSRFToken', csrf_token);
+    //     xhttp.send(JSON.stringify(data));
+    // }
+    //
+    //
+    // function http_get(url, success) {
+    //     let xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function() {
+    //         if (this.readyState === 4 && this.status === 200) {
+    //             let data = JSON.parse(xhttp.responseText);
+    //             success(data);
+    //         }
+    //     };
+    //     xhttp.open("GET", url);
+    //     xhttp.send();
+    // }
+</script>
+</body>
+
+</html>
