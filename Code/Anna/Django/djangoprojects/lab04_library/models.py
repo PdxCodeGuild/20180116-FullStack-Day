@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # make migrations whenever models are changed - migrations update the database!
@@ -10,23 +11,17 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=200)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    pub_date = models.DateTimeField()
-    checked_out = models.BooleanField(default=False)
-
-    def checked_out(self):
-        return self.checked_out is True
+    title = models.CharField(max_length=200)  # title of book
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)  # fk because author can have multiple books
+    pub_date = models.DateTimeField()  # set once
+    checked_out = models.BooleanField(default=False)  # changed when user checks out
+    who_checked_out = models.ForeignKey(User, on_delete=models.SET_NULL)  # records user who checks out at the time
+    timestamp_out = models.DateTimeField()  # when checked out
+    timestamp_in = models.DateTimeField()  # when checked back in
 
     def __str__(self):
         return self.title
 
-
-class User(models.Model):
-    user = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.user
 
 # book: the book that the user checked out or checked in
 # user: a text field containing the name of the user that checked out or checked in the book
