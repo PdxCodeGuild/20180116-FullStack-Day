@@ -5,9 +5,9 @@
     <h3>Here are the current books available:</h3>
 
     <div class="collection">
-
-        <a href="#!" class="collection-item">Alvin</a>
-
+        {% for book in books %}
+        <a href="{% url 'lab04_library:detail' book.id %}" class="collection-item">{{book.title}} by {{book.author}}</a>
+        {% endfor %}
     </div>
 </div>
 
