@@ -1,0 +1,43 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<style>
+
+    #input_text{
+        width: 500px;
+        background-color: #c9fff5;
+        margin-left: 30px;
+        text-align: center;
+    }
+    #btn {
+        margin-left: 230px;
+    }
+
+    h1{
+        margin-left: 150px;
+    }
+    #text_display, #text_above{
+         margin-left: 230px;
+        font-size: 20px;
+
+    }
+    #arrow{
+        margin-left: 280px;
+        font-size: 40px;
+    }
+
+</style>
+<body>
+    <div>
+        <h1>URL Shortner</h1>
+        <form action="{% url 'urlapp:index' %}"  method="post">
+            {% csrf_token %}
+            <input id="input_text" type="text" placeholder="Enter URL here" name="url_text"/><br>
+            <button id="btn" class="waves-effect waves-light btn-large">submit</button>
+        </form>
+        {% if object_in_short_url.btn_selected %}
+            <div id="text_above">New URl Below</div>
+            <div id="arrow">↓</div>
+            <div id="text_display">http://localhost:8000/{{object_in_short_url.short_url}}</div>
+        {% endif %}
+    </div>
+</body>

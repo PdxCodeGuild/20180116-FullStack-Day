@@ -1,9 +1,10 @@
+
 from django.urls import path
 from . import views
 
+app_name = 'urlapp'
 
-app_name = 'todoapp'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('addtodo/', views.addtodo, name='addtodo')
+    path('<str:new_given_url>/', views.go_to_url, name='go_to_url'),
 ]
