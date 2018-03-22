@@ -1,0 +1,24 @@
+
+{%  extends 'contactsapp/base.html' %}
+{%  %}
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Age</th>
+        <th>Favorite Fruit</th>
+        <th>Favorite Name</th>
+        <th>Favorite Color</th>
+    </tr>
+    {% for contact in contacts %}
+    <tr>
+        <td>
+            <form action="{% url 'contactsapp:delete' %}"
+        </td>
+    </tr>
+
+
+
+</table>
