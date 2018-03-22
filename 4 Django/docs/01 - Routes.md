@@ -44,6 +44,6 @@ urlpatterns = [
 ]
 ```
 
-## Parameter Capture
+## Parameters in the Path
 
-See the [views.md](views.md/#Path_Parameters) file.
+See the [views.md](02%20-%20Views.md#path-parameters) file.

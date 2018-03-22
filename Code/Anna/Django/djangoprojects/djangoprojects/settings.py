@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'contactcbv.apps.ContactcbvConfig',
     'contactsapp.apps.ContactsappConfig',
+    'lab04_library.apps.Lab04LibraryConfig',
     'lab03_urlshortener.apps.Lab03UrlshortenerConfig',
     'lab02_todo.apps.Lab02TodoConfig',
     'lab01_polls.apps.Lab01PollsConfig',

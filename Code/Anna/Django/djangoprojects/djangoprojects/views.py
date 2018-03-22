@@ -11,6 +11,7 @@ def index(request):
             <li><a href="/polls">Polls App</a></li>
             <li><a href="/todo">ToDo App</a></li>
             <li><a href="/shorty">URL Shortener App</a></li>
+            <li><a href="/library">Library App</a></li>
             <li><a href="/contacts">Contacts App</li>
         </ul>
     </div>

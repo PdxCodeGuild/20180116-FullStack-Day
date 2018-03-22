@@ -1,0 +1,38 @@
+<h1>Shorten URL</h1>
+
+<h3>Input URL to shorten: </h3>
+
+<div>
+    <form action="{% url 'shorturl:saveurl' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" id="add_bt">submit</button>
+        <input name="save_url" type="text" size="175"/>
+    </form>
+</div>
+
+<h3>Go To Shortened URL:</h3>
+<div>
+    <form action="{% url 'shorturl:gotourl' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">submit</button>
+        <input name="goto_url" type="text" size="175"/>
+    </form>
+</div>
+
+<table id="url_table">
+    <tr>
+        <th>ID</th>
+        <th>Code</th>
+        <th>URL</th>
+    </tr>
+    {% for url in url_list %}
+    <tr>
+        <td>{{url.id}}</td>
+        <td>{{url.url_code}}</td>
+        <td>{{url.long_url}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+

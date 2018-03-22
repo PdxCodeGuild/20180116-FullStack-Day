@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>To-do List Status Report</title>
+  </head>
+  <body>
+    <h1>To-do list status report</h1>
+    <form method="post" action="{% url 'TodoList:add_todo' %}">
+        <input type="text" name="todo_text"/>
+        {% csrf_token %}
+        <button type="submit">SUBMIT</button>
+    </form>
+    {% for todo in uncompleted_todos %}
+
+        <form method="post" action="{% url 'TodoList:complete_todo' %}">
+            <h2>{{ todo.title }}</h2>
+            <input type="hidden" name="todo_id" value="{{ todo.id }}">
+            {% csrf_token %}
+            <button type="submit">Complete</button>
+        </form>
+
+    {% endfor %}
+
+    <h2>Completed</h2>
+    <ul>
+    {% for todo in completed_todos %}
+      <li>{{todo.title}}</li>
+    {% endfor %}
+    </ul>
+
+
+
+
+
+  </body>
+</html>

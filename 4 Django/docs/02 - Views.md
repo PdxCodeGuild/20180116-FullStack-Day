@@ -18,11 +18,11 @@ The request object received by the view contains lots of important information.
 
 ### Path Parameters
 
-Path parameters must be 'captured' in the regular expression of the path. These are called 'named capture groups'. These values then become parameters to the view.
+You can specify parameters in the path using a datatype (`int`, `str`) and a name. Those values will then be automatically taken out of the path and passed as parameters to the view function.
 
 ##### urls.py
 ```python
-from django.conf.urls import url
+from django.conf.urls import path
 from . import views
 app_name = 'todoapp'
 urlpatterns = [
