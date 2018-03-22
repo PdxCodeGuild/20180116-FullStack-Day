@@ -25,6 +25,7 @@
     - jackson.dh.reed@gmail.com
 - Justin Martin
     - jlmartin432@gmail.com
+    - https://github.com/jmartin432/capstone
 - Maggie Geise
     - magdalenegeise@gmail.com
 - Matthew Beck
