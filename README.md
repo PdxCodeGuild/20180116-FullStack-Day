@@ -18,6 +18,7 @@
 - Anna Spysz
     - anna@annaspysz.com
     - Capstone Proposal: https://github.com/PdxCodeGuild/20180116-FullStack-Day/tree/master/Code/Anna/Capstone/Capstone%20mockup%20and%20proposal
+    - Actual repo will be here: https://github.com/bildungsroman/ifandonlyif.io
 - Brianna Harris
     - bkharris77@gmail.com
 - Eric Talbot
