@@ -13,7 +13,9 @@ def index(request):
             <li><a href="/shorty">URL Shortener App</a></li>
             <li><a href="/library">Library App</a></li>
             <li><a href="/contacts">Contacts App</li>
+            <li><a href="/userapp">User App</li>
         </ul>
+        <a href="/admin" class="btn btn-primary">Admin Panel</a>
     </div>
     </div>
         ''')
