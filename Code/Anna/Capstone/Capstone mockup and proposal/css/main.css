@@ -417,9 +417,23 @@ textarea {
     z-index: 500;
 }
 
+.fade {
+    opacity: .5;
+}
 
+.profile-pic {
+    max-width: 45px;
+}
 
-
+.iff-cont {
+    margin: 0 auto;
+    max-width: 80%;
+    min-height: 60%;
+    padding: 20px;
+    transform: translateZ(0);
+    color: #222;
+    z-index: 500;
+}
 
 
 
