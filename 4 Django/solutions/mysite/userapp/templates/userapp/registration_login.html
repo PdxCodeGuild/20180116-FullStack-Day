@@ -1,0 +1,48 @@
+
+
+
+
+{% if message %}
+<span style="background-color:green;color:white;font-size:40px">{{message}}</span>
+{% endif %}
+
+
+
+
+<h2>Login</h2>
+<form action="{% url 'userapp:login' %}?next={{next}}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="user name"/>
+    <input type="password" name="password" placeholder="password"/>
+    <button type="submit">login</button>
+</form>
+
+
+<h2>Register</h2>
+<form id="myform" action="{% url 'userapp:register' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="user name"/>
+    <input type="text" name="email" placeholder="email"/>
+    <input id="password_input1" type="password" name="password" placeholder="password"/>
+    <input id="password_input2" type="password" placeholder="re-type password"/>
+    <button type="submit" id="register_bt">register</button>
+</form>
+
+
+<script>
+
+    let register_bt = document.querySelector('#register_bt');
+    let password_input1 = document.querySelector('#password_input1');
+    let password_input2 = document.querySelector('#password_input2');
+    register_bt.onclick = function(evt) {
+        if (password_input1.value !== password_input2.value) {
+            alert('Your passwords don\'t match!');
+            return false;
+        }
+    }
+</script>
+
+
+
+
+

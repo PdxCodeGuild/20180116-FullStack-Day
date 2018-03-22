@@ -5,9 +5,13 @@
 
 - Create a site/project: `django-admin startproject <site/project name>`
 - Move into the site's directory: `cd <site/project name>`
+- Run migrations to create the database and user system `python manage.py migrate`
+- Create an admin account with `python manage.py createsuperuser`, and enter a username, email address, and password
+
+## Create an App
+
 - Create an app: `python manage.py startapp <app-name>`
 - Add your app (`appname.apps.AppnameConfig`) to the `INSTALLED_APPS` in `settings.py`
-
 
 ## Create a View
 
@@ -50,9 +54,8 @@ At this point, you should run the server (`python manage.py runserver`) and go t
 - (optional) View the SQL commands that will occur during migrations: `python manage.py sqlmigrate <appname> <migration number>`. You can find the migration number and the code that'll be executed during the migration in `<appname>/migrations/<migration number>_initial.py`
 - Perform migrations (synchronize your models with your database): `python manage.py migrate`
 
-## Set Up Admin Interface
+## Add the Model to the Admin Panel
 
-- Create an admin account with `python manage.py createsuperuser`, and enter a username, email address, and password
 - Add a `def __str__(self):` to your model so the admin interface knows how to display it.
 - Make your app visible in the admin panel by registering your models with our app's `admin.py`
 

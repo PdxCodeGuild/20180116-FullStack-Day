@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'userapp.apps.UserappConfig',
+    'contactcbv.apps.ContactcbvConfig',
+    'contactsapp.apps.ContactsappConfig',
+    'todoapp.apps.TodoappConfig',
+    'todoajax.apps.TodoajaxConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,3 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/userapp/registration_login/?redirect'
+

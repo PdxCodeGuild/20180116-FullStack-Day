@@ -1,0 +1,77 @@
+
+<h1>Todos</h1>
+
+
+
+<form action="{% url 'todoapp:savetodo' %}" method="post">
+    {% csrf_token %}
+    <input name="todo_text" type="text"/>
+    <button type="submit">add</button>
+</form>
+
+
+<form action="{% url 'todoapp:completetodo' %}" method="post" id="myform">
+{% csrf_token %}
+<table>
+    {% for todo in todos %}
+    <tr>
+        <td>{{todo.text}}</td>
+        <td>
+
+            <!--complete by posting (data will be in the body of the request-->
+            <!--<form action="{% url 'todoapp:completetodo' %}" method="post">-->
+                <!--{% csrf_token %}-->
+                <!--<input type="hidden" name="todo_id" value="{{todo.id}}"/>-->
+                <!--<button>✓</button>-->
+            <!--</form>-->
+
+            <!--complete by passing a parameter in the query string-->
+            <!--<button type="submit" formaction="{% url 'todoapp:completetodoq' %}?todo_id={{todo.id}}">✓</button>-->
+
+            <!--complete by passing a parameter in the path-->
+            <!--<button type="submit" formaction="{% url 'todoapp:completetodop' todo.id %}">✓</button>-->
+
+            <input data-todo_id="{{todo.id}}" class="cb" type="checkbox"/>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+    let cbs = document.querySelectorAll('.cb');
+    for (let i=0; i<cbs.length; ++i) {
+        cbs[i].onchange = function() {
+            let todo_id = this.dataset.todo_id;
+            // let myform = document.querySelector('#myform');
+
+            // let hi = document.createElement('input');
+            // hi.setAttribute('type', 'hidden');
+            // hi.setAttribute('name', 'todo_id');
+            // hi.setAttribute('value', todo_id);
+            // myform.appendChild(hi);
+            // myform.submit();
+
+
+            // we can also do this by changing the location
+            window.location = "{% url 'todoapp:completetodoq' %}?todo_id=" + todo_id;
+        }
+    }
+</script>
+
+</form>
+
+<ul style="text-decoration:line-through">
+    {% for todo in todos_completed %}
+    <li>{{todo.text}}</li>
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+
+
+

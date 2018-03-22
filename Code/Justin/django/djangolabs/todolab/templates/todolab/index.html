@@ -1,0 +1,65 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'todolab/style.css' %}" />
+
+
+
+<h1>To-Do List</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'todolab:create' %}" method="post">
+{% csrf_token %}
+{% if uncompleted_list %}
+    <table>
+        <tr>
+            <th class="item">Item</th>
+            <th class="date">Due Date</th>
+            <th>Action</th>
+        </tr>
+    {% for item in uncompleted_list %}
+        <tr>
+            <td class="item">{{ item.item_text }}</td>
+            <td class="date">{{ item.due_date }}</td>
+            <td><input id="details-{{ item.id }}" class="button details_bt" type="submit" value="" formaction="{% url 'todolab:details'  item.id %}"/>
+                <input id="complete-{{ item.id }}" class="button complete_bt" type="submit" value="" formaction="{% url 'todolab:complete'  item.id %}"/>
+                <input id="delete-{{ item.id }}" class="button delete_bt" type="submit" value="" formaction="{% url 'todolab:delete' item.id %}?redirect=index"/>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>Nothing to do but chill.... </p>
+{% endif %}
+    <a href="{% url 'todolab:create' %}">
+        <img class="button add_bt" src="{% static 'todolab/images/add.png' %}">
+    </a>
+
+<h1>Recently Completed</h1>
+{% if completed_list %}
+    <table>
+        <tr>
+            <th>Item</th>
+            <th class="date">Due Date</th>
+            <th class="date">Completed Date</th>
+            <th>Action</th>
+        </tr>
+    {% for item in completed_list %}
+        <tr>
+            <td class="item">{{ item.item_text }}</td>
+            <td class="date">{{ item.due_date }}</td>
+            <td class="date">{{ item.completed_date }}</td>
+            <td><input id="delete-{{ item.id }}" class="button delete_bt" type="submit" value="" formaction="{% url 'todolab:delete' item.id %}?redirect=index"/></td>
+        </tr>
+    {% endfor %}
+    </table>
+    <a href="{% url 'todolab:completed' %}">
+        <img class="button list_bt" src="{% static 'todolab/images/list.png' %}">
+    </a>
+{% else %}
+    <p>Get to work buddy! </p>
+{% endif %}
+
+
+
+</form>
