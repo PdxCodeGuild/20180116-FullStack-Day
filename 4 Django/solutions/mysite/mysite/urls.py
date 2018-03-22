@@ -7,5 +7,7 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('todos/', include('todoapp.urls')),
     path('todosajax/', include('todoajax.urls')),
-    path('contacts/', include('contactsapp.urls'))
+    path('contacts/', include('contactsapp.urls')),
+    path('contactcbv/', include('contactcbv.urls')),
+    path('userapp/', include('userapp.urls')),
 ]
