@@ -4,7 +4,7 @@
 Currently unknown
 
 ## Project Overview
-My web application will have tools with insightful tools for making cryptocurrency decisions, as well as yearly, monthly, weekly, daily, and hourly charts.  Maybe even down to the millisecond.
+My web application will have insightful tools for making cryptocurrency decisions, as well as yearly, monthly, weekly, daily, and hourly charts.  Maybe even down to the millisecond.
 
 I will be using Bitcoin and Ethereum as the main examples for this document.
 
