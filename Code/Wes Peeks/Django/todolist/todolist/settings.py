@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'uriel.apps.UrielConfig',
     'todos.apps.TodosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
