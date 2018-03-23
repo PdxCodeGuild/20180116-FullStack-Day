@@ -1,9 +1,10 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 
 from django.contrib.auth import logout, authenticate, login
-from django.contrib.auth.models import User, Group, Permission
+from django.contrib.auth.models import User, Group
 # from django.contrib.auth.decorators import login_required
+from datetime import datetime
 
 from .models import Author, Book
 
@@ -58,4 +59,16 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('lab04_library:index')+'?logout')
-    #return redirect(reverse('userapp:registration_login')+'?logout=true')
+    # return redirect(reverse('userapp:registration_login')+'?logout=true')
+
+
+def checkin_book(request):
+    Book.checked_out = False
+    Book.timestamp_in = datetime.now()
+    return HttpResponseRedirect(reverse('lab04_library:index') + '?checked_in')
+
+def checkout_book(request):
+    Book.checked_out = True
+    Book.timestamp_out = datetime.now()
+    Book.who_checked_out = request.user.is_authenticated
+    return HttpResponseRedirect(reverse('lab04_library:index') + '?checked_out')
