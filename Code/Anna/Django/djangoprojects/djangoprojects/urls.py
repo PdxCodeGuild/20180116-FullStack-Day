@@ -19,6 +19,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('userapp/', include('userapp.urls')),
     path('contactcbv/', include('contactcbv.urls')),
     path('contacts/', include('contactsapp.urls')),
     path('library/', include('lab04_library.urls')),

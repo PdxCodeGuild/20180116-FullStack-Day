@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,700,700i,800');
+
+/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to bottom right, rgba(225,190,231,.4), rgba(178,235,242,.4));
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.main-color {
+    background-color: #222 !important;
+    color: white;
+}
+.main-cont {
+    height: 80vh;
+}
+
+.main-cont h1 {
+    font-size: 5vw;
+}
+
+.underline-span {
+    border-bottom: 2px black solid;
+}
+
+.iff {
+    font-weight: bold;
+}
+
+.light-text {
+    font-weight: lighter;
+}
+
+
+/* navbar */
+.nav-wrapper a {
+    color: #222;
+}
+.scrolled {
+    background-color: rgba(255,255,255,.9) !important;
+    transition: background-color 500ms linear;
+}
+
+/* changing text */
+#change-text-1:after {
+    content:"do a thing I want";
+    animation: change-text-1 25s ease-in 1;
+}
+#change-text-2:after {
+    content:"do the thing(s) I need";
+    animation: change-text-2 25s ease-in 1;
+}
+@keyframes change-text-1 {
+  0% { content:"watch Netflix"; }
+  10% { content:"go to happy hour"; }
+  20% { content:"see a movie"; }
+  30% { content:"take a nap"; }
+  40% { content:"play Xbox"; }
+  50% { content: "read fan fiction"; }
+  60% { content: "play PUBG"; }
+  70% { content: "go to the park"; }
+  80% { content: "take a road trip"; }
+  90% { content: "smell the roses"; }
+}
+@keyframes change-text-2 {
+  0% { content:"go to the gym"; }
+  10% { content:"clean the garage"; }
+  20% { content:"reply to all my emails"; }
+  30% { content:"get the oil changed"; }
+  40% { content:"exercise for 30 minutes"; }
+  50% { content: "feed the cats"; }
+  60% { content: "finish tonight's homework"; }
+  70% { content: "deploy my web app"; }
+  80% { content: "sell the house"; }
+  90% { content: "write some lists"; }
+}
+#blink {
+    animation: blinkAnimation 2s ease-in-out 25s 1;
+}
+@keyframes blinkAnimation { /* flame pulses */
+  0%   { opacity:1; }
+  20%  { opacity:.2; }
+  100% { opacity:1; }
+}
+
+/* get started button */
+.start-btn {
+    color: #222;
+    text-decoration: none;
+    background: none;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s ease all;
+}
+.start-btn:hover {
+    color: #FFF;
+}
+.start-btn:focus {
+    color: #FFF;
+}
+
+.start-btn {
+    font-size: 2vw;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 23vw;
+    font-weight: bold;
+    padding: 14px 0px;
+    border: 3px solid #222;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 35px;
+}
+.start-btn:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #222;
+    z-index: -2;
+}
+.start-btn:hover:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+.start-btn:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+/* sign-up box */
+.signup-cont {
+    margin: 0 auto;
+    max-width: 50%;
+    min-height: 60%;
+    padding: 20px;
+    transform: translateZ(0);
+    text-align: center;
+    color: #222;
+    z-index: 500;
+}
+.form-footer {
+    margin-top: 2em;
+}
+
+.ui-input {
+    position: relative;
+    padding: 0;
+    border: 0;
+}
+
+.ui-input input {
+    border: 0;
+    background: none;
+    padding: 16px 0 16px 0;
+    font-size: 24px;
+    outline: 0;
+    width: 100%;
+    tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-callout: none;
+}
+
+.ui-input input + label {
+    position: relative;
+    display: block;
+    padding: 8px 0 8px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .0875em;
+    font-weight: 500;
+    text-align: left;
+}
+.ui-input input + label::before, .ui-input input + label::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+}
+.ui-input input + label::before {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.ui-input input + label::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    background-color: #6EB1FF;
+    height: 2px;
+}
+.ui-input input + label span {
+    position: relative;
+    color: rgba(255, 255, 255, 0.2);
+    transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.ui-input input + label span::after {
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    transform: scaleX(1);
+    white-space: nowrap;
+    color: #fff;
+    background-image: linear-gradient(to right, #4A90E2 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: 100% 50%;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translateZ(0);
+    transition: background-position 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.ui-input input:focus + label::after,
+.ui-input input.error + label::after,
+.ui-input input:invalid + label::after,
+.ui-input input.filled + label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.ui-input input:focus + label span::after,
+.ui-input input.error + label span::after,
+.ui-input input:invalid + label span::after,
+.ui-input input.filled + label span::after {
+    background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: 0% 50%;
+}
+
+.ui-input input.filled {
+    color: #ffffff;
+}
+.ui-input input.filled + label::after {
+    background-color: #ffffff;
+}
+.ui-input input.filled + label span::after {
+    background-image: linear-gradient(to right, #ffffff 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: 0% 50%;
+}
+
+.ui-input input:focus {
+    color: #6EB1FF;
+}
+.ui-input input:focus + label::after {
+    background-color: #6EB1FF;
+}
+.ui-input input:focus + label span::after {
+    background-image: linear-gradient(to right, #6EB1FF 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: 0% 50%;
+}
+
+.ui-input input.error,
+.ui-input input:invalid {
+    color: #E66161;
+}
+.ui-input input.error + label::after,
+.ui-input input:invalid + label::after {
+    background-color: #E66161;
+}
+.ui-input input.error + label span::after,
+.ui-input input:invalid + label span::after {
+    background-image: linear-gradient(to right, #E66161 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: 0% 50%;
+}
+
+.__first, .__second, .__third, .__fourth {
+    animation-name: fadeIn;
+    animation-duration: 180ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+}
+
+.__first {
+    animation-delay: 0ms;
+}
+
+.__second {
+    animation-delay: 80ms;
+}
+
+.__third {
+    animation-delay: 180ms;
+}
+
+.__fourth {
+    animation-delay: 360ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* IFF Task box */
+.task-cont {
+    margin: 0 auto;
+    max-width: 80%;
+    min-height: 60%;
+    padding: 20px;
+    transform: translateZ(0);
+    text-align: center;
+    color: #222;
+    z-index: 500;
+}
+
+.fade {
+    opacity: .5;
+}
+
+.profile-pic {
+    max-width: 45px;
+}
+
+.iff-cont {
+    margin: 0 auto;
+    max-width: 80%;
+    min-height: 60%;
+    padding: 20px;
+    transform: translateZ(0);
+    color: #222;
+    z-index: 500;
+}
+
+
+
+.page-footer a {
+    color: whitesmoke;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
