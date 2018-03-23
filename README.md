@@ -29,6 +29,7 @@
     - https://github.com/jmartin432/capstone
 - Maggie Geise
     - magdalenegeise@gmail.com
+    - https://github.com/vaelentine/FiddleHead
 - Matthew Beck
     - mbeck410@gmail.com
 - Michael Miley
