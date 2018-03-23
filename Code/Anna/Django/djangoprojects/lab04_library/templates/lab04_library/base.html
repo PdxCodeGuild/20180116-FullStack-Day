@@ -14,12 +14,14 @@
 <body>
     <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper green lighten-2">
+        <div class="nav-wrapper green lighten-1">
           <div class="container">
-            <a href="#" class="brand-logo">Django Library</a>
+            <a href="{% url 'lab04_library:index' %}" class="brand-logo">Django Library</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{% url 'lab04_library:register' %}">Register</a></li>
-                <li><a href="{% url 'lab04_library:login' %}">Sign in</a></li>
+                <li><a class="modal-trigger" href="#modal1">Register</a></li>
+                <li><a class="modal-trigger" href="#modal2">Sign in</a></li>
+                <!--<li><a class="modal-trigger" href="{% url 'lab04_library:register' %}">Register</a></li>-->
+                <!--<li><a class="modal-trigger" href="{% url 'lab04_library:login' %}">Sign in</a></li>-->
             </ul>
         </div>
         </div>
@@ -29,6 +31,31 @@
         {% block content %}{% endblock %}
     </div>
 
+    <!-- Login modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Register</h4>
+             <form id="myform" action="{% url 'lab04_library:register' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="user name"/>
+                <input type="text" name="email" placeholder="email"/>
+                <input id="password_input1" type="password" name="password" placeholder="password"/>
+                <input id="password_input2" type="password" placeholder="re-type password"/>
+                <button class="btn green lighten-1" type="submit" id="register_bt">register</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Log In</h4>
+            <form action="{% url 'lab04_library:login' %}?next={{next}}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="user name"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button class="btn green lighten-1" type="submit">login</button>
+            </form>
+        </div>
+    </div>
     <!-- Compiled and minified JavaScript -->
     <script src="{% static '/lab04_library/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static '/lab04_library/js/materialize.js' %}"></script>

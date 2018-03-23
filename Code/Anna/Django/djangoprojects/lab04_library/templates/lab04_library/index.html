@@ -6,7 +6,7 @@
 
     <div class="collection">
         {% for book in books %}
-        <a href="{% url 'lab04_library:detail' book.id %}" class="collection-item">{{book.title}} by {{book.author}}</a>
+        <a href="{% url 'lab04_library:detail' book.id %}" class="collection-item main-green">{{book.title}} by {{book.author}}</a>
         {% endfor %}
     </div>
 </div>
