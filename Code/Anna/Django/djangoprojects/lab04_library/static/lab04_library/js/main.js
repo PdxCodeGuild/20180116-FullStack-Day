@@ -1,8 +1,8 @@
 $(document).ready(function() {
     Materialize.updateTextFields();
     $('select').material_select();
+    $('.modal').modal();
 });
-
 
 let register_bt = document.querySelector('#register_bt');
 let password_input1 = document.querySelector('#password_input1');

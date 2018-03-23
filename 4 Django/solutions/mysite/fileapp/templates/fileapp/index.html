@@ -1,0 +1,29 @@
+
+
+
+
+<form action="{% url 'fileapp:index' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="name"/>
+    <input type="file" name="image" accept="image/*" required id="file_upload"/>
+    <button type="submit" id="bt_upload">upload</button>
+</form>
+
+
+<ul>
+    {% for image in images %}
+    <li><a href="{{image.image.url}}">{{image.name}}</a></li>
+    {% endfor %}
+</ul>
+
+
+<script>
+    let bt_upload = document.querySelector('#bt_upload');
+    let file_upload = document.querySelector('#file_upload');
+    bt_upload.onclick = function() {
+        if (file_upload.files[0].size > 100000) {
+            alert('that cat is too big');
+            return false;
+        }
+    }
+</script>

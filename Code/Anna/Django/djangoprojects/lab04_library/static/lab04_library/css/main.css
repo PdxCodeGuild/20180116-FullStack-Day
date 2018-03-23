@@ -2,20 +2,8 @@ html, body {
     height: 100%;
 }
 
-.header {
-    position: relative;
-    top: 0;
-    width: 100%;
-    min-height: 20vh;
-    background-color: #a5d6a7;
-    color: white;
-    margin-top: -40px;
-    padding: 10vm;
-    margin-bottom: 10vh;
-}
-
-.header h1 {
-    padding-top: 10vh;
+.main-green {
+    color: #66bb6a !important;
 }
 
 /* materialize label focus color */
