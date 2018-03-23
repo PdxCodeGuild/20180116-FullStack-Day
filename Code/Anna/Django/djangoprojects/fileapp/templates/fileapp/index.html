@@ -3,20 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Image App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .sidebar {
+            background-color: #222;
+            color: white;
+            width: 25vw;
+            height: 100%;
+            position: fixed;
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding: 40px;
+        }
+        .main {
+            margin-left: 25vw; /* Same as the width of the sidebar */
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <form action="{% url 'fileapp:index' %}" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="text" name="name" placeholder="Image Name">
-            <input type="file" name="image" accept="image/*" required>
-            <button type="submit">Upload image</button>
-        </form>
-    <hr>
-    {% for image in images %}
-        <li><a href="{{image.image.url}}"> {{image.name}}</a></li>
-        <img src="{{image.image.url}}" alt="{{image.name}}">
-    {% endfor %}
+    <div class="sidebar">
+        <h1 class="text-center">Add a cat!</h1>
+      <form action="{% url 'fileapp:index' %}" method="POST" enctype="multipart/form-data">
+        <div class="form-group row">
+            <input class="col-sm-6 col-form-label col-form-label-sm" type="text" id="name" name="name" placeholder="Image name">
+          <label for="name" class="col-sm-6 col-form-label">Image name</label>
+        </div>
+      <div class="form-group row">
+          <input class="form-control-file btn" type="file" name="image" accept="image/*" required>
+        </div>
+        <div class="form-group row">
+          <button class="btn btn-secondary" type="submit">Upload image</button>
+        </div>
+      </form>
     </div>
+    <div class="main">
+        <div class="row">
+        {% for image in images %}
+            <div class="col-4">
+                <li><a href="{{image.image.url}}"> {{image.name}}</a></li>
+                <img class="img-fluid" src="{{image.image.url}}" alt="{{image.name}}">
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- limit image size script! -->
+    <script>
+        let bt_upload = document.querySelector('#bt_upload');
+        let file_upload = document.querySelector('#file_upload');
+        bt_upload.onclick = function() {
+            if (file_upload.files[0].size > 100000) {
+                alert('that cat is too big');
+                return false;
+            }
+        }
+    </script>
+
 </body>
 </html>
