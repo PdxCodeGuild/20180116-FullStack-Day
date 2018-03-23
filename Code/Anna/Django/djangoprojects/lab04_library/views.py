@@ -62,13 +62,19 @@ def logout_view(request):
     # return redirect(reverse('userapp:registration_login')+'?logout=true')
 
 
-def checkin_book(request):
-    Book.checked_out = False
-    Book.timestamp_in = datetime.now()
+def checkin_book(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    book.checked_out = False
+    book.timestamp_in = datetime.now()
+    book.who_checked_out = None
+    book.save()
     return HttpResponseRedirect(reverse('lab04_library:index') + '?checked_in')
 
-def checkout_book(request):
-    Book.checked_out = True
-    Book.timestamp_out = datetime.now()
-    Book.who_checked_out = request.user.is_authenticated
+
+def checkout_book(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    book.checked_out = True
+    book.timestamp_out = datetime.now()
+    book.who_checked_out = request.user
+    book.save()
     return HttpResponseRedirect(reverse('lab04_library:index') + '?checked_out')

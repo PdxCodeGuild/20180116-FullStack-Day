@@ -40,7 +40,7 @@
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">No, take me back</a>
-        <a href="{% url 'lab04_library:checkin_book' %}" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+        <a href="{% url 'lab04_library:checkin_book' book.id %}" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
     </div>
 </div>
 <div id="modal_checkout" class="modal">
@@ -50,7 +50,7 @@
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">No, take me back</a>
-        <a href="{% url 'lab04_library:checkout_book' %}" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+        <a href="{% url 'lab04_library:checkout_book' book.id %}" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
     </div>
 </div>
 {% endblock %}
