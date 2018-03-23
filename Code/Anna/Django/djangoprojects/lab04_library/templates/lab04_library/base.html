@@ -18,10 +18,14 @@
           <div class="container">
             <a href="{% url 'lab04_library:index' %}" class="brand-logo">Django Library</a>
             <ul class="right hide-on-med-and-down">
+                {% if not request.user.is_authenticated %}
                 <li><a class="modal-trigger" href="#modal1">Register</a></li>
-                <li><a class="modal-trigger" href="#modal2">Sign in</a></li>
-                <!--<li><a class="modal-trigger" href="{% url 'lab04_library:register' %}">Register</a></li>-->
-                <!--<li><a class="modal-trigger" href="{% url 'lab04_library:login' %}">Sign in</a></li>-->
+                <li><a class="modal-trigger" href="#modal2">Log in</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li><a class="modal-trigger" href="">Welcome, {{user.username}}</a></li>
+                <li><a class="modal-trigger" href="{% url 'lab04_library:logout' %}">Log out</a></li>
+                {% endif %}
             </ul>
         </div>
         </div>
@@ -48,7 +52,7 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <h4>Log In</h4>
-            <form action="{% url 'lab04_library:login' %}?next={{next}}" method="post">
+            <form action="{% url 'lab04_library:login' %}" method="post">
                 {% csrf_token %}
                 <input type="text" name="username" placeholder="user name"/>
                 <input type="password" name="password" placeholder="password"/>
