@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-    <h1>Create Note</h1>
+    <h1>Create note</h1>
         <form class="form-group" id="container" action="{% url 'todolist:createnote' %}" method="post">
             {% csrf_token %}
             <input class="form-control" type="hidden" value="{{note.id}}" name="note_id" />
@@ -21,7 +21,7 @@
             <label for="note_body_input">Body</label>
             <textarea class="form-control" id="note_body_input" name="note_body">{{note.body}}</textarea>
             <br/>
-            <button class="btn btn-secondary" type="submit">Create Note</button>
+            <button class="btn btn-secondary" type="submit">Create note</button>
         </form>
     </div>
 
