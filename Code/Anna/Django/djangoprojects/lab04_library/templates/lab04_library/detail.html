@@ -1,0 +1,25 @@
+{% extends 'lab04_library/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="col s12">
+        <h2 class="header">{{book.title}}</h2>
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img class="responsive-img" src="{% static '/lab04_library/img/book.png' %}">
+                </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <h5>Author: <em>{{book.author}}</em></h5>
+                    <h5>Publication Date: <em>{{book.pub_date}}</em></h5>
+                    <h5>Checked out? <em>{{checkedout}}</em></h5>
+                </div>
+            <div class="card-action">
+              <a href="#!">Check Out</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <a class="waves-effect waves-light btn green lighten-1" href="{% url 'lab04_library:index' %}">Back to the main page</a>
+</div>
+{% endblock %}

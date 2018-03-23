@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image App</title>
+</head>
+<body>
+    <div class="container">
+        <form action="{% url 'fileapp:index' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Image Name">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload image</button>
+        </form>
+    <hr>
+    {% for image in images %}
+        <li><a href="{{image.image.url}}"> {{image.name}}</a></li>
+        <img src="{{image.image.url}}" alt="{{image.name}}">
+    {% endfor %}
+    </div>
+</body>
+</html>

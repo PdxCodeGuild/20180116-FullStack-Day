@@ -1,0 +1,65 @@
+{% load static %}
+{% load material_form %}
+<!-- can't comment out django stuff! -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Library</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static '/lab04_library/css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static '/lab04_library/css/main.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper green lighten-1">
+          <div class="container">
+            <a href="{% url 'lab04_library:index' %}" class="brand-logo">Django Library</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="modal-trigger" href="#modal1">Register</a></li>
+                <li><a class="modal-trigger" href="#modal2">Sign in</a></li>
+                <!--<li><a class="modal-trigger" href="{% url 'lab04_library:register' %}">Register</a></li>-->
+                <!--<li><a class="modal-trigger" href="{% url 'lab04_library:login' %}">Sign in</a></li>-->
+            </ul>
+        </div>
+        </div>
+    </nav>
+    </div>
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Login modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Register</h4>
+             <form id="myform" action="{% url 'lab04_library:register' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="user name"/>
+                <input type="text" name="email" placeholder="email"/>
+                <input id="password_input1" type="password" name="password" placeholder="password"/>
+                <input id="password_input2" type="password" placeholder="re-type password"/>
+                <button class="btn green lighten-1" type="submit" id="register_bt">register</button>
+            </form>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Log In</h4>
+            <form action="{% url 'lab04_library:login' %}?next={{next}}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="user name"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button class="btn green lighten-1" type="submit">login</button>
+            </form>
+        </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="{% static '/lab04_library/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/lab04_library/js/materialize.js' %}"></script>
+    <script src="{% static '/lab04_library/js/main.js' %}"></script>
+
+</body>
+</html>

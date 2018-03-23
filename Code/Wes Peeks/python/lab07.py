@@ -1,32 +1,36 @@
-import random
+from random import randint
 
-choice = ['rock', 'paper', 'scissors']
+# Setting game options
+throw_item =['Rock', 'Paper', 'Scissors']
 
-player = input("Choose: Rock, Paper, or Scissors?\n:")
+#assign a random throw to computer player
+computer = throw_item[randint(0,2)]
 
-comp = random.choice(choice)
+#Setting player start
+player = False
 
-while player not in choice:
-    player = input("Choose: Rock, Paper, or Scissors?\n:")
-
-# Rock
-if player == 'rock' and comp == 'rock':
-    print(comp + ', Rock Fight! Play again')
-elif comp == 'paper':
-    print(comp + ', Computer wins!')
-elif comp == 'scissors':
-    print(comp + ', Sparkly Vampire. Player wins.')
-# Paper
-elif player == 'paper' and comp == 'rock':
-    print(comp + ', Paper Blankey! Player wins.')
-elif comp == 'paper':
-    print(comp + ', Paper cut. Choose again')
-elif comp == 'scissors':
-    print(comp + ', Comp wins!')
-# Scissors
-elif player == 'scissors' and comp == 'rock':
-    print(comp + ', Comp wins! Bent Metal.')
-elif comp == 'paper':
-    print(comp + ', Player wins. Paper confetti.')
-elif comp == 'scissors':
-    print(comp + ', Scissor fight.')
+while player == False:
+    #conditions for true
+    player = input('Rock, Paper, or Scissors?')
+    if player == computer:
+        print("Tie")
+    elif player == 'Rock':
+        if computer == 'Paper':
+            print('You lose', computer, 'covers', player)
+        else:
+            print("You win!", player, 'crushes', computer)
+    elif player == 'Paper':
+        if computer == 'Scissors':
+            print('You lose', computer, 'cuts', player)
+        else:
+            print('You win', player, 'covers', computer)
+    elif player == 'Scissors':
+        if computer == 'Rock':
+            print('You lose', computer, 'breaks', player)
+        else:
+            print('You win', player,'cuts', computer)
+    else:
+        print('That\'s not a throw. Please pick one.')
+        #setting up the False for player to continue game
+    player = False
+    computer = throw_item[randint(0,2)]
