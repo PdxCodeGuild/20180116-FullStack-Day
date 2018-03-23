@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'fileapp.apps.FileappConfig',
     'userapp.apps.UserappConfig',
     'contactcbv.apps.ContactcbvConfig',
     'contactsapp.apps.ContactsappConfig',
@@ -126,4 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/userapp/registration_login/?redirect'
+
+MEDIA_URL = '/uploaded_files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
+
 
