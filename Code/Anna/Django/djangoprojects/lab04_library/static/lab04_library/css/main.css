@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+.main-green {
+    color: #66bb6a !important;
+}
+
+/* materialize label focus color */
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #a5d6a7 !important;
+}
+/* materialize label underline focus color */
+.input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #a5d6a7 !important;
+    box-shadow: 0 1px 0 0 #a5d6a7 !important;
+    color: #a5d6a7 !important;
+}

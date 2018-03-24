@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Note Detail</h1>
+        <h1>Note detail</h1>
         <form id="container" action="{% url 'todolist:savenote' %}" method="post">
             {% csrf_token %}
             <input class="form-control" type="hidden" value="{{note.id}}" name="note_id" />
