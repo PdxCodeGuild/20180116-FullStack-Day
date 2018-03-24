@@ -43,6 +43,7 @@
     - scotttgregg@gmail.com
 - Sergio Blue
     - sergiobluez@gmail.com
+    - Capstone: https://github.com/b1oo/super-dope-app-name/
 - Wes Peeks
     - wwpeeks@gmail.com
 - William Adkins
