@@ -1,6 +1,28 @@
-<h1>TODO App</h1>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+Todos:
+<form action="{% url 'todoapp:addtodo' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="todo_text"/>
+    <button type="submit">add todo</button>
+</form>
+<p>Todos</p>
 <ul>
-{% for item in all_todo_items %}
-    <li>{{ item.description_text }}</li>
-{% endfor %}
+    {% for todo_item in to_complete_items %}
+    <form action="{% url 'todoapp:mark_complete' %}" method="post">
+        {% csrf_token %}
+        <li>{{ todo_item.description_text }} {{ todo_item.date_created }}
+            <input type="hidden" name="todo_id" value="{{ todo_item.id }}"/>
+    <button type="submit">Complete</button>
+    </li>
+    </form>
+    {% endfor %}
+</ul>
+<p>Completed</p>
+<ul>
+    {% for todo_item in completed_items %}
+    <li>{{ todo_item.description_text }} {{ todo_item.date_completed }}</li>
+    {% endfor %}
 </ul>

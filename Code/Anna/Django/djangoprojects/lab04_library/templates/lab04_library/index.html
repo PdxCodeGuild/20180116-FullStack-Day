@@ -1,0 +1,25 @@
+{% extends 'lab04_library/base.html' %}
+{% block content %}
+<div class="container">
+    <h1 class="center-align">Welcome to the Django Library!</h1>
+    {% if request.user.is_authenticated %}
+        {% if user_books %}
+        <h4>Here the books you have currently checked out:</h4>
+        <div class="collection">
+            {% for book in user_books %}
+            <a href="{% url 'lab04_library:detail' book.id %}" class="collection-item main-green">{{book.title}} by {{book.author}}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endif %}
+    <h4>Here are the current books available:</h4>
+    <div class="collection">
+        {% for book in books %}
+            {% if book.checked_out is False %}
+            <a href="{% url 'lab04_library:detail' book.id %}" class="collection-item main-green">{{book.title}} by {{book.author}}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

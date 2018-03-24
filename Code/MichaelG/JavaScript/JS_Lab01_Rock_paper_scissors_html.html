@@ -31,74 +31,75 @@
             <!--</div>-->
         </div>
     </div>
-    <script>
-        // wins, ties and losses counter.
-        w=1;
-        t=1;
-        l=1;
-        // variables.
-        let opponent_choice = ['rock', 'paper', 'scissors'];
-        let outcome_txt = document.getElementById("outcome");
-        let win_count = document.getElementById("wincount");
-        let tie_count = document.getElementById("tiecount");
-        let loss_count = document.getElementById("losscount");
-        // functions for scores.
-        function rock_choice() {
-        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
-        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
-        if (rand === 'scissors') {
-        console.log('win');
-        win_count.innerHTML = w;
-        w++;
-            } else if (rand === 'paper') {
-                console.log('loss');
-                loss_count.innerHTML = l;
-                l++;
-                } else {
-                    console.log('tie');
-                    tie_count.innerHTML = t;
-                    t++;
-                }
-        }
-        function paper_choice() {
-        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
-        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
-        if (rand === 'scissors') {
-        console.log('loss');
-        loss_count.innerHTML = l;
-        l++;
-            } else if (rand === 'paper') {
-                console.log('tie');
-                tie_count.innerHTML = t;
-                t++;
-                } else {
-                    console.log('win');
-                    win_count.innerHTML = w;
-                    w++;
-                }
-        }
-        function scissors_choice() {
-        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
-        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
-        if (rand === 'scissors') {
-        console.log('tie');
-        tie_count.innerHTML = t;
-        t++;
-            } else if (rand === 'paper') {
-                console.log('win');
-                win_count.innerHTML = w;
-                w++
-                } else {
-                    console.log('loss');
-                    loss_count.innerHTML = l;
-                    l++;
-            }
-        }
-        // on click of player's choice to show computer's choice.
-        rock.onclick = rock_choice;
-        paper.onclick = paper_choice;
-        scissors.onclick = scissors_choice;
-
-    </script>
 </body>
 </html>
+
+<script>
+    // wins, ties and losses counter.
+    w=1;
+    t=1;
+    l=1;
+    // variables.
+    let opponent_choice = ['rock', 'paper', 'scissors'];
+    let outcome_txt = document.getElementById("outcome");
+    let win_count = document.getElementById("wincount");
+    let tie_count = document.getElementById("tiecount");
+    let loss_count = document.getElementById("losscount");
+    // functions for determining w/l/t.
+    function rock_choice() {
+        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+        if (rand === 'scissors') {
+            console.log('win');
+            win_count.innerHTML = w;
+            w++;
+        } else if (rand === 'paper') {
+            console.log('loss');
+            loss_count.innerHTML = l;
+            l++;
+        } else {
+            console.log('tie');
+            tie_count.innerHTML = t;
+            t++;
+        }
+    }
+    function paper_choice() {
+        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+        if (rand === 'scissors') {
+            console.log('loss');
+            loss_count.innerHTML = l;
+            l++;
+        } else if (rand === 'paper') {
+            console.log('tie');
+            tie_count.innerHTML = t;
+            t++;
+        } else {
+            console.log('win');
+            win_count.innerHTML = w;
+            w++;
+        }
+    }
+    function scissors_choice() {
+        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];
+        outcome_txt.innerHTML = "Your opponent has chosen " + rand;
+        if (rand === 'scissors') {
+            console.log('tie');
+            tie_count.innerHTML = t;
+            t++;
+        } else if (rand === 'paper') {
+            console.log('win');
+            win_count.innerHTML = w;
+            w++
+        } else {
+            console.log('loss');
+            loss_count.innerHTML = l;
+            l++;
+        }
+    }
+    // on click of player's choice to show computer's choice.
+    rock.onclick = rock_choice;
+    paper.onclick = paper_choice;
+    scissors.onclick = scissors_choice;
+
+</script>

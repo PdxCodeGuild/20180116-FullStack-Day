@@ -46,7 +46,7 @@ with open(openbook, 'r') as word_file:
                 if word[-1] in puncs and word:
                     sentences += 1
 
-"""The score is computed by multiplying the number of characters divided by the number of words by 4.17, adding the number of words divided by the number of sentences multiplied by 0.5, and subtracting 21.43. If the result is a decimal, always round up. Scores greater than 14 should be presented as having the same age and grade level as scores of 14.
+"""The score is computed by multiplying the number of characters divided by the number of words by 4.17, adding the number of words divided by the number of sentences multiplied by 0.5, and subtracting 21.43. If the result is a decimal, always round up. Scores greater than 14 should be presented as having the same age and grade area as scores of 14.
 """
 
 # char_total / word_total * 4.17 + word_total / sentences * 0.5 - 21.43
