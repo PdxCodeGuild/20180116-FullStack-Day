@@ -17,7 +17,7 @@ ECS.Components.PlayerControl = function PlayerControl( parameters ) {
 ECS.Components.PlayerControl.prototype.name = player_control;
 
 // ECS.Components.Ears = function() {}; //able to hear other entities if they make noise
-// ECS.Components.Legs = function() {}; //able to move single spaces
+// ECS.Components.Legs = function() {}; //able to mainLoop single spaces
 // ECS.Components.Eyes = function () {}; //has a field of view
 // ECS.Components.Mouth = function (){}; //able to chat and relay messages
 // ECS.Components.Inventory = function() {}; // able to carry items

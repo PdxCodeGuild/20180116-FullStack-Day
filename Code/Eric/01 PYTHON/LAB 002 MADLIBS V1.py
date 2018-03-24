@@ -26,7 +26,7 @@ print('When I go to the arcade with my ' + plural_noun1 + ', '
 	'my friends. In ' + comic_cartoon +  ', you can be different ' + plural_noun2 +
 	'. \nThe point of the game is to ' + verb1 + ' every bad guy.\n'
 	'You also need to save people, and then you can go to the \n'
-	'next level. In "Star Wars" you are Luke Skywalker and you try to \n'
+	'next area. In "Star Wars" you are Luke Skywalker and you try to \n'
 	'destroy every' + single_noun1 + '. In a car racing / motorcycle \n'
 	'racing game you need to beat every computerized vehicle that \n'
 	'you are ' + gerund_verb1 + ' against. There are a whole \n'

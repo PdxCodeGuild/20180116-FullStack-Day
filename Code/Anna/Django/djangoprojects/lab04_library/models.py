@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User  # wtf is AbstractUser?
 
 
 # make migrations whenever models are changed - migrations update the database!

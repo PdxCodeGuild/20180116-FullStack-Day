@@ -15,11 +15,42 @@
                     <h5>Checked out? <em>{{checkedout}}</em></h5>
                 </div>
             <div class="card-action">
-              <a href="#!">Check Out</a>
+            {% if request.user.is_authenticated %}
+                {% if book.checked_out is True %}
+                    <a class="modal-trigger" href="#modal_return">Return Book</a>
+                {% endif %}
+                {% if book.checked_out is False %}
+                    <a class="modal-trigger" href="#modal_checkout">Check Out</a>
+                {% endif %}
+            {% endif %}
+            {% if not request.user.is_authenticated %}
+              <a href="#!">You must be logged in to check out this book</a>
+            {% endif %}
             </div>
             </div>
         </div>
     </div>
     <a class="waves-effect waves-light btn green lighten-1" href="{% url 'lab04_library:index' %}">Back to the main page</a>
+</div>
+<!-- Modals  -->
+<div id="modal_return" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure you want to return this book?</h4>
+        <p>There might be more to explore yet!</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">No, take me back</a>
+        <a href="{% url 'lab04_library:checkin_book' book.id %}" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+    </div>
+</div>
+<div id="modal_checkout" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure you want to check out this book?</h4>
+        <p>There be dragons in it, matey!</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">No, take me back</a>
+        <a href="{% url 'lab04_library:checkout_book' book.id %}" class="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+    </div>
 </div>
 {% endblock %}

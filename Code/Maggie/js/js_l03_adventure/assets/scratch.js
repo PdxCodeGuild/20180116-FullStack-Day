@@ -20,7 +20,7 @@ message_div.setAttribute('class', 'message_div');
 message_div.style.backgroundColor = board_black;
 message_div.style.color = board_white;
 message_div.style.fontSize = '20px';
-message_div.innerText = 'Adventure Game! Use arrow keys to move.';
+message_div.innerText = 'Adventure Game! Use arrow keys to mainLoop.';
 
 
 class Gameboard {

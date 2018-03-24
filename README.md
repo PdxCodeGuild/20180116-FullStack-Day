@@ -20,6 +20,7 @@
     - Capstone Repo: https://github.com/bildungsroman/ifandonlyif.io
 - Brianna Harris
     - bkharris77@gmail.com
+    https://github.com/NinjaBee/StorieStream
 - Eric Talbot
     - etalbot1989@gmail.com
 - Jackson Reed
@@ -42,6 +43,7 @@
     - scotttgregg@gmail.com
 - Sergio Blue
     - sergiobluez@gmail.com
+    - Capstone: https://github.com/b1oo/super-dope-app-name/
 - Wes Peeks
     - wwpeeks@gmail.com
 - William Adkins

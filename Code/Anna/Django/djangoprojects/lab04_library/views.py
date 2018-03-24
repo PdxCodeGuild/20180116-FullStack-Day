@@ -1,9 +1,10 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.shortcuts import render, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 
 from django.contrib.auth import logout, authenticate, login
-from django.contrib.auth.models import User, Group, Permission
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User, Group
+# from django.contrib.auth.decorators import login_required
+from datetime import datetime
 
 from .models import Author, Book
 
@@ -12,13 +13,16 @@ from .models import Author, Book
 def index(request):
     books = Book.objects.all()
     authors = Author.objects.all()
-    context = {'books': books, 'authors': authors}
+    user_books = []
+    if request.user.is_authenticated:
+        user_books = Book.objects.filter(who_checked_out_id=request.user.id)
+    context = {'books': books, 'authors': authors, 'user_books': user_books}
     return render(request, 'lab04_library/index.html', context)
 
 
 def detail(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-    if book.checked_out == False:
+    if book.checked_out is False:
         checkedout = "This book is available"
     else:
         checkedout = "This book was checked out by " + str(book.who_checked_out) + " on " + str(book.timestamp_out)
@@ -47,15 +51,30 @@ def login_view(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        if 'next' in request.GET.keys():
-            return HttpResponseRedirect(request.GET['next'])
-        else:
-            return HttpResponseRedirect(reverse('lab04_library:index'))
+        return HttpResponseRedirect(reverse('lab04_library:index'))
     else:
-        return HttpResponseRedirect(reverse('lab04_library:login'))
+        return HttpResponseRedirect(reverse('lab04_library:index')+'?invalidcredentials')
 
 
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('lab04_library:index')+'?logout')
-    #return redirect(reverse('userapp:registration_login')+'?logout=true')
+    # return redirect(reverse('userapp:registration_login')+'?logout=true')
+
+
+def checkin_book(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    book.checked_out = False
+    book.timestamp_in = datetime.now()
+    book.who_checked_out = None
+    book.save()
+    return HttpResponseRedirect(reverse('lab04_library:index') + '?checked_in')
+
+
+def checkout_book(request, book_id):
+    book = Book.objects.get(pk=book_id)
+    book.checked_out = True
+    book.timestamp_out = datetime.now()
+    book.who_checked_out = request.user
+    book.save()
+    return HttpResponseRedirect(reverse('lab04_library:index') + '?checked_out')
