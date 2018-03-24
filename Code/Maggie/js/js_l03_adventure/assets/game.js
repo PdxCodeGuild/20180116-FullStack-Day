@@ -183,7 +183,7 @@ window.onkeyup = function(event) {
 };
 
 
-// player.move(1,1);
+// player.mainLoop(1,1);
 
 // player_x = board.querySelector(".col5.row5").innerText = '@';
 

@@ -253,7 +253,7 @@ def build_gamespace(name, rows, columns, num_boosters, num_weapons, num_friends,
 
 
 def update_board_visibility(world):
-    """Updates visibility of entities after every hero move
+    """Updates visibility of entities after every hero mainLoop
     Only entities with a specified distance are visible in normal mode.
     In practice mode everyting is visible.
     The castle is also visible if the map is found
@@ -401,8 +401,8 @@ def move_hero(world):
 
 
 def move_enemies(world):
-    # Moving enemies around the board, if chosen direction is empty or hero, action is taken, otherwise they don't move.
-    # Build list of enemies first then move them one at a time
+    # Moving enemies around the board, if chosen direction is empty or hero, action is taken, otherwise they don't mainLoop.
+    # Build list of enemies first then mainLoop them one at a time
     move_tuples = [(1, 0), (0, 1), (-1, 0), (0, -1)]
     enemies = world.get_enemies()
     for enemy in enemies:
@@ -612,7 +612,7 @@ while alive:
     if not alive:
         break
 
-    # Print board after enemies move
+    # Print board after enemies mainLoop
     print_board(adventure_world)
 
 # Print Initial Castle Board
@@ -644,7 +644,7 @@ while alive:  # Currently in castle world
     if not alive:
         break
 
-    # Print Board after enemies move
+    # Print Board after enemies mainLoop
     print_board(castle_world)
 
     # Check for dead dragon
