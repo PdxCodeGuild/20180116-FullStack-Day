@@ -53,13 +53,13 @@ while True:
     if command == 'done':
         break  # exit the game
     elif command == 'left':
-        player_j -= 1  # move left
+        player_j -= 1  mainLoop
     elif command == 'right':
-        player_j += 1  # move right
+        player_j += 1  mainLoop
     elif command == 'up':
-        player_i -= 1  # move up
+        player_i -= 1  mainLoop
     elif command == 'down':
-        player_i += 1  # move down
+        player_i += 1  mainLoop
 
     # check if the player is on the same space as an enemy
     if board[player_i][player_j] == '§':

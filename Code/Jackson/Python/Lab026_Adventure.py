@@ -46,29 +46,29 @@ print('Welcome to "Around the World!"  The objective is to sail around the world
 # loop until the user says 'done' or dies
 while True:
     command = input('what direction, captain?!: n/s/e/w')  # get the command from the user
-    Set_opponents() # set the bad guys on the board each time a move is made
+    Set_opponents() # set the bad guys on the board each time a mainLoop is made
     if command == 'done':
         break  # exit the game
     elif command == 'w':
-        player_j -= 1  # move left
+        player_j -= 1  # mainLoop left
         if player_j == -1:
             player_j +=10
             around_the_world = True
             Set_opponents()  # double the number of opponents
     elif command == 'e':
-        player_j += 1  # move right
+        player_j += 1  # mainLoop right
         if player_j == 10:
             player_j -= 10
             around_the_world = True
             Set_opponents()  # resets food after going 'around the world'
     elif command == 'n':
-        player_i -= 1  # move up
+        player_i -= 1  # mainLoop up
         if player_i == -1:
             player_i += 10
             around_the_world = True
             Set_opponents()  # resets food after going 'around the world'
     elif command == 's':
-        player_i += 1  # move down
+        player_i += 1  # mainLoop down
         if player_i == 10:
             player_i -= 10
             around_the_world = True

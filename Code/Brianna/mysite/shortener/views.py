@@ -12,9 +12,8 @@ def index(request):
     context = {'long_url': long_url}
     return render(request, 'shortener/index.html', context)
 
-def receive(request):
     url = get_object_or_404(Shortener, pk=url_id )
-    context = {'url': url}, {'short_url':short_url}, {'url_id':url_id}
+    context = {'nurl': url}, {'short_url':short_url}, {'url_id':url_id}
     return render(request, 'shortener/index.html', context)
 
 def redirect(request):
@@ -39,7 +38,7 @@ def create_short_url(request):
         short_url = random.choice[animal_list] + random.choice[ascii(string)]
     else:
         short_url = long_url
-    short_url.save(
+    short_url.save()
     context = {'url_id':url_id, 'long_url':long_url, 'short_url':short_url}
     return render(request, 'shortener/index.html', context)
 
