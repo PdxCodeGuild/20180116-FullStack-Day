@@ -39,6 +39,7 @@
     - mtgood86@gmail.com
 - Ociel Lerma
     - oglerma1@gmail.com
+    - https://github.com/oglerma/Capstone/blob/master/project_description.md
 - Scott Gregg
     - scotttgregg@gmail.com
 - Sergio Blue
