@@ -3413,7 +3413,7 @@ var modifiers = {
   },
 
   /**
-   * This modifier is used to move the `arrowElement` of the popper to make
+   * This modifier is used to mainLoop the `arrowElement` of the popper to make
    * sure it is positioned between the reference element and its popper element.
    * It will read the outer size of the `arrowElement` node to detect how many
    * pixels of conjuction are needed.
@@ -4510,7 +4510,7 @@ var Modal = function ($$$1) {
       var transition = Util.supportsTransitionEnd() && $$$1(this._element).hasClass(ClassName.FADE);
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
-        // Don't move modal's DOM position
+        // Don't mainLoop modal's DOM position
         document.body.appendChild(this._element);
       }
 

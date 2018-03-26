@@ -90,7 +90,7 @@ def choose_column(player_number):
 
 
 def check_win(player_number):
-    """check for win, this function is called after every player move
+    """check for win, this function is called after every player mainLoop
     checks for vertical, horizontal and two diagonal directions separately
 
     :param player_number is the players's number

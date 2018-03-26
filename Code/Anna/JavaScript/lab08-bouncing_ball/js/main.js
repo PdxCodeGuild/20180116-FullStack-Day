@@ -81,13 +81,13 @@ function makeBalls() {
 }
 let balls = makeBalls();
 
-// make all the balls move
+// make all the balls mainLoop
 function move() {
 	clear();
 	// draw the balls that were made
 	for (let i=0; i<10; ++i) {
 		balls[i].draw(ctx);
-		// move the balls
+		// mainLoop the balls
 		balls[i].x += balls[i].vx;
 		balls[i].y += balls[i].vy;
 		balls[i].vy *= 1.000000000001;
