@@ -1,0 +1,22 @@
+<h3>{{checkedout.book.title}}</h3>
+
+<table>
+    <tr>
+        <th>Author</th>
+        <th>Published</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>{{checkedout.book.author}}</td>
+        <td>{{checkedout.book.published}}</td>
+        <td>{{checkedout.if_checked_out}}</td>
+    </tr>
+</table>
+
+
+<div>
+    <button type="submit" name="check">{{checkedout.button_text}}</button>
+    <input type="text" name="add_task" placeholder="User Name"></textarea>
+</div>
+
+
