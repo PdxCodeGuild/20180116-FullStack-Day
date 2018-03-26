@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'DTL-Prokyon';
+  src: url('../fonts/DTL-Prokyon.ttf')  format("truetype"),
+       local('DTL-Prokyon');
+}
+
+body {
+    font-family: 'DTL-Prokyon', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+nav a {
+    font-family: 'DTL-Prokyon', sans-serif;
+    font-weight: bolder;
+}
+
+.django-green {
+    background-color: #092E20 !important;
+    color: #278762
+}
+
+.light-django-green {
+    background-color: #44b78b;
+    color: white;
+}
+
+.footer-green {
+    background-color: #092E20 !important;
+    color: #278762 !important;
+}
+
+.bingo-box:nth-child(13) {
+    background-color: #092E20;
+    color: white;
+    font-weight: bolder;
+}
+
+.bingo-container {
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bingo-box {
+    width: 25vh;
+    height: 25vh;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
+
+.bingo-box:hover {
+	background-color: #092E20;
+    color: white;
+}
+
+.bingo-box p {
+    font-size: 1.4vw;
+    margin: auto;
+}
+
+.lighter {
+    font-weight: lighter; !important;
+}
+
+/* making 5 even columns, which is surprisingly complicated in CSS grids */
+.s5ths,
+.m5ths,
+.l5ths,
+.xl5ths {
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.row .col.s5ths {
+    width: 20%;
+}
+
+@media only screen and (min-width: 601px) {
+    .row .col.m5ths {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .row .col.l5ths {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .row .col.xl5ths {
+        width: 20%;
+    }
+}

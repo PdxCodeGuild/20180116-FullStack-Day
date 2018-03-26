@@ -15,18 +15,24 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.contrib import admin
+from django.conf.urls.static import static
 from . import views
+from . import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('userapp/', include('userapp.urls')),
+    path('fileapp/', include('fileapp.urls')),
+    path('contactcbv/', include('contactcbv.urls')),
     path('contacts/', include('contactsapp.urls')),
+    path('library/', include('lab04_library.urls')),
     path('shorty/', include('lab03_urlshortener.urls')),
     path('todo/', include('lab02_todo.urls')),
     path('polls/', include('lab01_polls.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'lab02_todo.views.handler404'
 handler500 = 'lab02_todo.views.handler500'

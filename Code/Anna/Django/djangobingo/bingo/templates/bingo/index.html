@@ -1,0 +1,12 @@
+{% extends 'bingo/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="bingo-container">
+        <div class="row">
+            {% for word in bingo_list %}
+            <div id="{{forloop.counter}}" class="z-depth-1 col m5ths s6 bingo-box valign-wrapper center-align"><p>{{word}}</p></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

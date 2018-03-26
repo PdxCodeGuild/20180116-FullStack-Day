@@ -11,8 +11,12 @@ def index(request):
             <li><a href="/polls">Polls App</a></li>
             <li><a href="/todo">ToDo App</a></li>
             <li><a href="/shorty">URL Shortener App</a></li>
+            <li><a href="/library">Library App</a></li>
             <li><a href="/contacts">Contacts App</li>
+            <li><a href="/userapp">User App</li>
+            <li><a href="/fileapp">File App</li>
         </ul>
+        <a href="/admin" class="btn btn-primary">Admin Panel</a>
     </div>
     </div>
         ''')

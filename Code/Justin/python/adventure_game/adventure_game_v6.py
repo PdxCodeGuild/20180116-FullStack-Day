@@ -290,8 +290,8 @@ def move_hero(location, world):
 
 
 def move_enemies(world, hero):
-    # Moving enemies around the board, if chosen direction is empty or hero, action is taken, otherwise they don't move.
-    # Build list of enemies first then move them one at a time
+    # Moving enemies around the board, if chosen direction is empty or hero, action is taken, otherwise they don't mainLoop.
+    # Build list of enemies first then mainLoop them one at a time
     move_tuples = [(1, 0), (0, 1), (-1, 0), (0, -1)]
     enemies = world.get_enemies()
     for enemy in enemies:
@@ -468,7 +468,7 @@ print_board(adventure_world)
 
 while alive:
 
-    #Get location for the hero's next move
+    #Get location for the hero's next mainLoop
     current_location = hero.get_location()
     next_location = move_hero(current_location, adventure_world)
 
@@ -532,7 +532,7 @@ while alive:
     # Moving the enemies
     move_enemies(adventure_world, hero)
 
-    # Print board after enemies move
+    # Print board after enemies mainLoop
     print_board(adventure_world)
 
 
@@ -616,7 +616,7 @@ while alive:  # Currently in castle world
     # Moving the dragon
     move_enemies(castle_world, hero)
 
-    # Print Board after enemies move
+    # Print Board after enemies mainLoop
     print_board(castle_world)
 
 
