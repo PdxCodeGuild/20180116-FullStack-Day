@@ -21,8 +21,9 @@
     - bkharris77@gmail.com
 - Eric Talbot
     - etalbot1989@gmail.com
-- Jackson Reed
+- Jackson Reed: 
     - jackson.dh.reed@gmail.com
+    - https://github.com/sprread/TheSkyDiary
 - Justin Martin
     - jlmartin432@gmail.com
 - Maggie Geise
