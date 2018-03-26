@@ -34,6 +34,7 @@
     - https://github.com/vaelentine/FiddleHead
 - Matthew Beck
     - mbeck410@gmail.com
+    - Capstone: https://github.com/mbeck410/AltDex
 - Michael Miley
     - michaelvertex@gmail.com
 - Michael Good
