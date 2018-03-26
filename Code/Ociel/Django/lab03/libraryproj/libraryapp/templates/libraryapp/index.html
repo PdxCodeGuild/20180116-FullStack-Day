@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    body {
+        background-color: #00bcd4;
+    }
+
+    #input_btn {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .headers {
+        font-family: Papyrus, sans-serif;
+        color: black;
+        text-align: center;
+    }
+
+    #row {
+        padding-top: 100px;
+    }
+
+    #text_input {
+        text-align: center;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+</style>
+<body>
+
+<h1 class="headers">Welcome to Jumanji Library</h1>
+<h4 class="headers">Where all books exist!</h4>
+
+<!--This button goes to the add a books html-->
+<form action="{% url 'libraryapp:gotoaddbook' %}" method="post">
+    {% csrf_token %}
+    <button id="input_btn" type="submit" class="btn-floating btn-large waves-effect waves-light red"><i
+            class="material-icons">add</i></button>
+    <span>Add a Book</span>
+</form>
+<!--Title of Table-->
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel light-django-green">
+            <div class="col s9">Books</div>
+            <div class="col s1">in</div>
+            <div class="col s1">out</div>
+            <div class="col s1">History</div>
+        </div>
+    </div>
+</div>
+<!--Insert A book-->
+{% for books in book %}
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel light-django-green">
+            <div class="col s9">{{books.title}} by {{books.author_id}}</div>
+            <div id="check_in" class="col s1"><i class="material-icons">sentiment_satisfied</i></div>
+            <div class="col s1"><i class="material-icons">sentiment_very_dissatisfied</i></div>
+            <div class="col s1"><i class="material-icons">history</i></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript">
+let check_in = document.querySelector('#check_in');
+
+check_in.onclick = function () {
+    alert('hello');
+
+}
+
+</script>
+</body>
+
