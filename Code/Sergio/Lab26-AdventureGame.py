@@ -86,14 +86,14 @@ while True:
         break  # exit the game and win
 
     elif command == 'teleport':
-        player.location_j -= 5  # move left 5 spaces
+        player.location_j -= 5  # mainLoop left 5 spaces
         print('You have teleported out of the solar system but now you are stuck in hyperspace. Find a wormhole to go back into the solar system, then find another another wormhole to enter an alternate reality that you have created.')
     elif command == 'wormhole':
-        player.location_j += 10  # move right 10 spaces
+        player.location_j += 10  # mainLoop right 10 spaces
     elif command == 'up':
-        player.location_i -= 1  # move up
+        player.location_i -= 1  # mainLoop up
     elif command == 'down':
-        player.location_i += 1  # move down
+        player.location_i += 1  # mainLoop down
 
     for enemy in enemies:
         if random.randint(0, 1) == 0:

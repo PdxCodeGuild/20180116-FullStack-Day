@@ -140,22 +140,22 @@ def game_on(player_x, player_y, num_enemies):
             if player_y - 1 < 0:
                 scary_space()
             else:
-                player_y -= 1  # move left
+                player_y -= 1  # mainLoop left
         elif command == 'r':
             if player_y + 1 > play_game.width - 1:
                 scary_space()
             else:
-                player_y += 1  # move right
+                player_y += 1  # mainLoop right
         elif command == 'u':
             if player_x - 1 < 0:
                 scary_space()
             else:
-                player_x -= 1  # move up
+                player_x -= 1  # mainLoop up
         elif command == 'd':
             if player_x + 1 > play_game.height - 1:
                 scary_space()
             else:
-                player_x += 1  # move down
+                player_x += 1  # mainLoop down
         else:
             print("Invalid command.")
 

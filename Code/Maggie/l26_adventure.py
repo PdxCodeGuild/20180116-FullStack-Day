@@ -30,7 +30,7 @@ class GamePiece:  # all of the tilebased game elements, including the player
         self.ascii_char = char_int
         self.name = name
 
-    def move(self, dx, dy):  # move a piece by an amount
+    def move(self, dx, dy):  # mainLoop a piece by an amount
         self.x_loc += dx
         self.y_loc += dy
 

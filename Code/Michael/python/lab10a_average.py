@@ -6,27 +6,15 @@
 
 
 
-# nums = [5,0,8,3,4,1,6]
-# i = 0
-#
-# while i in nums:
-#     nums.append(2)
-#     i += 1
-#
-# sumnumber = sum(nums)
-# sumnumber /= len(nums)
-#
-# print(sumnumber)
-
-
-
-nums = []
+nums = [5,0,8,3,4,1,6]
 i = 0
 
-for i in nums:
-    nums.append(int(input('Enter a number to be averaged.\n> ')))
+while i in nums:
+    nums.append(2)
+    i += 1
 
 sumnumber = sum(nums)
-sumnumber /= len(i)
+sumnumber /= len(nums)
 
 print(sumnumber)
+

@@ -49,7 +49,7 @@
         }
 
         //CHECKS: BOTTOM TO TOP
-        //IF IT IS NOT HITTING THE SIDES THE IT CONSTANTLY ADDS GRAVITY.
+        //IF IT IS NOT HITTING THE SIDES THEN IT CONSTANTLY ADDS GRAVITY.
         if (ball.py + ball.vy > canvas_id.height || ball.py + ball.vy < 0) {
             ball.vy = -ball.vy * add_friction();
         } else {
@@ -81,9 +81,10 @@
         ctx.closePath();
     }
 
+
     function main_loop() {
         // update the ball's position
-        // Update but i call it move.
+        // Update but i call it mainLoop.
         move_ball();
         // check if it hit a boundary
         check_for_wall();

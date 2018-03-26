@@ -268,7 +268,7 @@ class MyGame(arcade.Window):
                 cat.kill()
                 self.score += 1
 
-            # If we've collected all the cats, then move to a "GAME_OVER"
+            # If we've collected all the cats, then mainLoop to a "GAME_OVER"
             # state.
             if len(self.cat_list) == 0:
                 self.current_state = GAME_OVER

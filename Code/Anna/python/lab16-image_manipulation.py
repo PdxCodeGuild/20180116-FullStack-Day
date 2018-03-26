@@ -96,7 +96,7 @@ if run == 'y':
 
         put_another_bird_on_it.show()
     else:
-        print("OK, your loss. Let's move on.")
+        print("OK, your loss. Let's mainLoop on.")
 else:
     run2 = input("Are you sure? y/n: ")
     if run2 == 'n':
@@ -109,7 +109,7 @@ else:
 
         put_another_bird_on_it.show()
     else:
-        print("OK, your loss. Let's move on.")
+        print("OK, your loss. Let's mainLoop on.")
 
 
 # version 3

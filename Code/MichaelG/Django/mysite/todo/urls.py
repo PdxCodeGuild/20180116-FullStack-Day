@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = 'todo'
+app_name = 'todoapp'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('page2', views.index, name='page2')
+    path('submit', views.add_todo, name='addtodo'),
+    path('mark_complete', views.mark_complete, name='mark_complete')
 ]
-
