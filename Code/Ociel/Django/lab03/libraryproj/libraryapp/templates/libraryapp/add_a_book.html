@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    body {
+        background-color: #00bcd4;
+        font-family: Papyrus, sans-serif;
+
+    }
+
+    #input_btn {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .headers {
+
+        color: black;
+        text-align: center;
+    }
+
+    #row {
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    #book_title_request, #author_title_request, #published_date_request {
+        background-color: whitesmoke;
+        text-align: center;
+    }
+
+</style>
+<body>
+
+
+<h4 class="headers">Add a book</h4>
+<!--Ask for a book-->
+<form action="{% url 'libraryapp:addbook' %}" method="post">
+    {% csrf_token %}
+    <div class="row" id="row">
+        <div class="col s8">
+            <input placeholder="Book Title" name="book_title" id="book_title_request" required>
+            <input placeholder="Authors Name" name="author_name" id="author_title_request" required>
+            <input type="date" placeholder="Published Date" name="pub_date" id="published_date_request" required>
+            <button id="input_btn" class="btn-floating btn-large waves-effect waves-light red"><i
+                    class="material-icons">add</i></button>
+            <span>Add book to Jumanji</span>
+        </div>
+        <div class="col s4">
+        </div>
+    </div>
+</form>
+
+
+
+
+
+<form action="{% url 'libraryapp:goback' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" name="goback" class="btn-floating btn-large waves-effect waves-light red"><</button>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
