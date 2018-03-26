@@ -21,6 +21,7 @@
     - bkharris77@gmail.com
 - Eric Talbot
     - etalbot1989@gmail.com
+    - capstone: https://github.com/efeezyubeezy/eric-capstone-2018-StudyBuddy
 - Jackson Reed
     - jackson.dh.reed@gmail.com
 - Justin Martin
