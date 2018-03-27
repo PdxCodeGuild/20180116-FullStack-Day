@@ -20,8 +20,10 @@
     - Capstone Repo: https://github.com/bildungsroman/ifandonlyif.io
 - Brianna Harris
     - bkharris77@gmail.com
+    https://github.com/NinjaBee/StorieStream
 - Eric Talbot
     - etalbot1989@gmail.com
+    - capstone: https://github.com/efeezyubeezy/eric-capstone-2018-StudyBuddy
 - Jackson Reed
     - jackson.dh.reed@gmail.com
 - Justin Martin
@@ -29,8 +31,10 @@
     - https://github.com/jmartin432/capstone
 - Maggie Geise
     - magdalenegeise@gmail.com
+    - https://github.com/vaelentine/FiddleHead
 - Matthew Beck
     - mbeck410@gmail.com
+    - Capstone: https://github.com/mbeck410/AltDex
 - Michael Miley
     - michaelvertex@gmail.com
 - Michael Good
@@ -38,10 +42,12 @@
     https://github.com/MTGood86/cap
 - Ociel Lerma
     - oglerma1@gmail.com
+    - https://github.com/oglerma/Capstone/blob/master/project_description.md
 - Scott Gregg
     - scotttgregg@gmail.com
 - Sergio Blue
     - sergiobluez@gmail.com
+    - Capstone: https://github.com/b1oo/super-dope-app-name/
 - Wes Peeks
     - wwpeeks@gmail.com
 - William Adkins

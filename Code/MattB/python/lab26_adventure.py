@@ -31,7 +31,7 @@ for i in range(int(enemies)):
     enemy_j = random.randint(0, width - 1)
     board[enemy_i][enemy_j] = '§'
 
-# Randomly move enemies each turn
+# Randomly mainLoop enemies each turn
 def enemy_move(a_board):
     for i in range(height):
         for j in range(width):
@@ -71,13 +71,13 @@ while True:
     if command == 'done':
         break  # exit the game
     elif command == 'left':
-        player_j -= 1  # move left
+        player_j -= 1  # mainLoop left
     elif command == 'right':
-        player_j += 1  # move right
+        player_j += 1  # mainLoop right
     elif command == 'up':
-        player_i -= 1  # move up
+        player_i -= 1  # mainLoop up
     elif command == 'down':
-        player_i += 1  # move down
+        player_i += 1  # mainLoop down
 
     if board[player_i][player_j] == '?':
         print('you\'ve found a weapon!')

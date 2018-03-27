@@ -1,0 +1,36 @@
+<h3>{{book.title}}</h3>
+
+<table>
+    <tr>
+        <th>Author</th>
+        <th>Published</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>{{book.author}}</td>
+        <td>{{book.published}}</td>
+        <td>{{book.if_available}}</td>
+    </tr>
+</table>
+
+
+<div>
+    <form action="{% url 'newlib:addtime' book.id %}" method="post">
+        {% csrf_token %}
+        {% if book.available %}
+            <input type="text" name="user" placeholder="User Name"></textarea>
+        {% else %}
+            <input type="text" name="user" placeholder="{{history.user}}">{{history.user}}</textarea>
+        {% endif %}
+        <button type="submit" name="check">{{book.button_text}}</button>
+    </form>
+</div>
+
+</br>
+
+<ul>
+    {% for h in histories %}
+        <li>Checked Out: {{h.time_out}}, {{h.user}}</li>
+        <li>Checked In: {{h.time_in}}, {{h.user}}</li>
+    {% endfor %}
+</ul>

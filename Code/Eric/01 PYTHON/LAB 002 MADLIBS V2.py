@@ -49,7 +49,7 @@ print('When I go to the arcade with my ' + random.choice(plural_nouns) + ', '
 	'my friends. In ' + random.choice(single_nouns) +  ', you can be different ' + random.choice(plural_nouns) +
 	'. \nThe point of the game is to ' + random.choice(verbs) + ' every bad guy.\n'
 	'You also need to save people, and then you can go to the \n'
-	'next level. In "Star Wars" you are Luke Skywalker and you try to \n'
+	'next area. In "Star Wars" you are Luke Skywalker and you try to \n'
 	'destroy every' + random.choice(single_nouns) + '. In a car racing / motorcycle \n'
 	'racing game you need to beat every computerized vehicle that \n'
 	'you are ' + random.choice(verbs) + ' against. There are a whole \n'

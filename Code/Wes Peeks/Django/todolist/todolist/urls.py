@@ -18,6 +18,7 @@ from django.urls import include, path
 
 
 urlpatterns = [
+    path('uriel/', include('uriel.urls')),
     path('todos/', include('todos.urls')),
     path('admin/', admin.site.urls)
 ]

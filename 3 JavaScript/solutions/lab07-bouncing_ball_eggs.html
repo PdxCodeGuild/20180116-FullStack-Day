@@ -60,7 +60,7 @@
             }
             function draw() {
                 var ctx = cnv.getContext("2d");
-                //ctx.clearRect(0, 0, cnv.width, cnv.height);
+                //context.clearRect(0, 0, cnv.width, cnv.height);
                 ctx.fillStyle = "rgba(255, 255, 255, 0.01)";
                 ctx.fillRect(0, 0, cnv.width, cnv.height);
                 ctx.fillStyle = "hsl("+counter+",100%,50%)";
@@ -68,7 +68,7 @@
                 counter %= 360;
                 ctx.beginPath();
                 var br = Math.abs(100*Math.sin(counter));
-                //ctx.fillRect(ball.px-ball.radius, ball.py-ball.radius, 2*ball.radius, 2*ball.radius);
+                //context.fillRect(ball.px-ball.radius, ball.py-ball.radius, 2*ball.radius, 2*ball.radius);
                 ctx.arc(ball.px, ball.py, br, 0, 2 * Math.PI, false);
                 ctx.fill();
             }

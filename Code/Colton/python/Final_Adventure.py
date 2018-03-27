@@ -33,21 +33,21 @@ while True:
     if command == 'done':
         break  # exit the game
     elif command == 'left' or command == 'l':
-        player_j -= 1  # move left
+        player_j -= 1  # mainLoop left
         if player_j == 0: #######Adding borders
             player_j += 1
     elif command == 'right' or command == 'r':
         if player_j == 9:
             player_j -= 1
-        player_j += 1  # move right
+        player_j += 1  # mainLoop right
     elif command == 'up' or command == 'u':
         if player_i == 0:
             player_i += 1
-        player_i -= 1  # move up
+        player_i -= 1  # mainLoop up
     elif command == 'down' or command == 'd':
         if player_i == 9:
             player_i -= 1
-        player_i += 1  # move down
+        player_i += 1  # mainLoop down
 
     player_health = 20#Adding player health and health is depleted for wrong answers
     # check if the player is on the same space as an enemy
