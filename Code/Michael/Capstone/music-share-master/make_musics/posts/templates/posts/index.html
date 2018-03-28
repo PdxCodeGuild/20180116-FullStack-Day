@@ -1,7 +1,7 @@
 {% extends 'posts/base.html' %}
 
 {% block content %}
-<h3 class="center-align red lighten-3">{{title}}</h3>
+<h5 class="center-align red lighten-3">{{title}}</h5>
 <ul class="collection">
   {% for post in posts %}
     <li class="collection-item"><a href="/posts/details/{{post.id}}">{{post.title}}</a></li>
