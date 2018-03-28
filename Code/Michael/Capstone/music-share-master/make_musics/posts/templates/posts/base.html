@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
   <meta charset="UTF-9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <link rel="stylesheet" href="../../static/posts/style.css">
+  <link rel="stylesheet" href="{% static 'posts/style.css' %}">
 
   <title>Site name</title>
 </head>
 <body>
-  {% load static %}
-  <div class="container center-align>
-    <a href="/admin">Admin Login</a><form>
+  <form class="container center-align>
+  <div>
+    <a href="/admin">Admin Login</a>
   <div>
     <input type="search" id="mySearch" name="q"
     placeholder="Search" size="30">
-    <button>Search</button>
+    <button class="btn">Search</button>
   </div>
 </form>
   </div>

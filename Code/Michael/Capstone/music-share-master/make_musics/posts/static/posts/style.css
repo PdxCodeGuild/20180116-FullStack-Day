@@ -1,4 +1,33 @@
 body {
+  background-color: lightgray;
+  color: black;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+header  {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin: 20px;
+}
+
+h5 {
   background-color: gray;
   color: white;
+  padding: 20px;
+}
+
+.container {
+  display: block;
+  flex-wrap: nowrap;
+}
+
+.btn {
+  background-color: gray;
+  margin-bottom: 15px;
+}
+
+.btn :hover {
+   background-color: white;
 }
