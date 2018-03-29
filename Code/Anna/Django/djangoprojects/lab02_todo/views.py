@@ -19,6 +19,7 @@ def savetodo(request):
     print(todo_item.created_date)
     return HttpResponseRedirect(reverse('todo:index'))
 
+
 def completetodo(request):
     todo_id = request.POST['todo_id']
     todo_item = TodoItem.objects.get(pk=todo_id)

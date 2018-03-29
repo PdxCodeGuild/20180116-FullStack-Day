@@ -15,6 +15,7 @@ def index(request):
             <li><a href="/contacts">Contacts App</li>
             <li><a href="/userapp">User App</li>
             <li><a href="/fileapp">File App</li>
+            <li><a href="/modeldemoapp">Model Demo App</li>
         </ul>
         <a href="/admin" class="btn btn-primary">Admin Panel</a>
     </div>
