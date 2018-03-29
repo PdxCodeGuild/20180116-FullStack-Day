@@ -1,7 +1,7 @@
 import math
 
 from PIL import Image
-img = Image.open("lenna.png") # must be in same folder
+img = Image.open("Lenna.png") # must be in same folder
 width, height = img.size
 pixels = img.load()
 
