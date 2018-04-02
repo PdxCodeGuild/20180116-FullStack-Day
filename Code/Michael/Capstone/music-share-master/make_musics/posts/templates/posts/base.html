@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   {% load static %}
+
 <head>
   <meta charset="UTF-9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="{% static 'posts/style.css' %}">
-
   <title>Site name</title>
 </head>
-<body>
-  <form class="container center-align>
-  <div>
-    <a href="/admin">Admin Login</a>
-  <div>
-    <input type="search" id="mySearch" name="q"
-    placeholder="Search" size="30">
-    <button class="btn">Search</button>
-  </div>
-</form>
-  </div>
 
-  <header class="container">
-    <h3>Site name</h3>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/admin">Admin Login</a>
+      <form>
+        <div>
+          <input type="search" id="mySearch" name="q">
+          <button class="btn">Search</button>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Everyday</h1>
+    <p>Learn about music and buy something else, like beer and/or pizza.</p>
   </header>
-  <div class="container">
-    {% block content %}
-    {% endblock %}
-  </div>
+
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+    <!-- </div> -->
+  </main>
+
+  <footer>
+      Copyright 2018
+  </footer>
+
   <script> src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
 </html>

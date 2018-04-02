@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeldemoapp.apps.ModeldemoappConfig',
     'fileapp.apps.FileappConfig',
     'userapp.apps.UserappConfig',
     'contactcbv.apps.ContactcbvConfig',
