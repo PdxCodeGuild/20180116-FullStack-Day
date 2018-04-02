@@ -16,7 +16,7 @@ Use the [favqs.com](https://favqs.com/api/) api to show a random quote. To start
 
 ## Version 2
 
-The API also supports browsing quotes. You can use the `page` and `filter` parameters to get a bunch of quotes. You can add page buttons and/or an `input` field and `button` for filtering.
+The API also supports browsing quotes. You can use the `page` and `filter` parameters to get a bunch of quotes. You can add page buttons and/or a text `input` field and `button` for filtering.
 
 `"https://favqs.com/api/quotes?page="+page_id+"&filter=" + text`.
 
