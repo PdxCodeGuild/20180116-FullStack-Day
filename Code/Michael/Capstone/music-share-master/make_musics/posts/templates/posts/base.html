@@ -14,14 +14,17 @@
 
   <nav>
     <div class="container">
-      <a href="/admin">Admin Login</a>
       <form>
-        <div>
-          <input type="search" id="mySearch" name="q">
+      <a href="/admin">Admin Login</a>
+          <input type="search">
           <button class="btn">Search</button>
-        </div>
       </form>
     </div>
+    <style>
+      input {
+        width: unset !important;
+      }
+    </style>
   </nav>
 
   <header>
@@ -35,13 +38,15 @@
         {% block content %}
         {% endblock %}
       </div>
-    <!-- </div> -->
+    </div>
   </main>
 
   <footer>
-      Copyright 2018
+    <div class="container">
+      Copiedright 2018
+    </div>
   </footer>
 
-  <script> src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
 </html>

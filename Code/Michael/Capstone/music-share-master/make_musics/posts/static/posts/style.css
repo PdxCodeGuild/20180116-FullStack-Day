@@ -5,10 +5,11 @@ html {
 
 nav {
   background-color: black;
-  margin-bottom: 200px;
+  height: 7%;
   width: 100%;
-  z-index: 5;
-  position: top;
+  z-index: 37;
+  position: sticky;
+  top: 0;
 }
 
 body {
@@ -30,7 +31,7 @@ header {
   background-color: dimgray;
   color: white;
   box-sizing: border-box;
-  min-height: 40vw;
+  min-height: 100vw;
   padding: 30vw 0 5vw;
   position: relative;
   -webkit-transform-style: inherit;
@@ -63,10 +64,10 @@ header::before {
 
 header * {
   font-weight: normal;
-  letter-spacing: 0.2em;
+  letter-spacing: 3.2px;
   text-align: center;
   margin: 0;
-  padding: 1em 0;
+  padding: 16px 0;
 }
 
 header p {
@@ -86,10 +87,10 @@ h5 {
   padding: 20px;
 }
 
-.container {
+/* .container {
   display: block;
   flex-wrap: nowrap;
-}
+} */
 
 .btn {
   background-color: gray;
@@ -99,6 +100,25 @@ h5 {
 .btn:hover {
   background-color: darkgray;
 }
+
+.wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+
+footer {
+  background-color: dimgray;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  z-index: 27;
+  position: sticky;
+  bottom: 0;
+  width: 100vw;
+}
+
+
 
 /* aside > div{
     background-color: black;
@@ -116,17 +136,3 @@ h5 {
     margin: 10px;
     border-radius: 3px;
 } */
-
-.wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-footer {
-  background-color: dimgray;
-  color: white;
-  padding: 30px;
-  z-index: 27;
-  position: bottom;
-  width: 100vw;
-}
