@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+    <h1>I am a library!</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="username"/>
+
+        <table>
+        {% for book in books %}
+            <tr>
+                <td>
+                    {{ book.author.first_name}} {{ book.author.last_name }}
+                </td>
+                <td>
+                    {{ book }}
+                </td>
+                <td>
+                    {{book.number_of_checkouts}}
+                </td>
+                <td>
+                    {% if book.is_checked_out %}
+                        <button formaction="{% url 'library:checkin' book.id %}">checkin</button>
+                    {% else %}
+                        <button formaction="{% url 'library:checkout' book.id %}">checkout</button>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </form>
+    <h2>Checkout History</h2>
+    <ul>
+    {% for checkout in checkouts %}
+        <li>
+            {{checkout}}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
