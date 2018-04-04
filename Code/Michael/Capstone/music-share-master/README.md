@@ -14,17 +14,22 @@ Continue browsing or logout.
 
 ## Database Models
 
+- Blog post
+    - foriegn key one-to-many / many-to-one to Label
 - Artist
     - name
     - many-to-one to Label (nullable)
-    
 - Album
     - name
     - many-to-many with Artist
-    
+    - discogs album ID
 - Label
     - name
     - many-to-many with Label
+- UserFavorite
+    - many to many with users
+    - name
+
 
 
 ## Pages
