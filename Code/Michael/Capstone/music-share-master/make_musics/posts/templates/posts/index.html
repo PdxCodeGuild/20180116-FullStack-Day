@@ -1,0 +1,11 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+{% block content %}
+<h5>{{title}}</h5>
+<ul class="collection">
+  {% for post in posts %}
+    <li class="collection-item"><a href="/posts/details/{{post.id}}">{{post.title}}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

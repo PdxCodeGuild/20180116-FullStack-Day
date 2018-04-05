@@ -21,6 +21,7 @@ from . import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('modeldemoapp/', include('modeldemoapp.urls')),
     path('userapp/', include('userapp.urls')),
     path('fileapp/', include('fileapp.urls')),
     path('contactcbv/', include('contactcbv.urls')),
