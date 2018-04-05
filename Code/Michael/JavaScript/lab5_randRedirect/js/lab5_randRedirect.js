@@ -50,3 +50,6 @@ document.getElementById("clicked").onclick = function () {
 
     };
 
+setTimeout(function(){
+window.location.reload(1);
+}, 5000);
