@@ -1,10 +1,19 @@
+* {
+  box-sizing: border-box
+}
+
 html {
   height: 100%;
   overflow: hidden;
 }
 
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 nav {
-  background-color: black;
+  background-color: dimgray;
   height: 7%;
   width: 100%;
   z-index: 37;
@@ -85,12 +94,21 @@ h5 {
   background-color: gray;
   color: white;
   padding: 20px;
+  text-align: center;
+  background-image: linear-gradient(120deg, black 0%, darkgray 100%);
+  /* margin: 0 0 2rem 0; */
+  font-size: 1.5rem;
 }
 
-/* .container {
+.container {
   display: block;
   flex-wrap: nowrap;
-} */
+}
+
+.contained {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .btn {
   background-color: gray;
@@ -104,7 +122,45 @@ h5 {
 .wrapper {
   display: flex;
   flex-wrap: nowrap;
-  height: 100vh;
+  /* height: 100vh; */
+}
+
+.card {
+  padding: 10px;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 4px;
+  overflow: hidden;
+  /* transition: all .2s linear; */
+}
+
+.card:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  /* transform: translate3D(0, -2px, 0); */
+}
+
+@media screen and (min-width: 300px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+
+.card:nth-child(2n) h5 {
+  background-image: linear-gradient(120deg, black 0%, darkgray 100%);
+}
+
+.card:nth-child(4n) h5 {
+  background-image: linear-gradient(120deg, black 0%, darkgray 100%);
+}
+
+.card:nth-child(5n) h5 {
+  background-image: linear-gradient(120deg, black 0%, darkgray 100%);
 }
 
 footer {
@@ -117,22 +173,3 @@ footer {
   bottom: 0;
   width: 100vw;
 }
-
-
-
-/* aside > div{
-    background-color: black;
-    padding: 30px;
-    margin-left: 0px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-} */
-
-/* section {
-    background-color: dimgray;
-    padding: 30px;
-    margin: 10px;
-    border-radius: 3px;
-} */
