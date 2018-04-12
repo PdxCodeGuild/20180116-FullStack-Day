@@ -18,6 +18,7 @@
 - Anna Spysz
     - anna@annaspysz.com
     - Capstone Repo: https://github.com/bildungsroman/ifandonlyif.io
+    - Bug/feature spreadsheet: https://docs.google.com/spreadsheets/d/1of64JAw58ZcHRoA9sZqPyIhAF6ELwZjz0C8T4awcO6A/edit?usp=sharing
 - Brianna Harris
     - bkharris77@gmail.com
     Capstone repo: https://github.com/NinjaBee/StorieStream_Main (New Repo)
