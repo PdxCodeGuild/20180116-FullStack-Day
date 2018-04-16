@@ -27,7 +27,7 @@ IFF will use Django in the backend to store user accounts and user lists. It wil
 - PostgreSQL for the user and list database
 - VueJS frontend
 - Materialize CSS for style
-- Deploy on Heroku/AWS (tbd)
+- Deploy on AWS Elastic Beanstalk
 
 **Potential users**:
 
@@ -47,7 +47,7 @@ IFF will use Django in the backend to store user accounts and user lists. It wil
 ## Functionality
 The user starts on the landing page, which will look like so:
 
-![Image of landing page](https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/Code/Anna/Capstone/Capstone%20mockup%20and%20proposal/img/iffscreen2.png)
+![Image of landing page](https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/Code/Anna/Capstone/Capstone%20mockup%20and%20proposal/img/iffscreen.png)
 
 A user signs up, and creates their first IFF list. They enter one get-to-do and how ever many to-dos they want.
 
@@ -55,56 +55,91 @@ Once a user has an account, their home screen shows a list of all of their IFF l
 
 Users can also have a history (archive) of all of the things they've done and have gotten to do in the past.
 
+![Image of list page](https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/Code/Anna/Capstone/Capstone%20mockup%20and%20proposal/img/iffscreen2.png)
+
 ## Data Model
 
-There are two main data models:
+There are three main data models:
 1. User
-2. IFF Task
+    - One-to-One relationship with Django User model, + extra fields
+    - Name
+    - username
+    - is_new_user? boolean - if true, get welcome screen
+    - email (not shown)
+    - password (not shown)
+    - profile pic ImageField
+    - short bio (300 chars)
+    - goals (where the user adds their top goals - 300 chars)
+    - friends (for future versions when users can share lists with friends)
+
+2. List of IFF Tasks
+    - text of one get to do item
+    - can you do the get-to-do? boolean
+    - is the get-to-do completed? boolean
+    - user id of owner of list
+    - created date (for sorting)
+    - completed date
+    - is the whole list completed? boolean (for archiving)
+        
+3. Individual IFF to-do task
+    - text of task
+    - foreign key to IFFlist task is part of
+    - is it completed? boolean
 
 The User model includes the user's login information, a profile picture, and all of their active and archived IFF lists. Future versions of IFF will add a social media aspect to the user profile, connecting users as friends and letting them see each others' IFF lists and even keep each other accountable by verifying that the to-do tasks were in fact completed (via photo or something like that).
 
 The IFF Task model is just one get-to-do item followed by at least one to-do item. Each new task is an instance of the IFF model.
 
+### Views
+
+1. Landing page
+    - Register modal
+    - Login sidebar
+2. New user welcome page with first IFFlist
+    - User profile completion sidebar on right
+3. Add IFFlist page
+    - Current/past lists sidebar on left
+4. Detail view for IFFlist
+
 ## Schedule
 
-#### Milestone 1
+### Milestone 1
 _Due date: March 30th_
 
-Entire project is set up, including installing Webpack, Django, and Vue and getting them to play nicely together in a virtual env. A rough front-end including the landing page and user log-in screen is completed.
-#### Milestone 2
+At the end of the week, the entire project is set up, including installing cookiecutter Django with Postgres and MailHog and getting them to play nicely together in ~~a virtual env~~ Docker (yikes!). A rough front-end including the landing page and user log-in screen is completed.
+### Milestone 2
 _Due date: April 6th_
 
 Ability for users to register and add lists is complete. It doesn't have to look pretty yet.
-#### Milestone 3
-_Due date: April 13th_(Capstone presentation day)
+### Milestone 3
+_Due date: April 13th_ (Capstone presentation day)
 
 An MVP of IFF is deployed and live, with the ability for users to sign up. The frontend is finalized.
-#### Milestone 4
+### Milestone 4
 _Due date: April 20th_
 
 User testing and debugging with actual users.
-#### Milestone 5
+### Milestone 5
 _Due date: May 31st_
 
 All bugs fixed and mass roll-out of platform. Functionality limited to signing up and adding up to 10 IFF lists at a time.
-#### Milestone 6
+### Milestone 6
 _Due date: Fall 2018_
 
 Add social aspect to platform. Users can become friends, invite their friends, and show lists to friends who will keep them accountable.
-#### Milestone 7
+### Milestone 7
 _Due date: end of 2018_
 
 Monetization of platform. Add premium monthly plan for unlimited lists.
-#### Milestone 8
+### Milestone 8
 _Due date: Q1 2019_
 
 Monetization of platform. Add team premium tier where multiple people can share lists.
-#### Milestone 9
+### Milestone 9
 _Due date: Q2 2019_
 
-Launch iOS and Android apps.
+Launch iOS and Android apps, Mac desktop app in the menu bar?
 ### Milestone 10
 _Due date: ?_
 
 Sell IFF to Mark Zuckerberg and retire to a private island.
-
