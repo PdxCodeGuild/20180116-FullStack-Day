@@ -47,7 +47,7 @@ IFF will use Django in the backend to store user accounts and user lists. It wil
 ## Functionality
 The user starts on the landing page, which will look like so:
 
-![Image of landing page](https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/32fb93dacbb08965f67cddb6c3ed06fc6ba41625/Code/Anna/Capstone/mockup/img/Screen%20Shot%202018-03-21%20at%2015.33.26.png)
+![Image of landing page](https://raw.githubusercontent.com/PdxCodeGuild/20180116-FullStack-Day/master/Code/Anna/Capstone/Capstone%20mockup%20and%20proposal/img/iffscreen2.png)
 
 A user signs up, and creates their first IFF list. They enter one get-to-do and how ever many to-dos they want.
 
