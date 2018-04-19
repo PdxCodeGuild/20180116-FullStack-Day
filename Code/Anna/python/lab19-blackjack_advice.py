@@ -7,6 +7,7 @@ import random
 
 card_list = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 card_dict = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 10, 'Q': 10, 'K': 10}
+ace_count = 0
 
 
 def deal():
@@ -29,8 +30,13 @@ def deal():
 # computer dealer version:
 
 
-def play(player_cards):
-    if 'A' in player_cards:
+def play(player_cards, ace_count):
+    if ace_count == 0:
+        total = 0
+        for i in range(len(player_cards)):
+            total += card_dict[player_cards[i]]
+
+    elif ace_count == 1:
         total = 0
         player_cards.remove('A')
 
@@ -48,17 +54,78 @@ def play(player_cards):
             player_cards.append('A')
             print(f"Ace value: {ace_value}")
 
-    else:
+    elif ace_count == 2:
         total = 0
+        player_cards = list(filter(lambda a: a != 'A', player_cards))
+
         for i in range(len(player_cards)):
             total += card_dict[player_cards[i]]
+
+        if total < 11:
+            ace_value = 12
+            total += 12
+            player_cards.append('A')
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+        else:
+            ace_value = 2
+            total += 2
+            player_cards.append('A')
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+
+    elif ace_count == 3:
+        total = 0
+        player_cards = list(filter(lambda a: a != 'A', player_cards))
+
+        for i in range(len(player_cards)):
+            total += card_dict[player_cards[i]]
+
+        if total < 11:
+            ace_value = 13
+            total += 13
+            player_cards.append('A')
+            player_cards.append('A')
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+        else:
+            ace_value = 3
+            total += 3
+            player_cards.append('A')
+            player_cards.append('A')
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+
+    elif ace_count == 4:
+        total = 0
+        player_cards = list(filter(lambda a: a != 'A', player_cards))
+
+        for i in range(len(player_cards)):
+            total += card_dict[player_cards[i]]
+
+        if total < 11:
+            ace_value = 14
+            total += 14
+            player_cards.append('A')
+            player_cards.append('A')
+            player_cards.append('A')
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
+        else:
+            ace_value = 4
+            total += 4
+            player_cards.append('A')
+            player_cards.append('A')
+            player_cards.append('A')
+            player_cards.append('A')
+            print(f"Ace value: {ace_value}")
 
     print(f"You have: {', '.join(player_cards)}")
     print(f"Your current total is: {total}")
     return total
 
 
-def game():
+def game(ace_count):
     cards = []
     hit = True
     total = 0
@@ -66,8 +133,10 @@ def game():
     while hit is True:
         new_card = deal()
         print(f"The dealer gives you: {new_card}")
+        if new_card == 'A':
+            ace_count += 1
         cards.append(new_card)
-        total = play(cards)
+        total = play(cards, ace_count)
 
         if total > 21:
             print("Busted!")
@@ -88,5 +157,4 @@ def game():
     return total
 
 
-game()
-
+game(ace_count)
