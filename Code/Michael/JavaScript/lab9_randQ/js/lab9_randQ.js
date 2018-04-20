@@ -27,14 +27,12 @@ function get_data() {
             let node = document.createElement("li");
             node.innerText = data.quotes[i].body + ' - ' + data.quotes[i].author;
             bq.appendChild(node);
-
-        setInterval(get_data, 10000);
         }
     });
 }
 
 
-// setInterval(get_data, 10000);
+setInterval(get_data, 10000);
 
 
 clicked.addEventListener("click", function() {
