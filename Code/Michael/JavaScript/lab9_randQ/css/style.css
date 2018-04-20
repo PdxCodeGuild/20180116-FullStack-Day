@@ -2,6 +2,11 @@ body {
     background-color: #1b1e21;
     color:white;
     font-family: "Helvetica Neue", "Times New Roman", sans-serif;
+    padding-bottom: 50px;
+}
+
+li {
+    padding-bottom: 15px;
 }
 
 button {

@@ -29,7 +29,7 @@
 
   <header>
     <h1>Everyday</h1>
-    <p>Learn about music and buy something else, like beer and/or pizza.</p>
+    <p>Learn about music and share.</p>
   </header>
 
   <main>
@@ -37,6 +37,7 @@
       <div class="container">
         {% block content %}
         {% endblock %}
+
       </div>
     </div>
   </main>
@@ -48,5 +49,7 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="{% static 'posts/project.js' %}"></script>
+
 </body>
 </html>
