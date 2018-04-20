@@ -26,8 +26,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-content: flex-end;
-    margin-top: 30%;
-    top: 90%;
+    margin-top: 100px;
 }
 
 .tag_div {
@@ -36,7 +35,7 @@ body {
 }
 
 button {
-    background-color: #82a8ff;
+    background-color: #ffffff;
     margin: 1.5em;
     border-color: hotpink;
     border-width: medium;
@@ -47,6 +46,22 @@ button {
     z-index: 3;
     height: 3em;
     width: 2em;
+}
+#search_bt {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #82a8ff;
+    margin: 1.5em;
+    border-color: hotpink;
+    border-width: medium;
+    border-radius: 10%;
+    color: hotpink;
+    font-family: "Sacramento", cursive, "Nanum Brush Script", cursive;
+    font-size: .6em;
+    z-index: 3;
+    height: 2em;
+    width: 3.5em;
 }
 
 #quote_div {
