@@ -4,7 +4,7 @@ let clicked = document.getElementById('clicked');
 
 function http_get(url, success) {
     let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState === 1) {
             xhttp.setRequestHeader('Authorization', 'Token token=""')
         } else if (this.readyState === 4 && this.status === 200) {
@@ -14,24 +14,22 @@ function http_get(url, success) {
     };
     xhttp.open("GET", url);
     xhttp.send();
+}
 
-    window.onload = function() {
-    function http_get() {
-    }
-    setInterval(http_get, 5000);
 
-};
+function get_data() {
+    http_get('https://favqs.com/api/quotes/', function(data) {
+        document.getElementById("bq").innerHTML = data.quotes[0].body + ' - ' + data.quotes[0].author;
+    });
+}
+
+
+setInterval(get_data, 10000);
 
 
 clicked.addEventListener("click", function() {
-    http_get('https://favqs.com/api/quotes/', renderHTML);
-
+    get_data();
 });
 
-function renderHTML(data) {
-    document.getElementById("bq").innerHTML = data.quotes[0].body + ' - ' + data.quotes[0].author;
-
-
-}}
 
 
