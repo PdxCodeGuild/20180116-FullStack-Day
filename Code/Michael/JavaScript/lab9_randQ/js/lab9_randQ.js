@@ -14,7 +14,14 @@ function http_get(url, success) {
     };
     xhttp.open("GET", url);
     xhttp.send();
-}
+
+    window.onload = function() {
+    function http_get() {
+    }
+    setInterval(http_get, 5000);
+
+};
+
 
 clicked.addEventListener("click", function() {
     http_get('https://favqs.com/api/quotes/', renderHTML);
@@ -23,6 +30,8 @@ clicked.addEventListener("click", function() {
 
 function renderHTML(data) {
     document.getElementById("bq").innerHTML = data.quotes[0].body + ' - ' + data.quotes[0].author;
-}
+
+
+}}
 
 

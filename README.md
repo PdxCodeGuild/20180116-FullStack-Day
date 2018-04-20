@@ -17,10 +17,10 @@
 
 - Anna Spysz
     - anna@annaspysz.com
-    - Capstone Repo: https://github.com/bildungsroman/ifandonlyif.io
+    - Capstone Repo: https://github.com/bildungsroman/iffapp.com
 - Brianna Harris
     - bkharris77@gmail.com
-    https://github.com/NinjaBee/StorieStream
+    Capstone repo: https://github.com/NinjaBee/StorieStream_Main (New Repo)
 - Eric Talbot
     - etalbot1989@gmail.com
     - capstone: https://github.com/efeezyubeezy/eric-capstone-2018-StudyBuddy

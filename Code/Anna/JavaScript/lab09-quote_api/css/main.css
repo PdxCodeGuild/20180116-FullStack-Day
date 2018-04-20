@@ -13,7 +13,7 @@ body {
 .headDiv {
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 25%;
     transform: translate(-50%, -50%);
     width: 60%;
     height: 40%;
@@ -44,7 +44,7 @@ body {
 #container{
     position: absolute;
     left: 50%;
-    top: 65%;
+    top: 70%;
     transform: translate(-50%, -50%);
     width: 60%;
     min-height: 40%;
