@@ -6,7 +6,7 @@
 </head>
 <body>
 <body>
-    <blockquote id="quote_block"></blockquote>
+    <ul id="quote_block"></ul>
     <span id="quote"></span>
 
     <input id="search_input">
@@ -24,7 +24,12 @@
             http_get(url, function(data) {
                 console.log(data);
                 //Print it out here
-                quote_block.innerText = data.quotes[0].body + ' - ' + data.quotes[0].author;
+                for (let i=0; i< data.quotes.length; ++i) {
+                    let single_quote = document.createElement("li");
+                    single_quote.innerText = data.quotes[i].body + ' - ' + data.quotes[i].author;
+                    quote_block.appendChild(single_quote);
+                }
+
 
             });
         });
