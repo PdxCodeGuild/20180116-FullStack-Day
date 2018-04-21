@@ -61,23 +61,23 @@ function getQuotes(page_number) {
 
 page_button_1.onclick = function () {
     getQuotes(1);
-    window.onScroll(0,0);
+    window.scrollTo(0,0);
 };
 page_button_2.onclick = function () {
     getQuotes(2);
-    window.onScroll(0,0);
+    window.scrollTo(0,0);
 };
 page_button_3.onclick = function () {
     getQuotes(3);
-    window.onScroll(0,0);
+    window.scrollTo(0,0);
 };
 page_button_4.onclick = function () {
     getQuotes(4);
-    window.onScroll(0,0);
+    window.scrollTo(0,0);
 };
 page_button_5.onclick = function () {
     getQuotes(5);
-    window.onScroll(0,0);
+    window.scrollTo(0,0);
 };
 
 
