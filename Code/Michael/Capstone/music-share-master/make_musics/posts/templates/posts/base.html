@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+<head>
+  <meta charset="UTF-9">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="{% static 'posts/style.css' %}">
+  <title>Site name</title>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <form>
+      <a href="/admin">Admin Login</a>
+          <input type="search">
+          <button class="btn">Search</button>
+      </form>
+    </div>
+    <style>
+      input {
+        width: unset !important;
+      }
+    </style>
+  </nav>
+
+  <header>
+    <h1>Everyday</h1>
+    <p>Learn about music and share.</p>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Copiedright 2018
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="{% static 'posts/project.js' %}"></script>
+
+</body>
+</html>

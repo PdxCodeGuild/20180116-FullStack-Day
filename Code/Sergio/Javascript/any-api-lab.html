@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    </head>
+
+    <body>
+        <div id='trade'> open console </div>
+    </body>
+    <h2>Create Object from JSON String</h2>
+
+    <p id="test"></p>
+
+
+    <script type="text/javascript">
+        let socket = io.connect('https://coincap.io');
+        socket.on('trades', function (tradeMsg) {
+            console.log(tradeMsg);
+            document.getElementById('trade').innerHTML = JSON.stringify(tradeMsg)
+        })
+    </script>
+<script>
+</div>
+
+
+</html>

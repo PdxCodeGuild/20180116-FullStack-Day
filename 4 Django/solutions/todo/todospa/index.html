@@ -1,0 +1,77 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.0/vue-resource.min.js"></script>
+    <style>
+        body {
+            transition: all ease 5s;
+        }
+
+        .fade-enter-active, .fade-leave-active {
+          transition: opacity .2s;
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+          opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello World!</h1>
+<div id="app">
+    <input type="text" v-model="todo_text"/>
+    <button v-on:click="addTodo">add todo</button>
+    <transition name="fade">
+        <div v-if="!loading_data">
+            <ul>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ul>
+        </div>
+    </transition>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            todos: [],
+            todo_text: '',
+            loading_data: false
+        },
+        methods: {
+            getTodos() {
+                let app = this;
+                app.loading_data = true;
+                this.$http.get('/todospa/list_todos').then(response => {
+                    app.todos = response.data.todo_items;
+                    app.loading_data = false;
+                });
+            },
+            addTodo() {
+                let csrf_token = Cookies.get('csrftoken');
+                this.$http.post('/todospa/save_todo/',
+                                    {'todo_text': this.todo_text},
+                                    {headers: {'X-CSRFToken': csrf_token}})
+                    .then(response => {
+                        this.getTodos();
+                    }, response => {
+                        console.log('error');
+                        console.log(response);
+                    });
+            }
+        }
+    });
+    app.getTodos();
+    app.addTodo();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

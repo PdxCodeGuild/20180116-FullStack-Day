@@ -1,0 +1,7 @@
+<h3>Authors: </h3>
+
+<ul>
+    {% for author in author_list %}
+    <li><a href="{% url 'library:detail' %}" author.id>{{author.name}}</li>
+    {% endfor %}
+</ul>

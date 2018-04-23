@@ -1,0 +1,13 @@
+
+
+<form action="{% url 'todoforms:index' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="todo_text"/>
+    <button type="submit">add todo</button>
+</form>
+<ul>
+    {% for todo_item in todo_items %}
+    <li>{{todo_item.text}}</li>
+    {% endfor %}
+</ul>
+

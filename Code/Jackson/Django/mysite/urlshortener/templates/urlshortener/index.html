@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <p>URL Shortener</p>
+    <form method="post">
+        {% csrf_token %}
+        <input id="orig_url" name="orig_url" placeholder="enter URL here" type="text" />
+        <button formaction="{% url 'urlshortener:index' %}" type="submit">shorten</button>
+    </form>
+    {% for display_url in urls%}
+        <li>
+            <a href="{{orig_url}}">{{ display_url }}</a>
+        </li>
+    {% endfor %}
+
+    <ul>
+    </ul>
+</body>
+</html>

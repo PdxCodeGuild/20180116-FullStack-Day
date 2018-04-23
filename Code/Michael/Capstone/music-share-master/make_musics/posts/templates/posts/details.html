@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+
+{% block content %}
+<h5>{{post.title}}</h5>
+<div class="card">
+  <div class="card-content">
+    {{post.body}}
+  </div>
+  <div class="card-action">
+    {{post.created_at}}
+    <div id="root"></div>
+  </div>
+</div>
+<a href="/posts" class="btn">Go back</a>
+{% endblock %}

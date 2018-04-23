@@ -1,10 +1,13 @@
+
+
+
 let bq = document.getElementById('bq');
 let clicked = document.getElementById('clicked');
 
 
 function http_get(url, success) {
     let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState === 1) {
             xhttp.setRequestHeader('Authorization', 'Token token=""')
         } else if (this.readyState === 4 && this.status === 200) {
@@ -16,13 +19,20 @@ function http_get(url, success) {
     xhttp.send();
 }
 
-clicked.addEventListener("click", function() {
-    http_get('https://favqs.com/api/quotes/', renderHTML);
+function get_data() {
 
-});
-
-function renderHTML(data) {
-    document.getElementById("bq").innerHTML = data.quotes[0].body + ' - ' + data.quotes[0].author;
+    http_get('https://favqs.com/api/quotes/', function(data) {
+        for (let i = 0; i < 1; i++) {
+            let node = document.createElement("li");
+            node.innerText = data.quotes[i].body + ' - ' + data.quotes[i].author;
+            bq.appendChild(node);
+        }
+    });
 }
 
+setInterval(get_data, 10000);
 
+
+clicked.addEventListener("click", function() {
+    get_data();
+});

@@ -1,0 +1,7 @@
+<h1>My Library</h1>
+
+<ul>
+    {% for book in checkedout %}
+    <li><a href="{% url 'library:detail' checkedout.id%}">{{book.title}}</a></li>
+    {% endfor %}
+</ul>
