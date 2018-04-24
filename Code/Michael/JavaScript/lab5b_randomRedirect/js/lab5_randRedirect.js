@@ -1,7 +1,8 @@
 
-document.getElementById("clicked").onclick = function () {
 
-    let recs = [
+
+
+let recs = [
     'https://www.discogs.com/Various-Blue-Skied-An-Clear-A-Morr-Music-Compilation/master/60921',
     'https://www.discogs.com/William-Basinski-Watermusic-II/master/476858',
     'https://www.discogs.com/Windsor-For-The-Derby-How-We-Lost/master/104957',
@@ -40,10 +41,19 @@ document.getElementById("clicked").onclick = function () {
     'https://www.discogs.com/Various-MASK-500/master/203080',
     'https://www.discogs.com/Autechre-Gescom-Keynell-Keynell/master/134096',
     'https://www.discogs.com/Cyclobe-Wounded-Galaxies-Tap-At-The-Window/master/289307',
-    ];
+];
 
-    let picked = Math.floor(Math.random() * recs.length);
-    location.href = recs[picked];
+let seconds = 5;
 
-    };
+function countdown() {
+    seconds = seconds - 1;
+    if (seconds < 0) {
+        let picked = Math.floor(Math.random() * recs.length);
+        location.href = recs[picked];
+    } else {
+        document.getElementById("countdown").innerHTML = seconds;
+        window.setTimeout("countdown()", 1000);
+    }
+}
 
+countdown();
