@@ -15,27 +15,21 @@ def numbers(x):
     tens = {20: 'twenty', 30: 'thirty', 40: 'fourty', 50: 'fifty', 60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety'}
     hundreds = {100: 'one-hundred', 200: 'two-hundred', 300: 'three-hundred', 400: 'four-hundred', 500: 'five-hundred', 600: 'six-hundred', 700: 'seven-hundred', 800: 'eight-hundred', 900: 'nine-hundred'}
 
-    hundred = x // 10 * 10 * 10
+    hundred = x // 100 * 100
     ten = x // 10 * 10
     one = x % 10
-
     text = ""
-
 
     if x <= 10:
         text = ones[one]
-
     if x >= 10 and x <= 19:
         text = teens[x]
-
     if x >= 20 and x <= 99:
         text = tens[ten] + '-' + ones[one]
-
     if x >= 100 and x <= 999:
         text = hundreds[hundred] + '-' + tens[ten] + '-' + ones[one]
 
     print(text)
 
-
-numbers(65)
+numbers(125)
 
