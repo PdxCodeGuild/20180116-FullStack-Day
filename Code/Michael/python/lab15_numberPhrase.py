@@ -11,12 +11,12 @@ def min(a, b):
 def numbers(x):
 
     ones = {0: 'Zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
-    teens = {10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen'}
-    tens = {20: 'twenty', 30: 'thirty', 40: 'fourty', 50: 'fifty', 60: 'sixty', 70: 'seventy', 80: 'eighty', 90: 'ninety'}
-    hundreds = {100: 'one-hundred', 200: 'two-hundred', 300: 'three-hundred', 400: 'four-hundred', 500: 'five-hundred', 600: 'six-hundred', 700: 'seven-hundred', 800: 'eight-hundred', 900: 'nine-hundred'}
+    teens = {0: 'ten', 1: 'eleven', 2: 'twelve', 3: 'thirteen', 4: 'fourteen', 5: 'fifteen', 6: 'sixteen', 7: 'seventeen', 8: 'eighteen', 9: 'nineteen'}
+    tens = {2: 'twenty', 3: 'thirty', 4: 'fourty', 5: 'fifty', 6: 'sixty', 7: 'seventy', 8: 'eighty', 9: 'ninety'}
+    hundreds = {1: 'one-hundred', 2: 'two-hundred', 3: 'three-hundred', 4: 'four-hundred', 5: 'five-hundred', 6: 'six-hundred', 7: 'seven-hundred', 8: 'eight-hundred', 9: 'nine-hundred'}
 
-    hundred = x // 100 * 100
-    ten = x // 10 * 10
+    hundred = x // 100
+    ten = x // 10 % 10
     one = x % 10
     text = ""
 
@@ -31,5 +31,5 @@ def numbers(x):
 
     print(text)
 
-numbers(125)
+numbers(625)
 
