@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Using Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!--Making it easier to make an HTTP request-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+</head>
+<body>
+
+<!--Using bootstrap to make card-block containers to display the info-->
+<div class="container">
+    <h2>Enter a Location:</h2>
+    <form id="location-form">
+        <input placeholder="Enter a location. For Example: PDX Code Guild or Portland, Oregon" id="location-input" class="form-control form-control-lg"/><br>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <div class="card-block" id="formatted-address"></div>
+    <div class="card-block" id="address-components"></div>
+    <div class="card-block" id="geometry"></div>
+</div>
+<script>
+    //Broke the key down to Two parts LOL
+    let first_part_key = 'AIzaSyB8u69JTnutLr5';
+    let second_part_key = 'MiOsvxGyhvEzgArawEiY';
+
+    let location_form = document.getElementById('location-form');
+    // Listen for the submit action and calls the geocode function when it is clicked.
+    location_form.addEventListener('submit', geocode);
+
+    function geocode(event) {
+        //Prevent actual submit
+        // THis will prevent it from blinking when we submit the request. It's stops it and
+        // just displays the info.
+        event.preventDefault();
+
+        let location = document.getElementById('location-input').value;
+
+        //HTTP Request
+        axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+            params: {
+                address: location,
+                key: first_part_key + second_part_key
+            }
+        })
+        // then will do everything inside unlesss there is an error. If there is an error it
+        // will go down to .catch
+            .then(function (response) {
+                //Log full response
+                console.log(response);
+
+
+                //Formatted address
+                // it Goes response -> data -> results -> formatted_address
+                let formattedAddress = response.data.results[0].formatted_address;
+                let formattedAddressOutput = `
+                <ul class="list-group">
+                <li class="list-group-item"> ${formattedAddress} </li>
+                </ul>`;
+
+                // Address Components
+                let addressComponents = response.data.results[0].address_components;
+                let addressComponentsOutput = '<ul class="list-group">';
+                for (let i = 0; i < addressComponents.length; i++) {
+                    addressComponentsOutput += `
+                    <li class="list-group-item"><strong>${addressComponents[i].types[0]
+                        }</strong>: ${addressComponents[i].long_name} </li>`;
+                }
+                addressComponentsOutput += '</ul>';
+                //Geometry
+                //Same as above. Now we are just gettinng Latitude and Longitutde.
+                let lat = response.data.results[0].geometry.location.lat;
+                let lng = response.data.results[0].geometry.location.lng;
+
+                //the Backtick are so that i can put more than one line in.
+                let geometryOutput = `
+                <ul class="list-group">
+                <li class="list-group-item"><strong>Latitude</strong>:
+                ${lat} </li>
+                <li class="list-group-item"><strong>Longitude</strong>:
+                ${lng} </li>
+                </ul>`;
+
+                // Output the string outputs to the divs we have created in the body.
+                document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
+                document.getElementById('address-components').innerHTML = addressComponentsOutput;
+                document.getElementById('geometry').innerHTML = geometryOutput;
+            })
+
+            // Logs Error if nothing i written inside (400) error or if the address does not exsist.
+            .catch(function (error) {
+                console.log(error)
+            });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
