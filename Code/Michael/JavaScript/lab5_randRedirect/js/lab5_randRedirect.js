@@ -1,7 +1,4 @@
 
-
-
-
 document.getElementById("clicked").onclick = function () {
 
     let recs = [
@@ -50,6 +47,3 @@ document.getElementById("clicked").onclick = function () {
 
     };
 
-setTimeout(function(){
-window.location.reload(1);
-}, 5000);
