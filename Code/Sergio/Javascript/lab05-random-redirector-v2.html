@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Random JavaScript Redirect</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Aldrich');
+
+    body {
+        background-color: whitesmoke;
+        color: #1b1e21;
+        text-align: center;
+        font-family: 'Aldrich', sans-serif;
+
+    }
+
+    h1 {
+        color: #274982;
+        font-size: 3em;
+        margin-bottom: 7px;
+
+    }
+    h2 {
+    color: #53913b;
+    font-size: 3em;
+    margin-bottom: 7px;
+
+    }
+
+    #clock {
+        color: #274982;
+        font-size: 5em;
+        text-align: center;
+    }
+</style>
+    </style>
+</head>
+<body>
+<div id=clock">
+
+
+<h1>Random JavaScript Redirect</h1>
+<h2>Countdown</h2> <h2><span id="countdown">5</span></h2>
+
+</div>
+<script>
+
+let seconds = 5;
+let urls = ['http://amzn.to/2EXZsE0', 'https://www.coinbase.com/join/5961d3bad26ede011ecc6fa7', 'https://m.do.co/c/757005c05ff0'];
+
+let randomUrl = Math.floor(Math.random() * urls.length);
+
+
+function countdown() {
+    seconds = seconds - 1;
+    if (seconds < 0) {
+
+        window.location = urls[randomUrl];
+    } else {
+        // Update remaining seconds
+        document.getElementById("countdown").innerHTML = seconds;
+        // Count down using javascript
+        window.setTimeout("countdown()", 1000);
+    }
+}
+
+// call countdown function
+countdown();
+
+</script>
+</body>
+</html>
