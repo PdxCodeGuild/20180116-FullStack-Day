@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quote v2</title>
+</head>
+<body>
+<body>
+    <ul id="quote_block"></ul>
+    <span id="quote"></span>
+
+    <input id="search_input">
+    <button id="search_bt">search</button>
+    <script>
+        let search_bt = document.querySelector("#search_bt");
+        let search_input = document.querySelector("#search_input");
+        let page_id = 1;
+        let api_key = "";
+        let quote_block = document.querySelector('#quote_block');
+
+        search_bt.addEventListener("click", function(){
+            //alert(search_input.value)
+            let url = "https://favqs.com/api/quotes?page="+page_id+"&filter=" + search_input.value;
+            http_get(url, function(data) {
+                console.log(data);
+                //Print it out here
+                for (let i=0; i< data.quotes.length; ++i) {
+                    let single_quote = document.createElement("li");
+                    single_quote.innerText = data.quotes[i].body + ' - ' + data.quotes[i].author;
+                    quote_block.appendChild(single_quote);
+                }
+
+
+            });
+        });
+
+    // can I get a secrets page so I don't commit an API key?  On line 45, took out: xhttp.setRequestHeader();
+
+        function http_get(url, success) {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 1) {
+                    console.log("test");
+                    xhttp.setRequestHeader('Authorization', 'Token token="'+ api_key + '"')
+                } else if (this.readyState === 4 && this.status === 200) {
+                    console.log("test2");
+                    let data = JSON.parse(xhttp.responseText);
+                    success(data);
+                } else if (this.readyState === 4 && this.status === 404) {
+                    // handle 404
+                    console.log("test3");
+                }
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+
+
+
+    </script>
+
+</body>
+</body>
+</html>
