@@ -1,0 +1,169 @@
+<html>
+<head>
+    <title>Stopwatch</title>
+</head>
+<body onload="clockTime()">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Aldrich');
+
+    h1 {
+        color: #274982;
+        font-size: 6em;
+        margin-bottom: 2px;
+
+    }
+
+    body {
+        background-color: whitesmoke;
+        color: #1b1e21;
+        text-align: center;
+    }
+
+    #stopwatch {
+        color: #274982;
+        font-size: 4em;
+        text-align: center;
+    }
+    .lap {
+        color: #274982;
+        background-color: whitesmoke;
+    }
+
+    .button {
+        font-size: 1em;
+        background-color: #274982;
+        color: whitesmoke;
+        width: 150px;
+        margin:4px;
+    }
+
+</style>
+
+<h1>JavaScript Stopwatch with Laps</h1>
+<div id="#timer">
+</div>
+
+
+<input class="stopwatch" id="stopwatch" type="text" value="0:0:0" ><br>
+	<input class="button" id="startandstopbutton" type="button" value="Start/Stop" onClick="startandstop();"><br>
+	<input class="button" id="marklapbutton" type="button" value="Lap" onClick="marklap();" ><br>
+	<input class="button" id="resetbutton" type="button" value="Reset Stopwatch" onClick="resetstopwatch();"><br>
+	<textarea class="lap" id="lapdetails"></textarea>
+
+<script>
+	let stopwatch;
+	let runningstate = 0;
+	let stoptime = 0;
+	let lapcounter = 0;
+	let currenttime;
+	let lapdate = '';
+	let lapdetails;
+
+	function timecounter(starttime)
+		{
+		currentdate = new Date();
+		lapdetails = document.getElementById('lapdetails');
+		stopwatch = document.getElementById('stopwatch');
+
+		let timediff = currentdate.getTime() - starttime;
+		if(runningstate == 0)
+			{
+			timediff = timediff + stoptime
+			}
+		if(runningstate == 1)
+			{
+			stopwatch.value = formattedtime(timediff);
+			refresh = setTimeout('timecounter(' + starttime + ');',10);
+			}
+		else
+			{
+			window.clearTimeout(refresh);
+			stoptime = timediff;
+			}
+		}
+
+function marklap()
+             {
+             if(runningstate == 1)
+                   {
+                   if(lapdate != '')
+                       {
+                        let lapold = lapdate.split(':');
+                        let lapnow = stopwatch.value.split(':');
+                        let lapcount = new Array();
+                        let x = 0
+        for(x; x < lapold.length; x++)
+             {
+         lapcount[x] = new Array();
+         lapcount[x][0] = lapold[x]*1;
+         lapcount[x][1] = lapnow[x]*1;
+              }
+         if(lapcount[1][1] < lapcount[1][0])
+              {
+            lapcount[1][1] += 60;
+              lapcount[0][1] -= 1;
+             }
+          if(lapcount[2][1] < lapcount[2][0])
+             {
+             lapcount[2][1] += 10;
+             lapcount[1][1] -= 1;
+              }
+       let mzeros = (lapcount[0][1] - lapcount[0][0]) < 10?'0':'';
+       let szeros = (lapcount[1][1] - lapcount[1][0]) < 10?'0':'';
+       lapdetails.value += '\t+' + mzeros + (lapcount[0][1] - lapcount[0][0]) + ':'
+        + szeros + (lapcount[1][1] - lapcount[1][0]) + ':'
+           + (lapcount[2][1] - lapcount[2][0]) + '\n';
+         }
+       lapdate = stopwatch.value;
+       lapdetails.value += (++lapcounter) + '. ' + stopwatch.value;
+        }
+     }
+function startandstop()
+      {
+      let startandstop = document.getElementById('startandstopbutton');
+      let startdate = new Date();
+      let starttime = startdate.getTime();
+      if(runningstate==0)
+    {
+     startandstop.value = 'Stop';
+      runningstate = 1;
+     timecounter(starttime);
+     }
+ else
+      {
+      startandstop.value = 'Start';
+      runningstate = 0;
+      lapdate = '';
+      }
+   }
+      function resetstopwatch()
+        {
+      lapdetails.value = '';
+      lapcounter = 0;
+       stoptime = 0;
+      lapdate = '';
+      window.clearTimeout(refresh);
+     if(runningstate == 1)
+   {
+   let resetdate = new Date();
+   let resettime = resetdate.getTime();
+   timecounter(resettime);
+  }
+else
+  {
+stopwatch.value = "0:0:0";
+  }
+ }
+ function formattedtime(unformattedtime)
+  {
+   let decisec = Math.floor(unformattedtime/100) + '';
+   let second = Math.floor(unformattedtime/1000);
+    let minute = Math.floor(unformattedtime/60000);
+decisec = decisec.charAt(decisec.length - 1);
+second = second - 60 * minute + '';
+return minute + ':' + second + ':' + decisec;
+}
+ // next time i'll use getHours getMinutes getSeconds getMilliseconds
+</script>
+</body>
+</html>
