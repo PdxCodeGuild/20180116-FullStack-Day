@@ -1,0 +1,75 @@
+!DOCTYPE html>
+head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Using JavaScript to get Api Calls</title>
+</head>
+<style>
+    body {
+        background-color: #1b1e26;
+    }
+
+    #main {
+        color: #6e7b99;
+        font-weight: bold;
+        text-align: center;
+        background-color: #1c1F24;
+        margin: 40px 100px 0 100px;
+        padding: 10px;
+    }
+
+    #quotes_of_the_day {
+
+        font-size: 20px;
+        font-family: monospace;
+        padding: 5px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #6e7b99;
+        padding-bottom: 5px;
+    }
+</style>
+</head>
+<body>
+<div id="quotes_of_the_day"><h2>25 Daily Quotes using JavaScript and API calls</h2></div>
+<div id="main"></div>
+
+<script>
+    let main = document.querySelector('#main');
+    let api_key = "3373ba34fe2285b35174cc6048d6e129";
+
+    function getQuote(page_one, quote_index) {
+        let url = 'https://favqs.com/api/quotes?page=' + page_one;
+        let httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function () {
+            let div = document.createElement('div');
+            if (httpRequest.readyState === 1) {
+                httpRequest.setRequestHeader('Authorization', 'Token token="' + api_key + '"');
+            } else if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+
+                let data = JSON.parse(httpRequest.responseText);
+                console.log(quote_index);
+                // isuees implementing blockquote
+                div.innerHTML = +"<blockquote>" + "Quote " + "</blockquote>" + (quote_index + 1) + ': \"' + data.quotes[quote_index].body + '\"' + "<p>" + '- ' + data.quotes[quote_index].author;
+                main.appendChild(div);
+            }
+        };
+        httpRequest.open('GET', url, true);
+        httpRequest.send();
+    }
+
+    function getQuotes() {
+        let page_one = 1;
+        for (let quote_index = 0; quote_index < 25; quote_index++) {
+            getQuote(page_one, quote_index);
+        }
+    }
+
+    getQuotes()
+</script>
+</body>
+</html>
