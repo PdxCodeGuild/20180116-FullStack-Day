@@ -1,38 +1,54 @@
 """
-Lab 24: Rain Data v1
+Lab 24: Rain Data - Mt. Tabor
 """
 import datetime
-import re
 
 # defines global string
 opendata = 'mttabor.txt'
-
-# daily rain list
+# list of tuples,
+tuples_list = []
 days = []
-data = []
+with open(opendata) as f:
+    contents = f.read().split('\n')  # new line
 
-with open(opendata) as file:  # opens 'opendata' where mttabor is assigned to
-    lines = file.read().split('\n')
+for i in range(12, len(contents)):  # skips first 12 lines
+    line = contents[i].split()
 
-for i in range(0, 12):  # skips to line 12
-    lines.remove(lines[0])
-lines.pop()
+    if len(line) == 0:
+        continue
+    date_string = line[0]
+    # datetime object
+    date = datetime.datetime.strptime(date_string, '%d-%b-%Y')
+    if line[1] == '-':
+        continue
+    daily_total_string = int(line[1])
+    tuples_list.append((date, daily_total_string))
 
-# regular expressions
-for i in range(len(lines)):
-    data.append(re.split('\s+', lines[i]))
+# print(tuples_list)
 
-# dates
-for i in range(len(data)):
-    date = datetime.datetime.strptime(data[i][0], '%d-%b-%Y')
-    days.append(f"{date.month}/{date.day}/{date.year}")
 
-# print(date.year)
-# print(date.month)
-# print(date.day)
-# print(date.strftime('%d-%b-%Y'))
-# print(data)
-# print(days)
-# print(lines)
+# get average rainfall
 
-# stuck on v2
+total = 0
+n = 0
+for i in range(len(tuples_list)):
+    total += tuples_list[i][1]
+    n += 1
+
+print(f'Total rain: {total}')
+
+average = total / n
+average_rain = round((total / n) / 100, 2)
+
+print(f'Average daily rainfall in inches: {average_rain}')
+
+# Work out the Mean (the simple average of the numbers) Then for each number: subtract the Mean and square the result (the squared difference).
+difference = 0
+total_num = 0
+for i in range(len(tuples_list)):
+    difference = tuples_list[i][1] - average  # subtract mean/average
+    squared = difference ** 2  # square ** the result
+    total_num += squared
+var = total_num / n
+variance = round((var / 100), 2)
+print(f'Variance is: {variance}')
