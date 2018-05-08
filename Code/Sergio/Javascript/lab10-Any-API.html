@@ -1,27 +1,45 @@
-<!DOCTYPE html>
 <html>
-
-    <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    </head>
-
-    <body>
-        <div id='trade'> open console </div>
-    </body>
-    <h2>Create Object from JSON String</h2>
-
-    <p id="test"></p>
-
-
-    <script type="text/javascript">
-        let socket = io.connect('https://coincap.io');
-        socket.on('trades', function (tradeMsg) {
-            console.log(tradeMsg);
-            document.getElementById('trade').innerHTML = JSON.stringify(tradeMsg)
-        })
-    </script>
-<script>
-</div>
-
-
+<head>
+<title>Bitcoin Real Time Price</title>
+<style type="text/css">
+  #data {
+    width: 400px;
+    border: 1px solid black;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px;
+  }
+  #logo {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <img id="logo" src="http://pngimg.com/uploads/bitcoin/bitcoin_PNG47.png" />
+  <div id="data" />
+  <script type="text/javascript">
+    let xmlhttp = new XMLHttpRequest();
+    let url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4  &&  this.status == 200) {
+        let json = JSON.parse(this.responseText);
+        parseJson(json);
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+    function parseJson(json) {
+      let time = "<b>Real time Bitcoin price : <br>" + json["time"]["updated"] + "</b>";
+      let usdValue = "1 BTC = to $" + json["bpi"]["USD"]["rate"];
+      document.getElementById("data").innerHTML = time +
+	       "<br /><br />" + usdValue;
+}
+</script>
+</body>
 </html>

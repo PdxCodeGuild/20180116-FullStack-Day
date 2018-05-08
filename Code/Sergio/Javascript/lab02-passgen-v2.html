@@ -1,0 +1,110 @@
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Password Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+</head><div class="wrapper">
+    <img src="https://i.imgur.com/KDO4Ulq.jpg" title="JavaScript Password Generator">
+    <br>
+  <h3>Choose password length:</h3>
+  <input id="howLong" class="field" type="number" name="quantity" min="5" max="30" value="5">
+  <h1>Generated Password</h1>
+  <p id="password" class="field">&nbsp;</p>
+  <div id="btn">Generate!</div>
+
+</div>
+<style>
+body, html {
+  padding:0;
+  margin:0;
+}
+body {
+  width:100%;
+  height:100%;
+  text-align: center;
+
+  background: linear-gradient(-180deg, black, #1c1c1c);
+  color: #428ba3;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  letter-spacing:2px;
+}
+.wrapper {
+  border: #428ba3;
+    border-radius:5px;
+  padding:30px;
+  background-color:#292929;
+    box-shadow: 5px 10px lightblue;
+}
+h1 {
+  font-size:2em;
+  margin:0;
+}
+h2 {
+  font-size:1.8em;
+  margin:0;
+}
+.field {
+  font-size:24px;
+  padding: 15px;
+  background-color:#444;
+  max-width:100%;
+  color:#428ba3;
+  margin:10px auto 20px auto;
+}
+input.field {
+  border:none;
+  width:50px;
+  padding:8px 0 8px 8px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  height:45px;
+}
+
+#btn {
+  width:100%;
+  max-width: 180px;
+  background-color:#428ba3;
+  cursor:pointer;
+  margin:auto;
+  color:#000;
+  vertical-align:middle;
+  font-size:20px;
+  border-radius:1px;
+  padding:15px 15px;
+
+  transition: background-color 0.2s linear;
+}
+#btn:hover {
+  background-color: #58bcdd;
+}
+</style>
+<script>
+
+let passGen = document.getElementById("password");
+let btn = document.getElementById("btn");
+let chars = ['A', 'B', 'C', 'D', 'E', 'F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',0,1,2,3,4,5,6,7,8,9,'!','@','#','$','%','^','&','*','(',')','-','=','_','+',',','.','?','<','>'];
+
+function generatePassword(passwordLength){
+  text = "";
+  for(let i=0; i < passwordLength; i++) {
+    text += chars[Math.floor(chars.length * Math.random())];
+    passGen.innerHTML = text;
+  }
+}
+
+btn.addEventListener('click', function(){
+  let passwordLength = document.getElementById("howLong").value;
+  generatePassword(passwordLength);
+
+});
+// to do add a copy to clipboard option
+
+</script>

@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Contacts List</title>
+</head>
+
+<body>
+<h1>Contacts List: Javascript Version</h1>
+<h2>Select CSV file</h2>
+<input id="csv" type="file">
+<h3>Contacts CSV output</h3>
+<output id="out">
+
+</output>
+<script src="jquery-csv.js"></script>
+<script>
+let contacts_list = [];
+let contacts_dict = {};
+
+let fileInput = document.getElementById("csv"),
+
+    readFile = function () {
+        let reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById('out').innerHTML = reader.result;
+        };
+
+        reader.?????(fileInput.files[0]);
+    };
+
+fileInput.addEventListener('change', readFile);
+</script>
+</body>
+</html>
