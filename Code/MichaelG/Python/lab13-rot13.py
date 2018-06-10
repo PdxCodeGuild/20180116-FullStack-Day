@@ -1,15 +1,24 @@
-import codecs
+def rot13(text):
+    result = ""
 
-while True:
-    inc = input('Please enter something to encode: ')
-    enc = codecs.getencoder("rot-13")
-    os = enc(inc)[0]
-    output = os
-    print(output)
-    aga = input('Would you like to encode again? Yes or no.')
-    if aga == 'no':
-        break
-    elif aga == 'yes':
-        inc
+    for letters in text:
 
-print('Goodbye.')
+        convert = ord(letters)
+        if convert >= ord('a') and convert <= ord('z'):
+            if convert > ord('m'):
+                convert -= 13
+            else:
+                convert += 13
+        elif convert >= ord('A') and convert <= ord('Z'):
+            if convert > ord('M'):
+                convert -= 13
+            else:
+                convert += 13
+
+        result += chr(convert)
+
+    return result
+
+
+test = input("Please enter a word to encode: ")
+print(rot13(test))

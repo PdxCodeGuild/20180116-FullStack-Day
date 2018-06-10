@@ -13,7 +13,23 @@
 <script>
     let hack_source = "charset=UTF-8> rel=stylesheet type=text/css href=JS_Lab01_Rock_paper_scissors_css.css" +
         "Rock Paper Scissors class=title_container id=title>Rock Paper Scissors! class=choices_container class=choice" +
-        "input type=image" ;
+        "input type=image" + "function rock_choice() {n" +
+        "        let rand = opponent_choice[Math.floor(Math.random() * opponent_choice.length)];\n" +
+        "        outcome_txt.innerHTML = \"Your opponent has chosen \" + rand;\n" +
+        "        if (rand === 'scissors') {\n" +
+        "            console.log('win');\n" +
+        "            win_count.innerHTML = w;\n" +
+        "            w++;\n" +
+        "        } else if (rand === 'paper') {\n" +
+        "            console.log('loss');\n" +
+        "            loss_count.innerHTML = l;\n" +
+        "            l++;\n" +
+        "        } else {\n" +
+        "            console.log('tie');\n" +
+        "            tie_count.innerHTML = t;\n" +
+        "            t++;\n" +
+        "        }\n" +
+        "    }";
 
     document.onkeydown = myFunction;
     // console.log(process);

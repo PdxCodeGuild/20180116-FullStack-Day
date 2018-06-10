@@ -18,7 +18,7 @@
 <div id="passg"></div>
 <script>
     let bt_gen = document.getElementById("bt_gen"); // gets button's ID to...
-    let passg =  document.getElementById("passg");// gets the output (password) div and passes to..
+    let passg = document.getElementById("passg");// gets the output (password) div and passes to..
 
     bt_gen.onclick = function () {
         passg.innerHTML = Math.random().toString(36).substr(2, 10); // this creates random password from strings and substr() extracts part of a string and returns specified number of characters (in this case also random)

@@ -1,11 +1,11 @@
 button {
-    padding: 400px;
+    padding: 40px;
     background-color: #1b1e21;
     color: white;
     border-radius: 4px;
-
 }
 
 body {
-    background-color: black;
+    background-color: darkgray;
+    font-family: "Helvetica Neue", "Times New Roman", sans-serif;
 }

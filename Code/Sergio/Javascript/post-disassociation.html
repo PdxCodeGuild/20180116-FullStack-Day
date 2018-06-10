@@ -1,168 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Disassociation</title>
-    <!-- https://tonejs.github.io/ -->
-<script src="https://tonejs.github.io/build/Tone.min.js"></script>
+    <title>Bouncy Faded Circles</title>
 </head>
-
-
-<body onload="clockTime()">
-
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Aldrich');
-
-    body {
-        background-color: whitesmoke;
-        color: #1b1e21;
-        text-align: center;
-        font-family: 'Aldrich', sans-serif;
-
-    }
-
-    h1 {
-        color: #274982;
-        font-size: 8em;
-        margin-bottom: 7px;
-
-    }
-
-    #clock {
-        color: #274982;
-        font-size: 5em;
-        text-align: center;
-    }
-#cnv:hover {
-    opacity:0.7;
+canvas{
+position: absolute;
+background: #111;
+height: 100%;
+width: 100%;
+left: 0;
+top: 0;
+cursor: pointer;
 }
-#cnv {
-    background:black;
-  opacity: 1;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
+input{
+position: absolute;
+left: 0;
+top: 0;
 }
 </style>
-<canvas id="cnv" width="1000" height="1000">
-    <h1>Clock</h1>
-<div id="clock"></div>
-</canvas>
+<body><canvas></canvas>
+<input type="range" min="0" max="1000" value="100"/>
+
 <script>
 
-let cnv = document.getElementById('cnv');
-let ctx = cnv.getContext('2d');
+canvas = document.querySelector('canvas');
+ctx = canvas.getContext('2d');
 
-class Circle {
-  constructor(x, y, radius, hue) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    this.hue = hue;
+(onresize = function(){
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+})();
+
+nBalls = Math.floor(Math.random() * 30);
+radius = Math.floor(Math.random() * 25);
+nProperties = 4;
+radiusSq = radius*radius
+DoubleRadiusSq = 4*radiusSq;
+dampeningFactor = 1;
+hardnessFactor = 50;
+balls = new Float32Array(nBalls*nProperties);
+
+forEach = function(fn,start){
+for(let i=start||1;i<balls.length;i+=nProperties){
+fn(i);
+}
+};
+
+mouse = {
+gotBall: false,
+ball: 1,
+x: 0,
+y: 1,
+};
+
+
+
+onmouseup = function(){
+mouse.gotBall = false;
+};
+
+ballAmountInput = document.querySelector('input');
+ballAmountInput.onchange = function(){
+balls = new Float32Array(ballAmountInput.value*nProperties);
+generateBalls()
+};
+
+(generateBalls = function(){
+forEach(function(i){
+balls[i] = Math.random()*(canvas.width-radius*2)+radius;
+balls[i+1] = Math.random()*(canvas.height-radius*2)+radius;
+balls[i+2] = Math.random()*10-4;
+});
+})();
+
+requestAnimationFrame(loop = function(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+let my_gradient=ctx.createLinearGradient(0,50,170,0);
+my_gradient.addColorStop(0, "red");
+my_gradient.addColorStop(1, "blue");
+ctx.fillStyle = my_gradient;
+forEach(function(i){
+if(i===mouse.ball && mouse.gotBall){
+  ctx.fillStyle = my_gradient;
+}else{
+  ctx.fillStyle = my_gradient;
+}
+ctx.beginPath();
+ctx.arc(balls[i],balls[i+1],radius,0,Math.PI*2);
+ctx.fill();
+
+forEach(function(j){
+  let dx = balls[i]-balls[j],
+      dy = balls[i+1]-balls[j+1],
+      distanceSq = dx*dx+dy*dy;
+  if(distanceSq<DoubleRadiusSq){
+    let distance = Math.sqrt(distanceSq),
+        halfOverlap = distance*0.5-radius,
+        ax = dx/distance*halfOverlap*hardnessFactor,
+        ay = dy/distance*halfOverlap*hardnessFactor;
+    balls[i+2] = (balls[i+2]-ax)*dampeningFactor;
+    balls[i+3] = (balls[i+3]-ay)*dampeningFactor;
+    balls[j+2] = (balls[j+2]+ax)*dampeningFactor;
+    balls[j+5] = (balls[j+5]+ay)*dampeningFactor;
   }
-  draw(ctx, t) {
-    //this.x += (2*Math.random()-1)*t;
+},i+nProperties);
+});
 
-    let new_x = this.x + Math.sin(t*3)*this.radius;
-    let new_y = this.y + Math.floor(Math.cos(t*5))*this.radius;
-    let new_radius = this.radius*Math.abs(Math.sin(t));
-    let new_angle = 8*Math.PI;//*(1+Math.sin(t*10));
-    //
+forEach(function(i){
+balls[i] += balls[i+2];
+balls[i+1] += balls[i+3];
+balls[i+3] += 0.7;
 
-    //
-    ctx.beginPath();
-    ctx.arc(new_x, new_y, new_radius, 0, new_angle, false);
-    let new_hue = this.hue + Math.floor((Math.cos(t)*500)**4%3);
+let bottom = balls[i+1]+radius;
+if(bottom>canvas.height){
+  balls[i+3] = (balls[i+3]-bottom+canvas.height)*dampeningFactor;
+};
 
-    ctx.fillStyle = 'hsl('+new_hue+', 80%, 23%)';
-    ctx.fill();
-  }
+let right = balls[i]+radius;
+if(right>canvas.width){
+  balls[i+2] = (balls[i+2]-right+canvas.width)*dampeningFactor;
+};
+
+let left = balls[i]-radius;
+if(left<0){
+  balls[i+2] = (balls[i+2]-left)*dampeningFactor;
+}
+});
+
+if(mouse.gotBall){
+let dx = balls[mouse.ball]-mouse.x,
+    dy = balls[mouse.ball+1]-mouse.y;
+balls[mouse.ball+2] = (balls[mouse.ball+2]-dx*0.02)*dampeningFactor;
+balls[mouse.ball+3] = (balls[mouse.ball+3]-dy*0.02)*dampeningFactor;
+ctx.strokeStyle = "blue";
+ctx.lineWidth = 10;
+ctx.beginPath();
+ctx.moveTo(mouse.x,mouse.y);
+ctx.lineTo(balls[mouse.ball],balls[mouse.ball+1]);
+ctx.stroke();
 }
 
-
-let circles = [];
-for (let i=0; i<500; ++i) {
-  let x = Math.random()*cnv.width;
-  let y = Math.random()*cnv.height;
-  let radius = 10 + Math.random()*100;
-  let hue = Math.floor(Math.random()*900); //tony hawk
-  let circle = new Circle(x, y, radius, hue);
-  circles.push(circle);
-}
-
-
-
-let last_time = new Date();
-
-function animation_step() {
-  let current_time = new Date();
-  console.log(current_time + last_time);
-  let t = (current_time - last_time)/1500;
-  //last_time = current_time;
-
-  window.requestAnimationFrame(animation_step);
-  //context.clearRect(0, 0, cnv.width, cnv.height);
-//
-
-//
-  ctx.fillStyle = 'rgba(255,255,255,0.01)';
-  ctx.fillRect(1, 0, cnv.width, cnv.height);
-  for (let i=0; i<circles.length; ++i) {
-    circles[i].draw(ctx, t);
-  }
-
-}
-window.requestAnimationFrame(animation_step);
-
-
-// current time
-function clockTime() {
-        let d = new Date();
-        let n = d.toLocaleTimeString();
-        document.getElementById("#clock").innerHTML = n;
-    }
-
-    function clockTime() {
-        let today = new Date();
-        let h = today.getHours();
-        let m = today.getMinutes();
-        let s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('clock').innerHTML =
-        h + ":" + m + ":" + s;
-        let t = setTimeout(clockTime, 500);
-    }
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
-
-
-// for (let i=0; i<100; ++i) {
-//   fillCircle(context, Math.random()*cnv.width, Math.random()*cnv.height, 2, 'hsl(200, 100%, 50%)');
-// }
-
-
-
-// let moving_div = document.getElementById('moving_div');
-// let left = 0;
-// moving_div.style.position = 'absolute';
-// moving_div.style.left = left;
-// moving_div.style.top = 0;
-// function animation_step() {
-//   left += 0.1;
-//   moving_div.style.left = left + 'px';
-//   console.log(left)
-//   if (left < 100) {
-//     window.requestAnimationFrame(animation_step);
-//   }
-// }
-// window.requestAnimationFrame(animation_step);
-
+requestAnimationFrame(loop);
+});
 
 
 </script>
-
 </body>
 </html>

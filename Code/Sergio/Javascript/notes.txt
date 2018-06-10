@@ -1,0 +1,13 @@
+undefined = funcion that doesnt return anything
+
+|| means "or" also called "pipe"
+
+use === by default
+use !== by default
+
+css "all ease"
+
+buttons ".checked"
+
+check strings doc
+
