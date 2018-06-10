@@ -1,14 +1,14 @@
 """
 This program will take the png skies that have been cropped and turns them into prints that will be uploaded to dropbox
 """
-from PIL import Image, ImageDraw
+from PIL import Image
 import datetime, os.path
 
 # variable that will change
 date = datetime.date(2018, 1, 16)  # starting date
 diary = 146
 current_image = 1020084  # last 7 digits after the 'P', will change with new camera
-ending_image = 1020085
+ending_image = 1020190
 folder_path = "/Users/jacksonreed/Desktop/v2 Sky Diary - Proofs/" + str(diary) + "/JPEG/"  # should be able to shorten
 
 
@@ -37,8 +37,12 @@ while current_image <= ending_image:
         # add day
         day_im = Image.open("/Users/jacksonreed/Desktop/dates/day" + str(date.strftime('%d')) + ".png")
         day_width, day_height = day_im.size
-        padding = 100
-        day_x = int(canvas_width / 2) + padding
+        # Need to test this !!! Trying to get the shorter days to look better
+        if int(date.strftime('%d')) < 10:
+            x_padding = 166
+        else:
+            x_padding = 100
+        day_x = int(canvas_width / 2) + x_padding  # added a second padding to make it look more even
         day_y = y + padding
         canvas.paste(day_im, (day_x, day_y, (day_x + day_width), (day_y + day_height)))
 
@@ -47,7 +51,7 @@ while current_image <= ending_image:
         year_width, year_height = year_im.size
         padding = 100
         year_x = int((canvas_width / 2) - (year_width / 2))
-        year_y = y + padding + 250  # 250 is padding above day/month and day/month_height
+        year_y = y + padding + 225  # changed to 225250 is padding above day/month and day/month_height
         canvas.paste(year_im, (year_x, year_y, year_x + year_width, year_y + year_height))
 
         # save file into new folder
@@ -55,14 +59,3 @@ while current_image <= ending_image:
         # increment date only when image is created to account for deleted image numbers on camera
         date += datetime.timedelta(days=1)
     current_image += 1
-
-
-
-# area = (0, 0, 300, 277)  # added size of png to info found from cropping
-# im.paste(date_img, area)
-# # draw white area
-# width, height = im.size
-# print(width)
-# print(height)
-# footer = ImageDraw.Draw(im)
-# footer.rectangle(((0, height), (width, width + 500)), fill="white")
