@@ -12,9 +12,10 @@ import os.path
 starting_date = datetime.date(2018, 1, 16)
 diary = 146
 current_image = 1020084  # last 7 digits after the 'P', will change with new camera
-ending_image = 1020085
+ending_image = 1020190
 folder_path = "/Users/jacksonreed/Desktop/v2 Sky Diary - Proofs/" + str(diary) + "/JPEG/"  # should be able to shorten
 image_prefix = "P"  # this will change with the new camera
+# figure out pixels by looking at first one.  Make sure ratio will allow at least 600 pixels at the bottom
 upperleft_x = 1420
 upperleft_y = 336
 lowerright_x = 4228
