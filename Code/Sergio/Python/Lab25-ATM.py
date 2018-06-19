@@ -10,12 +10,15 @@ class ATM:
         self.interest = interest
         self.transactions = []
 
+    # append to transactions list []
+
     def check_balance(self):  # checks balance
         return f"Your balance is: ${self.balance}"
 
     def deposit(self, amount):  # deposits to balance
+
         self.balance += amount
-        print(f"Deposit amount: {amount}")
+        self.transactions.append(f"Deposit amount: {amount}")
         return self.balance
 
     def check_withdrawal(self, amount):  # checks balance to see if we can withdraw
@@ -26,7 +29,7 @@ class ATM:
 
     def withdraw(self, amount):  # deposits to balance
         self.balance -= amount
-        print(f"You have withdrawn: {amount}")
+        self.transactions.append(f"You have withdrawn: {amount}")
         return self.balance
 
     def calc_interest(self):
@@ -46,6 +49,7 @@ print(checking_account.withdraw(900))
 print(checking_account.check_balance())
 print(checking_account.deposit(int(1000)))
 print(checking_account.check_balance())
-print(checking_account.withdraw(1500))  # change to ridiculously high number to get else statement
+print(checking_account.withdraw(1900))  # change to ridiculously high number to get else statement
 print(checking_account.deposit(2500))
 print(checking_account.calc_interest())
+print(checking_account.print_transactions())
