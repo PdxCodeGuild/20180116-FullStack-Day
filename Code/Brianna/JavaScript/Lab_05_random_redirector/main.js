@@ -14,17 +14,20 @@ let counter = 5;
 
 
 go_to_a_website_bt.onclick = function () {
-    location = website_array[random_index];
+    setTimeout(function () {
+        location = website_array[random_index];
+    }, 5000);
 };
 
+//
+// while (counter >0) {
+//     setInterval(function() {
+//     output_span.innerText = counter;
+//    counter -= 1;
+//  }, 1000);
+// }
+//
 
-
-while (counter >0) {
-    setInterval(function() {
-    output_span.innerText = counter;
-   counter -= 1;
- }, 1000);
-}
 
 
 
