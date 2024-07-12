@@ -45,9 +45,9 @@
     - https://github.com/oglerma/Capstone/blob/master/project_description.md
 - Scott Gregg
     - scotttgregg@gmail.com
-- Sergio Blue
-    - sergiobluez@gmail.com
-    - Capstone: https://github.com/b1oo/super-dope-app-name/
+- Unknown
+    - doxxed / h4cked
+    
 - Wes Peeks
     - wwpeeks@gmail.com
 - William Adkins
